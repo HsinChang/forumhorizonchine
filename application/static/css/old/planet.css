@@ -1,0 +1,99 @@
+/**
+ Copyright (C) 2008 ZHENG Zhong <heavyzheng nospam-at gmail D0T com>
+  - http://heavyz.blogspot.com/
+  - http://buggarden.blogspot.com/
+ 
+ Stylesheet for planet AFCP.
+ 
+ Created on 2008-11-17.
+ $Id: planet.css 26 2009-08-04 22:06:00Z guolin.mobi $
+ */
+
+/*------------------------------------------------------------------------------------------------*/
+/* Planet AFCP layout                                                                             */
+/*------------------------------------------------------------------------------------------------*/
+
+#planet-header {
+  margin: 10px 0 10px 0;
+  padding: 10px;
+  background-color: #EEEEEE;
+  border-width: 1px 0 1px 0;
+  border-style: solid;
+  border-color: #DDDDDD;
+}
+
+#planet-header p {
+  margin: 0;
+  padding: 0 0 4px 0;
+  font: italic normal 100% 'Trebuchet MS',arial,sans-serif;
+  line-height: 1.4em;
+}
+
+#planet-content #left-column {
+  margin: 0;
+  padding: 0;
+  display: inline;
+  float: left;
+  width: 440px;
+}
+
+#planet-content #right-column {
+  margin: 0;
+  padding: 0;
+  display: inline;
+  float: right;
+  width: 200px;
+}
+
+/*------------------------------------------------------------------------------------------------*/
+/* Planet AFCP styles                                                                             */
+/*------------------------------------------------------------------------------------------------*/
+
+.section {
+  margin: 0;
+  padding: 0 0 8px 0;
+}
+
+.section h2 {
+  margin: 0 0 8px 0;
+  padding: 4px 0 4px 0;
+  font: normal bold 140% 'Trebuchet MS',arial,sans-serif;
+  line-height: 1.4em;
+  border-bottom: 1px solid #888888;
+}
+
+.section .entry {
+  margin: 0;
+  padding: 0 0 8px 0;
+}
+
+.section .entry .entry-title {
+  margin: 0;
+  padding: 0 0 2px 0;
+  font: normal bold 110% 'Trebuchet MS',arial,sans-serif;
+  line-height: 1.4em;
+}
+
+.section .entry .entry-info {
+  margin: 0;
+  padding: 0 0 2px 0;
+  font: normal normal 90% 'Trebuchet MS',arial,sans-serif;
+  color: #888888;
+  line-height: 1.4em;
+}
+
+.section .entry .entry-content {
+  margin: 0;
+  padding: 0 0 2px 0;
+  font: normal normal 100% arial,sans-serif;
+  line-height: 1.4em;
+}
+
+.section .section-footer {
+  margin: 0;
+  padding: 2px;
+  font: normal normal 90% 'Trebuchet MS',arial,sans-serif;
+  text-align: right;
+  border-top: 1px solid #DDDDDD;
+}
+

@@ -1,0 +1,393 @@
+/**
+ Copyright (C) 2008 ZHENG Zhong <heavyzheng nospam-at gmail D0T com>
+  - http://heavyz.blogspot.com/
+  - http://buggarden.blogspot.com/
+ 
+ Created on 2008-11-20.
+ $Id: sections.css 26 2009-08-04 22:06:00Z guolin.mobi $
+ */
+
+.translated {
+	font-style: italic;
+	color: gray;
+}
+
+.section p {
+	text-align: justify;
+}
+.center p {
+	text-align: center;
+}
+
+.section {
+  margin: 0;
+  padding: 0 0 1em 0;
+  height: 1%; /* IE requires this to make a container! */
+}
+
+.section:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+.section .section-float-left {
+  margin: 0;
+  padding: 0 4px 4px 0;
+  display: inline;
+  float: left;
+}
+
+.section .section-float-right {
+  margin: 0;
+  padding: 0 0 4px 4px;
+  display: inline;
+  float: right;
+}
+
+.section h1, .section h2, .section h3 {
+  font-weight: bold;
+  font-family: 'Trebuchet MS',arial,sans-serif;
+  line-height: 1.4em;
+}
+
+.section h1 {
+  margin: 0 0 1em 0;
+  padding: 4px 0 4px 0;
+  font-size: 140%;
+  border-bottom: 1px solid #888888;
+}
+
+.section h2 {
+  margin: 0;
+  padding: 2px 0 2px 0;
+  font-size: 120%;
+}
+
+.section h3 {
+  margin: 2em 0 1em;
+  padding: 0 0 2px 0;
+  font-size: 110%;
+}
+
+.section p {
+  line-height: 1.4em;
+}
+
+.section ul li, .section ol li {
+  line-height: 1.4em;
+}
+
+.section-footer {
+  margin: 0;
+  padding: 4px;
+  font: normal normal 90% 'Trebuchet MS',arial,sans-serif;
+  color: #888888;
+  line-height: 1.4em;
+  border-top: 1px solid #DDDDDD;
+}
+
+.section h2 {
+	text-align: center;
+	margin-top: 2em;
+	margin-bottom: 2em;
+}
+
+.section hr {
+	margin-top: 3em;
+	margin-bottom: 3em;
+}
+form.unwrapped {
+	margin-bottom: 1em;
+	/* padding-bottom: 1em; */
+}
+
+table {
+	width: 100%;
+	border-collapse: collapse;
+}
+table, th, td {
+	border: 1px solid #999;
+}
+td {
+	padding: 3px;
+}
+table.noborder, .noborder th, .noborder td {
+	border: none;
+}
+th {
+	margin: 0;
+	padding: 4px;
+	font-family: 'Trebuchet MS', arial, sans-serif;
+	font-weight: bold;
+	background-color: #DDDDDD;
+}
+
+
+/*
+ * Page job
+ */
+
+.section .block-job {
+	border: solid 1px #999999;
+	border-radius: 5px;
+	/* padding: 0.5em;
+	padding-top: 0;
+	padding-left: 0; */
+	margin-top: 1em;
+	margin-bottom: 1em;
+	
+}
+
+.section .block-job form input[type="submit"] {
+	display: block;
+	margin: 0 auto 0;
+}
+.section .apply-button+div {
+	padding: 1em; /* 1em; */
+	/* -moz-transition: all 500ms;
+	-webkit-transition: all 500ms;
+	-ms-transition: all 500ms;
+	-o-transition: all 500ms;
+	transition: all 500ms; */
+	/* overflow: hidden; */
+}
+.section .apply-button+div p {
+	margin-top: 0.8em;
+	margin-bottom: 1em;
+}
+.wrapped {
+	/* display: none; */
+	height: 0;
+	margin-top: 0;
+	margin-bottom: 0;
+	padding-top: 0;
+	padding-bottom: 0;
+}
+.section .block-job h3.apply-button, .section .block-job .apply-button h3 {
+	margin: 0;
+	color: #1971a4; /* #2090D0; */
+	/* text not selectable */
+	/*-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	-o-user-select: none;
+	user-select: none;*/
+}
+
+.section .block-job div.apply-button:hover {
+	/* text-decoration: underline; */
+	cursor: pointer;
+	background-color: #e8f1fd;
+}
+
+.section div.apply-button {
+	padding: 0.5em;
+	border-radius: 4px;
+}
+
+.section .block-job h5, .section .block-job a.apply-button {
+	display: block;
+	font-family: 'Trebuchet MS', arial, sans-serif;
+	color: #1971a4;
+	background-color: #f5f9fe;
+	text-align: center;
+	font-size: medium;
+	padding: 0.4em 0 0.5em;
+	margin: 0 0 1em;
+	border: solid 1px white;
+	font-weight: bold;
+	text-decoration: none;
+}
+.section .block-job h5:hover, .section .block-job a.apply-button:hover {
+	background-color: #f2f7fd;
+	cursor: pointer;
+	border: solid 1px #d1e3f8;
+}
+
+.block-job h4 {
+	font-size: 120%;
+	font-style: italic;
+	color: #444;
+	background-color: #F1F1F1;
+	margin: 1em 0; /* 1.3 en haut et en bas */
+	padding: 0.3em 0.5em;
+}
+
+
+
+
+
+
+.right {
+	float: right;
+}
+
+.fixme {
+	color: red;
+	font-style: italic;
+}
+
+.modified {
+	color: blue;
+	font-style: italic;
+}
+.required {
+	color:red;
+}
+
+
+/* Page du programme */
+
+
+.program h2 {
+	margin-bottom: 0.5em;
+	color: #0066cc;
+}
+
+.program h2+h2 {
+	margin-top: 0;
+	margin-bottom: 2em;
+}
+
+.program table {
+	margin-bottom: 3em;
+}
+
+.program td {
+	padding: 0.8em 0.4em;
+	min-width: 7em;
+	text-align: center;
+}
+.program td+td {
+	text-align: left;
+}
+.program td+td+td {
+	text-align: center;
+}
+
+.program h3 {
+	margin: 0;
+	font-size: large;
+	text-align: center;
+	margin-bottom: 0.4em;
+	padding: 0;
+}
+
+.program ul {
+	margin: 0.4em 0 0;
+}
+
+.program table img {
+	display: block;
+	margin: 2.8em auto;
+}
+
+
+/* Page des services */
+
+/*
+.services table {
+	border-collapse: collapse;
+}
+.services th, .services td, .services table {
+	border: ridge 2px black;
+}
+.services th {
+	color: #FAFAFA;
+	background-color: #999999;
+}
+
+*/
+
+
+/* Page des intervenants */
+
+
+.exhibitors table {
+	width: 100%;
+	text-align: center;
+	margin-top: 1em;
+	margin-bottom: 1em;
+}
+/* .exhibitors table  */img.shadow {
+	-moz-transition: box-shadow 500ms;
+	-webkit-transition: box-shadow 500ms;
+	-ms-transition: box-shadow 500ms;
+	-o-transition: box-shadow 500ms;
+	transition: box-shadow 500ms;
+}
+/* .exhibitors table  */img.shadow:hover {
+	box-shadow: 1px 1px 3px #333333;
+}
+/* .exhibitors  */img.shadow {
+	padding: 2px;
+}
+
+
+
+/* Page de la liste des candidatures */
+
+
+
+.applications table {
+	border-collapse: collapse;
+	text-align: center;
+	margin: 1em 0;
+}
+
+.applications td, .applications th {
+	border: solid 1px #BBBBBB;
+	/* width: 50%; */
+	padding: 0.2em;
+}
+.applications th {
+	background-color: #595959;
+	/* text-align: center; */
+	color: white;
+	padding: 0.4em;
+}
+
+.cadre {
+	border: solid 2px #e1e983;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	padding: 1em 4em;
+	margin: 1em 2em;
+}
+
+/* Page du bilan du Forum 2011 */
+
+.balance div {
+	text-align: center;
+}
+.balance img {
+	margin: 1.5em 0;
+}
+
+
+/* Page des contacts */
+
+
+
+.contact tr:hover, .services tr:hover {
+	background-color: #F8F8F8;
+}
+.contact textarea, .program textarea {
+	width: 100%;
+	max-width: 670px;
+	min-width: 200px;
+	font-family: arial, sans-serif;
+	font-size: medium;
+}
+.contact input[type="text"], .program input[type="text"] {
+	width: 25em;
+	font-family: arial, sans-serif;
+	font-family: arial, sans-serif;
+	font-size: medium;
+}

@@ -1,0 +1,102 @@
+/**
+ Copyright (C) 2008 ZHENG Zhong <heavyzheng nospam-at gmail D0T com>
+  - http://heavyz.blogspot.com/
+  - http://buggarden.blogspot.com/
+ 
+ Created on 2008-12-08.
+ $Id: sidebar.css 26 2009-08-04 22:06:00Z guolin.mobi $
+ */
+
+.sidebar-section {
+  margin: 2px 0 8px 0;
+  padding: 0;
+}
+
+.sidebar-section .title {
+  margin: 0;
+  padding: 4px 0 10px 4px;
+  font: normal bold 110% 'Century Gothic',helvetica,sans-serif;
+  /* text-transform: uppercase; */
+  color: #2090D0;
+  cursor: pointer;
+}
+
+.sidebar-section .list {
+  margin: 0px;
+  padding: 0px;
+  border-width: 0;
+}
+
+.sidebar-section .entry {
+  margin: 0;
+  padding: 4px;
+  font: normal normal 90% 'Trebuchet MS',arial,sans-serif;
+  color: #666666;
+}
+
+.sidebar-section .list li  {
+	margin: 0;
+	font: normal normal 90% 'Trebuchet MS', arial, sans-serif;
+	color: #555555;
+	/* color: #666666; */
+	list-style: none outside none;
+	text-indent: 0;
+	
+	-moz-transition: all 200ms;
+	-webkit-transition: all 200ms;
+	-ms-transition: all 200ms;
+	-o-transition: all 200ms;
+	transition: all 200ms;
+}
+
+.sidebar-section .list li a {
+	display: block;
+	border-top: 1px solid #DDDDDD;
+	color: inherit;
+	/* width: 100%; */
+	height: 100%;
+	padding: 4px;
+	text-decoration: none;
+}
+
+.sidebar-section .list li.current {
+  background-color: #EEEEEE;
+  font-weight: bold;
+}
+.sidebar-section .list li:hover {
+	background-color: #E6E6E6/* #F6F6F6 */;
+	color: #333333;
+}
+.sidebar-section .list li.current:hover {
+	background-color: #DEDEDE/* #E9E9E9 */;
+}
+
+.sidebar-section a.button {
+	display: block;
+	text-align: center;
+	margin: 0.2em auto 1em;
+	text-decoration: none;
+	color: #4f6228; /* #364936; */
+	/* color: #3a520d; */
+	/* #444488; */
+	font-weight: bold;
+	/* #d6e3bc; Vert olive */
+	background-color: #caec8d; /*#E6E6FF;*/
+	border: solid 1px #6e936e; /* #AAAAFF; */
+	padding: 0.4em;
+	font-size: 120%;
+	border-radius: 2px;
+	
+	-moz-transition: all 500ms;
+	-webkit-transition: all 500ms;
+	-ms-transition: all 500ms;
+	-o-transition: all 500ms;
+	transition: all 500ms;
+}
+.sidebar-section a.button:hover {
+	/* #dee8c9; Vert olive */
+	background-color: #daf1ae; /* #F1F1FF; */
+	border-color: #4f6a4f;
+	box-shadow: 1px 1px 2px #779977;
+}
+

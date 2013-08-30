@@ -1,0 +1,94 @@
+/**
+ Copyright (C) 2008 ZHENG Zhong <heavyzheng nospam-at gmail D0T com>
+  - http://heavyz.blogspot.com/
+  - http://buggarden.blogspot.com/
+ 
+ Stylesheet for the AFCP member CV.
+ 
+ Created on 2008-11-21.
+ $Id: cv.css 26 2009-08-04 22:06:00Z guolin.mobi $
+ */
+
+#cv .section {
+  margin: 0;
+  padding: 0;
+}
+
+#cv .section-header {
+  margin: 4px 0 4px 0;
+  padding: 6px;
+  font: normal bold 120% 'Trebuchet MS',arial,sans-serif;
+  background-color: #EEEEEE;
+  border-width: 1px 0 1px 0;
+  border-style: solid;
+  border-color: #DDDDDD;
+}
+
+#cv .section-content {
+  margin: 4px 0 4px 0;
+  padding: 6px;
+}
+
+#cv .section-missing {
+  color: #888888;
+}
+
+#cv .section-edit-toggle {
+  margin: 0;
+  padding: 0 6px 0 6px;
+  font: normal normal 90% 'Trebuchet MS',arial,sans-serif;
+  text-align: right;
+}
+
+#cv .name-value-table {
+  width: 100%;
+}
+
+#cv .name-value-table .name-cell {
+  margin: 0;
+  padding: 2px 4px 2px 2px;
+  width: 20%;
+  line-height: 1.4em;
+  text-align: right;
+  font-weight: bold;
+  vertical-align: top;
+  white-space: nowrap;
+}
+
+#cv .name-value-table .value-cell {
+  margin: 0;
+  padding: 2px 2px 2px 4px;
+  line-height: 1.4em;
+  text-align: left;
+  vertical-align: top;
+}
+
+#cv #cv_yaml {
+  /* display: none; */
+}
+
+#cv #cv_basic_info #cv_photo {
+  margin: 0 4px 0 4px;
+  padding: 4px;
+  display: inline;
+  float: right;
+  width: 100px;
+  border: 1px solid #DDDDDD;
+}
+
+#cv #cv_basic_info h2 {
+  margin: 4px 0 4px 0;
+  padding: 0;
+  font: normal bold 140% 'Trebuchet MS',arial,sans-serif;
+}
+
+#cv #cv_footer {
+  margin: 4px 0 4px 0;
+  padding: 6px;
+  text-align: right;
+  font: normal normal 90% 'Trebuchet MS',arial,sans-serif;
+  color: #888888;
+  border-top: 1px solid #DDDDDD;
+}
+
+

@@ -1,0 +1,94 @@
+/**
+ Copyright (C) 2008 ZHENG Zhong <heavyzheng nospam-at gmail D0T com>
+  - http://heavyz.blogspot.com/
+  - http://buggarden.blogspot.com/
+ 
+ Created on 2008-12-09.
+ $Id: block.css 26 2009-08-04 22:06:00Z guolin.mobi $
+ */
+ 
+.container p {
+	text-align: justify;
+} 
+
+.block-title em, h1 em {
+	color: #FF0000;
+	font-style: normal;
+}
+
+.block {
+  margin: 0;
+  padding: 0 0 8px 0;
+}
+
+.block .block-title {
+  margin: 0 0 8px 0;
+  padding: 4px 0 4px 0;
+  font: normal bold 140% 'Trebuchet MS',arial,sans-serif;
+  color: #444444;
+  line-height: 1.4em;
+  border-bottom: 1px solid #888888;
+}
+
+.block .block-title a {
+  color: #444444;
+}
+
+.block .entry {
+  margin: 0;
+  padding: 0 0 8px 0;
+  height: 1%; /* IE requires this to make a container! */
+}
+
+.block .entry:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+.block .entry-image {
+  margin: 0 4px 4px 0;
+  padding: 2px;
+  display: inline;
+  float: left;
+  border: 1px solid #DDDDDD;
+}
+
+.block .entry-title {
+  margin: 0;
+  padding: 0 0 2px 0;
+  font: normal bold 110% 'Trebuchet MS',arial,sans-serif;
+  line-height: 1.4em;
+}
+
+.block .entry-info {
+  margin: 0;
+  padding: 0 0 2px 0;
+  font: normal normal 90% 'Trebuchet MS',arial,sans-serif;
+  color: #888888;
+  line-height: 1.4em;
+}
+
+.block .entry-content {
+  margin: 0;
+  padding: 0 0 2px 0;
+  font: normal normal 100% arial,sans-serif;
+  line-height: 1.4em;
+}
+
+.block .block-footer {
+  margin: 0;
+  padding: 2px;
+  font: normal normal 90% 'Trebuchet MS',arial,sans-serif;
+  text-align: right;
+  border-top: 1px solid #DDDDDD;
+}
+
+#home-wrapper h1 {
+	margin: 2em 0;
+}
+
+
+

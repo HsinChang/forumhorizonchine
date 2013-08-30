@@ -1,0 +1,55 @@
+/**
+ Copyright (C) 2008 ZHENG Zhong <heavyzheng nospam-at gmail D0T com>
+  - http://heavyz.blogspot.com/
+  - http://buggarden.blogspot.com/
+ 
+ Stylesheet for AFCP Announcement.
+ 
+ Created on 2008-11-17.
+ $Id: announcement.css 26 2009-08-04 22:06:00Z guolin.mobi $
+ */
+
+.announcement {
+  margin: 4px 0 4px 0;
+  padding: 0 0 4px 0;
+  border-bottom: 1px solid #666666;
+}
+
+.announcement .title {
+  margin: 0;
+  padding: 2px;
+  font: normal bold 110% 'Trebuchet MS',arial,sans-serif;
+}
+
+.announcement .author-date {
+  margin: 0;
+  padding: 2px;
+  font: normal normal 95% 'Trebuchet MS',arial,sans-serif;
+  color: #888888;
+}
+
+.announcement .resume {
+  margin: 6px 0 6px 0;
+  padding: 10px;
+  background-color: #EEEEEE;
+  line-height: 1.4em;
+  border-width: 1px 0 1px 0;
+  border-style: solid;
+  border-color: #DDDDDD;
+}
+
+.announcement .brief-content,
+.announcement .content {
+  margin: 0;
+  padding: 2px;
+  line-height: 1.4em;
+}
+
+.announcement-links {
+  margin: 0;
+  padding: 2px;
+  font: normal normal 95% 'Trebuchet MS',arial,sans-serif;
+  text-align: right;
+}
+
+

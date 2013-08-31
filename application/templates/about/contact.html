@@ -1,0 +1,52 @@
+{% extends "base_about.html" %}
+
+{% block html_title %}
+<title>
+  {{ _('contact us') }}
+</title>
+{% endblock html_title %}
+{% block content %}
+<div class="section contact">
+  <h1>Team leaders of China Horizon Forum 2013</h1>
+
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Title</th>
+    </tr>
+    <tr>
+      <td>Mr. Qi ZHU</td>
+      <td>AFCP President</td>
+    </tr>
+    <tr>
+      <td>Ms. Nan ZHANG</td>
+      <td>Forum team member</td>
+    </tr>
+    <tr>
+      <td>Mr. Zheng LI</td>
+      <td>Forum team member</td>
+    </tr>
+  </table>
+
+  {#
+  {% ifnotequal errmsg None %}
+  <div class="error">{{ errmsg }}</div>
+  {% endifnotequal %}
+  {% ifnotequal msgok None %}
+  <div class="info">Le message a bien été envoyé.</div>
+  {% endifnotequal %}
+  #}
+
+  <h2>Wish to contact us?</h2>
+  <form method="post">
+    <input type="hidden" name="from" value="forum" />
+    <div>Please enter your email: </div>
+    <div><input type="text" name="email" /></div>
+    <div>Please enter your message:</div>
+    <div><textarea name="message" rows="5"></textarea></div>
+    <div><input type="submit" value="Send the message" /></div>
+  </form>
+
+</div>
+
+{% endblock content %}

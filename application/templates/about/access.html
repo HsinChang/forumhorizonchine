@@ -1,0 +1,54 @@
+{% extends "base_about.html" %}
+{% block html_title %}
+<title>{{ _('Access') }}
+</title>
+{% endblock html_title %}
+{% block content %}
+<div class="section">
+  <h1>Access to the Forum</h1>
+
+  <p>
+    <strong>Mines ParisTech</strong>
+  </p>
+  <p>
+    <strong>60, Boulevard Saint-Michel<br/>
+    75272 PARIS Cedex 06<br/>
+    </strong>
+  </p>
+
+  <!-- <table>
+       <tr>
+       <td>
+       <h2></h2>
+       </td>
+       </tr>
+       <tr>
+       <td><iframe width="600" height="600" frameborder="0"
+       scrolling="no" marginheight="0" marginwidth="0"
+       src="http://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=mines+paristech+&amp;aq=&amp;sll=48.846813,2.337706&amp;sspn=0.006863,0.01929&amp;ie=UTF8&amp;hq=mines+paristech&amp;hnear=&amp;ll=48.845664,2.339761&amp;spn=0.006863,0.01929&amp;z=14&amp;iwloc=A&amp;cid=3301406460353804507&amp;output=embed">
+       </iframe><br />
+       <small><a
+       href="http://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=mines+paristech+&amp;aq=&amp;sll=48.846813,2.337706&amp;sspn=0.006863,0.01929&amp;ie=UTF8&amp;hq=mines+paristech&amp;hnear=&amp;ll=48.845664,2.339761&amp;spn=0.006863,0.01929&amp;z=14&amp;iwloc=A&amp;cid=3301406460353804507"
+       style="color: #0000FF; text-align: left">View Larger Map</a></small>
+       </td>
+       </tr>
+       </table> -->
+
+  <div style="width: 600px; height: 640px">
+    <iframe width="600" height="600" frameborder="0" scrolling="no"
+	    marginheight="0" marginwidth="0"
+	    src="http://maps.google.com/maps?f=q&source=s_q&hl=fr&geocode=&q=mines+paristech&ie=UTF8&z=16&t=m&iwloc=A&output=embed"></iframe>
+    <br/> <small><a
+    href="https://maps.google.fr/maps?q=mines+paristech&hl=fr&ll=48.846446,2.339187&spn=0.007668,0.021136&sll=48.680793,2.502588&sspn=1.969382,5.410767&hq=mines+paristech&t=m&z=16&iwloc=A">View
+    larger map</a></small>
+  </div>
+
+  <h3>Access:</h3>
+  <ul>
+    <li>RER: line B (Luxembourg)</li>
+    <li>Bus: 21, 27, 38, 82, 85 (Luxembourg)</li>
+    <li>Vélib' : stations number 5003 (facing 9, rue Le Goff) and
+    5010 (facing 1, rue Henri Barbusse)</li>
+  </ul>
+</div>
+{% endblock content %}

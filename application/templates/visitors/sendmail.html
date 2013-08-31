@@ -1,0 +1,50 @@
+{% extends ext %}
+{% comment %}
+<!--
+  Copyright (C) 2012 ORY-LAMBALLE Antoine
+
+  The email sending page of the AFCP webapp, French version (fr).
+  
+  Created on 2012-03-11.
+  $Id: sendmail.html 999 2012-03-11 13:40:00Z guolin.mobi $
+
+	To test with the development server (local), run the server with the command lines:
+cd C:\Users\archimachin\Dropbox\workspace_django\svn
+dev_appserver.py --smtp_host=smtp.neuf.fr --smtp_port=25 .
+
+example of email sending:
+http://code.google.com/intl/fr/appengine/docs/python/mail/sendingmail.html
+how to run the server:
+http://code.google.com/intl/fr/appengine/docs/python/tools/devserver.html#Using_Mail
+champs des messages :
+http://code.google.com/intl/fr/appengine/docs/python/mail/emailmessagefields.html
+pièces jointes :
+http://code.google.com/intl/fr/appengine/docs/python/mail/overview.html#Attachments
+classe EmailMessage :
+http://code.google.com/intl/fr/appengine/docs/python/mail/emailmessageclass.html
+API Python Mail :
+http://code.google.com/intl/fr/appengine/docs/python/mail/
+-->
+{% endcomment %} 
+
+{# ---------------------------------------------------------------------------------------------- #} 
+
+{% block html_title %}
+<title>Application sent by China Horizon Forum</title>
+{% endblock %}{# html_title #} 
+
+{# ---------------------------------------------------------------------------------------------- #} 
+
+{% block language %}{% endblock %}
+
+{% block content %}
+
+<p>Your application has been sent.</p>
+<p><a href="/visitors/job/en/">Go back to job opportunities</a></p>
+<!-- <p>Envoi d'e-mail avec un fichier en pièce jointe :</p>
+<form method="post" enctype="multipart/form-data">
+	<input type="file" name="cv"/>
+	<input type="submit">
+</form> -->
+
+{% endblock %}{# content #}

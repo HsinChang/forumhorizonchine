@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block html_head %}
+
+{% block html_title %}FIXME: html_title{% endblock %}
+
+<link rel="stylesheet" type="text/css" media="screen" href="/static/css/sections.css"/>
+
+{% endblock %}
+
+{% block header %}
+{% endblock %}
+
+{% block content %}
+{% endblock %}
+
+{% block sidebar %}
+<div class="sidebar-section">
+	<div class="title">Visitors area</div>
+
+	<div>
+		<a class="button" href="{{ url_for('inscript') }}">Register now!</a>
+
+		<ul class="list">
+		  <li>
+		    <a href="{{ url_for('program') }}">
+		      {{ _('Program') }}
+		    </a>
+		  </li>
+		  <li>
+		    <a href="{{ url_for('visitors_exhibitors')}}">
+		      {{ _('Exhibitors') }}
+		    </a>
+		  </li>
+		  <li>
+		    <a href="{{ url_for('job') }}">
+		      {{ _('Job opportunities') }}
+		    </a>
+		  </li>
+		  <li>
+		    <a href="{{ url_for('workpermit') }}">
+		      {{ _('Working permit') }}
+		    </a>
+		  </li>
+		</ul>
+	</div>
+</div>
+
+<div class="sidebar-section">
+	<div class="title">{{ _('About') }} AFCP</div>
+	<ul class="list">
+		<li><a href="http://www.afcp-paristech.org" rel="external" target="_blank">AFCP website</a></li>
+	</ul>
+</div>
+
+{% endblock %}{# sidebar #}

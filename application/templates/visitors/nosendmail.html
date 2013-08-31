@@ -1,0 +1,47 @@
+{% extends ext %}
+{% comment %}
+<!--
+  Copyright (C) 2012 ORY-LAMBALLE Antoine
+
+  The email sending page of the AFCP webapp, French version (fr).
+  
+  Created on 2012-03-11.
+  $Id: sendmail.html 999 2012-03-11 13:40:00Z guolin.mobi $
+-->
+{% endcomment %} 
+
+{# ---------------------------------------------------------------------------------------------- #} 
+
+{% block html_title %}
+<title>Error on sending the application via China Horizon Forum</title>
+{% endblock %}{# html_title #} 
+
+{# ---------------------------------------------------------------------------------------------- #} 
+
+{% block language %}{% endblock %}
+
+{% block content %}
+
+<p>Erreur...
+{% if error_code == 1 %}
+	adresse e-mail renseignée invalide.
+{% endif %}
+{% if error_code == 2 %}
+	le CV ou la lettre de motivation n'a pas été joint.
+{% endif %}
+{% if error_code == 3 %}
+	L'un des champs requis n'a pas été renseigné.
+{% endif %}
+{% if error_code == 4 %}
+	Le CV ou la lettre de motivation n'a pas un format autorisé (*.pdf ou *.doc).
+{% endif %}
+{% if error_code == 5 %}
+	Le CV et la lettre de motivation ensemble dépassent 1 Mo.
+{% endif %}
+{% if error_code == 6 %}
+	L'un des champs requis est vide.
+{% endif %}
+</p>
+<p><a href="/visitors/job/fr/">Retourner aux offres d'emploi</a></p>
+
+{% endblock %}{# content #}

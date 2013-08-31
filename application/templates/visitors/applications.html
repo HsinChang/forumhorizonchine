@@ -1,0 +1,52 @@
+{% extends ext %}
+{% comment %}
+<!--
+  Copyright (C) 2012 ORY-LAMBALLE Antoine
+
+  The application list of the AFCP webapp, French version (fr).
+  
+  Created on 2012-03-11.
+  $Id: applications.html 999 2012-03-11 13:40:00Z guolin.mobi $
+-->
+{% endcomment %}
+
+{# ---------------------------------------------------------------------------------------------- #} 
+
+{% block html_title %}
+<title>candidatures :: AFCP</title>
+{% endblock %}{# html_title #} 
+
+{# ---------------------------------------------------------------------------------------------- #} 
+
+{% block content %}
+
+<div class="section applications">
+	<h1>Liste des candidatures</h1>
+	<p>Un total de {{ application|length }} candidatures ont été envoyées par le site.</p>
+	<table>
+		<thead>
+			<tr>
+				<th>Date</th>
+				<th>Nom</th>
+				<th>Prénom</th>
+				<th>e-mail</th>
+				<th>Entreprise</th>
+				<th>Poste</th>
+			</tr>
+		</thead>
+		<tbody>
+	{% for a in application %}
+			<tr>
+				<td>{{ a.application_date|date:"d/m/Y" }}</td>
+				<td>{{ a.lastname }}</td>
+				<td>{{ a.firstname }}</td>
+				<td><a href="mailto:{{ a.email }}">{{ a.email }}</a></td>
+				<td>{{ a.company }}</td>
+				<td>{{ a.job }}</td>
+			</tr>
+	{% endfor %}
+		</tbody>
+	</table>
+</div>
+
+{% endblock %}{# content #}

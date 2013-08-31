@@ -1,0 +1,3340 @@
+{% extends "base_visitors.html" %}
+{#
+<!--
+  Copyright (C) 2008 ZHENG Zhong <heavyzheng nospam-at gmail D0T com>
+  - http://heavyz.blogspot.com/
+  - http://buggarden.blogspot.com/
+
+  The contact page of the AFCP webapp, French version (fr).
+
+  Attention : chaque formulaire d'offre d'emploi pour envoyer une candidature a un identifiant
+		(<input type="hidden" name="id" value="3" />) unique qui match avec
+		apps/forum/resources.py, variable company_emails en bas.
+
+
+  Created on 2008-11-20.
+  $Id: job.html 26 2009-08-04 22:06:00Z guolin.mobi $
+-->
+#}
+
+{% block html_title %}
+<title>Job opportunities via China Horizon Forum</title>
+<meta name="description"
+	content="Here you will find job offers from partner companies of China Horizon Forum and AFCP." />
+
+{% endblock %}{# html_title #}
+
+{% block content %}
+
+<div class="section job">
+	<h1>Jobs opportunities</h1>
+
+	{#
+	<div class="info">This page displays the job offers from
+		companies at China Horizon Forum. Offers are not available yet. Please
+		come back regularly to check whether opportunities are available.</div>
+		#}
+	{#
+	<h2>Schneider Electric</h2>
+
+	<h3><a target="_blank"
+				href="http://www.schneider-electric.com/sites/corporate/en/careers/your-career/students-and-recent-graduates/international-recruitment.page">International recruitment programme</a></h3>
+
+	#}
+
+
+
+	<h2 id="jpm">Michelin</h2>
+
+	<div class="block-job">
+		<div class="apply-button">
+			<div class="right">Job</div>
+			<h3>Deployment Engineer - Mechanical/Electrical</h3>
+		</div>
+		<div>
+
+			<h4>Principal Accountabilities</h4>
+
+			<ul>
+				<li>Be responsible for manufacture and process deployment,
+					assisting his/her superior in the automated system pre-study,
+					manages/performs deployment studies, coordinates the execution and
+					implementation of feasibility study, Mechanical design, equipment
+					modification/upgrade installation and commissioning till to
+					buy-off.</li>
+				<li>Problem solving, project controlling, contractor management
+					and coordinate among different departments.</li>
+				<li>Filing internal and external documents according to
+					Michelin quality system requirements.</li>
+			</ul>
+
+			<h4>Key Qualities Required</h4>
+
+			<ul>
+				<li>Good knowledge of electrical design especially in
+					Allen-Bradley PLC, servo driver and motion control system, and
+					necessary safety knowledge to design a machine or system.</li>
+				<li>Open mind, good team work spirit, and good communication
+					skills. Customer focus spirit is necessary.</li>
+				<li>Experience in NC(Numerical Control ) technology is a plus</li>
+				<li>Native Mandarin, fluent English in oral, writing and
+					listening.</li>
+				<li>Well-versed in MS Office and be able to use Auto-CAD (for
+					electrical diagram).</li>
+			</ul>
+
+
+			<!-- Formulaire pour postuler -->
+			<h5 class="apply-button">Apply</h5>
+			<form method="post" enctype="multipart/form-data"
+					action="/visitors/sendmail/en/" class="unwrapped">
+				*.doc and *.pdf files are accepted, max 500 Ko for each attachment.
+				{# L'identifiant indiquant à quelle adresse mail la candidature est envoyée, cf ressources du Forum #}
+				<input type="hidden" name="id" value="michelin" />
+				{# Nom de l'emploi, le même que dans le titre #}
+				<input type="hidden" name="jobname" value="Deployment Engineer - Mechanical/Electrical" />
+				{# Entreprise #}
+				<input type="hidden" name="company" value="Michelin" />
+				<table class="noborder">
+					<tr>
+						<td>Family name<span class="required">*</span></td>
+						<td><input type="text" name="nom" required="required" /></td>
+					</tr>
+					<tr>
+						<td>First name<span class="required">*</span></td>
+						<td><input type="text" name="prenom" required="required" /></td>
+					</tr>
+					<tr>
+						<td>e-mail<span class="required">*</span></td>
+						<td><input type="text" name="email" required="required" /></td>
+					</tr>
+					<tr>
+						<td>CV<span class="required">*</span></td>
+						<td><input type="file" name="cv" required="required" /></td>
+					</tr>
+					<tr>
+						<td>Covering letter<span class="required">*</span></td>
+						<td><input type="file" name="lm" required="required" /></td>
+					</tr>
+					<tr>
+						<td colspan="2"><small><span class="required">*</span>
+								: required field</small></td>
+					</tr>
+					<tr>
+						<td colspan="2"><input type="submit" value="Send"></td>
+					</tr>
+				</table>
+			</form>
+			<!-- Fin du formulaire -->
+		</div>
+	</div>
+
+	<div class="block-job">
+		<div class="apply-button">
+			<div class="right">Job</div>
+			<h3>Civil Engineer</h3>
+		</div>
+		<div>
+
+			<h4>Principal Accountabilities</h4>
+
+			<ul>
+				<li>Executes feasibility studies including technical
+					descriptions, cost estimates and schedules</li>
+				<li>Creates the bid package including expression of functional
+					needs and linked documents</li>
+				<li>Defines and/or validates the technical solutions,
+					participates to or implements the design reviews</li>
+				<li>Does the design studies technical offers, costs estimates
+					and time-frames</li>
+				<li>Provide reports to the lead engineers and manager.</li>
+				<li>Applies quality system methodology of his/her engineering
+					group</li>
+			</ul>
+
+			<h4>Key Qualities Required</h4>
+
+			<ul>
+				<li>Good problem solving ability, project management and good
+					communication skills.</li>
+				<li>Fluent in both oral and written English</li>
+				<li>Be familiar with MS office (word, excel PowerPoint,
+					Project) and Auto-CAD</li>
+			</ul>
+
+
+			<!-- Formulaire pour postuler -->
+			<h5 class="apply-button">Apply</h5>
+			<form method="post" enctype="multipart/form-data"
+					action="/visitors/sendmail/en/" class="unwrapped">
+				*.doc and *.pdf files are accepted, max 500 Ko for each attachment.
+				{# L'identifiant indiquant à quelle adresse mail la candidature est envoyée, cf ressources du Forum #}
+				<input type="hidden" name="id" value="michelin" />
+				{# Nom de l'emploi, le même que dans le titre #}
+				<input type="hidden" name="jobname" value="Civil Engineer" />
+				{# Entreprise #}
+				<input type="hidden" name="company" value="Michelin" />
+				<table class="noborder">
+					<tr>
+						<td>Family name<span class="required">*</span></td>
+						<td><input type="text" name="nom" required="required" /></td>
+					</tr>
+					<tr>
+						<td>First name<span class="required">*</span></td>
+						<td><input type="text" name="prenom" required="required" /></td>
+					</tr>
+					<tr>
+						<td>e-mail<span class="required">*</span></td>
+						<td><input type="text" name="email" required="required" /></td>
+					</tr>
+					<tr>
+						<td>CV<span class="required">*</span></td>
+						<td><input type="file" name="cv" required="required" /></td>
+					</tr>
+					<tr>
+						<td>Covering letter<span class="required">*</span></td>
+						<td><input type="file" name="lm" required="required" /></td>
+					</tr>
+					<tr>
+						<td colspan="2"><small><span class="required">*</span>
+								: required field</small></td>
+					</tr>
+					<tr>
+						<td colspan="2"><input type="submit" value="Send"></td>
+					</tr>
+				</table>
+			</form>
+			<!-- Fin du formulaire -->
+		</div>
+	</div>
+
+	<div class="block-job">
+		<div class="apply-button">
+			<div class="right">Job</div>
+			<h3>Electrical Engineer</h3>
+		</div>
+		<div>
+
+			<h4>Principal Accountabilities</h4>
+
+			<ul>
+				<li>Dossier analysis and technical communication with MP and
+					supplier</li>
+				<li>Reports to the project coordinator</li>
+				<li>After each project gives feedback to project coordinator on
+					supplier result</li>
+				<li>Guarantees realization is conform to dossier and Michelin
+					specification in the different phases</li>
+				<li>Creates and updates supplier follow-up dossier</li>
+				<li>Guarantees the prevention plan is implemented in supplier
+					workshop.</li>
+				<li>Supports supplier on technical aspects and workshop
+					organization (Bib Real, Bib Standard)</li>
+			</ul>
+
+			<h4>Key Qualities Required</h4>
+
+			<ul>
+				<li>Good knowledge for raw material, machining process, surface
+					treatment, assembly, settings</li>
+				<li>Good knowledge of industrial components for mechanical
+					(including pneumatic, hydraulic)</li>
+				<li>Good knowledge of AutoCAD 2008 + SolidWorks for design
+					reading</li>
+				<li>Good knowledge of measurement tooling (caliper, 3D…)</li>
+			</ul>
+
+
+			<!-- Formulaire pour postuler -->
+			<h5 class="apply-button">Apply</h5>
+			<form method="post" enctype="multipart/form-data"
+					action="/visitors/sendmail/en/" class="unwrapped">
+				*.doc and *.pdf files are accepted, max 500 Ko for each attachment.
+				{# L'identifiant indiquant à quelle adresse mail la candidature est envoyée, cf ressources du Forum #}
+				<input type="hidden" name="id" value="michelin" />
+				{# Nom de l'emploi, le même que dans le titre #}
+				<input type="hidden" name="jobname" value="Electrical Engineer" />
+				{# Entreprise #}
+				<input type="hidden" name="company" value="Michelin" />
+				<table class="noborder">
+					<tr>
+						<td>Family name<span class="required">*</span></td>
+						<td><input type="text" name="nom" required="required" /></td>
+					</tr>
+					<tr>
+						<td>First name<span class="required">*</span></td>
+						<td><input type="text" name="prenom" required="required" /></td>
+					</tr>
+					<tr>
+						<td>e-mail<span class="required">*</span></td>
+						<td><input type="text" name="email" required="required" /></td>
+					</tr>
+					<tr>
+						<td>CV<span class="required">*</span></td>
+						<td><input type="file" name="cv" required="required" /></td>
+					</tr>
+					<tr>
+						<td>Covering letter<span class="required">*</span></td>
+						<td><input type="file" name="lm" required="required" /></td>
+					</tr>
+					<tr>
+						<td colspan="2"><small><span class="required">*</span>
+								: required field</small></td>
+					</tr>
+					<tr>
+						<td colspan="2"><input type="submit" value="Send"></td>
+					</tr>
+				</table>
+			</form>
+			<!-- Fin du formulaire -->
+		</div>
+	</div>
+
+	<div class="block-job">
+		<div class="apply-button">
+			<div class="right">Job</div>
+			<h3>Green Tyre Designer</h3>
+		</div>
+		<div>
+
+			<h4>Principal Accountabilities</h4>
+
+			<ul>
+				<li>Initiate and lead the Quality Planning Approach and steer
+					the phase of feasibility study in order to enable the plant to
+					commit to a production plan</li>
+				<li>Analyze and adapt the cured / uncured model, supplied by
+					the Technical Department, to take local specificities into account
+					(process, constituents, standardization...)</li>
+				<li>Define robust, uncured models that are adapted to the
+					context of the activity. Write the associated uncured referentials
+					while respecting the Technical Department referentials Recommend
+					and negotiate a start-up scenario while respecting the key points
+					of Quality Planning</li>
+			</ul>
+
+			<h4>Key Qualities Required</h4>
+
+			<ul>
+				<li>Should speak/ write English (good level expected)</li>
+				<li>Bachelor degree and mechanical,material education
+					background</li>
+			</ul>
+
+
+			<!-- Formulaire pour postuler -->
+			<h5 class="apply-button">Apply</h5>
+			<form method="post" enctype="multipart/form-data"
+					action="/visitors/sendmail/en/" class="unwrapped">
+				*.doc and *.pdf files are accepted, max 500 Ko for each attachment.
+				{# L'identifiant indiquant à quelle adresse mail la candidature est envoyée, cf ressources du Forum #}
+				<input type="hidden" name="id" value="michelin" />
+				{# Nom de l'emploi, le même que dans le titre #}
+				<input type="hidden" name="jobname" value="Green Tyre Designer" />
+				{# Entreprise #}
+				<input type="hidden" name="company" value="Michelin" />
+				<table class="noborder">
+					<tr>
+						<td>Family name<span class="required">*</span></td>
+						<td><input type="text" name="nom" required="required" /></td>
+					</tr>
+					<tr>
+						<td>First name<span class="required">*</span></td>
+						<td><input type="text" name="prenom" required="required" /></td>
+					</tr>
+					<tr>
+						<td>e-mail<span class="required">*</span></td>
+						<td><input type="text" name="email" required="required" /></td>
+					</tr>
+					<tr>
+						<td>CV<span class="required">*</span></td>
+						<td><input type="file" name="cv" required="required" /></td>
+					</tr>
+					<tr>
+						<td>Covering letter<span class="required">*</span></td>
+						<td><input type="file" name="lm" required="required" /></td>
+					</tr>
+					<tr>
+						<td colspan="2"><small><span class="required">*</span>
+								: required field</small></td>
+					</tr>
+					<tr>
+						<td colspan="2"><input type="submit" value="Send"></td>
+					</tr>
+				</table>
+			</form>
+			<!-- Fin du formulaire -->
+		</div>
+	</div>
+
+	<div class="block-job">
+		<div class="apply-button">
+			<div class="right">Job</div>
+			<h3>Account Manager</h3>
+		</div>
+		<div>
+
+			<h4>Principal Accountabilities</h4>
+
+			<ul>
+				<li>To achieve the sell-in volume sell-out volume at the
+					territory level</li>
+				<li>Toimplement the retail distribution plan and to develop
+					mutual business plan and action plan through targeted retailers and
+					wholesaler in the dedicated territory</li>
+				<li>To implement the commercial policy defined, by applying the
+					entity's sales methods</li>
+				<li>To provide relevant training to all targeted customers
+					within the dedicated territory</li>
+			</ul>
+
+			<h4>Key Qualities Required</h4>
+
+			<ul>
+				<li>Should speak/ write English (good level expected)</li>
+				<li>Good communication and mobility</li>
+				<li>Willing to travel</li>
+			</ul>
+
+
+			<!-- Formulaire pour postuler -->
+			<h5 class="apply-button">Apply</h5>
+			<form method="post" enctype="multipart/form-data"
+					action="/visitors/sendmail/en/" class="unwrapped">
+				*.doc and *.pdf files are accepted, max 500 Ko for each attachment.
+				{# L'identifiant indiquant à quelle adresse mail la candidature est envoyée, cf ressources du Forum #}
+				<input type="hidden" name="id" value="michelin" />
+				{# Nom de l'emploi, le même que dans le titre #}
+				<input type="hidden" name="jobname" value="Account Manager" />
+				{# Entreprise #}
+				<input type="hidden" name="company" value="Michelin" />
+				<table class="noborder">
+					<tr>
+						<td>Family name<span class="required">*</span></td>
+						<td><input type="text" name="nom" required="required" /></td>
+					</tr>
+					<tr>
+						<td>First name<span class="required">*</span></td>
+						<td><input type="text" name="prenom" required="required" /></td>
+					</tr>
+					<tr>
+						<td>e-mail<span class="required">*</span></td>
+						<td><input type="text" name="email" required="required" /></td>
+					</tr>
+					<tr>
+						<td>CV<span class="required">*</span></td>
+						<td><input type="file" name="cv" required="required" /></td>
+					</tr>
+					<tr>
+						<td>Covering letter<span class="required">*</span></td>
+						<td><input type="file" name="lm" required="required" /></td>
+					</tr>
+					<tr>
+						<td colspan="2"><small><span class="required">*</span>
+								: required field</small></td>
+					</tr>
+					<tr>
+						<td colspan="2"><input type="submit" value="Send"></td>
+					</tr>
+				</table>
+			</form>
+			<!-- Fin du formulaire -->
+		</div>
+	</div>
+
+	<div class="block-job">
+		<div class="apply-button">
+			<div class="right">Job</div>
+			<h3>IT Infrastructure Architect</h3>
+		</div>
+		<div>
+
+			<h4>Principal Accountabilities</h4>
+
+			<ul>
+				<li>Working with Technical Strategy Architects and Platform
+					Architects, validate technical solution design.</li>
+				<li>Propose solutions as necessary based on the Michelin Infra
+					strategic and standard Product &amp; Solution catalogue</li>
+				<li>Follow up technical issues to ensure on time delivery of
+					key projects</li>
+				<li>Support operation team to solve infra stability and
+					performance problems</li>
+				<li>Define and improve system management processes with related
+					teams</li>
+			</ul>
+
+			<h4>Key Qualities Required</h4>
+
+			<ul>
+				<li>IT technology or relevant education background.</li>
+				<li>Wide knowledge on IT infrastructure, including
+					networking/VoIP/Windows/AIX/WAS/Oracle database/Storage system
+					management performance tunning, etc</li>
+				<li>Good documentation and presentation skill; strong
+					communication skill in Chinese and English.</li>
+				<li>Multi-tasking ability to work independently and under
+					pressure</li>
+			</ul>
+
+
+			<!-- Formulaire pour postuler -->
+			<h5 class="apply-button">Apply</h5>
+			<form method="post" enctype="multipart/form-data"
+					action="/visitors/sendmail/en/" class="unwrapped">
+				*.doc and *.pdf files are accepted, max 500 Ko for each attachment.
+				{# L'identifiant indiquant à quelle adresse mail la candidature est envoyée, cf ressources du Forum #}
+				<input type="hidden" name="id" value="michelin" />
+				{# Nom de l'emploi, le même que dans le titre #}
+				<input type="hidden" name="jobname" value="IT Infrastructure Architect" />
+				{# Entreprise #}
+				<input type="hidden" name="company" value="Michelin" />
+				<table class="noborder">
+					<tr>
+						<td>Family name<span class="required">*</span></td>
+						<td><input type="text" name="nom" required="required" /></td>
+					</tr>
+					<tr>
+						<td>First name<span class="required">*</span></td>
+						<td><input type="text" name="prenom" required="required" /></td>
+					</tr>
+					<tr>
+						<td>e-mail<span class="required">*</span></td>
+						<td><input type="text" name="email" required="required" /></td>
+					</tr>
+					<tr>
+						<td>CV<span class="required">*</span></td>
+						<td><input type="file" name="cv" required="required" /></td>
+					</tr>
+					<tr>
+						<td>Covering letter<span class="required">*</span></td>
+						<td><input type="file" name="lm" required="required" /></td>
+					</tr>
+					<tr>
+						<td colspan="2"><small><span class="required">*</span>
+								: required field</small></td>
+					</tr>
+					<tr>
+						<td colspan="2"><input type="submit" value="Send"></td>
+					</tr>
+				</table>
+			</form>
+			<!-- Fin du formulaire -->
+		</div>
+	</div>
+
+
+
+	<h2 id="jpm">JPMorgan</h2>
+
+	<div class="block-job">
+		<div class="apply-button">
+			<div class="right">Job</div>
+			<h3>Quantitative Research for EMEA Rates Options &amp; Exotics</h3>
+		</div>
+		<div>
+
+			<h4>Job Headline</h4>
+			<p>Entry or mid-level position in Quantitative Research, Rates Derivatives</p>
+			<p>Based in London</p>
+
+			<h4>Job Summary</h4>
+
+			<p>We are seeking a person who can make an immediate contribution while learning our Rates Derivatives business and the models we use. Some work experience is desirable, but we will also consider candidates with little or no relevant experience, if academic credentials are outstanding. We expect the person to share in a balanced mixture of responsibilities, including model research and development, pricing and risk investigation, discussions with the trading desk, and software development.</p>
+
+
+			<h4>Core Responsibilities</h4>
+			<ul>
+				<li>Develop models and implement them in software for pricing
+					and risk managing derivatives</li>
+				<li>Develop pricing and calibration tools</li>
+				<li>Benchmark and compare results of various techniques</li>
+				<li>Implement products using pricing engines and models</li>
+				<li>Explain model behavior and predictions to traders, identify
+					major sources of risk in portfolios, carry out scenario analyses,
+					provide guidance / debug analytics</li>
+				<li>Rapid prototyping of models and products</li>
+			</ul>
+
+			<h4>Qualifications</h4>
+
+			<p>Essential skills, experience and qualifications:</p>
+			<p>VERY STRONG coding skills and knowledge in mathematical finance</p>
+			<ul>
+				<li>Excellence in probability theory, stochastic processes,
+					partial differential equations and numerical analysis</li>
+				<li>Very strong analytical and problem solving abilities</li>
+				<li>C/C++ coding with emphasis on numerical methods</li>
+				<li>Good communication skills.</li>
+				<li>PhD or equivalent degree (e.g. D.E.A.) in Mathematics,
+					Mathematical Finance, Physics or Engineering</li>
+			</ul>
+
+			<p>Desirable skills/experience: Python</p>
+
+			<p>The CV is better sent before August 9th 2013.</p>
+
+
+			<!-- Formulaire pour postuler -->
+			<h5 class="apply-button">Apply</h5>
+			<form method="post" enctype="multipart/form-data"
+					action="/visitors/sendmail/en/" class="unwrapped">
+				*.doc and *.pdf files are accepted, max 500 Ko for each attachment.
+				{# L'identifiant indiquant à quelle adresse mail la candidature est envoyée, cf ressources du Forum #}
+				<input type="hidden" name="id" value="jpm" />
+				{# Nom de l'emploi, le même que dans le titre #}
+				<input type="hidden" name="jobname" value="Quantitative Research for EMEA Rates Options &amp; Exotics" />
+				{# Entreprise #}
+				<input type="hidden" name="company" value="JPMorgan" />
+				<table class="noborder">
+					<tr>
+						<td>Family name<span class="required">*</span></td>
+						<td><input type="text" name="nom" required="required" /></td>
+					</tr>
+					<tr>
+						<td>First name<span class="required">*</span></td>
+						<td><input type="text" name="prenom" required="required" /></td>
+					</tr>
+					<tr>
+						<td>e-mail<span class="required">*</span></td>
+						<td><input type="text" name="email" required="required" /></td>
+					</tr>
+					<tr>
+						<td>CV<span class="required">*</span></td>
+						<td><input type="file" name="cv" required="required" /></td>
+					</tr>
+					<tr>
+						<td>Covering letter<span class="required">*</span></td>
+						<td><input type="file" name="lm" required="required" /></td>
+					</tr>
+					<tr>
+						<td colspan="2"><small><span class="required">*</span>
+								: required field</small></td>
+					</tr>
+					<tr>
+						<td colspan="2"><input type="submit" value="Send"></td>
+					</tr>
+				</table>
+			</form>
+			<!-- Fin du formulaire -->
+		</div>
+	</div>
+
+
+
+	<h2 id="lyxor">Lyxor Asset Management</h2>
+
+	<div class="block-job">
+		<div class="apply-button">
+			<div class="right">Internship</div>
+			<h3>Quant R&amp;D</h3>
+		</div>
+		<div>
+
+			<p>6 Mois minimum / Disponibilité Mars 2013</p>
+
+			<h4>Mission</h4>
+
+			<p>L’équipe R&amp;D de Lyxor Asset Management recherche un stagiaire pour construire des stratégies d’arbitrage ainsi que des estimateurs basés sur les algorithmes de Machine Learning. Le but de ce stage sera de trouver et utiliser de nouveaux algorithmes de reconnaissance, de classification et de prévision sur des bases de données financières. Le paramétrage des modèles utilisera des méthodes telles que la validation croisée, le bootstrapping ainsi que des critères prenant en compte le nombre de paramètres et leurs effets.</p>
+
+
+			<h4>Profil</h4>
+			<p>Le candidat doit avoir de bonnes connaissances en statistiques (apprentissage statistique, séries temporelles, modèles de régression) et en finance (modèles de base de trading, backtest). Programmation en C++ ou dans un langage matriciel indispensable (Matlab, Gauss, R …).</p>
+
+			<h4>Bibliographie</h4>
+			<ul>
+			<li>Hastie T., Tibshirani R. and Friedman J., The Elements of statistical learning, Springer, 2009</li>
+			<li>Roncalli T., La Gestion d’Actifs Quantitative, Economica, 2010.</li>
+			<li>Vapnik V.N., The Nature of Statistical Learning, Springer, 2000.</li>
+			</ul>
+
+			<p>Si vous êtes intéressés, merci d’envoyer votre CV + Lettre de Motivation :</p>
+
+
+			<!-- Formulaire pour postuler -->
+			<h5 class="apply-button">Apply</h5>
+			<form method="post" enctype="multipart/form-data"
+					action="/visitors/sendmail/fr/" class="unwrapped">
+				*.doc and *.pdf files are accepted, max 500 Ko for each attachment.
+				{# L'identifiant indiquant à quelle adresse mail la candidature est envoyée, cf ressources du Forum #}
+				<input type="hidden" name="id" value="lyxorquant" />
+				{# Nom de l'emploi, le même que dans le titre #}
+				<input type="hidden" name="jobname" value="Quant R&D" />
+				{# Entreprise #}
+				<input type="hidden" name="company" value="Lyxor Asset Management" />
+				<table class="noborder">
+					<tr>
+						<td>Family name<span class="required">*</span></td>
+						<td><input type="text" name="nom" required="required" /></td>
+					</tr>
+					<tr>
+						<td>First name<span class="required">*</span></td>
+						<td><input type="text" name="prenom" required="required" /></td>
+					</tr>
+					<tr>
+						<td>e-mail<span class="required">*</span></td>
+						<td><input type="text" name="email" required="required" /></td>
+					</tr>
+					<tr>
+						<td>CV<span class="required">*</span></td>
+						<td><input type="file" name="cv" required="required" /></td>
+					</tr>
+					<tr>
+						<td>Covering letter<span class="required">*</span></td>
+						<td><input type="file" name="lm" required="required" /></td>
+					</tr>
+					<tr>
+						<td colspan="2"><small><span class="required">*</span>
+								: required field</small></td>
+					</tr>
+					<tr>
+						<td colspan="2"><input type="submit" value="Send"></td>
+					</tr>
+				</table>
+			</form>
+			<!-- Fin du formulaire -->
+		</div>
+	</div>
+
+
+
+	<h2 id="tbs">TBS Europe</h2>
+
+	<div class="block-job">
+		<div class="apply-button">
+			<div class="right">Internship</div>
+			<h3>Chargé(e) de mission - Marketing</h3>
+		</div>
+		<div>
+
+			<h4>Présentation de l'entreprise</h4>
+			<p>Nouvelle filiale à Paris de la société Shenzhen Turbosight Technologies CO. Ltd., (<a href="http://www.tbsdtv.com" target="_blank">www.tbsdtv.com</a>), l'entreprise TBS Europe se consacre au e-commerce et à la vente de produits TBS et de produits électroniques de consommation en France. Nous recherchons un(e) assistant(e) Chef de produit Marketing. Nous attendons une personne positive et responsable.</p>
+			<ul>
+			<li>Durée : 6 mois</li>
+			<li>Lieu de travail：La Défense</li>
+			<li>Contrat: stagiaire(si une bonne performance peut transformer à CDI)</li>
+			</ul>
+
+
+			<h4>Description de l'emploi</h4>
+			<ol>
+			<li>Effectuer des tests de nouveaux produits</li>
+			<li>Traduire les documentations des nouveaux produits</li>
+			</ol>
+			<h4>Marketing</h4>
+			<ol>
+			<li>Ajouter et gérer les nouveaux produits en ligne</li>
+			<li>Gérer les boutiques en ligne</li>
+			<li>Faire des études de marché</li>
+			<li>Développer le marché (à travers les réseaux sociaux)</li>
+			<li>Traiter les problèmes de commande</li>
+			<li>Développer les relations publiques locales (PR)</li>
+			<li>Participer aux réunions avec le directeur de vente</li>
+			</ol>
+
+			<h4>Exigences</h4>
+			<ol>
+			<li>Français Courant Exigé/ Anglais Courant Exigé. Italien /Espagnol /Chinois apprécié</li>
+			<li>Maîtrise de MS Office, avec compétences informatiques</li>
+			<li>Excellentes compétences en communication, bon sens de la responsabilité</li>
+			</ol>
+
+
+			<!-- Formulaire pour postuler -->
+			<h5 class="apply-button">Apply</h5>
+			<form method="post" enctype="multipart/form-data"
+					action="/visitors/sendmail/en/" class="unwrapped">
+				*.doc and *.pdf files are accepted, max 500 Ko for each attachment.
+				{# L'identifiant indiquant à quelle adresse mail la candidature est envoyée, cf ressources du Forum #}
+				<input type="hidden" name="id" value="tbsmarketing" />
+				{# Nom de l'emploi, le même que dans le titre #}
+				<input type="hidden" name="jobname" value="Chargé(e) de mission - Marketing" />
+				{# Entreprise #}
+				<input type="hidden" name="company" value="TBS Europe" />
+				<table class="noborder">
+					<tr>
+						<td>Family name<span class="required">*</span></td>
+						<td><input type="text" name="nom" required="required" /></td>
+					</tr>
+					<tr>
+						<td>First name<span class="required">*</span></td>
+						<td><input type="text" name="prenom" required="required" /></td>
+					</tr>
+					<tr>
+						<td>e-mail<span class="required">*</span></td>
+						<td><input type="text" name="email" required="required" /></td>
+					</tr>
+					<tr>
+						<td>CV<span class="required">*</span></td>
+						<td><input type="file" name="cv" required="required" /></td>
+					</tr>
+					<tr>
+						<td>Covering letter<span class="required">*</span></td>
+						<td><input type="file" name="lm" required="required" /></td>
+					</tr>
+					<tr>
+						<td colspan="2"><small><span class="required">*</span>
+								: required field</small></td>
+					</tr>
+					<tr>
+						<td colspan="2"><input type="submit" value="Send"></td>
+					</tr>
+				</table>
+			</form>
+			<!-- Fin du formulaire -->
+		</div>
+	</div>
+
+
+
+	<h2>BMW</h2>
+
+	<div class="block-job">
+		<div class="apply-button">
+			<div class="right">Job</div>
+			<h3>Technical Support Engineer Powertrain/Electrics - V5-CN000643</h3>
+		</div>
+		<div>
+
+			<h4>Key Objectives:</h4>
+			<p>BMW China is offering you an exciting opportunity as a Technical Support Engineer Powertrain/Electrics in the BMW Aftersales department China. You will work as an expert to help dealers to find the solution for any technical issue.</p>
+			<h4>Major Responsibilities:</h4>
+			<p>As Technical Support Engineer Powertrain/Electrics you are responsible to</p>
+			<ul><li>check dealer work and the diagnosis of received dealer requests for powertrain/electrics.
+			</li><li>give elaborate recommendation by using existing information, experience and tools.
+			</li><li>advice dealers which work/diagnosis has to be carried out for powertrain/electrics.
+			</li><li>give technical recommendation of needed repair.
+			</li><li>escalate/forward cases without technical solution, less information or new fault symptoms to the engineering team. </li></ul>
+			<h4>Education/Degree:</h4>
+			<p>University degree in engineering.</p>
+			<h4>Knowledge/Skills/Competences:</h4>
+			<ul><li>Detailed knowledge of automotive engineering processes, preferably at an OEM, as well as their link to crossover functions like body, electrics, chassis, powertrain.
+			</li><li>Business fluent written and spoken English; German is beneficial.
+			</li><li>Strong networking and communication skills.
+			</li><li>Good knowledge of PC Software in MS- and BMW applications. </li></ul>
+			<h4>Experience:</h4>
+			<ul><li>Internship or practical experience in dealership or repair workshop.</li></ul>
+			<br/>
+			<p>Are you looking for an exciting challenge? Then join our team. We look forward to receiving your application. You can find detailed information and apply online at <a href="http://bmw.zhaopin.com">bmw.zhaopin.com</a>.</p>
+
+			<a class="apply-button" href="https://apac.recruitmentplatform.com/appproc/index.cfm?event=createSessionAfterSessionClear&ID=QR1FK026203F3VBQB7V8M7V2E&jobboard=0&nPTID=2426&bSessionClear=true" target="_blank">Apply online</a>
+
+		</div>
+	</div>
+
+	<div class="block-job">
+		<div class="apply-button">
+			<div class="right">Job</div>
+			<h3>Strategist for Research &amp; Development China - V5-CN000490</h3>
+		</div>
+		<div>
+
+			<h4>Key Objectives:</h4>
+			<p>BMW China Services Ltd. was founded in 2011, providing R&amp;D, procurement, internal audit and finance services to the BMW Group in China and other Asian countries. The company is engaged in research and development for automobiles and motorcycles and their parts, components, systems and technology. It addresses design and styling of automobiles, development of on-board and off-board functions for mobility services, testing services for BMW/MINI/Rolls-Royce products, and technology consulting services to support the sourcing activities.</p>
+			<p>We are now hiring a Strategist located in Beijing to focus on analysis of China automotive R&amp;D competency, industry development trend, competitor’s strategy and other important data. The Strategist will also take responsibility to manage the university related issues.</p>
+			<h4>Major Responsibilities:</h4>
+			<p>As a strategist in BMW China, you need to support and drive the analysis on</p>
+			<ul><li>R&amp;D competencies in China of automotive and high-tech suppliers, R&amp;D companies (EDLs), OEMs &amp; competitors, Universities, etc.
+			</li><li>Competitors’ R&amp;D strategies in terms of content (what will they develop in China), capacities (how many engineers are they planning), locations (where will they develop what) and organizational setups (in which organization ‘joint ventures, 100% foreign owned etc.’ are they developing what).
+			</li><li>Supplier base in China for R&amp;D companies (EDLs)
+			</li><li>Availability of skills and HR in China
+			</li><li>Subsidies provided to universities/suppliers/ industry in general from state driven programs to promote R&amp;D in China
+			</li><li>Supplier landscape with current and long term local advantages
+			</li><li>China R&amp;D competency mapping with BMW’s R&amp;D strategy found in the business plans of the COCs (located at BMW in Munich).
+			</li><li>R&amp;D setup of BMW Brilliance Automotive Ltd. and complementing R&amp;D fields at BMW</li></ul>
+
+			<p>The strategist will also need to draw conclusions / support to derive positioning of organization and local BMW R&amp;D. You will prepare for management presentations accordingly.</p>
+			<p>As to university management, the strategist should</p>
+			<ul><li>Coordinate university activities of internal employees
+			</li><li>Set up and update knowledge management with focus on persons, skills, experiences, relationships and
+			Co-operation projects / topics
+			</li><li>Bundle knowledge and represent central COC on university relationship management</li></ul>
+
+			<h4>Education/Degree:</h4>
+			<p>Master’s degree in economic science or engineering science; preferably PhD.</p>
+			<h4>Knowledge/Skills/Competences:</h4>
+			<p>Expert knowledge about high-tech or automotive product development process (PEP).</p>
+			<ul><li>Expert knowledge about strategic development areas driven by Chinese authorities and universities to implement
+			the current five-year plan.
+			</li><li>Knowledge of BMW product portfolio, product strategy and differentiating competencies.
+			</li><li>Strong networking and communication skills for working in a large and networked environment.</li></ul>
+
+			<h4>Experience:</h4>
+			<ul><li>More than 5 years working experience in automotive or high-tech industry in China.
+			</li><li>Advanced experience in strategy development.</li></ul>
+			<br/>
+			<p>Are you looking for an exciting challenge? Then join our team. We look forward to receiving your application. You can find detailed information and apply online at <a href="http://bmw.zhaopin.com">bmw.zhaopin.com</a>.</p>
+
+			<a class="apply-button" href="http://bmw.zhaopin.com" target="_blank">Apply online</a>
+
+		</div>
+	</div>
+
+	<div class="block-job">
+		<div class="apply-button">
+			<div class="right">Job</div>
+			<h3>Specialist of Testing and Support Electrics / Electronics - V5-CN000342</h3>
+		</div>
+		<div>
+
+			<h4>Key Objectives:</h4>
+			<p>BMW China Services Ltd. was founded in 2011, providing R&amp;D, procurement, internal audit and finance services to the BMW Group in China and other Asian countries. The company is engaged in research and development for automobiles and motorcycles and their parts, components, systems and technology. It addresses design and styling of automobiles, development of on-board and off-board functions for mobility services, testing services for BMW/MINI/Rolls-Royce products, and technology consulting services to support the sourcing activities.</p>
+			<p>BMW China is offering you an exciting opportunity as an Specialist of Testing and Support Electrics/ Electronics, with working location in Beijing, China.</p>
+			<h4>Major Responsibilities:</h4>
+			<p>As Specialist of Testing and Support Electrics / Electronics you are responsible to</p>
+			<ul><li>Execute the test cases including road tests, recording of errors and results in reports and error reporting systems.
+			</li><li>Update HW and SW of test setups and ECUs.
+			</li><li>Program and execute of automated test setups in a test automation framework.
+			</li><li>Perform regular tests of the BMW ConnectedDrive system, resulting in error reports and feedback for agent training.
+			</li><li>Confirm bugfixes and feature improvements.
+			</li><li>Adjust existing testcases to the Chinese market.
+			</li><li>Maintain and extend current test setups.
+			</li><li>Support coordination of internal and external partners for ConnectedDrive China.</li></ul>
+
+			<h4>Education/Degree:</h4>
+			<p>Bachelor or Master Degree in automotive, electrical, computer, communications engineering, etc.</p>
+			<p>International study experience required.</p>
+			<h4>Knowledge/Skills/Competences:</h4>
+			<ul><li>Basic programming skills
+			</li><li>Profound understanding of automotive telecommunication
+			</li><li>Valid driver’s license which is at least 2 years old and very good driving capabilities resulting from regular car usage.
+			</li><li>Excellent language skills in Chinese and English (written and oral); German language skills are highly appreciated
+			</li><li>Excellent Microsoft Office skills</li></ul>
+
+			<h4>Experience:</h4>
+			<ul><li>Working experience in relevant field, especially in a fast paced, ever-changing and multi-task environment
+			</li><li>Call Center working experience preferred</li></ul>
+			<br/>
+			<p>Are you looking for an exciting challenge? Then join our team. We look forward to receiving your application. You can find detailed information and apply online at <a href="http://bmw.zhaopin.com">bmw.zhaopin.com</a>.</p>
+
+			<a class="apply-button" href="https://apac.recruitmentplatform.com/appproc/index.cfm?event=createSessionAfterSessionClear&ID=QR1FK026203F3VBQB7V8M7V2E&jobboard=0&nPTID=2130&bSessionClear=true" target="_blank">Apply online</a>
+
+		</div>
+	</div>
+
+	<div class="block-job">
+		<div class="apply-button">
+			<div class="right">Job</div>
+			<h3>Senior Specialist of Engineering Automotive Trim Parts - V5-CN000573</h3>
+		</div>
+		<div>
+
+			<h4>Key Objectives:</h4>
+			<p>BMW China Services Ltd. was founded in 2011, providing R&amp;D, procurement, internal audit and finance services to the BMW Group in China and other Asian countries. The company is engaged in research and development for automobiles and motorcycles and their parts, components, systems and technology. It addresses design and styling of automobiles, development of on-board and off-board functions for mobility services, testing services for BMW/MINI/Rolls-Royce products, and technology consulting services to support the sourcing activities.</p>
+			<p>We are hiring a Senior Specialist of Engineering Automotive Trim Parts for BMW China, with working location in Beijing. The Senior Specialist will focus on project development.</p>
+			<h4>Major Responsibilities:</h4>
+			<p>As Specialist of Engineering Automotive Trim Parts you are responsible to</p>
+			<ul><li>Develop projects including release.
+			</li><li>Ensures built to print understanding at supplier.
+			</li><li>Represents development understanding at supplier and in-house process partners like purchase, quality, plant and logistics.
+			</li><li>Be the connector in development tasks between BMW innovation center, plant and suppliers.
+			</li><li>Show and explain results in presentations.</li></ul>
+			<h4>Education/Degree:</h4>
+			<p>Bachelor or Master’s degree in Engineering.</p>
+			<h4>Knowledge/Skills/Competences:</h4>
+			<ul><li>Expert knowledge about development of interior automotive parts, like A-B-C pillar, trunk liner, parcel shelf, floor mats, carpet, head liner and injection molding grained parts
+			</li><li>Good knowledge in Microsoft Office Tools
+			</li><li>Good knowledge in Catia V5 Construction or similar
+			</li><li>Business fluent in both Chinese and English, German language skills are preferred
+			</li><li>Good analytical skills
+			</li><li>Team competence
+			</li><li>Ability to work and gather information independently
+			</li><li>Good presentation skills</li></ul>
+
+			<h4>Experience:</h4>
+
+			<ul><li>Working experience in Automotive Trim parts is preferred</li></ul>
+			<br/>
+			<p>Are you looking for an exciting challenge? Then join our team. We look forward to receiving your application. You can find detailed information and apply online at <a href="http://bmw.zhaopin.com">bmw.zhaopin.com</a>.</p>
+
+			<a class="apply-button" href="https://apac.recruitmentplatform.com/appproc/index.cfm?event=createSessionAfterSessionClear&ID=Q6GFK026203F3VBQB7V8M7VON&jobboard=0&nPTID=1827&bSessionClear=true" target="_blank">Apply online</a>
+
+		</div>
+	</div>
+
+	<div class="block-job">
+		<div class="apply-button">
+			<div class="right">Job</div>
+			<h3>Senior Specialist Company Car Fleet Management - V5-CN000623</h3>
+		</div>
+		<div>
+
+			<h4>Key Objectives:</h4>
+			<p>BMW China is offering you an exciting opportunity as a Senior Specialist Company Car Fleet Management in the BMW Administration Office China.</p>
+			<h4>Major Responsibilities:</h4>
+			<p>As Specialist Company Car Fleet Management you are responsible to</p>
+			<ul><li> control all BMW China company pool car handover in Beijing office.
+			</li><li>ensure all necessary documents are completed and logbook is filled out.
+			</li><li>ensure car users pick up and return cars on time, cars are clean  and fully fuelled.
+			</li><li>check  and report if cars are damaged or scratched.
+			</li><li>monitor and keep company pool car in best condition &amp; top quality for providing company pool car users best driving experience.
+			</li><li>introduce company car user main functions of BMW cars and instruct how to properly use BMW cars.
+			</li><li>support the manager of company car fleet management for implementation of company car operation procedures &amp; guideline.</li></ul>
+			<h4>Education/Degree:</h4>
+			<p>Bachelor’s degree in automotive is preferable.</p>
+			<h4>Knowledge/Skills/Competences:</h4>
+			<ul><li>Business fluent written and spoken English; German is beneficial.
+			</li><li>Strong networking and communication skills.
+			</li><li>Driver license C.
+			</li><li>Good knowledge of  MS Office and SAP.
+			</li><li>Basic knowledge of BMW products.</li></ul>
+			<h4>Experience:</h4>
+			<ul><li>1-3 years working experience in administration area, ideally in automotive company.
+			</li><li>1-3 years experience in automotive repair workshop management.</li></ul>
+			<br/>
+			<p>Are you looking for an exciting challenge? Then join our team. We look forward to receiving your application. You can find detailed information and apply online at <a href="http://bmw.zhaopin.com">bmw.zhaopin.com</a>.</p>
+
+			<a class="apply-button" href="https://apac.recruitmentplatform.com/syndicated/private/syd_apply.cfm?ID=QO0FK026203F3VBQB7V8M7V07&nPostingTargetID=2394&step=DIRECT" target="_blank">Apply online</a>
+
+		</div>
+	</div>
+
+	<div class="block-job">
+		<div class="apply-button">
+			<div class="right">Job</div>
+			<h3>Senior Specialist Accounts Receivables - V5-CN000635</h3>
+		</div>
+		<div>
+
+			<h4>Key Objectives:</h4>
+			<p>BMW China is offering you an exciting opportunity as a Senior Specialist Accounts Receivables in the BMW Finance Office China. You will work closely with sales department and other related departments to facilitate revenue growth as well as cash flow.</p>
+			<h4>Major Responsibilities:</h4>
+			<p>As Senior Specialist Accounts Receivables you are responsible to:</p>
+			<ul><li>Assist in the preparation and reporting of accurate revenue &amp; A/R information to company management and external professional bodies in a timely manner in adherence with tax and accounting regulatory requirements.
+			</li><li>Ensure all accounting transactions are in accordance with accounting policy as well as company guidelines.
+			</li><li>Issue VAT Invoices to dealers for BMW, MINI based on the data in the SAP system and prepare relevant VAT summary for internal and external recording purpose.
+			</li><li>Issue VAT Invoices to dealers and carriers for Rolls Royce and compensation claim respectively based on the information provided by RR and sales departments.
+			</li><li>Issue business invoices to dealers and external partners based on the information provided by related business departments.
+			</li><li>Check the original Notice for Red VAT Invoice Issuance with relevant PV provided by sales department, issue relevant red VAT invoices to dealers for Sales Allowance purpose and prepare the relevant documents for the recording of the in-charge Tax Bureau.
+			</li><li>Calculate freight charge according to the information received from sales department, prepare relevant breakdown for dealers’ reference and relevant posting in SAP system.
+			</li><li>Implement financial release for vehicles in SAP system based on the approval documents and relevant information.
+			</li><li>Perform dealer account reconciliations and clearing for assigned areas.
+			</li><li>Prepare the late payment and warehouse charge reporting for assigned areas.
+			</li><li>Maintain dealer contact list timely for internal information.
+			</li><li>Participate in stocktaking on regular basis and File the tax record with supporting documents.</li></ul>
+
+			<h4>Education/Degree:</h4>
+			<p>University degree in Economics or Finance.</p>
+			<h4>Knowledge/Skills/Competences:</h4>
+			<ul><li>Business fluent written and spoken English; German is beneficial.
+			</li><li>Strong networking and communication skills.
+			</li><li>Good knowledge of MS Office, SAP skills is beneficial.
+			</li><li>Good knowledge of tax law.
+			</li><li>Good Intercultural competency.</li></ul>
+			<h4>Experience:</h4>
+			<ul><li>1-3 years working experience in the Finance department of a foreign enterprise, ideally in automotive company.
+			</li><li>1-3 years experience VAT invoice insurance experience.</li></ul>
+			<br/>
+			<p>Are you looking for an exciting challenge? Then join our team. We look forward to receiving your application. You can find detailed information and apply online at <a href="http://bmw.zhaopin.com">bmw.zhaopin.com</a>.</p>
+
+			<a class="apply-button" href="https://apac.recruitmentplatform.com/appproc/index.cfm?event=createSessionAfterSessionClear&ID=QO0FK026203F3VBQB7V8M7V07&jobboard=0&nPTID=2394&bSessionClear=true" target="_blank">Apply online</a>
+
+		</div>
+	</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<div class="block-job">
+		<div class="apply-button">
+			<div class="right">Job</div>
+			<h3>Senior Specialist Warranty Claim Processing</h3>
+		</div>
+		<div>
+			<p>
+				Corporate Division <strong>Aftersales</strong><br /> Division,
+				located in <strong>Beijing/China</strong><br /> Employment – full
+				time
+			</p>
+			<h4>Key Responsibility</h4>
+			<ul>
+				<li>Execute all warranty related documentation and assistant in
+					advising dealers on warranty related issues</li>
+				<li>Process dealers warranty claim, weekly credits and monthly
+					payments in promised lead time</li>
+				<li>Handle warranty related inquiries and solve discrepancies
+					from dealers efficiently and effectively</li>
+				<li>Issue of warranty/good wills authorizations as required</li>
+				<li>Carry out warranty audits on-site of dealership as planned
+				</li>
+				<li>Reduce unnecessary warranty repairs in dealership</li>
+				<li>Steer recall campaign, full information package to dealers
+					before public announcement</li>
+				<li>Process warranty payment to dealer timely</li>
+				<li>Improve claim quality
+			</ul>
+			<h4>Qualification</h4>
+			<ul>
+				<li>Bachelor degree in Engineering or above.</li>
+				<li>At least 3 years working experience in auto industry.</li>
+				<li>Good automotive knowledge</li>
+				<li>Workshop repair experiences preferred</li>
+				<li>Work experience within Multi-national Company is preferred
+				</li>
+				<li>Fluent in English both oral &amp; written</li>
+				<li>Good communications skills</li>
+				<li>Self-motivation and team work spirit
+			</ul>
+			<!-- Formulaire pour postuler -->
+			<h5 class="apply-button">Apply</h5>
+			<form method="post" enctype="multipart/form-data"
+					action="/visitors/sendmail/en/" class="unwrapped">
+				*.doc and *.pdf files are accepted, max 500 Ko for each attachment.
+				{# L'identifiant indiquant à quelle adresse mail la candidature est envoyée, cf ressources du Forum #}
+				<input type="hidden" name="id" value="bmwbj" />
+				{# Nom de l'emploi, le même que dans le titre #}
+				<input type="hidden" name="jobname" value="Senior Specialist Warranty Claim Processing" />
+				{# Entreprise #}
+				<input type="hidden" name="company" value="BMW" />
+				<table class="noborder">
+					<tr>
+						<td>Family name<span class="required">*</span></td>
+						<td><input type="text" name="nom" required="required" /></td>
+					</tr>
+					<tr>
+						<td>First name<span class="required">*</span></td>
+						<td><input type="text" name="prenom" required="required" /></td>
+					</tr>
+					<tr>
+						<td>e-mail<span class="required">*</span></td>
+						<td><input type="text" name="email" required="required" /></td>
+					</tr>
+					<tr>
+						<td>English CV<span class="required">*</span></td>
+						<td><input type="file" name="cv_en" required="required" /></td>
+					</tr>
+					<tr>
+						<td>English covering letter<span class="required">*</span></td>
+						<td><input type="file" name="lm_en" required="required" /></td>
+					</tr>
+					<tr>
+						<td colspan="2"><small><span class="required">*</span>
+								: required field</small></td>
+					</tr>
+					<tr>
+						<td colspan="2"><input type="submit" value="Send"></td>
+					</tr>
+				</table>
+			</form>
+			<!-- Fin du formulaire -->
+		</div>
+	</div>
+
+	<div class="block-job">
+		<div class="apply-button">
+			<div class="right">Job</div>
+			<h3>Technician Measurement Technology Tooling</h3>
+		</div>
+		<div>
+			<p>
+				Corporate Division <strong>Body Shop</strong><br /> Division,
+				located in <strong>Shenyang/China</strong><br /> Employment – full
+				time
+			</p>
+			<h4>Tasks</h4>
+			<p>Independent application of measurement strategies and concepts
+				in BMW specifications. Coordination and definition of align- and
+				measurement programs with customers. Create and maintaining of
+				measurement planes in CATIA and "VDA-FS" Plane Data. Independent
+				approval of tooling and checking fixtures</p>
+			<h4>Key Responsibility</h4>
+			<ul>
+				<li>Independent application of measurement strategies and
+					concepts in BMW specifications</li>
+				<li>Coordination and definition of align- and measurement
+					programs with customers</li>
+				<li>Create and maintaining of measurement plans in CATIA and
+					"VDA-FS" Plane Data</li>
+				<li>Independent approval of tooling and checking figures</li>
+				<li>Lead trough geometrical analysis on the product for
+					aligning tooling and fixtures with Cax-Technic or coordinate
+					measuring machine</li>
+				<li>Application of Quality tools and methods</li>
+				<li>Assistance and developing of the CAX- Hard- and Software
+					incl. The applications (CATIA, Meramec CM, BMW MESS, PRISMA, PRESTO
+			</ul>
+			<h4>Qualification</h4>
+			<ul>
+				<li>University degree / graduated Mechanics</li>
+				<li>Specialize knowledge in measurement data processing</li>
+				<li>Specialize knowledge of measurement plans in CATIA and
+					"VDA-FS" Plane Data</li>
+				<li>Specialize knowledge of measurement programs in BMW
+					specifications</li>
+				<li>Knowledge of English language</li>
+				<li>Knowledge of German language</li>
+				<li>Experience handling coordinate measurement technology
+					including CAX-Methods, 1-3 years</li>
+				<li>Experience knowledge in measurement data processing, 1-3
+					years</li>
+				<li>Experience in building up figures tooling and checking
+					figures, 1-3 years</li>
+				<li>Experience in design non cutting manufacturing in the
+					automotive industries, 1-3 years
+			</ul>
+			<!-- Formulaire pour postuler -->
+			<h5 class="apply-button">Apply</h5>
+			<form method="post" enctype="multipart/form-data"
+					action="/visitors/sendmail/en/" class="unwrapped">
+				*.doc and *.pdf files are accepted, max 500 Ko for each attachment.
+				{# L'identifiant indiquant à quelle adresse mail la candidature est envoyée, cf ressources du Forum #}
+				<input type="hidden" name="id" value="bmwsy" />
+				{# Nom de l'emploi, le même que dans le titre #}
+				<input type="hidden" name="jobname" value="Technician Measurement Technology Tooling" />
+				{# Entreprise #}
+				<input type="hidden" name="company" value="BMW" />
+				<table class="noborder">
+					<tr>
+						<td>Family name<span class="required">*</span></td>
+						<td><input type="text" name="nom" required="required" /></td>
+					</tr>
+					<tr>
+						<td>First name<span class="required">*</span></td>
+						<td><input type="text" name="prenom" required="required" /></td>
+					</tr>
+					<tr>
+						<td>e-mail<span class="required">*</span></td>
+						<td><input type="text" name="email" required="required" /></td>
+					</tr>
+					<tr>
+						<td>English CV<span class="required">*</span></td>
+						<td><input type="file" name="cv_en" required="required" /></td>
+					</tr>
+					<tr>
+						<td>English covering letter<span class="required">*</span></td>
+						<td><input type="file" name="lm_en" required="required" /></td>
+					</tr>
+					<tr>
+						<td colspan="2"><small><span class="required">*</span>
+								: required field</small></td>
+					</tr>
+					<tr>
+						<td colspan="2"><input type="submit" value="Send"></td>
+					</tr>
+				</table>
+			</form>
+			<!-- Fin du formulaire -->
+		</div>
+	</div>
+
+	<div class="block-job">
+		<div class="apply-button">
+			<div class="right">Job</div>
+			<h3>Senior Specialist Infrastructure Planner</h3>
+		</div>
+		<div>
+			<p>
+				Corporate Division <strong>Engineering</strong><br /> Division,
+				located in <strong>Shenyang/China</strong><br /> Employment – full
+				time
+			</p>
+			<h4>Tasks</h4>
+			<p>Coordination and planning infrastructure for complete BBT-E.
+				Responsible for all construction activities in all plants (Dadong
+				and Tiexi) Responsible monitoring of costs (investment, budget,
+				equipment and follow up)</p>
+			<h4>Key Responsibility</h4>
+			<ul>
+				<li>Infrastructural planning of Dadong plant for BBT-E</li>
+				<li>Infrastructural planning of Tiexi plant for BBT-E</li>
+				<li>Design support, review of MEP planning, buy off process
+					design, energy estimation, creation and steering of change
+					requests, CAD drawing</li>
+				<li>On-site support for review of construction progress,
+					supplier support / activities</li>
+				<li>Ensure safety</li>
+				<li>Solve additional problems after finishing construction</li>
+				<li>Business control: Monitoring of investment, budget,
+					equipment and process in the plants</li>
+				<li>SAP reports, forecast</li>
+				<li>Purchase support: PR/PO monitoring, raising PR and PO,
+					goods receive monitoring and payment process to suppliers</li>
+				<li>Customs process: customs documentation steering, steer and
+					monitor import process for BBT-E</li>
+				<li>Project member for whole BBT-E structure project BBT-E</li>
+				<li>Represent BBT-E in the project meetings</li>
+				<li>Support Adv. Sp. Infrastructure Planner
+			</ul>
+			<h4>Qualification</h4>
+			<ul>
+				<li>Degree in civil engineer with background or qualification
+					in monitoring and construction process or a similar position</li>
+				<li>Team experience</li>
+				<li>Background of plant and office construction</li>
+				<li>Monitoring process including budget, investment, and
+					ordinate all process</li>
+				<li>Control construction in all progress and solving additional
+					problems</li>
+				<li>Proficient English</li>
+				<li>Knowledge of construction background, 1-3 years</li>
+				<li>Control construction progress, 1-3 years</li>
+				<li>Monitoring process, 1-3 years
+			</ul>
+			<!-- Formulaire pour postuler -->
+			<h5 class="apply-button">Apply</h5>
+			<form method="post" enctype="multipart/form-data"
+					action="/visitors/sendmail/en/" class="unwrapped">
+				*.doc and *.pdf files are accepted, max 500 Ko for each attachment.
+				{# L'identifiant indiquant à quelle adresse mail la candidature est envoyée, cf ressources du Forum #}
+				<input type="hidden" name="id" value="bmwsy" />
+				{# Nom de l'emploi, le même que dans le titre #}
+				<input type="hidden" name="jobname" value="Senior Specialist Infrastructure Planner" />
+				{# Entreprise #}
+				<input type="hidden" name="company" value="BMW" />
+				<table class="noborder">
+					<tr>
+						<td>Family name<span class="required">*</span></td>
+						<td><input type="text" name="nom" required="required" /></td>
+					</tr>
+					<tr>
+						<td>First name<span class="required">*</span></td>
+						<td><input type="text" name="prenom" required="required" /></td>
+					</tr>
+					<tr>
+						<td>e-mail<span class="required">*</span></td>
+						<td><input type="text" name="email" required="required" /></td>
+					</tr>
+					<tr>
+						<td>English CV<span class="required">*</span></td>
+						<td><input type="file" name="cv_en" required="required" /></td>
+					</tr>
+					<tr>
+						<td>English covering letter<span class="required">*</span></td>
+						<td><input type="file" name="lm_en" required="required" /></td>
+					</tr>
+					<tr>
+						<td colspan="2"><small><span class="required">*</span>
+								: required field</small></td>
+					</tr>
+					<tr>
+						<td colspan="2"><input type="submit" value="Send"></td>
+					</tr>
+				</table>
+			</form>
+			<!-- Fin du formulaire -->
+		</div>
+	</div>
+
+	<div class="block-job">
+		<div class="apply-button">
+			<div class="right">Job</div>
+			<h3>Senior Specialist Wholesale Collection Administration</h3>
+		</div>
+		<div>
+			<p>
+				Corporate Division <strong>Finance</strong><br /> Division, located
+				in <strong>Shenyang/China</strong><br /> Employment – full time
+			</p>
+			<h4>Tasks</h4>
+			<p>Management and maintenance Wholesale collection in order to
+				ensure collection recorded in company's bank account in a timely
+				manner</p>
+			<h4>Key Responsibility</h4>
+			<ul>
+				<li>Daily collect Bank Acceptance Draft from internal mail-box
+					and query them truth with bank partners</li>
+				<li>Daily send the hard copies of BAD to AR team for discount
+					and collection confirmation</li>
+				<li>Daily register BAD information confirmed by AR team</li>
+				<li>Maintain BAD registration form and follow up BAD discount
+					and collection situation</li>
+				<li>Prepare daily BAD situation report</li>
+				<li>Prepare BAD inventory counting report</li>
+				<li>Collect discount rates from different banks, compare them
+					and negotiate them with bank partners if necessary</li>
+				<li>Coordinate dealers and bank partners to handle BAD cases</li>
+				<li>Explain BAD related policy to dealers or bank partners</li>
+				<li>Other business concerning to wholesale collection or
+					treasury business</li>
+				<li>Other miscellaneous work arranged by Line Manager
+			</ul>
+			<h4>Qualification</h4>
+			<ul>
+				<li>Finance Specialty Graduation/ Bachelor Degree</li>
+				<li>Experience in accounting or Finance field</li>
+				<li>English fluently (verbal and written)</li>
+				<li>Strong sense of responsibility and urgency and be able to
+					work under great pressure</li>
+				<li>Excellent communication skill and team work spirit</li>
+				<li>Excellent computer skills: MS Word, Excel, PowerPoint</li>
+				<li>Quick learner with flexibility</li>
+				<li>Work experience in bank desirable,4-6 years</li>
+				<li>Experience with finance sector, 4-6 years</li>
+				<li>1-3 years experience in the automotive manufactory
+			</ul>
+			<!-- Formulaire pour postuler -->
+			<h5 class="apply-button">Apply</h5>
+			<form method="post" enctype="multipart/form-data"
+					action="/visitors/sendmail/en/" class="unwrapped">
+				*.doc and *.pdf files are accepted, max 500 Ko for each attachment.
+				{# L'identifiant indiquant à quelle adresse mail la candidature est envoyée, cf ressources du Forum #}
+				<input type="hidden" name="id" value="bmwsy" />
+				{# Nom de l'emploi, le même que dans le titre #}
+				<input type="hidden" name="jobname" value="Senior Specialist Wholesale Collection Administration" />
+				{# Entreprise #}
+				<input type="hidden" name="company" value="BMW" />
+				<table class="noborder">
+					<tr>
+						<td>Family name<span class="required">*</span></td>
+						<td><input type="text" name="nom" required="required" /></td>
+					</tr>
+					<tr>
+						<td>First name<span class="required">*</span></td>
+						<td><input type="text" name="prenom" required="required" /></td>
+					</tr>
+					<tr>
+						<td>e-mail<span class="required">*</span></td>
+						<td><input type="text" name="email" required="required" /></td>
+					</tr>
+					<tr>
+						<td>English CV<span class="required">*</span></td>
+						<td><input type="file" name="cv_en" required="required" /></td>
+					</tr>
+					<tr>
+						<td>English covering letter<span class="required">*</span></td>
+						<td><input type="file" name="lm_en" required="required" /></td>
+					</tr>
+					<tr>
+						<td colspan="2"><small><span class="required">*</span>
+								: required field</small></td>
+					</tr>
+					<tr>
+						<td colspan="2"><input type="submit" value="Send"></td>
+					</tr>
+				</table>
+			</form>
+			<!-- Fin du formulaire -->
+		</div>
+	</div>
+
+	<div class="block-job">
+		<div class="apply-button">
+			<div class="right">Job</div>
+			<h3>Senior Specialist Network Engineer</h3>
+		</div>
+		<div>
+			<p>
+				Corporate Division <strong>Finance</strong><br /> Division, located
+				in <strong>Shenyang/China</strong><br /> Employment – full time
+			</p>
+			<h4>Tasks</h4>
+			<p>Identify, implement and support potential solutions for
+				network technologies, based upon customer driven requirements</p>
+			<h4>Key Responsibility</h4>
+			<ul>
+				<li>Effectively plan and execute necessary technology upgrades
+				</li>
+				<li>Proactively provide technical solution according to
+					business needs and requirements</li>
+				<li>Deliver stable systems through the use of predictive growth
+					and maintenance techniques</li>
+				<li>Take lead operational support on a daily basis, e.g.
+					troubleshooting</li>
+				<li>Identify and resolve problems through use of technical
+					tools and application of skills and experience</li>
+				<li>Specify, procure and manage external support contracts for
+					network and telecommunication hardware and software</li>
+				<li>Negotiate Service Level Agreements with clients. Provide
+					specified levels of service</li>
+				<li>Delivery problem resolution and document problems and
+					status’s via the Remedy management tool</li>
+				<li>Attend customer project and service reviews and workshops</li>
+				<li>Identify, implement and support potential solutions for
+					network technologies, based upon customer driven requirements
+			</ul>
+			<h4>Qualification</h4>
+			<ul>
+				<li>University degree</li>
+				<li>Advanced project management skills, influencing people and
+					analytical skills</li>
+				<li>Analytical mind, problem solver</li>
+				<li>Good interpersonal skills</li>
+				<li>Flexible response to rapidly changing demands</li>
+				<li>Proficient English, German would be an advantage</li>
+				<li>Ability to function well under extreme pressure</li>
+				<li>Deep Knowledge of ITIL , and experience operation base on
+					ITIL process</li>
+				<li>2-3 years work in Local Telephone Company as a voice admin
+				</li>
+				<li>Minimum of 2 years Cisco administration and architecture
+					design</li>
+				<li>3-4 years experience in Industry on this specific job
+			</ul>
+			<!-- Formulaire pour postuler -->
+			<h5 class="apply-button">Apply</h5>
+			<form method="post" enctype="multipart/form-data"
+					action="/visitors/sendmail/en/" class="unwrapped">
+				*.doc and *.pdf files are accepted, max 500 Ko for each attachment.
+				{# L'identifiant indiquant à quelle adresse mail la candidature est envoyée, cf ressources du Forum #}
+				<input type="hidden" name="id" value="bmwsy" />
+				{# Nom de l'emploi, le même que dans le titre #}
+				<input type="hidden" name="jobname" value="Senior Specialist Network Engineer" />
+				{# Entreprise #}
+				<input type="hidden" name="company" value="BMW" />
+				<table class="noborder">
+					<tr>
+						<td>Family name<span class="required">*</span></td>
+						<td><input type="text" name="nom" required="required" /></td>
+					</tr>
+					<tr>
+						<td>First name<span class="required">*</span></td>
+						<td><input type="text" name="prenom" required="required" /></td>
+					</tr>
+					<tr>
+						<td>e-mail<span class="required">*</span></td>
+						<td><input type="text" name="email" required="required" /></td>
+					</tr>
+					<tr>
+						<td>English CV<span class="required">*</span></td>
+						<td><input type="file" name="cv_en" required="required" /></td>
+					</tr>
+					<tr>
+						<td>English covering letter<span class="required">*</span></td>
+						<td><input type="file" name="lm_en" required="required" /></td>
+					</tr>
+					<tr>
+						<td colspan="2"><small><span class="required">*</span>
+								: required field</small></td>
+					</tr>
+					<tr>
+						<td colspan="2"><input type="submit" value="Send"></td>
+					</tr>
+				</table>
+			</form>
+			<!-- Fin du formulaire -->
+		</div>
+	</div>
+
+	<div class="block-job">
+		<div class="apply-button">
+			<div class="right">Job</div>
+			<h3>Senior Specialist Workplace System</h3>
+		</div>
+		<div>
+			<p>
+				Corporate Division <strong>IT</strong><br /> Division, located in <strong>Shenyang/China</strong><br />
+				Employment – full time
+			</p>
+			<h4>Tasks</h4>
+			<p>Ensure BBA real-time communication platform are running stable
+				and reliable, coordinate world-wide service delivery to BBA with
+				good customer satisfaction with least cost, make user real-time
+				communication is effective with good availability and quality,
+				optimized process at most effectiveness</p>
+			<h4>Key Responsibility</h4>
+			<ul>
+				<li>Implement as well as support potential solutions for
+					Real-time communication technologies</li>
+				<li>Conduct customer project and service reviews and workshops
+				</li>
+				<li>Specify, procure and manage external support contracts for
+					workplace systems and peripheral hardware and software</li>
+				<li>Negotiate Service Level Agreements with Real-time
+					communication system. Provide specified levels of service</li>
+				<li>Deliver stable systems through the use of predictive growth
+					and maintenance techniques</li>
+				<li>Provide operational support on a daily basis</li>
+				<li>Project management for Real-time communication and other
+					projects</li>
+				<li>Identify and resolve problems through use of technical
+					tools and application of skills and experience. (Second level
+					support)</li>
+				<li>Deliver problem resolution and document problems and status
+					via management tool</li>
+				<li>Deliver training courses as required
+			</ul>
+			<h4>Qualification</h4>
+			<ul>
+				<li>Degree in Information Technology or similar qualification
+					although experience and proven delivery capability is just as
+					relevant</li>
+				<li>Strong knowledge of Microsoft Windows family</li>
+				<li>Strong knowledge of real time communication technology and
+					products</li>
+				<li>Strong project management skills</li>
+				<li>Strong knowledge of Cisco VOIP family</li>
+				<li>Understanding of the principles of information management
+					as a management technique to enable organizational development</li>
+				<li>Experience managing small teams and budgets</li>
+				<li>Experience in systems development and implementation</li>
+				<li>Leadership and planning skills</li>
+				<li>English fluently</li>
+				<li>Experience with IT Infrastructure, 7-10 years</li>
+				<li>Experience in VOIP and PSTN management, 4-6 years</li>
+				<li>Experience in manufacture enterprise is preferred, 4-6
+					years</li>
+				<li>Experience in Mobile devices management, 4-6 years</li>
+				<li>Experience in manage external suppliers, 1-3 years</li>
+				<li>Willing to learning, open mind and out-going, Team work
+					spirit. 7 x 24 standbys is required
+			</ul>
+			<!-- Formulaire pour postuler -->
+			<h5 class="apply-button">Apply</h5>
+			<form method="post" enctype="multipart/form-data"
+					action="/visitors/sendmail/en/" class="unwrapped">
+				*.doc and *.pdf files are accepted, max 500 Ko for each attachment.
+				{# L'identifiant indiquant à quelle adresse mail la candidature est envoyée, cf ressources du Forum #}
+				<input type="hidden" name="id" value="bmwsy" />
+				{# Nom de l'emploi, le même que dans le titre #}
+				<input type="hidden" name="jobname" value="Senior Specialist Workplace System" />
+				{# Entreprise #}
+				<input type="hidden" name="company" value="BMW" />
+				<table class="noborder">
+					<tr>
+						<td>Family name<span class="required">*</span></td>
+						<td><input type="text" name="nom" required="required" /></td>
+					</tr>
+					<tr>
+						<td>First name<span class="required">*</span></td>
+						<td><input type="text" name="prenom" required="required" /></td>
+					</tr>
+					<tr>
+						<td>e-mail<span class="required">*</span></td>
+						<td><input type="text" name="email" required="required" /></td>
+					</tr>
+					<tr>
+						<td>English CV<span class="required">*</span></td>
+						<td><input type="file" name="cv_en" required="required" /></td>
+					</tr>
+					<tr>
+						<td>English covering letter<span class="required">*</span></td>
+						<td><input type="file" name="lm_en" required="required" /></td>
+					</tr>
+					<tr>
+						<td colspan="2"><small><span class="required">*</span>
+								: required field</small></td>
+					</tr>
+					<tr>
+						<td colspan="2"><input type="submit" value="Send"></td>
+					</tr>
+				</table>
+			</form>
+			<!-- Fin du formulaire -->
+		</div>
+	</div>
+
+	<div class="block-job">
+		<div class="apply-button">
+			<div class="right">Job</div>
+			<h3>Senior Specialist Dealer Applications Operation</h3>
+		</div>
+		<div>
+			<p>
+				Corporate Division <strong>IT</strong><br /> Division, located in <strong>Beijing/China</strong><br />
+				Employment – full time
+			</p>
+			<h4>Key Responsibility</h4>
+			<ul>
+				<li>Ensure the operations of Sales systems and related systems
+					by achieving the SLA KPIs</li>
+				<li>Achieve the KPI targets for the module/ process</li>
+				<li>Develop and improve the efficiency and effectiveness of IT
+					support by performing IT projects and continuous improvement</li>
+				<li>Support business to achieve their targets by implementing
+					projects successfully in means of start-up management</li>
+				<li>Manage internal and external associates in means of
+					optimize continuous improvement</li>
+				<li>Run and improve a standardized Incident management process
+					(IM)</li>
+				<li>Run and improve a standardized Change management process
+					(CM)</li>
+				<li>Run and improve a standardized Problem management process</li>
+				<li>Run and improve a standardized IT-Service Continuity
+					process</li>
+				<li>Give support and suggestion to IT Sr. Spec. &amp; Junior
+					Spec
+			</ul>
+			<h4>Qualification</h4>
+			<ul>
+				<li>University degree in Information Science or equivalent
+					education and working experience</li>
+				<li>Minimum of four years experience in Sales system
+					implementation and support.</li>
+				<li>Deep Know-how of Sales systems (DMS, CRM); Experience in
+					application system support, IT project management, Sales System
+					implementation and change request realization; Hands-on experience
+					in database management and dealer IT infrastructure</li>
+				<li>Knowledge of key business process in one or more area like:
+				</li>
+				<li>Sales and Distribution</li>
+				<li>Warehouse management</li>
+				<li>Parts distribution</li>
+				<li>Process skills which including the following key processes:
+				</li>
+				<li>Application support and help desk processes</li>
+				<li>Adherence and development of IT processes that ensure
+					co-ordination and control</li>
+				<li>Know ERP, SCM and related system principle</li>
+				<li>Intercultural competence, service minded, analyzing.
+					Disciplined, positive, good communication skill</li>
+				<li>Team working spirit</li>
+				<li>Working under high pressure, willing to work outside office
+					hours and on call duty; Service oriented</li>
+				<li>Proficient English
+			</ul>
+			<!-- Formulaire pour postuler -->
+			<h5 class="apply-button">Apply</h5>
+			<form method="post" enctype="multipart/form-data"
+					action="/visitors/sendmail/en/" class="unwrapped">
+				*.doc and *.pdf files are accepted, max 500 Ko for each attachment.
+				{# L'identifiant indiquant à quelle adresse mail la candidature est envoyée, cf ressources du Forum #}
+				<input type="hidden" name="id" value="bmwbj" />
+				{# Nom de l'emploi, le même que dans le titre #}
+				<input type="hidden" name="jobname" value="Senior Specialist Dealer Applications Operation" />
+				{# Entreprise #}
+				<input type="hidden" name="company" value="BMW" />
+				<table class="noborder">
+					<tr>
+						<td>Family name<span class="required">*</span></td>
+						<td><input type="text" name="nom" required="required" /></td>
+					</tr>
+					<tr>
+						<td>First name<span class="required">*</span></td>
+						<td><input type="text" name="prenom" required="required" /></td>
+					</tr>
+					<tr>
+						<td>e-mail<span class="required">*</span></td>
+						<td><input type="text" name="email" required="required" /></td>
+					</tr>
+					<tr>
+						<td>English CV<span class="required">*</span></td>
+						<td><input type="file" name="cv_en" required="required" /></td>
+					</tr>
+					<tr>
+						<td>English covering letter<span class="required">*</span></td>
+						<td><input type="file" name="lm_en" required="required" /></td>
+					</tr>
+					<tr>
+						<td colspan="2"><small><span class="required">*</span>
+								: required field</small></td>
+					</tr>
+					<tr>
+						<td colspan="2"><input type="submit" value="Send"></td>
+					</tr>
+				</table>
+			</form>
+			<!-- Fin du formulaire -->
+		</div>
+	</div>
+
+	<div class="block-job">
+		<div class="apply-button">
+			<div class="right">Job</div>
+			<h3>Senior Specialist Line Supply Planning</h3>
+		</div>
+		<div>
+			<p>
+				Corporate Division <strong>Logistics</strong><br /> Division,
+				located in <strong>Shenyang/China</strong><br /> Employment – full
+				time
+			</p>
+			<h4>Tasks</h4>
+			<p>Responsibility for planning the material supply from warehouse
+				to line-side, including commissioning, sequencing activities and
+				physical transports</p>
+			<h4>Key Responsibility</h4>
+			<ul>
+				<li>Planning of line-side material presentation in
+					correspondence with line balancing activities</li>
+				<li>Planning of equipment (e.g. bins/ racks) for internal use</li>
+				<li>Interface with assembly department</li>
+				<li>Development of logistics concepts</li>
+				<li>Special project tasks on demand
+			</ul>
+			<h4>Qualification</h4>
+			<ul>
+				<li>Technical studies preferably in automotive engineering,
+					industrial engineering or business administration or logistics</li>
+				<li>PC skills</li>
+				<li>Structured thinking and analytic exposure with complex
+					system</li>
+				<li>Quality consciousness</li>
+				<li>Capability to exposure to high complexity, interest and
+					openness to other technologies, implementation ability and ability
+					to assert himself</li>
+				<li>English fluent, Chinese native, basic German optional</li>
+				<li>Positive exposure with high uncertainness, creativity,
+					innovation and vision ability</li>
+				<li>Handicraft skills, self-initiative, improvisation skills</li>
+				<li>Open-mindedness in dealing with others</li>
+				<li>Experience in the planning of logistics processes,
+					structures and equipment, 1-3 years</li>
+				<li>4-6 years of working in automotive plant logistics</li>
+				<li>Experience in project management, 4-6 years
+			</ul>
+			<!-- Formulaire pour postuler -->
+			<h5 class="apply-button">Apply</h5>
+			<form method="post" enctype="multipart/form-data"
+					action="/visitors/sendmail/en/" class="unwrapped">
+				*.doc and *.pdf files are accepted, max 500 Ko for each attachment.
+				{# L'identifiant indiquant à quelle adresse mail la candidature est envoyée, cf ressources du Forum #}
+				<input type="hidden" name="id" value="bmwsy" />
+				{# Nom de l'emploi, le même que dans le titre #}
+				<input type="hidden" name="jobname" value="Senior Specialist Line Supply Planning" />
+				{# Entreprise #}
+				<input type="hidden" name="company" value="BMW" />
+				<table class="noborder">
+					<tr>
+						<td>Family name<span class="required">*</span></td>
+						<td><input type="text" name="nom" required="required" /></td>
+					</tr>
+					<tr>
+						<td>First name<span class="required">*</span></td>
+						<td><input type="text" name="prenom" required="required" /></td>
+					</tr>
+					<tr>
+						<td>e-mail<span class="required">*</span></td>
+						<td><input type="text" name="email" required="required" /></td>
+					</tr>
+					<tr>
+						<td>English CV<span class="required">*</span></td>
+						<td><input type="file" name="cv_en" required="required" /></td>
+					</tr>
+					<tr>
+						<td>English covering letter<span class="required">*</span></td>
+						<td><input type="file" name="lm_en" required="required" /></td>
+					</tr>
+					<tr>
+						<td colspan="2"><small><span class="required">*</span>
+								: required field</small></td>
+					</tr>
+					<tr>
+						<td colspan="2"><input type="submit" value="Send"></td>
+					</tr>
+				</table>
+			</form>
+			<!-- Fin du formulaire -->
+		</div>
+	</div>
+
+	<div class="block-job">
+		<div class="apply-button">
+			<div class="right">Job</div>
+			<h3>Senior Specialist Packaging Planning</h3>
+		</div>
+		<div>
+			<p>
+				Corporate Division <strong>Logistics</strong><br /> Division,
+				located in <strong>Shenyang/China</strong><br /> Employment – full
+				time
+			</p>
+			<h4>Tasks</h4>
+			<p>Overall planning of internal packaging and bins and packaging
+				from local suppliers to Plant Shenyang</p>
+			<h4>Key Responsibility</h4>
+			<ul>
+				<li>Assessment and release of packaging proposals from
+					suppliers</li>
+				<li>Development of packaging concepts</li>
+				<li>Review and optimization of processes in terms of packaging
+					quality</li>
+				<li>Technical studies preferably in automotive engineering,
+					industrial engineering or business administration or logistics
+			</ul>
+			<h4>Qualification</h4>
+			<ul>
+				<li>University degree</li>
+				<li>PC skills</li>
+				<li>Structured thinking and analytic exposure with complex
+					system</li>
+				<li>Quality consciousness</li>
+				<li>Communication ability, cooperation with intercultural
+					teams, conflict ability and positive exposure</li>
+				<li>Ability to exposure to high complexity, interest and
+					openness to other technologies, implementation ability and ability
+					to assert himself</li>
+				<li>Positive exposure with high uncertainness, creativity,
+					innovation and vision ability</li>
+				<li>Handicraft skills, self-initiative, improvisation skills</li>
+				<li>Open-mindedness in dealing with others</li>
+				<li>Experience in project management, 4-6 years</li>
+				<li>Several years of working in automotive plant logistics, 4-6
+					years
+			</ul>
+			<!-- Formulaire pour postuler -->
+			<h5 class="apply-button">Apply</h5>
+			<form method="post" enctype="multipart/form-data"
+					action="/visitors/sendmail/en/" class="unwrapped">
+				*.doc and *.pdf files are accepted, max 500 Ko for each attachment.
+				{# L'identifiant indiquant à quelle adresse mail la candidature est envoyée, cf ressources du Forum #}
+				<input type="hidden" name="id" value="bmwsy" />
+				{# Nom de l'emploi, le même que dans le titre #}
+				<input type="hidden" name="jobname" value="Senior Specialist Packaging Planning" />
+				{# Entreprise #}
+				<input type="hidden" name="company" value="BMW" />
+				<table class="noborder">
+					<tr>
+						<td>Family name<span class="required">*</span></td>
+						<td><input type="text" name="nom" required="required" /></td>
+					</tr>
+					<tr>
+						<td>First name<span class="required">*</span></td>
+						<td><input type="text" name="prenom" required="required" /></td>
+					</tr>
+					<tr>
+						<td>e-mail<span class="required">*</span></td>
+						<td><input type="text" name="email" required="required" /></td>
+					</tr>
+					<tr>
+						<td>English CV<span class="required">*</span></td>
+						<td><input type="file" name="cv_en" required="required" /></td>
+					</tr>
+					<tr>
+						<td>English covering letter<span class="required">*</span></td>
+						<td><input type="file" name="lm_en" required="required" /></td>
+					</tr>
+					<tr>
+						<td colspan="2"><small><span class="required">*</span>
+								: required field</small></td>
+					</tr>
+					<tr>
+						<td colspan="2"><input type="submit" value="Send"></td>
+					</tr>
+				</table>
+			</form>
+			<!-- Fin du formulaire -->
+		</div>
+	</div>
+
+	<div class="block-job">
+		<div class="apply-button">
+			<div class="right">Job</div>
+			<h3>Senior Specialist VPS Methodiker 高级精益生产专员</h3>
+		</div>
+		<div>
+			<p>
+				Corporate Division <strong>VPS</strong><br /> Division, located in <strong>Shenyang/China</strong><br />
+				Employment – full time
+			</p>
+			<h4>Tasks</h4>
+			<p>The VPS Methodiker role is to advise on, coach and support and
+				actively demonstrate VPS methodologies to Managers, Process owners
+				and associates</p>
+			<h4>Key Responsibility</h4>
+			<ul>
+				<li>Process Improvement activities - Advises on the selection
+					of the appropriate tool/method to be applied in a given
+					circumstance</li>
+				<li>Application of VPS - Explains the relevance of
+					methods/tools to the circumstance in the context of the 10
+					principles of VPS</li>
+				<li>Application of the methodology - Demonstrates the selected
+					VPS methodology</li>
+				<li>VPS methods - Researches and develops the best practice
+					methods</li>
+				<li>VPS projects - Co-ordinates the application of methods</li>
+				<li>Process improvement &amp; projects - Coaches &amp; supports
+					ongoing application of VPS methods</li>
+				<li>Innovation - Identify blockers and develop mechanisms to
+					overcome them in the application of VPS methods</li>
+				<li>Innovation - Design and introduce low tech solutions within
+					production environment to improve processes
+			</ul>
+			<h4>Qualification</h4>
+			<ul>
+				<li>Qualified to bachelor degree level in automotive
+					engineering</li>
+				<li>Manufacturing &amp; Logistics operations</li>
+				<li>VPS philosophy and principles</li>
+				<li>Effective communication skills</li>
+				<li>VPS tools and techniques</li>
+				<li>Understanding of line balancing techniques</li>
+				<li>Team leadership - cross functional teams</li>
+				<li>Workshop facilitation</li>
+				<li>Competency project planning and management</li>
+				<li>Proficient English, German would be of advantage</li>
+				<li>Knowledge of Health &amp; Safety and Environmental
+					standards</li>
+				<li>Considerable experience in working within a Manufacturing
+					environment, 4-6 years
+			</ul>
+			<!-- Formulaire pour postuler -->
+			<h5 class="apply-button">Apply</h5>
+			<form method="post" enctype="multipart/form-data"
+					action="/visitors/sendmail/en/" class="unwrapped">
+				*.doc and *.pdf files are accepted, max 500 Ko for each attachment.
+				{# L'identifiant indiquant à quelle adresse mail la candidature est envoyée, cf ressources du Forum #}
+				<input type="hidden" name="id" value="bmwsy" />
+				{# Nom de l'emploi, le même que dans le titre #}
+				<input type="hidden" name="jobname" value="Senior Specialist VPS Methodiker 高级精益生产专员" />
+				{# Entreprise #}
+				<input type="hidden" name="company" value="BMW" />
+				<table class="noborder">
+					<tr>
+						<td>Family name<span class="required">*</span></td>
+						<td><input type="text" name="nom" required="required" /></td>
+					</tr>
+					<tr>
+						<td>First name<span class="required">*</span></td>
+						<td><input type="text" name="prenom" required="required" /></td>
+					</tr>
+					<tr>
+						<td>e-mail<span class="required">*</span></td>
+						<td><input type="text" name="email" required="required" /></td>
+					</tr>
+					<tr>
+						<td>English CV<span class="required">*</span></td>
+						<td><input type="file" name="cv_en" required="required" /></td>
+					</tr>
+					<tr>
+						<td>English covering letter<span class="required">*</span></td>
+						<td><input type="file" name="lm_en" required="required" /></td>
+					</tr>
+					<tr>
+						<td colspan="2"><small><span class="required">*</span>
+								: required field</small></td>
+					</tr>
+					<tr>
+						<td colspan="2"><input type="submit" value="Send"></td>
+					</tr>
+				</table>
+			</form>
+			<!-- Fin du formulaire -->
+		</div>
+	</div>
+
+	<div class="block-job">
+		<div class="apply-button">
+			<div class="right">Job</div>
+			<h3>Senior Specialist Maintenance Controls</h3>
+		</div>
+		<div>
+			<p>
+				Corporate Division <strong>Powertrain</strong><br /> Division,
+				located in <strong>Shenyang/China</strong><br /> Employment – full
+				time
+			</p>
+			<h4>Tasks</h4>
+			<p>Support all manufacturing operations (assembly, machining and
+				logistics) and control software systems and any other system support
+				that affects the manufacturing operations</p>
+			<h4>Key Responsibility</h4>
+			<ul>
+				<li>Upgrade and protect all systems and tools to ensure that
+					they are in line with BMW Brilliance Automotive and BMW standards
+					and operate effectively and efficiently</li>
+				<li>Issue, maintain, update and distribute technology data to
+					oversee all electrical drawing and control vendor specific
+					activities to manage systems and maintain high level of standards</li>
+				<li>Support introduction of new maintenance technologies and
+					ensure that requirements are met</li>
+				<li>Ensure accurate scheduling and chances where maintenance is
+					affected. Minimize risk and increase efficiency to support all
+					maintenance changes</li>
+				<li>Raise level of knowledge and provide expertise (by looking
+					out of market technologies) to deliver world class level of
+					maintenance
+			</ul>
+			<h4>Qualification</h4>
+			<ul>
+				<li>Bachelor / Master degree in mechanical engineering or
+					electrical engineering</li>
+				<li>Operational experience in a control-engineering environment
+					applicable to manufacturing systems</li>
+				<li>Knowledge of system software development together with
+					machine process understanding</li>
+				<li>Knowledge of manufacturing operations processes (assembly
+					and machining)</li>
+				<li>High level of understanding of software and hardware</li>
+				<li>Experience in an automotive manufacturing environment with
+					high volume production</li>
+				<li>Knowledge of various lean manufacturing methods</li>
+				<li>English, German would be an advantage</li>
+				<li>Background in manufacturing systems, automation and control
+					systems, 1-3 years</li>
+				<li>Experience with hardware and software development, 1-3
+					years</li>
+				<li>Several years experience in maintenance of assembly and
+					machining systems, 4-6 years
+			</ul>
+			<!-- Formulaire pour postuler -->
+			<h5 class="apply-button">Apply</h5>
+			<form method="post" enctype="multipart/form-data"
+					action="/visitors/sendmail/en/" class="unwrapped">
+				*.doc and *.pdf files are accepted, max 500 Ko for each attachment.
+				{# L'identifiant indiquant à quelle adresse mail la candidature est envoyée, cf ressources du Forum #}
+				<input type="hidden" name="id" value="bmwsy" />
+				{# Nom de l'emploi, le même que dans le titre #}
+				<input type="hidden" name="jobname" value="Senior Specialist Maintenance Controls" />
+				{# Entreprise #}
+				<input type="hidden" name="company" value="BMW" />
+				<table class="noborder">
+					<tr>
+						<td>Family name<span class="required">*</span></td>
+						<td><input type="text" name="nom" required="required" /></td>
+					</tr>
+					<tr>
+						<td>First name<span class="required">*</span></td>
+						<td><input type="text" name="prenom" required="required" /></td>
+					</tr>
+					<tr>
+						<td>e-mail<span class="required">*</span></td>
+						<td><input type="text" name="email" required="required" /></td>
+					</tr>
+					<tr>
+						<td>English CV<span class="required">*</span></td>
+						<td><input type="file" name="cv_en" required="required" /></td>
+					</tr>
+					<tr>
+						<td>English covering letter<span class="required">*</span></td>
+						<td><input type="file" name="lm_en" required="required" /></td>
+					</tr>
+					<tr>
+						<td colspan="2"><small><span class="required">*</span>
+								: required field</small></td>
+					</tr>
+					<tr>
+						<td colspan="2"><input type="submit" value="Send"></td>
+					</tr>
+				</table>
+			</form>
+			<!-- Fin du formulaire -->
+		</div>
+	</div>
+
+	<div class="block-job">
+		<div class="apply-button">
+			<div class="right">Job</div>
+			<h3>Senior Specialist Engine Audit Static Audit</h3>
+		</div>
+		<div>
+			<p>
+				Corporate Division <strong>Powertrain</strong><br /> Division,
+				located in <strong>Shenyang/China</strong><br /> Employment – full
+				time
+			</p>
+			<h4>Tasks</h4>
+			<p>To conduct all aspects of engine static audit. Identify and
+				rectify problems identified. Failure analysis of Engine within
+				Powertrain plant, from Vehicle plant and from Warranty</p>
+			<h4>Key Responsibility</h4>
+			<ul>
+				<li>Static Audit: to test, strip and examination of up to
+					defined volume of engines per month; using special tools; enable to
+					disassemble engine and check the part quality visually; evaluation
+					of testing result. Be able to rebuild the complete Engine and
+					repair problem Engine according to defined assembly process</li>
+				<li>Failure Analysis: to strip and check the part quality
+					visually or by using other resource. Define the root cause for
+					Engine failure according to failure model, define problem owner and
+					define conclusion and recommendation</li>
+				<li>Carry out problem identification &amp; take lead of
+					investigation processes</li>
+				<li>Contribute to the efficient and effective operation of test
+					facilities, including adherence to VPS processes and standards</li>
+				<li>Reporting (to serve as the point of contact for all
+					relevant functions: analysis specialists, quality specialists /
+					production management, quality control for all parts quality
+					issues)</li>
+				<li>Implementation of Dynamic audit test by Test Cell</li>
+				<li>Problem solving of daily problem within Powertrain plant
+			</ul>
+			<h4>Qualification</h4>
+			<ul>
+				<li>University degree / graduated in engineering
+					(automotive/engine)</li>
+				<li>Expert knowledge of engine components, quality standards,
+					product audit</li>
+				<li>Up-to-date knowledge of advancements in quality thinking
+					and approaches</li>
+				<li>Thorough understanding of business targets and objectives</li>
+				<li>Highly developed communication skills</li>
+				<li>Team and individual development, management and leadership
+				</li>
+				<li>Project management skills</li>
+				<li>Awareness of health, safety and environmental issues
+					relevant to the area of responsibility</li>
+				<li>Experience of working both cross-function and
+					internationally</li>
+				<li>English language skills</li>
+				<li>Knowledge of Engine Static audit background, 4-6 years</li>
+				<li>Knowledge of Engine failure analysis background, 1-3 years
+			</ul>
+			<!-- Formulaire pour postuler -->
+			<h5 class="apply-button">Apply</h5>
+			<form method="post" enctype="multipart/form-data"
+					action="/visitors/sendmail/en/" class="unwrapped">
+				*.doc and *.pdf files are accepted, max 500 Ko for each attachment.
+				{# L'identifiant indiquant à quelle adresse mail la candidature est envoyée, cf ressources du Forum #}
+				<input type="hidden" name="id" value="bmwsy" />
+				{# Nom de l'emploi, le même que dans le titre #}
+				<input type="hidden" name="jobname" value="Senior Specialist Engine Audit Static Audit" />
+				{# Entreprise #}
+				<input type="hidden" name="company" value="BMW" />
+				<table class="noborder">
+					<tr>
+						<td>Family name<span class="required">*</span></td>
+						<td><input type="text" name="nom" required="required" /></td>
+					</tr>
+					<tr>
+						<td>First name<span class="required">*</span></td>
+						<td><input type="text" name="prenom" required="required" /></td>
+					</tr>
+					<tr>
+						<td>e-mail<span class="required">*</span></td>
+						<td><input type="text" name="email" required="required" /></td>
+					</tr>
+					<tr>
+						<td>English CV<span class="required">*</span></td>
+						<td><input type="file" name="cv_en" required="required" /></td>
+					</tr>
+					<tr>
+						<td>English covering letter<span class="required">*</span></td>
+						<td><input type="file" name="lm_en" required="required" /></td>
+					</tr>
+					<tr>
+						<td colspan="2"><small><span class="required">*</span>
+								: required field</small></td>
+					</tr>
+					<tr>
+						<td colspan="2"><input type="submit" value="Send"></td>
+					</tr>
+				</table>
+			</form>
+			<!-- Fin du formulaire -->
+		</div>
+	</div>
+
+	<div class="block-job">
+		<div class="apply-button">
+			<div class="right">Job</div>
+			<h3>Production Specialist Assembly</h3>
+		</div>
+		<div>
+			<p>
+				Corporate Division <strong>Powertrain</strong><br /> Division,
+				located in <strong>Shenyang/China</strong><br /> Employment – full
+				time
+			</p>
+			<h4>Tasks</h4>
+			<p>Optimize all processes and technologies within the existing
+				systems and ensure a VPS driven production</p>
+			<h4>Key Responsibility</h4>
+			<ul>
+				<li>Analyze weak points within assembly operations and rectify
+					to ensure stability, reliability and quality of engines produced</li>
+				<li>Enhance and implement CIP and VPS activities to ensure the
+					continuous improvements and streamline of all production related
+					measures</li>
+				<li>Liaise, negotiate and influence relevant partners to ensure
+					the preferred operational requirements of products and processes
+					are met in accordance with all health, safety, environmental and
+					BMW standards</li>
+				<li>Analyze the root cause of faults/problems and apply
+					methodology to ensure all problem resolution activities are
+					completed in a proactive and systematic approach and all production
+					targets/guidelines are met</li>
+				<li>Ensure and improve all Q-critical features in series
+					production maintaining efficiency and minimizing downtime to
+					maximize the performance</li>
+				<li>Provide robust solutions for all tasks and problems not
+					solved by the production teams.</li>
+				<li>Provide appropriate levels of training to associates as
+					business requires within the</li>
+				<li>engine assembly line
+			</ul>
+			<h4>Qualification</h4>
+			<ul>
+				<li>Master degree / graduated in Mechanical Engineering /
+					Manufacturing</li>
+				<li>Knowledge of engine assembly and test processes</li>
+				<li>Knowledge of high volume manufacturing preferably within
+					the automotive (engine) industry</li>
+				<li>Ability to analyze and resolve technical issues using
+					systematic problem resolution techniques</li>
+				<li>Knowledge of process control techniques and gauging methods
+				</li>
+				<li>Highly developed communication skills in a multi-cultural
+					working environment, Competence to motivate and co-ordinate people
+					and mobilize resources to achieve desired results</li>
+				<li>Skills with analyzing and reporting, with high level of
+					personal commitment and motivation.</li>
+				<li>Skills with project management</li>
+				<li>Proficient English, German would be an advantage</li>
+				<li>Background in high volume automotive industries.,7-10 years
+				</li>
+				<li>Experience with engine assembly,4-6 years</li>
+				<li>Several years experience in systematic analyzing and
+					resolving technical issues,4-6 years</li>
+				<li>Experience with process control,4-6 years
+			</ul>
+			<!-- Formulaire pour postuler -->
+			<h5 class="apply-button">Apply</h5>
+			<form method="post" enctype="multipart/form-data"
+					action="/visitors/sendmail/en/" class="unwrapped">
+				*.doc and *.pdf files are accepted, max 500 Ko for each attachment.
+				{# L'identifiant indiquant à quelle adresse mail la candidature est envoyée, cf ressources du Forum #}
+				<input type="hidden" name="id" value="bmwsy" />
+				{# Nom de l'emploi, le même que dans le titre #}
+				<input type="hidden" name="jobname" value="Production Specialist Assembly" />
+				{# Entreprise #}
+				<input type="hidden" name="company" value="BMW" />
+				<table class="noborder">
+					<tr>
+						<td>Family name<span class="required">*</span></td>
+						<td><input type="text" name="nom" required="required" /></td>
+					</tr>
+					<tr>
+						<td>First name<span class="required">*</span></td>
+						<td><input type="text" name="prenom" required="required" /></td>
+					</tr>
+					<tr>
+						<td>e-mail<span class="required">*</span></td>
+						<td><input type="text" name="email" required="required" /></td>
+					</tr>
+					<tr>
+						<td>English CV<span class="required">*</span></td>
+						<td><input type="file" name="cv_en" required="required" /></td>
+					</tr>
+					<tr>
+						<td>English covering letter<span class="required">*</span></td>
+						<td><input type="file" name="lm_en" required="required" /></td>
+					</tr>
+					<tr>
+						<td colspan="2"><small><span class="required">*</span>
+								: required field</small></td>
+					</tr>
+					<tr>
+						<td colspan="2"><input type="submit" value="Send"></td>
+					</tr>
+				</table>
+			</form>
+			<!-- Fin du formulaire -->
+		</div>
+	</div>
+
+	<div class="block-job">
+		<div class="apply-button">
+			<div class="right">Job</div>
+			<h3>Specialist Quality Measurement Technique</h3>
+		</div>
+		<div>
+			<p>
+				Corporate Division <strong>Press Shop</strong><br /> Division,
+				located in <strong>Shenyang/China</strong><br /> Employment – full
+				time
+			</p>
+			<h4>Tasks</h4>
+			<ul>
+				<li>Advance for analysis capacities of the factories with
+					project specific measurement plans and -programs, as well as with
+					development and testing of innovative measurement technologies</li>
+				<li>The in TU installed measurement technology (MT) tactile and
+					visual is in sum cognizant for the documentation/ preparation of
+					quantities Q-features (measuring point- area)</li>
+				<li>To plan and program these Q-features in accordance with
+					their recording and to give intervals, as well as summaries the
+					measurement results and their issues into QLVs and to implement the
+					realization/ consulting with the process partners</li>
+				<li>Metrological analysis in terms of fault correction / tests
+					must be coordinated and realized (analysis of orders)</li>
+				<li>To administrate all relevant test mediums (OTIB...) and to
+					ensure their SPÜ- capability. The basic conditions for that are
+					described in the TK-MPM-processes or the instruction is summarized
+					in DMS (MPM and DMS)</li>
+				<li>Complexes measurement tasks, which includes the whole topic
+					of the measurement technology inclusive CA- area and which realized
+					with autonomous and self-dependent decisions</li>
+			</ul>
+			<h4>Key Responsibility</h4>
+			<ul>
+				<li>Conception, creation, testing and care of easy/basic
+					Teilausricht- and measuring programs using CAX-techniques or
+					coordinates measuring machines</li>
+				<li>Planning and realization of vehicle project-related
+					continuous alignment concepts in measurement plans for regarding to
+					clamping- and recording technology with the product methodologist/
+					process partner</li>
+				<li>Coordination of processes for determination of specific
+					tolerances in the measurement plans in accordance with development
+					and in process involved persons; system-technical creation of QLV
+					after process maturity and realization them with relevant
+					departments</li>
+				<li>Programming of measuring machine in conception, creation,
+					testing and care of easy/basic partial adjustment and measuring
+					programs using CAX-techniques or coordinates measuring machines</li>
+				<li>Conception, creation, testing and care of complexes partial
+					adjustment- and measuring programs (e.g. with local alignment
+					systems) using CAX-techniques or coordinates measuring machines and
+					coordination across the plants, if technically possible, securing
+					the universal availability of measuring programs during the
+					procedure on other measuring equipments</li>
+				<li>Administration of measuring programs with change management
+					(e.g. at all relevant modification of components or optimization
+					measures of the measuring points, securing the correlation with
+					KMG- measurement data and SPÜ</li>
+				<li>Macro-programming for data conversion BMW-mess, MDM/Poly
+					works at the optical measuring technique (tool manufacture)</li>
+				<li>Editing, triangulating and polygonisation of optical
+					created point clouds (tool manufacture)</li>
+				<li>Model editing for laser trimming (point cloud, alignment
+					for the off-line-program) (tool manufacture)</li>
+				<li>Measurement in implementation of measurements based on
+					previously finished measuring programs and testing plans with
+					coordinates measuring machines including all necessary setting up
+					and preparatory work incl. production-/process approval</li>
+				<li>Preparation and realization of geometrical and analyzing
+					measurements on product and tooling using CAX-techniques or
+					coordinate measuring machines</li>
+				<li>Unrolling of sheet metal using CAD; creation, preparation
+					and optimization of STL-data (networks), reverse engineering of
+					STL-data (tool manufacture)</li>
+				<li>Metrological assessment and release at suppliers, standard
+					specifications for the implementation and inducement of corrections
+					in case of non-compliance with specifications related components
+					and tooling</li>
+				<li>Consolidation (partly supply) and evaluation of prototype
+					technical-release procedure of components to the test stations
+					(dimension, material, ironing, radii, surface,…) for determination
+					of an overall status per part number (QSYS); to constitute
+					transparency, driver unit function</li>
+				<li>Planning , coordination and realization of first- and
+					modification samples of complexes components, also with external
+					suppliers (TU-tool manufacture + short-run manual production)</li>
+				<li>Quality management/ evaluation in exposition and
+					presentation of measurement results internal and external</li>
+				<li>Capable of making decisions preparation, documentation and
+					presentation of measurement- and analysis results also by using the
+					given statistical method</li>
+				<li>Thereby establishing the data base for process of fault
+					clearance (e.g. PQM- and QLV procedures )</li>
+				<li>Evaluation of the production process by using statistical
+					process parameter (Cp, CPK, QRK…), incl. choice of the usual and
+					complexes statistic methods</li>
+				<li>Analysis of preparation and realization of geometrical and
+					analyzing measurements on product and tooling using CAX-techniques
+					or coordinate measuring machines</li>
+				<li>Planning, coordination of complexes, overall methodical
+					fault analysis for geometrical Q-problems on product, ZBs, pressed
+					parts and tooling and to deduce corrective suggestions using the
+					relevant IT-systems</li>
+				<li>Measuring- and testing equipment in coordination SPÜ;
+					monitoring the test cycles of all testing- and measuring tool using
+					SPÜ system; initiates the repeat test by reminding lists; prepares
+					SPÜ-topics and intervals; coordinates the PMÜ of all plant-wide
+					KMGs</li>
+				<li>Conception of test medium specifications in consideration
+					of FMK with QMT and suppliers; represents the interests of
+					measurement technology and Q-management department in conferences
+					for starting test mediums</li>
+				<li>Coordination of change management and
+					reworking/optimization of available test mediums, as well as the
+					supplemental procurement in start of production</li>
+				<li>Realization of test medium-management from SOP for
+					guarantee all requirements of involved departments; coordinates all
+					corrective measures with user and external company and controls the
+					realization and grants the approval; ensures test mediums for the
+					functional check</li>
+				<li>CAQ-/IT-/Q-systems in assisting in projects for further
+					development of systems, technologies and processes of measurement
+					technology (e.g. visual measuring technique, CAD-CAQ, MT-CA.
+					structure, V-Star, Laser tracker) incl. representation of the
+					department in relevant workshops</li>
+				<li>Coordination in Representation of requirements and topics
+					of the measurement technology in project conferences/ workshops or
+					the like representative for several MA within his coordination task
+				</li>
+				<li>Problem analysis and fault correction in case of technical
+					defects of measurement machines by request of the operator.
+					coordination of fault correction in case of difficult faults</li>
+				<li>Assisting in projects for further development of systems,
+					technologies and processes of the measuring technique (e.g. visual
+					measurement technology, CAD-CAQ, MT-CA-structure, V-Star, Laser
+					tracker); incl. representation of the department in relevant
+					workshops</li>
+				<li>Administrator measurement technique (dimension) in central
+					contact person; support, consulting and training of internal and
+					external process partners in case of complexes applications/
+					systems; system support of specific metrological IT (software and
+					hardware)</li>
+				<li>Technological further development of the measurement
+					technology, creation of functional concepts, planning of projects
+					and roll out of first practice</li>
+				<li>Analysis and further development of measuring processes
+					regarding to the efficiency and effectiveness; development of
+					potentials for improvement and control of their realization</li>
+				<li>Consulting and assisting in innovation projects of
+					measurement, determination of the specifications for crossover to
+					the production run</li>
+				<li>Management of workshops and teams of specialists of
+					measurement technology within the forming technology;
+					representation of the technology in committees of geometry across
+					the process chain and departments</li>
+				<li>Securing of compliance with standards in case of restocking
+					or new procurements of measurement technology- equipment for the
+					forming technology</li>
+				<li>Coordination of complexes dimensional analysis, generation
+					of analysis and reports</li>
+				<li>Coordination and creation of QM-documents (AA, MPM, DMS,
+					etc.)
+			</ul>
+			<h4>Qualification</h4>
+			<ul>
+				<li>Appropriate and completed minimum three years education,
+					professional further education and related
+					metrological/technical-quality additional education or a technical
+					university degree and related subject-specific additional education
+				</li>
+				<li>Knowledge / Skills /Competences</li>
+				<li>Mechanical engineering technician or master in metalworking
+					industry</li>
+				<li>Professional further education in programming of
+					CNC-control system or macro programming in Visual Basic</li>
+				<li>Professional further education in CAD-systems, CATIA Ver. 4
+					und CATIA Ver. 5</li>
+				<li>Professional further education in handling with the
+					relevant measurement software like METROMEC, Poly works, Atos, IDA
+					/ e MMA / BMW mess</li>
+				<li>Command of English</li>
+				<li>Further qualification in the forming simulation regarding
+					to the data-feedback</li>
+				<li>Knowledge of operating systems Windows XP and Linux</li>
+				<li>Safe handling with UNIX-machines (work stations)</li>
+				<li>Command of the established Windows applications, as well as
+					creation and administration of PDF- files</li>
+				<li>Background in Press Shop, 1-3 years</li>
+				<li>Experience in handling with series- and
+					analysis-measurements, measuring system, test mediums/ ASP/ optical
+					measurement technique, 1-3 years
+			</ul>
+			<!-- Formulaire pour postuler -->
+			<h5 class="apply-button">Apply</h5>
+			<form method="post" enctype="multipart/form-data"
+					action="/visitors/sendmail/en/" class="unwrapped">
+				*.doc and *.pdf files are accepted, max 500 Ko for each attachment.
+				{# L'identifiant indiquant à quelle adresse mail la candidature est envoyée, cf ressources du Forum #}
+				<input type="hidden" name="id" value="bmwsy" />
+				{# Nom de l'emploi, le même que dans le titre #}
+				<input type="hidden" name="jobname" value="Specialist Quality Measurement Technique" />
+				{# Entreprise #}
+				<input type="hidden" name="company" value="BMW" />
+				<table class="noborder">
+					<tr>
+						<td>Family name<span class="required">*</span></td>
+						<td><input type="text" name="nom" required="required" /></td>
+					</tr>
+					<tr>
+						<td>First name<span class="required">*</span></td>
+						<td><input type="text" name="prenom" required="required" /></td>
+					</tr>
+					<tr>
+						<td>e-mail<span class="required">*</span></td>
+						<td><input type="text" name="email" required="required" /></td>
+					</tr>
+					<tr>
+						<td>English CV<span class="required">*</span></td>
+						<td><input type="file" name="cv_en" required="required" /></td>
+					</tr>
+					<tr>
+						<td>English covering letter<span class="required">*</span></td>
+						<td><input type="file" name="lm_en" required="required" /></td>
+					</tr>
+					<tr>
+						<td colspan="2"><small><span class="required">*</span>
+								: required field</small></td>
+					</tr>
+					<tr>
+						<td colspan="2"><input type="submit" value="Send"></td>
+					</tr>
+				</table>
+			</form>
+			<!-- Fin du formulaire -->
+		</div>
+	</div>
+
+	<div class="block-job">
+		<div class="apply-button">
+			<div class="right">Job</div>
+			<h3>Senior Specialist Production Scheduling</h3>
+		</div>
+		<div>
+			<p>
+				Corporate Division <strong>Press Shop</strong><br /> Division,
+				located in <strong>Shenyang/China</strong><br /> Employment – full
+				time
+			</p>
+			<h4>Tasks</h4>
+			<ul>
+				<li>Complete, independent securing of the component production
+					in right time and quantity (intermediate states and final products)
+					with the goal to supply all customers meeting the demands with the
+					use of methods and tools of the production control and customer
+					order processing for a defined production and component scope</li>
+				<li>Independent compliance of minimal capital commitment in the
+					form of inventories of intermediate and finished products with
+					regard to the economic utilization of the available production
+					capacities in conformity with the target agreement</li>
+				<li>Training of new employees/interns according to the relevant
+					processes, methods and tools</li>
+				<li>Additionally by component control: complete, independent
+					material control (disposition and procurement) of a defined range
+					of parts with special needs (for example LDL, CKD, parts
+					distribution) with the use of methods and tools of the material
+					control with the goal to ensure the supply of the user in
+					conformity with the target agreement</li>
+				<li>Additionally by component control: independent securing of
+					the supply performance according to the guidelines of the plants,
+					partners and central authorities with regard to the shipment plans,
+					flight plans and the different supply runtimes</li>
+			</ul>
+			<h4>Key Responsibility</h4>
+			<ul>
+				<li>Production control and customer order processing</li>
+				<li>Responsibility for the independent preparation of
+					production and assembly program a per machine / plant / production
+					area based on customer call- off orders and vehicle program to
+					ensure the economic use of the existing capacity</li>
+				<li>To prepare manufacturing guidelines, responsibility for the
+					resulting purchase obligations based on commitments of spare parts
+					(except replacement engines)</li>
+				<li>Preparation of production guidelines and responsibility for
+					the resulting purchase commitments based on the consumer, priority
+					rules, short-term program changes and special forerun production or
+					special stock age</li>
+				<li>Specification of the production sequence to ensure the
+					systematic supply considering the schedule situation, material
+					availability and the stock age and coverage situation. Responsible
+					for and supervises the inventory of intermediate states and final
+					products in the manufacturing sector</li>
+				<li>Planning and securing the production of run-out series (AI,
+					run-out models)</li>
+				<li>Coordination of the delivery arrangements within the
+					customer order processing; responsible for securing the supply of
+					spare parts service in due time and right quantity (except
+					replacement engines)</li>
+				<li>Coordination of the delivery arrangements within the
+					customer order processing; responsible for the securing of the
+					supply of customer plants, plants abroad, third-party customers and
+					customers with special needs in due time and right quantity</li>
+				<li>Coordination of the delivery arrangements within the
+					customer order processing and responsibility for the securing of
+					the supply of customer´s plants from JIT/JIS-production in due time
+					and right quantity</li>
+				<li>Coordination of the schedule situation in case of supply
+					shortages with customers, suppliers from the production area, tool
+					making and quality positions as well as other relevant positions
+					and responsibility for the decision on the measures to be taken</li>
+				<li>Processing of the supply of components for subcontracting
+					in due time and right quantity and responsible for the conduction
+					of consignment stock management</li>
+				<li>Coordination of the demands for container and packaging
+					material and securing of the supply of the production area with
+					containers in due time and right quantity</li>
+				<li>Material control (disposition and procurement)</li>
+				<li>Preparation of the obligatory delivery plans over the whole
+					material controlling horizon and responsibility for the purchase
+					commitments in this task area (e.g. no responsibility for wrong
+					data, preliminary performances in the technical change systems)</li>
+				<li>Preparation of analyses of the supply situation as a basis
+					for decisions in the production planning and program controlling in
+					case of supply shortages</li>
+				<li>Tracking of the capacity situation in critical production
+					areas/ suppliers and initiation of the escalation (in case of need)
+				</li>
+				<li>Controlling of recalls several times a day (JIT/JIS) with
+					additional parameters management, extensive controlling activities
+					in case of change management</li>
+				<li>Daily tracking of the delivery performance and the schedule
+					and quantity goals (e.g. residues, wrong deliveries), as well as
+					regular evaluation of the suppliers by applying the SCQ-methods and
+					tools</li>
+				<li>Initiation, preparation and participation in the logistic
+					problem solving processes (escalation). arrangement of appropriate
+					improvement measures with the suppliers (at escalation level 0,
+					written opinion) and their tracking</li>
+				<li>Contribution of his input to the supplier selection/
+					project evacuation and SPQM (VA 4.1.3 process) on a basis of the
+					experienced data and the results of the annual supplier evaluation
+				</li>
+				<li>Production control and material control</li>
+				<li>Responsibility for the control parameters maintenance,
+					checking of correctness of the relevant basic data and if necessary
+					inducement of corrections. Maintenance of preliminary work (e.g.
+					valid vehicle program, relevant orders, technical change data,
+					etc.) from related departments</li>
+				<li>Realization of short-term component availability in case of
+					production shortages through inducement of special measures</li>
+				<li>Inducement/ conduction of inventories and corrections,
+					analysis of stock differences on error causes and derivation of
+					appropriate measures for the sustainable securing of the required
+					stock levels</li>
+				<li>Checking of component overhang for further usability to
+					avoid scrap costs, checking of possible over-delivery beyond
+					purchase commitment, initiation of physical scrapping resp. return
+					to the supplier; solves the scrapping of remaining stock</li>
+				<li>Responsible for the execution of guidelines with respect to
+					quantities and schedules etc. from the product starts as well as
+					change deployments with regard to sufficient material availability
+					and processing of product resp. component outlet with minimal
+					material overhangs</li>
+				<li>Contribution to the preparation/ implementation of supply
+					concepts</li>
+				<li>Evaluation and checking of the feasibility of supply
+					concepts according to the system and process restrictions</li>
+				<li>Work in network/ project work</li>
+				<li>Representation of the department interests across plants
+					and departments</li>
+				<li>Representation of the department interests in work groups
+					across the plants to further develop and standardize methods and
+					tools</li>
+				<li>Participation in the specification of the logistic quality
+					target figures for the delivery process ( for example SUMIS-target
+					values, supply performance, coverage targets</li>
+				<li>Contribution to projects for the development and
+					implementation of new processes across plants and departments</li>
+				<li>Project management for development and implementation of
+					new processes across plants and departments and/or specialist
+					leadership of the team</li>
+				<li>Process design and process optimization according to the
+					related areas</li>
+				<li>Special tasks in support of diploma candidates
+			</ul>
+			<h4>Qualification</h4>
+			<ul>
+				<li>Tertiary education industrial engineer or business
+					economist major logistics preferable</li>
+				<li>Profound knowledge of the logistic processes in the
+					automotive industry, especially changes from customer-oriented
+					distribution and production process</li>
+				<li>Experience and knowledge of PC and data processing systems
+				</li>
+				<li>Knowledge on the processes of the supply planning including
+					packaging, transport, material flow and logistic costs</li>
+				<li>Very good command of English (business fluent)</li>
+				<li>Relevant professional experience in the area of logistics/
+					materials management preferred in the automotive industry or
+					automotive supplier</li>
+				<li>German would be an advantage</li>
+				<li>Background in Press Shop, 7-10 years
+			</ul>
+			<!-- Formulaire pour postuler -->
+			<h5 class="apply-button">Apply</h5>
+			<form method="post" enctype="multipart/form-data"
+					action="/visitors/sendmail/en/" class="unwrapped">
+				*.doc and *.pdf files are accepted, max 500 Ko for each attachment.
+				{# L'identifiant indiquant à quelle adresse mail la candidature est envoyée, cf ressources du Forum #}
+				<input type="hidden" name="id" value="bmwsy" />
+				{# Nom de l'emploi, le même que dans le titre #}
+				<input type="hidden" name="jobname" value="Senior Specialist Production Scheduling" />
+				{# Entreprise #}
+				<input type="hidden" name="company" value="BMW" />
+				<table class="noborder">
+					<tr>
+						<td>Family name<span class="required">*</span></td>
+						<td><input type="text" name="nom" required="required" /></td>
+					</tr>
+					<tr>
+						<td>First name<span class="required">*</span></td>
+						<td><input type="text" name="prenom" required="required" /></td>
+					</tr>
+					<tr>
+						<td>e-mail<span class="required">*</span></td>
+						<td><input type="text" name="email" required="required" /></td>
+					</tr>
+					<tr>
+						<td>English CV<span class="required">*</span></td>
+						<td><input type="file" name="cv_en" required="required" /></td>
+					</tr>
+					<tr>
+						<td>English covering letter<span class="required">*</span></td>
+						<td><input type="file" name="lm_en" required="required" /></td>
+					</tr>
+					<tr>
+						<td colspan="2"><small><span class="required">*</span>
+								: required field</small></td>
+					</tr>
+					<tr>
+						<td colspan="2"><input type="submit" value="Send"></td>
+					</tr>
+				</table>
+			</form>
+			<!-- Fin du formulaire -->
+		</div>
+	</div>
+
+	<div class="block-job">
+		<div class="apply-button">
+			<div class="right">Job</div>
+			<h3>Senior Specialist Maintenance Electric</h3>
+		</div>
+		<div>
+			<p>
+				Corporate Division <strong>Press Shop</strong><br /> Division,
+				located in <strong>Shenyang/China</strong><br /> Employment – full
+				time
+			</p>
+			<h4>Tasks</h4>
+			<ul>
+				<li>Ensure operational reliability/ process quality, i.e.
+					technical availability, conservation of value and quality of
+					supported operation systems and resource</li>
+				<li>Analysis of contractual contents, preparing for
+					implementation, e.g. preparation of workplace equipment, safety and
+					protection devices.</li>
+				<li>Turn-up procedure and boot up the installation (TOF,TKB)</li>
+				<li>Measures of fault analysis and sustainable troubleshooting
+					for technical installations</li>
+				<li>Measures of inspection and maintenance</li>
+				<li>Measures to implement / assembly/ plant optimization or
+					alterations</li>
+				<li>Cooperation and support of alteration, new buildings and
+					bringing into service/commissioning</li>
+				<li>Organization and coordination of maintenance-relevant
+					processes</li>
+				<li>Tasks in spare party process</li>
+				<li>Maintenance-measures to ensure the product quality; take
+					part in MFU,PFU</li>
+				<li>Ongoing analysis of plant operation and
+					developing/implementation of optimization work to eliminate weak
+					points and to improve the result</li>
+				<li>Recording and documentation of all data/specifications,
+					which are required for the maintenance process on the basis of an
+					agreed procedure</li>
+				<li>Use of all relevant DV-system</li>
+				<li>General optimization of the specific maintenance tasks,
+					e.g. TPM and KVP</li>
+			</ul>
+			<h4>Key Responsibility</h4>
+			<ul>
+				<li>Fault repair/ maintenance/ documentation of operating
+					resources containing simple interdependencies (changing contactors/
+					relays, hydraulic valve)</li>
+				<li>Fault repair/ maintenance for operating resources or
+					electrical systems containing complex error causes; cause analysis
+					with application of diagnostic systems; define the extent of repair
+					and exchange of parts (changing frequency converter with
+					programmers)</li>
+				<li>Error analysis/ correction of defects of mechanical systems
+					containing complex interdependencies ( servo hr. systems) with
+					difficult adjustment, parameter settings, alignment (working on
+					with hydraulic servo system with diagnostic devices)</li>
+				<li>Error analysis/ correction of defects of mechanical system
+					with complex error-causes because in case that fault signals coming
+					from the production; fault analysis / error assessment with the
+					help of diagnostic systems; determine the extent of repair and
+					exchange of parts; independent realization of maintenance ( e.g.
+					working at electrical servo systems with measurement devices)</li>
+				<li>Error analysis of complex operating resources with
+					mechanical, pneumatic, hydraulic, electrical components with
+					measure- and diagnostic systems (e.g.)</li>
+				<li>Maintenance of simple operating resources or electrical
+					systems with documentation; exchange of wearing parts (with regard
+					to checklist)</li>
+				<li>Complex maintenance work/ inspection work at operation
+					resources or electrical systems; documentation of the measured
+					values to strict legal requirements or to the quality management
+					system</li>
+				<li>Inspection and maintenance work of complex production
+					systems and control systems and therefore a plan of measures for
+					reaching the target state; inducement of provision parts (e.g. IR
+					camera - film shots)</li>
+				<li>Develop and refresh maintenance schedules; prepare (plan)
+					the maintenance/ inspection(personnel and parts); control/monitor
+					the realization/performance; functional test and commission)</li>
+				<li>Implementation of predefined alteration- and
+					realization-measures; preparing of uncomplicated operating
+					resources/ components/ control</li>
+				<li>Preparing and Implementation of difficult alteration- and
+					realization-measures, independent assembly of components using
+					various assembly-specific methods; implementation of changes of the
+					electrical controls; independent functional testing and
+					commissioning</li>
+				<li>Independent implementation of optimization measures based
+					on vulnerability assessments or errors in production;
+					Implementation of very difficult programming takes; updating and
+					archiving of machine documentation including the use of CAD / CAE
+					systems</li>
+				<li>Self development, preparation and implementation of
+					alteration / optimization measures; cooperation in the
+					specification of new plants; control during the construction of new
+					machines/ plants or discharging</li>
+				<li>Plan and develop a complete hard and software for special
+					problems with the plant and start up</li>
+				<li>Injection and extraction of spare parts using provided
+					systems</li>
+				<li>Check of incoming machine-specific spare parts for
+					construction, function, dimensional; self-repair and machine
+					setting/ adjustment of disassembled parts</li>
+				<li>Compile lists of proposals for stocking of spare parts to
+					ensure plant availability; preparing of part-drafts; dimensional
+					drawing or plans for in house-production</li>
+				<li>Initiation of parts-chaining to improve the downtime; parts
+					ordering form an economic point of view; complaints handling in
+					case of defective parts; Scrapping-initiation (contribution to
+					tool-optimization by suppliers</li>
+				<li>Independent preparation/ coordination of
+					maintenance-operations for inspection, upkeep and maintenance
+					within the limits of remit</li>
+				<li>Professional and on-schedule coordination of repair
+					measures to complex Machines</li>
+				<li>Functional/professional and on-schedule coordination of
+					extensive maintenance measures with participation of different
+					areas; supervising in terms of operative coordination (repair with
+					extensive re/ demounting )</li>
+				<li>Qualification of production workers in the sense of TPM</li>
+				<li>Preparation and realization of internal training courses;
+					support of other MT-groups as part of CoC-organisation</li>
+				<li>Give advice to production plant and planning unit in
+					position of MT-representative ; coordination and control of extern
+					company; functional master-representative (e.g. contact person for
+					3. and 4. shift)</li>
+				<li>Coordination of MT-teams ( e.g. complex maintenance)</li>
+				<li>Participation in comprehensive and extensive project tasks
+					( e.g. MT- representation in projects</li>
+				<li>Professional coordination of an complexes master area in
+					the absence of the master</li>
+				<li>Personnel planning
+			</ul>
+			<h4>Qualification</h4>
+			<ul>
+				<li>Bachelor of science, engineering in mechanical/electrical
+					engineering or a comparable course of studies such as system
+					engineering/ control technology</li>
+				<li>During the apprenticeship/studying main focus on
+					system/installation engineering of non cutting shaping the work
+					related tasks require knowledge and occupational skills, which are
+					generally acquired during a min. 3 years professional experience
+					and comprehensive subject-specific additional qualifications</li>
+				<li>Mechanical system/installation engineering of presses</li>
+				<li>Electrical system/installation engineering of presses</li>
+				<li>Forming technology (of non cutting shaping)</li>
+				<li>Knowledge of control systems</li>
+				<li>Knowledge of drives</li>
+				<li>Knowledge of mechanics</li>
+				<li>Knowledge of robotics, robotic control, robot programming</li>
+				<li>Skills with applied and engineering mechanics (1. Expert 2.
+					Basic)</li>
+				<li>Skills with applied electrical engineering (1. Basic 2.
+					Expert)</li>
+				<li>Knowledge of material science</li>
+				<li>Proficient English</li>
+				<li>German would be an advantage</li>
+				<li>Background in system engineering, 4-6 years</li>
+				<li>Experience with robotics, 4-6 years</li>
+				<li>Several years experience in forming technology, 4-6 years
+			</ul>
+			<!-- Formulaire pour postuler -->
+			<h5 class="apply-button">Apply</h5>
+			<form method="post" enctype="multipart/form-data"
+					action="/visitors/sendmail/en/" class="unwrapped">
+				*.doc and *.pdf files are accepted, max 500 Ko for each attachment.
+				{# L'identifiant indiquant à quelle adresse mail la candidature est envoyée, cf ressources du Forum #}
+				<input type="hidden" name="id" value="bmwsy" />
+				{# Nom de l'emploi, le même que dans le titre #}
+				<input type="hidden" name="jobname" value="Senior Specialist Maintenance Electric" />
+				{# Entreprise #}
+				<input type="hidden" name="company" value="BMW" />
+				<table class="noborder">
+					<tr>
+						<td>Family name<span class="required">*</span></td>
+						<td><input type="text" name="nom" required="required" /></td>
+					</tr>
+					<tr>
+						<td>First name<span class="required">*</span></td>
+						<td><input type="text" name="prenom" required="required" /></td>
+					</tr>
+					<tr>
+						<td>e-mail<span class="required">*</span></td>
+						<td><input type="text" name="email" required="required" /></td>
+					</tr>
+					<tr>
+						<td>English CV<span class="required">*</span></td>
+						<td><input type="file" name="cv_en" required="required" /></td>
+					</tr>
+					<tr>
+						<td>English covering letter<span class="required">*</span></td>
+						<td><input type="file" name="lm_en" required="required" /></td>
+					</tr>
+					<tr>
+						<td colspan="2"><small><span class="required">*</span>
+								: required field</small></td>
+					</tr>
+					<tr>
+						<td colspan="2"><input type="submit" value="Send"></td>
+					</tr>
+				</table>
+			</form>
+			<!-- Fin du formulaire -->
+		</div>
+	</div>
+
+	<div class="block-job">
+		<div class="apply-button">
+			<div class="right">Job</div>
+			<h3>Senior Specialist Target and Planning</h3>
+		</div>
+		<div>
+			<p>
+				Corporate Division <strong>Purchasing</strong><br /> Division,
+				located in <strong>Shenyang/China</strong><br /> Employment – full
+				time
+			</p>
+			<h4>Key Responsibility</h4>
+			<ul>
+				<li>Setup of robust/harmonized process model for Purchasing
+					&amp; QMT</li>
+				<li>Development/Maintenance of Guidelines / Work instructions</li>
+				<li>Development/Implementation of commonly used tools and
+					methodologies</li>
+				<li>Internal communication of QMS and CCC certification policy
+					and approval process</li>
+				<li>Derivation of target system for Purchasing &amp; QMT plus
+					monitoring/reporting</li>
+				<li>Planning/ Monitoring/ Reporting of Invest / Budget</li>
+				<li>Steer purchasing and QMT pass the Internal and External
+					audit, i.e. QMS, CCC, ISO14001 &amp; OHSAS18001 &amp; Green label
+			</ul>
+			<h4>Qualification</h4>
+			<ul>
+				<li>Bachelor’s degree in Automotive, Economy or related field</li>
+				<li>Knowledge of mechanical engineering or related field</li>
+				<li>ERP system</li>
+				<li>Good understanding of business process</li>
+				<li>CCC certification and homologation</li>
+				<li>Familiar with MS Word/Excel/PowerPoint</li>
+				<li>Good command of written and spoken English</li>
+				<li>Experience of communication with Certification Centre</li>
+				<li>Knowledge of Automotive industry</li>
+				<li>Mature, responsible and result-oriented personality</li>
+				<li>Good communication and interpersonal skills with managers</li>
+				<li>Candidates with working experience in Quality Management</li>
+				<li>Work experience with: Automotive OEM, Audit of Quality
+					Management
+			</ul>
+			<!-- Formulaire pour postuler -->
+			<h5 class="apply-button">Apply</h5>
+			<form method="post" enctype="multipart/form-data"
+					action="/visitors/sendmail/en/" class="unwrapped">
+				*.doc and *.pdf files are accepted, max 500 Ko for each attachment.
+				{# L'identifiant indiquant à quelle adresse mail la candidature est envoyée, cf ressources du Forum #}
+				<input type="hidden" name="id" value="bmwsy" />
+				{# Nom de l'emploi, le même que dans le titre #}
+				<input type="hidden" name="jobname" value="Senior Specialist Target and Planning" />
+				{# Entreprise #}
+				<input type="hidden" name="company" value="BMW" />
+				<table class="noborder">
+					<tr>
+						<td>Family name<span class="required">*</span></td>
+						<td><input type="text" name="nom" required="required" /></td>
+					</tr>
+					<tr>
+						<td>First name<span class="required">*</span></td>
+						<td><input type="text" name="prenom" required="required" /></td>
+					</tr>
+					<tr>
+						<td>e-mail<span class="required">*</span></td>
+						<td><input type="text" name="email" required="required" /></td>
+					</tr>
+					<tr>
+						<td>English CV<span class="required">*</span></td>
+						<td><input type="file" name="cv_en" required="required" /></td>
+					</tr>
+					<tr>
+						<td>English covering letter<span class="required">*</span></td>
+						<td><input type="file" name="lm_en" required="required" /></td>
+					</tr>
+					<tr>
+						<td colspan="2"><small><span class="required">*</span>
+								: required field</small></td>
+					</tr>
+					<tr>
+						<td colspan="2"><input type="submit" value="Send"></td>
+					</tr>
+				</table>
+			</form>
+			<!-- Fin du formulaire -->
+		</div>
+	</div>
+
+	<div class="block-job">
+		<div class="apply-button">
+			<div class="right">Job</div>
+			<h3>Specialist Warehouse</h3>
+		</div>
+		<div>
+			<p>
+				Corporate Division <strong>R &amp; D</strong><br /> Division,
+				located in <strong>Shenyang/China</strong><br /> Employment – full
+				time
+			</p>
+			<h4>Tasks</h4>
+			<ul>
+				<li>The main task of the SPECIALIST WAREHOUSE is to coordinate
+					the BBT-E-6 warehouse and related tasks</li>
+				<li>Manage and track the warehouse inventory as well as
+					shipping and receiving of parts, tools and machinery as requested
+					by workshop manager</li>
+				<li>Handle, maintain and track all special tools and equipment
+					to keep workshop operations running at all times</li>
+				<li>Coordinate ordering of spare parts, fluids, etc.</li>
+			</ul>
+			<h4>Key Responsibility</h4>
+			<ul>
+				<li>Coordinate the BBT-E-6 warehouse and related tasks</li>
+				<li>Manage and track the warehouse inventory</li>
+				<li>Shipping and receiving of parts, tools and machinery</li>
+				<li>Handle, maintain and track all special tools and equipment
+				</li>
+				<li>Coordinate ordering of spare parts, fluids, etc
+			</ul>
+			<h4>Qualification</h4>
+			<ul>
+				<li>Technician</li>
+				<li>Analytical, honest, reliable, determined, ready,
+					independent and initiative</li>
+				<li>Strong communication skills and demonstrate ability to work
+					with others in a cross cultural setting</li>
+				<li>Good knowledge on shipping and handling procedures w</li>
+				<li>Basic technical understanding of cars and vehicle structure
+				</li>
+				<li>Electrical qualifications as stipulated by BMW AG (Level 3
+					, preferably higher) to be able to work on current hybrid and
+					electrical prototype vehicles</li>
+				<li>Work experience in an international environment, 1-3 years
+				</li>
+				<li>Experience in the automotive field, 1-3 years
+			</ul>
+			<!-- Formulaire pour postuler -->
+			<h5 class="apply-button">Apply</h5>
+			<form method="post" enctype="multipart/form-data"
+					action="/visitors/sendmail/en/" class="unwrapped">
+				*.doc and *.pdf files are accepted, max 500 Ko for each attachment.
+				{# L'identifiant indiquant à quelle adresse mail la candidature est envoyée, cf ressources du Forum #}
+				<input type="hidden" name="id" value="bmwsy" />
+				{# Nom de l'emploi, le même que dans le titre #}
+				<input type="hidden" name="jobname" value="Specialist Warehouse" />
+				{# Entreprise #}
+				<input type="hidden" name="company" value="BMW" />
+				<table class="noborder">
+					<tr>
+						<td>Family name<span class="required">*</span></td>
+						<td><input type="text" name="nom" required="required" /></td>
+					</tr>
+					<tr>
+						<td>First name<span class="required">*</span></td>
+						<td><input type="text" name="prenom" required="required" /></td>
+					</tr>
+					<tr>
+						<td>e-mail<span class="required">*</span></td>
+						<td><input type="text" name="email" required="required" /></td>
+					</tr>
+					<tr>
+						<td>English CV<span class="required">*</span></td>
+						<td><input type="file" name="cv_en" required="required" /></td>
+					</tr>
+					<tr>
+						<td>English covering letter<span class="required">*</span></td>
+						<td><input type="file" name="lm_en" required="required" /></td>
+					</tr>
+					<tr>
+						<td colspan="2"><small><span class="required">*</span>
+								: required field</small></td>
+					</tr>
+					<tr>
+						<td colspan="2"><input type="submit" value="Send"></td>
+					</tr>
+				</table>
+			</form>
+			<!-- Fin du formulaire -->
+		</div>
+	</div>
+
+	<div class="block-job">
+		<div class="apply-button">
+			<div class="right">Job</div>
+			<h3>Senior Specialist Document Management</h3>
+		</div>
+		<div>
+			<p>
+				Corporate Division <strong>R&amp;D </strong><br /> Division, located
+				in <strong>Shenyang/China</strong><br /> Employment – full time
+			</p>
+			<h4>Tasks</h4>
+			<p>Management all complete vehicle related documents for the
+				consistency to project decisions</p>
+			<h4>Key Responsibility</h4>
+			<ul>
+				<li>Manage all complete vehicle related documents</li>
+				<li>Creating and take responsibility for LOP lists of complete
+					vehicle relevant meetings ,like technique/engineering circle</li>
+				<li>Creating minutes of complete vehicle relevant meetings
+					(like technique/engineering circle)</li>
+				<li>Prepare and manage workshops and meetings, room booking,
+					agenda preparation. etc</li>
+				<li>Support the management of the department complete vehicle</li>
+				<li>Responsible for the white papers to complete vehicle
+					processes
+			</ul>
+			<h4>Qualification</h4>
+			<ul>
+				<li>University Degree in Engineering</li>
+				<li>Current vehicle technique</li>
+				<li>Strong communication skills and demonstrate ability to work
+					with others in a cross cultural setting</li>
+				<li>Languages skills: fluent English language knowledge</li>
+				<li>Analytical, honest, reliable, determined, ready ,
+					independent and initiative</li>
+				<li>Work experience in an international environment,1-3years</li>
+				<li>Profound knowledge in vehicle development
+					processes,1-3years
+			</ul>
+			<!-- Formulaire pour postuler -->
+			<h5 class="apply-button">Apply</h5>
+			<form method="post" enctype="multipart/form-data"
+					action="/visitors/sendmail/en/" class="unwrapped">
+				*.doc and *.pdf files are accepted, max 500 Ko for each attachment.
+				{# L'identifiant indiquant à quelle adresse mail la candidature est envoyée, cf ressources du Forum #}
+				<input type="hidden" name="id" value="bmwsy" />
+				{# Nom de l'emploi, le même que dans le titre #}
+				<input type="hidden" name="jobname" value="Senior Specialist Document Management" />
+				{# Entreprise #}
+				<input type="hidden" name="company" value="BMW" />
+				<table class="noborder">
+					<tr>
+						<td>Family name<span class="required">*</span></td>
+						<td><input type="text" name="nom" required="required" /></td>
+					</tr>
+					<tr>
+						<td>First name<span class="required">*</span></td>
+						<td><input type="text" name="prenom" required="required" /></td>
+					</tr>
+					<tr>
+						<td>e-mail<span class="required">*</span></td>
+						<td><input type="text" name="email" required="required" /></td>
+					</tr>
+					<tr>
+						<td>English CV<span class="required">*</span></td>
+						<td><input type="file" name="cv_en" required="required" /></td>
+					</tr>
+					<tr>
+						<td>English covering letter<span class="required">*</span></td>
+						<td><input type="file" name="lm_en" required="required" /></td>
+					</tr>
+					<tr>
+						<td colspan="2"><small><span class="required">*</span>
+								: required field</small></td>
+					</tr>
+					<tr>
+						<td colspan="2"><input type="submit" value="Send"></td>
+					</tr>
+				</table>
+			</form>
+			<!-- Fin du formulaire -->
+		</div>
+	</div>
+
+	<div class="block-job">
+		<div class="apply-button">
+			<div class="right">Job</div>
+			<h3>Senior Specialist DMS Key User (Sales / Service)</h3>
+		</div>
+		<div>
+			<p>
+				Corporate Division <strong>Sales/Aftersales</strong><br /> Division,
+				located in <strong>Beijing/China</strong><br /> Employment – full
+				time
+			</p>
+			<h4>Key Responsibility</h4>
+			<ul>
+				<li>DMS Autoline implementation:</li>
+				<li>Assess existing dealerships to determine their readiness
+					for Autoline implementation</li>
+				<li>Follow up the preparation of dealership for upcoming
+					Autoline implementation during the offsite period from assessment
+					to start of training</li>
+				<li>Quality assurance for training and Autoline configuration
+					during the onsite period</li>
+				<li>Go-live preparation and data takeover support during the
+					onsite period</li>
+				<li>Document and solve open issues during onsite period</li>
+				<li>Handover to support and follow-up of open issues which
+					remain from onsite period</li>
+				<li>DMS Autoline releases:</li>
+				<li>Consolidate the user requirements internally and introduce
+					them into the project</li>
+				<li>Write change requests (incl. test cases) and prioritize
+					them</li>
+				<li>Execute tests during the different test levels (unit,
+					module and integration test)</li>
+				<li>Update the user manual and training presentation for new
+					releases</li>
+				<li>Write additional communication material for new releases</li>
+				<li>Document available reports</li>
+				<li>DMS Autoline support:</li>
+				<li>Answer questions of dealers based on forwarded tickets from
+					the Dealer IT Helpdesk
+			</ul>
+			<h4>Qualification</h4>
+			<ul>
+				<li>Bachelor degree</li>
+				<li>5 years Automobile industry wholesale or retail experience
+				</li>
+				<li>5 years DMS Sales/ Parts module experience</li>
+				<li>Good understanding of Automobile industry Sales/ Parts
+					business processes</li>
+				<li>Good understanding of the DMS Autoline software, including
+					the ability to map business processes to the software</li>
+				<li>Good understanding of ITPM, especially the use of
+					checklists and reviews for quality assurance</li>
+				<li>Good knowledge of Microsoft Office software, especially
+					Word, Excel and PowerPoint</li>
+				<li>Excellent communication skills in written and spoken
+					Chinese and English</li>
+				<li>Good understanding of the change, release and configuration
+					management processes
+			</ul>
+			<!-- Formulaire pour postuler -->
+			<h5 class="apply-button">Apply</h5>
+			<form method="post" enctype="multipart/form-data"
+					action="/visitors/sendmail/en/" class="unwrapped">
+				*.doc and *.pdf files are accepted, max 500 Ko for each attachment.
+				{# L'identifiant indiquant à quelle adresse mail la candidature est envoyée, cf ressources du Forum #}
+				<input type="hidden" name="id" value="bmwbj" />
+				{# Nom de l'emploi, le même que dans le titre #}
+				<input type="hidden" name="jobname" value="Senior Specialist DMS Key User (Sales / Service)" />
+				{# Entreprise #}
+				<input type="hidden" name="company" value="BMW" />
+				<table class="noborder">
+					<tr>
+						<td>Family name<span class="required">*</span></td>
+						<td><input type="text" name="nom" required="required" /></td>
+					</tr>
+					<tr>
+						<td>First name<span class="required">*</span></td>
+						<td><input type="text" name="prenom" required="required" /></td>
+					</tr>
+					<tr>
+						<td>e-mail<span class="required">*</span></td>
+						<td><input type="text" name="email" required="required" /></td>
+					</tr>
+					<tr>
+						<td>English CV<span class="required">*</span></td>
+						<td><input type="file" name="cv_en" required="required" /></td>
+					</tr>
+					<tr>
+						<td>English covering letter<span class="required">*</span></td>
+						<td><input type="file" name="lm_en" required="required" /></td>
+					</tr>
+					<tr>
+						<td colspan="2"><small><span class="required">*</span>
+								: required field</small></td>
+					</tr>
+					<tr>
+						<td colspan="2"><input type="submit" value="Send"></td>
+					</tr>
+				</table>
+			</form>
+			<!-- Fin du formulaire -->
+		</div>
+	</div>
+</div>
+{% endblock %}{# content #}

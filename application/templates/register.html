@@ -1,0 +1,25 @@
+{% extends "base_exhibitors.html" %}
+
+{% from "_formhelpers.html" import render_field as render_field %}
+
+{% block html_title %}
+<title>Register</title>
+{% endblock html_title %}
+{% block content %}
+<h1>Register</h1>
+<form  method="post" action="{{ url_for('exhibitors_register') }}">
+  <fieldset>
+    {{ form.hidden_tag() }}
+    {{ render_field(form.username) }}
+    {{ render_field(form.password) }}
+    {{ render_field(form.password_confirm) }}
+    {{ render_field(form.email) }}
+    {{ render_field(form.entreprise) }}
+    <div>
+      <div>
+        <button type="submit" value="register">Submit</button>
+      </div>
+    </div>
+  </fieldset>
+</form>
+{% endblock content %}

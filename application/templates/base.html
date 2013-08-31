@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="shortcut icon" type="image/ico" href="/favicon.ico" />
+    <link rel="stylesheet"  href="/static/css/common.css" />
+    <!--[if lte IE 9]>
+	<link rel="stylesheet" type="text/css" media="screen" href="/static/stylesheets/all_ie.css"/>
+	<![endif]-->
+    <!--[if lte IE 8]>
+	<link rel="stylesheet" type="text/css" media="screen" href="/static/stylesheets/ie8.css"/>
+	<![endif]-->
+    <link rel="stylesheet" href="/static/css/sidebar.css" />
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+
+    {% block html_head %}{% endblock %}
+
+  </head>
+
+  <body>
+    <div id="outer-wrapper">
+
+
+      <div id="topbar-wrapper">
+
+	<div class="forum-counter-container">
+	  {#
+	  <div class="date">{% blocktrans %}<span id="jj">{{ remaining_days }}</span> d{% endblocktrans %}</div>
+	  <div class="time"><span id="hh">00</span>:<span id="mm">00</span>:<span id="ss">00</span></div>
+	  <div class="nowlabel">Now!</div>
+	  #}
+	</div>
+
+	<div class="logo">
+	  <a href="{{ url_for('home') }}"><img src="/static/img/ForumChine.jpg" alt="AFCP Logo"
+	  width="450px" height="45px" /></a>
+	</div><!--/.logo-->
+
+	<div class="links">
+
+	  <div class="page">
+	    {# <a href="{{ url_for('home') }}">{{ _("Home") }}</a> #}
+	    <a href="{{ url_for('visitors') }}">{{ _("Visitors") }}</a>
+	    <a  href="{{ url_for('exhibitors') }}">{{ _("Exhibitors") }}</a>
+	    <a href="{{ url_for('about')}}">{{ _('About') }}</a>
+	  </div>
+
+	  {% block language %}
+	  {% for lang in LANGUAGES %}
+	  <a href="{{ url_for('setlocale', locale=lang) }}">
+	    <img src="/static/img/lang_{{ lang }}.gif">
+	    </img>
+	  </a>
+	  {% endfor %}
+	  {% endblock %}
+
+	</div><!--/.links-->
+
+      </div><!--/#topbar-wrapper-->
+
+      {% block header %}FIXME: header block{% endblock %}
+
+
+      <div id="navbar-wrapper">
+	{% block navbar %}{% endblock %}
+      </div><!--/#navbar-wrapper-->
+
+      <div id="sidebar-and-content-wrapper" class="container">
+
+	{% block sidebar_and_content %}
+
+	<div id="sidebar-wrapper">
+	  {% block sidebar %}
+	  {% include "afcp/sidebar.html" %}
+	  {% endblock %}
+	</div><!--/#sidebar-wrapper-->
+
+	<div id="content-wrapper">
+	  <a id="top"></a>
+	  {% block content %}FIXME: content block{% endblock %}
+	  <div class="section-footer">
+	    <p class="hide"><a href="#top">{{ _("Back to top") }}</a></p>
+	  </div>
+	</div><!--/#content-wrapper-->
+
+	{% endblock %}{# sidebar_and_content #}
+
+      </div><!--/#sidebar-and-content-wrapper-->
+
+      <div id="footer-wrapper" class="container">
+
+	<a href="http://www.afcp-paristech.org" rel="external" target="_blank">AFCP</a> |
+	<a href="http://www.zhengzhong.net/" rel="external">Thanks ZhengZhong</a> |
+	<a href="http://www.afcp-paristech.org" rel="external">Made in afcpweb team</a><!--  |
+	<a href="http://validator.w3.org/check?uri=referer" rel="external">Valid XHTML 1.0!</a> |
+	<a href="http://jigsaw.w3.org/css-validator/check/referer" rel="external">Valid CSS!</a> -->
+
+      </div><!--/#footer-wrapper-->
+
+    </div><!--/#outer-wrapper-->
+    <script type="text/javascript" src="/static/js/functions.js"></script>
+
+  </body>
+
+</html>

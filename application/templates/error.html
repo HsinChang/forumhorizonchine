@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% comment %}
+<!--
+  The error page of the AFCP webapp.
+  
+  Created on 2008-11-17.
+  $Id: error.html 26 2009-08-04 22:06:00Z guolin.mobi $
+-->
+{% endcomment %}
+
+{# ---------------------------------------------------------------------------------------------- #}
+
+{% block html_head %}
+<title>Error...</title>
+{% endblock %}{# html_head #}
+
+{# ---------------------------------------------------------------------------------------------- #}
+
+{% block content %}
+
+<h1>Sorry, there seems to be an error...</h1>
+
+<div class="error message">
+  {{ error|escape }}
+</div>
+
+<div>
+  <a href="/afcp/">Return to AFCP home</a>
+</div>
+
+{% endblock %}{# content #}
+
+

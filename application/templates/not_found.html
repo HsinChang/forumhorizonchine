@@ -1,0 +1,32 @@
+{% extends "forum/en/base.html" %}
+{% comment %}
+<!--
+  The 404 not-found page of the AFCP webapp.
+  
+  Created on 2008-11-18.
+  $Id: not_found.html 26 2009-08-04 22:06:00Z guolin.mobi $
+-->
+{% endcomment %}
+
+{# ---------------------------------------------------------------------------------------------- #}
+
+{% block html_head %}
+<title>Not found in AFCP</title>
+{% endblock %}{# html_head #}
+
+{#------------------------------------------------------------------------------------------------#}
+
+{% block header %}
+{% endblock %}{# header #}
+
+{# ---------------------------------------------------------------------------------------------- #}
+
+{% block sidebar_and_content %}
+
+<h2>404 not-found</h2>
+
+<div class="error message">Sorry, the URL "{{ url }}" that you requested cannot be found.</div>
+
+{% endblock %}{# sidebar_and_content #}
+
+

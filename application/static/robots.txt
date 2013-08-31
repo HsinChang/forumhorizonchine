@@ -1,0 +1,17 @@
+# Copyright (C) 2008 ZHENG Zhong <heavyzheng nospam-at gmail D0T com>
+# - http://heavyz.blogspot.com/
+# - http://buggarden.blogspot.com/
+#
+# robots.txt for search engines.
+#
+# Created on 2008-10-31.
+# $Id: robots.txt 26 2009-08-04 22:06:00Z guolin.mobi $
+#
+
+# Exclude my personal data.
+
+User-agent: *
+#Disallow: /personal/
+#Disallow: /private/
+Disallow: /static/
+

@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+{% from "_formhelpers.html" import render_field as render_field %}
+
+{% block html_head %}
+
+{% block html_title %}FIXME: html_title{% endblock %}
+
+<link rel="stylesheet" type="text/css" media="screen" href="/static/css/sections.css"/>
+
+{% endblock %}{# html_head #}
+
+{% block header %}
+{% endblock %}{# header #}
+
+{% block content %}
+{% endblock %}{# content #}
+
+{% block sidebar %}
+{% set member = current_user %}
+<div class="sidebar-section">
+  <div class="title">Exhibitors area</div>
+  <div>
+    {% if member.is_authenticated() %}
+    welcome! {{ member.username }} <a href="{{ url_for('exhibitors_logout')}}">logout</a>
+    {% else %}
+    <form method="post" action="{{ url_for('exhibitors_login') }}">
+      <input name="username" type="text" class="input-small" placeholder="Username">
+      </input>
+      <input name="password" type="password" class="input-small" placeholder="Password">
+      </input>
+      <button type="submit" class="btn">Sign in</button>
+      <a href="{{ url_for('exhibitors_register') }}">
+	register
+      </a>
+    </form>
+
+    {% endif %}
+
+    <ul class="list">
+      {% if member.is_authenticated() %}
+      <li>
+	<a href="{{ url_for('exhibitors_jobs') }} ">Offres</a>
+      </li>
+      {% endif %}
+      <li {% if request.path == url_for('exhibitors_visitors')%}
+	class="current" {% endif %}>
+	<a href="{{ url_for('exhibitors_visitors')}}">Visitors</a>
+      </li>
+      <li {% if request.path == url_for('services')%}
+	class="current" {% endif %}><a href="{{ url_for('services')}}">Our services</a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="sidebar-section">
+	<div class="title">About AFCP</div>
+	<ul class="list">
+		<li><a href="http://www.afcp-paristech.org" rel="external" target="_blank">AFCP website</a></li>
+
+	</ul>
+</div>
+
+{% endblock %}{# sidebar #}

@@ -42,6 +42,19 @@
 
 	#}
 
+	{% for job in jobs %}
+	<div class="block-job">
+	  <div class="apply-button">
+	    <div class="right">{{ job.type }}</div>
+	    <h3>{{ job.title }}</h3>
+	  </div>
+	  <div>
+	    {{ job.content|safe }}
+	  </div>
+	</div>
+	{% else %}
+	<h>no job data in database</h>
+	{% endfor %}
 
 
 	<h2 id="jpm">Michelin</h2>

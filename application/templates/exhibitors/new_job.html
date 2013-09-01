@@ -16,7 +16,7 @@
 {% endblock html_title %}
 {% block content %}
 <h1>New Job</h1>
-<form id="new_job_form" method="post" action="{{ url_for('new_job')}}">
+<form id="new_job_form" method="post" action="{{ url_for('exhibitor.new_job')}}">
   <fieldset>
     {{ form.hidden_tag() }}
     {{ render_field(form.title) }}

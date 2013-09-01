@@ -22,6 +22,12 @@ app.jinja_env.globals['current_user'] = current_user
 #Babel
 babel = Babel(app)
 
+#register blueprints
+from visitor import visitor
+from exhibitor import exhibitor
+app.register_blueprint(visitor, url_prefix='/visitor')
+app.register_blueprint(exhibitor, url_prefix='/exhibitor')
+
 @babel.localeselector
 def get_locale():
     if 'locale' in session:

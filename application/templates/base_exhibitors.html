@@ -21,15 +21,15 @@
   <div class="title">Exhibitors area</div>
   <div>
     {% if member.is_authenticated() %}
-    welcome! {{ member.username }} <a href="{{ url_for('exhibitors_logout')}}">logout</a>
+    welcome! {{ member.username }} <a href="{{ url_for('exhibitor.logout')}}">logout</a>
     {% else %}
-    <form method="post" action="{{ url_for('exhibitors_login') }}">
+    <form method="post" action="{{ url_for('exhibitor.login') }}">
       <input name="username" type="text" class="input-small" placeholder="Username">
       </input>
       <input name="password" type="password" class="input-small" placeholder="Password">
       </input>
       <button type="submit" class="btn">Sign in</button>
-      <a href="{{ url_for('exhibitors_register') }}">
+      <a href="{{ url_for('exhibitor.register') }}">
 	register
       </a>
     </form>
@@ -39,15 +39,15 @@
     <ul class="list">
       {% if member.is_authenticated() %}
       <li>
-	<a href="{{ url_for('exhibitors_jobs') }} ">Offres</a>
+	<a href="{{ url_for('exhibitor.jobs') }} ">Offres</a>
       </li>
       {% endif %}
-      <li {% if request.path == url_for('exhibitors_visitors')%}
+      <li {% if request.path == url_for('exhibitor.visitors')%}
 	class="current" {% endif %}>
-	<a href="{{ url_for('exhibitors_visitors')}}">Visitors</a>
+	<a href="{{ url_for('exhibitor.visitors')}}">Visitors</a>
       </li>
-      <li {% if request.path == url_for('services')%}
-	class="current" {% endif %}><a href="{{ url_for('services')}}">Our services</a>
+      <li {% if request.path == url_for('exhibitor.services')%}
+	class="current" {% endif %}><a href="{{ url_for('exhibitor.services')}}">Our services</a>
       </li>
     </ul>
   </div>

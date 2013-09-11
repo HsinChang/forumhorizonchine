@@ -1,0 +1,49 @@
+{% extends "base_admin.html" %}
+
+{% block html_title %}
+<title>
+  All enterprises
+</title>
+{% endblock html_title %}
+{% block content %}
+<h1 id="">All enterprises</h1>
+<p>
+  <a class="button" href="{{ url_for('admin.new_enterprise') }}">New</a>
+</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Shortname</th>
+      <th>email</th>
+      <th>&nbsp;</th>
+      <th>&nbsp;</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for e in enterprises %}
+    <tr>
+      <th>{{ e.name }}</th>
+      <th>{{ e.shortname }}</th>
+      <th>{{ e.email }}</th>
+      <th>
+	<a href="{{ url_for('admin.edit_enterprise', keyurl=e.key.urlsafe()) }}">
+	  edit
+	</a>
+      </th>
+      <th>
+	<a href="{{ url_for('admin.delete_enterprise', keyurl=e.key.urlsafe()) }}">
+	  delete
+	</a>
+      </th>
+    </tr>
+    {% else %}
+    <tr>
+      <td colspan="5">no enterprise provided yet</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+{% endblock content %}

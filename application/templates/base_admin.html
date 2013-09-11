@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block html_head %}
+
+{% block html_title %}
+<title>
+  ADMIN
+</title>
+{% endblock html_title %}
+
+<link rel="stylesheet" type="text/css" media="screen" href="/static/css/sections.css"/>
+
+{% endblock html_head %}{# html_head #}
+
+{% block header %}
+{% endblock %}{# header #}
+
+{% block content %}
+<h1>ADMIN</h1>
+{% endblock %}{# content #}
+
+{% block sidebar %}
+{% set user = current_user %}
+
+<div class="sidebar-section">
+  <div class="title">Admin area</div>
+  <div>
+    {% if user.is_authenticated() and user.role == ROLES['ADMIN'] %}
+    welcome! {{ user.username }} <a href="{{ url_for('admin.logout')}}">logout</a>
+
+    <ul class="list">
+      <li>
+	<a href="{{ url_for('admin.users') }}">users</a>
+      </li>
+      <li>
+	<a href="{{ url_for('admin.jobs') }}">jobs</a>
+      </li>
+      <li>
+	<a href="{{ url_for('admin.enterprises') }}">enterprises</a>
+      </li>
+    </ul>
+    {% else %}
+    <form method="post" action="{{ url_for('admin.login') }}">
+      <input name="username" type="text" class="input-small" placeholder="Username">
+      </input>
+      <input name="password" type="password" class="input-small" placeholder="Password">
+      </input>
+      <button type="submit" class="btn">Sign in</button>
+    </form>
+    {% endif %}
+  </div>
+</div>
+{% endblock sidebar %}

@@ -1,0 +1,51 @@
+{% extends "base_admin.html" %}
+
+{% block html_title %}
+<title>
+  All jobs
+</title>
+{% endblock html_title %}
+{% block content %}
+<h1 id="">All Jobs</h1>
+<p>
+  <a class="button" href="{{ url_for('admin.new_job') }}">New</a>
+</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Enterprise</th>
+      <th>Type</th>
+      <th>Date</th>
+      <th>&nbsp;</th>
+      <th>&nbsp;</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for job in jobs %}
+    <tr>
+      <th>{{ job.title }}</th>
+      <th>{{ job.enterprise.get().name }}</th>
+      <th>{{ job.type }}</th>
+      <th>{{ job.date }}</th>
+      <th>
+	<a href="{{ url_for('admin.edit_job', keyurl=job.key.urlsafe()) }}">
+	  edit
+	</a>
+      </th>
+      <th>
+	<a href="{{ url_for('admin.delete_job', keyurl=job.key.urlsafe()) }}">
+	  delete
+	</a>
+      </th>
+    </tr>
+    {% else %}
+    <tr>
+      <td colspan="6">no job provided yet</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+{% endblock content %}

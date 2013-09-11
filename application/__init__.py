@@ -7,9 +7,11 @@ from flask import Flask, session, request
 from flask_debugtoolbar import DebugToolbarExtension
 from gae_mini_profiler import profiler, templatetags
 from werkzeug.debug import DebuggedApplication
+from models import UserModel, ROLES
+
 from flask_babel import Babel
 from flask_login import LoginManager, current_user
-from models import ExhibitorModel
+from flask_admin import Admin
 
 app = Flask('application')
 app.config.from_object('application.settings')
@@ -18,15 +20,18 @@ app.config.from_object('application.settings')
 app.jinja_env.add_extension('jinja2.ext.loopcontrols')
 app.jinja_env.globals['LANGUAGES'] = app.config['LANGUAGES']
 app.jinja_env.globals['current_user'] = current_user
-
-#Babel
-babel = Babel(app)
-
+app.jinja_env.globals['ROLES'] = ROLES
 #register blueprints
 from visitor import visitor
 from exhibitor import exhibitor
+from admin import admin, init_admin
+
 app.register_blueprint(visitor, url_prefix='/visitor')
 app.register_blueprint(exhibitor, url_prefix='/exhibitor')
+app.register_blueprint(admin, url_prefix='/admin')
+
+#Babel
+babel = Babel(app)
 
 @babel.localeselector
 def get_locale():
@@ -48,7 +53,7 @@ def load_user(userid):
     if userid == None:
         return None
     id = int(userid)
-    member = ExhibitorModel.get_by_id(id)
+    member = UserModel.get_by_id(id)
     return member
 
 
@@ -68,3 +73,5 @@ if app.debug:
 
 # GAE Mini Profiler (only enabled on dev server)
 app.wsgi_app = profiler.ProfilerWSGIMiddleware(app.wsgi_app)
+
+app.before_first_request(init_admin)

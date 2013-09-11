@@ -12,14 +12,15 @@ from flaskext import wtf
 from flaskext.wtf import validators
 from wtforms.ext.appengine.ndb import model_form
 
-from .models import ExhibitorModel
+from .models import UserModel
 
 def username_exist_check(form, field):
     """check if the username registered is already userd"""
     username = field.data
-    member = ExhibitorModel.query(ExhibitorModel.username==username).get()
-    if member:
+    user = UserModel.query(UserModel.username==username).get()
+    if user:
         raise validators.ValidationError('username exists, choose a different one!')
+
 
 class LoginForm(wtf.Form):
     """form userd for login"""
@@ -35,9 +36,17 @@ class RegisterForm(wtf.Form):
 #    first_name = wtf.TextField('First name', validators=[validators.InputRequired()])
 #    last_name = wtf.TextField('Last name', validators=[validators.InputRequired()])
     email = wtf.TextField('Email', validators=[validators.Email()])
-    entreprise = wtf.TextField('Entreprise', validators=[validators.InputRequired()])
+    company = wtf.TextField('Company', validators=[validators.InputRequired()])
+
 
 class JobForm(wtf.Form):
     title = wtf.TextField('Title', validators=[validators.InputRequired()])
     type = wtf.SelectField('Type', choices=[('job', 'job'), ('internship', 'internship')])
+    enterprise = wtf.SelectField('Enterprise',)
     content = wtf.TextAreaField('Content', validators=[validators.InputRequired()])
+
+
+class EnterpriseForm(wtf.Form):
+    name = wtf.TextField('Name', validators=[validators.InputRequired()])
+    shortname = wtf.TextField('Short name', validators=[validators.InputRequired()])
+    email = wtf.TextField('Email', validators=[validators.Email()])

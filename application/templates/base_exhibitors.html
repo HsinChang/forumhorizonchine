@@ -3,11 +3,11 @@
 
 {% block html_head %}
 
-{% block html_title %}FIXME: html_title{% endblock %}
+{% block html_title %}FIXME: html_title{% endblock html_title %}
 
 <link rel="stylesheet" type="text/css" media="screen" href="/static/css/sections.css"/>
 
-{% endblock %}{# html_head #}
+{% endblock html_head %}{# html_head #}
 
 {% block header %}
 {% endblock %}{# header #}
@@ -16,12 +16,12 @@
 {% endblock %}{# content #}
 
 {% block sidebar %}
-{% set member = current_user %}
+{% set user = current_user %}
 <div class="sidebar-section">
   <div class="title">Exhibitors area</div>
   <div>
-    {% if member.is_authenticated() %}
-    welcome! {{ member.username }} <a href="{{ url_for('exhibitor.logout')}}">logout</a>
+    {% if user.is_authenticated() %}
+    welcome! {{ user.username }} <a href="{{ url_for('exhibitor.logout')}}">logout</a>
     {% else %}
     <form method="post" action="{{ url_for('exhibitor.login') }}">
       <input name="username" type="text" class="input-small" placeholder="Username">
@@ -33,7 +33,6 @@
 	register
       </a>
     </form>
-
     {% endif %}
 
     <ul class="list">

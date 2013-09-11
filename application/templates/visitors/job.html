@@ -50,6 +50,50 @@
 	  </div>
 	  <div>
 	    {{ job.content|safe }}
+
+	    <!-- Formulaire pour postuler -->
+	    <h5 class="apply-button">Apply</h5>
+	    <form method="post" enctype="multipart/form-data"
+		  action="/visitors/sendmail/en/" class="unwrapped">
+	      *.doc and *.pdf files are accepted, max 500 Ko for each attachment.
+	      {# L'identifiant indiquant à quelle adresse mail la candidature est envoyée, cf ressources du Forum #}
+	      <input type="hidden" name="id" value="michelin" />
+	      {# Nom de l'emploi, le même que dans le titre #}
+	      <input type="hidden" name="jobname" value="{{ job.title }}" />
+	      {# Entreprise #}
+	      <input type="hidden" name="company" value="{{ job.company}}" />
+	      <table class="noborder">
+		<tr>
+		  <td>Family name<span class="required">*</span></td>
+		  <td><input type="text" name="nom" required="required" /></td>
+		</tr>
+		<tr>
+		  <td>First name<span class="required">*</span></td>
+		  <td><input type="text" name="prenom" required="required" /></td>
+		</tr>
+		<tr>
+		  <td>e-mail<span class="required">*</span></td>
+		  <td><input type="text" name="email" required="required" /></td>
+		</tr>
+		<tr>
+		  <td>CV<span class="required">*</span></td>
+		  <td><input type="file" name="cv" required="required" /></td>
+		</tr>
+		<tr>
+		  <td>Covering letter<span class="required">*</span></td>
+		  <td><input type="file" name="lm" required="required" /></td>
+		</tr>
+		<tr>
+		  <td colspan="2"><small><span class="required">*</span>
+		  : required field</small></td>
+		</tr>
+		<tr>
+		  <td colspan="2"><input type="submit" value="Send"></input>
+		  </td>
+		</tr>
+	      </table>
+	    </form>
+
 	  </div>
 	</div>
 	{% else %}

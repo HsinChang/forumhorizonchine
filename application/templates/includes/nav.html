@@ -1,35 +1,32 @@
-<div class="navbar navbar-inverse navbar-fixed-top">
-    <div class="navbar-inner">
-        <div class="container">
-            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </a>
-            <a class="brand" href="/">Flask on App Engine</a>
-            <div class="nav-collapse">
-                <ul class="nav">
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            Dropdown Menu
-                            <b class="caret"></b>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#">Item One</a></li>
-                            <li><a href="#">Item Two</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="https://developers.google.com/appengine/docs/python/python27/using27">App Engine docs</a>
-                    </li>
-                    <li>
-                        <a href="http://flask.pocoo.org/">Flask docs</a>
-                    </li>
-                    <li>
-                        <a href="http://twitter.github.com/bootstrap">Bootstrap docs</a>
-                    </li>
-                </ul>
-            </div><!--/.nav-collapse -->
-        </div><!-- /.navbar .container -->
-    </div><!-- /.navbar-inner -->
-</div><!-- /navbar -->
+<div class="forum-counter-container">
+  {#
+  <div class="date">{% blocktrans %}<span id="jj">{{ remaining_days }}</span> d{% endblocktrans %}</div>
+  <div class="time"><span id="hh">00</span>:<span id="mm">00</span>:<span id="ss">00</span></div>
+  <div class="nowlabel">Now!</div>
+  #}
+</div>
+
+<div class="logo">
+  <a href="{{ url_for('home') }}"><img src="/static/img/ForumChine.jpg" alt="AFCP Logo"
+  width="450px" height="45px" /></a>
+</div><!--/.logo-->
+
+<div class="links">
+
+  <div class="page">
+    {# <a href="{{ url_for('home') }}">{{ _("Home") }}</a> #}
+    <a href="{{ url_for('visitor.index') }}">{{ _("Visitors") }}</a>
+    <a  href="{{ url_for('exhibitor.index') }}">{{ _("Exhibitors") }}</a>
+    <a href="{{ url_for('about')}}">{{ _('About') }}</a>
+  </div>
+
+  {% block language %}
+  {% for lang in LANGUAGES %}
+  <a href="{{ url_for('setlocale', locale=lang) }}">
+    <img src="/static/img/lang_{{ lang }}.gif">
+    </img>
+  </a>
+  {% endfor %}
+  {% endblock %}
+
+</div><!--/.links-->

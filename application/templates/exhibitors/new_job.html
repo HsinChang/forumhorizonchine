@@ -1,12 +1,9 @@
 {% extends "base_exhibitors.html" %}
 
 {% from "_formhelpers.html" import render_field as render_field %}
-{% block header %}
-<link rel="stylesheet" href="/static/aloha/css/aloha.css" type="text/css"/>
-<script src="/static/aloha/lib/require.js"></script>
-<script src="/static/aloha/lib/aloha.js"
-	data-aloha-plugins="common/ui,common/format,common/highlighteditables,common/link"></script>
 
+{% block header %}
+{% include "includes/aloha.html" %}
 {% endblock header %}
 
 {% block html_title %}
@@ -14,12 +11,14 @@
   new job
 </title>
 {% endblock html_title %}
+
 {% block content %}
 <h1>New Job</h1>
-<form id="new_job_form" method="post" action="{{ url_for('exhibitor.new_job')}}">
+<form id="job_form" method="post" action="{{ url_for('exhibitor.new_job') }}">
   <fieldset>
     {{ form.hidden_tag() }}
     {{ render_field(form.title) }}
+    {{ render_field(form.company) }}
     {{ render_field(form.type) }}
     {{ render_field(form.content, id='job_content', default='add your job discrition here') }}
   </fieldset>
@@ -30,7 +29,7 @@
   Aloha.ready( function() {
   Aloha.jQuery('#job_content').aloha();
 
-  jQuery('#new_job_form').submit(function(){
+  jQuery('#job_form').submit(function(){
   /*
   Before the form is submitted, we unload aloha and store the contents of the
   aloha editable to the textarea.

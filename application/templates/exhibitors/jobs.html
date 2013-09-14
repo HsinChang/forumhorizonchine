@@ -1,0 +1,79 @@
+{% extends "base_exhibitors.html" %}
+
+{% block html_title %}
+<title>
+  your offres
+</title>
+{% endblock html_title %}
+{% block content %}
+<h1 id="">All Offres</h1>
+<p>
+  <a class="button" href="{{ url_for('exhibitor.new_job') }}">New</a>
+</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Company</th>
+      <th>Type</th>
+      <th>Date</th>
+      <th>&nbsp;</th>
+      <th>&nbsp;</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for job in jobs %}
+    <tr>
+      <th>{{ job.title }}</th>
+      <th>{{ job.company }}</th>
+      <th>{{ job.type }}</th>
+      <th>{{ job.date }}</th>
+      <th>
+	<a href="{{ url_for('exhibitor.edit_job', job_id=job.key.id()) }}">
+	  edit
+	</a>
+      </th>
+      <th>
+	<a href="{{ url_for('exhibitor.delete_job', job_id=job.key.id()) }}">
+	  delete
+	</a>
+      </th>
+    </tr>
+    {% else %}
+    <tr>
+      <td colspan="6">no job provided yet</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{#
+<div class="section job">
+  {% for job in jobs %}
+  <div class="block-job">
+    <div class="apply-button">
+      <div class="right">
+      </div>
+      <h3>
+	{{ job.title }}
+      </h3>
+      <span>
+	{{ job.type }}
+      </span>
+
+      <a href="{{ url_for('exhibitor.delete_job')}}">
+	delete
+      </a>
+    </div>
+    <div>
+      {{ job.content|safe }}
+    </div>
+  </div>
+  {% else %}
+  <h3>
+
+  </h3>
+  {% endfor %}
+</div>
+#}
+{% endblock content %}

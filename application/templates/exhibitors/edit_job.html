@@ -1,0 +1,38 @@
+{% extends "base_exhibitors.html" %}
+{% from "_formhelpers.html" import render_field as render_field %}
+
+{% block header %}
+{% include "includes/aloha.html" %}
+{% endblock header %}
+
+{% block html_title %}
+<title>Edit Job</title>
+{% endblock html_title %}
+
+{% block content %}
+<h1>Edit Job</h1>
+<form id="job_form" method="post" action="{{ url_for('exhibitor.edit_job',job_id=job.key.id() )}}">
+  <fieldset>
+    {{ form.hidden_tag() }}
+    {{ render_field(form.title) }}
+    {{ render_field(form.company) }}
+    {{ render_field(form.type) }}
+    {{ render_field(form.content, id='job_content') }}
+  </fieldset>
+  <input type="submit" value="publish">
+  </input>
+</form>
+<script type="text/javascript">
+  Aloha.ready( function() {
+  Aloha.jQuery('#job_content').aloha();
+
+  jQuery('#job_form').submit(function(){
+  /*
+  Before the form is submitted, we unload aloha and store the contents of the
+  aloha editable to the textarea.
+  */
+  jQuery('#job_content').mahalo();
+  });
+  });
+</script>
+{% endblock content %}

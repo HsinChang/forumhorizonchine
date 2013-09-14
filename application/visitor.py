@@ -1,5 +1,9 @@
-from flask import Blueprint, render_template, abort, redirect, url_for
-from models import JobModel
+from flask import Blueprint, render_template, redirect, url_for, request, flash
+from models import JobModel, EnterpriseModel
+from flask_mail import Message
+from application import app
+from google.appengine.api import mail
+
 visitor = Blueprint('visitor', __name__)
 
 #visitors
@@ -18,8 +22,14 @@ def exhibitors():
 
 @visitor.route('/job')
 def job():
+    grouped_jobs = {}
     jobs = JobModel.query()
-    return render_template('visitors/job.html', jobs=jobs)
+    for job in jobs:
+        if job.enterprise in grouped_jobs:
+            grouped_jobs[job.enterprise].append(job)
+        else:
+            grouped_jobs[job.enterprise] = [job]
+    return render_template('visitors/job.html', grouped_jobs=grouped_jobs)
 
 @visitor.route('/workpermit')
 def workpermit():
@@ -28,3 +38,20 @@ def workpermit():
 @visitor.route('/')
 def index():
     return redirect(url_for('visitor.program'))
+
+@visitor.route('/apply', methods=['POST'])
+def apply():
+    """
+    """
+    email_enterprise = request.form['email.to']
+    jobname = request.form['jobname']
+    enterprise = request.form['enterprise']
+    first_name = request.form['firstname']
+    last_name = request.form['lastname']
+    email = request.form['email']
+    cv = request.files['cv']
+    lm = request.files['lm']
+    mail.send_mail('lutianming1005@gmail.com', 'lutianming1005@hotmail.com', subject='apply '+jobname,
+                   body='test ' + first_name + ' ' + last_name, attachments=[('cv', cv.read()), ('lm', lm.read())])
+    flash('mail sent')
+    return redirect(url_for('visitor.job'))

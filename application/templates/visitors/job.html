@@ -42,6 +42,9 @@
 
 	#}
 
+	{% for key, jobs in grouped_jobs.iteritems() %}
+	{% set enterprise = key.get() %}
+	<h2 id="jpm">{{ enterprise.name }}</h2>
 	{% for job in jobs %}
 	<div class="block-job">
 	  <div class="apply-button">
@@ -54,22 +57,22 @@
 	    <!-- Formulaire pour postuler -->
 	    <h5 class="apply-button">Apply</h5>
 	    <form method="post" enctype="multipart/form-data"
-		  action="/visitors/sendmail/en/" class="unwrapped">
+		  action="{{ url_for('visitor.apply') }}" class="unwrapped">
 	      *.doc and *.pdf files are accepted, max 500 Ko for each attachment.
 	      {# L'identifiant indiquant à quelle adresse mail la candidature est envoyée, cf ressources du Forum #}
-	      <input type="hidden" name="id" value="michelin" />
+	      <input type="hidden" name="email.to" value="{{ enterprise.email }}" />
 	      {# Nom de l'emploi, le même que dans le titre #}
 	      <input type="hidden" name="jobname" value="{{ job.title }}" />
 	      {# Entreprise #}
-	      <input type="hidden" name="company" value="{{ job.company}}" />
+	      <input type="hidden" name="enterprise" value="{{ enterprise.name }}" />
 	      <table class="noborder">
 		<tr>
-		  <td>Family name<span class="required">*</span></td>
-		  <td><input type="text" name="nom" required="required" /></td>
+		  <td>First name<span class="required">*</span></td>
+		  <td><input type="text" name="firstname" required="required" /></td>
 		</tr>
 		<tr>
-		  <td>First name<span class="required">*</span></td>
-		  <td><input type="text" name="prenom" required="required" /></td>
+		  <td>Last name<span class="required">*</span></td>
+		  <td><input type="text" name="lastname" required="required" /></td>
 		</tr>
 		<tr>
 		  <td>e-mail<span class="required">*</span></td>
@@ -96,6 +99,8 @@
 
 	  </div>
 	</div>
+	{% endfor %}
+
 	{% else %}
 	<h>no job data in database</h>
 	{% endfor %}

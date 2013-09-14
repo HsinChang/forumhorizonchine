@@ -12,7 +12,7 @@ from flaskext import wtf
 from flaskext.wtf import validators
 from wtforms.ext.appengine.ndb import model_form
 
-from .models import UserModel
+from .models import UserModel, EnterpriseModel
 
 def username_exist_check(form, field):
     """check if the username registered is already userd"""
@@ -21,6 +21,11 @@ def username_exist_check(form, field):
     if user:
         raise validators.ValidationError('username exists, choose a different one!')
 
+def enterprise_exist_check(form, field):
+    name = field.data
+    enterprise = EnterpriseModel.query(EnterpriseModel.name==name).get()
+    if enterprise:
+        raise validators.ValidationError('enterprise exists, you don\'t need to create it again!')
 
 class LoginForm(wtf.Form):
     """form userd for login"""
@@ -47,6 +52,6 @@ class JobForm(wtf.Form):
 
 
 class EnterpriseForm(wtf.Form):
-    name = wtf.TextField('Name', validators=[validators.InputRequired()])
+    name = wtf.TextField('Name', validators=[validators.InputRequired(), enterprise_exist_check])
     shortname = wtf.TextField('Short name', validators=[validators.InputRequired()])
     email = wtf.TextField('Email', validators=[validators.Email()])

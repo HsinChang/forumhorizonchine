@@ -6,6 +6,8 @@
     <tr>
       <th>Username</th>
       <th>role</th>
+      <th>&nbsp</th>
+      <th>&nbsp</th>
     </tr>
   </thead>
   <tbody>
@@ -13,10 +15,18 @@
     <tr>
       <th>{{ user.username}}</th>
       <th>{{ user.role }}</th>
+      <th>
+	<a href="{{ url_for('admin.edit_user', keyurl=user.key.urlsafe()) }}">edit</a>
+      </th>
+      {% if user.role != 'admin' %}
+      <th><a href="{{ url_for('admin.delete_user', keyurl=user.key.urlsafe()) }}) ">delete</a></th>
+      {% else %}
+      <th>&nbsp</th>
+      {% endif %}
     </tr>
     {% else %}
     <tr>
-      <th colspan="2">no user</th>
+      <th colspan="4">no user</th>
     </tr>
     {% endfor %}
   </tbody>

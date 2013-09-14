@@ -30,6 +30,7 @@ def login():
     return redirect(url_for('admin.index'))
 
 @admin.route('/logout', methods=['GET', 'POST'])
+@admin_required
 def logout():
     """
     logout admin
@@ -38,6 +39,7 @@ def logout():
     return redirect(url_for('admin.index'))
 
 @admin.route('/users')
+@admin_required
 def users():
     """
     user management
@@ -45,7 +47,36 @@ def users():
     users = UserModel.query()
     return render_template('admin/users.html', users=users)
 
+@admin.route('/edit_user/<keyurl>', methods=['GET', 'POST'])
+@admin_required
+def edit_user(keyurl):
+    """
+
+    Arguments:
+    - `keyurl`:
+    """
+    flash('TODO')
+    return redirect(url_for('admin.users'))
+
+@admin.route('/delete_user/<keyurl>', methods=['GET', 'POST'])
+@admin_required
+def delete_user(keyurl):
+    """
+
+    Arguments:
+    - `keyurl`:
+    """
+    key = ndb.Key(urlsafe=keyurl)
+    user = key.get()
+    if user and user.role != 'admin':
+        user.delete()
+    else:
+        flash('delete failed')
+    redirect(url_for('amdin.users'))
+
+
 @admin.route('/enterprises')
+@admin_required
 def enterprises():
     """
     """
@@ -53,6 +84,7 @@ def enterprises():
     return render_template('admin/enterprises.html', enterprises=enterprises)
 
 @admin.route('/new_enterprise', methods=['GET', 'POST'])
+@admin_required
 def new_enterprise():
     """
     """
@@ -71,6 +103,7 @@ def new_enterprise():
     return render_template('admin/new_enterprise.html', form=form)
 
 @admin.route('/edit_enterprise/<keyurl>', methods=['GET', 'POST'])
+@admin_required
 def edit_enterprise(keyurl):
     key = ndb.Key(urlsafe=keyurl)
     e = key.get()
@@ -91,6 +124,7 @@ def edit_enterprise(keyurl):
 
 
 @admin.route('/delete_enterprise/<keyurl>')
+@admin_required
 def delete_enterprise(keyurl):
     """
 
@@ -110,6 +144,7 @@ def delete_enterprise(keyurl):
 
 
 @admin.route('/jobs')
+@admin_required
 def jobs():
     """
     all jobs
@@ -118,6 +153,7 @@ def jobs():
     return render_template('admin/jobs.html', jobs=jobs)
 
 @admin.route('/new_job', methods=['GET', 'POST'])
+@admin_required
 def new_job():
     """
     create new job infos
@@ -143,6 +179,7 @@ def new_job():
 
 
 @admin.route('/edit_job/<keyurl>', methods=['GET', 'POST'])
+@admin_required
 def edit_job(keyurl):
     key = ndb.Key(urlsafe=keyurl)
     job = key.get()
@@ -166,6 +203,7 @@ def edit_job(keyurl):
 
 
 @admin.route('/delete_job/<keyurl>')
+@admin_required
 def delete_job(keyurl):
     """
 

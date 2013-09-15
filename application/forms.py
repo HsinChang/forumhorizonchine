@@ -47,11 +47,15 @@ class RegisterForm(wtf.Form):
 class JobForm(wtf.Form):
     title = wtf.TextField('Title', validators=[validators.InputRequired()])
     type = wtf.SelectField('Type', choices=[('job', 'job'), ('internship', 'internship')])
-    enterprise = wtf.SelectField('Enterprise',)
+    enterprise_mail = wtf.SelectField('Enterprise_Mail',)
     content = wtf.TextAreaField('Content', validators=[validators.InputRequired()])
 
 
 class EnterpriseForm(wtf.Form):
     name = wtf.TextField('Name', validators=[validators.InputRequired(), enterprise_exist_check])
     shortname = wtf.TextField('Short name', validators=[validators.InputRequired()])
+    #at lest one email
+    email = wtf.TextField('Email', validators=[validators.Email()])
+
+class EmailForm(wtf.Form):
     email = wtf.TextField('Email', validators=[validators.Email()])

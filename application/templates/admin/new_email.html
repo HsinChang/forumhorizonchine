@@ -1,0 +1,24 @@
+{% extends "base_admin.html" %}
+
+{% from "_formhelpers.html" import render_field as render_field %}
+
+{% block header %}
+{% endblock header %}
+
+{% block html_title %}
+<title>
+  new email
+</title>
+{% endblock html_title %}
+
+{% block content %}
+<h1>New Email</h1>
+<form method="post" action="{{ url_for('admin.new_email', keyurl=keyurl) }}">
+  <fieldset>
+    {{ form.hidden_tag() }}
+    {{ render_field(form.email) }}
+  </fieldset>
+  <input type="submit" value="Save">
+  </input>
+</form>
+{% endblock content %}

@@ -18,9 +18,40 @@
     {{ form.hidden_tag() }}
     {{ render_field(form.name) }}
     {{ render_field(form.shortname) }}
-    {{ render_field(form.email) }}
   </fieldset>
   <input type="submit" value="Save">
   </input>
 </form>
+
+<h3>Emails
+</h3>
+<p>
+  <a href="{{ url_for('admin.new_email', keyurl=keyurl)}}">add new email</a>
+</p>
+<table>
+  <thead>
+    <tr>
+      <th>email</th>
+      <th>&nbsp</th>
+      <th>&nbsp</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for email in emails %}
+    <tr>
+      <th>{{ email.email }}</th>
+      <th>
+	<a href="url_for('admin.edit_email', keyurl=email.key.urlsafe())">edit</a>
+      </th>
+      <th>
+	<a href="url_for('admin.delete_email', keyurl=email.key.urlsafe())">delete</a>
+      </th>
+    </tr>
+    {% else %}
+    <tr>
+      <td colspan="3">no email</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
 {% endblock content %}

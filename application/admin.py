@@ -7,8 +7,8 @@
 from google.appengine.runtime.apiproxy_errors import CapabilityDisabledError
 from google.appengine.ext import ndb
 from flask import Blueprint, render_template, redirect, url_for, request, flash
-from forms import RegisterForm, JobForm, EnterpriseForm
-from models import UserModel, JobModel, ROLES, EnterpriseModel
+from forms import RegisterForm, JobForm, EnterpriseForm, EmailForm
+from models import UserModel, JobModel, ROLES, EnterpriseModel, EmailModel
 from decorators import admin_required
 from application import app
 
@@ -93,14 +93,19 @@ def new_enterprise():
         e = EnterpriseModel(
             name = form.name.data,
             shortname = form.shortname.data,
-            email = form.email.data
         )
         try:
             e.put()
-            return redirect(url_for('admin.enterprises'))
+            email = EmailModel(
+                enterprise = e.key,
+                email = form.email.data
+            )
+            email.put()
+            return redirect(url_for('admin.edit_enterprise', keyurl=e.key.urlsafe()))
         except CapabilityDisabledError:
             flash('error')
     return render_template('admin/new_enterprise.html', form=form)
+
 
 @admin.route('/edit_enterprise/<keyurl>', methods=['GET', 'POST'])
 @admin_required
@@ -110,8 +115,9 @@ def edit_enterprise(keyurl):
     if not e:
         flash(_('no such enterprise'))
         return redirect(url_for('admin.enterprises'))
+    emails = EmailModel.query(EmailModel.enterprise==e.key)
     form = EnterpriseForm(request.form, obj=e)
-    if request.method == 'POST' and request.validate():
+    if request.method == 'POST' and form.validate():
             e.name = form.name.data
             e.shortname = form.shortname.data
             e.email = form.email.data
@@ -120,7 +126,7 @@ def edit_enterprise(keyurl):
                 return redirect(url_for('admin.enterprises'))
             except CapabilityDisabledError:
                 flash('error')
-    return render_template('admin/edit_enterprise.html', form=form, keyurl=keyurl)
+    return render_template('admin/edit_enterprise.html', form=form, keyurl=keyurl, emails=emails)
 
 
 @admin.route('/delete_enterprise/<keyurl>')
@@ -136,11 +142,70 @@ def delete_enterprise(keyurl):
     if not e:
         flash(_('no such enterprise'))
         return redirect(url_for('admin.enterprises'))
+    emails = EmailModel.query(EmailModel.enterprise==key)
+    keys = [e.key for e in emails]
+
     try:
+        ndb.delete_multi(keys)
         e.key.delete()
     except CapabilityDisabledError:
         flash(_('fail to delete'))
     return redirect(url_for('admin.enterprises'))
+
+
+@admin.route('/new_email/<keyurl>', methods=['GET', 'POST'])
+@admin_required
+def new_email(keyurl):
+    """
+    """
+    key = ndb.Key(urlsafe=keyurl)
+    form = EmailForm(request.form)
+    if request.method == 'POST' and form.validate():
+        email = EmailModel(
+            enterprise = key,
+            email = form.email.data
+        )
+        try:
+            email.put()
+            return redirect(url_for('admin.edit_enterprise', keyurl=keyurl))
+        except CapabilityDisabledError:
+            flash('save error')
+    return render_template('admin/new_email.html', form=form, keyurl=keyurl)
+
+
+@admin.route('/edit_email/<keyurl>', methods=['GET', 'POST'])
+@admin_required
+def edit_mail(keyurl):
+    email = ndb.Key(keyurl).get()
+    if not email:
+        flash('no such email')
+        return redirect(url_for('admin.enterprises'))
+    form = EmailForm(request.form)
+    if request.method == 'POST' and form.validate():
+        email.email = form.email.data
+        try:
+            email.put()
+            return redirect(url_for('admin.edit_enterprise', keyurl=email.enterprise))
+        except CapabilityDisabledError:
+            flash('save error')
+    return render_template('admin.edit_email.html', form=form, keyurl=keyurl)
+
+
+@admin.route('/delete_email/<keyurl>', methods=['POST'])
+@admin_required
+def delete_email(keyurl):
+    """
+
+    Arguments:
+    - `keyurl`:
+    """
+    email = ndb.Key(urlsafe=keyurl)
+    if not email:
+        flash('no such email')
+        return redirect(url_for('admin.enterprises'))
+    enterprise = email.enterprise
+    email.key.delete()
+    return redirect(url_for('admin.edit_enterprise', keyurl=enterpris))
 
 
 @admin.route('/jobs')
@@ -159,14 +224,18 @@ def new_job():
     create new job infos
     """
     form = JobForm(request.form)
-    enterprises = EnterpriseModel.query()
-    form.enterprise.choices = [(e.key.urlsafe(), e.name) for e in enterprises]
+    mails = EmailModel.query()
+
+    form.enterprise_mail.choices = [(mail.key.urlsafe(), mail.enterprise.get().name + ' -- ' + mail.email) for mail in mails]
     if request.method == 'POST' and form.validate():
         user = flask_login.current_user
+        mail = ndb.Key(urlsafe=form.enterprise_mail.data)
+        enterprise = mail.get().enterprise
         job = JobModel(
             title = form.title.data,
             type = form.type.data,
-            enterprise = ndb.Key(urlsafe=form.enterprise.data),
+            enterprise = enterprise,
+            enterprise_mail = mail,
             content = form.content.data,
        #     poster = user.key
         )

@@ -11,6 +11,9 @@ Use Flask framework to rewrite [forumhorizonchine](http://code.google.com/p/foru
 If you use Eclipse to develop python, use the plugin of [pydev](http://pydev.org/). I know you can install them without my guide:)
 
 ##Lib
++ Flask-login
++ Flask-babel
++ Flask-wtf
 All the required Python libs are included in the /lib folder. You don't need to install them by yourself. But if you use Eclipse and Pydev, you should add them to the path of Python Libraries. Try *Window > Preferences > PyDev > Interpreter - Python > Libraries*
 
 -------

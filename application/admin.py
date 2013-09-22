@@ -256,12 +256,15 @@ def edit_job(keyurl):
         flash(_('no such job'))
         return redirect(url_for('admin.jobs'))
     form = JobForm(request.form, obj=job)
-    enterprises = EnterpriseModel.query()
-    form.enterprise.choices = [(e.key.urlsafe(), e.name) for e in enterprises]
+
+    mails = EmailModel.query()
+    form.enterprise_mail.choices = [(mail.key.urlsafe(), mail.enterprise.get().name + ' -- ' + mail.email) for mail in mails]
     if request.method == 'POST' and form.validate():
             job.title = form.title.data
             job.type = form.type.data
-            job.enterprise = ndb.Key(urlsafe=form.enterprise.data)
+            mail = ndb.Key(urlsafe=form.enterprise_mail.data)
+            job.enterprise_mail = mail
+            job.enterprise = mail.get().enterprise
             job.content = form.content.data
             try:
                 job.put()

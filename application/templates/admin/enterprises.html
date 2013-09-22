@@ -16,7 +16,6 @@
     <tr>
       <th>Name</th>
       <th>Shortname</th>
-      <th>email</th>
       <th>&nbsp;</th>
       <th>&nbsp;</th>
     </tr>
@@ -26,7 +25,6 @@
     <tr>
       <th>{{ e.name }}</th>
       <th>{{ e.shortname }}</th>
-      <th>{{ e.email }}</th>
       <th>
 	<a href="{{ url_for('admin.edit_enterprise', keyurl=e.key.urlsafe()) }}">
 	  edit

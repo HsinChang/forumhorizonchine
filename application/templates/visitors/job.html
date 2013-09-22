@@ -29,22 +29,9 @@
 <div class="section job">
 	<h1>{{ _('Jobs opportunities') }}</h1>
 
-	{#
-	<div class="info">This page displays the job offers from
-		companies at China Horizon Forum. Offers are not available yet. Please
-		come back regularly to check whether opportunities are available.</div>
-		#}
-	{#
-	<h2>Schneider Electric</h2>
-
-	<h3><a target="_blank"
-				href="http://www.schneider-electric.com/sites/corporate/en/careers/your-career/students-and-recent-graduates/international-recruitment.page">International recruitment programme</a></h3>
-
-	#}
-
 	{% for key, jobs in grouped_jobs.iteritems() %}
 	{% set enterprise = key.get() %}
-	<h2 id="jpm">{{ enterprise.name }}</h2>
+	<h2 id="{{ enterprise.shortname }}">{{ enterprise.name }}</h2>
 	{% for job in jobs %}
 	<div class="block-job">
 	  <div class="apply-button">

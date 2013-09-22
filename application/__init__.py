@@ -11,7 +11,7 @@ from models import UserModel, ROLES
 
 from flask_babel import Babel
 from flask_login import LoginManager, current_user
-from flask_admin import Admin
+from flask_mail import Mail
 
 app = Flask('application')
 app.config.from_object('application.settings')
@@ -21,14 +21,7 @@ app.jinja_env.add_extension('jinja2.ext.loopcontrols')
 app.jinja_env.globals['LANGUAGES'] = app.config['LANGUAGES']
 app.jinja_env.globals['current_user'] = current_user
 app.jinja_env.globals['ROLES'] = ROLES
-#register blueprints
-from visitor import visitor
-from exhibitor import exhibitor
-from admin import admin, init_admin
 
-app.register_blueprint(visitor, url_prefix='/visitor')
-app.register_blueprint(exhibitor, url_prefix='/exhibitor')
-app.register_blueprint(admin, url_prefix='/admin')
 
 #Babel
 babel = Babel(app)
@@ -45,8 +38,8 @@ def get_timezone():
         return session['timezone']
 
 #login
-login_manager = LoginManager()
-login_manager.init_app(app)
+login_manager = LoginManager(app)
+#login_manager.init_app(app)
 
 @login_manager.user_loader
 def load_user(userid):
@@ -56,10 +49,22 @@ def load_user(userid):
     member = UserModel.get_by_id(id)
     return member
 
+#mail
+mail = Mail(app)
 
 @app.context_processor
 def inject_profiler():
     return dict(profiler_includes=templatetags.profiler_includes())
+
+
+#register blueprints
+from visitor import visitor
+from exhibitor import exhibitor
+from admin import admin, init_admin
+
+app.register_blueprint(visitor, url_prefix='/visitor')
+app.register_blueprint(exhibitor, url_prefix='/exhibitor')
+app.register_blueprint(admin, url_prefix='/admin')
 
 # Pull in URL dispatch routes
 import urls

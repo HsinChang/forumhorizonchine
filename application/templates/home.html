@@ -2,7 +2,7 @@
 
 {% block html_head %}
 
-<title>{{ gettext('China Horizon Forum') }}</title>
+<title>{{ _('China Horizon Forum') }}</title>
 <meta name="description"
 	content="This forum is a place for Franco-Chinese business recruitment gathering students and graduates of ParisTech. It also offers a series of conferences and round table discussions." />
 
@@ -34,26 +34,26 @@
 
 	<div id="left-column">
 
-		<h1>Official partners of the Forum in 2013</h1>
+		<h1>{{ _('Official partners of the Forum in 2013') }}</h1>
 
 		<div class="partners">
 
 				<a href="http://www.alstom.com/fr/" target="_blank">
 					<img src="/static/img/logo/2012/alstom.jpg"
-					width="150px" alt="Alstom" /><span>Official website</span>
+					width="150px" alt="Alstom" /><span>{{ _('Official website') }}</span>
 				</a>
 				<a href="http://www.bmwgroup.com/"
 					target="_blank"><img
 					src="/static/img/logo/2013/bmw.png" width="150px"
-					alt="BMW" /><span>Official website</span>
+					alt="BMW" /><span>{{ _('Official website') }}</span>
 				</a>
 				<a href="http://www.dragonflygroup.com/" target="_blank"><img
 					src="/static/img/logo/2013/dragonfly.png"
-					width="150px" alt="Dragonfly Group" /><span>Official website</span>
+					width="150px" alt="Dragonfly Group" /><span>{{ _('Official website') }}</span>
 				</a>
 		</div>
 
-		<h1>Poster</h1>
+		<h1>{{ _('Poster') }}</h1>
 
 		<div id="announcements" class="block">
 			<img src="/static/img/affiche2013_redim.png" width="420px"/>
@@ -62,65 +62,58 @@
     </div>
 	<div id="right-column">
 		<div class="block">
-			<h1>Welcome to <em>China Horizon Forum</em></h1>
+			<h1>{{ _('Welcome to <em>China Horizon Forum</em>') }}</h1>
 
-			<p id="registration"><a href="/visitors/inscript/forum2013/en/"> <img
-				src="/static/forum/images/inscrivez_redim_200.jpg" width="200px" />
-			</a></p>
-			<p>Co-organized by the French-Chinese Friendship Association of
-				ParisTech (AFCP) and ParisTech, Forum Horizon Chine is a space for
-				recruiting French sinophile and Chinese students and graduates from
-				the engineering and business Grandes Écoles of ParisTech.</p>
+			<p id="registration">
+			  <a href="{{ url_for('visitor.inscription') }}">
+			    <img src="/static/forum/images/inscrivez_redim_200.jpg" width="200px"/>
+			  </a>
+			</p>
+			<p>
+			  {{ _('Co-organized by the French-Chinese Friendship Association of ParisTech (AFCP) and ParisTech, Forum Horizon Chine is a space for recruiting French sinophile and Chinese students and graduates from the engineering and business Grandes Écoles of ParisTech.') }}
+			</p>
 
 			<p>
-				This year, the sixth edition will be held at <strong>Mines
-					ParisTech</strong> on <strong>April 18, 2013</strong> at <strong>10
-					am</strong>. This unique event attracts the most promising students and
-				graduates interested in a French-Chinese career. It will include a
-				job fair and conference facilities where you will:
+			  {{ _('This year, the sixth edition will be held at <strong>Mines ParisTech</strong> on <strong>April 18, 2013</strong> at <strong>10 am</strong>. This unique event attracts the most promising students and graduates interested in a French-Chinese career. It will include a	job fair and conference facilities where you will') }}:
 			</p>
 			<ul>
-				<li>Meet talented young Chinese students and graduates as well
-					as French students and graduates wishing to pursue a career in
-					China,</li>
-				<li>Present your company and your development strategy in China
-					and Asia,</li>
-				<li>Communicate with other companies and representatives of
-					China’s special economic zones, in order to know the Chinese
-					market, its regulatory environment and its opportunities for
-					implementation.</li>
+			  <li>
+			    {{ _('Meet talented young Chinese students and graduates as well as French students and graduates wishing to pursue a career in China,') }}
+			  </li>
+			  <li>
+			    {{ _('Present your company and your development strategy in China and Asia,') }}
+			  </li>
+			  <li>
+			    {{ _('Communicate with other companies and representatives of China’s special economic zones, in order to know the Chinese market, its regulatory environment and its opportunities for implementation.') }}
+			  </li>
 			</ul>
-			<p>You will participate in a series of conferences and round
-				tables at the end of the day followed by a cocktail.</p>
-			<p>This forum is co-organized by the French-Chinese Friendship
-				Association ParisTech (AFCP) and ParisTech, with the support of the
-				Embassy of China.</p>
-
-			<div class="info">You are a student or an alumnus of Paristech?</div>
-			<p class="post-info">
-				You can now register on <a href="/visitors/inscription/en/">the
-					registration page</a>. Find out more about this Forum, in "Visitor"
-				section, you can take a look at <a href="/visitors/program/en/">the
-					program</a> and at <a href="/visitors/exhibitors/en/">the companies</a>
-				that will participate in.
+			<p>
+			  {{ _('You will participate in a series of conferences and round tables at the end of the day followed by a cocktail.') }}
+			</p>
+			<p>
+			  {{ _('This forum is co-organized by the French-Chinese Friendship Association ParisTech (AFCP) and ParisTech, with the support of the Embassy of China.') }}
 			</p>
 
-			<div class="info">Wish to get a stand for your company?</div>
+			<div class="info">
+			  {{ _('You are a student or an alumnus of Paristech?') }}
+			</div>
 			<p class="post-info">
-				Please do not hesitate to <a href="/contact/contact/en/">contact
-					us</a> to receive our offers. In section "Exhibitors", You will find <a
-					href="/exhibitors/visitors/en/">a presentation of the visitors
-					of the Forum</a> as well as the <a href="/exhibitors/services/en/">services
-					offered</a>.
+			  {{ _('You can now register on <a href="%(inscription)s">the registration page</a>. Find out more about this Forum, in "Visitor" section, you can take a look at <a href="%(program)s">the program</a> and at <a href="%(exhibitors)s">the companies</a> that will participate in.', inscription=url_for("visitor.inscription"), program=url_for("visitor.program"), exhibitors=url_for("visitor.exhibitors")) }}
 			</p>
 
+			<div class="info">
+			  {{ _('Wish to get a stand for your company?') }}
+			</div>
+			<p class="post-info">
+			  {{ _('Please do not hesitate to <a href="%(contact)s">contact us</a> to receive our offers. In section "Exhibitors", You will find <a href="%(visitors)s">a presentation of the visitors	of the Forum</a> as well as the <a href="%(services)s">services offered</a>.', contact=url_for("contact"), visitors=url_for("exhibitor.visitors"), services=url_for("exhibitor.services")) }}
+			</p>
 		</div>
 
 
 	<!-- TODO: intégrer le lien vers la nouvelle brochure ici -->
         {# hide the brochure
 	<div id="ecoles" class="block">
-	  <div class="block-title">{{ gettext("Forum précédent") }}</div>
+	  <div class="block-title">{{ _("Forum précédent") }}</div>
 	  <div class="modified">Contenu du bloc à vérifier</div>
 	  <p>Vous pouvez obtenir plus de détail concernant l'édition 2011 du forum Horizon Chine
 	  en consultant <a href="/static/doc/ForumHorizonChine2011.pdf">la brochure du forum de 2011</a>.</p>
@@ -128,7 +121,7 @@
 	</div>
  #}
 		<div id="planet" class="block">
-			<h1>{{ gettext("Organizers") }}</h1>
+			<h1>{{ _("Organizers") }}</h1>
 			<!--
             <div class="modified">Lien sur les images, texte en dessous supprimé</div>
              -->

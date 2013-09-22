@@ -112,7 +112,6 @@ def visitors():
     return render_template('exhibitors/visitors.html')
 
 @exhibitor.route('/services')
-@login_required
 def services():
     return render_template('exhibitors/services.html')
 

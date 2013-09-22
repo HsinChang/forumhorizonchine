@@ -18,30 +18,29 @@
 <div class="sidebar-section">
   <div class="title">About the Forum</div>
   <ul class="list">
-    <li>
+    <li {% if request.path == url_for('access') %}
+      class="current" {% endif %}>
       <a href="{{ url_for('access') }}">
-	Access to the Forum
+	{{ _('Access to the Forum') }}
       </a>
     </li>
-    <li>
+    <li {% if request.path == url_for('balance') %}
+      class="current" {% endif %}>
       <a href="{{ url_for('balance') }}">
-	2012 balance
+	{{ _('2012 balance') }}
       </a>
     </li>
-    <li>
+    <li {% if request.path == url_for('contact') %}
+      class="current" {% endif %}>
       <a href="{{ url_for('contact') }}">
-	Contact us
+	{{ _('Contact us') }}
       </a>
     </li>
   </ul>
 </div>
 
 <div class="sidebar-section">
-  <div class="title">About AFCP</div>
-  <ul class="list">
-    <li><a href="http://www.afcp-paristech.org" rel="external" target="_blank">AFCP website</a></li>
-
-  </ul>
+  {% include "includes/about.html" %}
 </div>
 
 {% endblock %}{# sidebar #}

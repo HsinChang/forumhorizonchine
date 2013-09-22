@@ -2,17 +2,17 @@
 
 {% block html_title %}
 <title>
-  {{ _('contact us') }}
+  {{ _('Contact the team of China Horizon Forum') }}
 </title>
 {% endblock html_title %}
 {% block content %}
 <div class="section contact">
-  <h1>Team leaders of China Horizon Forum 2013</h1>
+  <h1>{{ _('Team leaders of China Horizon Forum 2013') }}</h1>
 
   <table>
     <tr>
-      <th>Name</th>
-      <th>Title</th>
+      <th>{{ _('Name') }}</th>
+      <th>{{ _('Title') }}</th>
     </tr>
     <tr>
       <td>Mr. Qi ZHU</td>
@@ -33,16 +33,16 @@
   <div class="error">{{ errmsg }}</div>
   {% endifnotequal %}
   {% ifnotequal msgok None %}
-  <div class="info">Le message a bien été envoyé.</div>
+  <div class="info">{{ _('The message is sent succussfully.') }}</div>
   {% endifnotequal %}
   #}
 
-  <h2>Wish to contact us?</h2>
+  <h2>{{ _('Wish to contact us?') }}</h2>
   <form method="post">
     <input type="hidden" name="from" value="forum" />
-    <div>Please enter your email: </div>
+    <div>{{ _('Please enter your email') }}: </div>
     <div><input type="text" name="email" /></div>
-    <div>Please enter your message:</div>
+    <div>{{ _('Please enter your message') }}:</div>
     <div><textarea name="message" rows="5"></textarea></div>
     <div><input type="submit" value="Send the message" /></div>
   </form>

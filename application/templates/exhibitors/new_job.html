@@ -8,12 +8,12 @@
 
 {% block html_title %}
 <title>
-  new job
+  {{ _('New job') }}
 </title>
 {% endblock html_title %}
 
 {% block content %}
-<h1>New Job</h1>
+<h1>{{ _('New job') }}</h1>
 <form id="job_form" method="post" action="{{ url_for('exhibitor.new_job') }}">
   <fieldset>
     {{ form.hidden_tag() }}

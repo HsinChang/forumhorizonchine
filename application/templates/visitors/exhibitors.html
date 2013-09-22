@@ -1,7 +1,7 @@
 {% extends "base_visitors.html" %}
 
 {% block html_title %}
-<title>Exhibitors in China Horizon Forum</title>
+<title>{{ _('Exhibitors in China Horizon Forum') }}</title>
 <meta name="description"
 	content="Companies at 2012 Forum: Dragonfly Group, Saint-Gobain, IBM, L'Oréal, Bureau Veritas, BNP Paribas, Alstom and Arkema." />
 
@@ -10,23 +10,19 @@
 {% block content %}
 
 <div class="section exhibitors">
-	<h1>Exposants</h1>
-	<h3>We are in contact with many French and Chinese players:</h3>
+	<h1>{{ _('Exposants') }}</h1>
+	<h3>{{ _('We are in contact with many French and Chinese players') }}:</h3>
 	<ul>
-		<li>major French companies such as Michelin, l'Oréal, Areva,
-			Suez, Schneider, Carrefour...</li>
-		<li>French SMEs wishing to expand their activities into the
-			Chinese market,</li>
-		<li>major Chinese groups such as Huawei and ZTE, which are
-			already present on the French market,</li>
-		<li>and some of China’s Special Economic Zones, eager to attract
-			foreign investors.</li>
+		<li>{{ _('major French companies such as Michelin, l'Oréal, Areva,
+			Suez, Schneider, Carrefour...') }}</li>
+		<li>{{ _('French SMEs wishing to expand their activities into the
+			Chinese market,') }}</li>
+		<li>{{ _('major Chinese groups such as Huawei and ZTE, which are
+			already present on the French market,') }}</li>
+		<li>{{ _('and some of China’s Special Economic Zones, eager to attract
+			foreign investors.') }}</li>
 	</ul>
-	<h3>The following companies have already confirmed their presence at the Forum:</h3>
-	{#<h3>The forum preparations will soon be completed. As a guidance,
-		below are the companies that participated in the 2012 edition of the
-		China Horizon Forum:</h3>#}
-
+	<h3>{{ _('The following companies have already confirmed their presence at the Forum') }}:</h3>
 	<table class="noborder">
 		<tr>
 			<td><a href="http://www.alstom.com/fr/" target="_blank"><img class="shadow" src="/static/forum/images/logo/2012/alstom.jpg"

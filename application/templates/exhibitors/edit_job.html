@@ -6,11 +6,11 @@
 {% endblock header %}
 
 {% block html_title %}
-<title>Edit Job</title>
+<title>{{ _('Edit job') }}</title>
 {% endblock html_title %}
 
 {% block content %}
-<h1>Edit Job</h1>
+<h1>{{ _('Edit job') }}</h1>
 <form id="job_form" method="post" action="{{ url_for('exhibitor.edit_job',job_id=job.key.id() )}}">
   <fieldset>
     {{ form.hidden_tag() }}

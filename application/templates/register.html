@@ -3,10 +3,10 @@
 {% from "_formhelpers.html" import render_field as render_field %}
 
 {% block html_title %}
-<title>Register</title>
+<title>{{ _('Register') }}</title>
 {% endblock html_title %}
 {% block content %}
-<h1>Register</h1>
+<h1>{{ _('Register') }}</h1>
 <form  method="post" action="{{ url_for('exhibitor.register') }}">
   <fieldset>
     {{ form.hidden_tag() }}
@@ -17,7 +17,7 @@
     {{ render_field(form.company) }}
     <div>
       <div>
-        <button type="submit" value="register">Submit</button>
+        <button type="submit" value="register">{{ _('Submit') }}</button>
       </div>
     </div>
   </fieldset>

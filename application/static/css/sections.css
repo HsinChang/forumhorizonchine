@@ -394,7 +394,7 @@ th {
 
 
 /*new job textarea*/
-#job_content {
+.job_content {
     width: 100%;
     height: 300px;
 }

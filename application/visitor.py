@@ -7,9 +7,9 @@ from google.appengine.api import mail
 visitor = Blueprint('visitor', __name__)
 
 #visitors
-@visitor.route('/inscript')
-def inscript():
-    return render_template('inscription/forum2013.html')
+@visitor.route('/inscription')
+def inscription():
+    return render_template('visitors/inscription.html')
 #    return render_template('visitors/inscription.html')
 
 @visitor.route('/program')

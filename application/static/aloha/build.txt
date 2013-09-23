@@ -127,6 +127,7 @@ plugins/common/horizontalruler/nls/i18n.js
 i18n!horizontalruler/nls/i18n
 plugins/common/horizontalruler/lib/horizontalruler-plugin.js
 plugins/common/paste/lib/paste-plugin.js
+plugins/common/autoparagraph/lib/autoparagraph-plugin.js
 plugins/extra/toc/nls/i18n.js
 i18n!toc/nls/i18n
 plugins/extra/toc/lib/toc-plugin.js

@@ -11,7 +11,7 @@ from forms import RegisterForm, JobForm, EnterpriseForm, EmailForm
 from models import UserModel, JobModel, ROLES, EnterpriseModel, EmailModel
 from decorators import admin_required
 from application import app
-
+from passlib.apps import custom_app_context as pwd_context
 import flask_login
 
 admin = Blueprint('admin', __name__)
@@ -21,8 +21,9 @@ def login():
     if request.method == 'POST':
         username = request.form['username']
         password = request.form['password']
-        user = UserModel.query(UserModel.username==username, UserModel.password==password).get()
-        if user and user.role == ROLES['ADMIN']:
+
+        user = UserModel.query(UserModel.username==username).get()
+        if user and pwd_context.verify(password, user.password) and user.role == ROLES['ADMIN']:
             result = flask_login.login_user(user)
             flash('login succeeded!')
         else:
@@ -302,12 +303,13 @@ def index():
 def init_admin():
     role = ROLES['ADMIN']
     user = UserModel.query(UserModel.username=='admin').get()
-    print user
+
     if user is None:
         #create admin
+        password = pwd_context.encrypt('admin')
         admin = UserModel(
             username = 'admin',
-            password = 'admin',
+            password = password,
             role = role,
             email = 'lutianming1005@gmail.com',
         )

@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, redirect, url_for, request, flash
+from flask import Blueprint, render_template, redirect, url_for, request, flash, session
 from models import JobModel, EnterpriseModel
 from flask_mail import Message
 from application import app
@@ -25,6 +25,16 @@ def job():
     grouped_jobs = {}
     jobs = JobModel.query()
     for job in jobs:
+        locale = session['locale']
+        if locale == 'fr' and job.fr.published:
+            job.default = job.fr
+        elif locale == 'zh' and job.zh.published:
+            job.default = job.zh
+        elif locale == 'en' and job.en.published:
+            job.default = job.en
+        else:
+            job.default = getattr(job, job.default_lang)
+
         if job.enterprise in grouped_jobs:
             grouped_jobs[job.enterprise].append(job)
         else:

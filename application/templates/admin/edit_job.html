@@ -17,24 +17,56 @@
 <form id="job_form" method="post" action="{{ url_for('admin.edit_job', keyurl=keyurl) }}">
   <fieldset>
     {{ form.hidden_tag() }}
-    {{ render_field(form.title) }}
     {{ render_field(form.enterprise_mail) }}
     {{ render_field(form.type) }}
-    {{ render_field(form.content, id='job_content') }}
+    <div class="section job">
+      <div class="block-job">
+	<div id="en" class="apply-button">
+	  <div>English version</div>
+	</div>
+	<div>
+	  {{ render_field(form.publish_en) }}
+	  {{ render_field(form.title_en) }}
+	  {{ render_field(form.content_en, class="job_content") }}
+	</div>
+      </div>
+      <div class="block-job">
+	<div id="fr" class="apply-button">
+	  <div>French version</div>
+	</div>
+	<div>
+	  {{ render_field(form.publish_fr) }}
+	  {{ render_field(form.title_fr) }}
+	  {{ render_field(form.content_fr, class="job_content") }}
+	</div>
+      </div>
+      <div class="block-job">
+	<div id="zh" class="apply-button">
+	  <div>Chinese version</div>
+	</div>
+	<div>
+	  {{ render_field(form.publish_zh) }}
+	  {{ render_field(form.title_zh) }}
+	  {{ render_field(form.content_zh, class="job_content") }}
+	</div>
+      </div>
+    </div>
+    {{ render_field(form.default_lang) }}
+    {{ render_field(form.cv_required) }}
   </fieldset>
   <input type="submit" value="publish">
   </input>
 </form>
 <script type="text/javascript">
   Aloha.ready( function() {
-  Aloha.jQuery('#job_content').aloha();
+  Aloha.jQuery('.job_content').aloha();
 
   jQuery('#job_form').submit(function(){
   /*
   Before the form is submitted, we unload aloha and store the contents of the
   aloha editable to the textarea.
   */
-  jQuery('#job_content').mahalo();
+  jQuery('.job_content').mahalo();
   });
   });
 </script>

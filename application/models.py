@@ -11,14 +11,22 @@ from google.appengine.ext import ndb
 ROLES ={'EXHIBITOR':'exhibitor', 'ADMIN': 'admin'}
 OFFRE_TYPES = {'JOB': 'job', 'INTERN': 'internship'}
 
+class JobMetaModel(ndb.Model):
+    published = ndb.BooleanProperty(required=True)
+    title = ndb.StringProperty()
+    content = ndb.TextProperty()
+
 class JobModel(ndb.Model):
-    title = ndb.StringProperty(required=True)
     type = ndb.StringProperty(required=True)
     poster = ndb.KeyProperty()
     date = ndb.DateProperty(auto_now_add=True)
     enterprise = ndb.KeyProperty(required=True)
     enterprise_mail = ndb.KeyProperty(required=True)
-    content = ndb.TextProperty(required=True)
+    fr = ndb.StructuredProperty(JobMetaModel)
+    en = ndb.StructuredProperty(JobMetaModel)
+    zh = ndb.StructuredProperty(JobMetaModel)
+    default_lang = ndb.StringProperty(required=True)
+    cv_required = ndb.StringProperty(repeated=True)
 
 
 class EnterpriseModel(ndb.Model):

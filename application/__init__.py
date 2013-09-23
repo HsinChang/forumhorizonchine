@@ -28,9 +28,9 @@ babel = Babel(app)
 
 @babel.localeselector
 def get_locale():
-    if 'locale' in session:
-        return session['locale']
-    return request.accept_languages.best_match(app.config['LANGUAGES'])
+    if 'locale' not in session:
+        session['locale'] = request.accept_languages.best_match(app.config['LANGUAGES'])
+    return session['locale']
 
 @babel.timezoneselector
 def get_timezone():

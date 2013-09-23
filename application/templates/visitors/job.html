@@ -36,10 +36,10 @@
 	<div class="block-job">
 	  <div class="apply-button">
 	    <div class="right">{{ job.type }}</div>
-	    <h3>{{ job.title }}</h3>
+	    <h3>{{ job.default.title }}</h3>
 	  </div>
 	  <div>
-	    {{ job.content|safe }}
+	    {{ job.default.content|safe }}
 
 	    <!-- Formulaire pour postuler -->
 	    <h5 class="apply-button">Apply</h5>
@@ -65,10 +65,12 @@
 		  <td>e-mail<span class="required">*</span></td>
 		  <td><input type="text" name="email" required="required" /></td>
 		</tr>
+		{% for cv in job.cv_required %}
 		<tr>
-		  <td>CV<span class="required">*</span></td>
-		  <td><input type="file" name="cv" required="required" /></td>
+		  <td>CV in {{ cv }}<span class="required">*</span></td>
+		  <td><input type="file" name="cv_{{ cv }}" required="required" /></td>
 		</tr>
+		{% endfor %}
 		<tr>
 		  <td>Covering letter<span class="required">*</span></td>
 		  <td><input type="file" name="lm" required="required" /></td>

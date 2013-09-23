@@ -8,7 +8,7 @@ from google.appengine.runtime.apiproxy_errors import CapabilityDisabledError
 from google.appengine.ext import ndb
 from flask import Blueprint, render_template, redirect, url_for, request, flash
 from forms import RegisterForm, JobForm, EnterpriseForm, EmailForm
-from models import UserModel, JobModel, ROLES, EnterpriseModel, EmailModel
+from models import UserModel, JobModel, JobMetaModel, ROLES, EnterpriseModel, EmailModel
 from decorators import admin_required
 from application import app
 from passlib.apps import custom_app_context as pwd_context
@@ -233,11 +233,26 @@ def new_job():
         mail = ndb.Key(urlsafe=form.enterprise_mail.data)
         enterprise = mail.get().enterprise
         job = JobModel(
-            title = form.title.data,
             type = form.type.data,
             enterprise = enterprise,
             enterprise_mail = mail,
-            content = form.content.data,
+            fr = JobMetaModel(
+                published = form.publish_fr.data,
+                title = form.title_fr.data,
+                content = form.content_fr.data
+            ),
+            en = JobMetaModel(
+                published = form.publish_en.data,
+                title = form.title_en.data,
+                content = form.content_en.data
+            ),
+            zh = JobMetaModel(
+                published = form.publish_zh.data,
+                title = form.title_zh.data,
+                content = form.content_zh.data
+            ),
+            default_lang = form.default_lang.data,
+            cv_required = form.cv_required.data
        #     poster = user.key
         )
         try:
@@ -258,15 +273,36 @@ def edit_job(keyurl):
         return redirect(url_for('admin.jobs'))
     form = JobForm(request.form, obj=job)
 
+    form.publish_en.data = job.en.published
+    form.publish_fr.data = job.fr.published
+    form.publish_zh.data = job.fr.published
+    form.title_en.data = job.en.title
+    form.title_fr.data = job.fr.title
+    form.title_zh.data = job.zh.title
+    form.content_en.data = job.en.content
+    form.content_fr.data = job.fr.content
+    form.content_zh.data = job.zh.content
+
     mails = EmailModel.query()
     form.enterprise_mail.choices = [(mail.key.urlsafe(), mail.enterprise.get().name + ' -- ' + mail.email) for mail in mails]
     if request.method == 'POST' and form.validate():
-            job.title = form.title.data
             job.type = form.type.data
             mail = ndb.Key(urlsafe=form.enterprise_mail.data)
             job.enterprise_mail = mail
             job.enterprise = mail.get().enterprise
-            job.content = form.content.data
+
+            job.fr.published = form.publish_fr.data
+            job.fr.title = form.title_fr.data
+            job.fr.content = form.content_fr.data
+            job.en.published = form.publish_en.data
+            job.en.title = form.title_en.data
+            job.en.content = form.title_en.data
+            job.zh.published = form.publish_zh.data
+            job.zh.title = form.title_zh.data
+            job.zh.content = form.content_zh.data
+
+            job.default_lang = form.default_lang.data
+            job.cv_required = form.cv_required.data
             try:
                 job.put()
                 return redirect(url_for('admin.jobs'))

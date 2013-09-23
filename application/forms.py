@@ -68,7 +68,8 @@ class JobForm(wtf.Form):
     content_zh = TextAreaField('Content')
     content_fr = TextAreaField('Content')
 
-    cv_required = SelectMultipleField('required CV', choices=[('en', 'en'), ('fr', 'fr'), ('zh', 'zh')])
+    default_lang = SelectField('Default version', choices=[('en', 'en'), ('fr', 'fr'), ('zh', 'zh')])
+    cv_required = SelectMultipleField('required CV("use the Key Ctrl to select multi")', choices=[('en', 'en'), ('fr', 'fr'), ('zh', 'zh')], validators=[validators.InputRequired()])
 
 
 class EnterpriseForm(wtf.Form):

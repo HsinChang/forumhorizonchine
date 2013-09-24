@@ -7,7 +7,7 @@
 from google.appengine.runtime.apiproxy_errors import CapabilityDisabledError
 from google.appengine.ext import ndb
 from flask import Blueprint, render_template, redirect, url_for, request, flash
-from forms import RegisterForm, JobForm, EnterpriseForm, EmailForm
+from forms import RegisterForm, JobForm, EnterpriseForm, EmailForm, PasswordForm
 from models import UserModel, JobModel, JobMetaModel, ROLES, EnterpriseModel, EmailModel
 from decorators import admin_required
 from application import app
@@ -39,6 +39,21 @@ def logout():
     flask_login.logout_user()
     return redirect(url_for('admin.index'))
 
+
+@admin.route('/change_password', methods=['GET', 'POST'])
+@admin_required
+def change_password():
+    form = PasswordForm(request.form)
+    if request.method == 'POST' and form.validate():
+        user = flask_login.current_user
+        user.password = pwd_context.encrypt(form.new_password.data)
+        try:
+            user.put()
+            flash('password changed!')
+            redirect(url_for('admin.index'))
+        except CapabilityDisabledError:
+            flash('error whan changing password')
+    return render_template('admin/change_password.html', form=form)
 @admin.route('/users')
 @admin_required
 def users():
@@ -226,8 +241,14 @@ def new_job():
     """
     form = JobForm(request.form)
     mails = EmailModel.query()
+    choices = [(mail.key.urlsafe(), mail.enterprise.get().name + ' -- ' + mail.email) for mail in mails]
 
-    form.enterprise_mail.choices = [(mail.key.urlsafe(), mail.enterprise.get().name + ' -- ' + mail.email) for mail in mails]
+    if len(choices) == 0:
+        #no enterprise, create one at first
+        flash('there is no enterprise, please create one before add new job')
+        return redirect(url_for('admin.new_enterprise'))
+
+    form.enterprise_mail.choices = choices
     if request.method == 'POST' and form.validate():
         user = flask_login.current_user
         mail = ndb.Key(urlsafe=form.enterprise_mail.data)

@@ -9,8 +9,10 @@ See: http://flask.pocoo.org/docs/patterns/wtforms/
 """
 
 from flaskext import wtf
+from flask_login import current_user
 from wtforms import StringField, PasswordField, BooleanField, TextAreaField, SelectField, FormField, SelectMultipleField
 from wtforms import validators
+from passlib.apps import custom_app_context as pwd_context
 from .models import UserModel, EnterpriseModel
 
 def username_exist_check(form, field):
@@ -19,6 +21,14 @@ def username_exist_check(form, field):
     user = UserModel.query(UserModel.username==username).get()
     if user:
         raise validators.ValidationError('username exists, choose a different one!')
+
+def old_password_check(form, field):
+    """check old password input is valide"""
+    old_password = field.data
+    password = current_user.password
+    r = pwd_context.verify(old_password, current_user.password)
+    if not r:
+        raise validators.ValidationError('old password is wrong')
 
 def enterprise_exist_check(form, field):
     name = field.data
@@ -41,6 +51,12 @@ class RegisterForm(wtf.Form):
 #    last_name = wtf.TextField('Last name', validators=[validators.InputRequired()])
     email = StringField('Email', validators=[validators.Email()])
     company = StringField('Company', validators=[validators.InputRequired()])
+
+
+class PasswordForm(wtf.Form):
+    old_password = PasswordField('Old password', validators=[validators.InputRequired(), old_password_check])
+    new_password = PasswordField('New password', validators=[validators.InputRequired()])
+    confirm_password = PasswordField('Confirm password', validators=[validators.EqualTo('new_password')])
 
 
 class JobMetaForm(wtf.Form):

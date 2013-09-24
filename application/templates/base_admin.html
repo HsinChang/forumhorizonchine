@@ -29,13 +29,20 @@
     welcome! {{ user.username }} <a href="{{ url_for('admin.logout')}}">logout</a>
 
     <ul class="list">
-      <li>
+      <li {% if request.path == url_for('admin.change_password') %}
+	class="current" {% endif %}>
+	<a href="{{ url_for('admin.change_password') }}">change password</a>
+      </li>
+      <li {% if request.path == url_for('admin.users') %}
+	class="current" {% endif %}>
 	<a href="{{ url_for('admin.users') }}">users</a>
       </li>
-      <li>
+      <li {% if request.path == url_for('admin.jobs') %}
+	class="current" {% endif %}>
 	<a href="{{ url_for('admin.jobs') }}">jobs</a>
       </li>
-      <li>
+      <li {% if request.path == url_for('admin.enterprises') %}
+	class="current" {% endif %}>
 	<a href="{{ url_for('admin.enterprises') }}">enterprises</a>
       </li>
     </ul>
@@ -45,7 +52,7 @@
       </input>
       <input name="password" type="password" class="input-small" placeholder="Password">
       </input>
-      <button type="submit" class="btn">Sign in</button>
+      <input type="submit" value="Submit"></input>
     </form>
     {% endif %}
   </div>

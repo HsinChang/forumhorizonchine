@@ -1,8 +1,9 @@
 from flask import Blueprint, render_template, redirect, url_for, request, flash, session
-from models import JobModel, EnterpriseModel
+from models import JobModel, EnterpriseModel, EmailModel,
 from flask_mail import Message
 from application import app
 from google.appengine.api import mail
+from google.appengine.ext import ndb
 
 visitor = Blueprint('visitor', __name__)
 
@@ -54,14 +55,28 @@ def apply():
     """
     """
     email_enterprise = request.form['email.to']
+    email_to = ndb.Key(urlsafe=email_enterprise)
     jobname = request.form['jobname']
     enterprise = request.form['enterprise']
     first_name = request.form['firstname']
     last_name = request.form['lastname']
     email = request.form['email']
-    cv = request.files['cv']
+    cv = {}
+    if 'cv_en' in request.files:
+        cv['en'] = request.files['cv_en']
+    if 'cv_fr' in request.files:
+        cv['fr'] = request.files['cv_fr']
+    if 'cv_zh' in request.files:
+        cv['zh'] = request.files['cv_zh']
     lm = request.files['lm']
-    mail.send_mail('lutianming1005@gmail.com', 'lutianming1005@hotmail.com', subject='apply '+jobname,
-                   body='test ' + first_name + ' ' + last_name, attachments=[('cv', cv.read()), ('lm', lm.read())])
+    attachments = []
+    for key, item in cv.items():
+        attachments.append((key, item.read()))
+    attachments.append(('lm', lm.read()))
+    mail.send_mail('lutianming1005@gmail.com',
+                   'lutianming1005@hotmail.com',
+                   subject='apply '+jobname,
+                   body='test apply ' + first_name + ' ' + last_name,
+                   attachments=attachments)
     flash('mail sent')
     return redirect(url_for('visitor.job'))

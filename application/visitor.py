@@ -23,7 +23,7 @@ def exhibitors():
 @visitor.route('/job')
 def job():
     grouped_jobs = {}
-    jobs = JobModel.query()
+    jobs = JobModel.query(JobModel.published==True)
     for job in jobs:
         locale = session['locale']
         if locale == 'fr' and job.fr.published:

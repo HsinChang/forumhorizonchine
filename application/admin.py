@@ -253,27 +253,28 @@ def new_job():
         user = flask_login.current_user
         mail = ndb.Key(urlsafe=form.enterprise_mail.data)
         enterprise = mail.get().enterprise
+        fr = JobMetaModel(
+            published = form.publish_fr.data,
+            title = form.title_fr.data,
+            content = form.content_fr.data)
+        en = JobMetaModel(
+            published = form.publish_en.data,
+            title = form.title_en.data,
+            content = form.content_en.data)
+        zh = JobMetaModel(
+            published = form.publish_zh.data,
+            title = form.title_zh.data,
+            content = form.content_zh.data)
         job = JobModel(
             type = form.type.data,
             enterprise = enterprise,
             enterprise_mail = mail,
-            fr = JobMetaModel(
-                published = form.publish_fr.data,
-                title = form.title_fr.data,
-                content = form.content_fr.data
-            ),
-            en = JobMetaModel(
-                published = form.publish_en.data,
-                title = form.title_en.data,
-                content = form.content_en.data
-            ),
-            zh = JobMetaModel(
-                published = form.publish_zh.data,
-                title = form.title_zh.data,
-                content = form.content_zh.data
-            ),
+            fr = fr,
+            en = en,
+            zh = zh,
+            published = fr.published or en.published or zh.published,
             default_lang = form.default_lang.data,
-            cv_required = form.cv_required.data
+            cv_required = form.cv_required.data,
        #     poster = user.key
         )
         try:
@@ -293,42 +294,44 @@ def edit_job(keyurl):
         flash(_('no such job'))
         return redirect(url_for('admin.jobs'))
     form = JobForm(request.form, obj=job)
-
-    form.publish_en.data = job.en.published
-    form.publish_fr.data = job.fr.published
-    form.publish_zh.data = job.fr.published
-    form.title_en.data = job.en.title
-    form.title_fr.data = job.fr.title
-    form.title_zh.data = job.zh.title
-    form.content_en.data = job.en.content
-    form.content_fr.data = job.fr.content
-    form.content_zh.data = job.zh.content
-
     mails = EmailModel.query()
     form.enterprise_mail.choices = [(mail.key.urlsafe(), mail.enterprise.get().name + ' -- ' + mail.email) for mail in mails]
     if request.method == 'POST' and form.validate():
-            job.type = form.type.data
-            mail = ndb.Key(urlsafe=form.enterprise_mail.data)
-            job.enterprise_mail = mail
-            job.enterprise = mail.get().enterprise
+        job.type = form.type.data
+        mail = ndb.Key(urlsafe=form.enterprise_mail.data)
+        job.enterprise_mail = mail
+        job.enterprise = mail.get().enterprise
 
-            job.fr.published = form.publish_fr.data
-            job.fr.title = form.title_fr.data
-            job.fr.content = form.content_fr.data
-            job.en.published = form.publish_en.data
-            job.en.title = form.title_en.data
-            job.en.content = form.title_en.data
-            job.zh.published = form.publish_zh.data
-            job.zh.title = form.title_zh.data
-            job.zh.content = form.content_zh.data
+        job.fr.published = form.publish_fr.data
+        job.fr.title = form.title_fr.data
+        job.fr.content = form.content_fr.data
+        job.en.published = form.publish_en.data
+        job.en.title = form.title_en.data
+        job.en.content = form.title_en.data
+        job.zh.published = form.publish_zh.data
+        job.zh.title = form.title_zh.data
+        job.zh.content = form.content_zh.data
+        job.published = job.fr.published or job.en.published or job.zh.published
+        job.default_lang = form.default_lang.data
+        job.cv_required = form.cv_required.data
+        try:
+            job.put()
+            return redirect(url_for('admin.jobs'))
+        except CapabilityDisabledError:
+            flash('error')
+    elif request.method == 'GET':
+    #GET handle goes here
+        form.publish_en.data = job.en.published
+        form.publish_fr.data = job.fr.published
+        form.publish_zh.data = job.zh.published
+        form.title_en.data = job.en.title
+        form.title_fr.data = job.fr.title
+        form.title_zh.data = job.zh.title
+        form.content_en.data = job.en.content
+        form.content_fr.data = job.fr.content
+        form.content_zh.data = job.zh.content
 
-            job.default_lang = form.default_lang.data
-            job.cv_required = form.cv_required.data
-            try:
-                job.put()
-                return redirect(url_for('admin.jobs'))
-            except CapabilityDisabledError:
-                flash('error')
+
     return render_template('admin/edit_job.html', form=form, keyurl=keyurl)
 
 

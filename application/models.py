@@ -22,6 +22,7 @@ class JobModel(ndb.Model):
     date = ndb.DateProperty(auto_now_add=True)
     enterprise = ndb.KeyProperty(required=True)
     enterprise_mail = ndb.KeyProperty(required=True)
+    published = ndb.BooleanProperty(required=True)
     fr = ndb.StructuredProperty(JobMetaModel)
     en = ndb.StructuredProperty(JobMetaModel)
     zh = ndb.StructuredProperty(JobMetaModel)

@@ -63,6 +63,7 @@ def apply():
     """
     email_enterprise = request.form['email.to']
     email_to = ndb.Key(urlsafe=email_enterprise)
+    to = email_to.get().email
     jobname = request.form['jobname']
     enterprise = request.form['enterprise']
     first_name = request.form['firstname']
@@ -109,7 +110,7 @@ def apply():
         attachments.append((item.filename, item.read()))
     attachments.append((lm.filename, lm.read()))
     message = mail.EmailMessage(sender='Admin of AFCP <lutianming1005@gmail.com>',
-                   to='lutianming1005@hotmail.com')
+                                to=to)
     message.subject = 'New application sent by AFCP'
     message.attachments = attachments
     message.body = u"""

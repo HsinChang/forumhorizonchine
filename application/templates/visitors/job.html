@@ -47,7 +47,7 @@
 		  action="{{ url_for('visitor.apply') }}" class="unwrapped">
 	      *.doc and *.pdf files are accepted, max 500 Ko for each attachment.
 	      {# L'identifiant indiquant à quelle adresse mail la candidature est envoyée, cf ressources du Forum #}
-	      <input type="hidden" name="email.to" value="{{ job.enterprise_mail }}" />
+	      <input type="hidden" name="email.to" value="{{ job.enterprise_mail.urlsafe() }}" />
 	      {# Nom de l'emploi, le même que dans le titre #}
 	      <input type="hidden" name="jobname" value="{{ job.title }}" />
 	      {# Entreprise #}

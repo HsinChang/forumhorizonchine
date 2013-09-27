@@ -37,3 +37,5 @@ CACHE_TYPE = 'gaememcached'
 
 #language
 LANGUAGES = ['en', 'fr', 'zh']
+
+MAX_CONTENT_LENGTH = 16 * 1024 * 1024

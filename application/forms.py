@@ -22,6 +22,7 @@ def username_exist_check(form, field):
     if user:
         raise validators.ValidationError('username exists, choose a different one!')
 
+
 def old_password_check(form, field):
     """check old password input is valide"""
     old_password = field.data
@@ -30,11 +31,37 @@ def old_password_check(form, field):
     if not r:
         raise validators.ValidationError('old password is wrong')
 
+
 def enterprise_exist_check(form, field):
     name = field.data
     enterprise = EnterpriseModel.query(EnterpriseModel.name==name).get()
     if enterprise:
         raise validators.ValidationError('enterprise exists, you don\'t need to create it again!')
+
+
+def job_lang_check(lang):
+    """
+    closure to check specific lang property
+
+    Arguments:
+    - `lang`:
+    """
+    lang = lang
+    def job_check(form, field):
+        """
+        this is to check if job properties are well edited:
+        job title and content should not be empty if it is published
+
+        Arguments:
+        - `from`:
+        - `field`:
+        """
+        data = field.data
+        published = getattr(form, 'publish_'+lang)
+        if published:
+            if len(data) == 0:
+                raise validators.ValidationError('field should not be empty if you choose to publish it')
+    return job_check
 
 class LoginForm(wtf.Form):
     """form userd for login"""
@@ -77,12 +104,12 @@ class JobForm(wtf.Form):
     publish_en = BooleanField('Publish', default=True)
     publish_zh = BooleanField('Publish', default=True)
     publish_fr = BooleanField('Publish', default=True)
-    title_en = StringField('Title')
-    title_zh = StringField('Title')
-    title_fr = StringField('Title')
-    content_en = TextAreaField('Content')
-    content_zh = TextAreaField('Content')
-    content_fr = TextAreaField('Content')
+    title_en = StringField('Title', validators=[job_lang_check('en')])
+    title_zh = StringField('Title', validators=[job_lang_check('zh')])
+    title_fr = StringField('Title', validators=[job_lang_check('fr')])
+    content_en = TextAreaField('Content', validators=[job_lang_check('en')])
+    content_zh = TextAreaField('Content', validators=[job_lang_check('zh')])
+    content_fr = TextAreaField('Content', validators=[job_lang_check('fr')])
 
     default_lang = SelectField('Default version', choices=[('en', 'en'), ('fr', 'fr'), ('zh', 'zh')])
     cv_required = SelectMultipleField('required CV and letter of motivation("use the Key Ctrl to select multi")', choices=[('en', 'en'), ('fr', 'fr'), ('zh', 'zh')], validators=[validators.InputRequired()])

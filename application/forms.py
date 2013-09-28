@@ -74,9 +74,9 @@ class JobForm(wtf.Form):
     # en = FormField(JobMetaForm, 'en')
     # fr = FormField(JobMetaForm, 'fr')
     # zh = FormField(JobMetaForm, 'zh')
-    publish_en = BooleanField('Publish')
-    publish_zh = BooleanField('Publish')
-    publish_fr = BooleanField('Publish')
+    publish_en = BooleanField('Publish', default=True)
+    publish_zh = BooleanField('Publish', default=True)
+    publish_fr = BooleanField('Publish', default=True)
     title_en = StringField('Title')
     title_zh = StringField('Title')
     title_fr = StringField('Title')
@@ -85,7 +85,7 @@ class JobForm(wtf.Form):
     content_fr = TextAreaField('Content')
 
     default_lang = SelectField('Default version', choices=[('en', 'en'), ('fr', 'fr'), ('zh', 'zh')])
-    cv_required = SelectMultipleField('required CV("use the Key Ctrl to select multi")', choices=[('en', 'en'), ('fr', 'fr'), ('zh', 'zh')], validators=[validators.InputRequired()])
+    cv_required = SelectMultipleField('required CV and letter of motivation("use the Key Ctrl to select multi")', choices=[('en', 'en'), ('fr', 'fr'), ('zh', 'zh')], validators=[validators.InputRequired()])
 
 
 class EnterpriseForm(wtf.Form):

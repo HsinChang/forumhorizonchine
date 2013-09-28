@@ -61,27 +61,27 @@ def index():
 def apply():
     """
     """
+    joburl = request.form['joburl']
+    key = ndb.Key(urlsafe=joburl)
+    job = key.get()
+    jobname = request.form['jobname']
     email_enterprise = request.form['email.to']
     email_to = ndb.Key(urlsafe=email_enterprise)
     to = email_to.get().email
-    jobname = request.form['jobname']
+
     enterprise = request.form['enterprise']
     first_name = request.form['firstname']
     last_name = request.form['lastname']
     email = request.form['email']
-    cv = {}
-
+    files = []
     #validate form
     if len(first_name) == 0 or len(last_name) == 0 or len(email) == 0:
         flash('empty field')
         return redirect(url_for('visitor.job'))
 
     #max size 2MB
-    max_size = 2*1024*1024
     for k, f in request.files.items():
-        print(k, f)
         path, ext = splitext(f.filename)
-        print(path, ext)
         if ext != '.doc' and ext != '.docx' and ext != '.pdf':
             flash('only support doc and pdf files')
             return redirect(url_for('visitor.job'))
@@ -89,26 +89,29 @@ def apply():
         #     flash('document size should be under 2M')
         #     return redirect(url_for('visitor.job'))
 
-    if 'cv_en' in request.files:
-        f = request.files['cv_en']
-        path, ext = splitext(f.filename)
-        f.filename = 'cv_en' + ext
-        cv['en'] = f
-    if 'cv_fr' in request.files:
-        f = request.files['cv_fr']
-        path, ext = splitext(f.filename)
-        f.filename = 'cv_fr' + ext
-        cv['fr'] = request.files['cv_fr']
-    if 'cv_zh' in request.files:
-        f = request.files['cv_zh']
-        path, ext = splitext(f.filename)
-        f.filename = 'cv_zh' + ext
-        cv['zh'] = request.files['cv_zh']
-    lm = request.files['lm']
+        f.filename = k + ext
+        files.append(f)
+
+    # if 'cv_en' in request.files:
+    #     f = request.files['cv_en']
+    #     path, ext = splitext(f.filename)
+    #     f.filename = 'cv_en' + ext
+    #     cv['en'] = f
+    # if 'cv_fr' in request.files:
+    #     f = request.files['cv_fr']
+    #     path, ext = splitext(f.filename)
+    #     f.filename = 'cv_fr' + ext
+    #     cv['fr'] = request.files['cv_fr']
+    # if 'cv_zh' in request.files:
+    #     f = request.files['cv_zh']
+    #     path, ext = splitext(f.filename)
+    #     f.filename = 'cv_zh' + ext
+    #     cv['zh'] = request.files['cv_zh']
+    # lm = request.files['lm']
     attachments = []
-    for key, item in cv.items():
-        attachments.append((item.filename, item.read()))
-    attachments.append((lm.filename, lm.read()))
+    for f in files:
+        attachments.append((f.filename, f.read()))
+    # attachments.append((lm.filename, lm.read()))
     message = mail.EmailMessage(sender='Admin of AFCP <lutianming1005@gmail.com>',
                                 to=to)
     message.subject = 'New application sent by AFCP'

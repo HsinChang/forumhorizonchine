@@ -70,11 +70,11 @@
 		  <td>CV in {{ cv }}<span class="required">*</span></td>
 		  <td><input type="file" name="cv_{{ cv }}" required="required" /></td>
 		</tr>
-		{% endfor %}
 		<tr>
-		  <td>Covering letter<span class="required">*</span></td>
-		  <td><input type="file" name="lm" required="required" /></td>
+		  <td>motivation letter in {{ cv }}<span class="required">*<</span></td>
+		  <td><input type="file" name="lm_{{ cv }}" required="required"></input></td>
 		</tr>
+		{% endfor %}
 		<tr>
 		  <td colspan="2"><small><span class="required">*</span>
 		  : required field</small></td>

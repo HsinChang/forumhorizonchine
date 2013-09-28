@@ -47,32 +47,33 @@
 		  action="{{ url_for('visitor.apply') }}" class="unwrapped">
 	      *.doc and *.pdf files are accepted, max 500 Ko for each attachment.
 	      {# L'identifiant indiquant à quelle adresse mail la candidature est envoyée, cf ressources du Forum #}
+	      <input type="hidden" name="joburl" value = "{{ job.key.urlsafe() }}"/>
 	      <input type="hidden" name="email.to" value="{{ job.enterprise_mail.urlsafe() }}" />
 	      {# Nom de l'emploi, le même que dans le titre #}
-	      <input type="hidden" name="jobname" value="{{ job.title }}" />
+	      <input type="hidden" name="jobname" value="{{ job.default.title }}" />
 	      {# Entreprise #}
 	      <input type="hidden" name="enterprise" value="{{ enterprise.name }}" />
 	      <table class="noborder">
 		<tr>
 		  <td>First name<span class="required">*</span></td>
-		  <td><input type="text" name="firstname" required="required" /></td>
+		  <td><input type="text" name="firstname" required/></td>
 		</tr>
 		<tr>
 		  <td>Last name<span class="required">*</span></td>
-		  <td><input type="text" name="lastname" required="required" /></td>
+		  <td><input type="text" name="lastname" required/></td>
 		</tr>
 		<tr>
 		  <td>e-mail<span class="required">*</span></td>
-		  <td><input type="text" name="email" required="required" /></td>
+		  <td><input type="email" name="email" required/></td>
 		</tr>
 		{% for cv in job.cv_required %}
 		<tr>
 		  <td>CV in {{ cv }}<span class="required">*</span></td>
-		  <td><input type="file" name="cv_{{ cv }}" required="required" /></td>
+		  <td><input type="file" name="cv_{{ cv }}" accept="application/pdf, application/msword" required/></td>
 		</tr>
 		<tr>
-		  <td>motivation letter in {{ cv }}<span class="required">*<</span></td>
-		  <td><input type="file" name="lm_{{ cv }}" required="required"></input></td>
+		  <td>motivation letter in {{ cv }}<span class="required">*</span></td>
+		  <td><input type="file" name="lm_{{ cv }}" accept="application/pdf, application/msword" required></input></td>
 		</tr>
 		{% endfor %}
 		<tr>

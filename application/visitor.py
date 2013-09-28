@@ -74,12 +74,7 @@ def apply():
     last_name = request.form['lastname']
     email = request.form['email']
     files = []
-    #validate form
-    if len(first_name) == 0 or len(last_name) == 0 or len(email) == 0:
-        flash('empty field')
-        return redirect(url_for('visitor.job'))
 
-    #max size 2MB
     for k, f in request.files.items():
         path, ext = splitext(f.filename)
         if ext != '.doc' and ext != '.docx' and ext != '.pdf':

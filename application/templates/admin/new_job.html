@@ -58,8 +58,13 @@
   </input>
 </form>
 <script type="text/javascript">
+  var width = $('.job_content').width();
+
   Aloha.ready( function() {
   Aloha.jQuery('.job_content').aloha();
+
+  var aloha_area = $(".aloha-textarea");
+  aloha_area.css("width", width);
 
   jQuery('#job_form').submit(function(){
   /*

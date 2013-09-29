@@ -4,12 +4,12 @@ buttons.next().slideToggle(0);
 $('.slidedDown').next().slideToggle(0);
 
 $(document).ready(function() {
-	buttons.click(function(e) {
-		$(this).next().slideToggle();
-	});
-	$('#sidebar-wrapper div.title').click(function() {
-		$(this).next().slideToggle();
-	});
+    buttons.click(function(e) {
+	$(this).next().slideToggle();
+    });
+    $('#sidebar-wrapper div.title').click(function() {
+	$(this).next().slideToggle();
+    });
 });
 
 

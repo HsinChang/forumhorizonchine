@@ -1,0 +1,20 @@
+<script type="text/javascript">
+  var width = $('.job_content').width();
+
+  Aloha.ready( function() {
+  Aloha.jQuery('.job_content').aloha();
+
+  var aloha_area = $(".aloha-textarea");
+  aloha_area.css("width", width);
+
+  jQuery('#job_form').submit(function(){
+  /*
+  Before the form is submitted, we unload aloha and store the contents of the
+  aloha editable to the textarea.
+  */
+  jQuery('.job_content').mahalo();
+  });
+  });
+
+  var errors = $('.field-error').next().slideToggle(0)
+</script>

@@ -14,11 +14,11 @@
 <h1>Edit Job</h1>
 <form id="job_form" method="post" action="{{ url_for('admin.edit_job', keyurl=keyurl) }}">
   <fieldset>
-    {% include "includes/job_form_fields.html %}
+    {% include "includes/job_form_fields.html" %}
   </fieldset>
   <input type="submit" value="publish">
   </input>
 </form>
-{% include "includes/aloha_script.html %}
+{% include "includes/aloha_script.html" %}
 
 {% endblock content %}

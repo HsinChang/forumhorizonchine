@@ -58,7 +58,7 @@ def job_lang_check(lang):
         """
         data = field.data
         published = getattr(form, 'publish_'+lang)
-        if published:
+        if published.data:
             if len(data) == 0:
                 raise validators.ValidationError('field should not be empty if you choose to publish it')
     return job_check

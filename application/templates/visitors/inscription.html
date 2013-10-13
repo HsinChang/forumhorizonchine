@@ -1,4 +1,4 @@
-{% extends "base_visitors.html" %}
+q{% extends "base_visitors.html" %}
 
 {% block html_title %}
 <title>Registrations for China Horizon Forum</title>
@@ -10,7 +10,7 @@
 {% block content %}
 
 <div class="section">
-	<h1>Registrations</h1>
+  <h1>{{ _('Registrations')}}</h1>
 	{#
 	<p>Registrations for the 2013 edition of the China Horizon Forum
 		are not yet open. Please come back later to register.
@@ -21,10 +21,10 @@
 	#}
 
 	<h2>
-		<a href="/visitors/inscript/forum2013/en/">Registration to the China Horizon Forum</a>
+	  <a href="{{ url_for('visitor.inscription') }}">{{ _('Registration to the China Horizon Forum') }}</a>
 	</h2>
 
-	<p>Registration for the Dragonfly Group workshop CV are closed.</p>
+	<p>{{ _('Registration for the Dragonfly Group workshop CV are closed.') }}</p>
 
 	{#
 	<p>Dragonfly Group is organizing a workshop about CV writing and
@@ -36,9 +36,6 @@
 		<a href="/visitors/inscript/atelier2013/en/">CV workshop hosted by Dragonfly Group</a>
 	</h2>
 	#}
-
-
-
 </div>
 
 

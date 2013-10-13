@@ -19,7 +19,7 @@
 	<div class="title">{{ _('Visitors area') }}</div>
 
 	<div>
-		<a class="button" href="{{ url_for('visitor.inscription') }}">Register now!</a>
+		<a class="button" href="{{ url_for('visitor.inscription') }}">{{ _('Register now') }}!</a>
 
 		<ul class="list">
 		  <li {% if request.path == url_for('visitor.program') %}

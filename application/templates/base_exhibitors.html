@@ -20,6 +20,7 @@
 <div class="sidebar-section">
   <div class="title">{{ _('Exhibitors area') }}</div>
   <div>
+    {#
     {% if user.is_authenticated() %}
     {{ _('welcome') }}! {{ user.username }} <a href="{{ url_for('exhibitor.logout')}}">{{ _('logout') }}</a>
     {% else %}
@@ -34,7 +35,7 @@
       </a>
     </form>
     {% endif %}
-
+    #}
     <ul class="list">
       {% if user.is_authenticated() %}
       <li {% if request.path == url_for('exhibitor.jobs') %}

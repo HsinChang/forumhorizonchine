@@ -12,7 +12,7 @@ var durationBetweenSlides = 10000; // in milliseconds
 
 var bannerImageClassName = "banner-img";
 
-var root = "/static/forum/images/";
+var root = "/static/img/";
 var bannersURLs = [root+"Forum_Horizon_Chine_2010_1.jpg"
               , root+"Forum_Horizon_Chine_2010_2.jpg"
               , root+"Forum_Horizon_Chine_2010_3.jpg"

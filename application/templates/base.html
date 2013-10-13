@@ -2,15 +2,15 @@
 <html lang="en">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <link rel="shortcut icon" type="image/ico" href="/favicon.ico" />
-    <link rel="stylesheet"  href="/static/css/common.css" />
+    <link rel="shortcut icon" type="image/ico" href="{{ url_for('static', filename='img/favicon.ico') }}" />
+    <link rel="stylesheet"  href="{{ url_for('static', filename='css/common.css') }}"/>
     <!--[if lte IE 9]>
 	<link rel="stylesheet" type="text/css" media="screen" href="/static/stylesheets/all_ie.css"/>
 	<![endif]-->
     <!--[if lte IE 8]>
 	<link rel="stylesheet" type="text/css" media="screen" href="/static/stylesheets/ie8.css"/>
 	<![endif]-->
-    <link rel="stylesheet" href="/static/css/sidebar.css" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/sidebar.css') }}" />
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 
     {% block html_head %}{% endblock %}

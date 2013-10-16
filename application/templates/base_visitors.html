@@ -16,42 +16,46 @@
 
 {% block sidebar %}
 <div class="sidebar-section">
-	<div class="title">{{ _('Visitors area') }}</div>
+  <div class="title">{{ _('Visitors area') }}</div>
 
-	<div>
-		<a class="button" href="{{ url_for('visitor.inscription') }}">{{ _('Register now') }}!</a>
-
-		<ul class="list">
-		  <li {% if request.path == url_for('visitor.program') %}
-		    class="current" {% endif %}>
-		    <a href="{{ url_for('visitor.program') }}">
-		      {{ _('Program') }}
-		    </a>
-		  </li>
-		  <li {% if request.path == url_for('visitor.exhibitors') %}
-		    class="current" {% endif %}>
-		    <a href="{{ url_for('visitor.exhibitors')}}">
-		      {{ _('Exhibitors') }}
-		    </a>
-		  </li>
-		  <li {% if request.path == url_for('visitor.job') %}
-		    class="current" {% endif %}>
-		    <a href="{{ url_for('visitor.job') }}">
-		      {{ _('Job opportunities') }}
-		    </a>
-		  </li>
-		  <li {% if request.path == url_for('visitor.workpermit') %}
-		    class="current" {% endif %}>
-		    <a href="{{ url_for('visitor.workpermit') }}">
-		      {{ _('Working permit') }}
-		    </a>
-		  </li>
-		</ul>
-	</div>
+  <div>
+    {#	<a class="button" href="{{ url_for('visitor.inscription') }}">{{ _('Register now') }}!</a>
+    #}
+    <ul class="list">
+      <li {% if request.path == url_for('visitor.program') %}
+	class="current" {% endif %}>
+	<a href="{{ url_for('visitor.program') }}">
+	  {{ _('Program') }}
+	</a>
+      </li>
+      <li {% if request.path == url_for('visitor.exhibitors') %}
+	class="current" {% endif %}>
+	<a href="{{ url_for('visitor.exhibitors')}}">
+	  {{ _('Exhibitors') }}
+	</a>
+      </li>
+      <li {% if request.path == url_for('visitor.job') %}
+	class="current" {% endif %}>
+	<a href="{{ url_for('visitor.job') }}">
+	  {{ _('Job opportunities') }}
+	</a>
+      </li>
+      <li {% if request.path == url_for('visitor.workpermit') %}
+	class="current" {% endif %}>
+	<a href="{{ url_for('visitor.workpermit') }}">
+	  {{ _('Working permit') }}
+	</a>
+      </li>
+    </ul>
+  </div>
 </div>
 
 <div class="sidebar-section">
-  {% include "includes/about.html" %}
+  {% include "includes/about_forum.html" %}
+</div>
+
+<div class="sidebar-section">
+  {% include "includes/about_AFCP.html" %}
 </div>
 
 {% endblock %}{# sidebar #}

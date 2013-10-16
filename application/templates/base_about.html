@@ -16,31 +16,11 @@
 {% block sidebar %}
 
 <div class="sidebar-section">
-  <div class="title">About the Forum</div>
-  <ul class="list">
-    <li {% if request.path == url_for('access') %}
-      class="current" {% endif %}>
-      <a href="{{ url_for('access') }}">
-	{{ _('Access to the Forum') }}
-      </a>
-    </li>
-    <li {% if request.path == url_for('balance') %}
-      class="current" {% endif %}>
-      <a href="{{ url_for('balance') }}">
-	{{ _('2012 balance') }}
-      </a>
-    </li>
-    <li {% if request.path == url_for('contact') %}
-      class="current" {% endif %}>
-      <a href="{{ url_for('contact') }}">
-	{{ _('Contact us') }}
-      </a>
-    </li>
-  </ul>
+  {% include "includes/about_forum.html" %}
 </div>
 
 <div class="sidebar-section">
-  {% include "includes/about.html" %}
+  {% include "includes/about_AFCP.html" %}
 </div>
 
 {% endblock %}{# sidebar #}

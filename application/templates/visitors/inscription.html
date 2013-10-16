@@ -1,9 +1,8 @@
-q{% extends "base_visitors.html" %}
+{% extends "base_visitors.html" %}
 
 {% block html_title %}
-<title>Registrations for China Horizon Forum</title>
-<meta name="description"
-	content="Registration of visitors for 2013 China Horizon Forum will start on February or March. Other subscriptions may be required for some activities." />
+<title>{{ _('Registrations for China Horizon Forum')}}</title>
+<meta name="description" content="Registration of visitors for 2013 China Horizon Forum will start on February or March. Other subscriptions may be required for some activities." />
 
 {% endblock %}{# html_title #}
 
@@ -21,7 +20,9 @@ q{% extends "base_visitors.html" %}
 	#}
 
 	<h2>
-	  <a href="{{ url_for('visitor.inscription') }}">{{ _('Registration to the China Horizon Forum') }}</a>
+	  <a href="{{ url_for('visitor.inscription') }}">
+	  {{ _('Registration to the China Horizon Forum') }}
+	  </a>
 	</h2>
 
 	<p>{{ _('Registration for the Dragonfly Group workshop CV are closed.') }}</p>
@@ -37,7 +38,5 @@ q{% extends "base_visitors.html" %}
 	</h2>
 	#}
 </div>
-
-
 
 {% endblock %}{# content #}

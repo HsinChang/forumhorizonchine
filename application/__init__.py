@@ -12,6 +12,8 @@ from models import UserModel, ROLES
 from flask_babel import Babel
 from flask_login import LoginManager, current_user
 from flask_mail import Mail
+import gettext
+gettext.install(None)
 
 app = Flask('application')
 app.config.from_object('application.settings')
@@ -79,4 +81,4 @@ if app.debug:
 # GAE Mini Profiler (only enabled on dev server)
 app.wsgi_app = profiler.ProfilerWSGIMiddleware(app.wsgi_app)
 
-app.before_first_request(init_admin)
+init_admin()

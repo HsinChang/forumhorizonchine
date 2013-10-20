@@ -56,24 +56,24 @@
 	      <table class="noborder">
 		<tr>
 		  <td>First name<span class="required">*</span></td>
-		  <td><input type="text" name="firstname" required/></td>
+		  <td><input type="text" name="firstname" required="required"/></td>
 		</tr>
 		<tr>
 		  <td>Last name<span class="required">*</span></td>
-		  <td><input type="text" name="lastname" required/></td>
+		  <td><input type="text" name="lastname" required="required"/></td>
 		</tr>
 		<tr>
 		  <td>e-mail<span class="required">*</span></td>
-		  <td><input type="email" name="email" required/></td>
+		  <td><input type="email" name="email" required="required"/></td>
 		</tr>
 		{% for cv in job.cv_required %}
 		<tr>
 		  <td>CV in {{ cv }}<span class="required">*</span></td>
-		  <td><input type="file" name="cv_{{ cv }}" accept="application/pdf, application/msword" required/></td>
+		  <td><input type="file" name="cv_{{ cv }}" accept="application/pdf, application/msword" required="required"/></td>
 		</tr>
 		<tr>
 		  <td>motivation letter in {{ cv }}<span class="required">*</span></td>
-		  <td><input type="file" name="lm_{{ cv }}" accept="application/pdf, application/msword" required></input></td>
+		  <td><input type="file" name="lm_{{ cv }}" accept="application/pdf, application/msword" required="required"></input></td>
 		</tr>
 		{% endfor %}
 		<tr>

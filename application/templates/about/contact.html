@@ -1,5 +1,7 @@
 {% extends "base_about.html" %}
 
+{% from "_formhelpers.html" import render_field as render_field %}
+
 {% block html_title %}
 <title>
   {{ _('Contact the team of China Horizon Forum') }}
@@ -38,13 +40,24 @@
   #}
 
   <h2>{{ _('Wish to contact us?') }}</h2>
-  <form method="post">
+  <form method="post" action="{{ url_for('contact') }}">
+    <fieldset>
+      {{ form.hidden_tag() }}
+      {{ render_field(form.first_name) }}
+      {{ render_field(form.last_name) }}
+      {{ render_field(form.email) }}
+      {{ render_field(form.message) }}
+    </fieldset>
+    <input type="submit" value="{{ _('Send') }}">
+    </input>
+    {#
     <input type="hidden" name="from" value="forum" />
     <div>{{ _('Please enter your email') }}: </div>
     <div><input type="text" name="email" /></div>
     <div>{{ _('Please enter your message') }}:</div>
     <div><textarea name="message" rows="5"></textarea></div>
     <div><input type="submit" value="{{ _('Send the message')}}" /></div>
+    #}
   </form>
 
 </div>

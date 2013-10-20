@@ -1,22 +1,36 @@
 {% extends "base_visitors.html" %}
 
+{% from "_formhelpers.html" import render_field as render_field %}
+
 {% block html_title %}
 <title>{{ _('Status change from student to employee') }}</title>
 <meta name="description"
-	content="This page explains the process to change the status from student to employee (mostly in Chinese)." />
+      content="This page explains the process to change the status from student to employee (mostly in Chinese)." />
 
 {% endblock %}{# html_title #}
 
 {% block content %}
 
 <div class="section program">
-	<h1>{{ _('Status change from student to employee') }}</h1>
+  <h1>{{ _('Status change from student to employee') }}</h1>
 
-	<object style="width:670px; height: 510px" data="/static/docs/20130117Changement_de_statut.pdf" type="text/html" codetype="application/pdf"></object>
-	<a href="/static/docs/20130117Changement_de_statut.pdf" title="Right click &gt; &quot;Save as&quot; to download it">Link to the PDF</a>
+  <object style="width:670px; height: 510px" data="/static/docs/20130117Changement_de_statut.pdf" type="text/html" codetype="application/pdf"></object>
+  <a href="/static/docs/20130117Changement_de_statut.pdf" title="Right click &gt; &quot;Save as&quot; to download it">Link to the PDF</a>
 
-{#	<!-- <iframe src="/static/docs/20121001Changement_de_statu.pdf" width="670px" height="510px">Coucou</iframe> --> #}
+  {#	<!-- <iframe src="/static/docs/20121001Changement_de_statu.pdf" width="670px" height="510px">Coucou</iframe> --> #}
 
+  <h2>{{ _('you want to send a comment about this guide') }}?</h2>
+  <form method="post" action="{{ url_for('visitor.workpermit') }}">
+    <fieldset>
+      {{ form.hidden_tag() }}
+      {{ render_field(form.first_name) }}
+      {{ render_field(form.last_name) }}
+      {{ render_field(form.email) }}
+      {{ render_field(form.message) }}
+    </fieldset>
+    <input type="submit" value="{{ _('Send') }}">
+    </input>
+  </form>
 </div>
 
 

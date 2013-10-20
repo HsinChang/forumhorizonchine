@@ -31,7 +31,7 @@
 
       {% with messages = get_flashed_messages() %}
       {% if messages %}
-      <ul class=flashes>
+      <ul class="flashes">
 	{% for message in messages %}
 	<li>{{ message }}</li>
 	{% endfor %}
@@ -57,7 +57,9 @@
 	  <a id="top"></a>
 	  {% block content %}FIXME: content block{% endblock %}
 	  <div class="section-footer">
-	    <p class="hide"><a href="#top">{{ _("Back to top") }}</a></p>
+	    <p class="hide">
+	      <a href="#top">{{ _('Back to top') }}</a>
+	    </p>
 	  </div>
 	</div><!--/#content-wrapper-->
 

@@ -9,6 +9,7 @@ For example the *say_hello* handler, handling the URL route '/hello/<username>',
 
 """
 from google.appengine.api import users
+from google.appengine.api import mail
 from google.appengine.runtime.apiproxy_errors import CapabilityDisabledError
 
 from flask import request, render_template, flash, url_for, redirect, session
@@ -19,7 +20,7 @@ import flask_login
 
 from application import app
 from decorators import login_required, admin_required
-from forms import RegisterForm, JobForm
+from forms import RegisterForm, JobForm, ContactForm
 
 
 # Flask-Cache (configured to use App Engine Memcache API)
@@ -44,9 +45,26 @@ def access():
 def balance():
     return render_template('about/balance.html')
 
-@app.route('/about/contact')
+@app.route('/about/contact', methods=['GET', 'POST'])
 def contact():
-    return render_template('about/contact.html')
+    form = ContactForm(request.form)
+    if request.method == 'POST' and form.validate():
+        first_name = form.first_name.data
+        last_name = form.last_name.data
+        email = form.email.data
+        comment = form.message.data
+
+        message = mail.EmailMessage(sender='Admin of AFCP <lutianming1005@gmail.com>',
+                                    to="lutianming1005@hotmail.com")
+        message.subject = 'Message from {0} {1}<{2}>'.format(first_name, last_name, email)
+        message.body = u"""
+    Following is the message from {0} {1} {2}:
+
+    {3}
+    """.format(first_name, last_name, email, comment)
+        message.send()
+        flash('mail sent')
+    return render_template('about/contact.html', form=form)
 
 @app.route('/about')
 def about():

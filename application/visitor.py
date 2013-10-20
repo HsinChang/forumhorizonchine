@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from flask import Blueprint, render_template, redirect, url_for, request, flash, session
 from models import JobModel, EnterpriseModel, EmailModel
+from forms import ContactForm
 from flask_mail import Message
 from application import app
 from google.appengine.api import mail
@@ -47,9 +48,26 @@ def job():
     return render_template('visitors/job.html', grouped_jobs=grouped_jobs)
 
 
-@visitor.route('/workpermit')
+@visitor.route('/workpermit', methods=['GET', 'POST'])
 def workpermit():
-    return render_template('visitors/workpermit.html')
+    form = ContactForm(request.form)
+    if request.method == 'POST' and form.validate():
+        first_name = form.first_name.data
+        last_name = form.last_name.data
+        email = form.email.data
+        comment = form.message.data
+
+        message = mail.EmailMessage(sender='Admin of AFCP <lutianming1005@gmail.com>',
+                                    to="lutianming1005@hotmail.com")
+        message.subject = 'Comment about the workpermit guide from {0} {1}<{2}>'.format(first_name, last_name, email)
+        message.body = u"""
+    Following is the comment from {0} {1} {2}:
+
+    {3}
+    """.format(first_name, last_name, email, comment)
+        message.send()
+        flash('mail sent')
+    return render_template('visitors/workpermit.html', form=form)
 
 
 @visitor.route('/')

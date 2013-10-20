@@ -7,15 +7,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2013-10-16 21:44+0200\n"
-"PO-Revision-Date: 2013-10-20 15:12+0100\n"
+"POT-Creation-Date: 2013-10-20 16:34+0200\n"
+"PO-Revision-Date: 2013-10-20 16:36+0100\n"
 "Last-Translator: Tianming.Lu <lutianming1005@gmail.com>\n"
 "Language-Team: zh <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 1.3\n"
+"Generated-By: Babel 0.9.6\n"
 "X-Generator: Poedit 1.5.4\n"
 
 #: admin.py:132 admin.py:159
@@ -37,6 +37,22 @@ msgstr ""
 #: exhibitor.py:105
 msgid "job deleted"
 msgstr ""
+
+#: forms.py:128
+msgid "First name"
+msgstr "名"
+
+#: forms.py:129
+msgid "Last name"
+msgstr "姓"
+
+#: forms.py:130
+msgid "Email"
+msgstr ""
+
+#: forms.py:131
+msgid "Message"
+msgstr "消息"
 
 #: templates/base_exhibitors.html:21
 msgid "Exhibitors area"
@@ -248,57 +264,49 @@ msgstr ""
 msgid "Below are statistics about the participants of 2012 China Horizon Forum"
 msgstr "以下是2012年中国地平线论坛参与者的统计数据："
 
-#: templates/about/contact.html:5
+#: templates/about/contact.html:7
 msgid "Contact the team of China Horizon Forum"
 msgstr "联系中国地平线论坛团队"
 
-#: templates/about/contact.html:10
+#: templates/about/contact.html:12
 msgid "Team leaders of China Horizon Forum 2013"
 msgstr "2013年中国地平线论坛负责人"
 
-#: templates/about/contact.html:14 templates/exhibitors/jobs.html:17
+#: templates/about/contact.html:16 templates/exhibitors/jobs.html:17
 msgid "Name"
 msgstr "姓名"
 
-#: templates/about/contact.html:15
+#: templates/about/contact.html:17
 msgid "Title"
 msgstr "职位"
 
-#: templates/about/contact.html:18 templates/visitors/program.html:56
+#: templates/about/contact.html:20 templates/visitors/program.html:56
 msgid "Mr. Qi ZHU"
 msgstr "朱琪先生"
 
-#: templates/about/contact.html:19
+#: templates/about/contact.html:21
 msgid "AFCP President"
 msgstr "AFCP主席"
 
-#: templates/about/contact.html:22
+#: templates/about/contact.html:24
 msgid "Ms. Nan ZHANG"
 msgstr "章楠 小姐"
 
-#: templates/about/contact.html:23 templates/about/contact.html:27
+#: templates/about/contact.html:25 templates/about/contact.html:29
 msgid "Forum team member"
 msgstr "论坛团队负责人"
 
-#: templates/about/contact.html:26
+#: templates/about/contact.html:28
 msgid "Mr. Zheng LI"
 msgstr "李铮 先生"
 
-#: templates/about/contact.html:40
+#: templates/about/contact.html:42
 msgid "Wish to contact us?"
 msgstr "您希望联系我们?"
 
-#: templates/about/contact.html:43
-msgid "Please enter your email"
-msgstr "请输入您的邮箱地址"
-
-#: templates/about/contact.html:45
-msgid "Please enter your message"
-msgstr "请输入您的消息内容"
-
-#: templates/about/contact.html:47
-msgid "Send the message"
-msgstr "发送"
+#: templates/about/contact.html:51 templates/visitors/workpermit.html:31
+msgid "Send"
+msgstr ""
 
 #: templates/exhibitors/edit_job.html:9 templates/exhibitors/edit_job.html:13
 msgid "Edit job"
@@ -692,11 +700,11 @@ msgstr ""
 msgid "Job opportunities via China Horizon Forum"
 msgstr "中国地平线论坛招聘广告"
 
-#: templates/visitors/job.html:30
+#: templates/visitors/job.html:30 templates/visitors/job_meta.html:2
 msgid "Jobs opportunities"
 msgstr "职位信息"
 
-#: templates/visitors/job.html:95
+#: templates/visitors/job.html:95 templates/visitors/job_meta.html:67
 msgid "No job provided"
 msgstr "暂无职位"
 
@@ -801,12 +809,16 @@ msgstr "国立巴黎高等矿业学校能源与工序学院院长"
 msgid "Closing Ceremony"
 msgstr "闭幕式"
 
-#: templates/visitors/workpermit.html:4 templates/visitors/workpermit.html:13
+#: templates/visitors/workpermit.html:6 templates/visitors/workpermit.html:15
 msgid "Status change from student to employee"
 msgstr "学生居留转工作居留"
 
-#~ msgid "About"
-#~ msgstr "关于"
+#: templates/visitors/workpermit.html:22
+msgid "you want to send a comment about this guide"
+msgstr ""
 
-#~ msgid "Register now"
-#~ msgstr "立即注册"
+#~ msgid "Please enter your email"
+#~ msgstr "请输入您的邮箱地址"
+
+#~ msgid "Please enter your message"
+#~ msgstr "请输入您的消息内容"

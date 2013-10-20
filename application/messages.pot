@@ -8,14 +8,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2013-10-16 21:44+0200\n"
+"POT-Creation-Date: 2013-10-20 16:34+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 1.3\n"
+"Generated-By: Babel 0.9.6\n"
 
 #: admin.py:132 admin.py:159
 msgid "no such enterprise"
@@ -35,6 +35,22 @@ msgstr ""
 
 #: exhibitor.py:105
 msgid "job deleted"
+msgstr ""
+
+#: forms.py:128
+msgid "First name"
+msgstr ""
+
+#: forms.py:129
+msgid "Last name"
+msgstr ""
+
+#: forms.py:130
+msgid "Email"
+msgstr ""
+
+#: forms.py:131
+msgid "Message"
 msgstr ""
 
 #: templates/base_exhibitors.html:21
@@ -223,56 +239,48 @@ msgstr ""
 msgid "Below are statistics about the participants of 2012 China Horizon Forum"
 msgstr ""
 
-#: templates/about/contact.html:5
+#: templates/about/contact.html:7
 msgid "Contact the team of China Horizon Forum"
 msgstr ""
 
-#: templates/about/contact.html:10
+#: templates/about/contact.html:12
 msgid "Team leaders of China Horizon Forum 2013"
 msgstr ""
 
-#: templates/about/contact.html:14 templates/exhibitors/jobs.html:17
+#: templates/about/contact.html:16 templates/exhibitors/jobs.html:17
 msgid "Name"
 msgstr ""
 
-#: templates/about/contact.html:15
+#: templates/about/contact.html:17
 msgid "Title"
 msgstr ""
 
-#: templates/about/contact.html:18 templates/visitors/program.html:56
+#: templates/about/contact.html:20 templates/visitors/program.html:56
 msgid "Mr. Qi ZHU"
 msgstr ""
 
-#: templates/about/contact.html:19
+#: templates/about/contact.html:21
 msgid "AFCP President"
 msgstr ""
 
-#: templates/about/contact.html:22
+#: templates/about/contact.html:24
 msgid "Ms. Nan ZHANG"
 msgstr ""
 
-#: templates/about/contact.html:23 templates/about/contact.html:27
+#: templates/about/contact.html:25 templates/about/contact.html:29
 msgid "Forum team member"
 msgstr ""
 
-#: templates/about/contact.html:26
+#: templates/about/contact.html:28
 msgid "Mr. Zheng LI"
 msgstr ""
 
-#: templates/about/contact.html:40
+#: templates/about/contact.html:42
 msgid "Wish to contact us?"
 msgstr ""
 
-#: templates/about/contact.html:43
-msgid "Please enter your email"
-msgstr ""
-
-#: templates/about/contact.html:45
-msgid "Please enter your message"
-msgstr ""
-
-#: templates/about/contact.html:47
-msgid "Send the message"
+#: templates/about/contact.html:51 templates/visitors/workpermit.html:31
+msgid "Send"
 msgstr ""
 
 #: templates/exhibitors/edit_job.html:9 templates/exhibitors/edit_job.html:13
@@ -633,11 +641,11 @@ msgstr ""
 msgid "Job opportunities via China Horizon Forum"
 msgstr ""
 
-#: templates/visitors/job.html:30
+#: templates/visitors/job.html:30 templates/visitors/job_meta.html:2
 msgid "Jobs opportunities"
 msgstr ""
 
-#: templates/visitors/job.html:95
+#: templates/visitors/job.html:95 templates/visitors/job_meta.html:67
 msgid "No job provided"
 msgstr ""
 
@@ -742,7 +750,11 @@ msgstr ""
 msgid "Closing Ceremony"
 msgstr ""
 
-#: templates/visitors/workpermit.html:4 templates/visitors/workpermit.html:13
+#: templates/visitors/workpermit.html:6 templates/visitors/workpermit.html:15
 msgid "Status change from student to employee"
+msgstr ""
+
+#: templates/visitors/workpermit.html:22
+msgid "you want to send a comment about this guide"
 msgstr ""
 

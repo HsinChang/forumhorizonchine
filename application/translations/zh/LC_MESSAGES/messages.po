@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2013-10-16 21:44+0200\n"
-"PO-Revision-Date: 2013-10-16 21:45+0100\n"
+"PO-Revision-Date: 2013-10-20 15:12+0100\n"
 "Last-Translator: Tianming.Lu <lutianming1005@gmail.com>\n"
 "Language-Team: zh <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -641,7 +641,7 @@ msgstr "参展企业"
 
 #: templates/visitors/exhibitors.html:14
 msgid "We are in contact with many French and Chinese players"
-msgstr "我们正在与众多法国及中国企业进行接触 :"
+msgstr "我们正在与众多法国及中国企业进行接触"
 
 #: templates/visitors/exhibitors.html:16
 msgid ""

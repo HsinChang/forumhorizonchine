@@ -1,0 +1,21 @@
+<div class="title">{{ _('About the Forum') }}</div>
+<ul class="list">
+  <li {% if request.path == url_for('access', usertype=usertype) %}
+    class="current" {% endif %}>
+    <a href="{{ url_for('access') }}">
+      {{ _('Access to the Forum') }}
+    </a>
+  </li>
+  <li {% if request.path == url_for('balance', usertype=usertype) %}
+    class="current" {% endif %}>
+    <a href="{{ url_for('balance') }}">
+      {{ _('2012 balance') }}
+    </a>
+  </li>
+  <li {% if request.path == url_for('contact', usertype=usertype) %}
+    class="current" {% endif %}>
+    <a href="{{ url_for('contact') }}">
+      {{ _('Contact us') }}
+    </a>
+  </li>
+</ul>

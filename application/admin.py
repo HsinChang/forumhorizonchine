@@ -6,7 +6,7 @@
 #         return self.render('admin/index.html')
 from google.appengine.runtime.apiproxy_errors import CapabilityDisabledError
 from google.appengine.ext import ndb
-from flask import Blueprint, render_template, redirect, url_for, request, flash
+from flask import Blueprint, render_template, redirect, url_for, request, flash, Response
 from forms import RegisterForm, JobForm, EnterpriseForm, EmailForm, PasswordForm
 from models import UserModel, JobModel, JobMetaModel, ROLES, EnterpriseModel, EmailModel
 from decorators import admin_required
@@ -373,6 +373,13 @@ def import_enterprise():
     f = request.files.values()[0]
     Data.import_enterprise(f)
     return redirect(url_for('admin.data'))
+
+@admin.route('/data/export_enterprise')
+def export_enterprise():
+    """
+    """
+    output = Data.export_enterprise()
+    return Response(output, mimetype='text/xml')
 
 @admin.route('/data/import_jobs')
 @admin_required

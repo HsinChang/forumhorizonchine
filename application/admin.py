@@ -13,6 +13,7 @@ from decorators import admin_required
 from application import app
 from passlib.apps import custom_app_context as pwd_context
 import flask_login
+from os.path import splitext
 
 admin = Blueprint('admin', __name__)
 
@@ -251,7 +252,8 @@ def new_job():
         flash('there is no enterprise, please create one before add new job')
         return redirect(url_for('admin.new_enterprise'))
 
-    form.enterprise_mail.choices = choices
+    form.enterprise_mail.choices = sorted(choices, key=lambda choice: choice[1])
+
     if request.method == 'POST' and form.validate():
         user = flask_login.current_user
         mail = ndb.Key(urlsafe=form.enterprise_mail.data)
@@ -298,7 +300,9 @@ def edit_job(keyurl):
         return redirect(url_for('admin.jobs'))
     form = JobForm(request.form, obj=job)
     mails = EmailModel.query()
-    form.enterprise_mail.choices = [(mail.key.urlsafe(), mail.enterprise.get().name + ' -- ' + mail.email) for mail in mails]
+    choices = [(mail.key.urlsafe(), mail.enterprise.get().name + ' -- ' + mail.email) for mail in mails]
+
+    form.enterprise_mail.choices = sorted(choices, key=lambda c: c[1])
     if request.method == 'POST' and form.validate():
         job.type = form.type.data
         mail = ndb.Key(urlsafe=form.enterprise_mail.data)
@@ -371,6 +375,11 @@ def import_enterprise():
     """
     """
     f = request.files.values()[0]
+    path, ext = splitext(f.filename)
+    if ext != '.xml':
+        #not xml file
+        flash('not xml file')
+    content = f.read()
     Data.import_enterprise(f)
     return redirect(url_for('admin.data'))
 
@@ -381,13 +390,27 @@ def export_enterprise():
     output = Data.export_enterprise()
     return Response(output, mimetype='text/xml')
 
-@admin.route('/data/import_jobs')
+@admin.route('/data/import_jobs', methods=['POST'])
 @admin_required
 def import_jobs():
     """
     """
-    utils.import_jobs()
+    f = request.files.values()[0]
+    path, ext = splitext(f.filename)
+    if ext != '.xml':
+        #not xml file
+        flash('not xml file')
+    content = f.read()
+    Data.import_jobs(content)
     return redirect(url_for('admin.data'))
+
+@admin.route('/data/export_jobs')
+@admin_required
+def export_jobs():
+    """
+    """
+    output = '<data></data>'
+    return Reponse(output, mimetype='text/xml')
 
 @admin.route('/')
 def index():

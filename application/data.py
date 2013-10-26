@@ -1,15 +1,13 @@
 import xml.etree.ElementTree as ET
-from models import EnterpriseModel, JobModel, EmailModel
-from os.path import splitext
+from models import EnterpriseModel, JobModel, EmailModel, JobMetaModel
 from flask import flash
 
-def import_enterprise(f):
-    path, ext = splitext(f.filename)
-    if ext != '.xml':
-        #not xml file
-        flash('not xml file')
-        return -1
-    content = f.read()
+def import_enterprise(content):
+    """
+
+    Arguments:
+    - `content`: string
+    """
     root = ET.fromstring(content)
     for e in root.iter('enterprise'):
         name = e.get('name')
@@ -55,3 +53,83 @@ def export_enterprise():
             sub.append(element)
 
     return ET.tostring(root)
+
+def import_jobs(content):
+    """
+
+    Arguments:
+    - `content`:
+    """
+    root = ET.fromstring(content)
+    for job in root.iter('job'):
+        jobtype = job.get('type')
+        en = JobMetaModel(
+            published = False,
+            title = '',
+            content = '',
+        )
+        fr = JobMetaModel(
+            published = False,
+            title = '',
+            content = '',
+        )
+        zh = JobMetaModel(
+            published = False,
+            title = '',
+            content = '',
+        )
+
+        for meta in job.iter('meta'):
+            lang = meta.get('lang')
+            title = meta.find('title').text
+            content = meta.find('content').text
+            if lang == 'en':
+                en.published = True
+                en.title = title
+                en.content = content
+            elif lang == 'fr':
+                fr.published = True
+                fr.title = title
+                fr.content = content
+            elif lang == 'zh':
+                zh.published = True
+                zh.title = title
+                zh.content = content
+
+        online = job.get('online')
+        apply = job.find('apply')
+        if int(online) == 0:
+            enterprise = apply.find('enterprise').text
+            email = apply.find('email').text
+
+            e = EnterpriseModel.query(EnterpriseModel.name==enterprise).get()
+            e_email = EmailModel.query(EmailModel.enterprise==e.key, EmailModel.email==email).get()
+
+            j = JobModel(
+                type = jobtype,
+                is_online = False,
+                is_complete = True,
+                enterprise = e.key,
+                enterprise_mail = e_email.key,
+                fr = fr,
+                en = en,
+                zh = zh,
+                published = True,
+                default_lang = 'en',
+                cv_required = ['en']
+            )
+        else:
+            url = apply.find('url').text
+            j = JobModel(
+                type = jobtype,
+                is_online = False,
+                is_complete = False,
+                apply_url = url,
+                fr = fr,
+                en = en,
+                zh = zh,
+                published = True,
+                default_lang = 'en',
+                cv_required = ['en']
+            )
+        j.put()

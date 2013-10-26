@@ -1,12 +1,12 @@
 {% from "_formhelpers.html" import render_field as render_field %}
 {{ form.hidden_tag() }}
-{{ render_field(form.enterprise_mail) }}
+{{ render_field(form.is_online) }}
+{{ render_field(form.apply_url, groupid="url") }}
+{{ render_field(form.enterprise_mail, groupid="mail") }}
 {{ render_field(form.type) }}
 <div class="section job">
   <div class="block-job">
-    <div id="en" class="apply-button {% if form.title_en.errors or form.content_en.errors %}
-			field-error
-			{% endif %}">
+    <div id="en" class="apply-button {% if form.title_en.errors or form.content_en.errors %}field-error{% endif %}">
       <div>English version</div>
     </div>
     <div>
@@ -16,10 +16,7 @@
     </div>
   </div>
   <div class="block-job">
-    <div id="fr" class="apply-button {% if form.title_fr.errors or form.content_fr.errors %}
-			field-error
-			{% endif %}
-">
+    <div id="fr" class="apply-button {% if form.title_fr.errors or form.content_fr.errors %}field-error{% endif %}">
       <div>French version</div>
     </div>
     <div>
@@ -29,9 +26,7 @@
     </div>
   </div>
   <div class="block-job">
-    <div id="zh" class="apply-button {% if form.title_en.errors or form.content_en.errors %}
-			field-error
-			{% endif %}">
+    <div id="zh" class="apply-button {% if form.title_en.errors or form.content_en.errors %}field-error{% endif %}">
       <div>Chinese version</div>
     </div>
     <div>

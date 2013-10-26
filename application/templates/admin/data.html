@@ -9,12 +9,16 @@
 {% block content %}
 <h1>Import</h1>
 <form method="post" enctype="multipart/form-data" action="{{ url_for('admin.import_enterprise') }}">
-  <input type="file" name="enterprise data">
-  </input>
+  <input type="file" name="enterprise data"/>
   <input type="submit" value="input"/>
 </form>
+
+<form method="post" enctype="multipart/form-data" action="{{ url_for('admin.import_jobs') }}">
+  <input type="file" name="job data" />
+  <input type="submit" value="input" />
+</form>
+
 <h1>Export</h1>
 <a href="{{ url_for('admin.export_enterprise') }}">export enterprise</a>
-
-<a href="{{ url_for('admin.import_jobs') }}">import jobs</a>
+<a href="{{ url_for('admin.export_jobs') }}">export jobs</a>
 {% endblock content %}

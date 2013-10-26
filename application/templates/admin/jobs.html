@@ -19,6 +19,7 @@
       <th>Type</th>
       <th>Date</th>
       <th>Published</th>
+      <th>state</th>
       <th>&nbsp;</th>
       <th>&nbsp;</th>
     </tr>
@@ -27,10 +28,16 @@
     {% for job in jobs %}
     <tr>
       <th>{{ job.en.title }}</th>
-      <th>{{ job.enterprise.get().name }}</th>
+      <th>{% if job.enterprise %}
+      job.enterprise.get().name
+      {% else %}
+
+      {% endif %}
+      </th>
       <th>{{ job.type }}</th>
       <th>{{ job.date }}</th>
       <th>{{ job.published }}</th>
+      <th>{{ job.is_complete }}</th>
       <th>
 	<a href="{{ url_for('admin.edit_job', keyurl=job.key.urlsafe()) }}">
 	  edit

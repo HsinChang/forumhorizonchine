@@ -1,6 +1,8 @@
-{% macro render_field(field) %}
+{% macro render_field(field, groupid=None) %}
 {% if field.errors %}
 <div class="control-group error">
+{% elif groupid %}
+<div class="control-group" id="{{ groupid }}">
 {% else %}
 <div class="control-group">
 {% endif %}

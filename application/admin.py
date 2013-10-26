@@ -191,12 +191,15 @@ def new_email(keyurl):
 
 @admin.route('/edit_email/<keyurl>', methods=['GET', 'POST'])
 @admin_required
-def edit_mail(keyurl):
-    email = ndb.Key(keyurl).get()
+def edit_email(keyurl):
+    email = ndb.Key(urlsafe=keyurl).get()
     if not email:
         flash('no such email')
         return redirect(url_for('admin.enterprises'))
     form = EmailForm(request.form)
+    if request.method == 'GET':
+        form.email.data = email.email
+
     if request.method == 'POST' and form.validate():
         email.email = form.email.data
         try:
@@ -204,7 +207,7 @@ def edit_mail(keyurl):
             return redirect(url_for('admin.edit_enterprise', keyurl=email.enterprise))
         except CapabilityDisabledError:
             flash('save error')
-    return render_template('admin.edit_email.html', form=form, keyurl=keyurl)
+    return render_template('admin/edit_email.html', form=form, keyurl=keyurl)
 
 
 @admin.route('/delete_email/<keyurl>', methods=['POST'])
@@ -221,7 +224,7 @@ def delete_email(keyurl):
         return redirect(url_for('admin.enterprises'))
     enterprise = email.enterprise
     email.key.delete()
-    return redirect(url_for('admin.edit_enterprise', keyurl=enterpris))
+    return redirect(url_for('admin/edit_enterprise', keyurl=enterpris))
 
 
 @admin.route('/jobs')
@@ -353,6 +356,31 @@ def delete_job(keyurl):
     except CapabilityDisabledError:
         flash(_('fail to delete'))
     return redirect(url_for('admin.jobs'))
+
+import data as Data
+@admin.route('/data')
+@admin_required
+def data():
+    """
+    """
+    return render_template('admin/data.html')
+
+@admin.route('/data/import_enterprise', methods=['POST'])
+@admin_required
+def import_enterprise():
+    """
+    """
+    f = request.files.values()[0]
+    Data.import_enterprise(f)
+    return redirect(url_for('admin.data'))
+
+@admin.route('/data/import_jobs')
+@admin_required
+def import_jobs():
+    """
+    """
+    utils.import_jobs()
+    return redirect(url_for('admin.data'))
 
 @admin.route('/')
 def index():

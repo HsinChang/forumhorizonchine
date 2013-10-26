@@ -45,6 +45,10 @@
 	class="current" {% endif %}>
 	<a href="{{ url_for('admin.enterprises') }}">enterprises</a>
       </li>
+      <li {% if request.path == url_for('admin.data') %}
+	class="current" {% endif %}>
+	<a href="{{ url_for('admin.data') }}">data</a>
+      </li>
     </ul>
     {% else %}
     <form method="post" action="{{ url_for('admin.login') }}">

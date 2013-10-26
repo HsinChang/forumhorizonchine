@@ -41,10 +41,10 @@
     <tr>
       <th>{{ email.email }}</th>
       <th>
-	<a href="url_for('admin.edit_email', keyurl=email.key.urlsafe())">edit</a>
+	<a href="{{ url_for('admin.edit_email', keyurl=email.key.urlsafe()) }}">edit</a>
       </th>
       <th>
-	<a href="url_for('admin.delete_email', keyurl=email.key.urlsafe())">delete</a>
+	<a href="{{ url_for('admin.delete_email', keyurl=email.key.urlsafe()) }}">delete</a>
       </th>
     </tr>
     {% else %}

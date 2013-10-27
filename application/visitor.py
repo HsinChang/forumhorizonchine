@@ -29,7 +29,7 @@ def exhibitors():
 @visitor.route('/job')
 def job():
     grouped_jobs = {}
-    jobs = JobModel.query(JobModel.published==True)
+    jobs = JobModel.query(JobModel.published==True, JobModel.enterprise!=None)
     for job in jobs:
         locale = session['locale']
         if locale == 'fr' and job.fr.published:
@@ -139,7 +139,7 @@ def apply():
     Bien à vous,
 
     L'équipe AFCP
-    """.format(job, first_name, last_name, email)
+    """.format(job.default.title, first_name, last_name, email)
     message.send()
     flash('mail sent')
     return redirect(url_for('visitor.job'))

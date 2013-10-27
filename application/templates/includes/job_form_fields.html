@@ -1,8 +1,9 @@
 {% from "_formhelpers.html" import render_field as render_field %}
 {{ form.hidden_tag() }}
+{{ render_field(form.enterprise) }}
 {{ render_field(form.is_online) }}
 {{ render_field(form.apply_url, groupid="url") }}
-{{ render_field(form.enterprise_mail, groupid="mail") }}
+{{ render_field(form.enterprise_mail, groupid="email") }}
 {{ render_field(form.type) }}
 <div class="section job">
   <div class="block-job">
@@ -38,3 +39,21 @@
 </div>
 {{ render_field(form.default_lang) }}
 {{ render_field(form.cv_required) }}
+
+<script type="text/javascript">
+  $('#is_online').change(function(){
+  if(this.checked){
+  document.getElementById('url').style.display = 'block';
+  document.getElementById('email').style.display = 'none';
+  }
+  else{
+  document.getElementById('url').style.display = 'none';
+  document.getElementById('email').style.display = 'block';
+  }
+  });
+
+  $('#enterprise').change(function(){
+
+  })
+
+</script>

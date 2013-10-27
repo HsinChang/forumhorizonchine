@@ -29,7 +29,7 @@
     <tr>
       <th>{{ job.en.title }}</th>
       <th>{% if job.enterprise %}
-      job.enterprise.get().name
+      {{ job.enterprise.get().name }}
       {% else %}
 
       {% endif %}

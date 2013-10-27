@@ -2,6 +2,18 @@
 
 {% block header %}
 {% include "includes/aloha.html" %}
+<script>
+  $(document).ready(function(){
+  if($('#is_online').checked){
+  document.getElementById('url').style.display = 'block';
+  document.getElementById('email').style.display = 'none';
+  }
+  else{
+  document.getElementById('url').style.display = 'none';
+  document.getElementById('email').style.display = 'block';
+  }
+  });
+</script>
 {% endblock header %}
 
 {% block html_title %}

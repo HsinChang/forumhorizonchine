@@ -99,6 +99,7 @@ class JobForm(wtf.Form):
     type = SelectField('Type', choices=[('job', 'job'), ('internship', 'internship')])
     is_online = BooleanField('apply online')
     apply_url = StringField('apply URL')
+    enterprise = SelectField('Enterprise')
     enterprise_mail = SelectField('Enterprise_Mail')
     # en = FormField(JobMetaForm, 'en')
     # fr = FormField(JobMetaForm, 'fr')

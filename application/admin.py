@@ -244,20 +244,23 @@ def new_job():
     create new job infos
     """
     form = JobForm(request.form)
+    enterprises = EnterpriseModel.query()
     mails = EmailModel.query()
-    choices = [(mail.key.urlsafe(), mail.enterprise.get().name + ' -- ' + mail.email) for mail in mails]
 
-    if len(choices) == 0:
+    form.enterprise.choices = [(e.key.urlsafe(), e.name) for e in enterprises]
+    if len(form.enterprise.choices) == 0:
         #no enterprise, create one at first
         flash('there is no enterprise, please create one before add new job')
         return redirect(url_for('admin.new_enterprise'))
 
+    choices = [(mail.key.urlsafe(), mail.enterprise.get().name + ' -- ' + mail.email) for mail in mails]
     form.enterprise_mail.choices = sorted(choices, key=lambda choice: choice[1])
 
     if request.method == 'POST' and form.validate():
         user = flask_login.current_user
         mail = ndb.Key(urlsafe=form.enterprise_mail.data)
-        enterprise = mail.get().enterprise
+        enterprise = ndb.Key(urlsafe=form.enterprise.data)
+
         fr = JobMetaModel(
             published = form.publish_fr.data,
             title = form.title_fr.data,
@@ -272,6 +275,7 @@ def new_job():
             content = form.content_zh.data)
         job = JobModel(
             type = form.type.data,
+            is_online = form.is_online.data,
             enterprise = enterprise,
             enterprise_mail = mail,
             fr = fr,
@@ -299,15 +303,18 @@ def edit_job(keyurl):
         flash(_('no such job'))
         return redirect(url_for('admin.jobs'))
     form = JobForm(request.form, obj=job)
+    enterprises = EnterpriseModel.query()
     mails = EmailModel.query()
-    choices = [(mail.key.urlsafe(), mail.enterprise.get().name + ' -- ' + mail.email) for mail in mails]
 
+    form.enterprise.choices = [(e.key.urlsafe(), e.name) for e in enterprises]
+    choices = [(mail.key.urlsafe(), mail.enterprise.get().name + ' -- ' + mail.email) for mail in mails]
     form.enterprise_mail.choices = sorted(choices, key=lambda c: c[1])
     if request.method == 'POST' and form.validate():
         job.type = form.type.data
+        job.is_online = form.is_online.data
         mail = ndb.Key(urlsafe=form.enterprise_mail.data)
         job.enterprise_mail = mail
-        job.enterprise = mail.get().enterprise
+        job.enterprise = ndb.Key(urlsafe=form.enterprise.data)
 
         job.fr.published = form.publish_fr.data
         job.fr.title = form.title_fr.data
@@ -380,7 +387,7 @@ def import_enterprise():
         #not xml file
         flash('not xml file')
     content = f.read()
-    Data.import_enterprise(f)
+    Data.import_enterprise(content)
     return redirect(url_for('admin.data'))
 
 @admin.route('/data/export_enterprise')

@@ -54,15 +54,17 @@ def contact():
         email = form.email.data
         comment = form.message.data
 
-        message = mail.EmailMessage(sender='Admin of AFCP <lutianming1005@gmail.com>',
-                                    to="lutianming1005@hotmail.com")
-        message.subject = 'Message from {0} {1}<{2}>'.format(first_name, last_name, email)
-        message.body = u"""
+        sender='Admin of AFCP <lutianming1005@gmail.com>'
+        to="lutianming1005@hotmail.com"
+        subject = 'Message from {0} {1}<{2}>'.format(first_name, last_name, email)
+        body = u"""
     Following is the message from {0} {1} {2}:
 
     {3}
     """.format(first_name, last_name, email, comment)
-        message.send()
+
+        mail.send_mail(sender, to, subject, body)
+
         flash('mail sent')
     return render_template('about/contact.html', form=form)
 

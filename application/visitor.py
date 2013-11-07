@@ -33,13 +33,17 @@ def job():
     for job in jobs:
         locale = session['locale']
         if locale == 'fr' and job.fr.published:
-            job.default = job.fr
+            job.current_lang = 'fr'
+            job.current = job.fr
         elif locale == 'zh' and job.zh.published:
-            job.default = job.zh
+            job.current_lang = 'zh'
+            job.current = job.zh
         elif locale == 'en' and job.en.published:
-            job.default = job.en
+            job.current_lang = 'en'
+            job.current = job.en
         else:
-            job.default = getattr(job, job.default_lang)
+            job.current_lang = job.default_lang
+            job.current = getattr(job, job.default_lang)
 
         if job.enterprise in grouped_jobs:
             grouped_jobs[job.enterprise].append(job)
@@ -57,15 +61,17 @@ def workpermit():
         email = form.email.data
         comment = form.message.data
 
-        message = mail.EmailMessage(sender='Admin of AFCP <lutianming1005@gmail.com>',
-                                    to="lutianming1005@hotmail.com")
-        message.subject = 'Comment about the workpermit guide from {0} {1}<{2}>'.format(first_name, last_name, email)
-        message.body = u"""
-    Following is the comment from {0} {1} {2}:
+        subject = 'Comment about the workpermit guide from {0} {1}<{2}>'.format(first_name, last_name, email)
+        body = u"""
+        Following is the comment from {0} {1} {2}:
 
-    {3}
-    """.format(first_name, last_name, email, comment)
-        message.send()
+        {3}
+        """.format(first_name, last_name, email, comment)
+
+        mail.send_mail('Admin of AFCP <lutianming1005@gmail.com>',
+                       "lutianming1005@hotmail.com",
+                       subject,
+                       body)
         flash('mail sent')
     return render_template('visitors/workpermit.html', form=form)
 
@@ -79,10 +85,11 @@ def index():
 def apply():
     """
     """
-    joburl = request.form['joburl']
-    key = ndb.Key(urlsafe=joburl)
-    job = key.get()
+    # joburl = request.form['joburl']
+    # key = ndb.Key(urlsafe=joburl)
+    # job = key.get()
     jobname = request.form['jobname']
+    lang = request.form['lang']
     email_enterprise = request.form['email.to']
     email_to = ndb.Key(urlsafe=email_enterprise)
     to = email_to.get().email
@@ -124,12 +131,22 @@ def apply():
     attachments = []
     for f in files:
         attachments.append((f.filename, f.read()))
-    # attachments.append((lm.filename, lm.read()))
-    message = mail.EmailMessage(sender='Admin of AFCP <lutianming1005@gmail.com>',
-                                to=to)
-    message.subject = 'New application sent by AFCP'
-    message.attachments = attachments
-    message.body = u"""
+
+    sender = 'Admin of AFCP <lutianming1005@gmail.com>'
+    subject_en = 'New application sent by AFCP'
+    subject_zh = u'来自AFCP的新职位申请'
+    subject_fr = u'Une nouvelle candidatur envoyée par AFCP'
+    subjects = {'en': subject_en, 'zh': subject_zh, 'fr': subject_fr}
+    body_en = """
+    Dear Sir/Miss,
+
+    A new application for the post {0} has been sent through the Site of AFCP where the offre is published.
+
+    Please have a look at the attached CV and cover letters of {1} {2} for this application. You can reach him/her with the email address {3}
+    """
+    body_zh = """
+    """
+    body_fr = u"""
     Madame, Monsieur,
 
     Une nouvelle candidature pour le poste {0} a été envoyée par l'intermédiaire du site de l'AFCP, l'offre y étant publiée.
@@ -139,7 +156,12 @@ def apply():
     Bien à vous,
 
     L'équipe AFCP
-    """.format(job.default.title, first_name, last_name, email)
-    message.send()
+    """
+    bodies = {'en': body_en, 'zh': body_zh, 'fr': body_fr}
+
+    subject = subjects[lang]
+    body = bodies[lang].format(jobname, first_name, last_name, email)
+    mail.send_mail(sender, to, subject, body, attachments=attachments)
+
     flash('mail sent')
     return redirect(url_for('visitor.job'))

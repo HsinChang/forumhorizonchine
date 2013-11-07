@@ -36,10 +36,10 @@
 	<div class="block-job">
 	  <div class="apply-button">
 	    <div class="right">{{ _(job.type) }}</div>
-	    <h3>{{ job.default.title }}</h3>
+	    <h3>{{ job.current.title }}</h3>
 	  </div>
 	  <div>
-	    {{ job.default.content|safe }}
+	    {{ job.current.content|safe }}
 
 	    {% if job.is_online %}
 	    <a class="apply-button" href="{{ job.apply_url }}">Apply online</a>
@@ -52,8 +52,9 @@
 	      {# L'identifiant indiquant à quelle adresse mail la candidature est envoyée, cf ressources du Forum #}
 	      <input type="hidden" name="joburl" value = "{{ job.key.urlsafe() }}"/>
 	      <input type="hidden" name="email.to" value="{{ job.enterprise_mail.urlsafe() }}" />
+	      <input type="hidden" name="lang" value="{{ job.current_lang }}"/>
 	      {# Nom de l'emploi, le même que dans le titre #}
-	      <input type="hidden" name="jobname" value="{{ job.default.title }}" />
+	      <input type="hidden" name="jobname" value="{{ job.current.title }}" />
 	      {# Entreprise #}
 	      <input type="hidden" name="enterprise" value="{{ enterprise.name }}" />
 	      <table class="noborder">

@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2013-10-20 16:34+0200\n"
-"PO-Revision-Date: 2013-10-20 16:35+0100\n"
+"POT-Creation-Date: 2013-11-07 16:48+0100\n"
+"PO-Revision-Date: 2013-11-07 16:50+0100\n"
 "Last-Translator: Tianming.Lu <lutianming1005@gmail.com>\n"
 "Language-Team: fr <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
@@ -18,15 +18,15 @@ msgstr ""
 "Generated-By: Babel 0.9.6\n"
 "X-Generator: Poedit 1.5.4\n"
 
-#: admin.py:132 admin.py:159
+#: admin.py:133 admin.py:160
 msgid "no such enterprise"
 msgstr ""
 
-#: admin.py:168 admin.py:354 exhibitor.py:107
+#: admin.py:169 admin.py:368 exhibitor.py:107
 msgid "fail to delete"
 msgstr ""
 
-#: admin.py:294 admin.py:349 exhibitor.py:81 exhibitor.py:101
+#: admin.py:303 admin.py:363 exhibitor.py:81 exhibitor.py:101
 msgid "no such job"
 msgstr ""
 
@@ -38,57 +38,59 @@ msgstr ""
 msgid "job deleted"
 msgstr ""
 
-#: forms.py:128
+#: forms.py:131
 msgid "First name"
 msgstr "Votre prénon"
 
-#: forms.py:129
+#: forms.py:132
 msgid "Last name"
 msgstr "Votre nom"
 
-#: forms.py:130
+#: forms.py:133
 msgid "Email"
 msgstr ""
 
-#: forms.py:131
+#: forms.py:134
 msgid "Message"
 msgstr "Le message"
 
-#: templates/base_exhibitors.html:21
+#: templates/base_exhibitors.html:21 templates/includes/exhibitor_menu.html:1
 msgid "Exhibitors area"
 msgstr "Espace exposants"
 
-#: templates/base_exhibitors.html:43
+#: templates/base_exhibitors.html:43 templates/includes/exhibitor_menu.html:23
 msgid "Jobs"
 msgstr ""
 
 #: templates/base_exhibitors.html:48 templates/exhibitors/visitors.html:13
-#: templates/includes/nav.html:18 templates/includes/nav_admin.html:17
+#: templates/includes/exhibitor_menu.html:28 templates/includes/nav.html:18
+#: templates/includes/nav_admin.html:17
 msgid "Visitors"
 msgstr "Visiteurs"
 
-#: templates/base_exhibitors.html:51
+#: templates/base_exhibitors.html:51 templates/includes/exhibitor_menu.html:31
 msgid "Our services"
 msgstr "Nos Services"
 
-#: templates/base_visitors.html:19
+#: templates/base_visitors.html:19 templates/includes/visitor_menu.html:1
 msgid "Visitors area"
 msgstr "Espace visiteurs"
 
-#: templates/base_visitors.html:28
+#: templates/base_visitors.html:28 templates/includes/visitor_menu.html:10
 msgid "Program"
 msgstr "Programme"
 
 #: templates/base_visitors.html:34 templates/includes/nav.html:19
 #: templates/includes/nav_admin.html:18
+#: templates/includes/visitor_menu.html:16
 msgid "Exhibitors"
 msgstr "Exposants"
 
-#: templates/base_visitors.html:40
+#: templates/base_visitors.html:40 templates/includes/visitor_menu.html:22
 msgid "Job opportunities"
 msgstr "Offres d'emploi"
 
-#: templates/base_visitors.html:46
+#: templates/base_visitors.html:46 templates/includes/visitor_menu.html:28
 msgid "Working permit"
 msgstr "Permis de travail"
 
@@ -743,7 +745,15 @@ msgstr "Offres d'emploi par le Forum Horizon Chine"
 msgid "Jobs opportunities"
 msgstr "Offres d'emploi"
 
-#: templates/visitors/job.html:95 templates/visitors/job_meta.html:67
+#: templates/visitors/job.html:39
+msgid "Job"
+msgstr "Emploi"
+
+#: templates/visitors/job.html:41
+msgid "Internship"
+msgstr "Stage"
+
+#: templates/visitors/job.html:102 templates/visitors/job_meta.html:67
 msgid "No job provided"
 msgstr "Il y n'a pas de travail"
 
@@ -855,9 +865,3 @@ msgstr "Changement de statut d'étudiant à salarié"
 #: templates/visitors/workpermit.html:22
 msgid "you want to send a comment about this guide"
 msgstr ""
-
-#~ msgid "Please enter your email"
-#~ msgstr "Votre e-mail "
-
-#~ msgid "Please enter your message"
-#~ msgstr "Message à envoyer à l'AFCP"

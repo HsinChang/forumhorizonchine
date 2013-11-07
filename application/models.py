@@ -9,7 +9,7 @@ App Engine datastore models
 from google.appengine.ext import ndb
 
 ROLES ={'EXHIBITOR':'exhibitor', 'ADMIN': 'admin'}
-OFFRE_TYPES = {'JOB': 'job', 'INTERN': 'internship'}
+OFFRE_TYPES = {'JOB': 'Job', 'INTERN': 'Jnternship'}
 
 class JobMetaModel(ndb.Model):
     published = ndb.BooleanProperty(required=True)

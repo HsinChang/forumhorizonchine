@@ -96,7 +96,7 @@ class JobMetaForm(wtf.Form):
 
 
 class JobForm(wtf.Form):
-    type = SelectField('Type', choices=[('job', 'job'), ('internship', 'internship')])
+    type = SelectField('Type', choices=[('Job', 'Job'), ('Internship', 'Internship')])
     is_online = BooleanField('apply online')
     apply_url = StringField('apply URL')
     enterprise = SelectField('Enterprise')

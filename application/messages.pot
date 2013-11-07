@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2013-10-20 16:34+0200\n"
+"POT-Creation-Date: 2013-11-07 16:48+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,15 +17,15 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 0.9.6\n"
 
-#: admin.py:132 admin.py:159
+#: admin.py:133 admin.py:160
 msgid "no such enterprise"
 msgstr ""
 
-#: admin.py:168 admin.py:354 exhibitor.py:107
+#: admin.py:169 admin.py:368 exhibitor.py:107
 msgid "fail to delete"
 msgstr ""
 
-#: admin.py:294 admin.py:349 exhibitor.py:81 exhibitor.py:101
+#: admin.py:303 admin.py:363 exhibitor.py:81 exhibitor.py:101
 msgid "no such job"
 msgstr ""
 
@@ -37,57 +37,58 @@ msgstr ""
 msgid "job deleted"
 msgstr ""
 
-#: forms.py:128
+#: forms.py:131
 msgid "First name"
 msgstr ""
 
-#: forms.py:129
+#: forms.py:132
 msgid "Last name"
 msgstr ""
 
-#: forms.py:130
+#: forms.py:133
 msgid "Email"
 msgstr ""
 
-#: forms.py:131
+#: forms.py:134
 msgid "Message"
 msgstr ""
 
-#: templates/base_exhibitors.html:21
+#: templates/base_exhibitors.html:21 templates/includes/exhibitor_menu.html:1
 msgid "Exhibitors area"
 msgstr ""
 
-#: templates/base_exhibitors.html:43
+#: templates/base_exhibitors.html:43 templates/includes/exhibitor_menu.html:23
 msgid "Jobs"
 msgstr ""
 
 #: templates/base_exhibitors.html:48 templates/exhibitors/visitors.html:13
-#: templates/includes/nav.html:18 templates/includes/nav_admin.html:17
+#: templates/includes/exhibitor_menu.html:28 templates/includes/nav.html:18
+#: templates/includes/nav_admin.html:17
 msgid "Visitors"
 msgstr ""
 
-#: templates/base_exhibitors.html:51
+#: templates/base_exhibitors.html:51 templates/includes/exhibitor_menu.html:31
 msgid "Our services"
 msgstr ""
 
-#: templates/base_visitors.html:19
+#: templates/base_visitors.html:19 templates/includes/visitor_menu.html:1
 msgid "Visitors area"
 msgstr ""
 
-#: templates/base_visitors.html:28
+#: templates/base_visitors.html:28 templates/includes/visitor_menu.html:10
 msgid "Program"
 msgstr ""
 
 #: templates/base_visitors.html:34 templates/includes/nav.html:19
-#: templates/includes/nav_admin.html:18
+#: templates/includes/nav_admin.html:18 templates/includes/visitor_menu.html:16
 msgid "Exhibitors"
 msgstr ""
 
-#: templates/base_visitors.html:40
+#: templates/base_visitors.html:40 templates/includes/visitor_menu.html:22
 msgid "Job opportunities"
 msgstr ""
 
-#: templates/base_visitors.html:46
+#: templates/base_visitors.html:46 templates/includes/visitor_menu.html:28
 msgid "Working permit"
 msgstr ""
 
@@ -645,7 +646,15 @@ msgstr ""
 msgid "Jobs opportunities"
 msgstr ""
 
-#: templates/visitors/job.html:95 templates/visitors/job_meta.html:67
+#: templates/visitors/job.html:39
+msgid "Job"
+msgstr ""
+
+#: templates/visitors/job.html:41
+msgid "Internship"
+msgstr ""
+
+#: templates/visitors/job.html:102 templates/visitors/job_meta.html:67
 msgid "No job provided"
 msgstr ""
 

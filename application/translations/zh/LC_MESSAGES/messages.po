@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2013-10-20 16:34+0200\n"
-"PO-Revision-Date: 2013-10-20 16:36+0100\n"
+"POT-Creation-Date: 2013-11-07 16:48+0100\n"
+"PO-Revision-Date: 2013-11-07 16:49+0100\n"
 "Last-Translator: Tianming.Lu <lutianming1005@gmail.com>\n"
 "Language-Team: zh <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -18,15 +18,15 @@ msgstr ""
 "Generated-By: Babel 0.9.6\n"
 "X-Generator: Poedit 1.5.4\n"
 
-#: admin.py:132 admin.py:159
+#: admin.py:133 admin.py:160
 msgid "no such enterprise"
 msgstr ""
 
-#: admin.py:168 admin.py:354 exhibitor.py:107
+#: admin.py:169 admin.py:368 exhibitor.py:107
 msgid "fail to delete"
 msgstr ""
 
-#: admin.py:294 admin.py:349 exhibitor.py:81 exhibitor.py:101
+#: admin.py:303 admin.py:363 exhibitor.py:81 exhibitor.py:101
 msgid "no such job"
 msgstr ""
 
@@ -38,57 +38,59 @@ msgstr ""
 msgid "job deleted"
 msgstr ""
 
-#: forms.py:128
+#: forms.py:131
 msgid "First name"
 msgstr "名"
 
-#: forms.py:129
+#: forms.py:132
 msgid "Last name"
 msgstr "姓"
 
-#: forms.py:130
+#: forms.py:133
 msgid "Email"
 msgstr ""
 
-#: forms.py:131
+#: forms.py:134
 msgid "Message"
 msgstr "消息"
 
-#: templates/base_exhibitors.html:21
+#: templates/base_exhibitors.html:21 templates/includes/exhibitor_menu.html:1
 msgid "Exhibitors area"
 msgstr "企业到访"
 
-#: templates/base_exhibitors.html:43
+#: templates/base_exhibitors.html:43 templates/includes/exhibitor_menu.html:23
 msgid "Jobs"
 msgstr "职位"
 
 #: templates/base_exhibitors.html:48 templates/exhibitors/visitors.html:13
-#: templates/includes/nav.html:18 templates/includes/nav_admin.html:17
+#: templates/includes/exhibitor_menu.html:28 templates/includes/nav.html:18
+#: templates/includes/nav_admin.html:17
 msgid "Visitors"
 msgstr "到访学生"
 
-#: templates/base_exhibitors.html:51
+#: templates/base_exhibitors.html:51 templates/includes/exhibitor_menu.html:31
 msgid "Our services"
 msgstr "我们的服务"
 
-#: templates/base_visitors.html:19
+#: templates/base_visitors.html:19 templates/includes/visitor_menu.html:1
 msgid "Visitors area"
 msgstr "学生到访"
 
-#: templates/base_visitors.html:28
+#: templates/base_visitors.html:28 templates/includes/visitor_menu.html:10
 msgid "Program"
 msgstr "活动安排"
 
 #: templates/base_visitors.html:34 templates/includes/nav.html:19
 #: templates/includes/nav_admin.html:18
+#: templates/includes/visitor_menu.html:16
 msgid "Exhibitors"
 msgstr "展出商"
 
-#: templates/base_visitors.html:40
+#: templates/base_visitors.html:40 templates/includes/visitor_menu.html:22
 msgid "Job opportunities"
 msgstr "职位信息"
 
-#: templates/base_visitors.html:46
+#: templates/base_visitors.html:46 templates/includes/visitor_menu.html:28
 msgid "Working permit"
 msgstr "工作许可"
 
@@ -704,7 +706,15 @@ msgstr "中国地平线论坛招聘广告"
 msgid "Jobs opportunities"
 msgstr "职位信息"
 
-#: templates/visitors/job.html:95 templates/visitors/job_meta.html:67
+#: templates/visitors/job.html:39
+msgid "Job"
+msgstr "工作职位"
+
+#: templates/visitors/job.html:41
+msgid "Internship"
+msgstr "实习"
+
+#: templates/visitors/job.html:102 templates/visitors/job_meta.html:67
 msgid "No job provided"
 msgstr "暂无职位"
 
@@ -816,9 +826,3 @@ msgstr "学生居留转工作居留"
 #: templates/visitors/workpermit.html:22
 msgid "you want to send a comment about this guide"
 msgstr ""
-
-#~ msgid "Please enter your email"
-#~ msgstr "请输入您的邮箱地址"
-
-#~ msgid "Please enter your message"
-#~ msgstr "请输入您的消息内容"

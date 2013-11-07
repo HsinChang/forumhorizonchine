@@ -87,6 +87,7 @@ def transform_jobs(filename):
     html = lxml.html.parse(filename)
     cleaner = Cleaner(comments=True, forms=False)
     html = cleaner.clean_html(html)
+
     jobs = html.xpath('//div[@class="block-job"]')
 
     root = ET.Element('jobs', )
@@ -108,6 +109,7 @@ def transform_jobs(filename):
         meta.set('lang', 'en')
         t = ET.SubElement(meta, 'title')
         t.text = title.text
+        print t.text
         c = ET.SubElement(meta, 'content')
         c.text = content
 
@@ -165,4 +167,4 @@ def transform_jobs(filename):
     with codecs.open('jobs.xml', 'w', encoding='utf-8') as f:
         f.write(output)
 
-transform_jobs('templates/visitors/job.html')
+transform_jobs('templates/visitors/job.html.bak')

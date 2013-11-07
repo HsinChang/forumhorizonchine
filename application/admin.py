@@ -407,8 +407,9 @@ def import_jobs():
     if ext != '.xml':
         #not xml file
         flash('not xml file')
-    content = f.read()
-    Data.import_jobs(content)
+    else:
+        content = f.read()
+        Data.import_jobs(content)
     return redirect(url_for('admin.data'))
 
 @admin.route('/data/export_jobs')

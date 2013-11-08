@@ -140,11 +140,22 @@ def apply():
     body_en = """
     Dear Sir/Miss,
 
-    A new application for the post {0} has been sent through the Site of AFCP where the offre is published.
+    A new application for the position {0} has been sent through the Site of AFCP where the offre is published.
 
     Please have a look at the attached CV and cover letters of {1} {2} for this application. You can reach him/her with the email address {3}
+
+    Best regards，
+    The team of AFCP
     """
-    body_zh = """
+    body_zh = u"""
+    您好，
+
+    AFCP发给了您一份{0}这一职位的新申请。
+
+    请查看附件中申请人{0} {1}的CV和动机信。您可以通过这一邮箱地址 {3} 与他/她取得联系。
+
+    此致！
+    AFCP团队
     """
     body_fr = u"""
     Madame, Monsieur,

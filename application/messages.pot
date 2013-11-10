@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2013-11-07 16:48+0100\n"
+"POT-Creation-Date: 2013-11-10 15:57+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -37,15 +37,15 @@ msgstr ""
 msgid "job deleted"
 msgstr ""
 
-#: forms.py:131
+#: forms.py:131 templates/visitors/job.html:62
 msgid "First name"
 msgstr ""
 
-#: forms.py:132
+#: forms.py:132 templates/visitors/job.html:66
 msgid "Last name"
 msgstr ""
 
-#: forms.py:133
+#: forms.py:133 templates/visitors/job.html:70
 msgid "Email"
 msgstr ""
 
@@ -62,7 +62,7 @@ msgid "Jobs"
 msgstr ""
 
 #: templates/base_exhibitors.html:48 templates/exhibitors/visitors.html:13
-#: templates/includes/exhibitor_menu.html:28 templates/includes/nav.html:18
+#: templates/includes/exhibitor_menu.html:28 templates/includes/nav.html:24
 #: templates/includes/nav_admin.html:17
 msgid "Visitors"
 msgstr ""
@@ -79,7 +79,7 @@ msgstr ""
 msgid "Program"
 msgstr ""
 
-#: templates/base_visitors.html:34 templates/includes/nav.html:19
+#: templates/base_visitors.html:34 templates/includes/nav.html:27
 #: templates/includes/nav_admin.html:18 templates/includes/visitor_menu.html:16
 msgid "Exhibitors"
 msgstr ""
@@ -580,7 +580,7 @@ msgstr ""
 msgid "Contact us"
 msgstr ""
 
-#: templates/includes/nav.html:17
+#: templates/includes/nav.html:20
 msgid "Home"
 msgstr ""
 
@@ -646,15 +646,23 @@ msgstr ""
 msgid "Jobs opportunities"
 msgstr ""
 
-#: templates/visitors/job.html:39
-msgid "Job"
+#: templates/visitors/job.html:45
+msgid "Apply online"
 msgstr ""
 
-#: templates/visitors/job.html:41
-msgid "Internship"
+#: templates/visitors/job.html:48
+msgid "Apply"
 msgstr ""
 
-#: templates/visitors/job.html:102 templates/visitors/job_meta.html:67
+#: templates/visitors/job.html:51
+msgid "*.doc and *.pdf files are accepted, max 500 KB for each attachment."
+msgstr ""
+
+#: templates/visitors/job.html:85
+msgid "required field"
+msgstr ""
+
+#: templates/visitors/job.html:99 templates/visitors/job_meta.html:67
 msgid "No job provided"
 msgstr ""
 

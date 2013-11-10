@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2013-11-07 16:48+0100\n"
-"PO-Revision-Date: 2013-11-07 16:49+0100\n"
+"POT-Creation-Date: 2013-11-10 15:57+0100\n"
+"PO-Revision-Date: 2013-11-10 15:59+0100\n"
 "Last-Translator: Tianming.Lu <lutianming1005@gmail.com>\n"
 "Language-Team: zh <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -38,15 +38,15 @@ msgstr ""
 msgid "job deleted"
 msgstr ""
 
-#: forms.py:131
+#: forms.py:131 templates/visitors/job.html:62
 msgid "First name"
 msgstr "名"
 
-#: forms.py:132
+#: forms.py:132 templates/visitors/job.html:66
 msgid "Last name"
 msgstr "姓"
 
-#: forms.py:133
+#: forms.py:133 templates/visitors/job.html:70
 msgid "Email"
 msgstr ""
 
@@ -63,7 +63,7 @@ msgid "Jobs"
 msgstr "职位"
 
 #: templates/base_exhibitors.html:48 templates/exhibitors/visitors.html:13
-#: templates/includes/exhibitor_menu.html:28 templates/includes/nav.html:18
+#: templates/includes/exhibitor_menu.html:28 templates/includes/nav.html:24
 #: templates/includes/nav_admin.html:17
 msgid "Visitors"
 msgstr "到访学生"
@@ -80,7 +80,7 @@ msgstr "学生到访"
 msgid "Program"
 msgstr "活动安排"
 
-#: templates/base_visitors.html:34 templates/includes/nav.html:19
+#: templates/base_visitors.html:34 templates/includes/nav.html:27
 #: templates/includes/nav_admin.html:18
 #: templates/includes/visitor_menu.html:16
 msgid "Exhibitors"
@@ -637,7 +637,7 @@ msgstr "关于论坛"
 msgid "Contact us"
 msgstr "我们的团队"
 
-#: templates/includes/nav.html:17
+#: templates/includes/nav.html:20
 msgid "Home"
 msgstr "论坛首页"
 
@@ -680,7 +680,7 @@ msgstr "以及希望吸引外资投入的一些中国经济特区."
 #: templates/visitors/exhibitors.html:21
 msgid ""
 "The following companies have already confirmed their presence at the Forum"
-msgstr "以下企业已经确认参加2013年论坛:"
+msgstr "以下企业已经确认参加2013年论坛"
 
 #: templates/visitors/inscription.html:4
 msgid "Registrations for China Horizon Forum"
@@ -706,15 +706,23 @@ msgstr "中国地平线论坛招聘广告"
 msgid "Jobs opportunities"
 msgstr "职位信息"
 
-#: templates/visitors/job.html:39
-msgid "Job"
-msgstr "工作职位"
+#: templates/visitors/job.html:45
+msgid "Apply online"
+msgstr "在线申请"
 
-#: templates/visitors/job.html:41
-msgid "Internship"
-msgstr "实习"
+#: templates/visitors/job.html:48
+msgid "Apply"
+msgstr "申请"
 
-#: templates/visitors/job.html:102 templates/visitors/job_meta.html:67
+#: templates/visitors/job.html:51
+msgid "*.doc and *.pdf files are accepted, max 500 KB for each attachment."
+msgstr "接受doc和pdf文件。单个文件不超过500KB。"
+
+#: templates/visitors/job.html:85
+msgid "required field"
+msgstr "必填项"
+
+#: templates/visitors/job.html:99 templates/visitors/job_meta.html:67
 msgid "No job provided"
 msgstr "暂无职位"
 
@@ -825,4 +833,4 @@ msgstr "学生居留转工作居留"
 
 #: templates/visitors/workpermit.html:22
 msgid "you want to send a comment about this guide"
-msgstr ""
+msgstr "你想要对此发表评论"

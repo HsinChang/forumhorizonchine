@@ -42,13 +42,13 @@
 	    {{ job.current.content|safe }}
 
 	    {% if job.is_online %}
-	    <a class="apply-button" href="{{ job.apply_url }}">Apply online</a>
+	    <a class="apply-button" href="{{ job.apply_url }}">{{ _("Apply online") }}</a>
 	    {% else %}
 	    <!-- Formulaire pour postuler -->
-	    <h5 class="apply-button">Apply</h5>
+	    <h5 class="apply-button">{{ _("Apply") }}</h5>
 	    <form method="post" enctype="multipart/form-data"
 		  action="{{ url_for('visitor.apply') }}" class="unwrapped">
-	      *.doc and *.pdf files are accepted, max 500 Ko for each attachment.
+	      {{ _("*.doc and *.pdf files are accepted, max 500 KB for each attachment.") }}
 	      {# L'identifiant indiquant à quelle adresse mail la candidature est envoyée, cf ressources du Forum #}
 	      <input type="hidden" name="joburl" value = "{{ job.key.urlsafe() }}"/>
 	      <input type="hidden" name="email.to" value="{{ job.enterprise_mail.urlsafe() }}" />
@@ -59,15 +59,15 @@
 	      <input type="hidden" name="enterprise" value="{{ enterprise.name }}" />
 	      <table class="noborder">
 		<tr>
-		  <td>First name<span class="required">*</span></td>
+		  <td>{{ _("First name") }}<span class="required">*</span></td>
 		  <td><input type="text" name="firstname" required="required"/></td>
 		</tr>
 		<tr>
-		  <td>Last name<span class="required">*</span></td>
+		  <td>{{ _("Last name") }}<span class="required">*</span></td>
 		  <td><input type="text" name="lastname" required="required"/></td>
 		</tr>
 		<tr>
-		  <td>e-mail<span class="required">*</span></td>
+		  <td>{{ _("Email") }}<span class="required">*</span></td>
 		  <td><input type="email" name="email" required="required"/></td>
 		</tr>
 		{% for cv in job.cv_required %}
@@ -82,7 +82,7 @@
 		{% endfor %}
 		<tr>
 		  <td colspan="2"><small><span class="required">*</span>
-		  : required field</small></td>
+		  : {{ _("required field") }}</small></td>
 		</tr>
 		<tr>
 		  <td colspan="2"><input type="submit" value="Send"></input>

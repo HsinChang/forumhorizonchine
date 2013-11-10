@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2013-11-07 16:48+0100\n"
-"PO-Revision-Date: 2013-11-07 16:50+0100\n"
+"POT-Creation-Date: 2013-11-10 15:57+0100\n"
+"PO-Revision-Date: 2013-11-10 16:00+0100\n"
 "Last-Translator: Tianming.Lu <lutianming1005@gmail.com>\n"
 "Language-Team: fr <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
@@ -38,15 +38,15 @@ msgstr ""
 msgid "job deleted"
 msgstr ""
 
-#: forms.py:131
+#: forms.py:131 templates/visitors/job.html:62
 msgid "First name"
 msgstr "Votre prénon"
 
-#: forms.py:132
+#: forms.py:132 templates/visitors/job.html:66
 msgid "Last name"
 msgstr "Votre nom"
 
-#: forms.py:133
+#: forms.py:133 templates/visitors/job.html:70
 msgid "Email"
 msgstr ""
 
@@ -63,7 +63,7 @@ msgid "Jobs"
 msgstr ""
 
 #: templates/base_exhibitors.html:48 templates/exhibitors/visitors.html:13
-#: templates/includes/exhibitor_menu.html:28 templates/includes/nav.html:18
+#: templates/includes/exhibitor_menu.html:28 templates/includes/nav.html:24
 #: templates/includes/nav_admin.html:17
 msgid "Visitors"
 msgstr "Visiteurs"
@@ -80,7 +80,7 @@ msgstr "Espace visiteurs"
 msgid "Program"
 msgstr "Programme"
 
-#: templates/base_visitors.html:34 templates/includes/nav.html:19
+#: templates/base_visitors.html:34 templates/includes/nav.html:27
 #: templates/includes/nav_admin.html:18
 #: templates/includes/visitor_menu.html:16
 msgid "Exhibitors"
@@ -671,7 +671,7 @@ msgstr "À propos du Forum"
 msgid "Contact us"
 msgstr "Contactez-nous"
 
-#: templates/includes/nav.html:17
+#: templates/includes/nav.html:20
 msgid "Home"
 msgstr "Accueil"
 
@@ -719,7 +719,7 @@ msgstr ""
 msgid ""
 "The following companies have already confirmed their presence at the Forum"
 msgstr ""
-"Les entreprises suivantes nous ont déjà confirmé leur présence au Forum :"
+"Les entreprises suivantes nous ont déjà confirmé leur présence au Forum"
 
 #: templates/visitors/inscription.html:4
 msgid "Registrations for China Horizon Forum"
@@ -745,15 +745,24 @@ msgstr "Offres d'emploi par le Forum Horizon Chine"
 msgid "Jobs opportunities"
 msgstr "Offres d'emploi"
 
-#: templates/visitors/job.html:39
-msgid "Job"
-msgstr "Emploi"
+#: templates/visitors/job.html:45
+msgid "Apply online"
+msgstr "Postuler en ligne"
 
-#: templates/visitors/job.html:41
-msgid "Internship"
-msgstr "Stage"
+#: templates/visitors/job.html:48
+msgid "Apply"
+msgstr "Postuler"
 
-#: templates/visitors/job.html:102 templates/visitors/job_meta.html:67
+#: templates/visitors/job.html:51
+msgid "*.doc and *.pdf files are accepted, max 500 KB for each attachment."
+msgstr ""
+"*. doc et *. pdf sont acceptés, maximum 500 Ko pour chaque pièce jointe."
+
+#: templates/visitors/job.html:85
+msgid "required field"
+msgstr "champ obligatoire"
+
+#: templates/visitors/job.html:99 templates/visitors/job_meta.html:67
 msgid "No job provided"
 msgstr "Il y n'a pas de travail"
 
@@ -864,4 +873,4 @@ msgstr "Changement de statut d'étudiant à salarié"
 
 #: templates/visitors/workpermit.html:22
 msgid "you want to send a comment about this guide"
-msgstr ""
+msgstr "vous voulez envoyer un commentaire au sujet de ce guide"

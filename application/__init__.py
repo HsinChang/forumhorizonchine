@@ -64,8 +64,8 @@ from visitor import visitor
 from exhibitor import exhibitor
 from admin import admin, init_admin
 
-app.register_blueprint(visitor, url_prefix='/visitor')
-app.register_blueprint(exhibitor, url_prefix='/exhibitor')
+app.register_blueprint(visitor, url_prefix='/visitors')
+app.register_blueprint(exhibitor, url_prefix='/exhibitors')
 app.register_blueprint(admin, url_prefix='/admin')
 
 # Pull in URL dispatch routes

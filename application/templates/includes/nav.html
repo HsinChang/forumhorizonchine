@@ -14,9 +14,17 @@
 <div class="links">
 
   <div class="page">
-    <a href="{{ url_for('home') }}">{{ _("Home") }}</a>
-    <a href="{{ url_for('visitor.index') }}">{{ _("Visitors") }}</a>
-    <a  href="{{ url_for('exhibitor.index') }}">{{ _("Exhibitors") }}</a>
+    <a {% if request.path == url_for('home') %}
+    class="current"
+    {% endif %}
+    href="{{ url_for('home') }}">{{ _("Home") }}</a>
+    <a {% if request.path[0:9] == '/visitors' %}
+    class="current"
+    {% endif %}
+    href="{{ url_for('visitor.index') }}">{{ _("Visitors") }}</a>
+    <a {% if request.path[0:11] == '/exhibitors' %}
+    class="current"
+    {% endif %} href="{{ url_for('exhibitor.index') }}">{{ _("Exhibitors") }}</a>
     {# <a href="{{ url_for('about')}}">{{ _('About') }}</a> #}
   </div>
 

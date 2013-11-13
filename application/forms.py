@@ -10,6 +10,7 @@ See: http://flask.pocoo.org/docs/patterns/wtforms/
 
 from flaskext import wtf
 from flask_login import current_user
+from flask_babel import lazy_gettext
 from wtforms import StringField, PasswordField, BooleanField, TextAreaField, SelectField, FormField, SelectMultipleField
 from wtforms import validators
 from passlib.apps import custom_app_context as pwd_context
@@ -128,7 +129,7 @@ class EmailForm(wtf.Form):
     email = StringField('Email', validators=[validators.Email()])
 
 class ContactForm(wtf.Form):
-    first_name = StringField(_(u'First name'), validators=[validators.InputRequired()])
-    last_name = StringField(_(u'Last name'), validators=[validators.InputRequired()])
-    email = StringField(_(u'Email'), validators=[validators.Email()])
-    message = TextAreaField(_(u'Message'), validators=[validators.InputRequired()])
+    first_name = StringField(lazy_gettext(u'First name'), validators=[validators.InputRequired()])
+    last_name = StringField(lazy_gettext(u'Last name'), validators=[validators.InputRequired()])
+    email = StringField(lazy_gettext(u'Email'), validators=[validators.Email()])
+    message = TextAreaField(lazy_gettext(u'Message'), validators=[validators.InputRequired()])

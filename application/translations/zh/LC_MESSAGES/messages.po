@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2013-11-10 15:57+0100\n"
-"PO-Revision-Date: 2013-11-10 15:59+0100\n"
+"POT-Creation-Date: 2013-11-10 16:12+0100\n"
+"PO-Revision-Date: 2013-11-10 16:14+0100\n"
 "Last-Translator: Tianming.Lu <lutianming1005@gmail.com>\n"
 "Language-Team: zh <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -37,6 +37,14 @@ msgstr ""
 #: exhibitor.py:105
 msgid "job deleted"
 msgstr ""
+
+#: forms.py:99
+msgid "Job"
+msgstr "工作职位"
+
+#: forms.py:99
+msgid "Internship"
+msgstr "实习"
 
 #: forms.py:131 templates/visitors/job.html:62
 msgid "First name"

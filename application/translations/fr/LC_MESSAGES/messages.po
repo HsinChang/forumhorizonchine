@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2013-11-10 16:12+0100\n"
-"PO-Revision-Date: 2013-11-10 16:13+0100\n"
+"POT-Creation-Date: 2013-11-13 23:58+0100\n"
+"PO-Revision-Date: 2013-11-14 00:01+0100\n"
 "Last-Translator: Tianming.Lu <lutianming1005@gmail.com>\n"
 "Language-Team: fr <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
@@ -30,6 +30,18 @@ msgstr ""
 msgid "no such job"
 msgstr ""
 
+#: configs.py:4 settings.py:39
+msgid "English"
+msgstr "Anglais"
+
+#: configs.py:4 settings.py:39
+msgid "French"
+msgstr "Français"
+
+#: configs.py:4 settings.py:39
+msgid "Chinese"
+msgstr "Chinois"
+
 #: exhibitor.py:24
 msgid "registered"
 msgstr ""
@@ -38,69 +50,13 @@ msgstr ""
 msgid "job deleted"
 msgstr ""
 
-#: forms.py:99
+#: forms.py:100
 msgid "Job"
 msgstr "Emploi"
 
-#: forms.py:99
+#: forms.py:100
 msgid "Internship"
 msgstr "Stage"
-
-#: forms.py:131 templates/visitors/job.html:62
-msgid "First name"
-msgstr "Votre prénon"
-
-#: forms.py:132 templates/visitors/job.html:66
-msgid "Last name"
-msgstr "Votre nom"
-
-#: forms.py:133 templates/visitors/job.html:70
-msgid "Email"
-msgstr ""
-
-#: forms.py:134
-msgid "Message"
-msgstr "Le message"
-
-#: templates/base_exhibitors.html:21 templates/includes/exhibitor_menu.html:1
-msgid "Exhibitors area"
-msgstr "Espace exposants"
-
-#: templates/base_exhibitors.html:43 templates/includes/exhibitor_menu.html:23
-msgid "Jobs"
-msgstr ""
-
-#: templates/base_exhibitors.html:48 templates/exhibitors/visitors.html:13
-#: templates/includes/exhibitor_menu.html:28 templates/includes/nav.html:24
-#: templates/includes/nav_admin.html:17
-msgid "Visitors"
-msgstr "Visiteurs"
-
-#: templates/base_exhibitors.html:51 templates/includes/exhibitor_menu.html:31
-msgid "Our services"
-msgstr "Nos Services"
-
-#: templates/base_visitors.html:19 templates/includes/visitor_menu.html:1
-msgid "Visitors area"
-msgstr "Espace visiteurs"
-
-#: templates/base_visitors.html:28 templates/includes/visitor_menu.html:10
-msgid "Program"
-msgstr "Programme"
-
-#: templates/base_visitors.html:34 templates/includes/nav.html:27
-#: templates/includes/nav_admin.html:18
-#: templates/includes/visitor_menu.html:16
-msgid "Exhibitors"
-msgstr "Exposants"
-
-#: templates/base_visitors.html:40 templates/includes/visitor_menu.html:22
-msgid "Job opportunities"
-msgstr "Offres d'emploi"
-
-#: templates/base_visitors.html:46 templates/includes/visitor_menu.html:28
-msgid "Working permit"
-msgstr "Permis de travail"
 
 #: templates/home.html:5
 msgid "China Horizon Forum"
@@ -240,7 +196,7 @@ msgstr "soumettez"
 msgid "Access to China Horizon Forum"
 msgstr "Forum Horizon Chine"
 
-#: templates/about/access.html:8 templates/includes/about_forum.html:6
+#: templates/about/access.html:8 templates/includes/about_forum.html:7
 msgid "Access to the Forum"
 msgstr "Accès au Forum"
 
@@ -248,7 +204,7 @@ msgstr "Accès au Forum"
 msgid "Access"
 msgstr "Accès"
 
-#: templates/about/balance.html:5 templates/includes/about_forum.html:12
+#: templates/about/balance.html:5 templates/includes/about_forum.html:13
 msgid "2012 balance"
 msgstr "Bilan 2012"
 
@@ -489,6 +445,12 @@ msgstr ""
 msgid "Visitor profiles of the China Horizon Forum"
 msgstr "Profils des visiteurs du Forum Horizon Chine"
 
+#: templates/exhibitors/visitors.html:13
+#: templates/includes/exhibitor_menu.html:28 templates/includes/nav.html:24
+#: templates/includes/nav_admin.html:17
+msgid "Visitors"
+msgstr "Visiteurs"
+
 #: templates/exhibitors/visitors.html:14
 msgid "Visiting students"
 msgstr "Les étudiants invités"
@@ -675,13 +637,46 @@ msgstr "Site de l'AFCP"
 msgid "About the Forum"
 msgstr "À propos du Forum"
 
-#: templates/includes/about_forum.html:18
+#: templates/includes/about_forum.html:19
 msgid "Contact us"
 msgstr "Contactez-nous"
+
+#: templates/includes/exhibitor_menu.html:1
+msgid "Exhibitors area"
+msgstr "Espace exposants"
+
+#: templates/includes/exhibitor_menu.html:23
+msgid "Jobs"
+msgstr ""
+
+#: templates/includes/exhibitor_menu.html:31
+msgid "Our services"
+msgstr "Nos Services"
 
 #: templates/includes/nav.html:20
 msgid "Home"
 msgstr "Accueil"
+
+#: templates/includes/nav.html:27 templates/includes/nav_admin.html:18
+#: templates/includes/visitor_menu.html:16
+msgid "Exhibitors"
+msgstr "Exposants"
+
+#: templates/includes/visitor_menu.html:1
+msgid "Visitors area"
+msgstr "Espace visiteurs"
+
+#: templates/includes/visitor_menu.html:10
+msgid "Program"
+msgstr "Programme"
+
+#: templates/includes/visitor_menu.html:22
+msgid "Job opportunities"
+msgstr "Offres d'emploi"
+
+#: templates/includes/visitor_menu.html:28
+msgid "Working permit"
+msgstr "Permis de travail"
 
 #: templates/visitors/exhibitors.html:4
 msgid "Exhibitors in China Horizon Forum"
@@ -765,6 +760,26 @@ msgstr "Postuler"
 msgid "*.doc and *.pdf files are accepted, max 500 KB for each attachment."
 msgstr ""
 "*. doc et *. pdf sont acceptés, maximum 500 Ko pour chaque pièce jointe."
+
+#: templates/visitors/job.html:62
+msgid "First name"
+msgstr "Votre prénon"
+
+#: templates/visitors/job.html:66
+msgid "Last name"
+msgstr "Votre nom"
+
+#: templates/visitors/job.html:70
+msgid "Email"
+msgstr ""
+
+#: templates/visitors/job.html:75
+msgid "CV in {0}"
+msgstr "CV en {0}"
+
+#: templates/visitors/job.html:79
+msgid "motivation letter in {0}"
+msgstr "lettre motivation en {0}"
 
 #: templates/visitors/job.html:85
 msgid "required field"
@@ -882,3 +897,6 @@ msgstr "Changement de statut d'étudiant à salarié"
 #: templates/visitors/workpermit.html:22
 msgid "you want to send a comment about this guide"
 msgstr "vous voulez envoyer un commentaire au sujet de ce guide"
+
+#~ msgid "Message"
+#~ msgstr "Le message"

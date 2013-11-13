@@ -29,9 +29,9 @@
   </div>
 
   {% block language %}
-  {% for lang in LANGUAGES %}
-  <a href="{{ url_for('setlocale', locale=lang) }}">
-    <img src="/static/img/lang_{{ lang }}.gif">
+  {% for locale in LOCALES %}
+  <a href="{{ url_for('setlocale', locale=locale) }}">
+    <img src="/static/img/lang_{{ locale }}.gif">
     </img>
   </a>
   {% endfor %}

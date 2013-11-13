@@ -72,11 +72,11 @@
 		</tr>
 		{% for cv in job.cv_required %}
 		<tr>
-		  <td>CV in {{ cv }}<span class="required">*</span></td>
+		  <td>{{ _("CV in {0}").format(_(cv)) }}<span class="required">*</span></td>
 		  <td><input type="file" name="cv_{{ cv }}" accept="application/pdf, application/msword" required="required"/></td>
 		</tr>
 		<tr>
-		  <td>motivation letter in {{ cv }}<span class="required">*</span></td>
+		  <td>{{ _("motivation letter in {0}").format(_(cv)) }}<span class="required">*</span></td>
 		  <td><input type="file" name="lm_{{ cv }}" accept="application/pdf, application/msword" required="required"></input></td>
 		</tr>
 		{% endfor %}

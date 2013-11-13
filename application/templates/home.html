@@ -106,7 +106,7 @@
 			  {{ _('Wish to get a stand for your company?') }}
 			</div>
 			<p class="post-info">
-			  {{ _('Please do not hesitate to <a href="%(contact)s">contact us</a> to receive our offers. In section "Exhibitors", You will find <a href="%(visitors)s">a presentation of the visitors	of the Forum</a> as well as the <a href="%(services)s">services offered</a>.', contact=url_for("contact"), visitors=url_for("exhibitor.visitors"), services=url_for("exhibitor.services")) }}
+			  {{ _('Please do not hesitate to <a href="%(contact)s">contact us</a> to receive our offers. In section "Exhibitors", You will find <a href="%(visitors)s">a presentation of the visitors	of the Forum</a> as well as the <a href="%(services)s">services offered</a>.', contact=url_for("contact", usertype="exhibitors"), visitors=url_for("exhibitor.visitors"), services=url_for("exhibitor.services")) }}
 			</p>
 		</div>
 

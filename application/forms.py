@@ -8,6 +8,7 @@ See: http://flask.pocoo.org/docs/patterns/wtforms/
 
 """
 
+from application import app
 from flaskext import wtf
 from flask_login import current_user
 from flask_babel import lazy_gettext
@@ -95,7 +96,7 @@ class JobMetaForm(wtf.Form):
         kwargs['csrf_enabled'] = False
         super(JobMetaForm, self).__init__(*args, **kwargs)
 
-
+_lang_choices = zip(app.config['LOCALES'], app.config['LANGUAGES'].keys())
 class JobForm(wtf.Form):
     type = SelectField('Type', choices=[('Job', _('Job')), ('Internship', _('Internship'))])
     is_online = BooleanField('apply online')
@@ -115,8 +116,8 @@ class JobForm(wtf.Form):
     content_zh = TextAreaField('Content', validators=[job_lang_check('zh')])
     content_fr = TextAreaField('Content', validators=[job_lang_check('fr')])
 
-    default_lang = SelectField('Default version', choices=[('en', 'en'), ('fr', 'fr'), ('zh', 'zh')])
-    cv_required = SelectMultipleField('required CV and letter of motivation("use the Key Ctrl to select multi")', choices=[('en', 'en'), ('fr', 'fr'), ('zh', 'zh')], validators=[validators.InputRequired()])
+    default_lang = SelectField('Default version', choices=_lang_choices)
+    cv_required = SelectMultipleField('required CV and letter of motivation("use the Key Ctrl to select multi")', choices=_lang_choices, validators=[validators.InputRequired()])
 
 
 class EnterpriseForm(wtf.Form):

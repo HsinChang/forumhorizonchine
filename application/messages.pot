@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2013-11-10 16:12+0100\n"
+"POT-Creation-Date: 2013-11-13 23:58+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -29,6 +29,18 @@ msgstr ""
 msgid "no such job"
 msgstr ""
 
+#: configs.py:4 settings.py:39
+msgid "English"
+msgstr ""
+
+#: configs.py:4 settings.py:39
+msgid "French"
+msgstr ""
+
+#: configs.py:4 settings.py:39
+msgid "Chinese"
+msgstr ""
+
 #: exhibitor.py:24
 msgid "registered"
 msgstr ""
@@ -37,67 +49,12 @@ msgstr ""
 msgid "job deleted"
 msgstr ""
 
-#: forms.py:99
+#: forms.py:100
 msgid "Job"
 msgstr ""
 
-#: forms.py:99
+#: forms.py:100
 msgid "Internship"
-msgstr ""
-
-#: forms.py:131 templates/visitors/job.html:62
-msgid "First name"
-msgstr ""
-
-#: forms.py:132 templates/visitors/job.html:66
-msgid "Last name"
-msgstr ""
-
-#: forms.py:133 templates/visitors/job.html:70
-msgid "Email"
-msgstr ""
-
-#: forms.py:134
-msgid "Message"
-msgstr ""
-
-#: templates/base_exhibitors.html:21 templates/includes/exhibitor_menu.html:1
-msgid "Exhibitors area"
-msgstr ""
-
-#: templates/base_exhibitors.html:43 templates/includes/exhibitor_menu.html:23
-msgid "Jobs"
-msgstr ""
-
-#: templates/base_exhibitors.html:48 templates/exhibitors/visitors.html:13
-#: templates/includes/exhibitor_menu.html:28 templates/includes/nav.html:24
-#: templates/includes/nav_admin.html:17
-msgid "Visitors"
-msgstr ""
-
-#: templates/base_exhibitors.html:51 templates/includes/exhibitor_menu.html:31
-msgid "Our services"
-msgstr ""
-
-#: templates/base_visitors.html:19 templates/includes/visitor_menu.html:1
-msgid "Visitors area"
-msgstr ""
-
-#: templates/base_visitors.html:28 templates/includes/visitor_menu.html:10
-msgid "Program"
-msgstr ""
-
-#: templates/base_visitors.html:34 templates/includes/nav.html:27
-#: templates/includes/nav_admin.html:18 templates/includes/visitor_menu.html:16
-msgid "Exhibitors"
-msgstr ""
-
-#: templates/base_visitors.html:40 templates/includes/visitor_menu.html:22
-msgid "Job opportunities"
-msgstr ""
-
-#: templates/base_visitors.html:46 templates/includes/visitor_menu.html:28
-msgid "Working permit"
 msgstr ""
 
 #: templates/home.html:5
@@ -208,7 +165,7 @@ msgstr ""
 msgid "Access to China Horizon Forum"
 msgstr ""
 
-#: templates/about/access.html:8 templates/includes/about_forum.html:6
+#: templates/about/access.html:8 templates/includes/about_forum.html:7
 msgid "Access to the Forum"
 msgstr ""
 
@@ -216,7 +173,7 @@ msgstr ""
 msgid "Access"
 msgstr ""
 
-#: templates/about/balance.html:5 templates/includes/about_forum.html:12
+#: templates/about/balance.html:5 templates/includes/about_forum.html:13
 msgid "2012 balance"
 msgstr ""
 
@@ -428,6 +385,12 @@ msgstr ""
 msgid "Visitor profiles of the China Horizon Forum"
 msgstr ""
 
+#: templates/exhibitors/visitors.html:13
+#: templates/includes/exhibitor_menu.html:28 templates/includes/nav.html:24
+#: templates/includes/nav_admin.html:17
+msgid "Visitors"
+msgstr ""
+
 #: templates/exhibitors/visitors.html:14
 msgid "Visiting students"
 msgstr ""
@@ -584,12 +547,45 @@ msgstr ""
 msgid "About the Forum"
 msgstr ""
 
-#: templates/includes/about_forum.html:18
+#: templates/includes/about_forum.html:19
 msgid "Contact us"
+msgstr ""
+
+#: templates/includes/exhibitor_menu.html:1
+msgid "Exhibitors area"
+msgstr ""
+
+#: templates/includes/exhibitor_menu.html:23
+msgid "Jobs"
+msgstr ""
+
+#: templates/includes/exhibitor_menu.html:31
+msgid "Our services"
 msgstr ""
 
 #: templates/includes/nav.html:20
 msgid "Home"
+msgstr ""
+
+#: templates/includes/nav.html:27 templates/includes/nav_admin.html:18
+#: templates/includes/visitor_menu.html:16
+msgid "Exhibitors"
+msgstr ""
+
+#: templates/includes/visitor_menu.html:1
+msgid "Visitors area"
+msgstr ""
+
+#: templates/includes/visitor_menu.html:10
+msgid "Program"
+msgstr ""
+
+#: templates/includes/visitor_menu.html:22
+msgid "Job opportunities"
+msgstr ""
+
+#: templates/includes/visitor_menu.html:28
+msgid "Working permit"
 msgstr ""
 
 #: templates/visitors/exhibitors.html:4
@@ -664,6 +660,26 @@ msgstr ""
 
 #: templates/visitors/job.html:51
 msgid "*.doc and *.pdf files are accepted, max 500 KB for each attachment."
+msgstr ""
+
+#: templates/visitors/job.html:62
+msgid "First name"
+msgstr ""
+
+#: templates/visitors/job.html:66
+msgid "Last name"
+msgstr ""
+
+#: templates/visitors/job.html:70
+msgid "Email"
+msgstr ""
+
+#: templates/visitors/job.html:75
+msgid "CV in {0}"
+msgstr ""
+
+#: templates/visitors/job.html:79
+msgid "motivation letter in {0}"
 msgstr ""
 
 #: templates/visitors/job.html:85

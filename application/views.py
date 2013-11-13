@@ -37,16 +37,16 @@ def setlocale(locale):
     return redirect(request.referrer)
 
 #about
-@app.route('/about/access')
-def access():
-    return render_template('about/access.html')
+@app.route('/<usertype>/about/access')
+def access(usertype):
+    return render_template('about/access.html', usertype=usertype)
 
-@app.route('/about/balance')
-def balance():
-    return render_template('about/balance.html')
+@app.route('/<usertype>/about/balance')
+def balance(usertype):
+    return render_template('about/balance.html', usertype=usertype)
 
-@app.route('/about/contact', methods=['GET', 'POST'])
-def contact():
+@app.route('/<usertype>/about/contact', methods=['GET', 'POST'])
+def contact(usertype):
     form = ContactForm(request.form)
     if request.method == 'POST' and form.validate():
         first_name = form.first_name.data
@@ -66,11 +66,11 @@ def contact():
         mail.send_mail(sender, to, subject, body)
 
         flash('mail sent')
-    return render_template('about/contact.html', form=form)
+    return render_template('about/contact.html', form=form, usertype=usertype)
 
-@app.route('/about')
-def about():
-    return redirect(url_for('access'))
+@app.route('/<usertype>/about')
+def about(usertype):
+    return redirect(url_for('access', usertype=usertype))
 
 @cache.cached(timeout=60)
 def cached_examples():

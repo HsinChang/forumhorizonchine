@@ -14,7 +14,14 @@
 {% endblock %}
 
 {% block sidebar %}
-
+<div class="sidebar-section">
+  {% if usertype=="visitors" %}
+  {% include "includes/visitor_menu.html" %}
+  {% elif usertype=="exhibitors" %}
+  {% set user = current_user %}
+  {% include "includes/exhibitor_menu.html" %}
+  {% endif %}
+</div>
 <div class="sidebar-section">
   {% include "includes/about_forum.html" %}
 </div>

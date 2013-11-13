@@ -16,42 +16,11 @@
 {% endblock %}{# content #}
 
 {% block sidebar %}
+
 {% set user = current_user %}
+{% set usertype = "exhibitors" %}
 <div class="sidebar-section">
-  <div class="title">{{ _('Exhibitors area') }}</div>
-  <div>
-    {#
-    {% if user.is_authenticated() %}
-    {{ _('welcome') }}! {{ user.username }} <a href="{{ url_for('exhibitor.logout')}}">{{ _('logout') }}</a>
-    {% else %}
-    <form method="post" action="{{ url_for('exhibitor.login') }}">
-      <input name="username" type="text" class="input-small" placeholder="Username">
-      </input>
-      <input name="password" type="password" class="input-small" placeholder="Password">
-      </input>
-      <button type="submit" class="btn">{{ _('Sign in') }}</button>
-      <a href="{{ url_for('exhibitor.register') }}">
-	{{ _('register') }}
-      </a>
-    </form>
-    {% endif %}
-    #}
-    <ul class="list">
-      {% if user.is_authenticated() %}
-      <li {% if request.path == url_for('exhibitor.jobs') %}
-	class="current" {% endif %}>
-	<a href="{{ url_for('exhibitor.jobs') }} ">{{ _('Jobs') }}</a>
-      </li>
-      {% endif %}
-      <li {% if request.path == url_for('exhibitor.visitors')%}
-	class="current" {% endif %}>
-	<a href="{{ url_for('exhibitor.visitors')}}">{{ _('Visitors') }}</a>
-      </li>
-      <li {% if request.path == url_for('exhibitor.services')%}
-	class="current" {% endif %}><a href="{{ url_for('exhibitor.services') }}">{{ _('Our services') }}</a>
-      </li>
-    </ul>
-  </div>
+{% include "includes/exhibitor_menu.html" %}
 </div>
 
 <div class="sidebar-section">

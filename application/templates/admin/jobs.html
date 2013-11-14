@@ -27,7 +27,7 @@
   <tbody>
     {% for job in jobs %}
     <tr>
-      <th>{{ job.en.title }}</th>
+      <th>{{ job.meta["en"]["title"] }}</th>
       <th>{% if job.enterprise %}
       {{ job.enterprise.get().name }}
       {% else %}

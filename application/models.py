@@ -27,9 +27,10 @@ class JobModel(ndb.Model):
     enterprise_mail = ndb.KeyProperty()
 
     published = ndb.BooleanProperty(required=True)
-    fr = ndb.StructuredProperty(JobMetaModel)
-    en = ndb.StructuredProperty(JobMetaModel)
-    zh = ndb.StructuredProperty(JobMetaModel)
+    meta = ndb.JsonProperty()
+    # fr = ndb.StructuredProperty(JobMetaModel)
+    # en = ndb.StructuredProperty(JobMetaModel)
+    # zh = ndb.StructuredProperty(JobMetaModel)
     default_lang = ndb.StringProperty(required=True)
     cv_required = ndb.StringProperty(repeated=True)
 

@@ -63,38 +63,61 @@ def import_jobs(content):
     root = ET.fromstring(content)
     for job in root.iter('job'):
         jobtype = job.get('type')
-        en = JobMetaModel(
-            published = False,
-            title = '',
-            content = '',
-        )
-        fr = JobMetaModel(
-            published = False,
-            title = '',
-            content = '',
-        )
-        zh = JobMetaModel(
-            published = False,
-            title = '',
-            content = '',
-        )
-
-        for meta in job.iter('meta'):
-            lang = meta.get('lang')
-            title = meta.find('title').text
-            content = meta.find('content').text
-            if lang == 'en':
-                en.published = True
-                en.title = title
-                en.content = content
-            elif lang == 'fr':
-                fr.published = True
-                fr.title = title
-                fr.content = content
-            elif lang == 'zh':
-                zh.published = True
-                zh.title = title
-                zh.content = content
+        fr = {
+            'published': False,
+            'title': '',
+            'content': ''
+        }
+        en = {
+            'published': False,
+            'title': '',
+            'content': ''
+        }
+        zh = {
+            'published': False,
+            'title': '',
+            'content': ''
+        }
+        # en = JobMetaModel(
+        #     published = False,
+        #     title = '',
+        #     content = '',
+        # )
+        # fr = JobMetaModel(
+        #     published = False,
+        #     title = '',
+        #     content = '',
+        # )
+        # zh = JobMetaModel(
+        #     published = False,
+        #     title = '',
+        #     content = '',
+        # )
+        meta = {
+            'en': en,
+            'fr': fr,
+            'zh': zh
+        }
+        for m in job.iter('meta'):
+            lang = m.get('lang')
+            title = m.find('title').text
+            content = m.find('content').text
+            l = meta[lang]
+            l['published'] = True
+            l['title'] = title
+            l['content'] = content
+            # if lang == 'en':
+            #     en['published'] = True
+            #     en['title'] = title
+            #     en.content = content
+            # elif lang == 'fr':
+            #     fr.published = True
+            #     fr.title = title
+            #     fr.content = content
+            # elif lang == 'zh':
+            #     zh.published = True
+            #     zh.title = title
+            #     zh.content = content
 
         online = job.get('online')
         apply = job.find('apply')
@@ -111,9 +134,10 @@ def import_jobs(content):
                 is_complete = True,
                 enterprise = e.key,
                 enterprise_mail = e_email.key,
-                fr = fr,
-                en = en,
-                zh = zh,
+                # fr = fr,
+                # en = en,
+                # zh = zh,
+                meta = meta,
                 published = True,
                 default_lang = 'en',
                 cv_required = ['en']
@@ -122,12 +146,13 @@ def import_jobs(content):
             url = apply.find('url').text
             j = JobModel(
                 type = jobtype,
-                is_online = False,
+                is_online = True,
                 is_complete = False,
                 apply_url = url,
-                fr = fr,
-                en = en,
-                zh = zh,
+                # fr = fr,
+                # en = en,
+                # zh = zh,
+                meta = meta,
                 published = True,
                 default_lang = 'en',
                 cv_required = ['en']

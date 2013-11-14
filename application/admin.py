@@ -261,27 +261,33 @@ def new_job():
         mail = ndb.Key(urlsafe=form.enterprise_mail.data)
         enterprise = ndb.Key(urlsafe=form.enterprise.data)
 
-        fr = JobMetaModel(
-            published = form.publish_fr.data,
-            title = form.title_fr.data,
-            content = form.content_fr.data)
-        en = JobMetaModel(
-            published = form.publish_en.data,
-            title = form.title_en.data,
-            content = form.content_en.data)
-        zh = JobMetaModel(
-            published = form.publish_zh.data,
-            title = form.title_zh.data,
-            content = form.content_zh.data)
+        fr = {
+            'published': form.publish_fr.data,
+            'title': form.title_fr.data,
+            'content': form.content_fr.data
+        }
+        en = {
+            'published': form.publish_en.data,
+            'title': form.title_en.data,
+            'content': form.content_en.data
+        }
+        zh = {
+            'published': form.publish_zh.data,
+            'title': form.title_zh.data,
+            'content': form.content_zh.data
+        }
+        meta = {
+            "en": en,
+            "fr": fr,
+            "zh": zh
+        }
         job = JobModel(
             type = form.type.data,
             is_online = form.is_online.data,
             enterprise = enterprise,
             enterprise_mail = mail,
-            fr = fr,
-            en = en,
-            zh = zh,
-            published = fr.published or en.published or zh.published,
+            meta = meta,
+            published = fr["published"] or en["published"] or zh["published"],
             default_lang = form.default_lang.data,
             cv_required = form.cv_required.data,
        #     poster = user.key
@@ -309,6 +315,7 @@ def edit_job(keyurl):
     form.enterprise.choices = [(e.key.urlsafe(), e.name) for e in enterprises]
     choices = [(mail.key.urlsafe(), mail.enterprise.get().name + ' -- ' + mail.email) for mail in mails]
     form.enterprise_mail.choices = sorted(choices, key=lambda c: c[1])
+
     if request.method == 'POST' and form.validate():
         job.type = form.type.data
         job.is_online = form.is_online.data
@@ -316,15 +323,11 @@ def edit_job(keyurl):
         job.enterprise_mail = mail
         job.enterprise = ndb.Key(urlsafe=form.enterprise.data)
 
-        job.fr.published = form.publish_fr.data
-        job.fr.title = form.title_fr.data
-        job.fr.content = form.content_fr.data
-        job.en.published = form.publish_en.data
-        job.en.title = form.title_en.data
-        job.en.content = form.title_en.data
-        job.zh.published = form.publish_zh.data
-        job.zh.title = form.title_zh.data
-        job.zh.content = form.content_zh.data
+        for lang in ['fr', 'en', 'zh']:
+            job.meta[lang]['published'] = getattr(form, "publish_"+lang).data
+            job.meta[lang]['title'] = getattr(form, "title_"+lang).data
+            job.meta[lang]['content'] = getattr(form, "content_"+lang).data
+
         job.published = job.fr.published or job.en.published or job.zh.published
         job.default_lang = form.default_lang.data
         job.cv_required = form.cv_required.data
@@ -335,16 +338,21 @@ def edit_job(keyurl):
             flash('error')
     elif request.method == 'GET':
     #GET handle goes here
-        form.publish_en.data = job.en.published
-        form.publish_fr.data = job.fr.published
-        form.publish_zh.data = job.zh.published
-        form.title_en.data = job.en.title
-        form.title_fr.data = job.fr.title
-        form.title_zh.data = job.zh.title
-        form.content_en.data = job.en.content
-        form.content_fr.data = job.fr.content
-        form.content_zh.data = job.zh.content
+        if job.is_online:
+            form.is_online.data = True
+            form.apply_url.data = job.apply_url
+        else:
+            form.enterprise.data = job.enterprise.urlsafe()
+            form.enterprise_mail.data = job.enterprise_mail.urlsafe()
+        for lang in ['fr', 'en', 'zh']:
+            v = getattr(form, "publish_"+lang)
+            v.data = job.meta[lang]['published']
 
+            v = getattr(form, "title_"+lang)
+            v.data = job.meta[lang]['title']
+
+            v = getattr(form, "content_"+lang)
+            v.data = job.meta[lang]['content']
 
     return render_template('admin/edit_job.html', form=form, keyurl=keyurl)
 

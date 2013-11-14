@@ -96,16 +96,13 @@ class JobMetaForm(wtf.Form):
         kwargs['csrf_enabled'] = False
         super(JobMetaForm, self).__init__(*args, **kwargs)
 
-_lang_choices = zip(app.config['LOCALES'], app.config['LANGUAGES'].keys())
+_lang_choices = zip(sorted(app.config['LOCALES']), sorted(app.config['LANGUAGES'].keys()))
 class JobForm(wtf.Form):
     type = SelectField('Type', choices=[('Job', _('Job')), ('Internship', _('Internship'))])
     is_online = BooleanField('apply online')
     apply_url = StringField('apply URL')
     enterprise = SelectField('Enterprise')
     enterprise_mail = SelectField('Enterprise_Mail')
-    # en = FormField(JobMetaForm, 'en')
-    # fr = FormField(JobMetaForm, 'fr')
-    # zh = FormField(JobMetaForm, 'zh')
     publish_en = BooleanField('Publish', default=True)
     publish_zh = BooleanField('Publish', default=True)
     publish_fr = BooleanField('Publish', default=True)

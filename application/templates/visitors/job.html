@@ -29,17 +29,17 @@
 <div class="section job">
 	<h1>{{ _('Jobs opportunities') }}</h1>
 
-	{% for key, jobs in grouped_jobs.iteritems() %}
+	{% for key, jobs in grouped_jobs %}
 	{% set enterprise = key.get() %}
 	<h2 id="{{ enterprise.shortname }}">{{ enterprise.name }}</h2>
 	{% for job in jobs %}
 	<div class="block-job">
 	  <div class="apply-button">
 	    <div class="right">{{ _(job.type) }}</div>
-	    <h3>{{ job.current.title }}</h3>
+	    <h3>{{ job.current['title'] }}</h3>
 	  </div>
 	  <div>
-	    {{ job.current.content|safe }}
+	    {{ job.current['content']|safe }}
 
 	    {% if job.is_online %}
 	    <a class="apply-button" href="{{ job.apply_url }}">{{ _("Apply online") }}</a>

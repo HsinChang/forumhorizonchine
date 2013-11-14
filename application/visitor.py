@@ -7,6 +7,7 @@ from application import app
 from google.appengine.api import mail
 from google.appengine.ext import ndb
 from os.path import splitext, getsize
+from operator import itemgetter
 
 visitor = Blueprint('visitor', __name__)
 
@@ -32,24 +33,19 @@ def job():
     jobs = JobModel.query(JobModel.published==True, JobModel.enterprise!=None)
     for job in jobs:
         locale = session['locale']
-        if locale == 'fr' and job.fr.published:
-            job.current_lang = 'fr'
-            job.current = job.fr
-        elif locale == 'zh' and job.zh.published:
-            job.current_lang = 'zh'
-            job.current = job.zh
-        elif locale == 'en' and job.en.published:
-            job.current_lang = 'en'
-            job.current = job.en
+        if job.meta[locale]["published"] == True:
+            job.current_lang = locale
         else:
             job.current_lang = job.default_lang
-            job.current = getattr(job, job.default_lang)
+        job.current = job.meta[job.current_lang]
 
         if job.enterprise in grouped_jobs:
             grouped_jobs[job.enterprise].append(job)
         else:
             grouped_jobs[job.enterprise] = [job]
-    return render_template('visitors/job.html', grouped_jobs=grouped_jobs)
+
+        tuple_jobs = sorted(grouped_jobs.items(), key=itemgetter(1))
+    return render_template('visitors/job.html', grouped_jobs=tuple_jobs)
 
 
 @visitor.route('/workpermit', methods=['GET', 'POST'])

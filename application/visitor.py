@@ -45,7 +45,7 @@ def job():
             grouped_jobs[job.enterprise] = [job]
 
         tuple_jobs = sorted(grouped_jobs.items(), key=itemgetter(1))
-    return render_template('visitors/job.html', grouped_jobs=tuple_jobs)
+    return render_template('visitors/job.html', grouped_jobs=tuple_jobs, languages = app.config['LANGUAGES'])
 
 
 @visitor.route('/workpermit', methods=['GET', 'POST'])

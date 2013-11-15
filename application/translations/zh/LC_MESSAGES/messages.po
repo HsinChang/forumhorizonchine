@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2013-11-13 23:58+0100\n"
-"PO-Revision-Date: 2013-11-14 00:00+0100\n"
+"PO-Revision-Date: 2013-11-15 20:25+0100\n"
 "Last-Translator: Tianming.Lu <lutianming1005@gmail.com>\n"
 "Language-Team: zh <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -731,7 +731,7 @@ msgstr "姓"
 
 #: templates/visitors/job.html:70
 msgid "Email"
-msgstr ""
+msgstr "邮箱"
 
 #: templates/visitors/job.html:75
 msgid "CV in {0}"

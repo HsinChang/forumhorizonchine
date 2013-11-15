@@ -71,12 +71,13 @@
 		  <td><input type="email" name="email" required="required"/></td>
 		</tr>
 		{% for cv in job.cv_required %}
+		{% set lang = languages[cv] %}
 		<tr>
-		  <td>{{ _("CV in {0}").format(_(cv)) }}<span class="required">*</span></td>
+		  <td>{{ _("CV in {0}").format(_(lang)) }}<span class="required">*</span></td>
 		  <td><input type="file" name="cv_{{ cv }}" accept="application/pdf, application/msword" required="required"/></td>
 		</tr>
 		<tr>
-		  <td>{{ _("motivation letter in {0}").format(_(cv)) }}<span class="required">*</span></td>
+		  <td>{{ _("motivation letter in {0}").format(_(lang)) }}<span class="required">*</span></td>
 		  <td><input type="file" name="lm_{{ cv }}" accept="application/pdf, application/msword" required="required"></input></td>
 		</tr>
 		{% endfor %}

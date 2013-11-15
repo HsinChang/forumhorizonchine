@@ -96,7 +96,7 @@ class JobMetaForm(wtf.Form):
         kwargs['csrf_enabled'] = False
         super(JobMetaForm, self).__init__(*args, **kwargs)
 
-_lang_choices = zip(sorted(app.config['LOCALES']), sorted(app.config['LANGUAGES'].keys()))
+_lang_choices = [(k, v) for (k,v) in app.config['LANGUAGES'].items()]
 class JobForm(wtf.Form):
     type = SelectField('Type', choices=[('Job', _('Job')), ('Internship', _('Internship'))])
     is_online = BooleanField('apply online')

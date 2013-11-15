@@ -35,8 +35,7 @@ DEBUG_TB_INTERCEPT_REDIRECTS = False
 # Flask-Cache settings
 CACHE_TYPE = 'gaememcached'
 
-LOCALES = ['en', 'fr', 'zh']
-LANGUAGES = {'English': _('English'), 'French': _('French'), 'Chinese': _('Chinese')}
+LANGUAGES = {'en': _('English'), 'fr': _('French'), 'zh': _('Chinese')}
 ADMINS = ['lutianming1005@gmail.com']
 
 #upload file size limit

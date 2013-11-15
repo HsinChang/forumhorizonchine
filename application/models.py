@@ -24,7 +24,7 @@ class JobModel(ndb.Model):
     is_online = ndb.BooleanProperty(required=True)
     apply_url = ndb.StringProperty()
     enterprise = ndb.KeyProperty()
-    enterprise_mail = ndb.KeyProperty()
+    enterprise_email = ndb.KeyProperty()
 
     published = ndb.BooleanProperty(required=True)
     meta = ndb.JsonProperty()

@@ -14,6 +14,7 @@ from application import app
 from passlib.apps import custom_app_context as pwd_context
 import flask_login
 from os.path import splitext
+import json
 
 admin = Blueprint('admin', __name__)
 
@@ -253,12 +254,17 @@ def new_job():
         flash('there is no enterprise, please create one before add new job')
         return redirect(url_for('admin.new_enterprise'))
 
-    choices = [(mail.key.urlsafe(), mail.enterprise.get().name + ' -- ' + mail.email) for mail in mails]
-    form.enterprise_mail.choices = sorted(choices, key=lambda choice: choice[1])
+    grouped_emails = {str(e.key.urlsafe()): {} for e in enterprises}
+    for m in mails:
+        key = m.enterprise.urlsafe()
+        grouped_emails[key][str(m.key.urlsafe())] = m.email
+
+    key = form.enterprise.choices[0][0]
+    form.enterprise_email.choices = grouped_emails[key].items()
 
     if request.method == 'POST' and form.validate():
         user = flask_login.current_user
-        mail = ndb.Key(urlsafe=form.enterprise_mail.data)
+        mail = ndb.Key(urlsafe=form.enterprise_email.data)
         enterprise = ndb.Key(urlsafe=form.enterprise.data)
 
         fr = {
@@ -285,7 +291,7 @@ def new_job():
             type = form.type.data,
             is_online = form.is_online.data,
             enterprise = enterprise,
-            enterprise_mail = mail,
+            enterprise_email = mail,
             meta = meta,
             published = fr["published"] or en["published"] or zh["published"],
             default_lang = form.default_lang.data,
@@ -297,7 +303,7 @@ def new_job():
             return redirect(url_for('admin.jobs'))
         except CapabilityDisabledError:
             flash('add job error!')
-    return render_template('admin/new_job.html', form=form)
+    return render_template('admin/new_job.html', form=form, grouped_emails = json.dumps(grouped_emails))
 
 
 @admin.route('/edit_job/<keyurl>', methods=['GET', 'POST'])
@@ -313,14 +319,19 @@ def edit_job(keyurl):
     mails = EmailModel.query()
 
     form.enterprise.choices = [(e.key.urlsafe(), e.name) for e in enterprises]
-    choices = [(mail.key.urlsafe(), mail.enterprise.get().name + ' -- ' + mail.email) for mail in mails]
-    form.enterprise_mail.choices = sorted(choices, key=lambda c: c[1])
+    grouped_emails = {str(e.key.urlsafe()): {} for e in enterprises}
+    for m in mails:
+        key = m.enterprise.urlsafe()
+        grouped_emails[key][str(m.key.urlsafe())] = m.email
+
+    key = form.enterprise.choices[0][0]
+    form.enterprise_email.choices = grouped_emails[key].items()
 
     if request.method == 'POST' and form.validate():
         job.type = form.type.data
         job.is_online = form.is_online.data
-        mail = ndb.Key(urlsafe=form.enterprise_mail.data)
-        job.enterprise_mail = mail
+        mail = ndb.Key(urlsafe=form.enterprise_email.data)
+        job.enterprise_email = mail
         job.enterprise = ndb.Key(urlsafe=form.enterprise.data)
 
         for lang in ['fr', 'en', 'zh']:
@@ -338,12 +349,15 @@ def edit_job(keyurl):
             flash('error')
     elif request.method == 'GET':
     #GET handle goes here
+        if job.enterprise:
+            form.enterprise.data = job.enterprise.urlsafe()
+            form.enterprise_email.choices = grouped_emails[form.enterprise.data].items()
         if job.is_online:
             form.is_online.data = True
             form.apply_url.data = job.apply_url
         else:
-            form.enterprise.data = job.enterprise.urlsafe()
-            form.enterprise_mail.data = job.enterprise_mail.urlsafe()
+            form.enterprise_email.data = job.enterprise_email.urlsafe()
+
         for lang in ['fr', 'en', 'zh']:
             v = getattr(form, "publish_"+lang)
             v.data = job.meta[lang]['published']

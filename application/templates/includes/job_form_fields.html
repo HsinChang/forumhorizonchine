@@ -3,7 +3,7 @@
 {{ render_field(form.enterprise) }}
 {{ render_field(form.is_online) }}
 {{ render_field(form.apply_url, groupid="url") }}
-{{ render_field(form.enterprise_mail, groupid="email") }}
+{{ render_field(form.enterprise_email, groupid="email") }}
 {{ render_field(form.type) }}
 <div class="section job">
   <div class="block-job">
@@ -41,19 +41,24 @@
 {{ render_field(form.cv_required) }}
 
 <script type="text/javascript">
-  $('#is_online').change(function(){
-  if(this.checked){
-  document.getElementById('url').style.display = 'block';
-  document.getElementById('email').style.display = 'none';
-  }
-  else{
-  document.getElementById('url').style.display = 'none';
-  document.getElementById('email').style.display = 'block';
-  }
-  });
-
-  $('#enterprise').change(function(){
-
-  })
-
+ $('#is_online').change(function(){
+   if(this.checked){
+     document.getElementById('url').style.display = 'block';
+     document.getElementById('email').style.display = 'none';
+   }
+   else{
+     document.getElementById('url').style.display = 'none';
+     document.getElementById('email').style.display = 'block';
+   }
+ });
+ var emails = {{ grouped_emails|safe }};
+ $('#enterprise').change(function(){
+   var e = $('#enterprise_email');
+   e.empty();
+   var options = emails[this.value];
+   $.each(options, function(key, value) {
+     e.append($("<option></option>")
+      .attr("value", key).text(value));
+   });
+ });
 </script>

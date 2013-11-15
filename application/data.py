@@ -133,7 +133,7 @@ def import_jobs(content):
                 is_online = False,
                 is_complete = True,
                 enterprise = e.key,
-                enterprise_mail = e_email.key,
+                enterprise_email = e_email.key,
                 # fr = fr,
                 # en = en,
                 # zh = zh,

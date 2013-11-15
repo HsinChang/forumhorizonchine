@@ -102,7 +102,7 @@ class JobForm(wtf.Form):
     is_online = BooleanField('apply online')
     apply_url = StringField('apply URL')
     enterprise = SelectField('Enterprise')
-    enterprise_mail = SelectField('Enterprise_Mail')
+    enterprise_email = SelectField('Enterprise_Email')
     publish_en = BooleanField('Publish', default=True)
     publish_zh = BooleanField('Publish', default=True)
     publish_fr = BooleanField('Publish', default=True)

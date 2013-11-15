@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2013-11-13 23:58+0100\n"
-"PO-Revision-Date: 2013-11-15 20:25+0100\n"
+"POT-Creation-Date: 2013-11-15 20:34+0100\n"
+"PO-Revision-Date: 2013-11-15 20:35+0100\n"
 "Last-Translator: Tianming.Lu <lutianming1005@gmail.com>\n"
 "Language-Team: zh <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -22,23 +22,23 @@ msgstr ""
 msgid "no such enterprise"
 msgstr ""
 
-#: admin.py:169 admin.py:368 exhibitor.py:107
+#: admin.py:169 admin.py:376 exhibitor.py:107
 msgid "fail to delete"
 msgstr ""
 
-#: admin.py:303 admin.py:363 exhibitor.py:81 exhibitor.py:101
+#: admin.py:309 admin.py:371 exhibitor.py:81 exhibitor.py:101
 msgid "no such job"
 msgstr ""
 
-#: configs.py:4 settings.py:39
+#: configs.py:4 settings.py:38
 msgid "English"
 msgstr "英文"
 
-#: configs.py:4 settings.py:39
+#: configs.py:4 settings.py:38
 msgid "French"
 msgstr "法文"
 
-#: configs.py:4 settings.py:39
+#: configs.py:4 settings.py:38
 msgid "Chinese"
 msgstr "中文"
 
@@ -50,13 +50,17 @@ msgstr ""
 msgid "job deleted"
 msgstr ""
 
-#: forms.py:100
+#: forms.py:101
 msgid "Job"
 msgstr "工作职位"
 
-#: forms.py:100
+#: forms.py:101
 msgid "Internship"
 msgstr "实习"
+
+#: forms.py:133
+msgid "Message"
+msgstr "消息"
 
 #: templates/home.html:5
 msgid "China Horizon Forum"
@@ -733,19 +737,19 @@ msgstr "姓"
 msgid "Email"
 msgstr "邮箱"
 
-#: templates/visitors/job.html:75
+#: templates/visitors/job.html:76
 msgid "CV in {0}"
 msgstr "{0}简历"
 
-#: templates/visitors/job.html:79
+#: templates/visitors/job.html:80
 msgid "motivation letter in {0}"
 msgstr "{0}动机信"
 
-#: templates/visitors/job.html:85
+#: templates/visitors/job.html:86
 msgid "required field"
 msgstr "必填项"
 
-#: templates/visitors/job.html:99 templates/visitors/job_meta.html:67
+#: templates/visitors/job.html:100 templates/visitors/job_meta.html:67
 msgid "No job provided"
 msgstr "暂无职位"
 
@@ -857,6 +861,3 @@ msgstr "学生居留转工作居留"
 #: templates/visitors/workpermit.html:22
 msgid "you want to send a comment about this guide"
 msgstr "你想要对此发表评论"
-
-#~ msgid "Message"
-#~ msgstr "消息"

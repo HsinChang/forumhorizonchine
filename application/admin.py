@@ -7,7 +7,7 @@
 from google.appengine.runtime.apiproxy_errors import CapabilityDisabledError
 from google.appengine.ext import ndb
 from flask import Blueprint, render_template, redirect, url_for, request, flash, Response
-from forms import RegisterForm, JobForm, EnterpriseForm, EmailForm, PasswordForm
+from forms import RegisterForm, JobForm, EnterpriseForm, EmailForm, PasswordForm, BaseEnterpriseForm
 from models import UserModel, JobModel, JobMetaModel, ROLES, EnterpriseModel, EmailModel
 from decorators import admin_required
 from application import app
@@ -134,16 +134,20 @@ def edit_enterprise(keyurl):
         flash(_('no such enterprise'))
         return redirect(url_for('admin.enterprises'))
     emails = EmailModel.query(EmailModel.enterprise==e.key)
-    form = EnterpriseForm(request.form, obj=e)
-    if request.method == 'POST' and form.validate():
-            e.name = form.name.data
-            e.shortname = form.shortname.data
-            e.email = form.email.data
-            try:
-                e.put()
-                return redirect(url_for('admin.enterprises'))
-            except CapabilityDisabledError:
-                flash('error')
+    form = BaseEnterpriseForm(request.form)
+
+    if request.method == 'GET':
+        form.name.data = e.name
+        form.shortname.data = e.shortname
+
+    elif request.method == 'POST' and form.validate():
+        e.name = form.name.data
+        e.shortname = form.shortname.data
+        try:
+            e.put()
+            return redirect(url_for('admin.enterprises'))
+        except CapabilityDisabledError:
+            flash('error')
     return render_template('admin/edit_enterprise.html', form=form, keyurl=keyurl, emails=emails)
 
 

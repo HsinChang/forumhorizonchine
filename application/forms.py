@@ -116,10 +116,11 @@ class JobForm(wtf.Form):
     default_lang = SelectField('Default version', choices=_lang_choices)
     cv_required = SelectMultipleField('required CV and letter of motivation("use the Key Ctrl to select multi")', choices=_lang_choices, validators=[validators.InputRequired()])
 
-
-class EnterpriseForm(wtf.Form):
-    name = StringField('Name', validators=[validators.InputRequired(), enterprise_exist_check])
+class BaseEnterpriseForm(wtf.Form):
+    name = StringField('Name', validators=[validators.InputRequired()])
     shortname = StringField('Short name', validators=[validators.InputRequired()])
+
+class EnterpriseForm(BaseEnterpriseForm):
     #at lest one email
     email = StringField('Email', validators=[validators.Email()])
 

@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2013-11-15 20:34+0100\n"
-"PO-Revision-Date: 2013-11-15 20:35+0100\n"
+"POT-Creation-Date: 2013-11-17 17:59+0100\n"
+"PO-Revision-Date: 2013-11-17 18:01+0100\n"
 "Last-Translator: Tianming.Lu <lutianming1005@gmail.com>\n"
 "Language-Team: zh <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -18,15 +18,15 @@ msgstr ""
 "Generated-By: Babel 0.9.6\n"
 "X-Generator: Poedit 1.5.4\n"
 
-#: admin.py:133 admin.py:160
+#: admin.py:134 admin.py:165
 msgid "no such enterprise"
 msgstr ""
 
-#: admin.py:169 admin.py:376 exhibitor.py:107
+#: admin.py:174 admin.py:394 exhibitor.py:107
 msgid "fail to delete"
 msgstr ""
 
-#: admin.py:309 admin.py:371 exhibitor.py:81 exhibitor.py:101
+#: admin.py:319 admin.py:389 exhibitor.py:81 exhibitor.py:101
 msgid "no such job"
 msgstr ""
 
@@ -58,7 +58,19 @@ msgstr "工作职位"
 msgid "Internship"
 msgstr "实习"
 
-#: forms.py:133
+#: forms.py:131 templates/visitors/job.html:62
+msgid "First name"
+msgstr "名"
+
+#: forms.py:132 templates/visitors/job.html:66
+msgid "Last name"
+msgstr "姓"
+
+#: forms.py:133 templates/visitors/job.html:70
+msgid "Email"
+msgstr "邮箱"
+
+#: forms.py:134
 msgid "Message"
 msgstr "消息"
 
@@ -232,7 +244,7 @@ msgstr ""
 
 #: templates/about/balance.html:17
 msgid "Below are statistics about the participants of 2012 China Horizon Forum"
-msgstr "以下是2012年中国地平线论坛参与者的统计数据："
+msgstr "以下是2012年中国地平线论坛参与者的统计数据"
 
 #: templates/about/contact.html:7
 msgid "Contact the team of China Horizon Forum"
@@ -274,9 +286,10 @@ msgstr "李铮 先生"
 msgid "Wish to contact us?"
 msgstr "您希望联系我们?"
 
-#: templates/about/contact.html:51 templates/visitors/workpermit.html:31
+#: templates/about/contact.html:51 templates/visitors/job.html:89
+#: templates/visitors/workpermit.html:31
 msgid "Send"
-msgstr ""
+msgstr "发送"
 
 #: templates/exhibitors/edit_job.html:9 templates/exhibitors/edit_job.html:13
 msgid "Edit job"
@@ -426,7 +439,7 @@ msgid "Visitor profiles of the China Horizon Forum"
 msgstr "中国地平线论坛到访学生资料"
 
 #: templates/exhibitors/visitors.html:13
-#: templates/includes/exhibitor_menu.html:28 templates/includes/nav.html:24
+#: templates/includes/exhibitor_menu.html:30 templates/includes/nav.html:24
 #: templates/includes/nav_admin.html:17
 msgid "Visitors"
 msgstr "到访学生"
@@ -615,11 +628,7 @@ msgstr "我们的团队"
 msgid "Exhibitors area"
 msgstr "企业到访"
 
-#: templates/includes/exhibitor_menu.html:23
-msgid "Jobs"
-msgstr "职位"
-
-#: templates/includes/exhibitor_menu.html:31
+#: templates/includes/exhibitor_menu.html:33
 msgid "Our services"
 msgstr "我们的服务"
 
@@ -725,24 +734,12 @@ msgstr "申请"
 msgid "*.doc and *.pdf files are accepted, max 500 KB for each attachment."
 msgstr "接受doc和pdf文件。单个文件不超过500KB。"
 
-#: templates/visitors/job.html:62
-msgid "First name"
-msgstr "名"
-
-#: templates/visitors/job.html:66
-msgid "Last name"
-msgstr "姓"
-
-#: templates/visitors/job.html:70
-msgid "Email"
-msgstr "邮箱"
-
 #: templates/visitors/job.html:76
 msgid "CV in {0}"
 msgstr "{0}简历"
 
 #: templates/visitors/job.html:80
-msgid "motivation letter in {0}"
+msgid "Motivation letter in {0}"
 msgstr "{0}动机信"
 
 #: templates/visitors/job.html:86
@@ -857,6 +854,10 @@ msgstr "闭幕式"
 #: templates/visitors/workpermit.html:6 templates/visitors/workpermit.html:15
 msgid "Status change from student to employee"
 msgstr "学生居留转工作居留"
+
+#: templates/visitors/workpermit.html:18
+msgid "Link to the PDF"
+msgstr "下载PDF"
 
 #: templates/visitors/workpermit.html:22
 msgid "you want to send a comment about this guide"

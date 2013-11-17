@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2013-11-15 20:45+0100\n"
+"POT-Creation-Date: 2013-11-17 17:59+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,15 +17,15 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 0.9.6\n"
 
-#: admin.py:133 admin.py:160
+#: admin.py:134 admin.py:165
 msgid "no such enterprise"
 msgstr ""
 
-#: admin.py:169 admin.py:376 exhibitor.py:107
+#: admin.py:174 admin.py:394 exhibitor.py:107
 msgid "fail to delete"
 msgstr ""
 
-#: admin.py:309 admin.py:371 exhibitor.py:81 exhibitor.py:101
+#: admin.py:319 admin.py:389 exhibitor.py:81 exhibitor.py:101
 msgid "no such job"
 msgstr ""
 
@@ -57,19 +57,19 @@ msgstr ""
 msgid "Internship"
 msgstr ""
 
-#: forms.py:130 templates/visitors/job.html:62
+#: forms.py:131 templates/visitors/job.html:62
 msgid "First name"
 msgstr ""
 
-#: forms.py:131 templates/visitors/job.html:66
+#: forms.py:132 templates/visitors/job.html:66
 msgid "Last name"
 msgstr ""
 
-#: forms.py:132 templates/visitors/job.html:70
+#: forms.py:133 templates/visitors/job.html:70
 msgid "Email"
 msgstr ""
 
-#: forms.py:133
+#: forms.py:134
 msgid "Message"
 msgstr ""
 
@@ -261,7 +261,8 @@ msgstr ""
 msgid "Wish to contact us?"
 msgstr ""
 
-#: templates/about/contact.html:51 templates/visitors/workpermit.html:31
+#: templates/about/contact.html:51 templates/visitors/job.html:89
+#: templates/visitors/workpermit.html:31
 msgid "Send"
 msgstr ""
 
@@ -402,7 +403,7 @@ msgid "Visitor profiles of the China Horizon Forum"
 msgstr ""
 
 #: templates/exhibitors/visitors.html:13
-#: templates/includes/exhibitor_menu.html:28 templates/includes/nav.html:24
+#: templates/includes/exhibitor_menu.html:30 templates/includes/nav.html:24
 #: templates/includes/nav_admin.html:17
 msgid "Visitors"
 msgstr ""
@@ -571,11 +572,7 @@ msgstr ""
 msgid "Exhibitors area"
 msgstr ""
 
-#: templates/includes/exhibitor_menu.html:23
-msgid "Jobs"
-msgstr ""
-
-#: templates/includes/exhibitor_menu.html:31
+#: templates/includes/exhibitor_menu.html:33
 msgid "Our services"
 msgstr ""
 
@@ -683,7 +680,7 @@ msgid "CV in {0}"
 msgstr ""
 
 #: templates/visitors/job.html:80
-msgid "motivation letter in {0}"
+msgid "Motivation letter in {0}"
 msgstr ""
 
 #: templates/visitors/job.html:86
@@ -797,6 +794,10 @@ msgstr ""
 
 #: templates/visitors/workpermit.html:6 templates/visitors/workpermit.html:15
 msgid "Status change from student to employee"
+msgstr ""
+
+#: templates/visitors/workpermit.html:18
+msgid "Link to the PDF"
 msgstr ""
 
 #: templates/visitors/workpermit.html:22

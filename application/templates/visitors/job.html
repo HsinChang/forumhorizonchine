@@ -77,7 +77,7 @@
 		  <td><input type="file" name="cv_{{ cv }}" accept="application/pdf, application/msword" required="required"/></td>
 		</tr>
 		<tr>
-		  <td>{{ _("motivation letter in {0}").format(_(lang)) }}<span class="required">*</span></td>
+		  <td>{{ _("Motivation letter in {0}").format(_(lang)) }}<span class="required">*</span></td>
 		  <td><input type="file" name="lm_{{ cv }}" accept="application/pdf, application/msword" required="required"></input></td>
 		</tr>
 		{% endfor %}
@@ -86,7 +86,7 @@
 		  : {{ _("required field") }}</small></td>
 		</tr>
 		<tr>
-		  <td colspan="2"><input type="submit" value="Send"></input>
+		  <td colspan="2"><input type="submit" value={{ _('Send') }}></input>
 		  </td>
 		</tr>
 	      </table>

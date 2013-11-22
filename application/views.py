@@ -43,7 +43,8 @@ def access(usertype):
 
 @app.route('/<usertype>/about/balance')
 def balance(usertype):
-    return render_template('about/balance.html', usertype=usertype)
+    locale = session['locale']
+    return render_template('about/balance.html', usertype=usertype, locale=locale)
 
 @app.route('/<usertype>/about/contact', methods=['GET', 'POST'])
 def contact(usertype):

@@ -30,7 +30,7 @@ def exhibitors():
 @visitor.route('/job')
 def job():
     grouped_jobs = {}
-    jobs = JobModel.query(JobModel.published==True, JobModel.enterprise!=None)
+    jobs = JobModel.query(JobModel.published==True, JobModel.is_complete==True)
     for job in jobs:
         locale = session['locale']
         if job.meta[locale]["published"] == True:
@@ -46,6 +46,7 @@ def job():
 
         tuple_jobs = sorted(grouped_jobs.items(), key=itemgetter(1))
     return render_template('visitors/job.html', grouped_jobs=tuple_jobs, languages = app.config['LANGUAGES'])
+
 
 
 @visitor.route('/workpermit', methods=['GET', 'POST'])
@@ -88,7 +89,9 @@ def apply():
     lang = request.form['lang']
     email_enterprise = request.form['email.to']
     email_to = ndb.Key(urlsafe=email_enterprise)
+
     to = email_to.get().email
+    # to = 'lutianming1005@hotmail.com'
 
     enterprise = request.form['enterprise']
     first_name = request.form['firstname']
@@ -129,11 +132,12 @@ def apply():
         attachments.append((f.filename, f.read()))
 
     sender = 'Admin of AFCP <lutianming1005@gmail.com>'
+    cc = app.config['ADMIN']
     subject_en = 'New application sent by AFCP'
     subject_zh = u'来自AFCP的新职位申请'
     subject_fr = u'Une nouvelle candidatur envoyée par AFCP'
     subjects = {'en': subject_en, 'zh': subject_zh, 'fr': subject_fr}
-    body_en = """
+    body_en = u"""
     Dear Sir/Miss,
 
     A new application for the position {0} has been sent through the Site of AFCP where the offre is published.
@@ -168,7 +172,7 @@ def apply():
 
     subject = subjects[lang]
     body = bodies[lang].format(jobname, first_name, last_name, email)
-    mail.send_mail(sender, to, subject, body, attachments=attachments)
+    mail.send_mail(sender, to, subject, body, attachments=attachments, cc=cc)
 
     flash('mail sent')
     return redirect(url_for('visitor.job'))

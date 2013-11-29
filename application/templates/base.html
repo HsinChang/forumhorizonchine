@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link rel="shortcut icon" type="image/ico" href="{{ url_for('static', filename='img/favicon.ico') }}" />
@@ -49,7 +49,6 @@
 
 	<div id="sidebar-wrapper">
 	  {% block sidebar %}
-	  {% include "afcp/sidebar.html" %}
 	  {% endblock %}
 	</div><!--/#sidebar-wrapper-->
 
@@ -58,7 +57,7 @@
 	  {% block content %}FIXME: content block{% endblock %}
 	  <div class="section-footer">
 	    <p class="hide">
-	      <a href="#top">{{ _("Back to top") }}</a>
+	      <a href="#top">{{ _('Back to top') }}</a>
 	    </p>
 	  </div>
 	</div><!--/#content-wrapper-->

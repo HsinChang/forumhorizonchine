@@ -1,0 +1,35 @@
+{% extends "base_visitors.html"  %}
+
+{% block html_title %}
+  <title>{{ _('Useful information about China Horizon Forum') }}</title>
+  <meta name="description" content={{ _("Some useful information about the China Horizon Forum or related activities.") }}>
+  </meta>
+
+{% endblock %}{# html_title #}
+
+{% block content %}
+
+<div class="section">
+  <h1>{{ _('Useful information') }}</h1>
+  <h2>{{ _('Recruitment Forum') }}</h2>
+  <p>{{ _('The ParisTech forums are places for successful exchanges between students and recruiters. Designed and led by students, these forums promote the integration of students in the professional world that awaits them. The AFCP here gives you times and places of these forums') }}.</p>
+  <p>
+    <img width="646px" height="549px" src="{{ url_for("static", filename="img/forums.png") }}" alt="Places and times of ParisTech Forums">
+  </p>
+  <p>
+    {{ _("Among the forums above, <strong>China Horizon Forum</strong> is organized by the French-Chinese Friendship Association of ParisTech (AFCP) together with ParisTech, and with the support of the Chinese Embassy in France. This forum has three objectives:") }}
+  </p>
+  <ul>
+    <li>{{ _("Helping Chinese ParisTech students to find an internship or a job") }}</li>
+    <li>{{ _("Helping French ParisTech students interested in a career related to China to find an internship or a job corresponding to their expectations") }}</li>
+    <li>{{ _("Provide an opportunity for exchange to French and Chinese companies, partners of the Forum.") }}</li>
+  </ul>
+  <p>
+    {{ _("You are cordially invited to join us on <strong>March 6, 2014</strong> at <strong>ENSTA ParisTech</strong>!") }}
+  </p>
+  <p>
+    {{ _('Thanks to <a href="http://paristech.org/">Paristech.org</a> to provide us this information.') }}
+  </p>
+</div>
+
+{% endblock %}

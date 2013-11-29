@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2013-11-17 17:59+0100\n"
+"POT-Creation-Date: 2013-11-29 17:14+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -57,15 +57,15 @@ msgstr ""
 msgid "Internship"
 msgstr ""
 
-#: forms.py:131 templates/visitors/job.html:62
+#: forms.py:131 templates/visitors/job.html:61
 msgid "First name"
 msgstr ""
 
-#: forms.py:132 templates/visitors/job.html:66
+#: forms.py:132 templates/visitors/job.html:65
 msgid "Last name"
 msgstr ""
 
-#: forms.py:133 templates/visitors/job.html:70
+#: forms.py:133 templates/visitors/job.html:69
 msgid "Email"
 msgstr ""
 
@@ -77,23 +77,30 @@ msgstr ""
 msgid "China Horizon Forum"
 msgstr ""
 
-#: templates/home.html:38
+#: templates/home.html:6
+msgid ""
+"This forum is a place for Franco-Chinese business recruitment gathering "
+"students and graduates of ParisTech. It also offers a series of "
+"conferences and round table discussions."
+msgstr ""
+
+#: templates/home.html:37
 msgid "Official partners of the Forum in 2013"
 msgstr ""
 
-#: templates/home.html:44 templates/home.html:49 templates/home.html:53
+#: templates/home.html:43 templates/home.html:48 templates/home.html:52
 msgid "Official website"
 msgstr ""
 
-#: templates/home.html:57
+#: templates/home.html:56
 msgid "Poster"
 msgstr ""
 
-#: templates/home.html:66
+#: templates/home.html:65
 msgid "Welcome to <em>China Horizon Forum</em>"
 msgstr ""
 
-#: templates/home.html:74
+#: templates/home.html:73
 msgid ""
 "Co-organized by the French-Chinese Friendship Association of ParisTech "
 "(AFCP) and ParisTech, Forum Horizon Chine is a space for recruiting "
@@ -101,7 +108,7 @@ msgid ""
 "and business Grandes Écoles of ParisTech."
 msgstr ""
 
-#: templates/home.html:78
+#: templates/home.html:77
 msgid ""
 "This year, the sixth edition will be held at <strong>Mines "
 "ParisTech</strong> on <strong>April 18, 2013</strong> at <strong>10 "
@@ -110,40 +117,40 @@ msgid ""
 "fair and conference facilities where you will"
 msgstr ""
 
-#: templates/home.html:82
+#: templates/home.html:81
 msgid ""
 "Meet talented young Chinese students and graduates as well as French "
 "students and graduates wishing to pursue a career in China,"
 msgstr ""
 
-#: templates/home.html:85
+#: templates/home.html:84
 msgid "Present your company and your development strategy in China and Asia,"
 msgstr ""
 
-#: templates/home.html:88
+#: templates/home.html:87
 msgid ""
 "Communicate with other companies and representatives of China’s special "
 "economic zones, in order to know the Chinese market, its regulatory "
 "environment and its opportunities for implementation."
 msgstr ""
 
-#: templates/home.html:92
+#: templates/home.html:91
 msgid ""
 "You will participate in a series of conferences and round tables at the "
 "end of the day followed by a cocktail."
 msgstr ""
 
-#: templates/home.html:95
+#: templates/home.html:94
 msgid ""
 "This forum is co-organized by the French-Chinese Friendship Association "
 "ParisTech (AFCP) and ParisTech, with the support of the Embassy of China."
 msgstr ""
 
-#: templates/home.html:99
+#: templates/home.html:98
 msgid "You are a student or an alumnus of Paristech?"
 msgstr ""
 
-#: templates/home.html:102
+#: templates/home.html:101
 #, python-format
 msgid ""
 "You can now register on <a href=\"%(inscription)s\">the registration "
@@ -152,11 +159,11 @@ msgid ""
 "href=\"%(exhibitors)s\">the companies</a> that will participate in."
 msgstr ""
 
-#: templates/home.html:106
+#: templates/home.html:105
 msgid "Wish to get a stand for your company?"
 msgstr ""
 
-#: templates/home.html:109
+#: templates/home.html:108
 #, python-format
 msgid ""
 "Please do not hesitate to <a href=\"%(contact)s\">contact us</a> to "
@@ -165,7 +172,7 @@ msgid ""
 " well as the <a href=\"%(services)s\">services offered</a>."
 msgstr ""
 
-#: templates/home.html:125
+#: templates/home.html:124
 msgid "Organizers"
 msgstr ""
 
@@ -181,11 +188,17 @@ msgstr ""
 msgid "Access to China Horizon Forum"
 msgstr ""
 
-#: templates/about/access.html:8 templates/includes/about_forum.html:7
+#: templates/about/access.html:5
+msgid ""
+"The Forum will be held in the premises of Mines ParisTech. Here you will "
+"find the address, a map and public transport to get here."
+msgstr ""
+
+#: templates/about/access.html:10 templates/includes/about_forum.html:7
 msgid "Access to the Forum"
 msgstr ""
 
-#: templates/about/access.html:45
+#: templates/about/access.html:47
 msgid "Access"
 msgstr ""
 
@@ -193,17 +206,24 @@ msgstr ""
 msgid "2012 balance"
 msgstr ""
 
-#: templates/about/balance.html:11
-msgid "China Horizon Forum 2012 balance"
+#: templates/about/balance.html:7
+msgid ""
+"The 2012 edition of the Forum received 8 companies and 300 subscriptions "
+"on the website. Assessment and statistics about participants are "
+"presented here (schools, location, area, nationality)."
 msgstr ""
 
 #: templates/about/balance.html:13
+msgid "China Horizon Forum 2012 balance"
+msgstr ""
+
+#: templates/about/balance.html:15
 msgid ""
 "The 5<sup>th</sup> China Horizon Forum was held on April 12, 2012 at "
 "Télécom ParisTech."
 msgstr ""
 
-#: templates/about/balance.html:14
+#: templates/about/balance.html:16
 msgid ""
 "In terms of attendance, 297 people registered on our official website. "
 "Among them, many Chinese graduates or experienced workers already in "
@@ -217,7 +237,7 @@ msgid ""
 "Group, IBM, L'Oréal and Saint-Gobain."
 msgstr ""
 
-#: templates/about/balance.html:17
+#: templates/about/balance.html:19
 msgid "Below are statistics about the participants of 2012 China Horizon Forum"
 msgstr ""
 
@@ -225,44 +245,50 @@ msgstr ""
 msgid "Contact the team of China Horizon Forum"
 msgstr ""
 
-#: templates/about/contact.html:12
+#: templates/about/contact.html:9
+msgid ""
+"Wish to contact us? Please complete this form to send us a message. We "
+"will reply as soon as possible."
+msgstr ""
+
+#: templates/about/contact.html:14
 msgid "Team leaders of China Horizon Forum 2013"
 msgstr ""
 
-#: templates/about/contact.html:16 templates/exhibitors/jobs.html:17
+#: templates/about/contact.html:18 templates/exhibitors/jobs.html:17
 msgid "Name"
 msgstr ""
 
-#: templates/about/contact.html:17
+#: templates/about/contact.html:19
 msgid "Title"
 msgstr ""
 
-#: templates/about/contact.html:20 templates/visitors/program.html:56
+#: templates/about/contact.html:22 templates/visitors/program.html:56
 msgid "Mr. Qi ZHU"
 msgstr ""
 
-#: templates/about/contact.html:21
+#: templates/about/contact.html:23
 msgid "AFCP President"
 msgstr ""
 
-#: templates/about/contact.html:24
+#: templates/about/contact.html:26
 msgid "Ms. Nan ZHANG"
 msgstr ""
 
-#: templates/about/contact.html:25 templates/about/contact.html:29
+#: templates/about/contact.html:27 templates/about/contact.html:31
 msgid "Forum team member"
 msgstr ""
 
-#: templates/about/contact.html:28
+#: templates/about/contact.html:30
 msgid "Mr. Zheng LI"
 msgstr ""
 
-#: templates/about/contact.html:42
+#: templates/about/contact.html:44
 msgid "Wish to contact us?"
 msgstr ""
 
-#: templates/about/contact.html:51 templates/visitors/job.html:89
-#: templates/visitors/workpermit.html:31
+#: templates/about/contact.html:53 templates/visitors/job.html:88
+#: templates/visitors/workpermit.html:30
 msgid "Send"
 msgstr ""
 
@@ -310,77 +336,84 @@ msgstr ""
 msgid "Services of China Horizon Forum"
 msgstr ""
 
-#: templates/exhibitors/services.html:13
+#: templates/exhibitors/services.html:5
+msgid ""
+"China Horizon Forum offers a range of services, including the "
+"presentation of your company, the opportunity to recruit young talent and"
+" explore the Chinese market."
+msgstr ""
+
+#: templates/exhibitors/services.html:12
 msgid "Services"
 msgstr ""
 
-#: templates/exhibitors/services.html:14
+#: templates/exhibitors/services.html:13
 msgid "Our forum offers the following services"
 msgstr ""
 
-#: templates/exhibitors/services.html:21
+#: templates/exhibitors/services.html:20
 msgid "An opportunity to present your business"
 msgstr ""
 
-#: templates/exhibitors/services.html:25
+#: templates/exhibitors/services.html:24
 msgid "Advertising your business"
 msgstr ""
 
-#: templates/exhibitors/services.html:28
+#: templates/exhibitors/services.html:27
 msgid ""
 "Via our website, emailing our students, the brochure and the presentation"
 " note of the forum"
 msgstr ""
 
-#: templates/exhibitors/services.html:32
+#: templates/exhibitors/services.html:31
 msgid "Communication on your participation"
 msgstr ""
 
-#: templates/exhibitors/services.html:33
+#: templates/exhibitors/services.html:32
 msgid "Through the Chinese Embassy and the Grandes Ecoles of ParisTech"
 msgstr ""
 
-#: templates/exhibitors/services.html:37
+#: templates/exhibitors/services.html:36
 msgid "Thematic conferences"
 msgstr ""
 
-#: templates/exhibitors/services.html:38
+#: templates/exhibitors/services.html:37
 msgid "To submit your development strategy in China and Asia, on forum day"
 msgstr ""
 
-#: templates/exhibitors/services.html:43
+#: templates/exhibitors/services.html:42
 msgid "An opportunity to recruit talented young Chinese"
 msgstr ""
 
-#: templates/exhibitors/services.html:47
+#: templates/exhibitors/services.html:46
 msgid "Presentation stand"
 msgstr ""
 
-#: templates/exhibitors/services.html:48
+#: templates/exhibitors/services.html:47
 msgid "You will meet young Chinese talents looking for work or internship"
 msgstr ""
 
-#: templates/exhibitors/services.html:52
+#: templates/exhibitors/services.html:51
 msgid "Database of résumés and candidate profiles"
 msgstr ""
 
-#: templates/exhibitors/services.html:53
+#: templates/exhibitors/services.html:52
 msgid ""
 "After the forum, we will provide you with a database of CVs of candidates"
 " interested in your business, as well as their statistical profiles"
 msgstr ""
 
-#: templates/exhibitors/services.html:58
+#: templates/exhibitors/services.html:57
 msgid ""
 "An opportunity to cooperate with areas of economic and technical "
 "operations in China"
 msgstr ""
 
-#: templates/exhibitors/services.html:61
+#: templates/exhibitors/services.html:60
 msgid "Round table"
 msgstr ""
 
-#: templates/exhibitors/services.html:64
+#: templates/exhibitors/services.html:63
 msgid ""
 "Along with Chinese companies and representatives from areas of economic "
 "and technical operations, you can better understand the conditions for "
@@ -388,11 +421,11 @@ msgid ""
 " set up"
 msgstr ""
 
-#: templates/exhibitors/services.html:68 templates/visitors/program.html:122
+#: templates/exhibitors/services.html:67 templates/visitors/program.html:122
 msgid "Cocktail"
 msgstr ""
 
-#: templates/exhibitors/services.html:70
+#: templates/exhibitors/services.html:69
 msgid ""
 "A cocktail will be offered at the end of the day, to close the forum. You"
 " will be able to continue these discussions in a friendly atmosphere."
@@ -402,34 +435,40 @@ msgstr ""
 msgid "Visitor profiles of the China Horizon Forum"
 msgstr ""
 
-#: templates/exhibitors/visitors.html:13
+#: templates/exhibitors/visitors.html:5
+msgid ""
+"The Forum is open to talented gratuates and students of ParisTech. This "
+"prestigious education system and research network is presented here."
+msgstr ""
+
+#: templates/exhibitors/visitors.html:12
 #: templates/includes/exhibitor_menu.html:30 templates/includes/nav.html:24
 #: templates/includes/nav_admin.html:17
 msgid "Visitors"
 msgstr ""
 
-#: templates/exhibitors/visitors.html:14
+#: templates/exhibitors/visitors.html:13
 msgid "Visiting students"
 msgstr ""
 
-#: templates/exhibitors/visitors.html:15
+#: templates/exhibitors/visitors.html:14
 msgid ""
 "China Horizon Forum is open to young Chinese talents in higher education "
 "or working in France. Young French talents motivated by a career related "
 "to China are also invited."
 msgstr ""
 
-#: templates/exhibitors/visitors.html:17
+#: templates/exhibitors/visitors.html:16
 msgid ""
 "We also invite Chinese graduates with some years of experience in France "
 "and wishing to develop a project in China."
 msgstr ""
 
-#: templates/exhibitors/visitors.html:19
+#: templates/exhibitors/visitors.html:18
 msgid "Grandes Ecoles of ParisTech"
 msgstr ""
 
-#: templates/exhibitors/visitors.html:21
+#: templates/exhibitors/visitors.html:20
 msgid ""
 "ParisTech, institute of Science and Technology, is a point of reference "
 "in the field of higher education and research. It covers all sciences and"
@@ -437,7 +476,7 @@ msgid ""
 "in its field in France."
 msgstr ""
 
-#: templates/exhibitors/visitors.html:23
+#: templates/exhibitors/visitors.html:22
 msgid ""
 "The number of teachers and the full range of scientific disciplines "
 "covered confer to ParisTech stature comparable to that of major "
@@ -445,70 +484,70 @@ msgid ""
 " partner for excellence."
 msgstr ""
 
-#: templates/exhibitors/visitors.html:25
+#: templates/exhibitors/visitors.html:24
 msgid "Schools founder members of ParisTech"
 msgstr ""
 
-#: templates/exhibitors/visitors.html:33
+#: templates/exhibitors/visitors.html:32
 msgid "École des Ponts ParisTech"
 msgstr ""
 
-#: templates/exhibitors/visitors.html:39
+#: templates/exhibitors/visitors.html:38
 msgid " Télécom ParisTech"
 msgstr ""
 
-#: templates/exhibitors/visitors.html:48
+#: templates/exhibitors/visitors.html:47
 msgid "ENSAE ParisTech"
 msgstr ""
 
-#: templates/exhibitors/visitors.html:54
+#: templates/exhibitors/visitors.html:53
 msgid "ENSTA ParisTech"
 msgstr ""
 
-#: templates/exhibitors/visitors.html:63
+#: templates/exhibitors/visitors.html:62
 msgid "Arts et Métiers ParisTech"
 msgstr ""
 
-#: templates/exhibitors/visitors.html:69
+#: templates/exhibitors/visitors.html:68
 msgid "École Polytechnique"
 msgstr ""
 
-#: templates/exhibitors/visitors.html:78
+#: templates/exhibitors/visitors.html:77
 msgid "HEC Paris"
 msgstr ""
 
-#: templates/exhibitors/visitors.html:84
+#: templates/exhibitors/visitors.html:83
 msgid "Institut d'Optique Graduate School"
 msgstr ""
 
-#: templates/exhibitors/visitors.html:93
+#: templates/exhibitors/visitors.html:92
 msgid "Chimie ParisTech"
 msgstr ""
 
-#: templates/exhibitors/visitors.html:99
+#: templates/exhibitors/visitors.html:98
 msgid "ESPCI ParisTech"
 msgstr ""
 
-#: templates/exhibitors/visitors.html:108
+#: templates/exhibitors/visitors.html:107
 msgid "MINES ParisTech"
 msgstr ""
 
-#: templates/exhibitors/visitors.html:114
+#: templates/exhibitors/visitors.html:113
 msgid "AgroParisTech"
 msgstr ""
 
-#: templates/exhibitors/visitors.html:120
+#: templates/exhibitors/visitors.html:119
 msgid "Chinese students of ParisTech"
 msgstr ""
 
-#: templates/exhibitors/visitors.html:122
+#: templates/exhibitors/visitors.html:121
 msgid ""
 "In partnership with nine of the most prestigious universities in China, "
 "ParisTech has developed several cooperation initiatives, the main one "
 "being \"50 Chinese engineers in Paris.\""
 msgstr ""
 
-#: templates/exhibitors/visitors.html:124
+#: templates/exhibitors/visitors.html:123
 msgid ""
 "Since 2000, ParisTech recruits each year more than 50 Chinese bachelor "
 "graduates in Science and Technology, with the highest level, to study "
@@ -516,33 +555,33 @@ msgid ""
 "partners of ParisTech"
 msgstr ""
 
-#: templates/exhibitors/visitors.html:128
+#: templates/exhibitors/visitors.html:127
 msgid ""
 "Beijing : Beijing University, Tsinghua University, China Agricultural "
 "University"
 msgstr ""
 
-#: templates/exhibitors/visitors.html:131
+#: templates/exhibitors/visitors.html:130
 msgid ""
 "Nanjing : Nanjing University, SouthEast University, Nanjing Agricultural "
 "University"
 msgstr ""
 
-#: templates/exhibitors/visitors.html:134
+#: templates/exhibitors/visitors.html:133
 msgid ""
 "Shanghai : Fudan University, Shanghai Jiaotong University, Tongji "
 "University"
 msgstr ""
 
-#: templates/exhibitors/visitors.html:137
+#: templates/exhibitors/visitors.html:136
 msgid "Hangzhou : Zhejiang University"
 msgstr ""
 
-#: templates/exhibitors/visitors.html:140
+#: templates/exhibitors/visitors.html:139
 msgid "Wuhan : Wuhan University, Huazhong University of Science and Technology"
 msgstr ""
 
-#: templates/exhibitors/visitors.html:144
+#: templates/exhibitors/visitors.html:143
 msgid ""
 "To date, more than one thousand Chinese students, nearly half of whom are"
 " engineering students, have benefited from various training within "
@@ -601,42 +640,110 @@ msgstr ""
 msgid "Working permit"
 msgstr ""
 
+#: templates/includes/visitor_menu.html:34 templates/visitors/infos.html:13
+msgid "Useful information"
+msgstr ""
+
 #: templates/visitors/exhibitors.html:4
 msgid "Exhibitors in China Horizon Forum"
 msgstr ""
 
-#: templates/visitors/exhibitors.html:13
+#: templates/visitors/exhibitors.html:5
+msgid ""
+"Companies at 2012 Forum: Dragonfly Group, Saint-Gobain, IBM, L'Oréal, "
+"Bureau Veritas, BNP Paribas, Alstom and Arkema."
+msgstr ""
+
+#: templates/visitors/exhibitors.html:12
 msgid "Exposants"
 msgstr ""
 
-#: templates/visitors/exhibitors.html:14
+#: templates/visitors/exhibitors.html:13
 msgid "We are in contact with many French and Chinese players"
 msgstr ""
 
-#: templates/visitors/exhibitors.html:16
+#: templates/visitors/exhibitors.html:15
 msgid ""
 "major French companies such as Michelin, l'Oréal, Areva, Suez, Schneider,"
 " Carrefour..."
 msgstr ""
 
-#: templates/visitors/exhibitors.html:17
+#: templates/visitors/exhibitors.html:16
 msgid "French SMEs wishing to expand their activities into the Chinese market,"
 msgstr ""
 
-#: templates/visitors/exhibitors.html:18
+#: templates/visitors/exhibitors.html:17
 msgid ""
 "major Chinese groups such as Huawei and ZTE, which are already present on"
 " the French market,"
 msgstr ""
 
-#: templates/visitors/exhibitors.html:19
+#: templates/visitors/exhibitors.html:18
 msgid ""
 "and some of China’s Special Economic Zones, eager to attract foreign "
 "investors."
 msgstr ""
 
-#: templates/visitors/exhibitors.html:21
+#: templates/visitors/exhibitors.html:20
 msgid "The following companies have already confirmed their presence at the Forum"
+msgstr ""
+
+#: templates/visitors/infos.html:4
+msgid "Useful information about China Horizon Forum"
+msgstr ""
+
+#: templates/visitors/infos.html:5
+msgid ""
+"Some useful information about the China Horizon Forum or related "
+"activities."
+msgstr ""
+
+#: templates/visitors/infos.html:14
+msgid "Recruitment Forum"
+msgstr ""
+
+#: templates/visitors/infos.html:15
+msgid ""
+"The ParisTech forums are places for successful exchanges between students"
+" and recruiters. Designed and led by students, these forums promote the "
+"integration of students in the professional world that awaits them. The "
+"AFCP here gives you times and places of these forums"
+msgstr ""
+
+#: templates/visitors/infos.html:20
+msgid ""
+"Among the forums above, <strong>China Horizon Forum</strong> is organized"
+" by the French-Chinese Friendship Association of ParisTech (AFCP) "
+"together with ParisTech, and with the support of the Chinese Embassy in "
+"France. This forum has three objectives:"
+msgstr ""
+
+#: templates/visitors/infos.html:23
+msgid "Helping Chinese ParisTech students to find an internship or a job"
+msgstr ""
+
+#: templates/visitors/infos.html:24
+msgid ""
+"Helping French ParisTech students interested in a career related to China"
+" to find an internship or a job corresponding to their expectations"
+msgstr ""
+
+#: templates/visitors/infos.html:25
+msgid ""
+"Provide an opportunity for exchange to French and Chinese companies, "
+"partners of the Forum."
+msgstr ""
+
+#: templates/visitors/infos.html:28
+msgid ""
+"You are cordially invited to join us on <strong>March 6, 2014</strong> at"
+" <strong>ENSTA ParisTech</strong>!"
+msgstr ""
+
+#: templates/visitors/infos.html:31
+msgid ""
+"Thanks to <a href=\"http://paristech.org/\">Paristech.org</a> to provide "
+"us this information."
 msgstr ""
 
 #: templates/visitors/inscription.html:4
@@ -659,40 +766,52 @@ msgstr ""
 msgid "Job opportunities via China Horizon Forum"
 msgstr ""
 
-#: templates/visitors/job.html:30 templates/visitors/job_meta.html:2
+#: templates/visitors/job.html:22
+msgid ""
+"Here you will find job offers from partner companies of China Horizon "
+"Forum and AFCP."
+msgstr ""
+
+#: templates/visitors/job.html:29 templates/visitors/job_meta.html:2
 msgid "Jobs opportunities"
 msgstr ""
 
-#: templates/visitors/job.html:45
+#: templates/visitors/job.html:44
 msgid "Apply online"
 msgstr ""
 
-#: templates/visitors/job.html:48
+#: templates/visitors/job.html:47
 msgid "Apply"
 msgstr ""
 
-#: templates/visitors/job.html:51
+#: templates/visitors/job.html:50
 msgid "*.doc and *.pdf files are accepted, max 500 KB for each attachment."
 msgstr ""
 
-#: templates/visitors/job.html:76
+#: templates/visitors/job.html:75
 msgid "CV in {0}"
 msgstr ""
 
-#: templates/visitors/job.html:80
+#: templates/visitors/job.html:79
 msgid "Motivation letter in {0}"
 msgstr ""
 
-#: templates/visitors/job.html:86
+#: templates/visitors/job.html:85
 msgid "required field"
 msgstr ""
 
-#: templates/visitors/job.html:100 templates/visitors/job_meta.html:67
+#: templates/visitors/job.html:99 templates/visitors/job_meta.html:67
 msgid "No job provided"
 msgstr ""
 
 #: templates/visitors/program.html:4
 msgid "Program of China Horizon Forum"
+msgstr ""
+
+#: templates/visitors/program.html:5
+msgid ""
+"Scheduled for 2013 Forum: welcome/breakfast, opening ceremony, business "
+"conferences, interviews, round tables, closing conference and cocktail."
 msgstr ""
 
 #: templates/visitors/program.html:13
@@ -792,15 +911,21 @@ msgstr ""
 msgid "Closing Ceremony"
 msgstr ""
 
-#: templates/visitors/workpermit.html:6 templates/visitors/workpermit.html:15
+#: templates/visitors/workpermit.html:6 templates/visitors/workpermit.html:14
 msgid "Status change from student to employee"
 msgstr ""
 
-#: templates/visitors/workpermit.html:18
+#: templates/visitors/workpermit.html:7
+msgid ""
+"This page explains the process to change the status from student to "
+"employee (mostly in Chinese)."
+msgstr ""
+
+#: templates/visitors/workpermit.html:17
 msgid "Link to the PDF"
 msgstr ""
 
-#: templates/visitors/workpermit.html:22
+#: templates/visitors/workpermit.html:21
 msgid "you want to send a comment about this guide"
 msgstr ""
 

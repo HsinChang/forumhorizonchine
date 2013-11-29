@@ -73,6 +73,11 @@ def workpermit():
     return render_template('visitors/workpermit.html', form=form)
 
 
+@visitor.route('/infos')
+def infos():
+    return render_template('visitors/infos.html')
+
+
 @visitor.route('/')
 def index():
     return redirect(url_for('visitor.program'))

@@ -137,7 +137,7 @@ def apply():
         attachments.append((f.filename, f.read()))
 
     sender = 'Admin of AFCP <lutianming1005@gmail.com>'
-    cc = app.config['ADMIN']
+    cc = app.config['ADMINS']
     subject_en = 'New application sent by AFCP'
     subject_zh = u'来自AFCP的新职位申请'
     subject_fr = u'Une nouvelle candidatur envoyée par AFCP'

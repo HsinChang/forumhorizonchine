@@ -16,31 +16,31 @@
   <p>{{ _('In terms of attendance, 297 people registered on our official website. Among them, many Chinese graduates or experienced workers already in search of a first job, or a new job, as well as French and Chinese students looking for a short term or long term internship. During the Forum, about 180 participants responded to a questionnaire on their profile, and the information collected is analyzed and presented below. Among those participants, nearly a quarter were not registered on our official website. Speaking of the industry, eight companies from various sectors were present: Alstom, Arkema, BNP, Bureau Veritas, Dragonfly Group, IBM, L\'Oréal and Saint-Gobain.') }}
   </p>
 
-  <p>{{ _('Below are statistics about the participants of 2012 China Horizon Forum') }}:</p>
+  <p>{{ _('Below are statistics about the participants of 2012 China Horizon Forum:') }}</p>
 
   <div>
-    <img src={{ "/static/forum/bilan-2012/etablissements-{0}.png".format(locale) }} width="483px"
-	 height="291px" title="Les différents établissements"
+    <img src={{ url_for('static',filename='img/bilan-2012/etablissements-{0}.png'.format(locale)) }}
+	 height="275px" title="Les différents établissements"
 	 alt="School category of visitors" />
   </div>
   <div>
-    <img src={{ "/static/forum/bilan-2012/participants-{0}.png".format(locale) }} width="483px"
-	 height="291px" title="Origines des étudiants participants"
+    <img src={{ url_for('static', filename="img/bilan-2012/participants-{0}.png".format(locale)) }}
+	 height="256px" title="Origines des étudiants participants"
 	 alt="Ratio ParisTech/other schools" />
   </div>
   <div>
-    <img src={{ "/static/forum/bilan-2012/eleves-pros-{0}.png".format(locale) }} width="483px"
-	 height="291px" title="Répartition professionnel/élève"
+    <img src={{ url_for('static', filename="img/bilan-2012/eleves-pros-{0}.png".format(locale)) }}
+	 height="283px" title="Répartition professionnel/élève"
 	 alt="Ratio students/employees" />
   </div>
   <div>
-    <img src={{ "/static/forum/bilan-2012/type-ecole-{0}.png".format(locale) }} width="483px"
-	 height="291px" title="Répartition scientifique/commerciale"
+    <img src={{ url_for('static', filename="img/bilan-2012/type-ecole-{0}.png".format(locale)) }}
+         height="253px" title="Répartition scientifique/commerciale"
 	 alt="Ratio engineering/business schools" />
   </div>
   <div>
-    <img src={{ "/static/forum/bilan-2012/nationalite-{0}.png".format(locale) }} width="483px"
-	 height="291px" title="Nationalité des participants"
+    <img src={{ url_for('static', filename="img/bilan-2012/nationalite-{0}.png".format(locale)) }}
+	 height="281px" title="Nationalité des participants"
 	 alt="Nationalities" />
   </div>
 

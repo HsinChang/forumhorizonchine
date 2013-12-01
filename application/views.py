@@ -55,8 +55,8 @@ def contact(usertype):
         email = form.email.data
         comment = form.message.data
 
-        sender='Admin of AFCP <lutianming1005@gmail.com>'
-        to="lutianming1005@hotmail.com"
+        sender= app.config['SENDER']
+        to= app.config['CONTACTUS']
         subject = 'Message from {0} {1}<{2}>'.format(first_name, last_name, email)
         body = u"""
     Following is the message from {0} {1} {2}:
@@ -64,7 +64,7 @@ def contact(usertype):
     {3}
     """.format(first_name, last_name, email, comment)
 
-        mail.send_mail(sender, to, subject, body)
+        mail.send_mail(sender, to, subject, body, reply_to=email)
 
         flash('mail sent')
     return render_template('about/contact.html', form=form, usertype=usertype)

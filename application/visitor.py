@@ -7,7 +7,6 @@ from application import app
 from google.appengine.api import mail
 from google.appengine.ext import ndb
 from os.path import splitext, getsize
-from operator import itemgetter
 
 visitor = Blueprint('visitor', __name__)
 
@@ -31,21 +30,28 @@ def exhibitors():
 def job():
     grouped_jobs = {}
     jobs = JobModel.query(JobModel.published==True, JobModel.is_complete==True)
+
     for job in jobs:
         locale = session['locale']
         if job.meta[locale]["published"] == True:
             job.current_lang = locale
         else:
             job.current_lang = job.default_lang
-        job.current = job.meta[job.current_lang]
+            job.current = job.meta[job.current_lang]
 
         if job.enterprise in grouped_jobs:
             grouped_jobs[job.enterprise].append(job)
         else:
             grouped_jobs[job.enterprise] = [job]
 
-        tuple_jobs = sorted(grouped_jobs.items(), key=itemgetter(1))
-    return render_template('visitors/job.html', grouped_jobs=tuple_jobs, languages = app.config['LANGUAGES'])
+    if len(grouped_jobs) == 0:
+        grouped_jobs = None
+    else:
+        grouped_jobs = sorted(grouped_jobs.items(), key=lambda i: i[0].get().shortname)
+        for jobs in grouped_jobs:
+            jobs[1].sort(key=lambda i:i.current['title'])
+
+    return render_template('visitors/job.html', grouped_jobs=grouped_jobs, languages = app.config['LANGUAGES'])
 
 
 
@@ -136,8 +142,8 @@ def apply():
     for f in files:
         attachments.append((f.filename, f.read()))
 
-    sender = 'Admin of AFCP <lutianming1005@gmail.com>'
-    cc = app.config['ADMINS']
+    sender = app.config['SENDER']
+    cc = app.config['CC']
     subject_en = 'New application sent by AFCP'
     subject_zh = u'来自AFCP的新职位申请'
     subject_fr = u'Une nouvelle candidatur envoyée par AFCP'

@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2013-11-29 17:14+0100\n"
-"PO-Revision-Date: 2013-11-29 17:43+0100\n"
+"POT-Creation-Date: 2013-12-01 20:00+0100\n"
+"PO-Revision-Date: 2013-12-01 20:01+0100\n"
 "Last-Translator: Tianming.Lu <lutianming1005@gmail.com>\n"
 "Language-Team: zh <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -58,15 +58,15 @@ msgstr "工作职位"
 msgid "Internship"
 msgstr "实习"
 
-#: forms.py:131 templates/visitors/job.html:61
+#: forms.py:131 templates/visitors/job.html:64
 msgid "First name"
 msgstr "名"
 
-#: forms.py:132 templates/visitors/job.html:65
+#: forms.py:132 templates/visitors/job.html:68
 msgid "Last name"
 msgstr "姓"
 
-#: forms.py:133 templates/visitors/job.html:69
+#: forms.py:133 templates/visitors/job.html:72
 msgid "Email"
 msgstr "邮箱"
 
@@ -266,8 +266,9 @@ msgstr ""
 "斯通，阿科玛，法国巴黎银行，必维国际检验集团，唐沪集团，IBM，欧莱雅和圣戈班。"
 
 #: templates/about/balance.html:19
-msgid "Below are statistics about the participants of 2012 China Horizon Forum"
-msgstr "以下是2012年中国地平线论坛参与者的统计数据"
+msgid ""
+"Below are statistics about the participants of 2012 China Horizon Forum:"
+msgstr "以下是2012年中国地平线论坛参与者的统计数据："
 
 #: templates/about/contact.html:7
 msgid "Contact the team of China Horizon Forum"
@@ -315,7 +316,7 @@ msgstr "李铮 先生"
 msgid "Wish to contact us?"
 msgstr "您希望联系我们?"
 
-#: templates/about/contact.html:53 templates/visitors/job.html:88
+#: templates/about/contact.html:53 templates/visitors/job.html:91
 #: templates/visitors/workpermit.html:30
 msgid "Send"
 msgstr "发送"
@@ -376,8 +377,8 @@ msgid "Services"
 msgstr "服务"
 
 #: templates/exhibitors/services.html:13
-msgid "Our forum offers the following services"
-msgstr "本次论坛将为贵单位提供以下服务"
+msgid "Our forum offers the following services:"
+msgstr "本次论坛将为贵单位提供以下服务："
 
 #: templates/exhibitors/services.html:20
 msgid "An opportunity to present your business"
@@ -722,8 +723,8 @@ msgid "Exposants"
 msgstr "参展企业"
 
 #: templates/visitors/exhibitors.html:13
-msgid "We are in contact with many French and Chinese players"
-msgstr "我们正在与众多法国及中国企业进行接触"
+msgid "We are in contact with many French and Chinese players:"
+msgstr "我们正在与众多法国及中国企业进行接触："
 
 #: templates/visitors/exhibitors.html:15
 msgid ""
@@ -751,8 +752,8 @@ msgstr "以及希望吸引外资投入的一些中国经济特区."
 
 #: templates/visitors/exhibitors.html:20
 msgid ""
-"The following companies have already confirmed their presence at the Forum"
-msgstr "以下企业已经确认参加2013年论坛"
+"The following companies have already confirmed their presence at the Forum:"
+msgstr "以下企业已经确认参加2013年论坛："
 
 #: templates/visitors/infos.html:4
 msgid "Useful information about China Horizon Forum"
@@ -853,31 +854,35 @@ msgstr "论坛和AFCP的合作企业的招聘广告将在本页贴出。"
 msgid "Jobs opportunities"
 msgstr "职位信息"
 
-#: templates/visitors/job.html:44
+#: templates/visitors/job.html:32
+msgid "There is no job now."
+msgstr "现在没有职位。"
+
+#: templates/visitors/job.html:47
 msgid "Apply online"
 msgstr "在线申请"
 
-#: templates/visitors/job.html:47
+#: templates/visitors/job.html:50
 msgid "Apply"
 msgstr "申请"
 
-#: templates/visitors/job.html:50
+#: templates/visitors/job.html:53
 msgid "*.doc and *.pdf files are accepted, max 500 KB for each attachment."
 msgstr "接受doc和pdf文件。单个文件不超过500KB。"
 
-#: templates/visitors/job.html:75
+#: templates/visitors/job.html:78
 msgid "CV in {0}"
 msgstr "{0}简历"
 
-#: templates/visitors/job.html:79
+#: templates/visitors/job.html:82
 msgid "Motivation letter in {0}"
 msgstr "{0}动机信"
 
-#: templates/visitors/job.html:85
+#: templates/visitors/job.html:88
 msgid "required field"
 msgstr "必填项"
 
-#: templates/visitors/job.html:99 templates/visitors/job_meta.html:67
+#: templates/visitors/job_meta.html:67
 msgid "No job provided"
 msgstr "暂无职位"
 

@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2013-11-29 17:14+0100\n"
-"PO-Revision-Date: 2013-11-29 17:37+0100\n"
+"POT-Creation-Date: 2013-12-01 20:00+0100\n"
+"PO-Revision-Date: 2013-12-01 20:02+0100\n"
 "Last-Translator: Tianming.Lu <lutianming1005@gmail.com>\n"
 "Language-Team: fr <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
@@ -58,15 +58,15 @@ msgstr "Emploi"
 msgid "Internship"
 msgstr "Stage"
 
-#: forms.py:131 templates/visitors/job.html:61
+#: forms.py:131 templates/visitors/job.html:64
 msgid "First name"
 msgstr "Votre prénon"
 
-#: forms.py:132 templates/visitors/job.html:65
+#: forms.py:132 templates/visitors/job.html:68
 msgid "Last name"
 msgstr "Votre nom"
 
-#: forms.py:133 templates/visitors/job.html:69
+#: forms.py:133 templates/visitors/job.html:72
 msgid "Email"
 msgstr ""
 
@@ -261,8 +261,8 @@ msgid ""
 "The 5<sup>th</sup> China Horizon Forum was held on April 12, 2012 at Télécom "
 "ParisTech."
 msgstr ""
-"Le 5<sup>ème<sup> Forum Horizon Chine, s’est tenu le 12 Avril 2012 à Télécom "
-"ParisTech."
+"Le 5<sup>ème</sup> Forum Horizon Chine, s’est tenu le 12 Avril 2012 à "
+"Télécom ParisTech."
 
 #: templates/about/balance.html:16
 msgid ""
@@ -289,9 +289,10 @@ msgstr ""
 "Dragonfly Group, IBM, L’Oréal et Saint-Gobain."
 
 #: templates/about/balance.html:19
-msgid "Below are statistics about the participants of 2012 China Horizon Forum"
+msgid ""
+"Below are statistics about the participants of 2012 China Horizon Forum:"
 msgstr ""
-"Ci-dessous, les statistiques de participants du Forum Horizon Chine 2012"
+"Ci-dessous, les statistiques de participants du Forum Horizon Chine 2012 :"
 
 #: templates/about/contact.html:7
 msgid "Contact the team of China Horizon Forum"
@@ -341,7 +342,7 @@ msgstr "M. Zheng LI"
 msgid "Wish to contact us?"
 msgstr "Vous souhaitez nous contacter ?"
 
-#: templates/about/contact.html:53 templates/visitors/job.html:88
+#: templates/about/contact.html:53 templates/visitors/job.html:91
 #: templates/visitors/workpermit.html:30
 msgid "Send"
 msgstr "Envoyer"
@@ -405,8 +406,8 @@ msgid "Services"
 msgstr "Services"
 
 #: templates/exhibitors/services.html:13
-msgid "Our forum offers the following services"
-msgstr "Notre forum vous offre les services suivants"
+msgid "Our forum offers the following services:"
+msgstr "Notre forum vous offre les services suivants :"
 
 #: templates/exhibitors/services.html:20
 msgid "An opportunity to present your business"
@@ -679,7 +680,8 @@ msgstr "Hangzhou : Zhejiang University"
 
 #: templates/exhibitors/visitors.html:139
 msgid "Wuhan : Wuhan University, Huazhong University of Science and Technology"
-msgstr "Wuhan: Wuhan University, Huazhong University of Science & Technology"
+msgstr ""
+"Wuhan : Wuhan University, Huazhong University of Science and Technology"
 
 #: templates/exhibitors/visitors.html:143
 msgid ""
@@ -767,8 +769,8 @@ msgid "Exposants"
 msgstr ""
 
 #: templates/visitors/exhibitors.html:13
-msgid "We are in contact with many French and Chinese players"
-msgstr "Nous sommes en contact avec de nombreux acteurs français et chinois"
+msgid "We are in contact with many French and Chinese players:"
+msgstr "Nous sommes en contact avec de nombreux acteurs français et chinois :"
 
 #: templates/visitors/exhibitors.html:15
 msgid ""
@@ -800,9 +802,9 @@ msgstr ""
 
 #: templates/visitors/exhibitors.html:20
 msgid ""
-"The following companies have already confirmed their presence at the Forum"
+"The following companies have already confirmed their presence at the Forum:"
 msgstr ""
-"Les entreprises suivantes nous ont déjà confirmé leur présence au Forum"
+"Les entreprises suivantes nous ont déjà confirmé leur présence au Forum :"
 
 #: templates/visitors/infos.html:4
 msgid "Useful information about China Horizon Forum"
@@ -913,32 +915,36 @@ msgstr ""
 msgid "Jobs opportunities"
 msgstr "Offres d'emploi"
 
-#: templates/visitors/job.html:44
+#: templates/visitors/job.html:32
+msgid "There is no job now."
+msgstr "Il n'y a pas d'offre maintenant."
+
+#: templates/visitors/job.html:47
 msgid "Apply online"
 msgstr "Postuler en ligne"
 
-#: templates/visitors/job.html:47
+#: templates/visitors/job.html:50
 msgid "Apply"
 msgstr "Postuler"
 
-#: templates/visitors/job.html:50
+#: templates/visitors/job.html:53
 msgid "*.doc and *.pdf files are accepted, max 500 KB for each attachment."
 msgstr ""
 "*. doc et *. pdf sont acceptés, maximum 500 Ko pour chaque pièce jointe."
 
-#: templates/visitors/job.html:75
+#: templates/visitors/job.html:78
 msgid "CV in {0}"
 msgstr "CV en {0}"
 
-#: templates/visitors/job.html:79
+#: templates/visitors/job.html:82
 msgid "Motivation letter in {0}"
 msgstr "Lettre motivation en {0}"
 
-#: templates/visitors/job.html:85
+#: templates/visitors/job.html:88
 msgid "required field"
 msgstr "champ obligatoire"
 
-#: templates/visitors/job.html:99 templates/visitors/job_meta.html:67
+#: templates/visitors/job_meta.html:67
 msgid "No job provided"
 msgstr "Il y n'a pas de travail"
 

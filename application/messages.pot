@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2013-11-29 17:14+0100\n"
+"POT-Creation-Date: 2013-12-01 20:00+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -57,15 +57,15 @@ msgstr ""
 msgid "Internship"
 msgstr ""
 
-#: forms.py:131 templates/visitors/job.html:61
+#: forms.py:131 templates/visitors/job.html:64
 msgid "First name"
 msgstr ""
 
-#: forms.py:132 templates/visitors/job.html:65
+#: forms.py:132 templates/visitors/job.html:68
 msgid "Last name"
 msgstr ""
 
-#: forms.py:133 templates/visitors/job.html:69
+#: forms.py:133 templates/visitors/job.html:72
 msgid "Email"
 msgstr ""
 
@@ -238,7 +238,7 @@ msgid ""
 msgstr ""
 
 #: templates/about/balance.html:19
-msgid "Below are statistics about the participants of 2012 China Horizon Forum"
+msgid "Below are statistics about the participants of 2012 China Horizon Forum:"
 msgstr ""
 
 #: templates/about/contact.html:7
@@ -287,7 +287,7 @@ msgstr ""
 msgid "Wish to contact us?"
 msgstr ""
 
-#: templates/about/contact.html:53 templates/visitors/job.html:88
+#: templates/about/contact.html:53 templates/visitors/job.html:91
 #: templates/visitors/workpermit.html:30
 msgid "Send"
 msgstr ""
@@ -348,7 +348,7 @@ msgid "Services"
 msgstr ""
 
 #: templates/exhibitors/services.html:13
-msgid "Our forum offers the following services"
+msgid "Our forum offers the following services:"
 msgstr ""
 
 #: templates/exhibitors/services.html:20
@@ -659,7 +659,7 @@ msgid "Exposants"
 msgstr ""
 
 #: templates/visitors/exhibitors.html:13
-msgid "We are in contact with many French and Chinese players"
+msgid "We are in contact with many French and Chinese players:"
 msgstr ""
 
 #: templates/visitors/exhibitors.html:15
@@ -685,7 +685,9 @@ msgid ""
 msgstr ""
 
 #: templates/visitors/exhibitors.html:20
-msgid "The following companies have already confirmed their presence at the Forum"
+msgid ""
+"The following companies have already confirmed their presence at the "
+"Forum:"
 msgstr ""
 
 #: templates/visitors/infos.html:4
@@ -776,31 +778,35 @@ msgstr ""
 msgid "Jobs opportunities"
 msgstr ""
 
-#: templates/visitors/job.html:44
-msgid "Apply online"
+#: templates/visitors/job.html:32
+msgid "There is no job now."
 msgstr ""
 
 #: templates/visitors/job.html:47
-msgid "Apply"
+msgid "Apply online"
 msgstr ""
 
 #: templates/visitors/job.html:50
+msgid "Apply"
+msgstr ""
+
+#: templates/visitors/job.html:53
 msgid "*.doc and *.pdf files are accepted, max 500 KB for each attachment."
 msgstr ""
 
-#: templates/visitors/job.html:75
+#: templates/visitors/job.html:78
 msgid "CV in {0}"
 msgstr ""
 
-#: templates/visitors/job.html:79
+#: templates/visitors/job.html:82
 msgid "Motivation letter in {0}"
 msgstr ""
 
-#: templates/visitors/job.html:85
+#: templates/visitors/job.html:88
 msgid "required field"
 msgstr ""
 
-#: templates/visitors/job.html:99 templates/visitors/job_meta.html:67
+#: templates/visitors/job_meta.html:67
 msgid "No job provided"
 msgstr ""
 

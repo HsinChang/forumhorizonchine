@@ -6,7 +6,7 @@
   - http://buggarden.blogspot.com/
 
   The contact page of the AFCP webapp, French version (fr).
-  
+
   Created on 2008-11-20.
   $Id: letter.html 39 2010-03-08 21:47:02Z guolin.mobi $
 -->
@@ -63,7 +63,7 @@
 		Pour plus de détails, vous pouvez consulter notre site internet : <a
 			href="http://www.afcp-paristech.org">http://www.afcp-paristech.org</a>
 	</p>
-	<p>ou nous contacter directement : afcparistech<img alt="[at]" src="/static/images/at_15_arial.png">gmail<img alt="[dot]" src="/static/images/dot_15_arial.png">com</p>
+	<p>ou nous contacter directement : afcparistech<img alt="[at]" src={{ url_for('static', filename='at_15_arial.png') }}>gmail<img alt="[dot]" src="/static/images/dot_15_arial.png">com</p>
 	<p>ou par téléphone :</p>
 	<table>
 		<tr>
@@ -98,5 +98,3 @@
 
 
 {% endblock %}{# content #}
-
-

@@ -66,7 +66,7 @@
 
 			<p id="registration">
 			  <a href="{{ url_for('visitor.inscription') }}">
-			    <img src="/static/forum/images/inscrivez_redim_200.jpg" width="200px"/>
+			    <img src={{ url_for('static', filename="img/inscrivez_redim_200.jpg") }} width="200px"/>
 			  </a>
 			</p>
 			<p>
@@ -129,9 +129,9 @@
 			<div>
 				<table class="noborder">
 					<tr>
-						<td><a href="http://www.afcp-paristech.org" target="_blank"><img src="/static/forum/images/logo/afcp_logo_redim_250.jpg"
+						<td><a href="http://www.afcp-paristech.org" target="_blank"><img src={{ url_for('static', filename="img/logo/afcp_logo_redim_250.jpg") }}
 							alt="AFCP logo" width="250" height="36" /></a></td>
-						<td><a href="http://www.paristech.org" target="_blank"><img src="/static/forum/images/logo/paristech_redim_150.jpg"
+						<td><a href="http://www.paristech.org" target="_blank"><img src={{ url_for('static', filename="img/logo/paristech_redim_150.jpg") }}
 							alt="ParisTech logo" width="150" height="41" /></a></td>
 					</tr>
 				</table>

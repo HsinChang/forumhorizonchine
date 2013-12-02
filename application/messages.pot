@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2013-12-01 20:00+0100\n"
+"POT-Creation-Date: 2013-12-02 19:54+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -29,15 +29,15 @@ msgstr ""
 msgid "no such job"
 msgstr ""
 
-#: configs.py:4 settings.py:38
+#: configs.py:4 settings.py:39
 msgid "English"
 msgstr ""
 
-#: configs.py:4 settings.py:38
+#: configs.py:4 settings.py:39
 msgid "French"
 msgstr ""
 
-#: configs.py:4 settings.py:38
+#: configs.py:4 settings.py:39
 msgid "Chinese"
 msgstr ""
 
@@ -49,28 +49,32 @@ msgstr ""
 msgid "job deleted"
 msgstr ""
 
-#: forms.py:101
+#: forms.py:102
 msgid "Job"
 msgstr ""
 
-#: forms.py:101
+#: forms.py:102
 msgid "Internship"
 msgstr ""
 
-#: forms.py:131 templates/visitors/job.html:64
+#: forms.py:136 templates/visitors/job.html:64
 msgid "First name"
 msgstr ""
 
-#: forms.py:132 templates/visitors/job.html:68
+#: forms.py:137 templates/visitors/job.html:68
 msgid "Last name"
 msgstr ""
 
-#: forms.py:133 templates/visitors/job.html:72
+#: forms.py:138 templates/visitors/job.html:72
 msgid "Email"
 msgstr ""
 
-#: forms.py:134
+#: forms.py:139
 msgid "Message"
+msgstr ""
+
+#: visitor.py:147
+msgid "New application sent by AFCP"
 msgstr ""
 
 #: templates/home.html:5
@@ -615,6 +619,12 @@ msgstr ""
 msgid "Our services"
 msgstr ""
 
+#: templates/includes/job_form_fields.html:9
+msgid ""
+"For the following 3 sections, please check the \"publish\" checkbox to "
+"make it visible to users"
+msgstr ""
+
 #: templates/includes/nav.html:20
 msgid "Home"
 msgstr ""
@@ -642,6 +652,33 @@ msgstr ""
 
 #: templates/includes/visitor_menu.html:34 templates/visitors/infos.html:13
 msgid "Useful information"
+msgstr ""
+
+#: templates/mail/apply.html:2
+msgid "Dear Sir/Miss,"
+msgstr ""
+
+#: templates/mail/apply.html:4
+#, python-format
+msgid ""
+"A new application for the position <b>%(title)s</b> has been sent through"
+" the Site of AFCP where the offre is published."
+msgstr ""
+
+#: templates/mail/apply.html:6
+#, python-format
+msgid ""
+"Please have a look at the attached CV and cover letters of "
+"<b>%(first_name)s %(last_name)s</b> for this application. You can reach "
+"him/her with the following email address:"
+msgstr ""
+
+#: templates/mail/apply.html:9
+msgid "Best regards,"
+msgstr ""
+
+#: templates/mail/apply.html:10
+msgid "The team of AFCP"
 msgstr ""
 
 #: templates/visitors/exhibitors.html:4

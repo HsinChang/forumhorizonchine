@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2013-12-01 20:00+0100\n"
-"PO-Revision-Date: 2013-12-01 20:01+0100\n"
+"POT-Creation-Date: 2013-12-02 19:54+0100\n"
+"PO-Revision-Date: 2013-12-02 19:59+0100\n"
 "Last-Translator: Tianming.Lu <lutianming1005@gmail.com>\n"
 "Language-Team: zh <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -30,15 +30,15 @@ msgstr ""
 msgid "no such job"
 msgstr ""
 
-#: configs.py:4 settings.py:38
+#: configs.py:4 settings.py:39
 msgid "English"
 msgstr "英文"
 
-#: configs.py:4 settings.py:38
+#: configs.py:4 settings.py:39
 msgid "French"
 msgstr "法文"
 
-#: configs.py:4 settings.py:38
+#: configs.py:4 settings.py:39
 msgid "Chinese"
 msgstr "中文"
 
@@ -50,29 +50,33 @@ msgstr ""
 msgid "job deleted"
 msgstr ""
 
-#: forms.py:101
+#: forms.py:102
 msgid "Job"
 msgstr "工作职位"
 
-#: forms.py:101
+#: forms.py:102
 msgid "Internship"
 msgstr "实习"
 
-#: forms.py:131 templates/visitors/job.html:64
+#: forms.py:136 templates/visitors/job.html:64
 msgid "First name"
 msgstr "名"
 
-#: forms.py:132 templates/visitors/job.html:68
+#: forms.py:137 templates/visitors/job.html:68
 msgid "Last name"
 msgstr "姓"
 
-#: forms.py:133 templates/visitors/job.html:72
+#: forms.py:138 templates/visitors/job.html:72
 msgid "Email"
 msgstr "邮箱"
 
-#: forms.py:134
+#: forms.py:139
 msgid "Message"
 msgstr "消息"
+
+#: visitor.py:147
+msgid "New application sent by AFCP"
+msgstr "来自AFCP的新职位申请"
 
 #: templates/home.html:5
 msgid "China Horizon Forum"
@@ -677,6 +681,12 @@ msgstr "企业到访"
 msgid "Our services"
 msgstr "我们的服务"
 
+#: templates/includes/job_form_fields.html:9
+msgid ""
+"For the following 3 sections, please check the \"publish\" checkbox to make "
+"it visible to users"
+msgstr ""
+
 #: templates/includes/nav.html:20
 msgid "Home"
 msgstr "论坛首页"
@@ -705,6 +715,35 @@ msgstr "工作许可"
 #: templates/includes/visitor_menu.html:34 templates/visitors/infos.html:13
 msgid "Useful information"
 msgstr "实用信息"
+
+#: templates/mail/apply.html:2
+msgid "Dear Sir/Miss,"
+msgstr "您好，"
+
+#: templates/mail/apply.html:4
+#, python-format
+msgid ""
+"A new application for the position <b>%(title)s</b> has been sent through "
+"the Site of AFCP where the offre is published."
+msgstr "      AFCP发给了您一份<b>%(title)s</b>这一职位的新申请。"
+
+#: templates/mail/apply.html:6
+#, python-format
+msgid ""
+"Please have a look at the attached CV and cover letters of <b>%(first_name)s "
+"%(last_name)s</b> for this application. You can reach him/her with the "
+"following email address:"
+msgstr ""
+"    请查看附件中申请人<b>%(first_name)s %(last_name)s</b>的CV和动机信。您可以"
+"通过以下邮箱地址与他/她取得联系："
+
+#: templates/mail/apply.html:9
+msgid "Best regards,"
+msgstr "祝好！"
+
+#: templates/mail/apply.html:10
+msgid "The team of AFCP"
+msgstr "AFCP团队"
 
 #: templates/visitors/exhibitors.html:4
 msgid "Exhibitors in China Horizon Forum"

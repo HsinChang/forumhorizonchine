@@ -3,6 +3,7 @@ from flask import Blueprint, render_template, redirect, url_for, request, flash,
 from models import JobModel, EnterpriseModel, EmailModel
 from forms import ContactForm
 from flask_mail import Message
+from flask_babel import lazy_gettext
 from application import app
 from google.appengine.api import mail
 from google.appengine.ext import ndb
@@ -37,7 +38,7 @@ def job():
             job.current_lang = locale
         else:
             job.current_lang = job.default_lang
-            job.current = job.meta[job.current_lang]
+        job.current = job.meta[job.current_lang]
 
         if job.enterprise in grouped_jobs:
             grouped_jobs[job.enterprise].append(job)
@@ -149,41 +150,61 @@ def apply():
     subject_fr = u'Une nouvelle candidatur envoyée par AFCP'
     subjects = {'en': subject_en, 'zh': subject_zh, 'fr': subject_fr}
     body_en = u"""
-    Dear Sir/Miss,
+    <html>
+    <p>Dear Sir/Miss,<p>
 
-    A new application for the position {0} has been sent through the Site of AFCP where the offre is published.
+    <p>A new application for the position <b>{0}</b> has been sent through the Site of AFCP where the offre is published.</p>
 
-    Please have a look at the attached CV and cover letters of {1} {2} for this application. You can reach him/her with the email address {3}
+    <p>Please have a look at the attached CV and cover letters of <b>{1} {2}</b> for this application. You can reach him/her with the email address <a href="mailto:{3}">{3}</a>.</p>
 
-    Best regards，
-    The team of AFCP
+    <p>Best regards，</p>
+    <p>The team of AFCP</p>
+    </html>
     """
     body_zh = u"""
-    您好，
+    <html>
+    <p>您好，</p>
 
-    AFCP发给了您一份{0}这一职位的新申请。
+    <p>AFCP发给了您一份<b>{0}</b>这一职位的新申请。</p>
 
-    请查看附件中申请人{0} {1}的CV和动机信。您可以通过这一邮箱地址 {3} 与他/她取得联系。
+    <p>请查看附件中申请人<b>{1} {2}</b>的CV和动机信。您可以通过这一邮箱地址 <a href="mailto:{3}">{3}</a>与他/她取得联系。</p>
 
-    此致！
-    AFCP团队
+    <p>此致！</p>
+    <p>AFCP团队</p>
+    </html>
     """
     body_fr = u"""
-    Madame, Monsieur,
+    <html>
+    <p>Madame, Monsieur,</p>
 
-    Une nouvelle candidature pour le poste {0} a été envoyée par l'intermédiaire du site de l'AFCP, l'offre y étant publiée.
+    <p>Une nouvelle candidature pour le poste <b>{0}</b> a été envoyée par l'intermédiaire du site de l'AFCP, l'offre y étant publiée.</p>
 
-    Veuillez trouver ci-joint le CV et la lettre de motivation de {1} {2} pour cette candidature. Vous pouvez le joindre à l'adresse e-mail {3}
+    <p>Veuillez trouver ci-joint le CV et la lettre de motivation de <b>{1} {2}</b> pour cette candidature. Vous pouvez le joindre à l'adresse e-mail <a href="mailto:{3}">{3}</a>.</p>
 
-    Bien à vous,
-
-    L'équipe AFCP
+    <p>Bien à vous,</p>
+    <p>L'équipe AFCP</p>
+    </html>
     """
     bodies = {'en': body_en, 'zh': body_zh, 'fr': body_fr}
 
     subject = subjects[lang]
     body = bodies[lang].format(jobname, first_name, last_name, email)
-    mail.send_mail(sender, to, subject, body, attachments=attachments, cc=cc)
 
+    message = mail.EmailMessage(sender=sender)
+    if app.config['DEBUG'] == True:
+        message.to = 'lutianming1005@gmail.com'
+    else:
+        message.to = to
+        message.cc = cc
+    message.subject = subject
+    # message.html = render_template('mail/apply.html',
+    #                                title=jobname,
+    #                                first_name=first_name,
+    #                                last_name=last_name,
+    #                                email=email)
+    message.html = body
+    message.attachments = attachments
+    # mail.send_mail(sender, to, subject, body, attachments=attachments, cc=cc)
+    message.send()
     flash('mail sent')
     return redirect(url_for('visitor.job'))

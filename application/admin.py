@@ -353,13 +353,17 @@ def edit_job(keyurl):
             flash('error')
     elif request.method == 'GET':
     #GET handle goes here
+
+        #in case of no enterprise when importing
         if job.enterprise:
             form.enterprise.data = job.enterprise.urlsafe()
             form.enterprise_email.choices = grouped_emails[form.enterprise.data].items()
+
         if job.is_online:
             form.is_online.data = True
             form.apply_url.data = job.apply_url
         else:
+            form.is_online.data = False
             form.enterprise_email.data = job.enterprise_email.urlsafe()
 
         for lang in ['fr', 'en', 'zh']:
@@ -372,7 +376,7 @@ def edit_job(keyurl):
             v = getattr(form, "content_"+lang)
             v.data = job.meta[lang]['content']
 
-    return render_template('admin/edit_job.html', form=form, keyurl=keyurl)
+    return render_template('admin/edit_job.html', form=form, keyurl=keyurl, grouped_emails= json.dumps(grouped_emails))
 
 
 @admin.route('/delete_job/<keyurl>')

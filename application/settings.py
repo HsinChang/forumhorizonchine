@@ -20,6 +20,7 @@ if 'SERVER_SOFTWARE' in os.environ and os.environ['SERVER_SOFTWARE'].startswith(
     DEBUG_MODE = True
 
 DEBUG = DEBUG_MODE
+DEBUG = True
 
 # Set secret keys for CSRF protection
 SECRET_KEY = CSRF_SECRET_KEY

@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2013-12-02 19:54+0100\n"
-"PO-Revision-Date: 2013-12-02 19:56+0100\n"
+"PO-Revision-Date: 2013-12-02 22:44+0100\n"
 "Last-Translator: Tianming.Lu <lutianming1005@gmail.com>\n"
 "Language-Team: fr <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
@@ -980,7 +980,7 @@ msgstr "CV en {0}"
 
 #: templates/visitors/job.html:82
 msgid "Motivation letter in {0}"
-msgstr "Lettre motivation en {0}"
+msgstr "Lettre de motivation en {0}"
 
 #: templates/visitors/job.html:88
 msgid "required field"

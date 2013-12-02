@@ -12,7 +12,7 @@ from application import app
 from flaskext import wtf
 from flask_login import current_user
 from flask_babel import lazy_gettext
-from wtforms import StringField, PasswordField, BooleanField, TextAreaField, SelectField, FormField, SelectMultipleField
+from wtforms import StringField, PasswordField, BooleanField, TextAreaField, SelectField, FormField, SelectMultipleField, RadioField
 from wtforms import validators
 from passlib.apps import custom_app_context as pwd_context
 from .models import UserModel, EnterpriseModel
@@ -96,6 +96,7 @@ class JobMetaForm(wtf.Form):
         kwargs['csrf_enabled'] = False
         super(JobMetaForm, self).__init__(*args, **kwargs)
 
+
 _lang_choices = [(k, v) for (k,v) in app.config['LANGUAGES'].items()]
 class JobForm(wtf.Form):
     type = SelectField('Type', choices=[('Job', _('Job')), ('Internship', _('Internship'))])
@@ -103,9 +104,9 @@ class JobForm(wtf.Form):
     apply_url = StringField('apply URL')
     enterprise = SelectField('Enterprise')
     enterprise_email = SelectField('Enterprise_Email')
-    publish_en = BooleanField('Publish', default=True)
-    publish_zh = BooleanField('Publish', default=True)
-    publish_fr = BooleanField('Publish', default=True)
+    publish_en = BooleanField('Publish', default=False)
+    publish_zh = BooleanField('Publish', default=False)
+    publish_fr = BooleanField('Publish', default=False)
     title_en = StringField('Title', validators=[job_lang_check('en')])
     title_zh = StringField('Title', validators=[job_lang_check('zh')])
     title_fr = StringField('Title', validators=[job_lang_check('fr')])
@@ -114,18 +115,22 @@ class JobForm(wtf.Form):
     content_fr = TextAreaField('Content', validators=[job_lang_check('fr')])
 
     default_lang = SelectField('Default version', choices=_lang_choices)
-    cv_required = SelectMultipleField('required CV and letter of motivation("use the Key Ctrl to select multi")', choices=_lang_choices, validators=[validators.InputRequired()])
+    cv_required = SelectMultipleField('required CV and letter of motivation', choices=_lang_choices, validators=[validators.InputRequired()])
+
 
 class BaseEnterpriseForm(wtf.Form):
     name = StringField('Name', validators=[validators.InputRequired()])
     shortname = StringField('Short name', validators=[validators.InputRequired()])
 
+
 class EnterpriseForm(BaseEnterpriseForm):
     #at lest one email
     email = StringField('Email', validators=[validators.Email()])
 
+
 class EmailForm(wtf.Form):
     email = StringField('Email', validators=[validators.Email()])
+
 
 class ContactForm(wtf.Form):
     first_name = StringField(lazy_gettext('First name'), validators=[validators.InputRequired()])

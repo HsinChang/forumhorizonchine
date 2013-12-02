@@ -6,6 +6,7 @@
 {{ render_field(form.enterprise_email, groupid="email") }}
 {{ render_field(form.type) }}
 <div class="section job">
+  <h4>{{ _('For the following 3 sections, please check the "publish" checkbox to make it visible to users') }}</h4>
   <div class="block-job">
     <div id="en" class="apply-button {% if form.title_en.errors or form.content_en.errors %}field-error{% endif %}">
       <div>English version</div>
@@ -40,6 +41,9 @@
 {{ render_field(form.default_lang) }}
 {{ render_field(form.cv_required) }}
 
+<link rel="stylesheet" href="{{ url_for('static', filename='css/lib/chosen.min.css') }}" />
+<script type="text/javascript" src={{ url_for('static', filename="js/lib/chosen.jquery.min.js") }}>
+</script>
 <script type="text/javascript">
  $('#is_online').change(function(){
    if(this.checked){
@@ -61,4 +65,8 @@
       .attr("value", key).text(value));
    });
  });
+
+ $("#default_lang").chosen({width: "60%"});
+ $("#cv_required").chosen({width: "60%"});
+
 </script>

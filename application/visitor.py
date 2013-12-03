@@ -76,7 +76,7 @@ def workpermit():
                        "lutianming1005@hotmail.com",
                        subject,
                        body)
-        flash('mail sent')
+        flash('mail sent', 'success')
     return render_template('visitors/workpermit.html', form=form)
 
 
@@ -114,7 +114,7 @@ def apply():
     for k, f in request.files.items():
         path, ext = splitext(f.filename)
         if ext != '.doc' and ext != '.docx' and ext != '.pdf':
-            flash('only support doc and pdf files')
+            flash('only support doc and pdf files', 'error')
             return redirect(url_for('visitor.job'))
         # if getsize(f.stream) > max_size:
         #     flash('document size should be under 2M')
@@ -206,5 +206,5 @@ def apply():
     message.attachments = attachments
     # mail.send_mail(sender, to, subject, body, attachments=attachments, cc=cc)
     message.send()
-    flash('mail sent')
+    flash('mail sent', 'success')
     return redirect(url_for('visitor.job'))

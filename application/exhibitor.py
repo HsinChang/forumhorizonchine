@@ -21,7 +21,7 @@ def register():
         )
         try:
             user.put()
-            flash(_('registered'))
+            flash(_('registered'), 'success')
             return redirect(url_for('exhibitor.index'))
         except CapabilityDisabledError:
             return render_template('register.html', form=form)
@@ -78,7 +78,7 @@ def new_job():
 def edit_job(job_id):
     job = JobModel.get_by_id(int(job_id))
     if not job:
-        flash(_('no such job'))
+        flash(_('no such job'), 'error')
         return redirect(url_for('exhibitor.jobs'))
     form = JobForm(request.form, obj=job)
     if request.method == 'POST' and form.validate():
@@ -88,9 +88,9 @@ def edit_job(job_id):
             job.enterprise = ndb.key(form.enterprise.data)
             job.content = form.content.data
             job.put()
-            flash('job modified successfully!')
+            flash('job modified successfully!', 'success')
         except CapabilityDisabledError:
-            flash('fail to modify job')
+            flash('fail to modify job', 'error')
     return render_template('exhibitors/edit_job.html', form=form, job=job)
 
 @exhibitor.route('/delete_job/<int:job_id>')
@@ -98,13 +98,13 @@ def edit_job(job_id):
 def delete_job(job_id):
     job = JobModel.get_by_id(int(job_id))
     if not job:
-        flash(_('no such job'))
+        flash(_('no such job'), 'error')
         return redirect(url_for('exhibitor.jobs'))
     try:
         job.key.delete()
-        flash(_('job deleted'))
+        flash(_('job deleted'), 'error')
     except CapabilityDisabledError:
-        flash(_('fail to delete'))
+        flash(_('fail to delete'), 'error')
     return redirect(url_for('exhibitor.jobs'))
 
 @exhibitor.route('/visitors')

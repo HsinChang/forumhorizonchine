@@ -16,7 +16,7 @@ def login_required(func):
     def decorated_view(*args, **kwargs):
         user = login.current_user
         if user.is_anonymous():
-            flash('login first!')
+            flash('login first!', 'error')
             return redirect(url_for('exhibitor.index'))
         return func(*args, **kwargs)
     return decorated_view

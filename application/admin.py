@@ -27,9 +27,9 @@ def login():
         user = UserModel.query(UserModel.username==username).get()
         if user and pwd_context.verify(password, user.password) and user.role == ROLES['ADMIN']:
             result = flask_login.login_user(user)
-            flash('login succeeded!')
+            flash('login succeeded!', 'success')
         else:
-            flash('login failed')
+            flash('login failed', 'error')
     return redirect(url_for('admin.index'))
 
 @admin.route('/logout', methods=['GET', 'POST'])
@@ -51,10 +51,10 @@ def change_password():
         user.password = pwd_context.encrypt(form.new_password.data)
         try:
             user.put()
-            flash('password changed!')
+            flash('password changed!', 'info')
             redirect(url_for('admin.index'))
         except CapabilityDisabledError:
-            flash('error whan changing password')
+            flash('error whan changing password', 'error')
     return render_template('admin/change_password.html', form=form)
 @admin.route('/users')
 @admin_required
@@ -89,7 +89,7 @@ def delete_user(keyurl):
     if user and user.role != 'admin':
         user.delete()
     else:
-        flash('delete failed')
+        flash('delete failed', 'error')
     redirect(url_for('amdin.users'))
 
 
@@ -121,7 +121,7 @@ def new_enterprise():
             email.put()
             return redirect(url_for('admin.edit_enterprise', keyurl=e.key.urlsafe()))
         except CapabilityDisabledError:
-            flash('error')
+            flash('error', 'error')
     return render_template('admin/new_enterprise.html', form=form)
 
 
@@ -131,7 +131,7 @@ def edit_enterprise(keyurl):
     key = ndb.Key(urlsafe=keyurl)
     e = key.get()
     if not e:
-        flash(_('no such enterprise'))
+        flash(_('no such enterprise'), 'error')
         return redirect(url_for('admin.enterprises'))
     emails = EmailModel.query(EmailModel.enterprise==e.key)
     form = BaseEnterpriseForm(request.form)
@@ -147,7 +147,7 @@ def edit_enterprise(keyurl):
             e.put()
             return redirect(url_for('admin.enterprises'))
         except CapabilityDisabledError:
-            flash('error')
+            flash('error', 'error')
     return render_template('admin/edit_enterprise.html', form=form, keyurl=keyurl, emails=emails)
 
 
@@ -162,7 +162,7 @@ def delete_enterprise(keyurl):
     key = ndb.Key(urlsafe=keyurl)
     e = key.get()
     if not e:
-        flash(_('no such enterprise'))
+        flash(_('no such enterprise'), 'error')
         return redirect(url_for('admin.enterprises'))
     emails = EmailModel.query(EmailModel.enterprise==key)
     keys = [e.key for e in emails]
@@ -171,7 +171,7 @@ def delete_enterprise(keyurl):
         ndb.delete_multi(keys)
         e.key.delete()
     except CapabilityDisabledError:
-        flash(_('fail to delete'))
+        flash(_('fail to delete'), 'error')
     return redirect(url_for('admin.enterprises'))
 
 
@@ -191,7 +191,7 @@ def new_email(keyurl):
             email.put()
             return redirect(url_for('admin.edit_enterprise', keyurl=keyurl))
         except CapabilityDisabledError:
-            flash('save error')
+            flash('save error', 'error')
     return render_template('admin/new_email.html', form=form, keyurl=keyurl)
 
 
@@ -200,7 +200,7 @@ def new_email(keyurl):
 def edit_email(keyurl):
     email = ndb.Key(urlsafe=keyurl).get()
     if not email:
-        flash('no such email')
+        flash('no such email', 'error')
         return redirect(url_for('admin.enterprises'))
     form = EmailForm(request.form)
     if request.method == 'GET':
@@ -212,7 +212,7 @@ def edit_email(keyurl):
             email.put()
             return redirect(url_for('admin.edit_enterprise', keyurl=email.enterprise))
         except CapabilityDisabledError:
-            flash('save error')
+            flash('save error', 'error')
     return render_template('admin/edit_email.html', form=form, keyurl=keyurl)
 
 
@@ -226,7 +226,7 @@ def delete_email(keyurl):
     """
     email = ndb.Key(urlsafe=keyurl)
     if not email:
-        flash('no such email')
+        flash('no such email', 'error')
         return redirect(url_for('admin.enterprises'))
     enterprise = email.enterprise
     email.key.delete()
@@ -255,7 +255,7 @@ def new_job():
     form.enterprise.choices = [(e.key.urlsafe(), e.name) for e in enterprises]
     if len(form.enterprise.choices) == 0:
         #no enterprise, create one at first
-        flash('there is no enterprise, please create one before add new job')
+        flash('there is no enterprise, please create one before add new job', 'error')
         return redirect(url_for('admin.new_enterprise'))
 
     grouped_emails = {str(e.key.urlsafe()): {} for e in enterprises}
@@ -306,7 +306,7 @@ def new_job():
             job.put()
             return redirect(url_for('admin.jobs'))
         except CapabilityDisabledError:
-            flash('add job error!')
+            flash('add job error!', 'error')
     return render_template('admin/new_job.html', form=form, grouped_emails = json.dumps(grouped_emails))
 
 
@@ -316,7 +316,7 @@ def edit_job(keyurl):
     key = ndb.Key(urlsafe=keyurl)
     job = key.get()
     if not job:
-        flash(_('no such job'))
+        flash(_('no such job'), 'error')
         return redirect(url_for('admin.jobs'))
     form = JobForm(request.form, obj=job)
     enterprises = EnterpriseModel.query()
@@ -350,7 +350,7 @@ def edit_job(keyurl):
             job.put()
             return redirect(url_for('admin.jobs'))
         except CapabilityDisabledError:
-            flash('error')
+            flash('error', 'error')
     elif request.method == 'GET':
     #GET handle goes here
 
@@ -390,12 +390,12 @@ def delete_job(keyurl):
     key = ndb.Key(urlsafe=keyurl)
     job = key.get()
     if not job:
-        flash(_('no such job'))
+        flash(_('no such job'), 'error')
         return redirect(url_for('admin.jobs'))
     try:
         job.key.delete()
     except CapabilityDisabledError:
-        flash(_('fail to delete'))
+        flash(_('fail to delete'), 'error')
     return redirect(url_for('admin.jobs'))
 
 import data as Data
@@ -415,9 +415,10 @@ def import_enterprise():
     path, ext = splitext(f.filename)
     if ext != '.xml':
         #not xml file
-        flash('not xml file')
+        flash('not xml file', 'error')
     content = f.read()
     Data.import_enterprise(content)
+    flash('import success!', 'success')
     return redirect(url_for('admin.data'))
 
 @admin.route('/data/export_enterprise')
@@ -436,10 +437,11 @@ def import_jobs():
     path, ext = splitext(f.filename)
     if ext != '.xml':
         #not xml file
-        flash('not xml file')
+        flash('not xml file', 'error')
     else:
         content = f.read()
         Data.import_jobs(content)
+        flash('import success!', 'success')
     return redirect(url_for('admin.data'))
 
 @admin.route('/data/export_jobs')

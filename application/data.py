@@ -32,7 +32,6 @@ def import_enterprise(content):
                     email = email.text
                 )
                 mail.put()
-    flash('import success!')
     return 0
 
 def export_enterprise():
@@ -51,8 +50,8 @@ def export_enterprise():
             element = ET.Element('email')
             element.text = email.email
             sub.append(element)
-
     return ET.tostring(root)
+
 
 def import_jobs(content):
     """
@@ -78,21 +77,7 @@ def import_jobs(content):
             'title': '',
             'content': ''
         }
-        # en = JobMetaModel(
-        #     published = False,
-        #     title = '',
-        #     content = '',
-        # )
-        # fr = JobMetaModel(
-        #     published = False,
-        #     title = '',
-        #     content = '',
-        # )
-        # zh = JobMetaModel(
-        #     published = False,
-        #     title = '',
-        #     content = '',
-        # )
+
         meta = {
             'en': en,
             'fr': fr,
@@ -106,24 +91,12 @@ def import_jobs(content):
             l['published'] = True
             l['title'] = title
             l['content'] = content
-            # if lang == 'en':
-            #     en['published'] = True
-            #     en['title'] = title
-            #     en.content = content
-            # elif lang == 'fr':
-            #     fr.published = True
-            #     fr.title = title
-            #     fr.content = content
-            # elif lang == 'zh':
-            #     zh.published = True
-            #     zh.title = title
-            #     zh.content = content
 
         online = job.get('online')
-        apply = job.find('apply')
+        apply_info = job.find('apply')
         if int(online) == 0:
-            enterprise = apply.find('enterprise').text
-            email = apply.find('email').text
+            enterprise = apply_info.find('enterprise').text
+            email = apply_info.find('email').text
 
             e = EnterpriseModel.query(EnterpriseModel.name==enterprise).get()
             e_email = EmailModel.query(EmailModel.enterprise==e.key, EmailModel.email==email).get()
@@ -134,27 +107,22 @@ def import_jobs(content):
                 is_complete = True,
                 enterprise = e.key,
                 enterprise_email = e_email.key,
-                # fr = fr,
-                # en = en,
-                # zh = zh,
                 meta = meta,
                 published = True,
                 default_lang = 'en',
                 cv_required = ['en']
             )
         else:
-            url = apply.find('url').text
+            url = apply_info.find('url').text
             j = JobModel(
                 type = jobtype,
                 is_online = True,
                 is_complete = False,
                 apply_url = url,
-                # fr = fr,
-                # en = en,
-                # zh = zh,
                 meta = meta,
                 published = True,
                 default_lang = 'en',
                 cv_required = ['en']
             )
         j.put()
+    return 0

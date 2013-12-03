@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2013-12-03 21:47+0100\n"
-"PO-Revision-Date: 2013-12-03 21:50+0100\n"
+"POT-Creation-Date: 2013-12-03 23:18+0100\n"
+"PO-Revision-Date: 2013-12-03 23:19+0100\n"
 "Last-Translator: Tianming.Lu <lutianming1005@gmail.com>\n"
 "Language-Team: zh <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -74,7 +74,7 @@ msgstr "邮箱"
 msgid "Message"
 msgstr "消息"
 
-#: templates/base.html:51
+#: templates/base.html:52
 msgid "Back to top"
 msgstr "返回顶部"
 
@@ -320,7 +320,7 @@ msgstr "李铮 先生"
 msgid "Wish to contact us?"
 msgstr "您希望联系我们?"
 
-#: templates/about/contact.html:53 templates/visitors/job.html:91
+#: templates/about/contact.html:53 templates/visitors/job.html:103
 #: templates/visitors/workpermit.html:30
 msgid "Send"
 msgstr "发送"
@@ -909,15 +909,23 @@ msgstr "申请"
 msgid "*.doc and *.pdf files are accepted, max 500 KB for each attachment."
 msgstr "接受doc和pdf文件。单个文件不超过500KB。"
 
-#: templates/visitors/job.html:78
+#: templates/visitors/job.html:79
 msgid "CV in {0}"
 msgstr "{0}简历"
 
-#: templates/visitors/job.html:82
+#: templates/visitors/job.html:83
 msgid "Motivation letter in {0}"
 msgstr "{0}动机信"
 
-#: templates/visitors/job.html:88
+#: templates/visitors/job.html:89
+msgid "CV"
+msgstr "简历"
+
+#: templates/visitors/job.html:93
+msgid "Motivation letter"
+msgstr "动机信"
+
+#: templates/visitors/job.html:100
 msgid "required field"
 msgstr "必填项"
 
@@ -1051,6 +1059,3 @@ msgstr "下载PDF"
 #: templates/visitors/workpermit.html:21
 msgid "you want to send a comment about this guide"
 msgstr "你想要对此发表评论"
-
-#~ msgid "New application sent by AFCP"
-#~ msgstr "来自AFCP的新职位申请"

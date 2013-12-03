@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2013-12-03 21:47+0100\n"
-"PO-Revision-Date: 2013-12-03 21:50+0100\n"
+"POT-Creation-Date: 2013-12-03 23:18+0100\n"
+"PO-Revision-Date: 2013-12-03 23:19+0100\n"
 "Last-Translator: Tianming.Lu <lutianming1005@gmail.com>\n"
 "Language-Team: fr <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
@@ -74,7 +74,7 @@ msgstr ""
 msgid "Message"
 msgstr ""
 
-#: templates/base.html:51
+#: templates/base.html:52
 msgid "Back to top"
 msgstr "Retour en haut"
 
@@ -346,7 +346,7 @@ msgstr "M. Zheng LI"
 msgid "Wish to contact us?"
 msgstr "Vous souhaitez nous contacter ?"
 
-#: templates/about/contact.html:53 templates/visitors/job.html:91
+#: templates/about/contact.html:53 templates/visitors/job.html:103
 #: templates/visitors/workpermit.html:30
 msgid "Send"
 msgstr "Envoyer"
@@ -974,15 +974,23 @@ msgid "*.doc and *.pdf files are accepted, max 500 KB for each attachment."
 msgstr ""
 "*. doc et *. pdf sont acceptés, maximum 500 Ko pour chaque pièce jointe."
 
-#: templates/visitors/job.html:78
+#: templates/visitors/job.html:79
 msgid "CV in {0}"
 msgstr "CV en {0}"
 
-#: templates/visitors/job.html:82
+#: templates/visitors/job.html:83
 msgid "Motivation letter in {0}"
 msgstr "Lettre de motivation en {0}"
 
-#: templates/visitors/job.html:88
+#: templates/visitors/job.html:89
+msgid "CV"
+msgstr "CV"
+
+#: templates/visitors/job.html:93
+msgid "Motivation letter"
+msgstr "Lettre de motivation"
+
+#: templates/visitors/job.html:100
 msgid "required field"
 msgstr "champ obligatoire"
 
@@ -1119,6 +1127,3 @@ msgstr "Lien vers le PDF"
 #: templates/visitors/workpermit.html:21
 msgid "you want to send a comment about this guide"
 msgstr "vous voulez envoyer un commentaire au sujet de ce guide"
-
-#~ msgid "New application sent by AFCP"
-#~ msgstr "Une nouvelle candidatur envoyée par AFCP"

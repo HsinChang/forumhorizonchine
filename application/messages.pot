@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2013-12-03 21:47+0100\n"
+"POT-Creation-Date: 2013-12-03 23:18+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -73,7 +73,7 @@ msgstr ""
 msgid "Message"
 msgstr ""
 
-#: templates/base.html:51
+#: templates/base.html:52
 msgid "Back to top"
 msgstr ""
 
@@ -291,7 +291,7 @@ msgstr ""
 msgid "Wish to contact us?"
 msgstr ""
 
-#: templates/about/contact.html:53 templates/visitors/job.html:91
+#: templates/about/contact.html:53 templates/visitors/job.html:103
 #: templates/visitors/workpermit.html:30
 msgid "Send"
 msgstr ""
@@ -831,15 +831,23 @@ msgstr ""
 msgid "*.doc and *.pdf files are accepted, max 500 KB for each attachment."
 msgstr ""
 
-#: templates/visitors/job.html:78
+#: templates/visitors/job.html:79
 msgid "CV in {0}"
 msgstr ""
 
-#: templates/visitors/job.html:82
+#: templates/visitors/job.html:83
 msgid "Motivation letter in {0}"
 msgstr ""
 
-#: templates/visitors/job.html:88
+#: templates/visitors/job.html:89
+msgid "CV"
+msgstr ""
+
+#: templates/visitors/job.html:93
+msgid "Motivation letter"
+msgstr ""
+
+#: templates/visitors/job.html:100
 msgid "required field"
 msgstr ""
 

@@ -56,6 +56,8 @@ def change_password():
         except CapabilityDisabledError:
             flash('error whan changing password', 'error')
     return render_template('admin/change_password.html', form=form)
+
+
 @admin.route('/users')
 @admin_required
 def users():
@@ -258,7 +260,7 @@ def new_job():
         flash('there is no enterprise, please create one before add new job', 'error')
         return redirect(url_for('admin.new_enterprise'))
 
-    grouped_emails = {str(e.key.urlsafe()): {} for e in enterprises}
+    grouped_emails = {e.key.urlsafe(): {} for e in enterprises}
     for m in mails:
         key = m.enterprise.urlsafe()
         grouped_emails[key][str(m.key.urlsafe())] = m.email
@@ -323,7 +325,7 @@ def edit_job(keyurl):
     mails = EmailModel.query()
 
     form.enterprise.choices = [(e.key.urlsafe(), e.name) for e in enterprises]
-    grouped_emails = {str(e.key.urlsafe()): {} for e in enterprises}
+    grouped_emails = {e.key.urlsafe(): {} for e in enterprises}
     for m in mails:
         key = m.enterprise.urlsafe()
         grouped_emails[key][str(m.key.urlsafe())] = m.email
@@ -343,7 +345,7 @@ def edit_job(keyurl):
             job.meta[lang]['title'] = getattr(form, "title_"+lang).data
             job.meta[lang]['content'] = getattr(form, "content_"+lang).data
 
-        job.published = job.fr.published or job.en.published or job.zh.published
+        job.published = job.meta['en']['published'] or job.meta['fr']['published'] or job.meta['zh']['published']
         job.default_lang = form.default_lang.data
         job.cv_required = form.cv_required.data
         try:

@@ -72,17 +72,29 @@ $Id: job.html 26 2009-08-04 22:06:00Z guolin.mobi $
 		      <td>{{ _("Email") }}<span class="required">*</span></td>
 		      <td><input type="email" name="email" required="required"/></td>
 		    </tr>
-		    {% for cv in job.cv_required %}
-		      {% set lang = languages[cv] %}
-		      <tr>
-			<td>{{ _("CV in {0}").format(_(lang)) }}<span class="required">*</span></td>
-			<td><input type="file" name="cv_{{ cv }}" accept="application/pdf, application/msword" required="required"/></td>
-		      </tr>
-		      <tr>
-			<td>{{ _("Motivation letter in {0}").format(_(lang)) }}<span class="required">*</span></td>
-			<td><input type="file" name="lm_{{ cv }}" accept="application/pdf, application/msword" required="required"></input></td>
-		      </tr>
-		    {% endfor %}
+		    {% if job.cv_required %}
+		      {% for cv in job.cv_required %}
+			{% set lang = languages[cv] %}
+			<tr>
+			  <td>{{ _("CV in {0}").format(_(lang)) }}<span class="required">*</span></td>
+			  <td><input type="file" name="cv_{{ cv }}" accept="application/pdf, application/msword" required="required"/></td>
+			</tr>
+			<tr>
+			  <td>{{ _("Motivation letter in {0}").format(_(lang)) }}<span class="required">*</span></td>
+			  <td><input type="file" name="lm_{{ cv }}" accept="application/pdf, application/msword" required="required"></input></td>
+			</tr>
+		      {% endfor %}
+		    {% else %}
+			<tr>
+			  <td>{{ _("CV") }}<span class="required">*</span></td>
+			  <td><input type="file" name="cv" accept="application/pdf, application/msword" required="required"/></td>
+			</tr>
+			<tr>
+			  <td>{{ _("Motivation letter").format(_(lang)) }}<span class="required">*</span></td>
+			  <td><input type="file" name="lm" accept="application/pdf, application/msword" required="required"></input></td>
+			</tr>
+		    {% endif %}
+
 		    <tr>
 		      <td colspan="2"><small><span class="required">*</span>
 			: {{ _("required field") }}</small></td>

@@ -103,7 +103,7 @@ class JobForm(wtf.Form):
     is_online = BooleanField('apply online')
     apply_url = StringField('apply URL')
     enterprise = SelectField('Enterprise')
-    enterprise_email = SelectField('Enterprise_Email')
+    enterprise_email = SelectField('Enterprise_Email', coerce=str)
     publish_en = BooleanField('Publish', default=False)
     publish_zh = BooleanField('Publish', default=False)
     publish_fr = BooleanField('Publish', default=False)
@@ -115,7 +115,7 @@ class JobForm(wtf.Form):
     content_fr = TextAreaField('Content', validators=[job_lang_check('fr')])
 
     default_lang = SelectField('Default version', choices=_lang_choices)
-    cv_required = SelectMultipleField('required CV and letter of motivation', choices=_lang_choices, validators=[validators.InputRequired()])
+    cv_required = SelectMultipleField('required versions of CV and letter of motivation(keep it empty if no requirement about the language of CV)', choices=_lang_choices)
 
 
 class BaseEnterpriseForm(wtf.Form):

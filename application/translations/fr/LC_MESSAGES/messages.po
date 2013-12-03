@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2013-12-02 19:54+0100\n"
-"PO-Revision-Date: 2013-12-02 22:44+0100\n"
+"POT-Creation-Date: 2013-12-03 21:47+0100\n"
+"PO-Revision-Date: 2013-12-03 21:50+0100\n"
 "Last-Translator: Tianming.Lu <lutianming1005@gmail.com>\n"
 "Language-Team: fr <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
@@ -22,11 +22,11 @@ msgstr ""
 msgid "no such enterprise"
 msgstr ""
 
-#: admin.py:174 admin.py:394 exhibitor.py:107
+#: admin.py:174 admin.py:398 exhibitor.py:107
 msgid "fail to delete"
 msgstr ""
 
-#: admin.py:319 admin.py:389 exhibitor.py:81 exhibitor.py:101
+#: admin.py:319 admin.py:393 exhibitor.py:81 exhibitor.py:101
 msgid "no such job"
 msgstr ""
 
@@ -74,9 +74,9 @@ msgstr ""
 msgid "Message"
 msgstr ""
 
-#: visitor.py:147
-msgid "New application sent by AFCP"
-msgstr "Une nouvelle candidatur envoyée par AFCP"
+#: templates/base.html:51
+msgid "Back to top"
+msgstr "Retour en haut"
 
 #: templates/home.html:5
 msgid "China Horizon Forum"
@@ -1119,3 +1119,6 @@ msgstr "Lien vers le PDF"
 #: templates/visitors/workpermit.html:21
 msgid "you want to send a comment about this guide"
 msgstr "vous voulez envoyer un commentaire au sujet de ce guide"
+
+#~ msgid "New application sent by AFCP"
+#~ msgstr "Une nouvelle candidatur envoyée par AFCP"

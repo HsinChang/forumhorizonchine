@@ -5,11 +5,11 @@
     <link rel="shortcut icon" type="image/ico" href="{{ url_for('static', filename='img/favicon.ico') }}" />
     <link rel="stylesheet"  href="{{ url_for('static', filename='css/common.css') }}"/>
     <!--[if lte IE 9]>
-	<link rel="stylesheet" type="text/css" media="screen" href="/static/stylesheets/all_ie.css"/>
-	<![endif]-->
+    <link rel="stylesheet" type="text/css" media="screen" href="/static/stylesheets/all_ie.css"/>
+    <![endif]-->
     <!--[if lte IE 8]>
-	<link rel="stylesheet" type="text/css" media="screen" href="/static/stylesheets/ie8.css"/>
-	<![endif]-->
+    <link rel="stylesheet" type="text/css" media="screen" href="/static/stylesheets/ie8.css"/>
+    <![endif]-->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/sidebar.css') }}" />
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 
@@ -23,21 +23,13 @@
 
       <div id="topbar-wrapper">
 	{% block  topbar %}
-	{% include "includes/nav.html" %}
+	  {% include "includes/nav.html" %}
 	{% endblock  topbar %}
       </div><!--/#topbar-wrapper-->
 
       {% block header %}FIXME: header block{% endblock %}
 
-      {% with messages = get_flashed_messages() %}
-      {% if messages %}
-      <ul class="flashes">
-	{% for message in messages %}
-	<li>{{ message }}</li>
-	{% endfor %}
-      </ul>
-      {% endif %}
-      {% endwith %}
+      {% include "includes/flash_message.html" %}
 
       <div id="navbar-wrapper">
 	{% block navbar %}{% endblock %}
@@ -47,20 +39,20 @@
 
 	{% block sidebar_and_content %}
 
-	<div id="sidebar-wrapper">
-	  {% block sidebar %}
-	  {% endblock %}
-	</div><!--/#sidebar-wrapper-->
+	  <div id="sidebar-wrapper">
+	    {% block sidebar %}
+	    {% endblock %}
+	  </div><!--/#sidebar-wrapper-->
 
-	<div id="content-wrapper">
-	  <a id="top"></a>
-	  {% block content %}FIXME: content block{% endblock %}
-	  <div class="section-footer">
-	    <p class="hide">
-	      <a href="#top">{{ _('Back to top') }}</a>
-	    </p>
-	  </div>
-	</div><!--/#content-wrapper-->
+	  <div id="content-wrapper">
+	    <a id="top"></a>
+	    {% block content %}FIXME: content block{% endblock %}
+	    <div class="section-footer">
+	      <p class="hide">
+		<a href="#top">{{ _("Back to top") }}</a>
+	      </p>
+	    </div>
+	  </div><!--/#content-wrapper-->
 
 	{% endblock %}{# sidebar_and_content #}
 
@@ -68,10 +60,11 @@
 
       <div id="footer-wrapper" class="container">
 
-	<a href="http://www.afcp-paristech.org" rel="external" target="_blank">AFCP</a> |
-	<a href="http://www.zhengzhong.net/" rel="external">Thanks ZhengZhong</a> |
-	<a href="http://www.afcp-paristech.org" rel="external">Made in afcpweb team</a><!--  |
-	<a href="http://validator.w3.org/check?uri=referer" rel="external">Valid XHTML 1.0!</a> |
+	<a href="http://www.afcp-paristech.org" rel="external" target="_blank">AFCP</a>
+	<a href="http://www.zhengzhong.net/" rel="external">Thanks ZhengZhong</a>
+	<a href="http://www.afcp-paristech.org" rel="external">Made in afcpweb team</a>
+	<!--
+	<a href="http://validator.w3.org/check?uri=referer" rel="external">Valid XHTML 1.0!</a>
 	<a href="http://jigsaw.w3.org/css-validator/check/referer" rel="external">Valid CSS!</a> -->
 
       </div><!--/#footer-wrapper-->

@@ -115,7 +115,7 @@ class JobForm(wtf.Form):
     content_fr = TextAreaField('Content', validators=[job_lang_check('fr')])
 
     default_lang = SelectField('Default version', choices=_lang_choices)
-    cv_required = SelectMultipleField('required versions of CV and letter of motivation(keep it empty if no requirement about the language of CV)', choices=_lang_choices)
+    cv_required = SelectMultipleField('Required versions of CV and letter of motivation', choices=_lang_choices)
 
 
 class BaseEnterpriseForm(wtf.Form):

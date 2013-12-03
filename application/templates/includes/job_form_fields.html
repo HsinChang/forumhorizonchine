@@ -39,7 +39,7 @@
   </div>
 </div>
 {{ render_field(form.default_lang) }}
-{{ render_field(form.cv_required) }}
+{{ render_field(form.cv_required, **{"data-placeholder" : "Keep it empty if no requirement"}) }}
 
 <link rel="stylesheet" href="{{ url_for('static', filename='css/lib/chosen.min.css') }}" />
 <script type="text/javascript" src={{ url_for('static', filename="js/lib/chosen.jquery.min.js") }}>

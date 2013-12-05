@@ -4,7 +4,7 @@ from models import JobModel, EnterpriseModel, EmailModel
 from forms import ContactForm
 from flask_mail import Message
 from flask_babel import lazy_gettext
-from application import app
+from application import app, get_locale
 from google.appengine.api import mail
 from google.appengine.ext import ndb
 from os.path import splitext, getsize
@@ -33,7 +33,7 @@ def job():
     jobs = JobModel.query(JobModel.published==True, JobModel.is_complete==True)
 
     for job in jobs:
-        locale = session['locale']
+        locale = get_locale()
         if job.meta[locale]["published"] == True:
             job.current_lang = locale
         else:

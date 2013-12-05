@@ -1,14 +1,15 @@
 {% extends "base.html" %}
 
 {% block html_head %}
+  {% block html_title %}
+    <title>ADMIN</title>
+  {% endblock html_title %}
 
-{% block html_title %}
-<title>
-  ADMIN
-</title>
-{% endblock html_title %}
-
-<link rel="stylesheet" type="text/css" media="screen" href="{{ url_for('static', filename='css/sections.css') }}"/>
+  <script type="text/javascript" src="{{ url_for('static', filename="js/lib/jquery.ui.core.js") }}"></script>
+  <script type="text/javascript" src="{{ url_for('static', filename="js/lib/jquery.ui.widget.js") }}"></script>
+  <script type="text/javascript" src="{{ url_for('static', filename="js/lib/jquery.ui.mouse.js") }}"></script>
+  <script type="text/javascript" src="{{ url_for('static', filename="js/lib/jquery.ui.sortable.js") }}"></script>
+  <link rel="stylesheet" type="text/css" media="screen" href="{{ url_for('static', filename='css/sections.css') }}"/>
 
 {% endblock html_head %}{# html_head #}
 

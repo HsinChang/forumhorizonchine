@@ -16,8 +16,8 @@
 <form method="post" action="{{ url_for('admin.new_enterprise') }}">
   <fieldset>
     {{ form.hidden_tag() }}
-    {{ render_field(form.name) }}
     {{ render_field(form.shortname) }}
+    {{ render_field(form.name) }}
     {{ render_field(form.email) }}
   </fieldset>
   <input type="submit" value="Save">

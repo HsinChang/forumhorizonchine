@@ -12,10 +12,11 @@ from application import app
 from flaskext import wtf
 from flask_login import current_user
 from flask_babel import lazy_gettext
-from wtforms import StringField, PasswordField, BooleanField, TextAreaField, SelectField, FormField, SelectMultipleField, RadioField
+from wtforms import StringField, PasswordField, BooleanField, TextAreaField, SelectField, FormField, SelectMultipleField, HiddenField
 from wtforms import validators
 from passlib.apps import custom_app_context as pwd_context
 from .models import UserModel, EnterpriseModel
+import re
 
 def username_exist_check(form, field):
     """check if the username registered is already userd"""
@@ -34,12 +35,10 @@ def old_password_check(form, field):
         raise validators.ValidationError('old password is wrong')
 
 
-def enterprise_exist_check(form, field):
-    name = field.data
-    enterprise = EnterpriseModel.query(EnterpriseModel.name==name).get()
-    if enterprise:
-        raise validators.ValidationError('enterprise exists, you don\'t need to create it again!')
-
+def shortname_check(form, field):
+    shortname = field.data
+    if not re.match("^[\w]+$", shortname):
+        raise validators.ValidationError('shortname can only contain letters, numbers and underscore!')
 
 def job_lang_check(lang):
     """
@@ -120,7 +119,7 @@ class JobForm(wtf.Form):
 
 class BaseEnterpriseForm(wtf.Form):
     name = StringField('Name', validators=[validators.InputRequired()])
-    shortname = StringField('Short name', validators=[validators.InputRequired()])
+    shortname = StringField('Short name', validators=[validators.InputRequired(), shortname_check])
 
 
 class EnterpriseForm(BaseEnterpriseForm):

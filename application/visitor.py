@@ -30,7 +30,8 @@ def exhibitors():
 @visitor.route('/job')
 def job():
     grouped_jobs = {}
-    jobs = JobModel.query(JobModel.published==True, JobModel.is_complete==True)
+    jobs = JobModel.query(JobModel.published==True,
+                          JobModel.is_complete==True)
 
     for job in jobs:
         locale = get_locale()
@@ -48,7 +49,7 @@ def job():
     if len(grouped_jobs) == 0:
         grouped_jobs = None
     else:
-        grouped_jobs = sorted(grouped_jobs.items(), key=lambda i: i[0].get().shortname)
+        grouped_jobs = sorted(grouped_jobs.items(), key=lambda i: i[0].get().order)
         for jobs in grouped_jobs:
             jobs[1].sort(key=lambda i:i.current['title'])
 

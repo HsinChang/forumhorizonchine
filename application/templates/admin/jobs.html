@@ -1,60 +1,61 @@
 {% extends "base_admin.html" %}
 
 {% block html_title %}
-<title>
-  All jobs
-</title>
+  <title>
+    All jobs
+  </title>
 {% endblock html_title %}
 {% block content %}
-<h1 id="">All Jobs</h1>
-<p>
-  <a class="button" href="{{ url_for('admin.new_job') }}">New</a>
-</p>
-
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Enterprise</th>
-      <th>Type</th>
-      <th>Date</th>
-      <th>Published</th>
-      <th>state</th>
-      <th>&nbsp;</th>
-      <th>&nbsp;</th>
-    </tr>
-  </thead>
-  <tbody>
-    {% for job in jobs %}
-    <tr>
-      <th>{{ job.meta["en"]["title"] }}</th>
-      <th>{% if job.enterprise %}
-      {{ job.enterprise.get().name }}
+  <h1 id="">All Jobs</h1>
+  <p>
+    <a class="button" href="{{ url_for('admin.new_job') }}">New</a>
+  </p>
+  {% for e, jobs in grouped_jobs.items() %}
+    <h4>
+      {% if e %}
+	{{ e.get().shortname }} <a href="{{ url_for('admin.sort_jobs', keyurl=e.urlsafe()) }}">sort</a>
       {% else %}
-
+	<font color="red">incomplete jobs</font>
       {% endif %}
-      </th>
-      <th>{{ job.type }}</th>
-      <th>{{ job.date }}</th>
-      <th>{{ job.published }}</th>
-      <th>{{ job.is_complete }}</th>
-      <th>
-	<a href="{{ url_for('admin.edit_job', keyurl=job.key.urlsafe()) }}">
-	  edit
-	</a>
-      </th>
-      <th>
-	<a href="{{ url_for('admin.delete_job', keyurl=job.key.urlsafe()) }}">
-	  delete
-	</a>
-      </th>
-    </tr>
-    {% else %}
-    <tr>
-      <td colspan="7">no job provided yet</td>
-    </tr>
-    {% endfor %}
-  </tbody>
-</table>
+    </h4>
+    <table>
+      <thead>
+	<tr>
+	  <th>Title</th>
+	  <th>Type</th>
+	  <th>Date</th>
+	  <th>Published</th>
+	  <th>state</th>
+	  <th>&nbsp;</th>
+	  <th>&nbsp;</th>
+	</tr>
+      </thead>
+      <tbody>
+	{% for job in jobs %}
+	  <tr>
+	    <th>{{ job.meta["en"]["title"] }}</th>
+	    <th>{{ job.type }}</th>
+	    <th>{{ job.date }}</th>
+	    <th>{{ job.published }}</th>
+	    <th>{{ job.is_complete }}</th>
+	    <th>
+	      <a href="{{ url_for('admin.edit_job', keyurl=job.key.urlsafe()) }}">
+		edit
+	      </a>
+	    </th>
+	    <th>
+	      <a href="{{ url_for('admin.delete_job', keyurl=job.key.urlsafe()) }}">
+		delete
+	      </a>
+	    </th>
+	  </tr>
+	    {% else %}
+	  <tr>
+	    <td colspan="7">no job provided yet</td>
+	  </tr>
+	{% endfor %}
+      </tbody>
+    </table>
+  {% endfor %}
 
 {% endblock content %}

@@ -18,6 +18,7 @@ class JobMetaModel(ndb.Model):
 
 class JobModel(ndb.Model):
     type = ndb.StringProperty(required=True)
+    order = ndb.IntegerProperty(default=0)
     poster = ndb.KeyProperty()
     date = ndb.DateProperty(auto_now_add=True)
     is_complete = ndb.BooleanProperty(default=True)
@@ -38,7 +39,7 @@ class JobModel(ndb.Model):
 class EnterpriseModel(ndb.Model):
     name = ndb.StringProperty(required=True)
     shortname = ndb.StringProperty(required=True)
-
+    order = ndb.IntegerProperty(default=0)
 
 class EmailModel(ndb.Model):
     """

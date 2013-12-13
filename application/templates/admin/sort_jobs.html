@@ -1,0 +1,33 @@
+{% extends "base_admin.html" %}
+
+{% block html_title %}
+  <title>
+    Sort jobs of {{ e.shortname }}
+  </title>
+{% endblock html_title %}
+
+{% block content %}
+<p>
+  Drag the rows to sort jobs. Jobs shown to visitors will have the same order you sort.
+</p>
+  <form method="POST" action="{{ url_for('admin.sort_jobs', keyurl=e.key.urlsafe()) }}">
+    <input type="hidden" name="order" id="order"/>
+    <div>
+      <ol id="sortable" class="sorted">
+	{% for job in jobs %}
+	  <li id="index_{{ job.order }}" class="index">{{ job.meta['en']['title'] }}</li>
+	{% endfor %}
+      </ol>
+    </div>
+    <input type="submit" value="sort"/>
+  </form>
+  <script>
+   $( "#sortable" ).sortable();
+   $( "#sortable" ).disableSelection();
+
+   $('form').submit(function(){
+     $("#order").val($("#sortable").sortable("serialize"));
+   })
+  </script>
+
+{% endblock content %}

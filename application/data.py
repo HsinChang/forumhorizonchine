@@ -9,23 +9,27 @@ def import_enterprise(content):
     - `content`: string
     """
     root = ET.fromstring(content)
+    order = 0
     for e in root.iter('enterprise'):
         name = e.get('name')
         shortname = e.get('shortname')
         model = EnterpriseModel.query(EnterpriseModel.name==name).get()
         if not model:
             model = EnterpriseModel(
+                order = order,
                 name = name,
                 shortname = shortname
             )
             model.put()
+            order = order + 1
 
         emails = e.find('emails')
         for email in emails.iter('email'):
             if not email.text or len(email.text) == 0:
                 continue
 
-            mail = EmailModel.query(EmailModel.enterprise==model.key, EmailModel.email==email.text).get()
+            mail = EmailModel.query(EmailModel.enterprise==model.key,
+                                    EmailModel.email==email.text).get()
             if not mail:
                 mail = EmailModel(
                     enterprise = model.key,

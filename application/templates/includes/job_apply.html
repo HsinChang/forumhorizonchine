@@ -1,0 +1,71 @@
+<div class="apply-button">
+  <div class="right">{{ _(job.type) }}</div>
+  <h3>{{ job.current['title'] }}</h3>
+</div>
+<div>
+  {{ job.current['content']|safe }}
+
+  {% if job.is_online %}
+    <a class="apply-button" href="{{ job.apply_url }}">{{ _("Apply online") }}</a>
+  {% else %}
+    <!-- Formulaire pour postuler -->
+    <h5 class="apply-button">{{ _("Apply") }}</h5>
+    <form method="post" enctype="multipart/form-data"
+	  action="{{ url_for('visitor.apply') }}" class="unwrapped">
+      {{ _("*.doc and *.pdf files are accepted, max 500 KB for each attachment.") }}
+      {# L'identifiant indiquant à quelle adresse mail la candidature est envoyée, cf ressources du Forum #}
+      <input type="hidden" name="joburl" value = "{{ job.key.urlsafe() }}"/>
+      <input type="hidden" name="email.to" value="{{ job.enterprise_email.urlsafe() }}" />
+      <input type="hidden" name="lang" value="{{ job.current_lang }}"/>
+      {# Nom de l'emploi, le même que dans le titre #}
+      <input type="hidden" name="jobname" value="{{ job.current.title }}" />
+      {# Entreprise #}
+      <input type="hidden" name="enterprise" value="{{ enterprise.name }}" />
+      <table class="noborder">
+	<tr>
+	  <td>{{ _("First name") }}<span class="required">*</span></td>
+	  <td><input type="text" name="firstname" required="required"/></td>
+	</tr>
+	<tr>
+	  <td>{{ _("Last name") }}<span class="required">*</span></td>
+	  <td><input type="text" name="lastname" required="required"/></td>
+	</tr>
+	<tr>
+	  <td>{{ _("Email") }}<span class="required">*</span></td>
+	  <td><input type="email" name="email" required="required"/></td>
+	</tr>
+	{% if job.cv_required %}
+	  {% for cv in job.cv_required %}
+	    {% set lang = languages[cv] %}
+	    <tr>
+	      <td>{{ _("CV in {0}").format(_(lang)) }}<span class="required">*</span></td>
+	      <td><input type="file" name="cv_{{ cv }}" accept="application/pdf, application/msword" required="required"/></td>
+	    </tr>
+	    <tr>
+	      <td>{{ _("Motivation letter in {0}").format(_(lang)) }}<span class="required">*</span></td>
+	      <td><input type="file" name="lm_{{ cv }}" accept="application/pdf, application/msword" required="required"></input></td>
+	    </tr>
+	  {% endfor %}
+	{% else %}
+	  <tr>
+	    <td>{{ _("CV") }}<span class="required">*</span></td>
+	    <td><input type="file" name="cv" accept="application/pdf, application/msword" required="required"/></td>
+	  </tr>
+	  <tr>
+	    <td>{{ _("Motivation letter").format(_(lang)) }}<span class="required">*</span></td>
+	    <td><input type="file" name="lm" accept="application/pdf, application/msword" required="required"></input></td>
+	  </tr>
+	{% endif %}
+
+	<tr>
+	  <td colspan="2"><small><span class="required">*</span>
+	    : {{ _("required field") }}</small></td>
+	</tr>
+	<tr>
+	  <td colspan="2"><input type="submit" value={{ _('Send') }}></input>
+	  </td>
+	</tr>
+      </table>
+    </form>
+  {% endif %}
+</div>

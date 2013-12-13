@@ -14,6 +14,7 @@ from application import app
 from passlib.apps import custom_app_context as pwd_context
 import flask_login
 from os.path import splitext
+import re
 import json
 
 admin = Blueprint('admin', __name__)
@@ -100,8 +101,38 @@ def delete_user(keyurl):
 def enterprises():
     """
     """
-    enterprises = EnterpriseModel.query()
+    enterprises = EnterpriseModel.query().order(EnterpriseModel.order)
     return render_template('admin/enterprises.html', enterprises=enterprises)
+
+
+@admin.route('/sort_enterprises', methods=['GET','POST'])
+@admin_required
+def sort_enterprises():
+    """
+    """
+    enterprises = EnterpriseModel.query().order(EnterpriseModel.order)
+    es = []
+    for e in enterprises:
+        es.append(e)
+
+    if request.method == 'POST':
+        data = request.form['order']
+        order = re.findall(r'\d+', data)
+        order = [int(x) for x in order]
+        for i in range(len(order)):
+            rank = order[i]
+            print rank
+            e = es[rank]
+            if e.order != i:
+                e.order = i
+                e.put()
+
+        es.sort(key=lambda e: e.order)
+    else:
+        for e in es:
+            print e.order
+    return render_template("admin/sort_enterprises.html", enterprises=es)
+
 
 @admin.route('/new_enterprise', methods=['GET', 'POST'])
 @admin_required
@@ -241,8 +272,30 @@ def jobs():
     """
     all jobs
     """
+    grouped_jobs = {None:[]}
+    incomplete_jobs = []
     jobs = JobModel.query()
-    return render_template('admin/jobs.html', jobs=jobs)
+    for job in jobs:
+        if job.is_complete is False:
+            grouped_jobs[None].append(job)
+        elif job.enterprise in grouped_jobs:
+            grouped_jobs[job.enterprise].append(job)
+        else:
+            grouped_jobs[job.enterprise] = [job]
+
+
+    return render_template('admin/jobs.html',
+                           grouped_jobs=grouped_jobs)
+
+
+@admin.route('/sort_jobs/<keyurl>', methods=['GET', 'POST'])
+@admin_required
+def sort_jobs(keyurl):
+    key = ndb.Key(urlsafe=keyurl)
+    jobs = JobModel.query(JobModel.enterprise==key)
+    if request.method == 'POST':
+        pass
+    return render_template('admin/sort_jobs.html', e=key.get(), jobs=jobs)
 
 @admin.route('/new_job', methods=['GET', 'POST'])
 @admin_required

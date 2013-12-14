@@ -96,19 +96,24 @@ def import_jobs(content):
             l['title'] = title
             l['content'] = content
 
+
+        enterprise = job.get('enterprise')
+        e = EnterpriseModel.query(EnterpriseModel.name==enterprise).get()
+        if e:
+            is_complete = True
+        else:
+            is_complete = False
         online = job.get('online')
         apply_info = job.find('apply')
         if int(online) == 0:
             enterprise = apply_info.find('enterprise').text
             email = apply_info.find('email').text
-
-            e = EnterpriseModel.query(EnterpriseModel.name==enterprise).get()
             e_email = EmailModel.query(EmailModel.enterprise==e.key, EmailModel.email==email).get()
 
             j = JobModel(
                 type = jobtype,
                 is_online = False,
-                is_complete = True,
+                is_complete = is_complete,
                 enterprise = e.key,
                 enterprise_email = e_email.key,
                 meta = meta,
@@ -121,7 +126,8 @@ def import_jobs(content):
             j = JobModel(
                 type = jobtype,
                 is_online = True,
-                is_complete = False,
+                is_complete = is_complete,
+                enterprise = e.key,
                 apply_url = url,
                 meta = meta,
                 published = True,

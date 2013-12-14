@@ -52,32 +52,7 @@ def transform_enterprise():
         email = ET.Element('email')
         email.text = company.email
         emails.append(email)
-
         enterprises.append(e)
-        # e = EnterpriseModel.query(EnterpriseModel.name==company.name).get()
-        # if e:
-        #     #enterprise exist
-        #     email = EmailModel.get(EmailModel.enterprise==e.key, EmailModel.email==company.email)
-        #     if email:
-        #         pass
-        #     else:
-        #         email = EmailModel(
-        #             enterprise=e.key,
-        #             email=company.email
-        #         )
-        # else:
-        #     #create new enterprise
-        #     e = EnterpriseModel(
-        #         name = company.name,
-        #         shortname = company.name
-        #     )
-
-        #     e.put()
-        #     email = EmailModel(
-        #         enterprise = e.key,
-        #         email = company.email
-        #     )
-        #     email.put()
     output = prettify(enterprises)
     with open('enterprise.xml', 'w') as f:
         f.write(output)
@@ -88,81 +63,61 @@ def transform_jobs(filename):
     cleaner = Cleaner(comments=True, forms=False)
     html = cleaner.clean_html(html)
 
-    jobs = html.xpath('//div[@class="block-job"]')
+    enterprises = html.xpath('//h2')
+    root = ET.Element('jobs')
 
-    root = ET.Element('jobs', )
-    for job in jobs[1:]:
-        j = ET.SubElement(root, 'job')
+    for e in enterprises:
+        jobs = html.xpath('//h2[. = \'{0}\']/following-sibling::div[1 = count(preceding-sibling::h2[1] | ../h2[. = \'{0}\'])]'.format(e.text))
 
-        #job infos
-        jobtype = job.find('.//div[@class="right"]')
-        title = job.find('.//div[@class="apply-button"]/h3')
+        for job in jobs:
+            j = ET.SubElement(root, 'job')
 
-        content = job.xpath('./div')[1]
-        content = lxml.html.tostring(content)
+            #job infos
+            jobtype = job.find('.//div[@class="right"]')
+            title = job.find('.//div[@class="apply-button"]/h3')
 
-        m = re.search('<\w+ class="apply-button"', content)
-        content = content[5:m.start()]
+            content = job.xpath('./div')[1]
+            content = lxml.html.tostring(content)
 
-        j.set('type', jobtype.text)
-        meta = ET.SubElement(j, 'meta')
-        meta.set('lang', 'en')
-        t = ET.SubElement(meta, 'title')
-        t.text = title.text
-        print t.text
-        c = ET.SubElement(meta, 'content')
-        c.text = content
+            m = re.search('<\w+ class="apply-button"', content)
+            content = content[5:m.start()]
 
+            j.set('type', jobtype.text)
+            j.set('enterprise', e.text)
+            meta = ET.SubElement(j, 'meta')
+            meta.set('lang', 'en')
+            t = ET.SubElement(meta, 'title')
+            t.text = title.text
+            print t.text
+            c = ET.SubElement(meta, 'content')
+            c.text = content
 
-        #apply info
-        apply = ET.SubElement(j, 'apply')
-        if len(job.forms) == 0:
-            #apply online
-            j.set('online', str(1))
-            a = job.find('./div/a[@class="apply-button"]')
-            href = a.get('href')
-            url = ET.SubElement(apply, 'url')
-            url.text = href
-        else:
-            j.set('online', str(0))
+            #apply info
+            apply = ET.SubElement(j, 'apply')
+            if len(job.forms) == 0:
+                #apply online
+                j.set('online', str(1))
+                a = job.find('./div/a[@class="apply-button"]')
+                href = a.get('href')
+                url = ET.SubElement(apply, 'url')
+                url.text = href
+            else:
+                j.set('online', str(0))
 
-            form = job.forms[0]
-            id = form.fields['id']
-            detail = company_details[id]
-            jobname = form.fields['jobname']
-            company = form.fields['company']
-            #transform to JobModel
+                form = job.forms[0]
+                id = form.fields['id']
+                detail = company_details[id]
+                jobname = form.fields['jobname']
+                company = form.fields['company']
+                #transform to JobModel
 
-            e = ET.SubElement(apply, 'enterprise')
-            e.text = detail.name
-            e = ET.SubElement(apply, 'email')
-            e.text = detail.email
-            e = ET.SubElement(apply, 'jobname')
-            e.text = jobname
+                e = ET.SubElement(apply, 'enterprise')
+                e.text = detail.name
+                e = ET.SubElement(apply, 'email')
+                e.text = detail.email
+                e = ET.SubElement(apply, 'jobname')
+                e.text = jobname
 
-
-            # enterprise = EnterpriseModel.query(EnterpriseModel.shortname==detail.name).get()
-            # j = JobModel.query(JobModel.en.title==title, job.enterprise==enterpise.key)
-            # if j:
-            #     #job exist, pass
-            #     continue
-
-            # email = EmailModel(EmailModel.enterpise==enterpise.key, EmailModel.email==detail.email)
-
-            # job = JobModel(
-            #     type = jobtype,
-            #     enterprise = enterpise.key,
-            #     enterprise_mail = email.key,
-            #     published = True,
-            #     en = JobMetaModel(
-            #         published = True,
-            #         title = title,
-            #         content = content,
-            #     ),
-            #     default_lang = 'en',
-            #     cv_required = ['en']
-            # )
-            # job.put()
     output = prettify(root)
     with codecs.open('jobs.xml', 'w', encoding='utf-8') as f:
         f.write(output)

@@ -51,7 +51,7 @@ def job():
     else:
         grouped_jobs = sorted(grouped_jobs.items(), key=lambda i: i[0].get().order)
         for jobs in grouped_jobs:
-            jobs[1].sort(key=lambda i:i.current['title'])
+            jobs[1].sort(key=lambda job:job.order)
 
     return render_template('visitors/job.html', grouped_jobs=grouped_jobs, languages = app.config['LANGUAGES'])
 

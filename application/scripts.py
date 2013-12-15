@@ -68,9 +68,10 @@ def transform_jobs(filename):
 
     for e in enterprises:
         jobs = html.xpath('//h2[. = \'{0}\']/following-sibling::div[1 = count(preceding-sibling::h2[1] | ../h2[. = \'{0}\'])]'.format(e.text))
-
+        enterprise = ET.SubElement(root,'enterprise')
+        enterprise.set('name', e.text)
         for job in jobs:
-            j = ET.SubElement(root, 'job')
+            j = ET.SubElement(enterprise, 'job')
 
             #job infos
             jobtype = job.find('.//div[@class="right"]')
@@ -83,7 +84,6 @@ def transform_jobs(filename):
             content = content[5:m.start()]
 
             j.set('type', jobtype.text)
-            j.set('enterprise', e.text)
             meta = ET.SubElement(j, 'meta')
             meta.set('lang', 'en')
             t = ET.SubElement(meta, 'title')
@@ -111,7 +111,7 @@ def transform_jobs(filename):
                 company = form.fields['company']
                 #transform to JobModel
 
-                e = ET.SubElement(apply, 'enterprise')
+                e = ET.SubElement(apply, 'company')
                 e.text = detail.name
                 e = ET.SubElement(apply, 'email')
                 e.text = detail.email

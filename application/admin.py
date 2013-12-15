@@ -283,6 +283,8 @@ def jobs():
         else:
             grouped_jobs[job.enterprise] = [job]
 
+    for jobs in grouped_jobs.values():
+        jobs.sort(key=lambda job: job.order)
 
     return render_template('admin/jobs.html',
                            grouped_jobs=grouped_jobs)
@@ -292,9 +294,21 @@ def jobs():
 @admin_required
 def sort_jobs(keyurl):
     key = ndb.Key(urlsafe=keyurl)
-    jobs = JobModel.query(JobModel.enterprise==key)
+    jobs = JobModel.query(JobModel.enterprise==key).order(JobModel.order)
+    job_list = []
+    for job in jobs:
+        job_list.append(job)
+
     if request.method == 'POST':
-        pass
+        data = request.form['order']
+        order = re.findall(r'\d+', data)
+        order = [int(x) for x in order]
+        for i in range(len(order)):
+            rank = order[i]
+            job = job_list[rank]
+            if job.order != i:
+                job.order = i
+                job.put()
     return render_template('admin/sort_jobs.html', e=key.get(), jobs=jobs)
 
 @admin.route('/new_job', methods=['GET', 'POST'])

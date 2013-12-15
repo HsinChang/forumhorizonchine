@@ -9,19 +9,22 @@ def import_enterprise(content):
     - `content`: string
     """
     root = ET.fromstring(content)
-    order = 0
+    e_max_order = EnterpriseModel.query().order(-EnterpriseModel.order).get()
+    order = -1
+    if e_max_order:
+        order = e_max_order.order
+
     for e in root.iter('enterprise'):
+        order = order + 1
         name = e.get('name')
         shortname = e.get('shortname')
-        model = EnterpriseModel.query(EnterpriseModel.name==name).get()
-        if not model:
-            model = EnterpriseModel(
-                order = order,
-                name = name,
-                shortname = shortname
-            )
-            model.put()
-            order = order + 1
+
+        model = EnterpriseModel(
+            order = order,
+            name = name,
+            shortname = shortname
+        )
+        model.put()
 
         emails = e.find('emails')
         for email in emails.iter('email'):
@@ -64,75 +67,84 @@ def import_jobs(content):
     - `content`:
     """
     root = ET.fromstring(content)
-    for job in root.iter('job'):
-        jobtype = job.get('type')
-        fr = {
-            'published': False,
-            'title': '',
-            'content': ''
-        }
-        en = {
-            'published': False,
-            'title': '',
-            'content': ''
-        }
-        zh = {
-            'published': False,
-            'title': '',
-            'content': ''
-        }
+    for enterprise in root.iter('enterprise'):
+        name = enterprise.get('name')
+        e = EnterpriseModel.query(EnterpriseModel.name==name).get()
 
-        meta = {
-            'en': en,
-            'fr': fr,
-            'zh': zh
-        }
-        for m in job.iter('meta'):
-            lang = m.get('lang')
-            title = m.find('title').text
-            content = m.find('content').text
-            l = meta[lang]
-            l['published'] = True
-            l['title'] = title
-            l['content'] = content
+        order = -1
+        job_max_order = JobModel.query(JobModel.enterprise==e.key).order(-JobModel.order).get()
+        if job_max_order:
+            order = job_max_order.order
 
+        for job in enterprise.iter('job'):
+            order = order + 1
+            jobtype = job.get('type')
+            fr = {
+                'published': False,
+                'title': '',
+                'content': ''
+            }
+            en = {
+                'published': False,
+                'title': '',
+                'content': ''
+            }
+            zh = {
+                'published': False,
+                'title': '',
+                'content': ''
+            }
 
-        enterprise = job.get('enterprise')
-        e = EnterpriseModel.query(EnterpriseModel.name==enterprise).get()
-        if e:
-            is_complete = True
-        else:
-            is_complete = False
-        online = job.get('online')
-        apply_info = job.find('apply')
-        if int(online) == 0:
-            enterprise = apply_info.find('enterprise').text
-            email = apply_info.find('email').text
-            e_email = EmailModel.query(EmailModel.enterprise==e.key, EmailModel.email==email).get()
+            meta = {
+                'en': en,
+                'fr': fr,
+                'zh': zh
+            }
+            for m in job.iter('meta'):
+                lang = m.get('lang')
+                title = m.find('title').text
+                content = m.find('content').text
+                l = meta[lang]
+                l['published'] = True
+                l['title'] = title
+                l['content'] = content
 
-            j = JobModel(
-                type = jobtype,
-                is_online = False,
-                is_complete = is_complete,
-                enterprise = e.key,
-                enterprise_email = e_email.key,
-                meta = meta,
-                published = True,
-                default_lang = 'en',
-                cv_required = ['en']
-            )
-        else:
-            url = apply_info.find('url').text
-            j = JobModel(
-                type = jobtype,
-                is_online = True,
-                is_complete = is_complete,
-                enterprise = e.key,
-                apply_url = url,
-                meta = meta,
-                published = True,
-                default_lang = 'en',
-                cv_required = ['en']
-            )
-        j.put()
+            if e:
+                is_complete = True
+            else:
+                is_complete = False
+            online = job.get('online')
+            apply_info = job.find('apply')
+            if int(online) == 0:
+                #enterprise = apply_info.find('company').text
+                email = apply_info.find('email').text
+                e_email = EmailModel.query(EmailModel.enterprise==e.key, EmailModel.email==email).get()
+
+                j = JobModel(
+                    type = jobtype,
+                    is_online = False,
+                    is_complete = is_complete,
+                    order = order,
+                    enterprise = e.key,
+                    enterprise_email = e_email.key,
+                    meta = meta,
+                    published = True,
+                    default_lang = 'en',
+                    cv_required = ['en']
+                )
+            else:
+                url = apply_info.find('url').text
+                j = JobModel(
+                    type = jobtype,
+                    is_online = True,
+                    is_complete = is_complete,
+                    order = order,
+                    enterprise = e.key,
+                    apply_url = url,
+                    meta = meta,
+                    published = True,
+                    default_lang = 'en',
+                    cv_required = ['en']
+                )
+            j.put()
     return 0

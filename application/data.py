@@ -18,6 +18,7 @@ def import_enterprise(content):
         order = order + 1
         name = e.get('name')
         shortname = e.get('shortname')
+<<<<<<< HEAD
 
         model = EnterpriseModel(
             order = order,
@@ -25,6 +26,16 @@ def import_enterprise(content):
             shortname = shortname
         )
         model.put()
+=======
+        model = EnterpriseModel.query(EnterpriseModel.name==name).get()
+        if not model:
+            model = EnterpriseModel(
+                order = order,
+                name = name,
+                shortname = shortname
+            )
+            model.put()
+>>>>>>> 5700f7277411b81514a3aba53c17f32006ba241b
 
         emails = e.find('emails')
         for email in emails.iter('email'):

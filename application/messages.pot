@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2013-12-03 23:18+0100\n"
+"POT-Creation-Date: 2013-12-16 18:06+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,15 +17,15 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 0.9.6\n"
 
-#: admin.py:134 admin.py:165
+#: admin.py:167 admin.py:198
 msgid "no such enterprise"
 msgstr ""
 
-#: admin.py:174 admin.py:398 exhibitor.py:107
+#: admin.py:207 admin.py:467 exhibitor.py:107
 msgid "fail to delete"
 msgstr ""
 
-#: admin.py:319 admin.py:393 exhibitor.py:81 exhibitor.py:101
+#: admin.py:388 admin.py:462 exhibitor.py:81 exhibitor.py:101
 msgid "no such job"
 msgstr ""
 
@@ -49,28 +49,28 @@ msgstr ""
 msgid "job deleted"
 msgstr ""
 
-#: forms.py:102
+#: forms.py:101
 msgid "Job"
 msgstr ""
 
-#: forms.py:102
+#: forms.py:101
 msgid "Internship"
 msgstr ""
 
-#: forms.py:136 templates/visitors/job.html:64
-msgid "First name"
-msgstr ""
-
-#: forms.py:137 templates/visitors/job.html:68
-msgid "Last name"
-msgstr ""
-
-#: forms.py:138 templates/visitors/job.html:72
-msgid "Email"
+#: forms.py:138
+msgid "Your first name:"
 msgstr ""
 
 #: forms.py:139
-msgid "Message"
+msgid "Your last name:"
+msgstr ""
+
+#: forms.py:140
+msgid "Your email:"
+msgstr ""
+
+#: forms.py:141
+msgid "Message:"
 msgstr ""
 
 #: templates/base.html:52
@@ -114,11 +114,11 @@ msgstr ""
 
 #: templates/home.html:77
 msgid ""
-"This year, the sixth edition will be held at <strong>Mines "
-"ParisTech</strong> on <strong>April 18, 2013</strong> at <strong>10 "
-"am</strong>. This unique event attracts the most promising students and "
-"graduates interested in a French-Chinese career. It will include a\tjob "
-"fair and conference facilities where you will"
+"This year, the sixth edition will be held at <strong>ENSTA "
+"ParisTech</strong> on <strong>March 6, 2014</strong>. This unique event "
+"attracts the most promising students and graduates interested in a "
+"French-Chinese career. It will include a job fair and conference "
+"facilities where you will:"
 msgstr ""
 
 #: templates/home.html:81
@@ -150,24 +150,11 @@ msgid ""
 "ParisTech (AFCP) and ParisTech, with the support of the Embassy of China."
 msgstr ""
 
-#: templates/home.html:98
-msgid "You are a student or an alumnus of Paristech?"
-msgstr ""
-
-#: templates/home.html:101
-#, python-format
-msgid ""
-"You can now register on <a href=\"%(inscription)s\">the registration "
-"page</a>. Find out more about this Forum, in \"Visitor\" section, you can"
-" take a look at <a href=\"%(program)s\">the program</a> and at <a "
-"href=\"%(exhibitors)s\">the companies</a> that will participate in."
-msgstr ""
-
-#: templates/home.html:105
+#: templates/home.html:97
 msgid "Wish to get a stand for your company?"
 msgstr ""
 
-#: templates/home.html:108
+#: templates/home.html:100
 #, python-format
 msgid ""
 "Please do not hesitate to <a href=\"%(contact)s\">contact us</a> to "
@@ -176,7 +163,29 @@ msgid ""
 " well as the <a href=\"%(services)s\">services offered</a>."
 msgstr ""
 
-#: templates/home.html:124
+#: templates/home.html:103
+msgid "You are a student or an alumnus of Paristech?"
+msgstr ""
+
+#: templates/home.html:106
+#, python-format
+msgid ""
+"Registrations will open one or two months before the Forum. Until then, "
+"you may consult, on \"Visitor area\", the <a "
+"href=\"%(program)s\">previous year program</a> and <a "
+"href=\"%(exhibitors)s\">the exhibitors</a>."
+msgstr ""
+
+#: templates/home.html:108
+#, python-format
+msgid ""
+"You can now register on <a href=\"%(inscription)s\">the registration "
+"page</a>. Find out more about this Forum, in \"Visitor\" section, you can"
+" take a look at <a href=\"%(program)s\">the program</a> and at <a "
+"href=\"%(exhibitors)s\">the companies</a> that will participate in."
+msgstr ""
+
+#: templates/home.html:127
 msgid "Organizers"
 msgstr ""
 
@@ -202,8 +211,26 @@ msgstr ""
 msgid "Access to the Forum"
 msgstr ""
 
+#: templates/about/access.html:44
+msgid "View larger map"
+msgstr ""
+
 #: templates/about/access.html:47
 msgid "Access"
+msgstr ""
+
+#: templates/about/access.html:49
+msgid "RER: line B (Luxembourg)"
+msgstr ""
+
+#: templates/about/access.html:50
+msgid "Bus: 21, 27, 38, 82, 85 (Luxembourg)"
+msgstr ""
+
+#: templates/about/access.html:51
+msgid ""
+"Vélib': stations number 5003 (facing 9, rue Le Goff) and 5010 (facing 1, "
+"rue Henri Barbusse)"
 msgstr ""
 
 #: templates/about/balance.html:5 templates/includes/about_forum.html:13
@@ -291,8 +318,7 @@ msgstr ""
 msgid "Wish to contact us?"
 msgstr ""
 
-#: templates/about/contact.html:53 templates/visitors/job.html:103
-#: templates/visitors/workpermit.html:30
+#: templates/about/contact.html:53 templates/includes/job_apply.html:65
 msgid "Send"
 msgstr ""
 
@@ -590,9 +616,9 @@ msgid ""
 "To date, more than one thousand Chinese students, nearly half of whom are"
 " engineering students, have benefited from various training within "
 "ParisTech awarded with diplomas of Engineering, Master, Specialized "
-"Master and Doctorate. The majority of Chinese graduates from the \"50 "
-"engineers\" program were hired in large French or European\tcompanies, or"
-" have pursued doctoral studies."
+"Master and Doctorate. The majority of Chinese graduates from the "
+"\"50&nbspengineers\" program were hired in large French or European "
+"companies, or have pursued doctoral studies."
 msgstr ""
 
 #: templates/includes/about_AFCP.html:1
@@ -617,6 +643,50 @@ msgstr ""
 
 #: templates/includes/exhibitor_menu.html:33
 msgid "Our services"
+msgstr ""
+
+#: templates/includes/job_apply.html:9
+msgid "Apply online"
+msgstr ""
+
+#: templates/includes/job_apply.html:12
+msgid "Apply"
+msgstr ""
+
+#: templates/includes/job_apply.html:15
+msgid "*.doc and *.pdf files are accepted, max 500 KB for each attachment."
+msgstr ""
+
+#: templates/includes/job_apply.html:26
+msgid "First name"
+msgstr ""
+
+#: templates/includes/job_apply.html:30
+msgid "Last name"
+msgstr ""
+
+#: templates/includes/job_apply.html:34
+msgid "Email"
+msgstr ""
+
+#: templates/includes/job_apply.html:41
+msgid "CV in {0}"
+msgstr ""
+
+#: templates/includes/job_apply.html:45
+msgid "Motivation letter in {0}"
+msgstr ""
+
+#: templates/includes/job_apply.html:51
+msgid "CV"
+msgstr ""
+
+#: templates/includes/job_apply.html:55
+msgid "Motivation letter"
+msgstr ""
+
+#: templates/includes/job_apply.html:62
+msgid "required field"
 msgstr ""
 
 #: templates/includes/job_form_fields.html:9
@@ -746,7 +816,7 @@ msgid ""
 "The ParisTech forums are places for successful exchanges between students"
 " and recruiters. Designed and led by students, these forums promote the "
 "integration of students in the professional world that awaits them. The "
-"AFCP here gives you times and places of these forums"
+"AFCP here gives you times and places of these forums."
 msgstr ""
 
 #: templates/visitors/infos.html:20
@@ -817,38 +887,6 @@ msgstr ""
 
 #: templates/visitors/job.html:32
 msgid "There is no job now."
-msgstr ""
-
-#: templates/visitors/job.html:47
-msgid "Apply online"
-msgstr ""
-
-#: templates/visitors/job.html:50
-msgid "Apply"
-msgstr ""
-
-#: templates/visitors/job.html:53
-msgid "*.doc and *.pdf files are accepted, max 500 KB for each attachment."
-msgstr ""
-
-#: templates/visitors/job.html:79
-msgid "CV in {0}"
-msgstr ""
-
-#: templates/visitors/job.html:83
-msgid "Motivation letter in {0}"
-msgstr ""
-
-#: templates/visitors/job.html:89
-msgid "CV"
-msgstr ""
-
-#: templates/visitors/job.html:93
-msgid "Motivation letter"
-msgstr ""
-
-#: templates/visitors/job.html:100
-msgid "required field"
 msgstr ""
 
 #: templates/visitors/job_meta.html:67
@@ -977,6 +1015,10 @@ msgid "Link to the PDF"
 msgstr ""
 
 #: templates/visitors/workpermit.html:21
-msgid "you want to send a comment about this guide"
+msgid "you wish to send a comment about this guide?"
+msgstr ""
+
+#: templates/visitors/workpermit.html:28
+msgid "Send the message"
 msgstr ""
 

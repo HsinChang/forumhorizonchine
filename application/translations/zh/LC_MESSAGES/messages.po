@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2013-12-03 23:18+0100\n"
-"PO-Revision-Date: 2013-12-03 23:19+0100\n"
+"POT-Creation-Date: 2013-12-16 18:06+0100\n"
+"PO-Revision-Date: 2013-12-16 20:17+0100\n"
 "Last-Translator: Tianming.Lu <lutianming1005@gmail.com>\n"
 "Language-Team: zh <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -18,15 +18,15 @@ msgstr ""
 "Generated-By: Babel 0.9.6\n"
 "X-Generator: Poedit 1.5.4\n"
 
-#: admin.py:134 admin.py:165
+#: admin.py:167 admin.py:198
 msgid "no such enterprise"
 msgstr ""
 
-#: admin.py:174 admin.py:398 exhibitor.py:107
+#: admin.py:207 admin.py:467 exhibitor.py:107
 msgid "fail to delete"
 msgstr ""
 
-#: admin.py:319 admin.py:393 exhibitor.py:81 exhibitor.py:101
+#: admin.py:388 admin.py:462 exhibitor.py:81 exhibitor.py:101
 msgid "no such job"
 msgstr ""
 
@@ -50,28 +50,28 @@ msgstr ""
 msgid "job deleted"
 msgstr ""
 
-#: forms.py:102
+#: forms.py:101
 msgid "Job"
 msgstr "工作职位"
 
-#: forms.py:102
+#: forms.py:101
 msgid "Internship"
 msgstr "实习"
 
-#: forms.py:136 templates/visitors/job.html:64
-msgid "First name"
+#: forms.py:138
+msgid "Your first name:"
 msgstr "名"
 
-#: forms.py:137 templates/visitors/job.html:68
-msgid "Last name"
+#: forms.py:139
+msgid "Your last name:"
 msgstr "姓"
 
-#: forms.py:138 templates/visitors/job.html:72
-msgid "Email"
-msgstr "邮箱"
+#: forms.py:140
+msgid "Your email:"
+msgstr "您的邮箱："
 
-#: forms.py:139
-msgid "Message"
+#: forms.py:141
+msgid "Message:"
 msgstr "消息"
 
 #: templates/base.html:52
@@ -120,16 +120,15 @@ msgstr ""
 
 #: templates/home.html:77
 msgid ""
-"This year, the sixth edition will be held at <strong>Mines ParisTech</"
-"strong> on <strong>April 18, 2013</strong> at <strong>10 am</strong>. This "
-"unique event attracts the most promising students and graduates interested "
-"in a French-Chinese career. It will include a\tjob fair and conference "
-"facilities where you will"
+"This year, the sixth edition will be held at <strong>ENSTA ParisTech</"
+"strong> on <strong>March 6, 2014</strong>. This unique event attracts the "
+"most promising students and graduates interested in a French-Chinese career. "
+"It will include a job fair and conference facilities where you will:"
 msgstr ""
-"今年，第六届中国地平线论坛将于<strong>2013年4月18日10点</strong>在<strong>巴"
-"黎高等矿业学校</strong>举行。此论坛的唯一性决定了其可以吸引到那些最有志于在中"
-"法两国间开展职业生涯的学生和毕业生。论坛包含了一个招聘沙龙以及一些讲座，届时"
-"您将可以"
+"今年，第七届中国地平线论坛将于<strong>2014年3月6日10点</strong>在<strong>法国"
+"国立高等先进技术大学校</strong>举行。此论坛的唯一性决定了其可以吸引到那些最有"
+"志于在中法两国间开展职业生涯的学生和毕业生。论坛包含了一个招聘沙龙以及一些讲"
+"座，届时您将可以："
 
 #: templates/home.html:81
 msgid ""
@@ -166,27 +165,11 @@ msgstr ""
 "此论坛由巴黎高科中法友好协会(AFCP)及巴黎高科集团联合组织，并得到了中国大使馆"
 "的大力支持。"
 
-#: templates/home.html:98
-msgid "You are a student or an alumnus of Paristech?"
-msgstr "您是巴黎高科的学生或者校友？"
-
-#: templates/home.html:101
-#, python-format
-msgid ""
-"You can now register on <a href=\"%(inscription)s\">the registration page</"
-"a>. Find out more about this Forum, in \"Visitor\" section, you can take a "
-"look at <a href=\"%(program)s\">the program</a> and at <a href="
-"\"%(exhibitors)s\">the companies</a> that will participate in."
-msgstr ""
-"请点击 <a href=\"%(inscription)s\">注册页面</a> 来报名 ! 如果想要了解更多信"
-"息，请查询“到访学生”页面，里面有 <a href=\"%(program)s\">日程安排</a> 和 <a "
-"href=\"%(exhibitors)s\">参展企业名单</a>。"
-
-#: templates/home.html:105
+#: templates/home.html:97
 msgid "Wish to get a stand for your company?"
 msgstr "您希望为您的企业获得一个展台？"
 
-#: templates/home.html:108
+#: templates/home.html:100
 #, python-format
 msgid ""
 "Please do not hesitate to <a href=\"%(contact)s\">contact us</a> to receive "
@@ -198,7 +181,34 @@ msgstr ""
 "面，您将可以了解到 <a href=\"%(visitors)s\">到访学生的基本信息</a> 以及 <a "
 "href=\"%(services)s\">我们提供的服务</a>。 "
 
-#: templates/home.html:124
+#: templates/home.html:103
+msgid "You are a student or an alumnus of Paristech?"
+msgstr "您是巴黎高科的学生或者校友？"
+
+#: templates/home.html:106
+#, python-format
+msgid ""
+"Registrations will open one or two months before the Forum. Until then, you "
+"may consult, on \"Visitor area\", the <a href=\"%(program)s\">previous year "
+"program</a> and <a href=\"%(exhibitors)s\">the exhibitors</a>."
+msgstr ""
+"报名将于论坛前的一到两个月开放。在那之前, 您可以浏览\"到访学生\", <a href="
+"\"%(program)s\">去年活动安排</a>和<a href=\"%(exhibitors)s\">展出商</a>来获取"
+"更多信息。"
+
+#: templates/home.html:108
+#, python-format
+msgid ""
+"You can now register on <a href=\"%(inscription)s\">the registration page</"
+"a>. Find out more about this Forum, in \"Visitor\" section, you can take a "
+"look at <a href=\"%(program)s\">the program</a> and at <a href="
+"\"%(exhibitors)s\">the companies</a> that will participate in."
+msgstr ""
+"请点击 <a href=\"%(inscription)s\">注册页面</a> 来报名 ! 如果想要了解更多信"
+"息，请查询“到访学生”页面，里面有 <a href=\"%(program)s\">日程安排</a> 和 <a "
+"href=\"%(exhibitors)s\">参展企业名单</a>。"
+
+#: templates/home.html:127
 msgid "Organizers"
 msgstr "主办方"
 
@@ -224,8 +234,26 @@ msgstr ""
 msgid "Access to the Forum"
 msgstr "我们的位置"
 
+#: templates/about/access.html:44
+msgid "View larger map"
+msgstr "查看大地图"
+
 #: templates/about/access.html:47
 msgid "Access"
+msgstr ""
+
+#: templates/about/access.html:49
+msgid "RER: line B (Luxembourg)"
+msgstr ""
+
+#: templates/about/access.html:50
+msgid "Bus: 21, 27, 38, 82, 85 (Luxembourg)"
+msgstr ""
+
+#: templates/about/access.html:51
+msgid ""
+"Vélib': stations number 5003 (facing 9, rue Le Goff) and 5010 (facing 1, rue "
+"Henri Barbusse)"
 msgstr ""
 
 #: templates/about/balance.html:5 templates/includes/about_forum.html:13
@@ -320,8 +348,7 @@ msgstr "李铮 先生"
 msgid "Wish to contact us?"
 msgstr "您希望联系我们?"
 
-#: templates/about/contact.html:53 templates/visitors/job.html:103
-#: templates/visitors/workpermit.html:30
+#: templates/about/contact.html:53 templates/includes/job_apply.html:65
 msgid "Send"
 msgstr "发送"
 
@@ -647,8 +674,8 @@ msgid ""
 "To date, more than one thousand Chinese students, nearly half of whom are "
 "engineering students, have benefited from various training within ParisTech "
 "awarded with diplomas of Engineering, Master, Specialized Master and "
-"Doctorate. The majority of Chinese graduates from the \"50 engineers\" "
-"program were hired in large French or European\tcompanies, or have pursued "
+"Doctorate. The majority of Chinese graduates from the \"50&nbspengineers\" "
+"program were hired in large French or European companies, or have pursued "
 "doctoral studies."
 msgstr ""
 "巴黎高科的办学宗旨是教学培训不断地适应现代企业和全球劳动市场的需求。学校和企"
@@ -680,6 +707,50 @@ msgstr "企业到访"
 #: templates/includes/exhibitor_menu.html:33
 msgid "Our services"
 msgstr "我们的服务"
+
+#: templates/includes/job_apply.html:9
+msgid "Apply online"
+msgstr "在线申请"
+
+#: templates/includes/job_apply.html:12
+msgid "Apply"
+msgstr "申请"
+
+#: templates/includes/job_apply.html:15
+msgid "*.doc and *.pdf files are accepted, max 500 KB for each attachment."
+msgstr "接受doc和pdf文件。单个文件不超过500KB。"
+
+#: templates/includes/job_apply.html:26
+msgid "First name"
+msgstr "名"
+
+#: templates/includes/job_apply.html:30
+msgid "Last name"
+msgstr "姓"
+
+#: templates/includes/job_apply.html:34
+msgid "Email"
+msgstr "邮箱"
+
+#: templates/includes/job_apply.html:41
+msgid "CV in {0}"
+msgstr "{0}简历"
+
+#: templates/includes/job_apply.html:45
+msgid "Motivation letter in {0}"
+msgstr "{0}动机信"
+
+#: templates/includes/job_apply.html:51
+msgid "CV"
+msgstr "简历"
+
+#: templates/includes/job_apply.html:55
+msgid "Motivation letter"
+msgstr "动机信"
+
+#: templates/includes/job_apply.html:62
+msgid "required field"
+msgstr "必填项"
 
 #: templates/includes/job_form_fields.html:9
 msgid ""
@@ -812,7 +883,7 @@ msgid ""
 "The ParisTech forums are places for successful exchanges between students "
 "and recruiters. Designed and led by students, these forums promote the "
 "integration of students in the professional world that awaits them. The AFCP "
-"here gives you times and places of these forums"
+"here gives you times and places of these forums."
 msgstr ""
 "巴黎高科每年都会举办近十个招聘论坛，这些论坛不但是高科的同学们与企业之间的交"
 "流平台，更是大家在找实习和工作的过程中不可错过的机会。AFCP在这里为大家整理了"
@@ -896,38 +967,6 @@ msgstr "职位信息"
 #: templates/visitors/job.html:32
 msgid "There is no job now."
 msgstr "现在没有职位。"
-
-#: templates/visitors/job.html:47
-msgid "Apply online"
-msgstr "在线申请"
-
-#: templates/visitors/job.html:50
-msgid "Apply"
-msgstr "申请"
-
-#: templates/visitors/job.html:53
-msgid "*.doc and *.pdf files are accepted, max 500 KB for each attachment."
-msgstr "接受doc和pdf文件。单个文件不超过500KB。"
-
-#: templates/visitors/job.html:79
-msgid "CV in {0}"
-msgstr "{0}简历"
-
-#: templates/visitors/job.html:83
-msgid "Motivation letter in {0}"
-msgstr "{0}动机信"
-
-#: templates/visitors/job.html:89
-msgid "CV"
-msgstr "简历"
-
-#: templates/visitors/job.html:93
-msgid "Motivation letter"
-msgstr "动机信"
-
-#: templates/visitors/job.html:100
-msgid "required field"
-msgstr "必填项"
 
 #: templates/visitors/job_meta.html:67
 msgid "No job provided"
@@ -1057,5 +1096,9 @@ msgid "Link to the PDF"
 msgstr "下载PDF"
 
 #: templates/visitors/workpermit.html:21
-msgid "you want to send a comment about this guide"
-msgstr "你想要对此发表评论"
+msgid "you wish to send a comment about this guide?"
+msgstr "您想要对此发表评论？"
+
+#: templates/visitors/workpermit.html:28
+msgid "Send the message"
+msgstr "发送消息"

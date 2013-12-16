@@ -41,15 +41,14 @@
 	    marginheight="0" marginwidth="0"
 	    src="http://maps.google.com/maps?f=q&source=s_q&hl=fr&geocode=&q=mines+paristech&ie=UTF8&z=16&t=m&iwloc=A&output=embed"></iframe>
     <br/> <small><a
-    href="https://maps.google.fr/maps?q=mines+paristech&hl=fr&ll=48.846446,2.339187&spn=0.007668,0.021136&sll=48.680793,2.502588&sspn=1.969382,5.410767&hq=mines+paristech&t=m&z=16&iwloc=A">View larger map</a></small>
+    href="https://maps.google.fr/maps?q=mines+paristech&hl=fr&ll=48.846446,2.339187&spn=0.007668,0.021136&sll=48.680793,2.502588&sspn=1.969382,5.410767&hq=mines+paristech&t=m&z=16&iwloc=A">{{ _('View larger map') }}</a></small>
   </div>
 
-  <h3>{{ _('Access') }}:</h3>
+  <h3>{{ _('Access:') }}</h3>
   <ul>
-    <li>RER: line B (Luxembourg)</li>
-    <li>Bus: 21, 27, 38, 82, 85 (Luxembourg)</li>
-    <li>Vélib' : stations number 5003 (facing 9, rue Le Goff) and
-    5010 (facing 1, rue Henri Barbusse)</li>
+    <li>{{ _('RER: line B (Luxembourg)') }}</li>
+    <li>{{ _('Bus: 21, 27, 38, 82, 85 (Luxembourg)')}}</li>
+    <li>{{ _("Vélib': stations number 5003 (facing 9, rue Le Goff) and 5010 (facing 1, rue Henri Barbusse)") }}</li>
   </ul>
 </div>
 {% endblock content %}

@@ -18,16 +18,14 @@
 
   {#	<!-- <iframe src="/static/docs/20121001Changement_de_statu.pdf" width="670px" height="510px">Coucou</iframe> --> #}
 
-  <h2>{{ _('you want to send a comment about this guide') }}?</h2>
+  <h2>{{ _('you wish to send a comment about this guide?') }}</h2>
   <form method="post" action="{{ url_for('visitor.workpermit') }}">
-    <fieldset>
       {{ form.hidden_tag() }}
       {{ render_field(form.first_name) }}
       {{ render_field(form.last_name) }}
       {{ render_field(form.email) }}
-      {{ render_field(form.message) }}
-    </fieldset>
-    <input type="submit" value="{{ _('Send') }}">
+      {{ render_field(form.message, rows=5) }}
+    <input type="submit" value="{{ _('Send the message') }}">
     </input>
   </form>
 </div>

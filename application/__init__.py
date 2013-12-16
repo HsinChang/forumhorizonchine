@@ -20,7 +20,7 @@ app.config.from_object('application.settings')
 
 # Enable jinja2 loop controls extension
 app.jinja_env.add_extension('jinja2.ext.loopcontrols')
-app.jinja_env.globals['LOCALES'] = app.config['LANGUAGES'].keys()
+app.jinja_env.globals['LOCALES'] = sorted(app.config['LANGUAGES'].keys())
 app.jinja_env.globals['current_user'] = current_user
 app.jinja_env.globals['ROLES'] = ROLES
 

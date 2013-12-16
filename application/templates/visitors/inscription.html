@@ -1,42 +1,33 @@
 {% extends "base_visitors.html" %}
 
 {% block html_title %}
-<title>{{ _('Registrations for China Horizon Forum')}}</title>
-<meta name="description" content="Registration of visitors for 2013 China Horizon Forum will start on February or March. Other subscriptions may be required for some activities." />
+  <title>{{ _('Registrations for China Horizon Forum')}}</title>
+  <meta name="description" content="Registration of visitors for 2013 China Horizon Forum will start on February or March. Other subscriptions may be required for some activities." />
 
 {% endblock %}{# html_title #}
 
 {% block content %}
 
-<div class="section">
-  <h1>{{ _('Registrations')}}</h1>
-	{#
-	<p>Registrations for the 2013 edition of the China Horizon Forum
-		are not yet open. Please come back later to register.
-		Registrations will be open to visitors one or two months before the
-		Forum. Other entries may also be required for certain activities of
-		the Forum, such as the résumé and interview workshops organized
-		respectively by Dragonfly Group and Saint-Gobain at the 2012 Forum.</p>
-	#}
+  <div class="section">
+    <h1>{{ _('Registrations')}}</h1>
+    <h2>
+      {{ _('Registration to the China Horizon Forum') }}
+    </h2>
+    <p>
+      {{ _('Registrations for the 2014 edition of the China Horizon Forum are not yet open. Please come back later to register. Registrations will be open to visitors one or two months before the Forum. Other entries may also be required for certain activities of the Forum, such as the résumé and interview workshops organized respectively by Dragonfly Group and Saint-Gobain at the 2012 Forum.') }}
+    </p>
 
-	<h2>
-	  <a href="{{ url_for('visitor.inscription') }}">
-	  {{ _('Registration to the China Horizon Forum') }}
-	  </a>
-	</h2>
-
-	<p>{{ _('Registration for the Dragonfly Group workshop CV are closed.') }}</p>
-
-	{#
-	<p>Dragonfly Group is organizing a workshop about CV writing and
-		thinking about professions to target. This workshop will be led by
-		Yves CORCELLE, a career management expert. Find out more by following
-		the link below and register by filling in the form and sending your CV
-		to the given address:</p>
-	<h2>
-		<a href="/visitors/inscript/atelier2013/en/">CV workshop hosted by Dragonfly Group</a>
-	</h2>
-	#}
-</div>
+    {#
+    <p>{{ _('Registration for the Dragonfly Group workshop CV are closed.') }}</p>
+    <p>Dragonfly Group is organizing a workshop about CV writing and
+      thinking about professions to target. This workshop will be led by
+      Yves CORCELLE, a career management expert. Find out more by following
+      the link below and register by filling in the form and sending your CV
+      to the given address:</p>
+    <h2>
+      <a href="/visitors/inscript/atelier2013/en/">CV workshop hosted by Dragonfly Group</a>
+    </h2>
+    #}
+  </div>
 
 {% endblock %}{# content #}

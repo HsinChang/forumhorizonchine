@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2013-12-16 20:39+0100\n"
+"POT-Creation-Date: 2013-12-16 22:16+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -863,12 +863,18 @@ msgstr ""
 msgid "Registrations"
 msgstr ""
 
-#: templates/visitors/inscription.html:24
+#: templates/visitors/inscription.html:14
 msgid "Registration to the China Horizon Forum"
 msgstr ""
 
-#: templates/visitors/inscription.html:28
-msgid "Registration for the Dragonfly Group workshop CV are closed."
+#: templates/visitors/inscription.html:17
+msgid ""
+"Registrations for the 2014 edition of the China Horizon Forum are not yet"
+" open. Please come back later to register. Registrations will be open to "
+"visitors one or two months before the Forum. Other entries may also be "
+"required for certain activities of the Forum, such as the résumé and "
+"interview workshops organized respectively by Dragonfly Group and Saint-"
+"Gobain at the 2012 Forum."
 msgstr ""
 
 #: templates/visitors/job.html:21
@@ -881,16 +887,12 @@ msgid ""
 "Forum and AFCP."
 msgstr ""
 
-#: templates/visitors/job.html:29 templates/visitors/job_meta.html:2
+#: templates/visitors/job.html:29
 msgid "Jobs opportunities"
 msgstr ""
 
 #: templates/visitors/job.html:32
 msgid "There is no job now."
-msgstr ""
-
-#: templates/visitors/job_meta.html:67
-msgid "No job provided"
 msgstr ""
 
 #: templates/visitors/program.html:4
@@ -1015,7 +1017,7 @@ msgid "Link to the PDF"
 msgstr ""
 
 #: templates/visitors/workpermit.html:21
-msgid "you wish to send a comment about this guide?"
+msgid "You wish to send a comment about this guide?"
 msgstr ""
 
 #: templates/visitors/workpermit.html:28

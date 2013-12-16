@@ -18,7 +18,7 @@
 
   {#	<!-- <iframe src="/static/docs/20121001Changement_de_statu.pdf" width="670px" height="510px">Coucou</iframe> --> #}
 
-  <h2>{{ _('you wish to send a comment about this guide?') }}</h2>
+  <h2>{{ _('You wish to send a comment about this guide?') }}</h2>
   <form method="post" action="{{ url_for('visitor.workpermit') }}">
       {{ form.hidden_tag() }}
       {{ render_field(form.first_name) }}

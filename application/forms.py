@@ -134,8 +134,10 @@ class EmailForm(wtf.Form):
     email = StringField('Email', validators=[validators.Email()])
 
 
-class ContactForm(wtf.Form):
-    first_name = StringField(lazy_gettext('Your first name:'), validators=[validators.InputRequired()])
-    last_name = StringField(lazy_gettext('Your last name:'), validators=[validators.InputRequired()])
+class BaseContactForm(wtf.Form):
     email = StringField(lazy_gettext('Your email:'), validators=[validators.Email()])
     message = TextAreaField(lazy_gettext('Message:'), validators=[validators.InputRequired()])
+
+class ContactForm(BaseContactForm):
+    first_name = StringField(lazy_gettext('Your first name:'), validators=[validators.InputRequired()])
+    last_name = StringField(lazy_gettext('Your last name:'), validators=[validators.InputRequired()])

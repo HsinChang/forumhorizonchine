@@ -43,15 +43,10 @@
 
   <h2>{{ _('Wish to contact us?') }}</h2>
   <form method="post" action="{{ url_for('contact', usertype=usertype) }}">
-    <fieldset>
       {{ form.hidden_tag() }}
-      {{ render_field(form.first_name) }}
-      {{ render_field(form.last_name) }}
       {{ render_field(form.email) }}
       {{ render_field(form.message) }}
-    </fieldset>
-    <input type="submit" value="{{ _('Send') }}">
-    </input>
+    <input type="submit" value="{{ _('Send') }}"/>
     {#
     <input type="hidden" name="from" value="forum" />
     <div>{{ _('Please enter your email') }}: </div>

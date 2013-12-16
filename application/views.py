@@ -20,7 +20,7 @@ import flask_login
 
 from application import app
 from decorators import login_required, admin_required
-from forms import RegisterForm, JobForm, ContactForm
+from forms import RegisterForm, JobForm, BaseContactForm
 
 
 # Flask-Cache (configured to use App Engine Memcache API)
@@ -48,7 +48,7 @@ def balance(usertype):
 
 @app.route('/<usertype>/about/contact', methods=['GET', 'POST'])
 def contact(usertype):
-    form = ContactForm(request.form)
+    form = BaseContactForm(request.form)
     if request.method == 'POST' and form.validate():
         first_name = form.first_name.data
         last_name = form.last_name.data

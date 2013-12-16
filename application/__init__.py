@@ -31,7 +31,9 @@ babel = Babel(app)
 @babel.localeselector
 def get_locale():
     if 'locale' not in session:
-        session['locale'] = request.accept_languages.best_match(app.config['LANGUAGES'].keys())
+        # session['locale'] = request.accept_languages.best_match(app.config['LANGUAGES'].keys())
+        #make French as default language
+        session['locale'] = 'fr'
     return session['locale']
 
 @babel.timezoneselector

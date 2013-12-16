@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2013-12-16 18:06+0100\n"
+"POT-Creation-Date: 2013-12-16 20:39+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -29,15 +29,15 @@ msgstr ""
 msgid "no such job"
 msgstr ""
 
-#: configs.py:4 settings.py:39
+#: configs.py:4 settings.py:38
 msgid "English"
 msgstr ""
 
-#: configs.py:4 settings.py:39
+#: configs.py:4 settings.py:38
 msgid "French"
 msgstr ""
 
-#: configs.py:4 settings.py:39
+#: configs.py:4 settings.py:38
 msgid "Chinese"
 msgstr ""
 
@@ -58,19 +58,19 @@ msgid "Internship"
 msgstr ""
 
 #: forms.py:138
-msgid "Your first name:"
-msgstr ""
-
-#: forms.py:139
-msgid "Your last name:"
-msgstr ""
-
-#: forms.py:140
 msgid "Your email:"
 msgstr ""
 
-#: forms.py:141
+#: forms.py:139
 msgid "Message:"
+msgstr ""
+
+#: forms.py:142
+msgid "Your first name:"
+msgstr ""
+
+#: forms.py:143
+msgid "Your last name:"
 msgstr ""
 
 #: templates/base.html:52
@@ -216,7 +216,7 @@ msgid "View larger map"
 msgstr ""
 
 #: templates/about/access.html:47
-msgid "Access"
+msgid "Access:"
 msgstr ""
 
 #: templates/about/access.html:49
@@ -318,7 +318,7 @@ msgstr ""
 msgid "Wish to contact us?"
 msgstr ""
 
-#: templates/about/contact.html:53 templates/includes/job_apply.html:65
+#: templates/about/contact.html:49 templates/includes/job_apply.html:65
 msgid "Send"
 msgstr ""
 

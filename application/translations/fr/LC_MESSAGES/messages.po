@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2013-12-16 18:06+0100\n"
-"PO-Revision-Date: 2013-12-16 20:10+0100\n"
+"POT-Creation-Date: 2013-12-16 20:39+0100\n"
+"PO-Revision-Date: 2013-12-16 20:39+0100\n"
 "Last-Translator: Tianming.Lu <lutianming1005@gmail.com>\n"
 "Language-Team: fr <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
@@ -30,15 +30,15 @@ msgstr ""
 msgid "no such job"
 msgstr ""
 
-#: configs.py:4 settings.py:39
+#: configs.py:4 settings.py:38
 msgid "English"
 msgstr "anglais"
 
-#: configs.py:4 settings.py:39
+#: configs.py:4 settings.py:38
 msgid "French"
 msgstr "français"
 
-#: configs.py:4 settings.py:39
+#: configs.py:4 settings.py:38
 msgid "Chinese"
 msgstr "chinois"
 
@@ -59,20 +59,20 @@ msgid "Internship"
 msgstr "Stage"
 
 #: forms.py:138
-msgid "Your first name:"
-msgstr "Votre prénom :"
-
-#: forms.py:139
-msgid "Your last name:"
-msgstr "Votre nom :"
-
-#: forms.py:140
 msgid "Your email:"
 msgstr "Votre e-mail :"
 
-#: forms.py:141
+#: forms.py:139
 msgid "Message:"
 msgstr "Commentaire à envoyer à l'AFCP : "
+
+#: forms.py:142
+msgid "Your first name:"
+msgstr "Votre prénom :"
+
+#: forms.py:143
+msgid "Your last name:"
+msgstr "Votre nom :"
 
 #: templates/base.html:52
 msgid "Back to top"
@@ -254,8 +254,8 @@ msgid "View larger map"
 msgstr "Agrandir le plan"
 
 #: templates/about/access.html:47
-msgid "Access"
-msgstr "Accès"
+msgid "Access:"
+msgstr "Accès :"
 
 #: templates/about/access.html:49
 msgid "RER: line B (Luxembourg)"
@@ -377,7 +377,7 @@ msgstr "M. Zheng LI"
 msgid "Wish to contact us?"
 msgstr "Vous souhaitez nous contacter ?"
 
-#: templates/about/contact.html:53 templates/includes/job_apply.html:65
+#: templates/about/contact.html:49 templates/includes/job_apply.html:65
 msgid "Send"
 msgstr "Envoyer"
 

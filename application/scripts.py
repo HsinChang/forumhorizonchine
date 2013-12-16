@@ -32,6 +32,11 @@ company_details = {
 #      'bmwsy': CompanyDetails('antoine.orylamballe@yahoo.fr'),     # BMW - recrutement sy
     'jpm':CompanyDetails('jpm','fei.shi@jpmchase.com'),     # Lyxor Asset Management - Quant R&D
     'michelin':CompanyDetails('michelin','assistant.recruiting@cn.michelin.com'),     # Michelin
+    'boc': CompanyDetails('boc', 'hrceximbank@gmail.com'),                                   # Bank of China
+    #       'bureauveritas': CompanyDetails('thomas.zhu2008@gmail.com'),                    # Bureau Veritas China
+    'haygroup': CompanyDetails('haygroup', 'xiajiaojiao428@gmail.com'),                           # Hay Group
+    'devialet': CompanyDetails('devialet', 'julien.bergere@devialet.com'),                        # Devialet
+    'diam': CompanyDetails('diam', 'raphaele.briand@diaminter.com, dan.xu@diaminter.com'),    # Diam
 }
 
 def prettify(elem):
@@ -67,7 +72,7 @@ def transform_jobs(filename):
     root = ET.Element('jobs')
 
     for e in enterprises:
-        jobs = html.xpath('//h2[. = \'{0}\']/following-sibling::div[1 = count(preceding-sibling::h2[1] | ../h2[. = \'{0}\'])]'.format(e.text))
+        jobs = html.xpath(u'//h2[. = \'{0}\']/following-sibling::div[1 = count(preceding-sibling::h2[1] | ../h2[. = \'{0}\'])]'.format(e.text))
         enterprise = ET.SubElement(root,'enterprise')
         enterprise.set('name', e.text)
         for job in jobs:
@@ -122,4 +127,4 @@ def transform_jobs(filename):
     with codecs.open('jobs.xml', 'w', encoding='utf-8') as f:
         f.write(output)
 
-transform_jobs('templates/visitors/job.html.bak')
+transform_jobs('/home/leo/offres.html')

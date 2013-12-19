@@ -2,15 +2,15 @@
 
 {% block html_title %}
 <title>
-  All enterprises
+  {{ _('All enterprises') }}
 </title>
 {% endblock html_title %}
 
 {% block content %}
-<h1 id="">All enterprises</h1>
+<h1 id="">{{ _('All enterprises') }}</h1>
 <p>
-  <a class="button" href="{{ url_for('admin.new_enterprise') }}">New</a>
-  <a class="button" href="{{ url_for('admin.sort_enterprises') }}">Sort</a>
+  <a class="button" href="{{ url_for('admin.new_enterprise') }}">{{ _('New') }}</a>
+  <a class="button" href="{{ url_for('admin.sort_enterprises') }}">{{ _('Sort') }}</a>
 </p>
 <table id="enterprises">
   <thead>
@@ -28,18 +28,18 @@
       <th>{{ e.name }}</th>
       <th>
 	<a href="{{ url_for('admin.edit_enterprise', keyurl=e.key.urlsafe()) }}">
-	  edit
+	  {{ _('edit') }}
 	</a>
       </th>
       <th>
 	<a href="{{ url_for('admin.delete_enterprise', keyurl=e.key.urlsafe()) }}">
-	  delete
+	  {{ _('delete') }}
 	</a>
       </th>
     </tr>
     {% else %}
     <tr>
-      <td colspan="5">no enterprise provided yet</td>
+      <td colspan="5">{{ _('no enterprise provided yet') }}</td>
     </tr>
     {% endfor %}
   </tbody>

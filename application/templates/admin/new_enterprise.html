@@ -7,12 +7,12 @@
 
 {% block html_title %}
 <title>
-  new enterprise
+  {{ _('New enterprise') }}
 </title>
 {% endblock html_title %}
 
 {% block content %}
-<h1>New Enterprise</h1>
+<h1>{{ _('New enterprise')}}</h1>
 <form method="post" action="{{ url_for('admin.new_enterprise') }}">
   <fieldset>
     {{ form.hidden_tag() }}

@@ -2,13 +2,13 @@
 
 {% block html_title %}
   <title>
-    Sort enterprises
+    {{ _('Sort enterprises') }}
   </title>
 {% endblock html_title %}
 
 {% block content %}
 <p>
-  Drag the rows to sort the enterprises. Enterprises shown to visitors will have the same order you sort.
+  {{ _('Drag the rows to sort the enterprises. Enterprises shown to visitors will have the same order you sort.') }}
 </p>
   <form method="POST" action="{{ url_for('admin.sort_enterprises') }}">
     <input type="hidden" name="order" id="order"/>

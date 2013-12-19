@@ -6,12 +6,12 @@
 
 {% block html_title %}
 <title>
-  edit job
+  {{ _('Edit job')}}
 </title>
 {% endblock html_title %}
 
 {% block content %}
-<h1>Edit Job</h1>
+<h1>{{ _('Edit Job') }} </h1>
 <form id="job_form" method="post" action="{{ url_for('admin.edit_job', keyurl=keyurl) }}">
   <fieldset>
     {% include "includes/job_form_fields.html" %}

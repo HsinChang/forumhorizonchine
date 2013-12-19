@@ -3,24 +3,28 @@
 {% from "_formhelpers.html" import render_field as render_field %}
 
 {% block html_title %}
-<title>Data</title>
+<title>{{ _('data') }}</title>
 {% endblock html_title %}
 
 {% block content %}
-<h1>Import</h1>
-<h4>Import enterprises' data:</h4>
+<h1>{{ _('Import')}}</h1>
+<h4>{{ _("Import enterprises' data":)}}</h4>
 <form method="post" enctype="multipart/form-data" action="{{ url_for('admin.import_enterprise') }}">
   <input type="file" name="enterprise data"/>
   <input type="submit" value="input"/>
 </form>
 
-<h4>Import jobs' data:</h4>
+<h4>{{ _("Import jobs' data:")}}</h4>
 <form method="post" enctype="multipart/form-data" action="{{ url_for('admin.import_jobs') }}">
   <input type="file" name="job data" />
   <input type="submit" value="input" />
 </form>
 
-<h1>Export</h1>
-<a href="{{ url_for('admin.export_enterprise') }}">export enterprise</a>
-<a href="{{ url_for('admin.export_jobs') }}">export jobs</a>
+<h1>{{ _('Export') }}</h1>
+<p>
+  <a href="{{ url_for('admin.export_enterprise') }}">{{ _('export enterprise') }}</a>
+</p>
+<p>
+  <a href="{{ url_for('admin.export_jobs') }}">{{ _('export jobs') }}</a>
+</p>
 {% endblock content %}

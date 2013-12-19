@@ -7,12 +7,12 @@
 
 {% block html_title %}
 <title>
-  edit enterprise
+  {{ _('Edit enterprise') }}
 </title>
 {% endblock html_title %}
 
 {% block content %}
-<h1>Edit Enterprise</h1>
+<h1>{{ _('Edit Enterprise')}}</h1>
 <form method="post" action="{{ url_for('admin.edit_enterprise', keyurl=keyurl) }}">
   <fieldset>
     {{ form.hidden_tag() }}
@@ -23,15 +23,14 @@
   </input>
 </form>
 
-<h3>Emails
-</h3>
+<h3>{{ _('Emails') }}</h3>
 <p>
-  <a href="{{ url_for('admin.new_email', keyurl=keyurl)}}">add new email</a>
+  <a href="{{ url_for('admin.new_email', keyurl=keyurl)}}">{{ _('add new email')}}</a>
 </p>
 <table>
   <thead>
     <tr>
-      <th>email</th>
+      <th>{{ _('email')}}</th>
       <th>&nbsp</th>
       <th>&nbsp</th>
     </tr>
@@ -41,15 +40,15 @@
     <tr>
       <th>{{ email.email }}</th>
       <th>
-	<a href="{{ url_for('admin.edit_email', keyurl=email.key.urlsafe()) }}">edit</a>
+	<a href="{{ url_for('admin.edit_email', keyurl=email.key.urlsafe()) }}">{{ _('edit') }}</a>
       </th>
       <th>
-	<a href="{{ url_for('admin.delete_email', keyurl=email.key.urlsafe()) }}">delete</a>
+	<a href="{{ url_for('admin.delete_email', keyurl=email.key.urlsafe()) }}">{{ _('delete') }}</a>
       </th>
     </tr>
     {% else %}
     <tr>
-      <td colspan="3">no email</td>
+      <td colspan="3">{{ _('no email') }}</td>
     </tr>
     {% endfor %}
   </tbody>

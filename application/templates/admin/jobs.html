@@ -2,18 +2,18 @@
 
 {% block html_title %}
   <title>
-    All jobs
+    {{ _('All jobs') }}
   </title>
 {% endblock html_title %}
 {% block content %}
-  <h1 id="">All Jobs</h1>
+  <h1 id="">{{ _('All jobs') }}</h1>
   <p>
-    <a class="button" href="{{ url_for('admin.new_job') }}">New</a>
+    <a class="button" href="{{ url_for('admin.new_job') }}">{{ _('New') }}</a>
   </p>
   {% for e, jobs in grouped_jobs.items() %}
     <h4>
       {% if e %}
-	{{ e.get().shortname }} <a href="{{ url_for('admin.sort_jobs', keyurl=e.urlsafe()) }}">sort</a>
+	{{ e.get().shortname }} <a href="{{ url_for('admin.sort_jobs', keyurl=e.urlsafe()) }}">{{ _('sort') }}</a>
       {% else %}
 	<font color="red">incomplete jobs</font>
       {% endif %}
@@ -21,11 +21,11 @@
     <table>
       <thead>
 	<tr>
-	  <th>Title</th>
-	  <th>Type</th>
-	  <th>Date</th>
-	  <th>Published</th>
-	  <th>state</th>
+	  <th>{{ _('Title') }}</th>
+	  <th>{{ _('Type') }}</th>
+	  <th>{{ _('Date') }}</th>
+	  <th>{{ _('Published') }}</th>
+	  <th>{{ _('state') }}</th>
 	  <th>&nbsp;</th>
 	  <th>&nbsp;</th>
 	</tr>
@@ -40,18 +40,18 @@
 	    <th>{{ job.is_complete }}</th>
 	    <th>
 	      <a href="{{ url_for('admin.edit_job', keyurl=job.key.urlsafe()) }}">
-		edit
+		{{ _('edit') }}
 	      </a>
 	    </th>
 	    <th>
 	      <a href="{{ url_for('admin.delete_job', keyurl=job.key.urlsafe()) }}">
-		delete
+		{{ _('delete') }}
 	      </a>
 	    </th>
 	  </tr>
 	    {% else %}
 	  <tr>
-	    <td colspan="7">no job provided yet</td>
+	    <td colspan="7">{{ _('no job provided yet') }}</td>
 	  </tr>
 	{% endfor %}
       </tbody>

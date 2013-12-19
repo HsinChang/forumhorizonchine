@@ -24,31 +24,31 @@
 {% set user = current_user %}
 
 <div class="sidebar-section">
-  <div class="title">Admin area</div>
+  <div class="title">{{ _('Admin area')}}</div>
   <div>
     {% if user.is_authenticated() and user.role == ROLES['ADMIN'] %}
-    welcome! {{ user.username }} <a href="{{ url_for('admin.logout')}}">logout</a>
+    {{ _('Welcome!')}} {{ user.username }} <a href="{{ url_for('admin.logout')}}">{{ _('logout')}}</a>
 
     <ul class="list">
       <li {% if request.path == url_for('admin.change_password') %}
 	class="current" {% endif %}>
-	<a href="{{ url_for('admin.change_password') }}">change password</a>
+	<a href="{{ url_for('admin.change_password') }}">{{ _('change password') }}</a>
       </li>
       <li {% if request.path == url_for('admin.users') %}
 	class="current" {% endif %}>
-	<a href="{{ url_for('admin.users') }}">users</a>
+	<a href="{{ url_for('admin.users') }}">{{ _('users')}}</a>
       </li>
       <li {% if request.path == url_for('admin.jobs') %}
 	class="current" {% endif %}>
-	<a href="{{ url_for('admin.jobs') }}">jobs</a>
+	<a href="{{ url_for('admin.jobs') }}">{{ _('jobs')}}</a>
       </li>
       <li {% if request.path == url_for('admin.enterprises') %}
 	class="current" {% endif %}>
-	<a href="{{ url_for('admin.enterprises') }}">enterprises</a>
+	<a href="{{ url_for('admin.enterprises') }}">{{ _('enterprises')}}</a>
       </li>
       <li {% if request.path == url_for('admin.data') %}
 	class="current" {% endif %}>
-	<a href="{{ url_for('admin.data') }}">data</a>
+	<a href="{{ url_for('admin.data') }}">{{ _('data')}}</a>
       </li>
     </ul>
     {% else %}

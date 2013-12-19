@@ -7,12 +7,12 @@
 
 {% block html_title %}
 <title>
-  edit email
+  {{ _('Edit email') }}
 </title>
 {% endblock html_title %}
 
 {% block content %}
-<h1>Edit Email</h1>
+<h1>{{ _('Edit email') }}</h1>
 <form method="post" action="{{ url_for('admin.edit_email', keyurl=keyurl) }}">
   <fieldset>
     {{ form.hidden_tag() }}

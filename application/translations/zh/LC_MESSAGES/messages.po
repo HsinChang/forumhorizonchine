@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2013-12-16 20:39+0100\n"
-"PO-Revision-Date: 2013-12-16 22:23+0100\n"
+"POT-Creation-Date: 2013-12-20 21:00+0100\n"
+"PO-Revision-Date: 2013-12-20 21:03+0100\n"
 "Last-Translator: Tianming.Lu <lutianming1005@gmail.com>\n"
 "Language-Team: zh <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -77,6 +77,38 @@ msgstr "姓"
 #: templates/base.html:52
 msgid "Back to top"
 msgstr "返回顶部"
+
+#: templates/base_admin.html:27
+msgid "Admin area"
+msgstr ""
+
+#: templates/base_admin.html:30
+msgid "Welcome!"
+msgstr ""
+
+#: templates/base_admin.html:30
+msgid "logout"
+msgstr ""
+
+#: templates/base_admin.html:35
+msgid "change password"
+msgstr ""
+
+#: templates/base_admin.html:39
+msgid "users"
+msgstr ""
+
+#: templates/base_admin.html:43
+msgid "jobs"
+msgstr ""
+
+#: templates/base_admin.html:47
+msgid "enterprises"
+msgstr ""
+
+#: templates/base_admin.html:51
+msgid "data"
+msgstr ""
 
 #: templates/home.html:5
 msgid "China Horizon Forum"
@@ -320,7 +352,7 @@ msgstr "2013年中国地平线论坛负责人"
 msgid "Name"
 msgstr "姓名"
 
-#: templates/about/contact.html:19
+#: templates/about/contact.html:19 templates/admin/jobs.html:24
 msgid "Title"
 msgstr "职位"
 
@@ -352,45 +384,148 @@ msgstr "您希望联系我们?"
 msgid "Send"
 msgstr "发送"
 
-#: templates/exhibitors/edit_job.html:9 templates/exhibitors/edit_job.html:13
+#: templates/admin/change_password.html:10
+#: templates/admin/change_password.html:15
+msgid "Change password"
+msgstr ""
+
+#: templates/admin/edit_email.html:10 templates/admin/edit_email.html:15
+msgid "Edit email"
+msgstr ""
+
+#: templates/admin/edit_enterprise.html:10
+msgid "Edit enterprise"
+msgstr ""
+
+#: templates/admin/edit_enterprise.html:15
+msgid "Edit Enterprise"
+msgstr ""
+
+#: templates/admin/edit_enterprise.html:26
+msgid "Emails"
+msgstr ""
+
+#: templates/admin/edit_enterprise.html:28
+msgid "add new email"
+msgstr ""
+
+#: templates/admin/edit_enterprise.html:33
+msgid "email"
+msgstr ""
+
+#: templates/admin/edit_enterprise.html:43 templates/admin/enterprises.html:31
+#: templates/admin/jobs.html:43 templates/exhibitors/jobs.html:34
+msgid "edit"
+msgstr "编辑"
+
+#: templates/admin/edit_enterprise.html:46 templates/admin/enterprises.html:36
+#: templates/admin/jobs.html:48 templates/exhibitors/jobs.html:39
+msgid "delete"
+msgstr "删除"
+
+#: templates/admin/edit_enterprise.html:51
+msgid "no email"
+msgstr ""
+
+#: templates/admin/edit_job.html:9 templates/exhibitors/edit_job.html:9
+#: templates/exhibitors/edit_job.html:13
 msgid "Edit job"
 msgstr "编辑职位"
+
+#: templates/admin/edit_job.html:14
+msgid "Edit Job"
+msgstr ""
+
+#: templates/admin/enterprises.html:5 templates/admin/enterprises.html:10
+msgid "All enterprises"
+msgstr ""
+
+#: templates/admin/enterprises.html:12 templates/admin/jobs.html:11
+msgid "New"
+msgstr ""
+
+#: templates/admin/enterprises.html:13
+msgid "Sort"
+msgstr ""
+
+#: templates/admin/enterprises.html:42
+msgid "no enterprise provided yet"
+msgstr ""
+
+#: templates/admin/jobs.html:5 templates/admin/jobs.html:9
+#: templates/exhibitors/jobs.html:9
+msgid "All jobs"
+msgstr "所有职位"
+
+#: templates/admin/jobs.html:16
+msgid "sort"
+msgstr ""
+
+#: templates/admin/jobs.html:25 templates/exhibitors/jobs.html:19
+msgid "Type"
+msgstr "类型"
+
+#: templates/admin/jobs.html:26 templates/exhibitors/jobs.html:20
+msgid "Date"
+msgstr "类型"
+
+#: templates/admin/jobs.html:27
+msgid "Published"
+msgstr ""
+
+#: templates/admin/jobs.html:28
+msgid "state"
+msgstr ""
+
+#: templates/admin/jobs.html:54
+msgid "no job provided yet"
+msgstr ""
+
+#: templates/admin/new_email.html:10 templates/admin/new_email.html:15
+msgid "New email"
+msgstr ""
+
+#: templates/admin/new_enterprise.html:10
+#: templates/admin/new_enterprise.html:15
+msgid "New enterprise"
+msgstr ""
+
+#: templates/admin/new_job.html:24 templates/admin/new_job.html:29
+#: templates/exhibitors/new_job.html:11 templates/exhibitors/new_job.html:16
+msgid "New job"
+msgstr "新的职位"
+
+#: templates/admin/sort_enterprises.html:5
+msgid "Sort enterprises"
+msgstr ""
+
+#: templates/admin/sort_enterprises.html:11
+msgid ""
+"Drag the rows to sort the enterprises. Enterprises shown to visitors will "
+"have the same order you sort."
+msgstr ""
+
+#: templates/admin/sort_jobs.html:5
+msgid "Sort jobs:"
+msgstr ""
+
+#: templates/admin/sort_jobs.html:11
+msgid ""
+"Drag the rows to sort jobs. Jobs shown to visitors will have the same order "
+"you sort."
+msgstr ""
 
 #: templates/exhibitors/jobs.html:5
 msgid "Your jobs"
 msgstr "您的职位"
 
-#: templates/exhibitors/jobs.html:9
-msgid "All jobs"
-msgstr "所有职位"
-
 #: templates/exhibitors/jobs.html:18
 msgid "Company"
 msgstr "公司"
 
-#: templates/exhibitors/jobs.html:19
-msgid "Type"
-msgstr "类型"
-
-#: templates/exhibitors/jobs.html:20
-msgid "Date"
-msgstr "类型"
-
-#: templates/exhibitors/jobs.html:34
-msgid "edit"
-msgstr "编辑"
-
-#: templates/exhibitors/jobs.html:39
-msgid "delete"
-msgstr "删除"
-
 #: templates/exhibitors/jobs.html:45
 msgid "No job yet"
 msgstr "还没有职位"
-
-#: templates/exhibitors/new_job.html:11 templates/exhibitors/new_job.html:16
-msgid "New job"
-msgstr "新的职位"
 
 #: templates/exhibitors/services.html:4
 msgid "Services of China Horizon Forum"
@@ -942,12 +1077,18 @@ msgstr "注册到中国地平线论坛"
 msgid "Registrations"
 msgstr "注册"
 
-#: templates/visitors/inscription.html:24
+#: templates/visitors/inscription.html:14
 msgid "Registration to the China Horizon Forum"
 msgstr "注册到中国地平线论坛"
 
-#: templates/visitors/inscription.html:28
-msgid "Registration for the Dragonfly Group workshop CV are closed."
+#: templates/visitors/inscription.html:17
+msgid ""
+"Registrations for the 2014 edition of the China Horizon Forum are not yet "
+"open. Please come back later to register. Registrations will be open to "
+"visitors one or two months before the Forum. Other entries may also be "
+"required for certain activities of the Forum, such as the résumé and "
+"interview workshops organized respectively by Dragonfly Group and Saint-"
+"Gobain at the 2012 Forum."
 msgstr ""
 
 #: templates/visitors/job.html:21
@@ -960,17 +1101,13 @@ msgid ""
 "and AFCP."
 msgstr "论坛和AFCP的合作企业的招聘广告将在本页贴出。"
 
-#: templates/visitors/job.html:29 templates/visitors/job_meta.html:2
+#: templates/visitors/job.html:29
 msgid "Jobs opportunities"
 msgstr "职位信息"
 
 #: templates/visitors/job.html:32
 msgid "There is no job now."
 msgstr "现在没有职位。"
-
-#: templates/visitors/job_meta.html:67
-msgid "No job provided"
-msgstr "暂无职位"
 
 #: templates/visitors/program.html:4
 msgid "Program of China Horizon Forum"
@@ -1096,7 +1233,7 @@ msgid "Link to the PDF"
 msgstr "下载PDF"
 
 #: templates/visitors/workpermit.html:21
-msgid "you wish to send a comment about this guide?"
+msgid "You wish to send a comment about this guide?"
 msgstr "您想要对此发表评论？"
 
 #: templates/visitors/workpermit.html:28

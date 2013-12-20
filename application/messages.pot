@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2013-12-16 22:16+0100\n"
+"POT-Creation-Date: 2013-12-20 21:00+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -75,6 +75,38 @@ msgstr ""
 
 #: templates/base.html:52
 msgid "Back to top"
+msgstr ""
+
+#: templates/base_admin.html:27
+msgid "Admin area"
+msgstr ""
+
+#: templates/base_admin.html:30
+msgid "Welcome!"
+msgstr ""
+
+#: templates/base_admin.html:30
+msgid "logout"
+msgstr ""
+
+#: templates/base_admin.html:35
+msgid "change password"
+msgstr ""
+
+#: templates/base_admin.html:39
+msgid "users"
+msgstr ""
+
+#: templates/base_admin.html:43
+msgid "jobs"
+msgstr ""
+
+#: templates/base_admin.html:47
+msgid "enterprises"
+msgstr ""
+
+#: templates/base_admin.html:51
+msgid "data"
 msgstr ""
 
 #: templates/home.html:5
@@ -290,7 +322,7 @@ msgstr ""
 msgid "Name"
 msgstr ""
 
-#: templates/about/contact.html:19
+#: templates/about/contact.html:19 templates/admin/jobs.html:24
 msgid "Title"
 msgstr ""
 
@@ -322,44 +354,147 @@ msgstr ""
 msgid "Send"
 msgstr ""
 
-#: templates/exhibitors/edit_job.html:9 templates/exhibitors/edit_job.html:13
+#: templates/admin/change_password.html:10
+#: templates/admin/change_password.html:15
+msgid "Change password"
+msgstr ""
+
+#: templates/admin/edit_email.html:10 templates/admin/edit_email.html:15
+msgid "Edit email"
+msgstr ""
+
+#: templates/admin/edit_enterprise.html:10
+msgid "Edit enterprise"
+msgstr ""
+
+#: templates/admin/edit_enterprise.html:15
+msgid "Edit Enterprise"
+msgstr ""
+
+#: templates/admin/edit_enterprise.html:26
+msgid "Emails"
+msgstr ""
+
+#: templates/admin/edit_enterprise.html:28
+msgid "add new email"
+msgstr ""
+
+#: templates/admin/edit_enterprise.html:33
+msgid "email"
+msgstr ""
+
+#: templates/admin/edit_enterprise.html:43 templates/admin/enterprises.html:31
+#: templates/admin/jobs.html:43 templates/exhibitors/jobs.html:34
+msgid "edit"
+msgstr ""
+
+#: templates/admin/edit_enterprise.html:46 templates/admin/enterprises.html:36
+#: templates/admin/jobs.html:48 templates/exhibitors/jobs.html:39
+msgid "delete"
+msgstr ""
+
+#: templates/admin/edit_enterprise.html:51
+msgid "no email"
+msgstr ""
+
+#: templates/admin/edit_job.html:9 templates/exhibitors/edit_job.html:9
+#: templates/exhibitors/edit_job.html:13
 msgid "Edit job"
+msgstr ""
+
+#: templates/admin/edit_job.html:14
+msgid "Edit Job"
+msgstr ""
+
+#: templates/admin/enterprises.html:5 templates/admin/enterprises.html:10
+msgid "All enterprises"
+msgstr ""
+
+#: templates/admin/enterprises.html:12 templates/admin/jobs.html:11
+msgid "New"
+msgstr ""
+
+#: templates/admin/enterprises.html:13
+msgid "Sort"
+msgstr ""
+
+#: templates/admin/enterprises.html:42
+msgid "no enterprise provided yet"
+msgstr ""
+
+#: templates/admin/jobs.html:5 templates/admin/jobs.html:9
+#: templates/exhibitors/jobs.html:9
+msgid "All jobs"
+msgstr ""
+
+#: templates/admin/jobs.html:16
+msgid "sort"
+msgstr ""
+
+#: templates/admin/jobs.html:25 templates/exhibitors/jobs.html:19
+msgid "Type"
+msgstr ""
+
+#: templates/admin/jobs.html:26 templates/exhibitors/jobs.html:20
+msgid "Date"
+msgstr ""
+
+#: templates/admin/jobs.html:27
+msgid "Published"
+msgstr ""
+
+#: templates/admin/jobs.html:28
+msgid "state"
+msgstr ""
+
+#: templates/admin/jobs.html:54
+msgid "no job provided yet"
+msgstr ""
+
+#: templates/admin/new_email.html:10 templates/admin/new_email.html:15
+msgid "New email"
+msgstr ""
+
+#: templates/admin/new_enterprise.html:10
+#: templates/admin/new_enterprise.html:15
+msgid "New enterprise"
+msgstr ""
+
+#: templates/admin/new_job.html:24 templates/admin/new_job.html:29
+#: templates/exhibitors/new_job.html:11 templates/exhibitors/new_job.html:16
+msgid "New job"
+msgstr ""
+
+#: templates/admin/sort_enterprises.html:5
+msgid "Sort enterprises"
+msgstr ""
+
+#: templates/admin/sort_enterprises.html:11
+msgid ""
+"Drag the rows to sort the enterprises. Enterprises shown to visitors will"
+" have the same order you sort."
+msgstr ""
+
+#: templates/admin/sort_jobs.html:5
+msgid "Sort jobs:"
+msgstr ""
+
+#: templates/admin/sort_jobs.html:11
+msgid ""
+"Drag the rows to sort jobs. Jobs shown to visitors will have the same "
+"order you sort."
 msgstr ""
 
 #: templates/exhibitors/jobs.html:5
 msgid "Your jobs"
 msgstr ""
 
-#: templates/exhibitors/jobs.html:9
-msgid "All jobs"
-msgstr ""
-
 #: templates/exhibitors/jobs.html:18
 msgid "Company"
 msgstr ""
 
-#: templates/exhibitors/jobs.html:19
-msgid "Type"
-msgstr ""
-
-#: templates/exhibitors/jobs.html:20
-msgid "Date"
-msgstr ""
-
-#: templates/exhibitors/jobs.html:34
-msgid "edit"
-msgstr ""
-
-#: templates/exhibitors/jobs.html:39
-msgid "delete"
-msgstr ""
-
 #: templates/exhibitors/jobs.html:45
 msgid "No job yet"
-msgstr ""
-
-#: templates/exhibitors/new_job.html:11 templates/exhibitors/new_job.html:16
-msgid "New job"
 msgstr ""
 
 #: templates/exhibitors/services.html:4

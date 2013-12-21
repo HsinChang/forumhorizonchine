@@ -330,7 +330,8 @@ def new_job():
     grouped_emails = {e.key.urlsafe(): [] for e in enterprises}
     for m in mails:
         key = m.enterprise.urlsafe()
-        grouped_emails[key].append({'url': m.key.urlsafe(), 'email': m.email})
+        if key in grouped_emails:
+            grouped_emails[key].append({'url': m.key.urlsafe(), 'email': m.email})
 
     form.enterprise_email.choices = [(i['url'], i['email']) for value in grouped_emails.values() for i in value]
 
@@ -394,7 +395,8 @@ def edit_job(keyurl):
     grouped_emails = {e.key.urlsafe(): [] for e in enterprises}
     for m in mails:
         key = m.enterprise.urlsafe()
-        grouped_emails[key].append({'url': m.key.urlsafe(), 'email': m.email})
+        if key in grouped_emails:
+            grouped_emails[key].append({'url': m.key.urlsafe(), 'email': m.email})
 
     form.enterprise_email.choices = [(i['url'], i['email']) for value in grouped_emails.values() for i in value]
 

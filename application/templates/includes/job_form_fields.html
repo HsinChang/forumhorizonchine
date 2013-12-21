@@ -62,15 +62,21 @@
    var options = emails[this.value];
    $.each(options, function(key, value) {
      e.append($("<option></option>")
-      .attr("value", key).text(value));
+      .attr("value", value.url).text(value.email));
    });
  });
 
  $("#default_lang").chosen({width: "60%"});
  $("#cv_required").chosen({width: "60%"});
-</script>
-<script>
+
  $(document).ready(function(){
+//   var e = $('#enterprise_email');
+//   e.empty();
+//   var options = emails[$('#enterprise').value];
+//   $.each(options, function(key, value) {
+//     e.append($("<option></option>")
+//      .attr("value", key).text(value));
+//   });
    if($('#is_online').checked){
      document.getElementById('url').style.display = 'block';
      document.getElementById('email').style.display = 'none';

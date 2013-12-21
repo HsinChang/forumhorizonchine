@@ -8,7 +8,7 @@
 
 {% block content %}
 <h1>{{ _('Import')}}</h1>
-<h4>{{ _("Import enterprises' data":)}}</h4>
+<h4>{{ _("Import enterprises' data:")}}</h4>
 <form method="post" enctype="multipart/form-data" action="{{ url_for('admin.import_enterprise') }}">
   <input type="file" name="enterprise data"/>
   <input type="submit" value="input"/>

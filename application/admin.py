@@ -327,13 +327,12 @@ def new_job():
         flash('there is no enterprise, please create one before add new job', 'error')
         return redirect(url_for('admin.new_enterprise'))
 
-    grouped_emails = {e.key.urlsafe(): {} for e in enterprises}
+    grouped_emails = {e.key.urlsafe(): [] for e in enterprises}
     for m in mails:
         key = m.enterprise.urlsafe()
-        grouped_emails[key][str(m.key.urlsafe())] = m.email
+        grouped_emails[key].append({'url': m.key.urlsafe(), 'email': m.email})
 
-    key = form.enterprise.choices[0][0]
-    form.enterprise_email.choices = grouped_emails[key].items()
+    form.enterprise_email.choices = [(i['url'], i['email']) for value in grouped_emails.values() for i in value]
 
     if request.method == 'POST' and form.validate():
         user = flask_login.current_user
@@ -392,13 +391,12 @@ def edit_job(keyurl):
     mails = EmailModel.query()
 
     form.enterprise.choices = [(e.key.urlsafe(), e.name) for e in enterprises]
-    grouped_emails = {e.key.urlsafe(): {} for e in enterprises}
+    grouped_emails = {e.key.urlsafe(): [] for e in enterprises}
     for m in mails:
         key = m.enterprise.urlsafe()
-        grouped_emails[key][str(m.key.urlsafe())] = m.email
+        grouped_emails[key].append({'url': m.key.urlsafe(), 'email': m.email})
 
-    key = form.enterprise.choices[0][0]
-    form.enterprise_email.choices = grouped_emails[key].items()
+    form.enterprise_email.choices = [(i['url'], i['email']) for value in grouped_emails.values() for i in value]
 
     if request.method == 'POST' and form.validate():
         job.type = form.type.data
@@ -421,12 +419,11 @@ def edit_job(keyurl):
         except CapabilityDisabledError:
             flash('error', 'error')
     elif request.method == 'GET':
-    #GET handle goes here
-
+        #GET handle goes here
         #in case of no enterprise when importing
         if job.enterprise:
             form.enterprise.data = job.enterprise.urlsafe()
-            form.enterprise_email.choices = grouped_emails[form.enterprise.data].items()
+            form.enterprise_email.choices = [(i['url'], i['email']) for i in grouped_emails[form.enterprise.data]]
 
         if job.is_online:
             form.is_online.data = True

@@ -1,10 +1,16 @@
 {% macro render_field(field, groupid=None) %}
   {% if field.errors %}
-    <div class="control-group error">
-  {% elif groupid %}
-      <div class="control-group" id="{{ groupid }}">
+    {% if groupid %}
+      <div class="control-group error" id="{{ groupid }}">
+    {% else %}
+	<div class="control-group error">
+    {% endif %}
   {% else %}
-	<div class="control-group">
+	{% if  groupid %}
+	  <div class="control-group" id="{{ groupid }}">
+	{% else %}
+	  <div class="control-group">
+	{% endif %}
   {% endif %}
 
   {% if field.type != "HiddenField" %}

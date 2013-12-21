@@ -12,18 +12,38 @@ from models import UserModel, ROLES
 from flask_babel import Babel
 from flask_login import LoginManager, current_user
 from flask_mail import Mail
-import gettext
+import gettext, os
 gettext.install(None)
 
 app = Flask('application')
-app.config.from_object('application.settings')
+if os.getenv('FLASK_CONF') == 'DEV':
+	#development settings n
+    app.config.from_object('application.settings.Development')
+	# Flask-DebugToolbar (only enabled when DEBUG=True)
+    toolbar = DebugToolbarExtension(app)
+
+    # Google app engine mini profiler
+    # https://github.com/kamens/gae_mini_profiler
+    app.wsgi_app = DebuggedApplication(app.wsgi_app, evalex=True)
+
+    from gae_mini_profiler import profiler, templatetags
+    @app.context_processor
+    def inject_profiler():
+        return dict(profiler_includes=templatetags.profiler_includes())
+    app.wsgi_app = profiler.ProfilerWSGIMiddleware(app.wsgi_app)
+
+elif os.getenv('FLASK_CONF') == 'TEST':
+    app.config.from_object('application.settings.Testing')
+
+else:
+    app.config.from_object('application.settings.Production')
 
 # Enable jinja2 loop controls extension
 app.jinja_env.add_extension('jinja2.ext.loopcontrols')
+
 app.jinja_env.globals['LOCALES'] = sorted(app.config['LANGUAGES'].keys())
 app.jinja_env.globals['current_user'] = current_user
 app.jinja_env.globals['ROLES'] = ROLES
-
 
 #Babel
 babel = Babel(app)
@@ -73,14 +93,13 @@ app.register_blueprint(admin, url_prefix='/admin')
 # Pull in URL dispatch routes
 import urls
 
-# Flask-DebugToolbar (only enabled when DEBUG=True)
-toolbar = DebugToolbarExtension(app)
+# # Flask-DebugToolbar (only enabled when DEBUG=True)
+# toolbar = DebugToolbarExtension(app)
 
-# Werkzeug Debugger (only enabled when DEBUG=True)
-if app.debug:
-    app.wsgi_app = DebuggedApplication(app.wsgi_app, evalex=True)
+# # Werkzeug Debugger (only enabled when DEBUG=True)
+# if app.debug:
+#     app.wsgi_app = DebuggedApplication(app.wsgi_app, evalex=True)
+#     init_admin()
 
-# GAE Mini Profiler (only enabled on dev server)
-app.wsgi_app = profiler.ProfilerWSGIMiddleware(app.wsgi_app)
-
-init_admin()
+# # GAE Mini Profiler (only enabled on dev server)
+# app.wsgi_app = profiler.ProfilerWSGIMiddleware(app.wsgi_app)

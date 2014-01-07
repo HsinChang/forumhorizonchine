@@ -111,9 +111,10 @@ def sort_enterprises():
     """
     """
     enterprises = EnterpriseModel.query().order(EnterpriseModel.order)
-    es = []
-    for e in enterprises:
-        es.append(e)
+    e_list = []
+    for index, e in enumerate(enterprises):
+        e.order = index
+        e_list.append(e)
 
     if request.method == 'POST':
         data = request.form['order']
@@ -122,16 +123,12 @@ def sort_enterprises():
         for i in range(len(order)):
             rank = order[i]
             print rank
-            e = es[rank]
-            if e.order != i:
-                e.order = i
-                e.put()
+            e = e_list[rank]
+            e.order = i
+        ndb.put_multi(e_list)
+        e_list.sort(key=lambda e: e.order)
 
-        es.sort(key=lambda e: e.order)
-    else:
-        for e in es:
-            print e.order
-    return render_template("admin/sort_enterprises.html", enterprises=es)
+    return render_template("admin/sort_enterprises.html", enterprises=e_list)
 
 
 @admin.route('/new_enterprise', methods=['GET', 'POST'])
@@ -296,7 +293,8 @@ def sort_jobs(keyurl):
     key = ndb.Key(urlsafe=keyurl)
     jobs = JobModel.query(JobModel.enterprise==key).order(JobModel.order)
     job_list = []
-    for job in jobs:
+    for index, job in enumerate(jobs):
+        job.order = index
         job_list.append(job)
 
     if request.method == 'POST':
@@ -306,9 +304,9 @@ def sort_jobs(keyurl):
         for i in range(len(order)):
             rank = order[i]
             job = job_list[rank]
-            if job.order != i:
-                job.order = i
-                job.put()
+            job.order = i
+        ndb.put_multi(job_list)
+        job_list.sort(key=lambda j: j.order)
     return render_template('admin/sort_jobs.html', e=key.get(), jobs=jobs)
 
 @admin.route('/new_job', methods=['GET', 'POST'])

@@ -180,7 +180,7 @@ def apply():
 
     <p>Une nouvelle candidature pour le poste <b>{0}</b> a été envoyée par l'intermédiaire du site de l'AFCP, l'offre y étant publiée.</p>
 
-    <p>Veuillez trouver ci-joint le CV et la lettre de motivation de <b>{1} {2}</b> pour cette candidature. Vous pouvez le joindre à l'adresse e-mail <a href="mailto:{3}">{3}</a>.</p>
+    <p>Veuillez trouver ci-joint le CV et la lettre de motivation de <b>{1} {2}</b> pour cette candidature. Vous pouvez le/la joindre à l'adresse e-mail <a href="mailto:{3}">{3}</a>.</p>
 
     <p>Bien à vous,</p>
     <p>L'équipe AFCP</p>

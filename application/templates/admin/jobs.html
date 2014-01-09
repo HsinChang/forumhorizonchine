@@ -33,7 +33,7 @@
       <tbody>
 	{% for job in jobs %}
 	  <tr>
-	    <th>{{ job.meta["en"]["title"] }}</th>
+	    <th>{{ job.meta[job.default_lang]["title"] }}</th>
 	    <th>{{ job.type }}</th>
 	    <th>{{ job.date }}</th>
 	    <th>{{ job.published }}</th>

@@ -98,7 +98,7 @@ class JobMetaForm(wtf.Form):
 
 _lang_choices = [(k, v) for (k,v) in app.config['LANGUAGES'].items()]
 class JobForm(wtf.Form):
-    type = SelectField('Type', choices=[('Job', _('Job')), ('Internship', _('Internship'))])
+    type = SelectField('Type', choices=[('Job', 'Job'), ('Internship', 'Internship')])
     is_online = BooleanField('apply online')
     apply_url = StringField('apply URL')
     enterprise = SelectField('Enterprise')

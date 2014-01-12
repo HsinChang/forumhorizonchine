@@ -12,10 +12,10 @@
   <a class="button" href="{{ url_for('admin.new_enterprise') }}">{{ _('New') }}</a>
   <a class="button" href="{{ url_for('admin.sort_enterprises') }}">{{ _('Sort') }}</a>
 </p>
-<table id="enterprises">
+<table id="enterprises" class="pure-table pure-table-bordered">
   <thead>
     <tr>
-      <th class="index">Shortname</th>
+      <th>Shortname</th>
       <th>Name</th>
       <th>&nbsp;</th>
       <th>&nbsp;</th>
@@ -24,18 +24,18 @@
   <tbody>
     {% for e in enterprises %}
     <tr>
-      <th id="index_{{ e.order }}" class="index">{{ e.shortname }}</th>
-      <th>{{ e.name }}</th>
-      <th>
+      <td id="index_{{ e.order }}" class="index">{{ e.shortname }}</td>
+      <td>{{ e.name }}</td>
+      <td>
 	<a href="{{ url_for('admin.edit_enterprise', keyurl=e.key.urlsafe()) }}">
 	  {{ _('edit') }}
 	</a>
-      </th>
-      <th>
+      </td>
+      <td>
 	<a href="{{ url_for('admin.delete_enterprise', keyurl=e.key.urlsafe()) }}">
 	  {{ _('delete') }}
 	</a>
-      </th>
+      </td>
     </tr>
     {% else %}
     <tr>

@@ -15,20 +15,27 @@ from google.appengine.runtime.apiproxy_errors import CapabilityDisabledError
 from flask import request, render_template, flash, url_for, redirect, session
 
 from flask_cache import Cache
-from flask_babel import refresh
+from flask_babel import refresh, format_date
 import flask_login
 
 from application import app
 from decorators import login_required, admin_required
 from forms import RegisterForm, JobForm, BaseContactForm
-
+from models import ForumModel
 
 # Flask-Cache (configured to use App Engine Memcache API)
 cache = Cache(app)
 
 @app.route('/')
 def home():
-    return render_template('home.html')
+    forum = ForumModel.query().get()
+    if not forum:
+        forum = ForumModel(
+            date = '',
+            address = ''
+        )
+    forum.formated_date = format_date(forum.date, 'full')
+    return render_template('home.html', forum=forum)
 
 @app.route('/setlocale/<locale>')
 def setlocale(locale):

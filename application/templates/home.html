@@ -74,7 +74,7 @@
 	</p>
 
 	<p>
-	  {{ _('This year, the sixth edition will be held at <strong>ENSTA ParisTech</strong> on <strong>March 6, 2014</strong>. This unique event attracts the most promising students and graduates interested in a French-Chinese career. It will include a job fair and conference facilities where you will:') }}
+	  {{ _('This year, the sixth edition will be held at <strong>%(address)s</strong> on <strong>%(date)s</strong>. This unique event attracts the most promising students and graduates interested in a French-Chinese career. It will include a job fair and conference facilities where you will:', address=forum.address, date=forum.formated_date) }}
 	</p>
 	<ul>
 	  <li>

@@ -1,14 +1,14 @@
 # Translations template for PROJECT.
-# Copyright (C) 2013 ORGANIZATION
+# Copyright (C) 2014 ORGANIZATION
 # This file is distributed under the same license as the PROJECT project.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2013.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2014.
 #
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2013-12-20 21:00+0100\n"
+"POT-Creation-Date: 2014-01-12 22:58+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,28 +17,16 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 0.9.6\n"
 
-#: admin.py:167 admin.py:198
+#: admin.py:165 admin.py:196
 msgid "no such enterprise"
 msgstr ""
 
-#: admin.py:207 admin.py:467 exhibitor.py:107
+#: admin.py:205 admin.py:465 exhibitor.py:107
 msgid "fail to delete"
 msgstr ""
 
-#: admin.py:388 admin.py:462 exhibitor.py:81 exhibitor.py:101
+#: admin.py:387 admin.py:460 exhibitor.py:81 exhibitor.py:101
 msgid "no such job"
-msgstr ""
-
-#: configs.py:4 settings.py:38
-msgid "English"
-msgstr ""
-
-#: configs.py:4 settings.py:38
-msgid "French"
-msgstr ""
-
-#: configs.py:4 settings.py:38
-msgid "Chinese"
 msgstr ""
 
 #: exhibitor.py:24
@@ -49,63 +37,71 @@ msgstr ""
 msgid "job deleted"
 msgstr ""
 
-#: forms.py:101
-msgid "Job"
-msgstr ""
-
-#: forms.py:101
-msgid "Internship"
-msgstr ""
-
-#: forms.py:138
+#: forms.py:145
 msgid "Your email:"
 msgstr ""
 
-#: forms.py:139
+#: forms.py:146
 msgid "Message:"
 msgstr ""
 
-#: forms.py:142
+#: forms.py:149
 msgid "Your first name:"
 msgstr ""
 
-#: forms.py:143
+#: forms.py:150
 msgid "Your last name:"
+msgstr ""
+
+#: settings.py:38
+msgid "English"
+msgstr ""
+
+#: settings.py:38
+msgid "French"
+msgstr ""
+
+#: settings.py:38
+msgid "Chinese"
 msgstr ""
 
 #: templates/base.html:52
 msgid "Back to top"
 msgstr ""
 
-#: templates/base_admin.html:27
+#: templates/base_admin.html:26
 msgid "Admin area"
 msgstr ""
 
-#: templates/base_admin.html:30
+#: templates/base_admin.html:29
 msgid "Welcome!"
 msgstr ""
 
-#: templates/base_admin.html:30
+#: templates/base_admin.html:29
 msgid "logout"
 msgstr ""
 
-#: templates/base_admin.html:35
+#: templates/base_admin.html:34
 msgid "change password"
 msgstr ""
 
-#: templates/base_admin.html:39
+#: templates/base_admin.html:38
 msgid "users"
 msgstr ""
 
-#: templates/base_admin.html:43
+#: templates/base_admin.html:42
 msgid "jobs"
 msgstr ""
 
-#: templates/base_admin.html:47
+#: templates/base_admin.html:46
 msgid "enterprises"
 msgstr ""
 
-#: templates/base_admin.html:51
+#: templates/base_admin.html:50
+msgid "forum"
+msgstr ""
+
+#: templates/base_admin.html:54 templates/admin/data.html:6
 msgid "data"
 msgstr ""
 
@@ -145,12 +141,12 @@ msgid ""
 msgstr ""
 
 #: templates/home.html:77
+#, python-format
 msgid ""
-"This year, the sixth edition will be held at <strong>ENSTA "
-"ParisTech</strong> on <strong>March 6, 2014</strong>. This unique event "
-"attracts the most promising students and graduates interested in a "
-"French-Chinese career. It will include a job fair and conference "
-"facilities where you will:"
+"This year, the sixth edition will be held at <strong>%(address)s</strong>"
+" on <strong>%(date)s</strong>. This unique event attracts the most "
+"promising students and graduates interested in a French-Chinese career. "
+"It will include a job fair and conference facilities where you will:"
 msgstr ""
 
 #: templates/home.html:81
@@ -318,45 +314,69 @@ msgstr ""
 msgid "Team leaders of China Horizon Forum 2013"
 msgstr ""
 
-#: templates/about/contact.html:18 templates/exhibitors/jobs.html:17
+#: templates/about/contact.html:19 templates/exhibitors/jobs.html:17
 msgid "Name"
 msgstr ""
 
-#: templates/about/contact.html:19 templates/admin/jobs.html:24
+#: templates/about/contact.html:20 templates/admin/jobs.html:24
 msgid "Title"
 msgstr ""
 
-#: templates/about/contact.html:22 templates/visitors/program.html:56
+#: templates/about/contact.html:25 templates/visitors/program.html:56
 msgid "Mr. Qi ZHU"
 msgstr ""
 
-#: templates/about/contact.html:23
+#: templates/about/contact.html:26
 msgid "AFCP President"
 msgstr ""
 
-#: templates/about/contact.html:26
+#: templates/about/contact.html:29
 msgid "Ms. Nan ZHANG"
 msgstr ""
 
-#: templates/about/contact.html:27 templates/about/contact.html:31
+#: templates/about/contact.html:30 templates/about/contact.html:34
 msgid "Forum team member"
 msgstr ""
 
-#: templates/about/contact.html:30
+#: templates/about/contact.html:33
 msgid "Mr. Zheng LI"
 msgstr ""
 
-#: templates/about/contact.html:44
+#: templates/about/contact.html:48
 msgid "Wish to contact us?"
 msgstr ""
 
-#: templates/about/contact.html:49 templates/includes/job_apply.html:65
+#: templates/about/contact.html:53 templates/includes/job_apply.html:65
 msgid "Send"
 msgstr ""
 
 #: templates/admin/change_password.html:10
 #: templates/admin/change_password.html:15
 msgid "Change password"
+msgstr ""
+
+#: templates/admin/data.html:10
+msgid "Import"
+msgstr ""
+
+#: templates/admin/data.html:11
+msgid "Import enterprises' data:"
+msgstr ""
+
+#: templates/admin/data.html:17
+msgid "Import jobs' data:"
+msgstr ""
+
+#: templates/admin/data.html:23
+msgid "Export"
+msgstr ""
+
+#: templates/admin/data.html:25
+msgid "export enterprise"
+msgstr ""
+
+#: templates/admin/data.html:28
+msgid "export jobs"
 msgstr ""
 
 #: templates/admin/edit_email.html:10 templates/admin/edit_email.html:15
@@ -420,6 +440,10 @@ msgstr ""
 
 #: templates/admin/enterprises.html:42
 msgid "no enterprise provided yet"
+msgstr ""
+
+#: templates/admin/forum.html:6 templates/admin/forum.html:12
+msgid "Forum"
 msgstr ""
 
 #: templates/admin/jobs.html:5 templates/admin/jobs.html:9
@@ -824,10 +848,18 @@ msgstr ""
 msgid "required field"
 msgstr ""
 
-#: templates/includes/job_form_fields.html:9
+#: templates/includes/job_form_fields.html:10
 msgid ""
 "For the following 3 sections, please check the \"publish\" checkbox to "
 "make it visible to users"
+msgstr ""
+
+#: templates/includes/job_form_fields.html:13
+msgid ""
+"If you have only one language version of job, just choose the right "
+"section of language and set the right default language. This version will"
+" also be shown to clients when other language versions are empty. So you "
+"don't need to edit and copy 3 versions"
 msgstr ""
 
 #: templates/includes/nav.html:20
@@ -1003,6 +1035,10 @@ msgid "Registration to the China Horizon Forum"
 msgstr ""
 
 #: templates/visitors/inscription.html:17
+msgid "loading..."
+msgstr ""
+
+#: templates/visitors/inscription.html:20
 msgid ""
 "Registrations for the 2014 edition of the China Horizon Forum are not yet"
 " open. Please come back later to register. Registrations will be open to "

@@ -7,12 +7,13 @@
 from google.appengine.runtime.apiproxy_errors import CapabilityDisabledError
 from google.appengine.ext import ndb
 from flask import Blueprint, render_template, redirect, url_for, request, flash, Response
-from forms import RegisterForm, JobForm, EnterpriseForm, EmailForm, PasswordForm, BaseEnterpriseForm
-from models import UserModel, JobModel, JobMetaModel, ROLES, EnterpriseModel, EmailModel
+from forms import RegisterForm, JobForm, EnterpriseForm, EmailForm, PasswordForm, BaseEnterpriseForm, ForumForm
+from models import UserModel, JobModel, JobMetaModel, ROLES, EnterpriseModel, EmailModel, ForumModel
 from decorators import admin_required
 from application import app
 from passlib.apps import custom_app_context as pwd_context
 import flask_login
+from flask_babel import format_date
 from os.path import splitext
 import re
 import json
@@ -463,6 +464,24 @@ def delete_job(keyurl):
     except CapabilityDisabledError:
         flash(_('fail to delete'), 'error')
     return redirect(url_for('admin.jobs'))
+
+
+@admin.route('/forum', methods=["GET", "POST"])
+@admin_required
+def forum():
+    forum = ForumModel.query().get()
+    if not forum:
+        forum = ForumModel()
+    form = ForumForm(request.form, obj=forum)
+    if request.method == 'POST' and form.validate():
+        forum.date = form.date.data
+        forum.address = form.address.data
+        forum.registrable = form.registrable.data
+        if forum.registrable:
+            forum.register_link = form.register_link.data
+        forum.put()
+    return render_template('admin/forum.html', form=form)
+
 
 import data as Data
 @admin.route('/data')

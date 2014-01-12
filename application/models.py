@@ -66,3 +66,10 @@ class UserModel(ndb.Model):
 
     def get_id(self):
         return unicode(self.key.id())
+
+class ForumModel(ndb.Model):
+    date = ndb.DateProperty(required=True)
+    address = ndb.StringProperty(required=True)
+    duration = ndb.IntegerProperty()
+    registrable = ndb.BooleanProperty(required=True)
+    register_link = ndb.StringProperty()

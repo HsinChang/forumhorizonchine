@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from flask import Blueprint, render_template, redirect, url_for, request, flash, session
-from models import JobModel, EnterpriseModel, EmailModel
+from models import JobModel, EnterpriseModel, EmailModel, ForumModel
 from forms import ContactForm
 from flask_mail import Message
 from flask_babel import lazy_gettext
@@ -14,7 +14,13 @@ visitor = Blueprint('visitor', __name__)
 #visitors
 @visitor.route('/inscription')
 def inscription():
-    return render_template('visitors/inscription.html')
+    forum = ForumModel.query().get()
+    registrable = False
+    link = None
+    if forum and forum.registrable:
+        registrable = True
+        link = forum.register_link
+    return render_template('visitors/inscription.html', registrable=registrable, link=link)
 
 
 @visitor.route('/program')

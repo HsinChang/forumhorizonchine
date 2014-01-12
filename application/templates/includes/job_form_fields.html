@@ -6,7 +6,12 @@
 {{ render_field(form.enterprise_email, groupid="email") }}
 {{ render_field(form.type) }}
 <div class="section job">
-  <h4>{{ _('For the following 3 sections, please check the "publish" checkbox to make it visible to users') }}</h4>
+  <h4>
+    {{ _('For the following 3 sections, please check the "publish" checkbox to make it visible to users') }}
+  </h4>
+  <h4>
+    {{ _("If you have only one language version of job, just choose the right section of language and set the right default language. This version will also be shown to clients when other language versions are empty. So you don't need to edit and copy 3 versions") }}
+  </h4>
   <div class="block-job">
     <div id="en" class="apply-button {% if form.title_en.errors or form.content_en.errors %}field-error{% endif %}">
       <div>English version</div>

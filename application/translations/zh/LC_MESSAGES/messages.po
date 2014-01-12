@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2014-01-12 22:58+0100\n"
-"PO-Revision-Date: 2014-01-12 23:01+0100\n"
+"PO-Revision-Date: 2014-01-12 23:43+0100\n"
 "Last-Translator: Tianming.Lu <lutianming1005@gmail.com>\n"
 "Language-Team: zh <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -492,7 +492,7 @@ msgstr "类型"
 
 #: templates/admin/jobs.html:26 templates/exhibitors/jobs.html:20
 msgid "Date"
-msgstr "类型"
+msgstr "日期"
 
 #: templates/admin/jobs.html:27
 msgid "Published"
@@ -1127,6 +1127,9 @@ msgid ""
 "interview workshops organized respectively by Dragonfly Group and Saint-"
 "Gobain at the 2012 Forum."
 msgstr ""
+"2014年中国地平线论坛的报名工作还未开放。请您稍后再前来报名注册！针对论坛的一"
+"些特殊活动，我们可能会安排其它报名环节，如分别由Dragonfly Group 和Saint "
+"Gobain 在2012年论坛组织的CV讨论会和面试。"
 
 #: templates/visitors/job.html:21
 msgid "Job opportunities via China Horizon Forum"

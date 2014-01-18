@@ -74,13 +74,10 @@ app.register_blueprint(admin, url_prefix='/admin')
 import urls
 
 # Flask-DebugToolbar (only enabled when DEBUG=True)
-toolbar = DebugToolbarExtension(app)
-
 # Werkzeug Debugger (only enabled when DEBUG=True)
 if app.debug:
     app.wsgi_app = DebuggedApplication(app.wsgi_app, evalex=True)
-
+    toolbar = DebugToolbarExtension(app)
+    init_admin()
 # GAE Mini Profiler (only enabled on dev server)
 app.wsgi_app = profiler.ProfilerWSGIMiddleware(app.wsgi_app)
-
-init_admin()

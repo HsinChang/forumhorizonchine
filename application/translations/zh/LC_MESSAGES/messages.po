@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2014-01-12 22:58+0100\n"
-"PO-Revision-Date: 2014-01-12 23:43+0100\n"
+"POT-Creation-Date: 2014-01-18 14:35+0100\n"
+"PO-Revision-Date: 2014-01-18 14:36+0100\n"
 "Last-Translator: Tianming.Lu <lutianming1005@gmail.com>\n"
 "Language-Team: zh <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -53,6 +53,14 @@ msgstr "名"
 #: forms.py:150
 msgid "Your last name:"
 msgstr "姓"
+
+#: models.py:12
+msgid "Job"
+msgstr "工作"
+
+#: models.py:12
+msgid "Jnternship"
+msgstr "实习"
 
 #: settings.py:38
 msgid "English"
@@ -1279,9 +1287,3 @@ msgstr "您想要对此发表评论？"
 #: templates/visitors/workpermit.html:28
 msgid "Send the message"
 msgstr "发送消息"
-
-#~ msgid "Job"
-#~ msgstr "工作职位"
-
-#~ msgid "Internship"
-#~ msgstr "实习"

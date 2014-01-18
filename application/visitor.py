@@ -152,9 +152,9 @@ def apply():
 
     sender = app.config['SENDER']
     cc = app.config['CC']
-    subject_en = 'New application sent by AFCP'
-    subject_zh = u'来自AFCP的新职位申请'
-    subject_fr = u'Une nouvelle candidatur envoyée par AFCP'
+    subject_en = 'New application sent by the site of AFCP'
+    subject_zh = u'来自AFCP网站的新职位申请'
+    subject_fr = u"Une nouvelle candidature envoyée par  le site de l'AFCP"
     subjects = {'en': subject_en, 'zh': subject_zh, 'fr': subject_fr}
     body_en = u"""
     <html>

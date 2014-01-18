@@ -10,7 +10,7 @@ from google.appengine.ext import ndb
 from gettext import gettext
 
 ROLES ={'EXHIBITOR':'exhibitor', 'ADMIN': 'admin'}
-OFFRE_TYPES = {'JOB': gettext('Job'), 'INTERN': gettext('Jnternship')}
+OFFRE_TYPES = {'JOB': gettext('Job'), 'INTERN': gettext('Internship')}
 
 class JobMetaModel(ndb.Model):
     published = ndb.BooleanProperty(required=True)

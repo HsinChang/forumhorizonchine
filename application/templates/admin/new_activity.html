@@ -1,7 +1,9 @@
 {% extends "base_admin.html" %}
 {% from "_formhelpers.html" import render_field as render_field %}
+{% from "_alohahelpers.html" import init_aloha as init_aloha %}
 
 {% block header %}
+  {% include "includes/aloha.html" %}
 {% endblock header %}
 
 {% block html_title %}
@@ -12,7 +14,7 @@
 
 {% block content %}
 <h1>{{ _('New activity')}}</h1>
-<form method="post" action="{{ url_for('admin.new_activity') }}">
+<form id="activity_form" method="post" action="{{ url_for('admin.new_activity') }}">
   <fieldset>
     {{ form.hidden_tag() }}
     {{ render_field(form.title) }}
@@ -20,9 +22,10 @@
     {{ render_field(form.address) }}
     {{ render_field(form.registrable) }}
     {{ render_field(form.register_link) }}
-    {{ render_field(form.content) }}
+    {{ render_field(form.content, class="text_content") }}
   </fieldset>
   <input type="submit" value="Save">
   </input>
 </form>
+{{ init_aloha("#activity_form", ".text_content") }}
 {% endblock content %}

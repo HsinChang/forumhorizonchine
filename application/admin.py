@@ -541,7 +541,7 @@ def edit_activity(keyurl):
 @admin_required
 def delete_activity(keyurl):
     activity = ndb.Key(urlsafe=keyurl).get()
-    activity.delete()
+    activity.key.delete()
     return redirect(url_for('admin.activities'))
 
 import data as Data

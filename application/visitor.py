@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from flask import Blueprint, render_template, redirect, url_for, request, flash, session
-from models import JobModel, EnterpriseModel, EmailModel, ForumModel
+from models import JobModel, EnterpriseModel, EmailModel, ForumModel, ActivityModel
 from forms import ContactForm
 from flask_mail import Message
 from flask_babel import lazy_gettext
@@ -22,6 +22,14 @@ def inscription():
         link = forum.register_link
     return render_template('visitors/inscription.html', registrable=registrable, link=link)
 
+
+@visitor.route('/inscript/<keyurl>')
+def inscript(keyurl):
+    activity = ndb.Key(urlsafe=keyurl).get()
+    if not activity:
+        flash("enable to register")
+        return redirect(url_for('visitor.activities'))
+    return render_template('visitors/inscript.html', activity=activity)
 
 @visitor.route('/program')
 def program():
@@ -61,7 +69,10 @@ def job():
 
     return render_template('visitors/job.html', grouped_jobs=grouped_jobs, languages = app.config['LANGUAGES'])
 
-
+@visitor.route('/activities')
+def activities():
+    a = ActivityModel.query()
+    return render_template('visitors/activities.html', activities=a)
 
 @visitor.route('/workpermit', methods=['GET', 'POST'])
 def workpermit():

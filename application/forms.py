@@ -155,3 +155,12 @@ class ForumForm(wtf.Form):
     address = StringField('address', validators=[validators.InputRequired()])
     registrable = BooleanField('registrable')
     register_link = StringField('register link', validators=[link_check])
+
+
+class ActivityForm(wtf.Form):
+    date = DateField('date(format mm/dd/yy)', format='%m/%d/%Y', validators=[validators.InputRequired()])
+    address = StringField('address', validators=[validators.InputRequired()])
+    registrable = BooleanField('registrable')
+    register_link = StringField('register link', validators=[link_check])
+    title = StringField('title', validators=[validators.InputRequired()])
+    content = TextAreaField('content', validators=[validators.InputRequired()])

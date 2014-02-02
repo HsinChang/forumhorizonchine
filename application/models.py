@@ -5,11 +5,10 @@ App Engine datastore models
 
 """
 
-
 from google.appengine.ext import ndb
 from gettext import gettext
 
-ROLES ={'EXHIBITOR':'exhibitor', 'ADMIN': 'admin'}
+ROLES = {'EXHIBITOR':'exhibitor', 'ADMIN': 'admin'}
 OFFRE_TYPES = {'JOB': gettext('Job'), 'INTERN': gettext('Internship')}
 
 class JobMetaModel(ndb.Model):
@@ -72,5 +71,12 @@ class ForumModel(ndb.Model):
     date = ndb.DateProperty(required=True)
     address = ndb.StringProperty(required=True)
     duration = ndb.IntegerProperty()
+    registrable = ndb.BooleanProperty(required=True)
+    register_link = ndb.StringProperty()
+
+class ActivityModel(ndb.Model):
+    meta = ndb.JsonProperty()
+    date = ndb.DateProperty(required=True)
+    address = ndb.StringProperty(required=True)
     registrable = ndb.BooleanProperty(required=True)
     register_link = ndb.StringProperty()

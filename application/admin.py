@@ -7,8 +7,8 @@
 from google.appengine.runtime.apiproxy_errors import CapabilityDisabledError
 from google.appengine.ext import ndb
 from flask import Blueprint, render_template, redirect, url_for, request, flash, Response
-from forms import RegisterForm, JobForm, EnterpriseForm, EmailForm, PasswordForm, BaseEnterpriseForm, ForumForm
-from models import UserModel, JobModel, JobMetaModel, ROLES, EnterpriseModel, EmailModel, ForumModel
+from forms import RegisterForm, JobForm, EnterpriseForm, EmailForm, PasswordForm, BaseEnterpriseForm, ForumForm, ActivityForm
+from models import UserModel, JobModel, JobMetaModel, ROLES, EnterpriseModel, EmailModel, ForumModel, ActivityModel
 from decorators import admin_required
 from application import app
 from passlib.apps import custom_app_context as pwd_context
@@ -482,6 +482,67 @@ def forum():
         forum.put()
     return render_template('admin/forum.html', form=form)
 
+
+@admin.route('/activities')
+@admin_required
+def activities():
+    a = ActivityModel.query()
+    return render_template('admin/activities.html', activities=a)
+
+@admin.route('/new_activity', methods=['GET', 'POST'])
+@admin_required
+def new_activity():
+    form = ActivityForm(request.form)
+    if request.method == 'POST' and form.validate():
+        meta = {}
+        meta['en'] = {
+            'title': form.title.data,
+            'content': form.content.data
+        }
+        activity = ActivityModel(
+            date = form.date.data,
+            address = form.address.data,
+            registrable = form.registrable.data,
+            register_link = form.register_link.data,
+            meta = meta
+        )
+        activity.put()
+        return redirect(url_for('admin.activities'))
+    return render_template('admin/new_activity.html', form=form)
+
+@admin.route('/edit_activity/<keyurl>', methods=['GET', 'POST'])
+@admin_required
+def edit_activity(keyurl):
+    activity = ndb.Key(urlsafe=keyurl).get()
+    if not activity:
+        return redirect('admin.activities')
+    form = ActivityForm(request.form, obj=activity)
+    if request.method == 'GET':
+        form.title.data = activity.meta['en']['title']
+        form.content.data = activity.meta['en']['content']
+
+    if request.method == 'POST' and form.validate():
+        meta = {}
+        meta['en'] = {
+            'title': form.title.data,
+            'content': form.content.data
+        }
+        activity.date = form.date.data
+        activity.address = form.address.data
+        activity.registrable = form.registrable.data
+        activity.register_link = form.register_link.data
+        activity.meta = meta
+
+        activity.put()
+        return redirect(url_for('admin.activities'))
+    return render_template('admin/edit_activity.html', form=form, keyurl=keyurl)
+
+@admin.route('/delete_activity/<keyurl>')
+@admin_required
+def delete_activity(keyurl):
+    activity = ndb.Key(urlsafe=keyurl).get()
+    activity.delete()
+    return redirect(url_for('admin.activities'))
 
 import data as Data
 @admin.route('/data')

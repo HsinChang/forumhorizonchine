@@ -1,0 +1,47 @@
+{% extends "base_admin.html" %}
+{% block html_title %}
+  <title>
+    {{ _('All activities') }}
+  </title>
+{% endblock html_title %}
+
+{% block content %}
+  <h1 id="">{{ _('All activities') }}</h1>
+  <p>
+    <a class="button" href="{{ url_for('admin.new_activity') }}">{{ _('New') }}</a>
+  </p>
+  <table id="activity">
+    <thead>
+      <tr>
+	<th>Title</th>
+	<th>Date</th>
+	<th>State</th>
+	<th>&nbsp;</th>
+	<th>&nbsp;</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for a in activities %}
+	<tr>
+	  <td>{{ a.meta['en']['title'] }}</td>
+	  <td>{{ a.date }}</td>
+	  <td>{{ a.registrable }}</td>
+	  <td>
+	    <a href="{{ url_for('admin.edit_activity', keyurl=a.key.urlsafe()) }}">
+	      {{ _('edit') }}
+	    </a>
+	  </td>
+	  <td>
+	    <a href="{{ url_for('admin.delete_activity', keyurl=a.key.urlsafe()) }}">
+	      {{ _('delete') }}
+	    </a>
+	  </td>
+	</tr>
+    {% else %}
+	<tr>
+	  <td colspan="5">{{ _('no activity yet') }}</td>
+	</tr>
+      {% endfor %}
+    </tbody>
+  </table
+{% endblock content %}

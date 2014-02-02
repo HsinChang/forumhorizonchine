@@ -1,47 +1,47 @@
 {% extends "base_admin.html" %}
 
 {% block html_title %}
-<title>
-  {{ _('All enterprises') }}
-</title>
+  <title>
+    {{ _('All enterprises') }}
+  </title>
 {% endblock html_title %}
 
 {% block content %}
-<h1 id="">{{ _('All enterprises') }}</h1>
-<p>
-  <a class="button" href="{{ url_for('admin.new_enterprise') }}">{{ _('New') }}</a>
-  <a class="button" href="{{ url_for('admin.sort_enterprises') }}">{{ _('Sort') }}</a>
-</p>
-<table id="enterprises">
-  <thead>
-    <tr>
-      <th>Shortname</th>
-      <th>Name</th>
-      <th>&nbsp;</th>
-      <th>&nbsp;</th>
-    </tr>
-  </thead>
-  <tbody>
-    {% for e in enterprises %}
-    <tr>
-      <td id="index_{{ e.order }}" class="index">{{ e.shortname }}</td>
-      <td>{{ e.name }}</td>
-      <td>
-	<a href="{{ url_for('admin.edit_enterprise', keyurl=e.key.urlsafe()) }}">
-	  {{ _('edit') }}
-	</a>
-      </td>
-      <td>
-	<a href="{{ url_for('admin.delete_enterprise', keyurl=e.key.urlsafe()) }}">
-	  {{ _('delete') }}
-	</a>
-      </td>
-    </tr>
+  <h1 id="">{{ _('All enterprises') }}</h1>
+  <p>
+    <a class="button" href="{{ url_for('admin.new_enterprise') }}">{{ _('New') }}</a>
+    <a class="button" href="{{ url_for('admin.sort_enterprises') }}">{{ _('Sort') }}</a>
+  </p>
+  <table id="enterprises">
+    <thead>
+      <tr>
+	<th>Shortname</th>
+	<th>Name</th>
+	<th>&nbsp;</th>
+	<th>&nbsp;</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for e in enterprises %}
+	<tr>
+	  <td id="index_{{ e.order }}" class="index">{{ e.shortname }}</td>
+	  <td>{{ e.name }}</td>
+	  <td>
+	    <a href="{{ url_for('admin.edit_enterprise', keyurl=e.key.urlsafe()) }}">
+	      {{ _('edit') }}
+	    </a>
+	  </td>
+	  <td>
+	    <a href="{{ url_for('admin.delete_enterprise', keyurl=e.key.urlsafe()) }}">
+	      {{ _('delete') }}
+	    </a>
+	  </td>
+	</tr>
     {% else %}
-    <tr>
-      <td colspan="5">{{ _('no enterprise provided yet') }}</td>
-    </tr>
-    {% endfor %}
-  </tbody>
-</table>
+	<tr>
+	  <td colspan="5">{{ _('no enterprise provided yet') }}</td>
+	</tr>
+      {% endfor %}
+    </tbody>
+  </table>
 {% endblock content %}

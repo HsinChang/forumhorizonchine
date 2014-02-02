@@ -1,0 +1,24 @@
+{% extends "base_visitors.html" %}
+
+{% block html_title %}
+  <title>{{ activity.meta['en']['title'] }}</title>
+{% endblock %}{# html_title #}
+
+{% block content %}
+
+  <div class="section">
+    <h1>{{ _('Registrations')}}</h1>
+    <h2>
+      {{ _('Registration') + " : " + activity.meta['en']['title'] }}
+    </h2>
+    {% if activity.registrable %}
+    <iframe src="https://docs.google.com/spreadsheet/embeddedform?formkey=dGJlZnJCMkRuT1NBOXJtbzVVaU1nNlE6MQ" width="670" height="1873" frameborder="0" marginheight="0" marginwidth="0">{{ _("loading...") }}</iframe>
+    {% else %}
+      <p>
+	{{ _("the registration is not open yet, please wait. Thanks!") }}
+      </p>
+    {% endif %}
+
+  </div>
+
+{% endblock %}{# content #}

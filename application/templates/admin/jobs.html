@@ -13,9 +13,9 @@
   {% for e, jobs in grouped_jobs.items() %}
     <h4>
       {% if e %}
-	{{ e.get().shortname }} <a href="{{ url_for('admin.sort_jobs', keyurl=e.urlsafe()) }}">{{ _('sort') }}</a>
+	{{ e.get().name }} <a href="{{ url_for('admin.sort_jobs', keyurl=e.urlsafe()) }}">{{ _('sort') }}</a>
       {% else %}
-	<font color="red">incomplete jobs</font>
+	{#	<font color="red">incomplete jobs</font> #}
       {% endif %}
     </h4>
     <table>

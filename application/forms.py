@@ -12,7 +12,7 @@ from application import app
 from flaskext import wtf
 from flask_login import current_user
 from flask_babel import lazy_gettext
-from wtforms import StringField, PasswordField, BooleanField, TextAreaField, SelectField, FormField, SelectMultipleField, HiddenField
+from wtforms import StringField, PasswordField, BooleanField, TextAreaField, SelectField, FormField, SelectMultipleField, HiddenField, DateField
 from wtforms import validators
 from passlib.apps import custom_app_context as pwd_context
 from .models import UserModel, EnterpriseModel
@@ -39,6 +39,13 @@ def shortname_check(form, field):
     shortname = field.data
     if not re.match("^[\w]+$", shortname):
         raise validators.ValidationError('shortname can only contain letters, numbers and underscore!')
+
+
+def link_check(form, field):
+    """link is required if forum is registrable"""
+    if form.registrable.data and len(field.data)==0:
+        raise validators.ValidationError('link should is required when the forum is registrable')
+
 
 def job_lang_check(lang):
     """
@@ -98,7 +105,7 @@ class JobMetaForm(wtf.Form):
 
 _lang_choices = [(k, v) for (k,v) in app.config['LANGUAGES'].items()]
 class JobForm(wtf.Form):
-    type = SelectField('Type', choices=[('Job', _('Job')), ('Internship', _('Internship'))])
+    type = SelectField('Type', choices=[('Job', 'Job'), ('Internship', 'Internship')])
     is_online = BooleanField('apply online')
     apply_url = StringField('apply URL')
     enterprise = SelectField('Enterprise')
@@ -141,3 +148,19 @@ class BaseContactForm(wtf.Form):
 class ContactForm(BaseContactForm):
     first_name = StringField(lazy_gettext('Your first name:'), validators=[validators.InputRequired()])
     last_name = StringField(lazy_gettext('Your last name:'), validators=[validators.InputRequired()])
+
+
+class ForumForm(wtf.Form):
+    date = DateField('date', format='%m/%d/%Y', validators=[validators.InputRequired()])
+    address = StringField('address', validators=[validators.InputRequired()])
+    registrable = BooleanField('registrable')
+    register_link = StringField('register link', validators=[link_check])
+
+
+class ActivityForm(wtf.Form):
+    date = DateField('date(format mm/dd/yy)', format='%m/%d/%Y', validators=[validators.InputRequired()])
+    address = StringField('address', validators=[validators.InputRequired()])
+    registrable = BooleanField('registrable')
+    register_link = StringField('register link', validators=[link_check])
+    title = StringField('title', validators=[validators.InputRequired()])
+    content = TextAreaField('content', validators=[validators.InputRequired()])

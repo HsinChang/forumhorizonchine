@@ -4,13 +4,12 @@
   {% block html_title %}
     <title>ADMIN</title>
   {% endblock html_title %}
-
   <script type="text/javascript" src="{{ url_for('static', filename="js/lib/jquery.ui.core.js") }}"></script>
   <script type="text/javascript" src="{{ url_for('static', filename="js/lib/jquery.ui.widget.js") }}"></script>
   <script type="text/javascript" src="{{ url_for('static', filename="js/lib/jquery.ui.mouse.js") }}"></script>
   <script type="text/javascript" src="{{ url_for('static', filename="js/lib/jquery.ui.sortable.js") }}"></script>
   <link rel="stylesheet" type="text/css" media="screen" href="{{ url_for('static', filename='css/sections.css') }}"/>
-
+{#  <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.3.0/pure-min.css">#}
 {% endblock html_head %}{# html_head #}
 
 {% block header %}
@@ -45,6 +44,14 @@
       <li {% if request.path == url_for('admin.enterprises') %}
 	class="current" {% endif %}>
 	<a href="{{ url_for('admin.enterprises') }}">{{ _('enterprises')}}</a>
+      </li>
+      <li {% if request.path == url_for('admin.forum') %}
+	class="current" {% endif %}>
+	<a href="{{ url_for('admin.forum') }}">{{ _('forum')}}</a>
+      </li>
+      <li {% if request.path == url_for('admin.activities') %}
+	class="current" {% endif %}>
+	<a href="{{ url_for('admin.activities') }}">{{ _('activities')}}</a>
       </li>
       <li {% if request.path == url_for('admin.data') %}
 	class="current" {% endif %}>

@@ -392,14 +392,10 @@ th {
 	font-size: medium;
 }
 
-
-/*new job textarea*/
-/*there is something wrong with Aloha editor
-  that the textarea is only 100px wide instead
-  of 100%
-  maybe we can change a editor...
-  */
-.job_content {
+.text_content {
     width: 100%;
     height: 300px;
+}
+input[type=text] {
+    width: 100%;
 }

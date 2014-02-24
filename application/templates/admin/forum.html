@@ -1,0 +1,28 @@
+{% extends "base_admin.html" %}
+
+{% from "_formhelpers.html" import render_field as render_field %}
+
+{% block html_title %}
+<title>{{ _('Forum') }}</title>
+<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
+{% endblock html_title %}
+
+{% block content %}
+<h1>{{ _('Forum') }}</h1>
+<form method="post" action="{{ url_for('admin.forum') }}">
+  <fieldset>
+    {{ form.hidden_tag() }}
+    {{ render_field(form.date) }}
+    {{ render_field(form.address) }}
+    {{ render_field(form.registrable) }}
+    {{ render_field(form.register_link) }}
+  </fieldset>
+  <input type="submit" value="Save">
+</form>
+<script>
+ $(function() {
+   $("#date").datepicker();
+ });
+</script>
+{% endblock content %}

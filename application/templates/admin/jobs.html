@@ -13,9 +13,9 @@
   {% for e, jobs in grouped_jobs.items() %}
     <h4>
       {% if e %}
-	{{ e.get().shortname }} <a href="{{ url_for('admin.sort_jobs', keyurl=e.urlsafe()) }}">{{ _('sort') }}</a>
+	{{ e.get().name }} <a href="{{ url_for('admin.sort_jobs', keyurl=e.urlsafe()) }}">{{ _('sort') }}</a>
       {% else %}
-	<font color="red">incomplete jobs</font>
+	{#	<font color="red">incomplete jobs</font> #}
       {% endif %}
     </h4>
     <table>
@@ -33,21 +33,21 @@
       <tbody>
 	{% for job in jobs %}
 	  <tr>
-	    <th>{{ job.meta["en"]["title"] }}</th>
-	    <th>{{ job.type }}</th>
-	    <th>{{ job.date }}</th>
-	    <th>{{ job.published }}</th>
-	    <th>{{ job.is_complete }}</th>
-	    <th>
+	    <td>{{ job.meta[job.default_lang]["title"] }}</td>
+	    <td>{{ job.type }}</td>
+	    <td>{{ job.date }}</td>
+	    <td>{{ job.published }}</td>
+	    <td>{{ job.is_complete }}</td>
+	    <td>
 	      <a href="{{ url_for('admin.edit_job', keyurl=job.key.urlsafe()) }}">
 		{{ _('edit') }}
 	      </a>
-	    </th>
-	    <th>
+	    </td>
+	    <td>
 	      <a href="{{ url_for('admin.delete_job', keyurl=job.key.urlsafe()) }}">
 		{{ _('delete') }}
 	      </a>
-	    </th>
+	    </td>
 	  </tr>
 	    {% else %}
 	  <tr>

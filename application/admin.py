@@ -7,12 +7,13 @@
 from google.appengine.runtime.apiproxy_errors import CapabilityDisabledError
 from google.appengine.ext import ndb
 from flask import Blueprint, render_template, redirect, url_for, request, flash, Response
-from forms import RegisterForm, JobForm, EnterpriseForm, EmailForm, PasswordForm, BaseEnterpriseForm
-from models import UserModel, JobModel, JobMetaModel, ROLES, EnterpriseModel, EmailModel
+from forms import RegisterForm, JobForm, EnterpriseForm, EmailForm, PasswordForm, BaseEnterpriseForm, ForumForm, ActivityForm
+from models import UserModel, JobModel, JobMetaModel, ROLES, EnterpriseModel, EmailModel, ForumModel, ActivityModel
 from decorators import admin_required
 from application import app
 from passlib.apps import custom_app_context as pwd_context
 import flask_login
+from flask_babel import format_date
 from os.path import splitext
 import re
 import json
@@ -111,9 +112,10 @@ def sort_enterprises():
     """
     """
     enterprises = EnterpriseModel.query().order(EnterpriseModel.order)
-    es = []
-    for e in enterprises:
-        es.append(e)
+    e_list = []
+    for index, e in enumerate(enterprises):
+        e.order = index
+        e_list.append(e)
 
     if request.method == 'POST':
         data = request.form['order']
@@ -122,16 +124,12 @@ def sort_enterprises():
         for i in range(len(order)):
             rank = order[i]
             print rank
-            e = es[rank]
-            if e.order != i:
-                e.order = i
-                e.put()
+            e = e_list[rank]
+            e.order = i
+        ndb.put_multi(e_list)
+        e_list.sort(key=lambda e: e.order)
 
-        es.sort(key=lambda e: e.order)
-    else:
-        for e in es:
-            print e.order
-    return render_template("admin/sort_enterprises.html", enterprises=es)
+    return render_template("admin/sort_enterprises.html", enterprises=e_list)
 
 
 @admin.route('/new_enterprise', methods=['GET', 'POST'])
@@ -296,7 +294,8 @@ def sort_jobs(keyurl):
     key = ndb.Key(urlsafe=keyurl)
     jobs = JobModel.query(JobModel.enterprise==key).order(JobModel.order)
     job_list = []
-    for job in jobs:
+    for index, job in enumerate(jobs):
+        job.order = index
         job_list.append(job)
 
     if request.method == 'POST':
@@ -306,9 +305,9 @@ def sort_jobs(keyurl):
         for i in range(len(order)):
             rank = order[i]
             job = job_list[rank]
-            if job.order != i:
-                job.order = i
-                job.put()
+            job.order = i
+        ndb.put_multi(job_list)
+        job_list.sort(key=lambda j: j.order)
     return render_template('admin/sort_jobs.html', e=key.get(), jobs=jobs)
 
 @admin.route('/new_job', methods=['GET', 'POST'])
@@ -330,7 +329,8 @@ def new_job():
     grouped_emails = {e.key.urlsafe(): [] for e in enterprises}
     for m in mails:
         key = m.enterprise.urlsafe()
-        grouped_emails[key].append({'url': m.key.urlsafe(), 'email': m.email})
+        if key in grouped_emails:
+            grouped_emails[key].append({'url': m.key.urlsafe(), 'email': m.email})
 
     form.enterprise_email.choices = [(i['url'], i['email']) for value in grouped_emails.values() for i in value]
 
@@ -394,7 +394,8 @@ def edit_job(keyurl):
     grouped_emails = {e.key.urlsafe(): [] for e in enterprises}
     for m in mails:
         key = m.enterprise.urlsafe()
-        grouped_emails[key].append({'url': m.key.urlsafe(), 'email': m.email})
+        if key in grouped_emails:
+            grouped_emails[key].append({'url': m.key.urlsafe(), 'email': m.email})
 
     form.enterprise_email.choices = [(i['url'], i['email']) for value in grouped_emails.values() for i in value]
 
@@ -463,6 +464,85 @@ def delete_job(keyurl):
     except CapabilityDisabledError:
         flash(_('fail to delete'), 'error')
     return redirect(url_for('admin.jobs'))
+
+
+@admin.route('/forum', methods=["GET", "POST"])
+@admin_required
+def forum():
+    forum = ForumModel.query().get()
+    if not forum:
+        forum = ForumModel()
+    form = ForumForm(request.form, obj=forum)
+    if request.method == 'POST' and form.validate():
+        forum.date = form.date.data
+        forum.address = form.address.data
+        forum.registrable = form.registrable.data
+        if forum.registrable:
+            forum.register_link = form.register_link.data
+        forum.put()
+    return render_template('admin/forum.html', form=form)
+
+
+@admin.route('/activities')
+@admin_required
+def activities():
+    a = ActivityModel.query()
+    return render_template('admin/activities.html', activities=a)
+
+@admin.route('/new_activity', methods=['GET', 'POST'])
+@admin_required
+def new_activity():
+    form = ActivityForm(request.form)
+    if request.method == 'POST' and form.validate():
+        meta = {}
+        meta['en'] = {
+            'title': form.title.data,
+            'content': form.content.data
+        }
+        activity = ActivityModel(
+            date = form.date.data,
+            address = form.address.data,
+            registrable = form.registrable.data,
+            register_link = form.register_link.data,
+            meta = meta
+        )
+        activity.put()
+        return redirect(url_for('admin.activities'))
+    return render_template('admin/new_activity.html', form=form)
+
+@admin.route('/edit_activity/<keyurl>', methods=['GET', 'POST'])
+@admin_required
+def edit_activity(keyurl):
+    activity = ndb.Key(urlsafe=keyurl).get()
+    if not activity:
+        return redirect('admin.activities')
+    form = ActivityForm(request.form, obj=activity)
+    if request.method == 'GET':
+        form.title.data = activity.meta['en']['title']
+        form.content.data = activity.meta['en']['content']
+
+    if request.method == 'POST' and form.validate():
+        meta = {}
+        meta['en'] = {
+            'title': form.title.data,
+            'content': form.content.data
+        }
+        activity.date = form.date.data
+        activity.address = form.address.data
+        activity.registrable = form.registrable.data
+        activity.register_link = form.register_link.data
+        activity.meta = meta
+
+        activity.put()
+        return redirect(url_for('admin.activities'))
+    return render_template('admin/edit_activity.html', form=form, keyurl=keyurl)
+
+@admin.route('/delete_activity/<keyurl>')
+@admin_required
+def delete_activity(keyurl):
+    activity = ndb.Key(urlsafe=keyurl).get()
+    activity.key.delete()
+    return redirect(url_for('admin.activities'))
 
 import data as Data
 @admin.route('/data')

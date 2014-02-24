@@ -6,7 +6,12 @@
 {{ render_field(form.enterprise_email, groupid="email") }}
 {{ render_field(form.type) }}
 <div class="section job">
-  <h4>{{ _('For the following 3 sections, please check the "publish" checkbox to make it visible to users') }}</h4>
+  <h4>
+    {{ _('For the following 3 sections, please check the "publish" checkbox to make it visible to users') }}
+  </h4>
+  <h4>
+    {{ _("If you have only one language version of job, just choose the right section of language and set the right default language. This version will also be shown to clients when other language versions are empty. So you don't need to edit and copy 3 versions") }}
+  </h4>
   <div class="block-job">
     <div id="en" class="apply-button {% if form.title_en.errors or form.content_en.errors %}field-error{% endif %}">
       <div>English version</div>
@@ -14,7 +19,7 @@
     <div>
       {{ render_field(form.publish_en) }}
       {{ render_field(form.title_en) }}
-      {{ render_field(form.content_en, class="job_content") }}
+      {{ render_field(form.content_en, class="text_content") }}
     </div>
   </div>
   <div class="block-job">
@@ -24,7 +29,7 @@
     <div>
       {{ render_field(form.publish_fr) }}
       {{ render_field(form.title_fr) }}
-      {{ render_field(form.content_fr, class="job_content") }}
+      {{ render_field(form.content_fr, class="text_content") }}
     </div>
   </div>
   <div class="block-job">
@@ -34,10 +39,16 @@
     <div>
       {{ render_field(form.publish_zh) }}
       {{ render_field(form.title_zh) }}
-      {{ render_field(form.content_zh, class="job_content") }}
+      {{ render_field(form.content_zh, class="text_content") }}
     </div>
   </div>
 </div>
+<h4>
+  Default language will also effect the language of application email.
+</h4>
+<p>
+  if the job only have one language version, it will use this language to send email. If the job have multiple language versions, the version that users are browsing or the default one will be used. For example, one job has French and English versions and English is the default version. If users use French version, french email will be sent. If users use Chinese version, then English email will be sent since there is no Chinese version and English is the default.
+</p>
 {{ render_field(form.default_lang) }}
 {{ render_field(form.cv_required, **{"data-placeholder" : "Keep it empty if no requirement"}) }}
 

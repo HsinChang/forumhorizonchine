@@ -5,16 +5,19 @@ App Engine datastore models
 
 """
 
-
 from google.appengine.ext import ndb
+from gettext import gettext
 
-ROLES ={'EXHIBITOR':'exhibitor', 'ADMIN': 'admin'}
-OFFRE_TYPES = {'JOB': 'Job', 'INTERN': 'Jnternship'}
+
+ROLES = {'EXHIBITOR':'exhibitor', 'ADMIN': 'admin'}
+OFFRE_TYPES = {'JOB': gettext('Job'), 'INTERN': gettext('Internship')}
+
 
 class JobMetaModel(ndb.Model):
     published = ndb.BooleanProperty(required=True)
     title = ndb.StringProperty()
     content = ndb.TextProperty()
+
 
 class JobModel(ndb.Model):
     type = ndb.StringProperty(required=True)
@@ -41,6 +44,7 @@ class EnterpriseModel(ndb.Model):
     shortname = ndb.StringProperty(required=True)
     order = ndb.IntegerProperty(default=0)
 
+
 class EmailModel(ndb.Model):
     """
     email for enterprise
@@ -66,3 +70,31 @@ class UserModel(ndb.Model):
 
     def get_id(self):
         return unicode(self.key.id())
+
+
+class ForumModel(ndb.Model):
+    date = ndb.DateProperty(required=True)
+    address = ndb.StringProperty(required=True)
+    duration = ndb.IntegerProperty()
+    registrable = ndb.BooleanProperty(required=True)
+    register_link = ndb.StringProperty()
+
+
+class ActivityModel(ndb.Model):
+    meta = ndb.JsonProperty()
+    date = ndb.DateProperty(required=True)
+    address = ndb.StringProperty(required=True)
+    registrable = ndb.BooleanProperty(required=True)
+    register_link = ndb.StringProperty()
+
+
+class Page(ndb.Model):
+    meta = ndb.JsonProperty()
+    url = ndb.StringProperty()
+
+
+class Menu(ndb.Model):
+    meta = ndb.JsonProperty()
+    parent = ndb.KeyProperty()
+    type = ndb.StringProperty()
+    children = ndb.KeyProperty(repeated=True)

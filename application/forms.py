@@ -164,3 +164,14 @@ class ActivityForm(wtf.Form):
     register_link = StringField('register link', validators=[link_check])
     title = StringField('title', validators=[validators.InputRequired()])
     content = TextAreaField('content', validators=[validators.InputRequired()])
+
+
+class MenuForm(wtf.Form):
+    id = StringField('id', validators=[validators.InputRequired()])
+    en = StringField('en', validators=[validators.InputRequired()])
+    fr = StringField('fr')
+    zh = StringField('zh')
+    parent = SelectField('parent', choices=[('', 'None')])
+    children = SelectMultipleField('children', choices=[('', 'None')])
+    type = SelectField('type', choices=[('TOP', 'TOP'), ('SIDE_NAV', 'SIDE_NAV'), ('SIDE_ENTRY', 'SIDE_ENTRY')])
+    action = SelectField('action', choices=[('', 'None')])

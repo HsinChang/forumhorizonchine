@@ -7,7 +7,7 @@ from flask import Flask, session, request
 from flask_debugtoolbar import DebugToolbarExtension
 from gae_mini_profiler import profiler, templatetags
 from werkzeug.debug import DebuggedApplication
-from models import UserModel, ROLES
+from models import UserModel, ROLES, MenuModel
 
 from flask_babel import Babel
 from flask_login import LoginManager, current_user
@@ -24,6 +24,7 @@ app.jinja_env.add_extension('jinja2.ext.loopcontrols')
 app.jinja_env.globals['LOCALES'] = sorted(app.config['LANGUAGES'].keys())
 app.jinja_env.globals['current_user'] = current_user
 app.jinja_env.globals['ROLES'] = ROLES
+app.jinja_env.globals['MENU'] = MenuModel.query(MenuModel.type=="TOP")
 
 #Babel
 babel = Babel(app)

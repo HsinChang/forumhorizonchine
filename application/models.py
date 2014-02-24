@@ -88,13 +88,19 @@ class ActivityModel(ndb.Model):
     register_link = ndb.StringProperty()
 
 
-class Page(ndb.Model):
+class PageModel(ndb.Model):
     meta = ndb.JsonProperty()
     url = ndb.StringProperty()
 
 
-class Menu(ndb.Model):
+MENU_TYPE = ['TOP', 'SIDE_NAV', 'SIDE_ENTRY']
+
+
+class MenuModel(ndb.Model):
+    id = ndb.StringProperty(required=True)
     meta = ndb.JsonProperty()
     parent = ndb.KeyProperty()
+    order = ndb.IntegerProperty()
     type = ndb.StringProperty()
     children = ndb.KeyProperty(repeated=True)
+    action = ndb.StringProperty()

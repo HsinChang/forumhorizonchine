@@ -14,6 +14,15 @@
 <div class="links">
 
   <div class="page">
+    {% for menu in MENU %}
+      <a {% if request.path == menu.action %}
+	class="current"
+      {% endif %}
+href="{{ menu.action }}">
+      {{ menu.id }}
+      </a>
+    {% endfor %}
+
     <a {% if request.path == url_for('home') %}
     class="current"
     {% endif %}

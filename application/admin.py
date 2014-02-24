@@ -6,9 +6,9 @@
 #         return self.render('admin/index.html')
 from google.appengine.runtime.apiproxy_errors import CapabilityDisabledError
 from google.appengine.ext import ndb
-from flask import Blueprint, render_template, redirect, url_for, request, flash, Response
-from forms import RegisterForm, JobForm, EnterpriseForm, EmailForm, PasswordForm, BaseEnterpriseForm, ForumForm, ActivityForm
-from models import UserModel, JobModel, JobMetaModel, ROLES, EnterpriseModel, EmailModel, ForumModel, ActivityModel
+from flask import Blueprint, render_template, redirect, url_for,request, flash, Response
+from forms import *
+from models import *
 from decorators import admin_required
 from application import app
 from passlib.apps import custom_app_context as pwd_context
@@ -360,14 +360,14 @@ def new_job():
             "zh": zh
         }
         job = JobModel(
-            type = form.type.data,
-            is_online = form.is_online.data,
-            enterprise = enterprise,
-            enterprise_email = mail,
-            meta = meta,
-            published = fr["published"] or en["published"] or zh["published"],
-            default_lang = form.default_lang.data,
-            cv_required = form.cv_required.data,
+            type=form.type.data,
+            is_online=form.is_online.data,
+            enterprise=enterprise,
+            enterprise_email=mail,
+            meta=meta,
+            published=fr["published"] or en["published"] or zh["published"],
+            default_lang=form.default_lang.data,
+            cv_required=form.cv_required.data,
        #     poster = user.key
         )
         try:
@@ -599,10 +599,76 @@ def export_jobs():
     return Reponse(output, mimetype='text/xml')
 
 @admin.route('/')
+@admin_required
 def index():
     """
     """
     return render_template('base_admin.html')
+
+
+@admin.route('/menus')
+@admin_required
+def menus():
+    menus = MenuModel.query()
+    return render_template('admin/menus.html', menus=menus)
+
+
+@admin.route('/new_menu', methods=['GET', 'POST'])
+@admin_required
+def new_menu():
+    form = MenuForm(request.form)
+
+    actions = []
+    for rule in app.url_map.iter_rules():
+        if "GET" in rule.methods:
+            #url = url_for(rule.endpoint)
+            actions.append((rule.endpoint, rule.endpoint))
+
+    form.action.choices = actions
+    submenus = MenuModel.query(MenuModel.type=="SIDE_NAV" or MenuModel.type=="SIDE_ENTRY")
+
+    form.children.choices = [(menu.key, menu.id) for menu in submenus]
+
+    if request.method == 'POST' and form.validate():
+        en = {'name': form.en.data}
+        fr = {'name': form.fr.data}
+        zh = {'name': form.zh.data}
+        meta = {'en': en, 'fr': fr, 'zh': zh}
+
+        parent = None
+        action = None
+        children = []
+        # if len(form.parent.data) > 0:
+        #     parent = form.parent.data
+        # if form.action.data:
+        #     action = form.action.data
+        # if len(form.children.data) > 0:
+        #     children = form.children.data
+
+        menu = MenuModel(
+            id = form.id.data,
+            meta = meta,
+            parent = parent,
+            type = form.type.data,
+            children = children,
+            action = action
+        )
+        menu.put()
+
+    return render_template('admin/new_menu.html', form=form)
+
+@admin.route('/edit_menu/<keyurl>', methods=["GET", "POST"])
+@admin_required
+def edit_menu(keyurl):
+
+    return render_template('admin/edit_menu.html', form=form)
+
+
+@admin.route('/delete_menu/keyurl')
+@admin_required
+def delete_menu(keyurl):
+    pass
+
 
 def init_admin():
     role = ROLES['ADMIN']

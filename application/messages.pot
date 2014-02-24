@@ -8,14 +8,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2014-01-18 14:59+0100\n"
+"POT-Creation-Date: 2014-02-24 17:02+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 0.9.6\n"
+"Generated-By: Babel 1.3\n"
 
 #: admin.py:165 admin.py:196
 msgid "no such enterprise"
@@ -61,15 +61,15 @@ msgstr ""
 msgid "Internship"
 msgstr ""
 
-#: settings.py:38
+#: settings.py:38 settings.py:57
 msgid "English"
 msgstr ""
 
-#: settings.py:38
+#: settings.py:38 settings.py:57
 msgid "French"
 msgstr ""
 
-#: settings.py:38
+#: settings.py:38 settings.py:57
 msgid "Chinese"
 msgstr ""
 
@@ -109,7 +109,11 @@ msgstr ""
 msgid "forum"
 msgstr ""
 
-#: templates/base_admin.html:54 templates/admin/data.html:6
+#: templates/base_admin.html:54
+msgid "activities"
+msgstr ""
+
+#: templates/base_admin.html:58 templates/admin/data.html:6
 msgid "data"
 msgstr ""
 
@@ -125,7 +129,7 @@ msgid ""
 msgstr ""
 
 #: templates/home.html:37
-msgid "Official partners of the Forum in 2013"
+msgid "Official partners of the Forum in 2014"
 msgstr ""
 
 #: templates/home.html:43 templates/home.html:48 templates/home.html:52
@@ -151,10 +155,11 @@ msgstr ""
 #: templates/home.html:77
 #, python-format
 msgid ""
-"This year, the sixth edition will be held at <strong>%(address)s</strong>"
-" on <strong>%(date)s</strong>. This unique event attracts the most "
-"promising students and graduates interested in a French-Chinese career. "
-"It will include a job fair and conference facilities where you will:"
+"This year, the sixth edition will be held at <a href=\"http://www.ensta-"
+"paristech.fr\"><strong>%(address)s</strong></a> on "
+"<strong>%(date)s</strong>. This unique event attracts the most promising "
+"students and graduates interested in a French-Chinese career. It will "
+"include a job fair and conference facilities where you will:"
 msgstr ""
 
 #: templates/home.html:81
@@ -247,26 +252,16 @@ msgstr ""
 msgid "Access to the Forum"
 msgstr ""
 
-#: templates/about/access.html:44
+#: templates/about/access.html:40
 msgid "View larger map"
 msgstr ""
 
-#: templates/about/access.html:47
+#: templates/about/access.html:43
 msgid "Access:"
 msgstr ""
 
 #: templates/about/access.html:49
-msgid "RER: line B (Luxembourg)"
-msgstr ""
-
-#: templates/about/access.html:50
-msgid "Bus: 21, 27, 38, 82, 85 (Luxembourg)"
-msgstr ""
-
-#: templates/about/access.html:51
-msgid ""
-"Vélib': stations number 5003 (facing 9, rue Le Goff) and 5010 (facing 1, "
-"rue Henri Barbusse)"
+msgid "Getting there by public transportation"
 msgstr ""
 
 #: templates/about/balance.html:5 templates/includes/about_forum.html:13
@@ -319,7 +314,7 @@ msgid ""
 msgstr ""
 
 #: templates/about/contact.html:14
-msgid "Team leaders of China Horizon Forum 2013"
+msgid "Team leaders of China Horizon Forum 2014"
 msgstr ""
 
 #: templates/about/contact.html:19 templates/exhibitors/jobs.html:17
@@ -339,7 +334,7 @@ msgid "AFCP President"
 msgstr ""
 
 #: templates/about/contact.html:29
-msgid "Ms. Nan ZHANG"
+msgid "Mr. Ken DENG"
 msgstr ""
 
 #: templates/about/contact.html:30 templates/about/contact.html:34
@@ -347,7 +342,7 @@ msgid "Forum team member"
 msgstr ""
 
 #: templates/about/contact.html:33
-msgid "Mr. Zheng LI"
+msgid "Mr. Tong ZHU"
 msgstr ""
 
 #: templates/about/contact.html:48
@@ -356,6 +351,31 @@ msgstr ""
 
 #: templates/about/contact.html:53 templates/includes/job_apply.html:65
 msgid "Send"
+msgstr ""
+
+#: templates/admin/activities.html:4 templates/admin/activities.html:9
+msgid "All activities"
+msgstr ""
+
+#: templates/admin/activities.html:11 templates/admin/enterprises.html:12
+#: templates/admin/jobs.html:11
+msgid "New"
+msgstr ""
+
+#: templates/admin/activities.html:31 templates/admin/edit_enterprise.html:43
+#: templates/admin/enterprises.html:31 templates/admin/jobs.html:43
+#: templates/exhibitors/jobs.html:34
+msgid "edit"
+msgstr ""
+
+#: templates/admin/activities.html:36 templates/admin/edit_enterprise.html:46
+#: templates/admin/enterprises.html:36 templates/admin/jobs.html:48
+#: templates/exhibitors/jobs.html:39
+msgid "delete"
+msgstr ""
+
+#: templates/admin/activities.html:42
+msgid "no activity yet"
 msgstr ""
 
 #: templates/admin/change_password.html:10
@@ -387,6 +407,10 @@ msgstr ""
 msgid "export jobs"
 msgstr ""
 
+#: templates/admin/edit_activity.html:11 templates/admin/edit_activity.html:16
+msgid "Edit activity"
+msgstr ""
+
 #: templates/admin/edit_email.html:10 templates/admin/edit_email.html:15
 msgid "Edit email"
 msgstr ""
@@ -411,35 +435,21 @@ msgstr ""
 msgid "email"
 msgstr ""
 
-#: templates/admin/edit_enterprise.html:43 templates/admin/enterprises.html:31
-#: templates/admin/jobs.html:43 templates/exhibitors/jobs.html:34
-msgid "edit"
-msgstr ""
-
-#: templates/admin/edit_enterprise.html:46 templates/admin/enterprises.html:36
-#: templates/admin/jobs.html:48 templates/exhibitors/jobs.html:39
-msgid "delete"
-msgstr ""
-
 #: templates/admin/edit_enterprise.html:51
 msgid "no email"
 msgstr ""
 
-#: templates/admin/edit_job.html:9 templates/exhibitors/edit_job.html:9
+#: templates/admin/edit_job.html:10 templates/exhibitors/edit_job.html:9
 #: templates/exhibitors/edit_job.html:13
 msgid "Edit job"
 msgstr ""
 
-#: templates/admin/edit_job.html:14
+#: templates/admin/edit_job.html:15
 msgid "Edit Job"
 msgstr ""
 
 #: templates/admin/enterprises.html:5 templates/admin/enterprises.html:10
 msgid "All enterprises"
-msgstr ""
-
-#: templates/admin/enterprises.html:12 templates/admin/jobs.html:11
-msgid "New"
 msgstr ""
 
 #: templates/admin/enterprises.html:13
@@ -483,6 +493,10 @@ msgstr ""
 msgid "no job provided yet"
 msgstr ""
 
+#: templates/admin/new_activity.html:11 templates/admin/new_activity.html:16
+msgid "New activity"
+msgstr ""
+
 #: templates/admin/new_email.html:10 templates/admin/new_email.html:15
 msgid "New email"
 msgstr ""
@@ -492,7 +506,7 @@ msgstr ""
 msgid "New enterprise"
 msgstr ""
 
-#: templates/admin/new_job.html:24 templates/admin/new_job.html:29
+#: templates/admin/new_job.html:25 templates/admin/new_job.html:30
 #: templates/exhibitors/new_job.html:11 templates/exhibitors/new_job.html:16
 msgid "New job"
 msgstr ""
@@ -891,11 +905,15 @@ msgstr ""
 msgid "Job opportunities"
 msgstr ""
 
-#: templates/includes/visitor_menu.html:28
+#: templates/includes/visitor_menu.html:28 templates/visitors/activities.html:9
+msgid "Activities"
+msgstr ""
+
+#: templates/includes/visitor_menu.html:34
 msgid "Working permit"
 msgstr ""
 
-#: templates/includes/visitor_menu.html:34 templates/visitors/infos.html:13
+#: templates/includes/visitor_menu.html:40 templates/visitors/infos.html:13
 msgid "Useful information"
 msgstr ""
 
@@ -924,6 +942,18 @@ msgstr ""
 
 #: templates/mail/apply.html:10
 msgid "The team of AFCP"
+msgstr ""
+
+#: templates/visitors/activities.html:4
+msgid "Activities via China Horizon Forum"
+msgstr ""
+
+#: templates/visitors/activities.html:26
+msgid "register now"
+msgstr ""
+
+#: templates/visitors/activities.html:31
+msgid "There is no activity now."
 msgstr ""
 
 #: templates/visitors/exhibitors.html:4
@@ -1030,20 +1060,28 @@ msgid ""
 "us this information."
 msgstr ""
 
+#: templates/visitors/inscript.html:10 templates/visitors/inscription.html:12
+msgid "Registrations"
+msgstr ""
+
+#: templates/visitors/inscript.html:12
+msgid "Registration"
+msgstr ""
+
+#: templates/visitors/inscript.html:15 templates/visitors/inscription.html:17
+msgid "loading..."
+msgstr ""
+
+#: templates/visitors/inscript.html:18
+msgid "the registration is not open yet, please wait. Thanks!"
+msgstr ""
+
 #: templates/visitors/inscription.html:4
 msgid "Registrations for China Horizon Forum"
 msgstr ""
 
-#: templates/visitors/inscription.html:12
-msgid "Registrations"
-msgstr ""
-
 #: templates/visitors/inscription.html:14
 msgid "Registration to the China Horizon Forum"
-msgstr ""
-
-#: templates/visitors/inscription.html:17
-msgid "loading..."
 msgstr ""
 
 #: templates/visitors/inscription.html:20

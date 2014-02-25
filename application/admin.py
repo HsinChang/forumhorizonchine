@@ -687,7 +687,7 @@ def new_page():
         return redirect(url_for('admin.pages'))
     return render_template('admin/new_page.html', form=form)
 
-@admin.route('/edit_page', methods=['GET', 'POST'])
+@admin.route('/edit_page/<keyurl>', methods=['GET', 'POST'])
 @admin_required
 def edit_page(keyurl):
     page = ndb.Key(urlsafe=keyurl).get()
@@ -700,7 +700,7 @@ def edit_page(keyurl):
             page.put()
             return redirect(url_for('admin.pages'))
 
-        return render_template('admin/edit_page.html', form=form)
+        return render_template('admin/edit_page.html', form=form, keyurl=keyurl)
     else:
         abort(404)
 

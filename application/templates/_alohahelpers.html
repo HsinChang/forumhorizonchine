@@ -1,22 +1,22 @@
 {% macro init_aloha(form, content) %}
-<script type="text/javascript">
-  var width = $("{{ content }}").width();
+  <script type="text/javascript">
+     var width = $("{{ content }}").width();
 
-  Aloha.ready( function() {
-  Aloha.jQuery("{{ content }}").aloha();
+     Aloha.ready( function() {
+       Aloha.jQuery("{{ content }}").aloha();
 
-  var aloha_area = $(".aloha-textarea");
-  aloha_area.css("width", width);
+       var aloha_area = $(".aloha-textarea");
+       aloha_area.css("width", width);
 
-  jQuery("{{ form }}").submit(function(){
-  /*
-  Before the form is submitted, we unload aloha and store the contents of the
-  aloha editable to the textarea.
-  */
-  jQuery("{{ content }}").mahalo();
-  });
-  });
+       jQuery("{{ form }}").submit(function(){
+	   /*
+	   Before the form is submitted, we unload aloha and store the contents of the
+	   aloha editable to the textarea.
+	    */
+	   jQuery("{{ content }}").mahalo();
+	 });
+       });
 
-  var errors = $('.field-error').next().slideToggle(0)
-</script>
+       var errors = $('.field-error').next().slideToggle(0)
+  </script>
 {% endmacro %}

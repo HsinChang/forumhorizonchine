@@ -1,0 +1,31 @@
+{% extends "base_admin.html" %}
+
+{% from "_formhelpers.html" import render_field as render_field %}
+
+{% block header %}
+{% endblock header %}
+
+{% block html_title %}
+<title>
+  {{ _('Edit menu') }}
+</title>
+{% endblock html_title %}
+
+{% block content %}
+<h1>{{ _('Edit menu')}}</h1>
+<form method="post" action="{{ url_for('admin.edit_menu', keyurl=keyurl) }}">
+  <fieldset>
+    {{ form.hidden_tag() }}
+      {{ render_field(form.id) }}
+      {{ render_field(form.en) }}
+      {{ render_field(form.fr) }}
+      {{ render_field(form.zh) }}
+      {{ render_field(form.type) }}
+      {{ render_field(form.parent) }}
+      {{ render_field(form.children) }}
+      {{ render_field(form.action) }}
+  </fieldset>
+  <input type="submit" value="Save">
+  </input>
+</form>
+{% endblock content %}

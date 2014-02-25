@@ -1,0 +1,35 @@
+{% from "_formhelpers.html" import render_field as render_field %}
+{{ form.hidden_tag() }}
+  {{ render_field(form.id) }}
+  {{ render_field(form.url) }}
+  {{ render_field(form.position) }}
+  {{ render_field(form.type) }}
+<div class="section job">
+  <div class="block-job">
+    <div id="en" class="apply-button {% if form.title_en.errors or form.content_en.errors %}field-error{% endif %}">
+      <div>English version</div>
+    </div>
+    <div>
+      {{ render_field(form.title_en) }}
+      {{ render_field(form.content_en, class="text_content") }}
+    </div>
+  </div>
+  <div class="block-job">
+    <div id="fr" class="apply-button {% if form.title_fr.errors or form.content_fr.errors %}field-error{% endif %}">
+      <div>French version</div>
+    </div>
+    <div>
+      {{ render_field(form.title_fr) }}
+      {{ render_field(form.content_fr, class="text_content") }}
+    </div>
+  </div>
+  <div class="block-job">
+    <div id="zh" class="apply-button {% if form.title_en.errors or form.content_en.errors %}field-error{% endif %}">
+      <div>Chinese version</div>
+    </div>
+    <div>
+      {{ render_field(form.title_zh) }}
+      {{ render_field(form.content_zh, class="text_content") }}
+    </div>
+  </div>
+</div>

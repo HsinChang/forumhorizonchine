@@ -175,3 +175,16 @@ class MenuForm(wtf.Form):
     children = SelectMultipleField('children', choices=[('', 'None')])
     type = SelectField('type', choices=[('TOP', 'TOP'), ('SIDE_NAV', 'SIDE_NAV'), ('SIDE_ENTRY', 'SIDE_ENTRY')])
     action = SelectField('action', choices=[('', 'None')])
+
+
+class PageForm(wtf.Form):
+    id = StringField('id', validators=[validators.InputRequired()])
+    type = SelectField('type', choices=[('SINGLE', 'SINGLE'), ('SIDEBAR', 'SIDEBAR')])
+    url = StringField('url', validators=[validators.InputRequired()])
+    position = SelectField('position', validators=[validators.InputRequired()])
+    title_en = StringField('Title')
+    title_zh = StringField('Title')
+    title_fr = StringField('Title')
+    content_en = TextAreaField('Content')
+    content_zh = TextAreaField('Content')
+    content_fr = TextAreaField('Content')

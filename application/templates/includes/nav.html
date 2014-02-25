@@ -15,10 +15,10 @@
 
   <div class="page">
     {% for menu in MENU %}
-      <a {% if request.path == menu.action %}
+      <a {% if request.path == url_for(menu.action) %}
 	class="current"
       {% endif %}
-href="{{ menu.action }}">
+href="{{ url_for(menu.action) }}">
       {{ menu.id }}
       </a>
     {% endfor %}
@@ -26,7 +26,8 @@ href="{{ menu.action }}">
     <a {% if request.path == url_for('home') %}
     class="current"
     {% endif %}
-    href="{{ url_for('home') }}">{{ _("Home") }}</a>
+    href="{{ url_for('home') }}">{{ _("Home") }}
+    </a>
     <a {% if request.path[0:9] == '/visitors' %}
     class="current"
     {% endif %}

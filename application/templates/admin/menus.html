@@ -1,0 +1,42 @@
+{% extends "base_admin.html" %}
+{% block html_title %}
+  <title>
+    {{ _('Menus') }}
+  </title>
+{% endblock html_title %}
+
+{% block content %}
+  <p><a href="{{ url_for('admin.new_menu') }}">New</a></p>
+  <table>
+    <thead>
+      <tr>
+	<th>id</th>
+	<th>type</th>
+	<th>parent</th>
+	<th>action</th>
+	<th>&nbsp;</th>
+	<th>&nbsp;</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for menu in menus %}
+	<tr>
+	  <td>{{ menu.id }}</td>
+	  <td>{{ menu.type }}</td>
+	  <td>{{ menu.parent }}</td>
+	  <td>{{ menu.action }}</td>
+	  <td>
+	    <a href="{{ url_for('admin.edit_menu', keyurl=menu.key.urlsafe()) }}">
+	      {{ _('edit') }}
+	    </a>
+	  </td>
+	  <td>
+	    <a href="{{ url_for('admin.delete_menu', keyurl=menu.key.urlsafe()) }}">
+	      {{ _('delete') }}
+	    </a>
+	  </td>
+	</tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock content %}

@@ -9,6 +9,7 @@ from google.appengine.ext import ndb
 from flask import Blueprint, render_template, redirect, url_for,request, flash, Response
 from forms import *
 from models import *
+from form2model import *
 from decorators import admin_required
 from application import app
 from passlib.apps import custom_app_context as pwd_context
@@ -599,7 +600,6 @@ def export_jobs():
     return Reponse(output, mimetype='text/xml')
 
 @admin.route('/')
-@admin_required
 def index():
     """
     """
@@ -613,60 +613,101 @@ def menus():
     return render_template('admin/menus.html', menus=menus)
 
 
-@admin.route('/new_menu', methods=['GET', 'POST'])
-@admin_required
-def new_menu():
-    form = MenuForm(request.form)
-
+def _init_menu_form(form):
     actions = []
     for rule in app.url_map.iter_rules():
-        if "GET" in rule.methods:
+        if "GET" in rule.methods and "POST" not in rule.methods:
             #url = url_for(rule.endpoint)
             actions.append((rule.endpoint, rule.endpoint))
 
     form.action.choices = actions
-    submenus = MenuModel.query(MenuModel.type=="SIDE_NAV" or MenuModel.type=="SIDE_ENTRY")
+    submenus = MenuModel.query(ndb.OR(MenuModel.type=="SIDE_NAV",
+                                      MenuModel.type=="SIDE_ENTRY"))
+    form.children.choices = [(menu.key.urlsafe(), menu.id) for menu in submenus]
 
-    form.children.choices = [(menu.key, menu.id) for menu in submenus]
+
+@admin.route('/new_menu', methods=['GET', 'POST'])
+@admin_required
+def new_menu():
+    form = MenuForm(request.form)
+    _init_menu_form(form)
 
     if request.method == 'POST' and form.validate():
-        en = {'name': form.en.data}
-        fr = {'name': form.fr.data}
-        zh = {'name': form.zh.data}
-        meta = {'en': en, 'fr': fr, 'zh': zh}
-
-        parent = None
-        action = None
-        children = []
-        # if len(form.parent.data) > 0:
-        #     parent = form.parent.data
-        # if form.action.data:
-        #     action = form.action.data
-        # if len(form.children.data) > 0:
-        #     children = form.children.data
-
-        menu = MenuModel(
-            id = form.id.data,
-            meta = meta,
-            parent = parent,
-            type = form.type.data,
-            children = children,
-            action = action
-        )
+        menu = MenuModel()
+        update_menu(menu, form)
         menu.put()
-
+        return redirect(url_for('admin.menus'))
     return render_template('admin/new_menu.html', form=form)
 
 @admin.route('/edit_menu/<keyurl>', methods=["GET", "POST"])
 @admin_required
 def edit_menu(keyurl):
+    menu = ndb.Key(urlsafe=keyurl).get()
+    if menu:
+        form = MenuForm(request.form, obj=menu)
+        _init_menu_form(form)
 
-    return render_template('admin/edit_menu.html', form=form)
+        form.en.data = menu.meta['en']
+        form.fr.data = menu.meta['fr']
+        form.zh.data = menu.meta['zh']
+        if request.method == 'POST' and form.validate():
+            update_menu(menu, form)
+            menu.put()
+            return redirect(url_for('admin.menus'))
+        return render_template('admin/edit_menu.html', form=form, keyurl=keyurl)
+    else:
+        abort(404)
+
+
 
 
 @admin.route('/delete_menu/keyurl')
 @admin_required
 def delete_menu(keyurl):
+    return redirect(url_for('admin.menus'))
+
+
+@admin.route('/pages')
+@admin_required
+def pages():
+    pages = PageModel.query()
+    return render_template('admin/pages.html', pages=pages)
+
+
+@admin.route('/new_page', methods=['GET', 'POST'])
+@admin_required
+def new_page():
+    form = PageForm(request.form)
+    menus = MenuModel.query(MenuModel.type == 'TOP')
+    form.position.choices = [(menu.key.urlsafe(), menu.id) for menu in menus]
+    if request.method == 'POST' and form.validate():
+        page = PageModel()
+        update_page(page, form)
+        page.put()
+        return redirect(url_for('admin.pages'))
+    return render_template('admin/new_page.html', form=form)
+
+@admin.route('/edit_page', methods=['GET', 'POST'])
+@admin_required
+def edit_page(keyurl):
+    page = ndb.Key(urlsafe=keyurl).get()
+    if page:
+        form = PageForm(request.form, obj=page)
+        menus = MenuModel.query(MenuModel.type == 'TOP')
+        form.position.choices = [(menu.key.urlsafe(), menu.id) for menu in menus]
+        if request.method == 'POST' and form.validate():
+            update_page(page, form)
+            page.put()
+            return redirect(url_for('admin.pages'))
+
+        return render_template('admin/edit_page.html', form=form)
+    else:
+        abort(404)
+
+
+@admin.route('/delete_page/<keyurl>')
+@admin_required
+def delete_page(keyurl):
     pass
 
 

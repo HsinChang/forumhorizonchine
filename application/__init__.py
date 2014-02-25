@@ -22,6 +22,7 @@ app.config.from_object('application.settings')
 app.jinja_env.add_extension('jinja2.ext.loopcontrols')
 
 app.jinja_env.globals['LOCALES'] = sorted(app.config['LANGUAGES'].keys())
+app.jinja_env.globals['SESSION'] = session
 app.jinja_env.globals['current_user'] = current_user
 app.jinja_env.globals['ROLES'] = ROLES
 app.jinja_env.globals['MENU'] = MenuModel.query(MenuModel.type=="TOP")
@@ -73,6 +74,8 @@ app.register_blueprint(admin, url_prefix='/admin')
 
 # Pull in URL dispatch routes
 import urls
+from views import init_pages_rule
+init_pages_rule()
 
 # Flask-DebugToolbar (only enabled when DEBUG=True)
 # Werkzeug Debugger (only enabled when DEBUG=True)

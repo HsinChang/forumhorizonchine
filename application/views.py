@@ -21,7 +21,7 @@ import flask_login
 from application import app
 from decorators import login_required, admin_required
 from forms import RegisterForm, JobForm, BaseContactForm
-from models import ForumModel
+from models import ForumModel, PageModel
 
 # Flask-Cache (configured to use App Engine Memcache API)
 cache = Cache(app)
@@ -93,3 +93,16 @@ def warmup():
 
     """
     return ''
+
+
+def page_view_functions(page, topmenu):
+    def page_view():
+        return render_template('base_page.html', page=page, topmenu=topmenu)
+    return page_view
+
+def init_pages_rule():
+    pages = PageModel.query()
+    for page in pages:
+        topmenu = page.position.get()
+        f = page_view_functions(page, topmenu)
+        app.add_url_rule('/'+topmenu.id + '/' + page.url, page.id, f)

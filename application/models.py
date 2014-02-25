@@ -89,8 +89,11 @@ class ActivityModel(ndb.Model):
 
 
 class PageModel(ndb.Model):
-    meta = ndb.JsonProperty()
+    id = ndb.StringProperty()
     url = ndb.StringProperty()
+    meta = ndb.JsonProperty()
+    position = ndb.KeyProperty()
+    type = ndb.StringProperty()
 
 
 MENU_TYPE = ['TOP', 'SIDE_NAV', 'SIDE_ENTRY']

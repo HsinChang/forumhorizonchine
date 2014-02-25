@@ -1,0 +1,40 @@
+{% extends "base_admin.html" %}
+{% block html_title %}
+  <title>
+    {{ _('Pages') }}
+  </title>
+{% endblock html_title %}
+
+{% block content %}
+  <p><a href="{{ url_for('admin.new_page') }}">New</a></p>
+  <table>
+    <thead>
+      <tr>
+	<th>id</th>
+	<th>url</th>
+	<th>position</th>
+	<th>&nbsp;</th>
+	<th>&nbsp;</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for page in pages %}
+	<tr>
+	  <td>{{ page.id }}</td>
+	  <td>{{ page.url }}</td>
+	  <td>{{ page.position.get().id }}</td>
+	  <td>
+	    <a href="{{ url_for('admin.edit_page', keyurl=page.key.urlsafe()) }}">
+	      {{ _('edit') }}
+	    </a>
+	  </td>
+	  <td>
+	    <a href="{{ url_for('admin.delete_page', keyurl=page.key.urlsafe()) }}">
+	      {{ _('delete') }}
+	    </a>
+	  </td>
+	</tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock content %}

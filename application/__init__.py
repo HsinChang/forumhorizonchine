@@ -74,8 +74,9 @@ app.register_blueprint(admin, url_prefix='/admin')
 
 # Pull in URL dispatch routes
 import urls
-from views import init_pages_rule
+from views import init_pages_rule, menu_endpoint
 init_pages_rule()
+app.jinja_env.globals['menu_endpoint'] = menu_endpoint
 
 # Flask-DebugToolbar (only enabled when DEBUG=True)
 # Werkzeug Debugger (only enabled when DEBUG=True)

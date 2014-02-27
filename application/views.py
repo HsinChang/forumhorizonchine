@@ -10,9 +10,10 @@ For example the *say_hello* handler, handling the URL route '/hello/<username>',
 """
 from google.appengine.api import users
 from google.appengine.api import mail
+from google.appengine.ext import ndb
 from google.appengine.runtime.apiproxy_errors import CapabilityDisabledError
 
-from flask import request, render_template, flash, url_for, redirect, session
+from flask import request, render_template, flash, url_for, redirect, session, abort
 
 from flask_cache import Cache
 from flask_babel import refresh, format_date
@@ -21,7 +22,7 @@ import flask_login
 from application import app
 from decorators import login_required, admin_required
 from forms import RegisterForm, JobForm, BaseContactForm
-from models import ForumModel, PageModel
+from models import ForumModel, PageModel, MenuModel
 
 # Flask-Cache (configured to use App Engine Memcache API)
 cache = Cache(app)
@@ -94,15 +95,61 @@ def warmup():
     """
     return ''
 
+@app.route('/page/<keyurl>')
+def page(keyurl):
+    menu = ndb.Key(urlsafe=keyurl).get()
+    if menu:
+        page = PageModel.query(PageModel.id == menu.action).get()
+        if page.type == 'SINGLE':
+            return render_template('base_page_1.html', page=page)
+        elif page.type == 'SIDEBAR':
+            return render_template('base_page_2.html', page=page, topmenu=_top(menu))
+    else:
+        abort(404)
 
-def page_view_functions(page, topmenu):
+
+def page_view_function(page, topmenu):
     def page_view():
         return render_template('base_page.html', page=page, topmenu=topmenu)
     return page_view
 
+
+def generate_rule(prefix, menu, top):
+    url = prefix + menu.id
+    if menu.action:
+        page = PageModel.query(PageModel.id == menu.action).get()
+        f = page_view_function(page, top)
+        app.add_url_rule(url, url[1:], f)
+
+    for child in menu.children:
+        submenu = child.get()
+        generate_rule(url+'/', submenu, top)
+
+def _top(menu):
+    if menu.parent:
+        return _top(menu.parent.get())
+    else:
+        return menu
+
+def add_menu_rule(menu):
+    endpoint = menu_endpoint(menu)
+    page = PageModel.query(PageModel.id == menu.action).get()
+    f = page_view_function(page, _top(menu))
+#    app.add_url_rule('/'+endpoint, endpoint, f)
+
+
+
 def init_pages_rule():
-    pages = PageModel.query()
-    for page in pages:
-        topmenu = page.position.get()
-        f = page_view_functions(page, topmenu)
-        app.add_url_rule('/'+topmenu.id + '/' + page.url, page.id, f)
+    pass
+    # topmenu = MenuModel.query(MenuModel.type == 'TOP')
+    # for menu in topmenu:
+#        generate_rule('/', menu, menu)
+
+
+def menu_endpoint(menu):
+    def _join_endpoint(menu, postfix):
+        if menu.parent:
+            return _join_endpoint(menu.parent, menu.id + '/' + postfix)
+        else:
+            return menu.id + '/' + postfix
+    return _join_endpoint(menu, '')

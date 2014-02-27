@@ -15,14 +15,14 @@
 
   <div class="page">
     {% for menu in MENU %}
-      <a {% if request.path == url_for(menu.action) %}
+      <a {% if request.path == url_for('page', keyurl=menu.key.urlsafe()) %}
 	class="current"
       {% endif %}
-href="{{ url_for(menu.action) }}">
+href="{{ url_for('page', keyurl=menu.key.urlsafe()) }}">
       {{ menu.id }}
       </a>
     {% endfor %}
-
+    {#
     <a {% if request.path == url_for('home') %}
     class="current"
     {% endif %}
@@ -35,7 +35,7 @@ href="{{ url_for(menu.action) }}">
     <a {% if request.path[0:11] == '/exhibitors' %}
     class="current"
     {% endif %} href="{{ url_for('exhibitor.index') }}">{{ _("Exhibitors") }}</a>
-    {# <a href="{{ url_for('about')}}">{{ _('About') }}</a> #}
+    #}
   </div>
 
   {% block language %}

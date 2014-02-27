@@ -1,0 +1,24 @@
+{% extends "base_admin.html" %}
+{% from "_alohahelpers.html" import init_aloha as init_aloha %}
+
+{% block header %}
+{% include "includes/aloha.html" %}
+{% endblock header %}
+
+{% block html_title %}
+<title>
+  {{ _('Edit page') }}
+</title>
+{% endblock html_title %}
+
+{% block content %}
+<h1>{{ _('Edit page') }}</h1>
+<form id="page_form" method="post" action="{{ url_for('admin.edit_page', keyurl=keyurl) }}">
+  <fieldset>
+    {% include "includes/page_form_fields.html" %}
+  </fieldset>
+  <input type="submit" value="save">
+  </input>
+</form>
+{{ init_aloha("#page_form", ".text_content") }}
+{% endblock content %}

@@ -6,6 +6,7 @@
 {% endblock html_title %}
 
 {% block content %}
+  {#
   <p><a href="{{ url_for('admin.new_menu') }}">New</a></p>
   <table>
     <thead>
@@ -13,7 +14,6 @@
 	<th>id</th>
 	<th>type</th>
 	<th>parent</th>
-	<th>action</th>
 	<th>&nbsp;</th>
 	<th>&nbsp;</th>
       </tr>
@@ -24,7 +24,6 @@
 	  <td>{{ menu.id }}</td>
 	  <td>{{ menu.type }}</td>
 	  <td>{{ menu.parent }}</td>
-	  <td>{{ menu.action }}</td>
 	  <td>
 	    <a href="{{ url_for('admin.edit_menu', keyurl=menu.key.urlsafe()) }}">
 	      {{ _('edit') }}
@@ -39,4 +38,55 @@
       {% endfor %}
     </tbody>
   </table>
+  #}
+
+  <div id='menu-tree'>
+    <ul>
+      <li>TOP MENU
+	<a href="{{ url_for('admin.new_menu') }}">add child</a>
+	{% for top in topmenu %}
+	  <ul>
+	    <li>{{ top.id }}
+	      <a href="{{ url_for('admin.edit_menu', keyurl=top.key.urlsafe()) }}">edit</a>
+	      <a href="{{ url_for('admin.delete_menu', keyurl=top.key.urlsafe()) }}">delete</a>
+	      <a href="{{ url_for('admin.new_menu', keyurl=top.key.urlsafe()) }}">add child</a>
+	    {% for menu_key in top.children %}
+	      {% set menu = menu_key.get() %}
+	      {% if menu.type=='SIDE_NAV' %}
+		<ul>
+		  <li>{{ menu.id }}
+		    <a href="{{ url_for('admin.edit_menu', keyurl=menu.key.urlsafe()) }}">edit</a>
+		    <a href="{{ url_for('admin.delete_menu', keyurl=menu.key.urlsafe()) }}">delete</a>
+		    <a href="{{ url_for('admin.new_menu', keyurl=menu.key.urlsafe()) }}">add child</a>
+		    <ul>
+		      {% for entry_key in menu.children %}
+			{% set entry = entry_key.get() %}
+			<li>{{ entry.id }}
+			  <a href="{{ url_for('admin.edit_menu', keyurl=entry.key.urlsafe()) }}">edit</a>
+			  <a href="{{ url_for('admin.delete_menu', keyurl=entry.key.urlsafe()) }}">delete</a>
+			</li>
+		      {% endfor %}
+		    </ul>
+		  </li>
+		</ul>
+	      {% else %}
+		<ul>
+		  <li>{{ menu.id }}
+		    <a href="{{ url_for('admin.edit_menu', keyurl=menu.key.urlsafe()) }}">edit</a>
+		    <a href="{{ url_for('admin.delete_menu', keyurl=menu.key.urlsafe()) }}">delete</a>
+		  </li>
+		</ul>
+	      {% endif %}
+	    {% endfor %}
+	    </li>
+	  </ul>
+	{% endfor %}
+      </li>
+    </ul>
+  </div>
+  <script>
+//     $(function(){
+//       $('#menu-tree').jstree({});
+//     });
+  </script>
 {% endblock content %}

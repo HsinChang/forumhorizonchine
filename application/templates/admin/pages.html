@@ -11,8 +11,6 @@
     <thead>
       <tr>
 	<th>id</th>
-	<th>url</th>
-	<th>position</th>
 	<th>&nbsp;</th>
 	<th>&nbsp;</th>
       </tr>
@@ -21,8 +19,6 @@
       {% for page in pages %}
 	<tr>
 	  <td>{{ page.id }}</td>
-	  <td>{{ page.url }}</td>
-	  <td>{{ page.position.get().id }}</td>
 	  <td>
 	    <a href="{{ url_for('admin.edit_page', keyurl=page.key.urlsafe()) }}">
 	      {{ _('edit') }}

@@ -609,35 +609,56 @@ def index():
 @admin.route('/menus')
 @admin_required
 def menus():
-    menus = MenuModel.query()
-    return render_template('admin/menus.html', menus=menus)
+    topmenu = MenuModel.query(MenuModel.type == 'TOP')
+    return render_template('admin/menus.html', menus=menus, topmenu=topmenu)
 
 
 def _init_menu_form(form):
-    actions = []
-    for rule in app.url_map.iter_rules():
-        if "GET" in rule.methods and "POST" not in rule.methods:
-            #url = url_for(rule.endpoint)
-            actions.append((rule.endpoint, rule.endpoint))
+    pages = PageModel.query()
+    actions = [(page.id, page.id) for page in pages]
+    # for rule in app.url_map.iter_rules():
+    #     if "GET" in rule.methods and "POST" not in rule.methods:
+    #         #url = url_for(rule.endpoint)
+    #         actions.append((rule.endpoint, rule.endpoint))
 
     form.action.choices = actions
-    submenus = MenuModel.query(ndb.OR(MenuModel.type=="SIDE_NAV",
-                                      MenuModel.type=="SIDE_ENTRY"))
-    form.children.choices = [(menu.key.urlsafe(), menu.id) for menu in submenus]
 
+
+from views import add_menu_rule
 
 @admin.route('/new_menu', methods=['GET', 'POST'])
+@admin.route('/new_menu/<keyurl>', methods=['GET', 'POST'])
 @admin_required
-def new_menu():
+def new_menu(keyurl=None):
     form = MenuForm(request.form)
     _init_menu_form(form)
-
+    if keyurl:
+        parent = ndb.Key(urlsafe=keyurl).get()
+    else:
+        parent = None
+    print(parent)
     if request.method == 'POST' and form.validate():
         menu = MenuModel()
         update_menu(menu, form)
+
+        if parent:
+            menu.parent = parent.key
+            if parent.type == 'TOP':
+                menu.type = 'SIDE_NAV'
+                menu.action = None
+            else:
+                menu.type = 'SIDE_ENTRY'
+        else:
+            menu.parent = None
+            menu.type = 'TOP'
         menu.put()
+        if parent:
+            parent.children.append(menu.key)
+            parent.put()
+
         return redirect(url_for('admin.menus'))
-    return render_template('admin/new_menu.html', form=form)
+    return render_template('admin/new_menu.html', form=form, keyurl=keyurl)
+
 
 @admin.route('/edit_menu/<keyurl>', methods=["GET", "POST"])
 @admin_required
@@ -659,11 +680,24 @@ def edit_menu(keyurl):
         abort(404)
 
 
-
-
-@admin.route('/delete_menu/keyurl')
+@admin.route('/delete_menu/')
 @admin_required
 def delete_menu(keyurl):
+    def _delete_children(menu):
+        children = menu.children.get()
+        for child in children:
+            _delete_children(child.get())
+            menu.delete()
+
+    menu = ndb.Key(urlsafe=keyurl).get()
+    parent = menu.parent.get()
+    children = menu.children.get()
+
+    parent.children.remove(menu.key)
+    for child in children:
+        _delete_children(child.get())
+    menu.delete()
+    parent.put()
     return redirect(url_for('admin.menus'))
 
 
@@ -678,8 +712,7 @@ def pages():
 @admin_required
 def new_page():
     form = PageForm(request.form)
-    menus = MenuModel.query(MenuModel.type == 'TOP')
-    form.position.choices = [(menu.key.urlsafe(), menu.id) for menu in menus]
+
     if request.method == 'POST' and form.validate():
         page = PageModel()
         update_page(page, form)
@@ -693,8 +726,12 @@ def edit_page(keyurl):
     page = ndb.Key(urlsafe=keyurl).get()
     if page:
         form = PageForm(request.form, obj=page)
-        menus = MenuModel.query(MenuModel.type == 'TOP')
-        form.position.choices = [(menu.key.urlsafe(), menu.id) for menu in menus]
+        form.title_en.data = page.meta['en']['title']
+        form.title_fr.data = page.meta['fr']['title']
+        form.title_zh.data = page.meta['zh']['title']
+        form.content_en.data = page.meta['en']['content']
+        form.content_fr.data = page.meta['fr']['content']
+        form.content_zh.data = page.meta['zh']['content']
         if request.method == 'POST' and form.validate():
             update_page(page, form)
             page.put()

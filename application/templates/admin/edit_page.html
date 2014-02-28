@@ -1,8 +1,6 @@
 {% extends "base_admin.html" %}
-{% from "_alohahelpers.html" import init_aloha as init_aloha %}
 
 {% block header %}
-{% include "includes/aloha.html" %}
 {% endblock header %}
 
 {% block html_title %}
@@ -20,5 +18,4 @@
   <input type="submit" value="save">
   </input>
 </form>
-{{ init_aloha("#page_form", ".text_content") }}
 {% endblock content %}

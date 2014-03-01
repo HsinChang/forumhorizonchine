@@ -183,3 +183,9 @@ class PageForm(wtf.Form):
     content_en = TextAreaField('Content')
     content_zh = TextAreaField('Content')
     content_fr = TextAreaField('Content')
+
+
+class ModuleForm(wtf.Form):
+    name = SelectField('name', validators=[validators.InputRequired()])
+    position = SelectField('position',
+                           choices=[('HEAD', 'HEAD'), ('FOOT', 'FOOT')])

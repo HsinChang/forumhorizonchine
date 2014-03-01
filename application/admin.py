@@ -748,6 +748,58 @@ def delete_page(keyurl):
     pass
 
 
+@admin.route('/page_modules/<keyurl>')
+@admin_required
+def page_modules(keyurl):
+    key = ndb.Key(urlsafe=keyurl)
+    modules = ModuleModel.query(ModuleModel.page == key)
+    return render_template('admin/page_modules.html', modules=modules, keyurl=keyurl)
+
+
+from modules import MODULES
+@admin.route('/page_modules/new/<keyurl>', methods=['GET', 'POST'])
+@admin_required
+def new_page_module(keyurl):
+    key = ndb.Key(urlsafe=keyurl)
+    form = ModuleForm(request.form)
+    form.name.choices = [(i, i) for i in MODULES.iterkeys()]
+    if request.method == 'POST' and form.validate():
+        module = ModuleModel()
+        module.page = key
+        module.name = form.name.data
+        module.position = form.position.data
+        module.put()
+        return redirect(url_for('admin.page_modules', keyurl=keyurl))
+    return render_template('admin/new_page_module.html',
+                           form=form, keyurl=keyurl)
+
+
+@admin.route('/page_modules/edit/<keyurl>', methods=['GET', 'POST'])
+@admin_required
+def edit_page_module(keyurl):
+    module = ndb.Key(urlsafe=keyurl).get()
+    form = ModuleForm(request.form, obj=module)
+    form.name.choices = [(i, i) for i in MODULES.iterkeys()]
+    if request.method == 'POST' and form.validate():
+        module.name = form.name.data
+        module.position = form.position.data
+        module.put()
+        page = module.page
+        return redirect(url_for('admin.page_modules', keyurl=page.urlsafe()))
+    return render_template('admin/edit_page_module.html',
+                           form=form, keyurl=keyurl)
+
+
+@admin.route('/page_modules/delete/<keyurl>')
+@admin_required
+def delete_page_module(keyurl):
+    module = ndb.Key(urlsafe=keyurl).get()
+    page = module.page
+    module.delete()
+    return redirect(url_for('admin.page_modules', keyurl=page.urlsafe()))
+
+
+
 def init_admin():
     role = ROLES['ADMIN']
     user = UserModel.query(UserModel.username=='admin').get()

@@ -7,10 +7,16 @@
   {% endblock %}
 
   <link rel="stylesheet" type="text/css" media="screen" href="{{ url_for('static', filename='css/sections.css') }}"/>
-
+  <link rel="stylesheet" type="text/css" media="screen"
+      href="{{ url_for('static', filename='css/home.css')}}"/>
+  <link rel="stylesheet" type="text/css" media="screen"
+      href="{{ url_for('static', filename='css/block.css') }}"/>
 {% endblock %}
 
 {% block header %}
+  {% for module in modules['HEAD'] %}
+    {{ module|safe }}
+  {% endfor %}
 {% endblock %}
 
 {% set lang = SESSION['locale'] %}
@@ -24,6 +30,9 @@
       {{ page.meta['en']['content']|safe }}
     </div>
   </div>
+  {% for module in modules['FOOT'] %}
+    {{ module|safe }}
+  {% endfor %}
 {% endblock %}
 
 {% block sidebar %}

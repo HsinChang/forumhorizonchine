@@ -13,12 +13,18 @@
 	<th>id</th>
 	<th>&nbsp;</th>
 	<th>&nbsp;</th>
+	<th>&nbsp;</th>
       </tr>
     </thead>
     <tbody>
       {% for page in pages %}
 	<tr>
 	  <td>{{ page.id }}</td>
+	  <td>
+	    <a href="{{ url_for('admin.page_modules', keyurl=page.key.urlsafe()) }}">
+	      {{ _('manage modules') }}
+	    </a>
+	  </td>
 	  <td>
 	    <a href="{{ url_for('admin.edit_page', keyurl=page.key.urlsafe()) }}">
 	      {{ _('edit') }}

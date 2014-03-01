@@ -22,7 +22,7 @@ import flask_login
 from application import app
 from decorators import login_required, admin_required
 from forms import RegisterForm, JobForm, BaseContactForm
-from models import ForumModel, PageModel, MenuModel
+from models import ForumModel, PageModel, MenuModel, ModuleModel
 
 # Flask-Cache (configured to use App Engine Memcache API)
 cache = Cache(app)
@@ -95,15 +95,27 @@ def warmup():
     """
     return ''
 
+from modules import MODULES
 @app.route('/page/<keyurl>')
 def page(keyurl):
     menu = ndb.Key(urlsafe=keyurl).get()
     if menu:
         page = PageModel.query(PageModel.id == menu.action).get()
+        modules = ModuleModel.query(ModuleModel.page == page.key)
+        module_content = {}
+        for module in modules:
+            f = MODULES[module.name]
+            content = f()
+            if module.position not in module_content:
+                module_content[module.position] = []
+            module_content[module.position].append(content)
+
         if page.type == 'SINGLE':
-            return render_template('base_page_1.html', page=page)
+            return render_template('base_page_1.html',
+                                   page=page, modules=module_content)
         elif page.type == 'SIDEBAR':
-            return render_template('base_page_2.html', page=page, topmenu=_top(menu))
+            return render_template('base_page_2.html', page=page,
+                                   topmenu=_top(menu), modules=module_content)
     else:
         abort(404)
 
@@ -125,11 +137,13 @@ def generate_rule(prefix, menu, top):
         submenu = child.get()
         generate_rule(url+'/', submenu, top)
 
+
 def _top(menu):
     if menu.parent:
         return _top(menu.parent.get())
     else:
         return menu
+
 
 def add_menu_rule(menu):
     endpoint = menu_endpoint(menu)

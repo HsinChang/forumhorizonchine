@@ -106,3 +106,10 @@ class MenuModel(ndb.Model):
     type = ndb.StringProperty()
     children = ndb.KeyProperty(repeated=True)
     action = ndb.StringProperty()
+
+
+class ModuleModel(ndb.Model):
+    name = ndb.StringProperty()
+    page = ndb.KeyProperty()
+    position = ndb.StringProperty()
+    order = ndb.IntegerProperty()

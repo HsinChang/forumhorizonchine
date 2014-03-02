@@ -25,7 +25,7 @@ app.jinja_env.globals['LOCALES'] = sorted(app.config['LANGUAGES'].keys())
 app.jinja_env.globals['SESSION'] = session
 app.jinja_env.globals['current_user'] = current_user
 app.jinja_env.globals['ROLES'] = ROLES
-app.jinja_env.globals['MENU'] = MenuModel.query(MenuModel.type=="TOP")
+app.jinja_env.globals['MENU'] = MenuModel.query(MenuModel.type=="TOP").order(MenuModel.order)
 
 #Babel
 babel = Babel(app)

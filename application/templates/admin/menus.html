@@ -44,12 +44,14 @@
     <ul>
       <li>TOP MENU
 	<a href="{{ url_for('admin.new_menu') }}">add child</a>
+	<a href="{{ url_for('admin.sort_menu') }}">sort children</a>
 	{% for top in topmenu %}
 	  <ul>
 	    <li>{{ top.id }}
 	      <a href="{{ url_for('admin.edit_menu', keyurl=top.key.urlsafe()) }}">edit</a>
 	      <a href="{{ url_for('admin.delete_menu', keyurl=top.key.urlsafe()) }}">delete</a>
 	      <a href="{{ url_for('admin.new_menu', keyurl=top.key.urlsafe()) }}">add child</a>
+	      <a href="{{ url_for('admin.sort_menu', keyurl=top.key.urlsafe()) }}">sort children</a>
 	    {% for menu_key in top.children %}
 	      {% set menu = menu_key.get() %}
 	      {% if menu.type=='SIDE_NAV' %}
@@ -58,6 +60,7 @@
 		    <a href="{{ url_for('admin.edit_menu', keyurl=menu.key.urlsafe()) }}">edit</a>
 		    <a href="{{ url_for('admin.delete_menu', keyurl=menu.key.urlsafe()) }}">delete</a>
 		    <a href="{{ url_for('admin.new_menu', keyurl=menu.key.urlsafe()) }}">add child</a>
+		    <a href="{{ url_for('admin.sort_menu', keyurl=menu.key.urlsafe()) }}">sort children</a>
 		    <ul>
 		      {% for entry_key in menu.children %}
 			{% set entry = entry_key.get() %}

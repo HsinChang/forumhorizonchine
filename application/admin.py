@@ -119,14 +119,8 @@ def sort_enterprises():
         e_list.append(e)
 
     if request.method == 'POST':
-        data = request.form['order']
-        order = re.findall(r'\d+', data)
-        order = [int(x) for x in order]
-        for i in range(len(order)):
-            rank = order[i]
-            print rank
-            e = e_list[rank]
-            e.order = i
+        order = get_order(request)
+        reorder(e_list, order)
         ndb.put_multi(e_list)
         e_list.sort(key=lambda e: e.order)
 
@@ -300,13 +294,8 @@ def sort_jobs(keyurl):
         job_list.append(job)
 
     if request.method == 'POST':
-        data = request.form['order']
-        order = re.findall(r'\d+', data)
-        order = [int(x) for x in order]
-        for i in range(len(order)):
-            rank = order[i]
-            job = job_list[rank]
-            job.order = i
+        order = get_order(request)
+        reorder(job_list, order)
         ndb.put_multi(job_list)
         job_list.sort(key=lambda j: j.order)
     return render_template('admin/sort_jobs.html', e=key.get(), jobs=jobs)
@@ -609,7 +598,7 @@ def index():
 @admin.route('/menus')
 @admin_required
 def menus():
-    topmenu = MenuModel.query(MenuModel.type == 'TOP')
+    topmenu = MenuModel.query(MenuModel.type == 'TOP').order(MenuModel.order)
     return render_template('admin/menus.html', menus=menus, topmenu=topmenu)
 
 
@@ -678,6 +667,52 @@ def edit_menu(keyurl):
         return render_template('admin/edit_menu.html', form=form, keyurl=keyurl)
     else:
         abort(404)
+
+
+def get_order(request):
+    data = request.form['order']
+    order = re.findall(r'\d+', data)
+    order = [int(x) for x in order]
+    return order
+
+
+def reorder(items, order):
+    for i in range(len(order)):
+        rank = order[i]
+        item = items[rank]
+        item.order = i
+    return items
+
+@admin.route('/sort_menu', methods=['GET', 'POST'])
+@admin.route('/sort_menu/<keyurl>', methods=['GET', 'POST'])
+@admin_required
+def sort_menu(keyurl=None):
+    menu = None
+    if keyurl:
+        menu = ndb.Key(urlsafe=keyur).get()
+        if not menu:
+            abort(404)
+            children = ndb.get_multi(menu.children)
+            children.sort(key=lambda m: m.order)
+
+    else:
+        children = MenuModel.query(MenuModel.type=="TOP").order(MenuModel.order)
+
+    menu_list = []
+    for index, menu in enumerate(children):
+        menu.order = index
+        menu_list.append(menu)
+    if request.method == 'POST':
+        order = get_order(request)
+        reorder(menu_list, order)
+        ndb.put_multi(menu_list)
+        menu_list.sort(key=lambda m: m.order)
+
+    if menu:
+        menu.children = [m.key for m in menu_list]
+        menu.put()
+    return render_template('admin/sort_menus.html',
+                           menus=menu_list, keyurl=keyurl)
 
 
 @admin.route('/delete_menu/<keyurl>')

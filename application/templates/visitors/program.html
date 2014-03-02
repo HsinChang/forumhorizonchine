@@ -12,84 +12,105 @@
   <div class="section program">
     <h1>{{ _('Forum program') }}</h1>
 
-    <h2>{{ _('Free entrance, 10h – 19h, April 18th 2013') }}</h2>
-
-
+    <h2>{{ _('Free entrance, 9h30 – 18h30, March 6th 2014') }}</h2>
     <table>
       <tr>
 	<td><strong>9h30 – 10h</strong></td>
 	<td><h3>{{ _('Registration and welcome coffee') }}</h3></td>
 	<td rowspan="9">
-	  <a href="http://www.alstom.com/fr/" target="_blank"><img
-	    class="shadow" src={{ url_for('static', filename="img/logo/2012/alstom.jpg") }}
-	    width="150px" alt="Alstom" /></a>
-	  <a href="http://www.arkema.fr/"
-	     target="_blank"><img class="shadow"
-				  src={{ url_for('static', filename="img/logo/2012/arkema.jpg") }} width="150px"
-	    alt="Arkema" /></a>
-	  <a href="http://www.bmwgroup.com/"
-	     target="_blank"><img class="shadow"
-				  src={{ url_for('static', filename="img/logo/2013/bmw.png") }} width="150px"
-	    alt="BMW" /></a>
-	  <a href="http://www.dragonflygroup.com/" target="_blank"><img
-	    class="shadow" src={{ url_for('static', filename="img/logo/2013/dragonfly.png") }}
-	    width="150px" alt="Dragonfly Group" /></a>
-	  <a href="http://www.egis-international.fr/" target="_blank"><img
-	    class="shadow" src={{ url_for('static', filename="img/logo/2013/egis.gif") }}
-	    width="150px" alt="Egis International" /></a>
-	  <a href="http://www.loreal.fr/" target="_blank"><img class="shadow"
-							       src={{ url_for('static', filename="img/logo/2012/l_oreal.jpg") }} width="150px"
-	    alt="L'Oréal" /></a>
-	  <a href="http://www.valeo.com/" target="_blank"><img class="shadow"
-							       src={{ url_for('static', filename="img/logo/2013/valeo.png") }} width="150px"
-	    alt="Valeo" /></a>
+	  <a href="http://www.arkema.fr/" target="_blank">
+	  <img class="shadow" src={{ url_for('static', filename="img/logo/enterprise/arkema.jpg") }}
+	  width="200px" height="114px" alt="Arkema" />
+	  </a>
+	  <a href="http://www.dragonflygroup.com/" target="_blank">
+	  <img class="shadow" src={{ url_for('static', filename="img/logo/enterprise/dragonfly.jpg") }} width="200px"
+	       height="131px" alt="Dragonfly Group"/>
+	  </a>
+	  <a href="http://www.faurecia.com/" target="_blank">
+	    <img class="shadow" src={{ url_for('static', filename="img/logo/enterprise/faurecia.jpg") }}
+	    width="200px" height="104px" alt="Faurecia" />
+	  </a>
+	  <a href="http://www.loreal.fr/" target="_blank"><img class="shadow" src={{ url_for('static', filename="img/logo/enterprise/LOreal.jpg") }}
+	    width="200px" height="47px" alt="L'Oréal" />
+	  </a>
+	  <a href="http://www.oxylane.com/" target="_blank">
+	    <img class="shadow" src={{ url_for('static', filename="img/logo/enterprise/oxylane.jpg") }}
+	    width="200px" height="104px" alt="Oxylane" />
+	  </a>
+	  <a href="http://www.schneider-electric.com/" target="_blank">
+	  <img class="shadow" src={{ url_for('static', filename="img/logo/enterprise/schneider.jpg") }} width="200px"
+	       height="131px" alt="Schneider"/>
+	  </a>
+	  <a href="http://www.valeo.com/" target="_blank">
+	    <img class="shadow" src={{ url_for('static', filename="img/logo/enterprise/valeo.jpg") }}
+	    width="200px" height="104px" alt="Valeo" />
+	  </a>
 	</td>
       </tr>
       <tr>
-	<td><strong>10h – 10h30</strong><br />Amphi L108</td>
+	<td><strong>10h – 10h30</strong><br />Amphi R112</td>
 	<td>
 	  <h3>{{ _('Opening Speeches') }}</h3>
 	  <ul>
-	    <li><strong>{{ _('Mr. Romain SOUBEYRAN') }}</strong>, {{ _('Director of MINES ParisTech') }}</li>
-	    <li><strong>{{ _('Mr. Yves POILANE') }}</strong>, {{ _('President of ParisTech') }}</li>
+	    <li><strong>{{ _('Ms. Elisabeth CREPON') }}</strong>, {{ _('Director of ENSTA ParisTech') }}</li>
+	    <li><strong>{{ _('Mr. Jean Philippe VANOT') }}</strong>, {{ _('President of ParisTech') }}</li>
 	    <li><strong>{{ _('Mr. Yansheng MA') }}</strong>, {{ _('Minister Counselor ( Education), Embassy of China') }}</li>
 	    <li><strong>{{ _('Mr. Qi ZHU') }}</strong>, {{ _('President of AFCP') }}</li>
 	  </ul>
 	</td>
       </tr>
       <tr>
-	<td><strong>11h – 12h</strong><br />Amphi L108</td>
+	<td><strong>11h – 11h30</strong><br />Room 1320</td>
 	<td>
-	  <h3>{{ _('Company presentation') }}</h3>
+	  <h3>{{ _('Round Table Discussion') }}</h3>
 	  <div class="center">
 	    <strong>Arkema</strong>
 	  </div>
 	</td>
       </tr>
       <tr>
-	<td><strong>12h – 13h30</strong></td>
+	<td><strong>11h45 – 12h15</strong><br />Room 1320</td>
+	<td>
+	  <h3>{{ _('Round Table Discussion') }}</h3>
+	  <div class="center">
+	    <strong>Faurecia</strong>
+	  </div>
+	</td>
+      </tr>
+      <tr>
+	<td><strong>12h30 – 13h30</strong></td>
 	<td>
 	  <h3>{{ _('Lunch') }}</h3>
 	</td>
       </tr>
       <tr>
-	<td><strong>13h30 – 14h30</strong><br />Amphi L108</td>
+	<td><strong>14h – 14h30</strong><br />Room 1320</td>
 	<td>
-	  <h3>{{ _('Company presentation') }}</h3>
+	  <h3>{{ _('Round Table Discussion') }}</h3>
 	  <div class="center">
-	    <strong>L'Oréal</strong>
+	    <strong>Schneider Electric</strong>
 	  </div>
 	</td>
       </tr>
       <tr>
-	<td><strong>14h40 – 15h40</strong><br />Amphi L108</td>
+	<td><strong>15h – 15h30</strong><br />Room 1320</td>
 	<td>
-	  <h3>{{ _('Company presentation') }}</h3>
+	  <h3>{{ _('Round Table Discussion') }}</h3>
 	  <div class="center">
-	    <strong>BMW Group</strong>
+	    <strong>Oxylane</strong>
 	  </div>
 	</td>
       </tr>
+      <tr>
+	<td><strong>17h – 18h</strong><br />Amphi R112</td>
+	<td>
+	  <h3>{{ _('Closing Ceremony') }}</h3>
+	  <div class="center">
+	    <strong>{{ _('Speaker to be determined') }}</strong>
+	  </div>
+	</td>
+      </tr>
+      {#
       <tr>
 	<td><strong>15h45 – 17h15</strong><br /> Amphi L108</td>
 	<td>
@@ -103,6 +124,7 @@
 	  </ul>
 	</td>
       </tr>
+
       <tr>
 	<td><strong>17h30 – 18h30</strong><br /> Amphi L108</td>
 	<td>
@@ -116,8 +138,9 @@
 
 	</td>
       </tr>
+      #}
       <tr>
-	<td><strong>18h30 – 19h00</strong></td>
+	<td><strong>18h – 18h30</strong></td>
 	<td>
 	  <h3>{{ _('Cocktail') }}</h3>
 	</td>
@@ -128,7 +151,12 @@
       <a href="http://www.afcp-paristech.org" target="_blank">
 	<img class="shadow"
 	     src="{{ url_for('static', filename="img/logo/afcp_logo.jpg") }}"
-	     width="312"height="45" alt="AFCP" />
+	     width="312" height="45" alt="AFCP" />
+      </a>
+      <a href="http://www.ensta-paristech.fr" target="_blank">
+	<img class="shadow"
+	     src="{{ url_for('static', filename="img/logo/ensta.jpg") }}"
+	     width="50" height="45" alt="ensta" />
       </a>
       <div class="floatright">
 	<a href="http://www.paristech.fr/" target="_blank">

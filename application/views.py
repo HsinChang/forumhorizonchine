@@ -27,16 +27,20 @@ from models import ForumModel, PageModel, MenuModel, ModuleModel
 # Flask-Cache (configured to use App Engine Memcache API)
 cache = Cache(app)
 
+# @app.route('/')
+# def home():
+#     forum = ForumModel.query().get()
+#     if not forum:
+#         forum = ForumModel(
+#             date = '',
+#             address = ''
+#         )
+#     forum.formated_date = format_date(forum.date, 'full')
+#     return render_template('home.html', forum=forum)
+
 @app.route('/')
 def home():
-    forum = ForumModel.query().get()
-    if not forum:
-        forum = ForumModel(
-            date = '',
-            address = ''
-        )
-    forum.formated_date = format_date(forum.date, 'full')
-    return render_template('home.html', forum=forum)
+    return redirect(url_for('page', entry='index'))
 
 @app.route('/setlocale/<locale>')
 def setlocale(locale):

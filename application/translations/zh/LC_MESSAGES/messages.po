@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2014-02-24 16:55+0100\n"
-"PO-Revision-Date: 2014-02-27 17:36+0100\n"
+"POT-Creation-Date: 2014-03-02 13:43+0100\n"
+"PO-Revision-Date: 2014-03-02 13:44+0100\n"
 "Last-Translator: Tianming.Lu <lutianming1005@gmail.com>\n"
 "Language-Team: zh <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -135,19 +135,19 @@ msgstr ""
 msgid "Official partners of the Forum in 2014"
 msgstr "2014年论坛官方合作伙伴"
 
-#: templates/home.html:43 templates/home.html:48 templates/home.html:52
+#: templates/home.html:42
 msgid "Official website"
 msgstr "官方网站"
 
-#: templates/home.html:56
+#: templates/home.html:46
 msgid "Poster"
 msgstr "海报"
 
-#: templates/home.html:65
+#: templates/home.html:55
 msgid "Welcome to <em>China Horizon Forum</em>"
 msgstr "欢迎来到<em>中国地平线</em>论坛！"
 
-#: templates/home.html:73
+#: templates/home.html:63
 msgid ""
 "Co-organized by the French-Chinese Friendship Association of ParisTech "
 "(AFCP) and ParisTech, Forum Horizon Chine is a space for recruiting French "
@@ -158,7 +158,7 @@ msgstr ""
 "台，其面向对象为巴黎高科旗下的工程师学校及商校的中国学生及毕业生，以及一些会"
 "说中文的法国学生。"
 
-#: templates/home.html:77
+#: templates/home.html:67
 #, python-format
 msgid ""
 "This year, the sixth edition will be held at <a href=\"http://www.ensta-"
@@ -172,7 +172,7 @@ msgstr ""
 "决定了其可以吸引到那些最有志于在中法两国间开展职业生涯的学生和毕业生。论坛包"
 "含了一个招聘沙龙以及一些讲座，届时您将可以："
 
-#: templates/home.html:81
+#: templates/home.html:71
 msgid ""
 "Meet talented young Chinese students and graduates as well as French "
 "students and graduates wishing to pursue a career in China,"
@@ -180,11 +180,11 @@ msgstr ""
 "接触到一些正在求学或已经毕业了的中国年轻人才，以及希望在中国工作的法国学生和"
 "毕业生。"
 
-#: templates/home.html:84
+#: templates/home.html:74
 msgid "Present your company and your development strategy in China and Asia,"
 msgstr "介绍您的企业及其在中国及亚洲的发展战略。"
 
-#: templates/home.html:87
+#: templates/home.html:77
 msgid ""
 "Communicate with other companies and representatives of China’s special "
 "economic zones, in order to know the Chinese market, its regulatory "
@@ -193,13 +193,13 @@ msgstr ""
 "与来自中国经济特区的其他企业和代表进行交流，以便了解中国市场、其监管环境以及"
 "进入该市场的可能性。"
 
-#: templates/home.html:91
+#: templates/home.html:81
 msgid ""
 "You will participate in a series of conferences and round tables at the end "
 "of the day followed by a cocktail."
 msgstr "我们将为您提供一系列讲座及圆桌会议，在活动接近尾声时还将举行鸡尾酒会。"
 
-#: templates/home.html:94
+#: templates/home.html:84
 msgid ""
 "This forum is co-organized by the French-Chinese Friendship Association "
 "ParisTech (AFCP) and ParisTech, with the support of the Embassy of China."
@@ -207,11 +207,11 @@ msgstr ""
 "此论坛由巴黎高科中法友好协会(AFCP)及巴黎高科集团联合组织，并得到了中国大使馆"
 "的大力支持。"
 
-#: templates/home.html:97
+#: templates/home.html:87
 msgid "Wish to get a stand for your company?"
 msgstr "您希望为您的企业获得一个展台？"
 
-#: templates/home.html:100
+#: templates/home.html:90
 #, python-format
 msgid ""
 "Please do not hesitate to <a href=\"%(contact)s\">contact us</a> to receive "
@@ -223,11 +223,11 @@ msgstr ""
 "面，您将可以了解到 <a href=\"%(visitors)s\">到访学生的基本信息</a> 以及 <a "
 "href=\"%(services)s\">我们提供的服务</a>。 "
 
-#: templates/home.html:103
+#: templates/home.html:93
 msgid "You are a student or an alumnus of Paristech?"
 msgstr "您是巴黎高科的学生或者校友？"
 
-#: templates/home.html:106
+#: templates/home.html:96
 #, python-format
 msgid ""
 "Registrations will open one or two months before the Forum. Until then, you "
@@ -238,7 +238,7 @@ msgstr ""
 "\"%(program)s\">去年活动安排</a>和<a href=\"%(exhibitors)s\">展出商</a>来获取"
 "更多信息。"
 
-#: templates/home.html:108
+#: templates/home.html:98
 #, python-format
 msgid ""
 "You can now register on <a href=\"%(inscription)s\">the registration page</"
@@ -250,7 +250,7 @@ msgstr ""
 "息，请查询“到访学生”页面，里面有 <a href=\"%(program)s\">日程安排</a> 和 <a "
 "href=\"%(exhibitors)s\">参展企业名单</a>。"
 
-#: templates/home.html:127
+#: templates/home.html:117
 msgid "Organizers"
 msgstr "主办方"
 
@@ -289,50 +289,48 @@ msgid "Getting there by public transportation"
 msgstr ""
 
 #: templates/about/balance.html:5 templates/includes/about_forum.html:13
-msgid "2012 balance"
-msgstr "2012论坛总结"
+msgid "2013 balance"
+msgstr "2013论坛总结"
 
 #: templates/about/balance.html:7
 msgid ""
-"The 2012 edition of the Forum received 8 companies and 300 subscriptions on "
+"The 2013 edition of the Forum received 8 companies and 300 subscriptions on "
 "the website. Assessment and statistics about participants are presented here "
 "(schools, location, area, nationality)."
 msgstr ""
 
 #: templates/about/balance.html:13
-msgid "China Horizon Forum 2012 balance"
-msgstr "2012年中国地平线论坛小结"
+msgid "China Horizon Forum 2013 balance"
+msgstr "2013年中国地平线论坛小结"
 
 #: templates/about/balance.html:15
 msgid ""
-"The 5<sup>th</sup> China Horizon Forum was held on April 12, 2012 at Télécom "
+"The 6<sup>th</sup> China Horizon Forum was held on April 18, 2013 at Mines "
 "ParisTech."
-msgstr "第五届中国地平线论坛已于2012年4月12日在巴黎高科高等电信学院举行。"
+msgstr "第五届中国地平线论坛已于2013年4月18日在巴黎高科高等矿业学校举行。"
 
 #: templates/about/balance.html:16
 msgid ""
-"In terms of attendance, 297 people registered on our official website. Among "
+"In terms of attendance, 225 people registered on our official website. Among "
 "them, many Chinese graduates or experienced workers already in search of a "
 "first job, or a new job, as well as French and Chinese students looking for "
-"a short term or long term internship. During the Forum, about 180 "
-"participants responded to a questionnaire on their profile, and the "
-"information collected is analyzed and presented below. Among those "
-"participants, nearly a quarter were not registered on our official website. "
-"Speaking of the industry, eight companies from various sectors were present: "
-"Alstom, Arkema, BNP, Bureau Veritas, Dragonfly Group, IBM, L'Oréal and Saint-"
-"Gobain."
+"a short term or long term internship. During the Forum, participants "
+"responded to a questionnaire on their profile, and the information collected "
+"is analyzed and presented below. Speaking of the industry, seven companies "
+"from various sectors were present: Alstom, Arkema, BMW group, Egis "
+"International, Dragonfly, Valeo and L'Oréal."
 msgstr ""
-"在参与者方面，有297人在我们的官网上进行了注册。他们当中，有不少刚毕业的中国学"
+"在参与者方面，有225人在我们的官网上进行了注册。他们当中，有不少刚毕业的中国学"
 "生或者已经有工作经验的在职人员分别前来寻找他们的第一份工作或是一份新的工作，"
-"同时，也有一些在找短期或长期实习的在校学生。论坛当日，将近180名参与者回答了有"
-"关他们简历的调查问卷，统计数据将在下方进行分析及介绍。这些人中将近四分之一并"
-"没有在我们的官网上进行注册。在企业方面，8家分属不同领域的企业出席了论坛：阿尔"
-"斯通，阿科玛，法国巴黎银行，必维国际检验集团，唐沪集团，IBM，欧莱雅和圣戈班。"
+"同时，也有一些在找短期或长期实习的在校学生。论坛当日，参与者们回答了有关他们"
+"简历的调查问卷，统计数据将在下方进行分析及介绍。在企业方面，7家分属不同领域的"
+"企业出席了论坛：Alstom, Arkema, BMW group, Egis International, Dragonfly, "
+"Valeo和Oréal"
 
 #: templates/about/balance.html:19
 msgid ""
-"Below are statistics about the participants of 2012 China Horizon Forum:"
-msgstr "以下是2012年中国地平线论坛参与者的统计数据："
+"Below are statistics about the participants of 2013 China Horizon Forum:"
+msgstr "以下是2013年中国地平线论坛参与者的统计数据："
 
 #: templates/about/contact.html:7
 msgid "Contact the team of China Horizon Forum"
@@ -356,7 +354,7 @@ msgstr "姓名"
 msgid "Title"
 msgstr "职位"
 
-#: templates/about/contact.html:25 templates/visitors/program.html:56
+#: templates/about/contact.html:25 templates/visitors/program.html:58
 msgid "Mr. Qi ZHU"
 msgstr "朱琪 先生"
 
@@ -395,13 +393,13 @@ msgstr ""
 
 #: templates/admin/activities.html:31 templates/admin/edit_enterprise.html:43
 #: templates/admin/enterprises.html:31 templates/admin/jobs.html:43
-#: templates/exhibitors/jobs.html:34
+#: templates/admin/page_modules.html:26 templates/exhibitors/jobs.html:34
 msgid "edit"
 msgstr "编辑"
 
 #: templates/admin/activities.html:36 templates/admin/edit_enterprise.html:46
 #: templates/admin/enterprises.html:36 templates/admin/jobs.html:48
-#: templates/exhibitors/jobs.html:39
+#: templates/admin/page_modules.html:31 templates/exhibitors/jobs.html:39
 msgid "delete"
 msgstr "删除"
 
@@ -479,6 +477,14 @@ msgstr "编辑职位"
 msgid "Edit Job"
 msgstr ""
 
+#: templates/admin/edit_page_module.html:10
+msgid "edit module for page"
+msgstr ""
+
+#: templates/admin/edit_page_module.html:15
+msgid "module"
+msgstr ""
+
 #: templates/admin/enterprises.html:5 templates/admin/enterprises.html:10
 msgid "All enterprises"
 msgstr ""
@@ -541,6 +547,18 @@ msgstr ""
 #: templates/exhibitors/new_job.html:11 templates/exhibitors/new_job.html:16
 msgid "New job"
 msgstr "新的职位"
+
+#: templates/admin/new_page_module.html:10
+msgid "new module for page"
+msgstr ""
+
+#: templates/admin/new_page_module.html:15
+msgid "new module"
+msgstr ""
+
+#: templates/admin/page_modules.html:4
+msgid "Modules for page"
+msgstr ""
 
 #: templates/admin/sort_enterprises.html:5
 msgid "Sort enterprises"
@@ -672,7 +690,7 @@ msgid ""
 msgstr ""
 "我们将为您组织圆桌会议，邀请有兴趣投资中国市场的法国大中小企业参加讨论。"
 
-#: templates/exhibitors/services.html:67 templates/visitors/program.html:122
+#: templates/exhibitors/services.html:67 templates/visitors/program.html:145
 msgid "Cocktail"
 msgstr "鸡尾酒会"
 
@@ -969,7 +987,7 @@ msgstr "活动安排"
 msgid "Job opportunities"
 msgstr "职位信息"
 
-#: templates/includes/visitor_menu.html:28
+#: templates/includes/visitor_menu.html:28 templates/module/activities.html:2
 #: templates/visitors/activities.html:9
 msgid "Activities"
 msgstr "其他活动"
@@ -1011,17 +1029,33 @@ msgstr "祝好！"
 msgid "The team of AFCP"
 msgstr "AFCP团队"
 
-#: templates/visitors/activities.html:4
-msgid "Activities via China Horizon Forum"
-msgstr "中国地平线论坛活动"
-
-#: templates/visitors/activities.html:26
+#: templates/module/activities.html:19 templates/visitors/activities.html:26
 msgid "register now"
 msgstr "注册"
 
-#: templates/visitors/activities.html:31
+#: templates/module/activities.html:24 templates/visitors/activities.html:31
 msgid "There is no activity now."
 msgstr "现在没有活动。"
+
+#: templates/module/comment.html:2 templates/visitors/workpermit.html:21
+msgid "You wish to send a comment about this guide?"
+msgstr "您想要对此发表评论？"
+
+#: templates/module/comment.html:9 templates/visitors/workpermit.html:28
+msgid "Send the message"
+msgstr "发送消息"
+
+#: templates/module/job.html:2 templates/visitors/job.html:29
+msgid "Jobs opportunities"
+msgstr "职位信息"
+
+#: templates/module/job.html:5 templates/visitors/job.html:32
+msgid "There is no job now."
+msgstr "现在没有职位。"
+
+#: templates/visitors/activities.html:4
+msgid "Activities via China Horizon Forum"
+msgstr "中国地平线论坛活动"
 
 #: templates/visitors/exhibitors.html:4
 msgid "Exhibitors in China Horizon Forum"
@@ -1188,14 +1222,6 @@ msgid ""
 "and AFCP."
 msgstr "论坛和AFCP的合作企业的招聘广告将在本页贴出。"
 
-#: templates/visitors/job.html:29
-msgid "Jobs opportunities"
-msgstr "职位信息"
-
-#: templates/visitors/job.html:32
-msgid "There is no job now."
-msgstr "现在没有职位。"
-
 #: templates/visitors/program.html:4
 msgid "Program of China Horizon Forum"
 msgstr "中国地平线论坛活动安排"
@@ -1213,97 +1239,61 @@ msgid "Forum program"
 msgstr "活动安排"
 
 #: templates/visitors/program.html:15
-msgid "Free entrance, 10h – 19h, April 18th 2013"
-msgstr "免费入场, 2013年4月18日10点至19点"
+msgid "Free entrance, 9h30 – 18h30, March 6th 2014"
+msgstr "免费入场, 2014年3月6日9点30至18点30"
 
-#: templates/visitors/program.html:21
+#: templates/visitors/program.html:19
 msgid "Registration and welcome coffee"
 msgstr "接待/早餐"
 
-#: templates/visitors/program.html:51
+#: templates/visitors/program.html:53
 msgid "Opening Speeches"
 msgstr "开幕仪式"
 
-#: templates/visitors/program.html:53
-msgid "Mr. Romain SOUBEYRAN"
-msgstr "Romain SOUBEYRAN 先生"
+#: templates/visitors/program.html:55
+msgid "Ms. Elisabeth CREPON"
+msgstr "Elisabeth CREPON 女士"
 
-#: templates/visitors/program.html:53
-msgid "Director of MINES ParisTech"
-msgstr "巴黎高科高等矿业学校校长"
+#: templates/visitors/program.html:55
+msgid "Director of ENSTA ParisTech"
+msgstr "巴黎高科高等先进技术学校校长"
 
-#: templates/visitors/program.html:54
-msgid "Mr. Yves POILANE"
-msgstr "Yves POILANE 先生"
+#: templates/visitors/program.html:56
+msgid "Mr. Jean Philippe VANOT"
+msgstr "Jean Philippe VANOT先生"
 
-#: templates/visitors/program.html:54
+#: templates/visitors/program.html:56
 msgid "President of ParisTech"
 msgstr "巴黎高科主席"
 
-#: templates/visitors/program.html:55
+#: templates/visitors/program.html:57
 msgid "Mr. Yansheng MA"
 msgstr "马燕生先生"
 
-#: templates/visitors/program.html:55
+#: templates/visitors/program.html:57
 msgid "Minister Counselor ( Education), Embassy of China"
 msgstr "中华人民共和国驻法兰西共和国大使馆教育处公使衔参赞"
 
-#: templates/visitors/program.html:56
+#: templates/visitors/program.html:58
 msgid "President of AFCP"
 msgstr "AFCP主席"
 
-#: templates/visitors/program.html:63 templates/visitors/program.html:78
-#: templates/visitors/program.html:87
-msgid "Company presentation"
-msgstr "企业讲座"
+#: templates/visitors/program.html:65 templates/visitors/program.html:74
+#: templates/visitors/program.html:89 templates/visitors/program.html:98
+msgid "Round Table Discussion"
+msgstr "圆桌会议"
 
-#: templates/visitors/program.html:72
+#: templates/visitors/program.html:83
 msgid "Lunch"
 msgstr "午餐/休息时间"
 
-#: templates/visitors/program.html:96
-msgid "Panel discussion"
-msgstr "圆桌会议"
-
-#: templates/visitors/program.html:97
-msgid "\"China and renewable energies\""
-msgstr "《中国与可再生资源》"
-
-#: templates/visitors/program.html:99
-msgid "Ms. Suyan ZHOU"
-msgstr "周苏燕"
-
-#: templates/visitors/program.html:99
-msgid "Senior Advisor, EDF, Direction Strategy &amp; Prospective"
-msgstr "高级顾问，EDF 策略与发展部门"
-
-#: templates/visitors/program.html:100
-msgid "Mr. Xavier BARBARO"
-msgstr "Xavier BARBARO"
-
-#: templates/visitors/program.html:100
-msgid "Chief Executive Officer, NEOEN"
-msgstr "NEOEN 行政总裁"
-
-#: templates/visitors/program.html:101
-msgid "Mr. Michel AUBLANT"
-msgstr "Michel AUBLANT"
-
-#: templates/visitors/program.html:101
-msgid "Executive Director of Institut ICARE"
-msgstr "ICARE 执行总裁"
-
-#: templates/visitors/program.html:102
-msgid "Mr. Didier MAYER"
-msgstr "Didier MAYER"
-
-#: templates/visitors/program.html:102
-msgid "Head of the Department Energy and Processes, MINES ParisTech"
-msgstr "国立巴黎高等矿业学校能源与工序学院院长"
-
-#: templates/visitors/program.html:109
+#: templates/visitors/program.html:107
 msgid "Closing Ceremony"
 msgstr "闭幕式"
+
+#: templates/visitors/program.html:109
+msgid "Speaker to be determined"
+msgstr "嘉宾待确定"
 
 #: templates/visitors/workpermit.html:6 templates/visitors/workpermit.html:14
 msgid "Status change from student to employee"
@@ -1319,16 +1309,47 @@ msgstr "本页面(主要以中文)详细介绍了从学生身份转为工作身�
 msgid "Link to the PDF"
 msgstr "下载PDF"
 
-#: templates/visitors/workpermit.html:21
-msgid "You wish to send a comment about this guide?"
-msgstr "您想要对此发表评论？"
-
-#: templates/visitors/workpermit.html:28
-msgid "Send the message"
-msgstr "发送消息"
-
 #~ msgid "Ms. Nan ZHANG"
 #~ msgstr "章楠 小姐"
 
 #~ msgid "Mr. Zheng LI"
 #~ msgstr "李铮 先生"
+
+#~ msgid "Mr. Romain SOUBEYRAN"
+#~ msgstr "Romain SOUBEYRAN 先生"
+
+#~ msgid "Mr. Yves POILANE"
+#~ msgstr "Yves POILANE 先生"
+
+#~ msgid "Company presentation"
+#~ msgstr "企业讲座"
+
+#~ msgid "\"China and renewable energies\""
+#~ msgstr "《中国与可再生资源》"
+
+#~ msgid "Ms. Suyan ZHOU"
+#~ msgstr "周苏燕"
+
+#~ msgid "Senior Advisor, EDF, Direction Strategy &amp; Prospective"
+#~ msgstr "高级顾问，EDF 策略与发展部门"
+
+#~ msgid "Mr. Xavier BARBARO"
+#~ msgstr "Xavier BARBARO"
+
+#~ msgid "Chief Executive Officer, NEOEN"
+#~ msgstr "NEOEN 行政总裁"
+
+#~ msgid "Mr. Michel AUBLANT"
+#~ msgstr "Michel AUBLANT"
+
+#~ msgid "Executive Director of Institut ICARE"
+#~ msgstr "ICARE 执行总裁"
+
+#~ msgid "Mr. Didier MAYER"
+#~ msgstr "Didier MAYER"
+
+#~ msgid "Head of the Department Energy and Processes, MINES ParisTech"
+#~ msgstr "国立巴黎高等矿业学校能源与工序学院院长"
+
+#~ msgid "2012 balance"
+#~ msgstr "2012论坛总结"

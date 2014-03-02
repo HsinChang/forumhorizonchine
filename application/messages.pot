@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2014-02-24 17:02+0100\n"
+"POT-Creation-Date: 2014-03-02 13:43+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -132,19 +132,19 @@ msgstr ""
 msgid "Official partners of the Forum in 2014"
 msgstr ""
 
-#: templates/home.html:43 templates/home.html:48 templates/home.html:52
+#: templates/home.html:42
 msgid "Official website"
 msgstr ""
 
-#: templates/home.html:56
+#: templates/home.html:46
 msgid "Poster"
 msgstr ""
 
-#: templates/home.html:65
+#: templates/home.html:55
 msgid "Welcome to <em>China Horizon Forum</em>"
 msgstr ""
 
-#: templates/home.html:73
+#: templates/home.html:63
 msgid ""
 "Co-organized by the French-Chinese Friendship Association of ParisTech "
 "(AFCP) and ParisTech, Forum Horizon Chine is a space for recruiting "
@@ -152,7 +152,7 @@ msgid ""
 "and business Grandes Écoles of ParisTech."
 msgstr ""
 
-#: templates/home.html:77
+#: templates/home.html:67
 #, python-format
 msgid ""
 "This year, the sixth edition will be held at <a href=\"http://www.ensta-"
@@ -162,40 +162,40 @@ msgid ""
 "include a job fair and conference facilities where you will:"
 msgstr ""
 
-#: templates/home.html:81
+#: templates/home.html:71
 msgid ""
 "Meet talented young Chinese students and graduates as well as French "
 "students and graduates wishing to pursue a career in China,"
 msgstr ""
 
-#: templates/home.html:84
+#: templates/home.html:74
 msgid "Present your company and your development strategy in China and Asia,"
 msgstr ""
 
-#: templates/home.html:87
+#: templates/home.html:77
 msgid ""
 "Communicate with other companies and representatives of China’s special "
 "economic zones, in order to know the Chinese market, its regulatory "
 "environment and its opportunities for implementation."
 msgstr ""
 
-#: templates/home.html:91
+#: templates/home.html:81
 msgid ""
 "You will participate in a series of conferences and round tables at the "
 "end of the day followed by a cocktail."
 msgstr ""
 
-#: templates/home.html:94
+#: templates/home.html:84
 msgid ""
 "This forum is co-organized by the French-Chinese Friendship Association "
 "ParisTech (AFCP) and ParisTech, with the support of the Embassy of China."
 msgstr ""
 
-#: templates/home.html:97
+#: templates/home.html:87
 msgid "Wish to get a stand for your company?"
 msgstr ""
 
-#: templates/home.html:100
+#: templates/home.html:90
 #, python-format
 msgid ""
 "Please do not hesitate to <a href=\"%(contact)s\">contact us</a> to "
@@ -204,11 +204,11 @@ msgid ""
 " well as the <a href=\"%(services)s\">services offered</a>."
 msgstr ""
 
-#: templates/home.html:103
+#: templates/home.html:93
 msgid "You are a student or an alumnus of Paristech?"
 msgstr ""
 
-#: templates/home.html:106
+#: templates/home.html:96
 #, python-format
 msgid ""
 "Registrations will open one or two months before the Forum. Until then, "
@@ -217,7 +217,7 @@ msgid ""
 "href=\"%(exhibitors)s\">the exhibitors</a>."
 msgstr ""
 
-#: templates/home.html:108
+#: templates/home.html:98
 #, python-format
 msgid ""
 "You can now register on <a href=\"%(inscription)s\">the registration "
@@ -226,7 +226,7 @@ msgid ""
 "href=\"%(exhibitors)s\">the companies</a> that will participate in."
 msgstr ""
 
-#: templates/home.html:127
+#: templates/home.html:117
 msgid "Organizers"
 msgstr ""
 
@@ -265,42 +265,40 @@ msgid "Getting there by public transportation"
 msgstr ""
 
 #: templates/about/balance.html:5 templates/includes/about_forum.html:13
-msgid "2012 balance"
+msgid "2013 balance"
 msgstr ""
 
 #: templates/about/balance.html:7
 msgid ""
-"The 2012 edition of the Forum received 8 companies and 300 subscriptions "
+"The 2013 edition of the Forum received 8 companies and 300 subscriptions "
 "on the website. Assessment and statistics about participants are "
 "presented here (schools, location, area, nationality)."
 msgstr ""
 
 #: templates/about/balance.html:13
-msgid "China Horizon Forum 2012 balance"
+msgid "China Horizon Forum 2013 balance"
 msgstr ""
 
 #: templates/about/balance.html:15
 msgid ""
-"The 5<sup>th</sup> China Horizon Forum was held on April 12, 2012 at "
-"Télécom ParisTech."
+"The 6<sup>th</sup> China Horizon Forum was held on April 18, 2013 at "
+"Mines ParisTech."
 msgstr ""
 
 #: templates/about/balance.html:16
 msgid ""
-"In terms of attendance, 297 people registered on our official website. "
+"In terms of attendance, 225 people registered on our official website. "
 "Among them, many Chinese graduates or experienced workers already in "
 "search of a first job, or a new job, as well as French and Chinese "
 "students looking for a short term or long term internship. During the "
-"Forum, about 180 participants responded to a questionnaire on their "
-"profile, and the information collected is analyzed and presented below. "
-"Among those participants, nearly a quarter were not registered on our "
-"official website. Speaking of the industry, eight companies from various "
-"sectors were present: Alstom, Arkema, BNP, Bureau Veritas, Dragonfly "
-"Group, IBM, L'Oréal and Saint-Gobain."
+"Forum, participants responded to a questionnaire on their profile, and "
+"the information collected is analyzed and presented below. Speaking of "
+"the industry, seven companies from various sectors were present: Alstom, "
+"Arkema, BMW group, Egis International, Dragonfly, Valeo and L'Oréal."
 msgstr ""
 
 #: templates/about/balance.html:19
-msgid "Below are statistics about the participants of 2012 China Horizon Forum:"
+msgid "Below are statistics about the participants of 2013 China Horizon Forum:"
 msgstr ""
 
 #: templates/about/contact.html:7
@@ -325,7 +323,7 @@ msgstr ""
 msgid "Title"
 msgstr ""
 
-#: templates/about/contact.html:25 templates/visitors/program.html:56
+#: templates/about/contact.html:25 templates/visitors/program.html:58
 msgid "Mr. Qi ZHU"
 msgstr ""
 
@@ -364,13 +362,13 @@ msgstr ""
 
 #: templates/admin/activities.html:31 templates/admin/edit_enterprise.html:43
 #: templates/admin/enterprises.html:31 templates/admin/jobs.html:43
-#: templates/exhibitors/jobs.html:34
+#: templates/admin/page_modules.html:26 templates/exhibitors/jobs.html:34
 msgid "edit"
 msgstr ""
 
 #: templates/admin/activities.html:36 templates/admin/edit_enterprise.html:46
 #: templates/admin/enterprises.html:36 templates/admin/jobs.html:48
-#: templates/exhibitors/jobs.html:39
+#: templates/admin/page_modules.html:31 templates/exhibitors/jobs.html:39
 msgid "delete"
 msgstr ""
 
@@ -448,6 +446,14 @@ msgstr ""
 msgid "Edit Job"
 msgstr ""
 
+#: templates/admin/edit_page_module.html:10
+msgid "edit module for page"
+msgstr ""
+
+#: templates/admin/edit_page_module.html:15
+msgid "module"
+msgstr ""
+
 #: templates/admin/enterprises.html:5 templates/admin/enterprises.html:10
 msgid "All enterprises"
 msgstr ""
@@ -509,6 +515,18 @@ msgstr ""
 #: templates/admin/new_job.html:25 templates/admin/new_job.html:30
 #: templates/exhibitors/new_job.html:11 templates/exhibitors/new_job.html:16
 msgid "New job"
+msgstr ""
+
+#: templates/admin/new_page_module.html:10
+msgid "new module for page"
+msgstr ""
+
+#: templates/admin/new_page_module.html:15
+msgid "new module"
+msgstr ""
+
+#: templates/admin/page_modules.html:4
+msgid "Modules for page"
 msgstr ""
 
 #: templates/admin/sort_enterprises.html:5
@@ -632,7 +650,7 @@ msgid ""
 " set up"
 msgstr ""
 
-#: templates/exhibitors/services.html:67 templates/visitors/program.html:122
+#: templates/exhibitors/services.html:67 templates/visitors/program.html:145
 msgid "Cocktail"
 msgstr ""
 
@@ -905,7 +923,8 @@ msgstr ""
 msgid "Job opportunities"
 msgstr ""
 
-#: templates/includes/visitor_menu.html:28 templates/visitors/activities.html:9
+#: templates/includes/visitor_menu.html:28 templates/module/activities.html:2
+#: templates/visitors/activities.html:9
 msgid "Activities"
 msgstr ""
 
@@ -944,16 +963,32 @@ msgstr ""
 msgid "The team of AFCP"
 msgstr ""
 
-#: templates/visitors/activities.html:4
-msgid "Activities via China Horizon Forum"
-msgstr ""
-
-#: templates/visitors/activities.html:26
+#: templates/module/activities.html:19 templates/visitors/activities.html:26
 msgid "register now"
 msgstr ""
 
-#: templates/visitors/activities.html:31
+#: templates/module/activities.html:24 templates/visitors/activities.html:31
 msgid "There is no activity now."
+msgstr ""
+
+#: templates/module/comment.html:2 templates/visitors/workpermit.html:21
+msgid "You wish to send a comment about this guide?"
+msgstr ""
+
+#: templates/module/comment.html:9 templates/visitors/workpermit.html:28
+msgid "Send the message"
+msgstr ""
+
+#: templates/module/job.html:2 templates/visitors/job.html:29
+msgid "Jobs opportunities"
+msgstr ""
+
+#: templates/module/job.html:5 templates/visitors/job.html:32
+msgid "There is no job now."
+msgstr ""
+
+#: templates/visitors/activities.html:4
+msgid "Activities via China Horizon Forum"
 msgstr ""
 
 #: templates/visitors/exhibitors.html:4
@@ -1104,14 +1139,6 @@ msgid ""
 "Forum and AFCP."
 msgstr ""
 
-#: templates/visitors/job.html:29
-msgid "Jobs opportunities"
-msgstr ""
-
-#: templates/visitors/job.html:32
-msgid "There is no job now."
-msgstr ""
-
 #: templates/visitors/program.html:4
 msgid "Program of China Horizon Forum"
 msgstr ""
@@ -1127,96 +1154,60 @@ msgid "Forum program"
 msgstr ""
 
 #: templates/visitors/program.html:15
-msgid "Free entrance, 10h – 19h, April 18th 2013"
+msgid "Free entrance, 9h30 – 18h30, March 6th 2014"
 msgstr ""
 
-#: templates/visitors/program.html:21
+#: templates/visitors/program.html:19
 msgid "Registration and welcome coffee"
 msgstr ""
 
-#: templates/visitors/program.html:51
+#: templates/visitors/program.html:53
 msgid "Opening Speeches"
 msgstr ""
 
-#: templates/visitors/program.html:53
-msgid "Mr. Romain SOUBEYRAN"
-msgstr ""
-
-#: templates/visitors/program.html:53
-msgid "Director of MINES ParisTech"
-msgstr ""
-
-#: templates/visitors/program.html:54
-msgid "Mr. Yves POILANE"
-msgstr ""
-
-#: templates/visitors/program.html:54
-msgid "President of ParisTech"
+#: templates/visitors/program.html:55
+msgid "Ms. Elisabeth CREPON"
 msgstr ""
 
 #: templates/visitors/program.html:55
-msgid "Mr. Yansheng MA"
-msgstr ""
-
-#: templates/visitors/program.html:55
-msgid "Minister Counselor ( Education), Embassy of China"
+msgid "Director of ENSTA ParisTech"
 msgstr ""
 
 #: templates/visitors/program.html:56
+msgid "Mr. Jean Philippe VANOT"
+msgstr ""
+
+#: templates/visitors/program.html:56
+msgid "President of ParisTech"
+msgstr ""
+
+#: templates/visitors/program.html:57
+msgid "Mr. Yansheng MA"
+msgstr ""
+
+#: templates/visitors/program.html:57
+msgid "Minister Counselor ( Education), Embassy of China"
+msgstr ""
+
+#: templates/visitors/program.html:58
 msgid "President of AFCP"
 msgstr ""
 
-#: templates/visitors/program.html:63 templates/visitors/program.html:78
-#: templates/visitors/program.html:87
-msgid "Company presentation"
+#: templates/visitors/program.html:65 templates/visitors/program.html:74
+#: templates/visitors/program.html:89 templates/visitors/program.html:98
+msgid "Round Table Discussion"
 msgstr ""
 
-#: templates/visitors/program.html:72
+#: templates/visitors/program.html:83
 msgid "Lunch"
 msgstr ""
 
-#: templates/visitors/program.html:96
-msgid "Panel discussion"
-msgstr ""
-
-#: templates/visitors/program.html:97
-msgid "\"China and renewable energies\""
-msgstr ""
-
-#: templates/visitors/program.html:99
-msgid "Ms. Suyan ZHOU"
-msgstr ""
-
-#: templates/visitors/program.html:99
-msgid "Senior Advisor, EDF, Direction Strategy &amp; Prospective"
-msgstr ""
-
-#: templates/visitors/program.html:100
-msgid "Mr. Xavier BARBARO"
-msgstr ""
-
-#: templates/visitors/program.html:100
-msgid "Chief Executive Officer, NEOEN"
-msgstr ""
-
-#: templates/visitors/program.html:101
-msgid "Mr. Michel AUBLANT"
-msgstr ""
-
-#: templates/visitors/program.html:101
-msgid "Executive Director of Institut ICARE"
-msgstr ""
-
-#: templates/visitors/program.html:102
-msgid "Mr. Didier MAYER"
-msgstr ""
-
-#: templates/visitors/program.html:102
-msgid "Head of the Department Energy and Processes, MINES ParisTech"
+#: templates/visitors/program.html:107
+msgid "Closing Ceremony"
 msgstr ""
 
 #: templates/visitors/program.html:109
-msgid "Closing Ceremony"
+msgid "Speaker to be determined"
 msgstr ""
 
 #: templates/visitors/workpermit.html:6 templates/visitors/workpermit.html:14
@@ -1231,13 +1222,5 @@ msgstr ""
 
 #: templates/visitors/workpermit.html:17
 msgid "Link to the PDF"
-msgstr ""
-
-#: templates/visitors/workpermit.html:21
-msgid "You wish to send a comment about this guide?"
-msgstr ""
-
-#: templates/visitors/workpermit.html:28
-msgid "Send the message"
 msgstr ""
 

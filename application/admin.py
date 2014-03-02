@@ -680,7 +680,7 @@ def edit_menu(keyurl):
         abort(404)
 
 
-@admin.route('/delete_menu/')
+@admin.route('/delete_menu/<keyurl>')
 @admin_required
 def delete_menu(keyurl):
     def _delete_children(menu):
@@ -689,15 +689,19 @@ def delete_menu(keyurl):
             _delete_children(child.get())
             menu.delete()
 
-    menu = ndb.Key(urlsafe=keyurl).get()
-    parent = menu.parent.get()
-    children = menu.children.get()
+    key = ndb.Key(urlsafe=keyurl)
+    menu = key.get()
+    if menu.parent:
+        parent = menu.parent.get()
+        parent.children.remove(menu.key)
+        parent.put()
 
-    parent.children.remove(menu.key)
-    for child in children:
-        _delete_children(child.get())
-    menu.delete()
-    parent.put()
+    if menu.children:
+        children = ndb.get_multi(menu.children)
+        for child in children:
+            _delete_children(child.get())
+    key.delete()
+
     return redirect(url_for('admin.menus'))
 
 
@@ -745,7 +749,11 @@ def edit_page(keyurl):
 @admin.route('/delete_page/<keyurl>')
 @admin_required
 def delete_page(keyurl):
-    pass
+    key = ndb.Key(urlsafe=keyurl)
+    modules = ModuleModel.query(ModuleModel.page == key)
+    key.delete()
+    ndb.delete_multi([m.key for m in modules])
+    return redirect(url_for('admin.pages'))
 
 
 @admin.route('/page_modules/<keyurl>')
@@ -793,11 +801,11 @@ def edit_page_module(keyurl):
 @admin.route('/page_modules/delete/<keyurl>')
 @admin_required
 def delete_page_module(keyurl):
-    module = ndb.Key(urlsafe=keyurl).get()
+    key = ndb.Key(urlsafe=keyurl).get()
+    module = key.get()
     page = module.page
-    module.delete()
+    key.delete()
     return redirect(url_for('admin.page_modules', keyurl=page.urlsafe()))
-
 
 
 def init_admin():

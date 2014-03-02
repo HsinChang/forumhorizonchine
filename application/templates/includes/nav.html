@@ -15,10 +15,10 @@
 
   <div class="page">
     {% for menu in MENU %}
-      <a {% if request.path == url_for('page', keyurl=menu.key.urlsafe()) %}
+      <a {% if request.path == url_for('page', entry=menu.id) %}
 	class="current"
       {% endif %}
-href="{{ url_for('page', keyurl=menu.key.urlsafe()) }}">
+href="{{ url_for('page', entry=menu.id) }}">
       {{ menu.id }}
       </a>
     {% endfor %}

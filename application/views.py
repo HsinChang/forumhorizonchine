@@ -96,9 +96,20 @@ def warmup():
     return ''
 
 from modules import MODULES
-@app.route('/page/<keyurl>')
-def page(keyurl):
-    menu = ndb.Key(urlsafe=keyurl).get()
+@app.route('/<entry>')
+@app.route('/<root>/<entry>')
+def page(entry="", root=""):
+    menu = None
+    if root == "":
+        menu = MenuModel.query(MenuModel.id == entry).get()
+    else:
+        menus = MenuModel.query(MenuModel.id == entry)
+        for m in menus:
+            top = _top(m)
+            if top == root:
+                menu = m
+                break
+
     if menu:
         page = PageModel.query(PageModel.id == menu.action).get()
         modules = ModuleModel.query(ModuleModel.page == page.key)
@@ -118,6 +129,29 @@ def page(keyurl):
                                    topmenu=_top(menu), modules=module_content)
     else:
         abort(404)
+
+# @app.route('/page/<keyurl>')
+# def page(keyurl):
+#     menu = ndb.Key(urlsafe=keyurl).get()
+#     if menu:
+#         page = PageModel.query(PageModel.id == menu.action).get()
+#         modules = ModuleModel.query(ModuleModel.page == page.key)
+#         module_content = {}
+#         for module in modules:
+#             f = MODULES[module.name]
+#             content = f()
+#             if module.position not in module_content:
+#                 module_content[module.position] = []
+#             module_content[module.position].append(content)
+
+#         if page.type == 'SINGLE':
+#             return render_template('base_page_1.html',
+#                                    page=page, modules=module_content)
+#         elif page.type == 'SIDEBAR':
+#             return render_template('base_page_2.html', page=page,
+#                                    topmenu=_top(menu), modules=module_content)
+#     else:
+#         abort(404)
 
 
 def page_view_function(page, topmenu):

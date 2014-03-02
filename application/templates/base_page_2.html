@@ -43,9 +43,9 @@
       <ul class="list">
 	{% for entry_key in menu_nav.children %}
 	  {% set entry = entry_key.get() %}
-	  <li {% if request.path == url_for('page', keyurl=entry.key.urlsafe()) %}
+	  <li {% if request.path == url_for('page', root=topmenu.id, entry=entry.id) %}
 	    class="current" {% endif %}>
-	    <a href="{{ url_for('page', keyurl=entry.key.urlsafe()) }}">
+	    <a href="{{ url_for('page', root=topmenu.id, entry=entry.id) }}">
 	      {{ entry.meta[lang] }}
 	    </a>
 	  </li>

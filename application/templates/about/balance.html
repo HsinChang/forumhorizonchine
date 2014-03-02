@@ -19,8 +19,8 @@
   <p>{{ _('Below are statistics about the participants of 2013 China Horizon Forum:') }}</p>
 
   <div>
-    <img src={{ url_for('static',filename='img/balance2013/balance2013.png'.format(locale)) }}
-	 alt="statistics" />
+    <img width="650px" src={{ url_for('static',filename='img/balance2013/balance2013_{0}.png'.format(locale)) }}
+    alt="statistics" />
   </div>
   {#
   <div>

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2014-03-02 13:43+0100\n"
+"POT-Creation-Date: 2014-03-06 13:26+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -191,24 +191,11 @@ msgid ""
 "ParisTech (AFCP) and ParisTech, with the support of the Embassy of China."
 msgstr ""
 
-#: templates/home.html:87
-msgid "Wish to get a stand for your company?"
-msgstr ""
-
-#: templates/home.html:90
-#, python-format
-msgid ""
-"Please do not hesitate to <a href=\"%(contact)s\">contact us</a> to "
-"receive our offers. In section \"Exhibitors\", You will find <a "
-"href=\"%(visitors)s\">a presentation of the visitors\tof the Forum</a> as"
-" well as the <a href=\"%(services)s\">services offered</a>."
-msgstr ""
-
-#: templates/home.html:93
+#: templates/home.html:88
 msgid "You are a student or an alumnus of Paristech?"
 msgstr ""
 
-#: templates/home.html:96
+#: templates/home.html:92
 #, python-format
 msgid ""
 "Registrations will open one or two months before the Forum. Until then, "
@@ -217,13 +204,26 @@ msgid ""
 "href=\"%(exhibitors)s\">the exhibitors</a>."
 msgstr ""
 
-#: templates/home.html:98
+#: templates/home.html:94
 #, python-format
 msgid ""
 "You can now register on <a href=\"%(inscription)s\">the registration "
 "page</a>. Find out more about this Forum, in \"Visitor\" section, you can"
 " take a look at <a href=\"%(program)s\">the program</a> and at <a "
 "href=\"%(exhibitors)s\">the companies</a> that will participate in."
+msgstr ""
+
+#: templates/home.html:98
+msgid "Wish to get a stand for your company?"
+msgstr ""
+
+#: templates/home.html:101
+#, python-format
+msgid ""
+"Please do not hesitate to <a href=\"%(contact)s\">contact us</a> to "
+"receive our offers. In section \"Exhibitors\", You will find <a "
+"href=\"%(visitors)s\">a presentation of the visitors\tof the Forum</a> as"
+" well as the <a href=\"%(services)s\">services offered</a>."
 msgstr ""
 
 #: templates/home.html:117
@@ -549,6 +549,10 @@ msgid ""
 "order you sort."
 msgstr ""
 
+#: templates/admin/sort_menus.html:5
+msgid "Sort menus"
+msgstr ""
+
 #: templates/exhibitors/jobs.html:5
 msgid "Your jobs"
 msgstr ""
@@ -650,7 +654,7 @@ msgid ""
 " set up"
 msgstr ""
 
-#: templates/exhibitors/services.html:67 templates/visitors/program.html:145
+#: templates/exhibitors/services.html:67 templates/visitors/program.html:152
 msgid "Cocktail"
 msgstr ""
 
@@ -1154,7 +1158,7 @@ msgid "Forum program"
 msgstr ""
 
 #: templates/visitors/program.html:15
-msgid "Free entrance, 9h30 – 18h30, March 6th 2014"
+msgid "Free entrance, 9h30 – 19h00, March 6th 2014"
 msgstr ""
 
 #: templates/visitors/program.html:19
@@ -1206,8 +1210,30 @@ msgstr ""
 msgid "Closing Ceremony"
 msgstr ""
 
-#: templates/visitors/program.html:109
-msgid "Speaker to be determined"
+#: templates/visitors/program.html:110
+msgid "Philippe JULLIAN"
+msgstr ""
+
+#: templates/visitors/program.html:110
+msgid "Former Chief Financial Officer of Air Liquide"
+msgstr ""
+
+#: templates/visitors/program.html:111
+msgid ""
+"\"The industrial, business and financial strategy of Air Liquide Group "
+"and its presence in China\""
+msgstr ""
+
+#: templates/visitors/program.html:114
+msgid "Wei WEI"
+msgstr ""
+
+#: templates/visitors/program.html:114
+msgid "Group Management Development Director of Faurecia"
+msgstr ""
+
+#: templates/visitors/program.html:115
+msgid "\"Your Global Career at Faurecia\""
 msgstr ""
 
 #: templates/visitors/workpermit.html:6 templates/visitors/workpermit.html:14

@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2014-03-02 13:43+0100\n"
-"PO-Revision-Date: 2014-03-02 13:44+0100\n"
+"POT-Creation-Date: 2014-03-06 13:26+0100\n"
+"PO-Revision-Date: 2014-03-06 13:29+0100\n"
 "Last-Translator: Tianming.Lu <lutianming1005@gmail.com>\n"
 "Language-Team: zh <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -207,27 +207,11 @@ msgstr ""
 "此论坛由巴黎高科中法友好协会(AFCP)及巴黎高科集团联合组织，并得到了中国大使馆"
 "的大力支持。"
 
-#: templates/home.html:87
-msgid "Wish to get a stand for your company?"
-msgstr "您希望为您的企业获得一个展台？"
-
-#: templates/home.html:90
-#, python-format
-msgid ""
-"Please do not hesitate to <a href=\"%(contact)s\">contact us</a> to receive "
-"our offers. In section \"Exhibitors\", You will find <a href=\"%(visitors)s"
-"\">a presentation of the visitors\tof the Forum</a> as well as the <a href="
-"\"%(services)s\">services offered</a>."
-msgstr ""
-"请<a href=\"%(contact)s\">联系我们</a> ，我们会尽快回复您的提问. 在“展出商”页"
-"面，您将可以了解到 <a href=\"%(visitors)s\">到访学生的基本信息</a> 以及 <a "
-"href=\"%(services)s\">我们提供的服务</a>。 "
-
-#: templates/home.html:93
+#: templates/home.html:88
 msgid "You are a student or an alumnus of Paristech?"
 msgstr "您是巴黎高科的学生或者校友？"
 
-#: templates/home.html:96
+#: templates/home.html:92
 #, python-format
 msgid ""
 "Registrations will open one or two months before the Forum. Until then, you "
@@ -238,7 +222,7 @@ msgstr ""
 "\"%(program)s\">去年活动安排</a>和<a href=\"%(exhibitors)s\">展出商</a>来获取"
 "更多信息。"
 
-#: templates/home.html:98
+#: templates/home.html:94
 #, python-format
 msgid ""
 "You can now register on <a href=\"%(inscription)s\">the registration page</"
@@ -249,6 +233,22 @@ msgstr ""
 "请点击 <a href=\"%(inscription)s\">注册页面</a> 来报名 ! 如果想要了解更多信"
 "息，请查询“到访学生”页面，里面有 <a href=\"%(program)s\">日程安排</a> 和 <a "
 "href=\"%(exhibitors)s\">参展企业名单</a>。"
+
+#: templates/home.html:98
+msgid "Wish to get a stand for your company?"
+msgstr "您希望为您的企业获得一个展台？"
+
+#: templates/home.html:101
+#, python-format
+msgid ""
+"Please do not hesitate to <a href=\"%(contact)s\">contact us</a> to receive "
+"our offers. In section \"Exhibitors\", You will find <a href=\"%(visitors)s"
+"\">a presentation of the visitors\tof the Forum</a> as well as the <a href="
+"\"%(services)s\">services offered</a>."
+msgstr ""
+"请<a href=\"%(contact)s\">联系我们</a> ，我们会尽快回复您的提问. 在“展出商”页"
+"面，您将可以了解到 <a href=\"%(visitors)s\">到访学生的基本信息</a> 以及 <a "
+"href=\"%(services)s\">我们提供的服务</a>。 "
 
 #: templates/home.html:117
 msgid "Organizers"
@@ -580,6 +580,10 @@ msgid ""
 "you sort."
 msgstr ""
 
+#: templates/admin/sort_menus.html:5
+msgid "Sort menus"
+msgstr ""
+
 #: templates/exhibitors/jobs.html:5
 msgid "Your jobs"
 msgstr "您的职位"
@@ -690,7 +694,7 @@ msgid ""
 msgstr ""
 "我们将为您组织圆桌会议，邀请有兴趣投资中国市场的法国大中小企业参加讨论。"
 
-#: templates/exhibitors/services.html:67 templates/visitors/program.html:145
+#: templates/exhibitors/services.html:67 templates/visitors/program.html:152
 msgid "Cocktail"
 msgstr "鸡尾酒会"
 
@@ -1239,8 +1243,8 @@ msgid "Forum program"
 msgstr "活动安排"
 
 #: templates/visitors/program.html:15
-msgid "Free entrance, 9h30 – 18h30, March 6th 2014"
-msgstr "免费入场, 2014年3月6日9点30至18点30"
+msgid "Free entrance, 9h30 – 19h00, March 6th 2014"
+msgstr "免费入场, 2014年3月6日9点30至19点"
 
 #: templates/visitors/program.html:19
 msgid "Registration and welcome coffee"
@@ -1291,9 +1295,31 @@ msgstr "午餐/休息时间"
 msgid "Closing Ceremony"
 msgstr "闭幕式"
 
-#: templates/visitors/program.html:109
-msgid "Speaker to be determined"
-msgstr "嘉宾待确定"
+#: templates/visitors/program.html:110
+msgid "Philippe JULLIAN"
+msgstr "Philippe JULLIAN 先生"
+
+#: templates/visitors/program.html:110
+msgid "Former Chief Financial Officer of Air Liquide"
+msgstr "法国液化空气集团前任首席财务官"
+
+#: templates/visitors/program.html:111
+msgid ""
+"\"The industrial, business and financial strategy of Air Liquide Group and "
+"its presence in China\""
+msgstr "“液化空气集团的工业、商业和财务战略及其在中国的业务”"
+
+#: templates/visitors/program.html:114
+msgid "Wei WEI"
+msgstr ""
+
+#: templates/visitors/program.html:114
+msgid "Group Management Development Director of Faurecia"
+msgstr "佛吉亚集团管理发展总监"
+
+#: templates/visitors/program.html:115
+msgid "\"Your Global Career at Faurecia\""
+msgstr ""
 
 #: templates/visitors/workpermit.html:6 templates/visitors/workpermit.html:14
 msgid "Status change from student to employee"
@@ -1353,3 +1379,6 @@ msgstr "下载PDF"
 
 #~ msgid "2012 balance"
 #~ msgstr "2012论坛总结"
+
+#~ msgid "Speaker to be determined"
+#~ msgstr "嘉宾待确定"

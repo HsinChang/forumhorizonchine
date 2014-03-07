@@ -18,7 +18,7 @@ from flask_cache import Cache
 from flask_babel import refresh, format_date
 import flask_login
 
-from application import app
+from application import app, get_locale
 from decorators import login_required, admin_required
 from forms import RegisterForm, JobForm, BaseContactForm
 from models import ForumModel
@@ -50,26 +50,24 @@ def access(usertype):
 
 @app.route('/<usertype>/about/balance')
 def balance(usertype):
-    locale = session['locale']
+    locale = get_locale()
     return render_template('about/balance.html', usertype=usertype, locale=locale)
 
 @app.route('/<usertype>/about/contact', methods=['GET', 'POST'])
 def contact(usertype):
     form = BaseContactForm(request.form)
     if request.method == 'POST' and form.validate():
-        first_name = form.first_name.data
-        last_name = form.last_name.data
         email = form.email.data
         comment = form.message.data
 
         sender= app.config['SENDER']
-        to= app.config['CONTACTUS']
-        subject = 'Message from {0} {1}<{2}>'.format(first_name, last_name, email)
+        to= app.config['CONTACT']
+        subject = 'Message from {0}'.format(email)
         body = u"""
-    Following is the message from {0} {1} {2}:
+    Following is the message from {0}:
 
-    {3}
-    """.format(first_name, last_name, email, comment)
+    {1}
+    """.format(email, comment)
 
         mail.send_mail(sender, to, subject, body, reply_to=email)
 

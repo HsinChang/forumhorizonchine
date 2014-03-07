@@ -138,7 +138,7 @@ def apply():
         #     flash('document size should be under 2M')
         #     return redirect(url_for('visitor.job'))
 
-        f.filename = "{0}({1}){2}".format(k, path, ext)
+        f.filename = u"{0}({1}){2}".format(k, path, ext)
         files.append(f)
 
     # if 'cv_en' in request.files:

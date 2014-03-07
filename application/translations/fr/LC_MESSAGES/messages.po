@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2014-03-06 13:26+0100\n"
-"PO-Revision-Date: 2014-03-06 13:31+0100\n"
+"PO-Revision-Date: 2014-03-07 17:43+0100\n"
 "Last-Translator: Tianming.Lu <lutianming1005@gmail.com>\n"
 "Language-Team: fr <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
@@ -391,7 +391,7 @@ msgstr "Président de l'AFCP"
 
 #: templates/about/contact.html:29
 msgid "Mr. Ken DENG"
-msgstr ""
+msgstr "M. Ken DENG"
 
 #: templates/about/contact.html:30 templates/about/contact.html:34
 msgid "Forum team member"
@@ -399,7 +399,7 @@ msgstr "Équipe du Forum"
 
 #: templates/about/contact.html:33
 msgid "Mr. Tong ZHU"
-msgstr ""
+msgstr "M. Tong ZHU"
 
 #: templates/about/contact.html:48
 msgid "Wish to contact us?"

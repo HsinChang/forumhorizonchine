@@ -10,10 +10,10 @@
   <p>
     <a class="button" href="{{ url_for('admin.new_job') }}">{{ _('New') }}</a>
   </p>
-  {% for e, jobs in grouped_jobs.items() %}
+  {% for key, jobs in grouped_jobs %}
     <h4>
-      {% if e %}
-	{{ e.get().name }} <a href="{{ url_for('admin.sort_jobs', keyurl=e.urlsafe()) }}">{{ _('sort') }}</a>
+      {% if key %}
+	{{ key.get().name }} <a href="{{ url_for('admin.sort_jobs', keyurl=key.urlsafe()) }}">{{ _('sort') }}</a>
       {% else %}
 	{#	<font color="red">incomplete jobs</font> #}
       {% endif %}

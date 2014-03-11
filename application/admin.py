@@ -17,6 +17,7 @@ from flask_babel import format_date
 from os.path import splitext
 import re
 import json
+import itertools
 
 admin = Blueprint('admin', __name__)
 
@@ -191,16 +192,17 @@ def delete_enterprise(keyurl):
     - `e_id`:
     """
     key = ndb.Key(urlsafe=keyurl)
-    e = key.get()
-    if not e:
+    if not key:
         flash(_('no such enterprise'), 'error')
         return redirect(url_for('admin.enterprises'))
-    emails = EmailModel.query(EmailModel.enterprise==key)
-    keys = [e.key for e in emails]
-
+    emails = EmailModel.query(EmailModel.enterprise == key)
+    jobs = JobModel.query(JobModel.enterprise == key)
+    email_keys = [e.key for e in emails]
+    job_keys = [j.key for j in jobs]
     try:
-        ndb.delete_multi(keys)
-        e.key.delete()
+        ndb.delete_multi(email_keys)
+        ndb.delete_multi(job_keys)
+        key.delete()
     except CapabilityDisabledError:
         flash(_('fail to delete'), 'error')
     return redirect(url_for('admin.enterprises'))
@@ -270,19 +272,10 @@ def jobs():
     """
     all jobs
     """
-    grouped_jobs = {None:[]}
-    incomplete_jobs = []
     jobs = JobModel.query()
-    for job in jobs:
-        if job.is_complete is False:
-            grouped_jobs[None].append(job)
-        elif job.enterprise in grouped_jobs:
-            grouped_jobs[job.enterprise].append(job)
-        else:
-            grouped_jobs[job.enterprise] = [job]
-
-    for jobs in grouped_jobs.values():
-        jobs.sort(key=lambda job: job.order)
+    grouped_jobs = {k: sorted(g, key=lambda j: j.order)
+                    for k, g in itertools.groupby(jobs,
+                                                  key=lambda j: j.enterprise)}
 
     return render_template('admin/jobs.html',
                            grouped_jobs=grouped_jobs)

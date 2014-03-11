@@ -74,6 +74,7 @@ def activities():
     a = ActivityModel.query()
     return render_template('visitors/activities.html', activities=a)
 
+
 @visitor.route('/workpermit', methods=['GET', 'POST'])
 def workpermit():
     form = ContactForm(request.form)
@@ -83,6 +84,8 @@ def workpermit():
         email = form.email.data
         comment = form.message.data
 
+        sender = app.config['SENDER']
+        to = app.config['CONTACT']
         subject = 'Comment about the workpermit guide from {0} {1}<{2}>'.format(first_name, last_name, email)
         body = u"""
         Following is the comment from {0} {1} {2}:
@@ -90,8 +93,8 @@ def workpermit():
         {3}
         """.format(first_name, last_name, email, comment)
 
-        mail.send_mail('Admin of AFCP <lutianming1005@gmail.com>',
-                       "lutianming1005@hotmail.com",
+        mail.send_mail(sender,
+                       to,
                        subject,
                        body)
         flash('mail sent', 'success')

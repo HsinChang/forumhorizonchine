@@ -277,6 +277,12 @@ def jobs():
                     for k, g in itertools.groupby(jobs,
                                                   key=lambda j: j.enterprise)}
 
+    if len(grouped_jobs) == 0:
+        grouped_jobs = None
+    else:
+        grouped_jobs = sorted(grouped_jobs.items(),
+                              key=lambda i: i[0].get().order)
+
     return render_template('admin/jobs.html',
                            grouped_jobs=grouped_jobs)
 

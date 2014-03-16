@@ -38,8 +38,12 @@ CACHE_TYPE = 'gaememcached'
 LANGUAGES = {'en': _('English'), 'fr': _('French'), 'zh': _('Chinese')}
 
 #EMAILS
-CONTACT = ['ZHU Qi <realzhq@gmail.com>', 'LI Zheng <zheng.li@polytechnique.edu>', 'ZHANG Nan <nan.zhann@gmail.com>', 'DENG Ken <dengken524@live.cn>', 'Antoine ORY-LAMBALLE <antoine.orylamballe@yahoo.fr>', 'ZHU Tong <zhutong0114@gmail.com>']
-CC = ['ZHU Qi <realzhq@gmail.com>', 'LI Zheng <zheng.li@polytechnique.edu>', 'ZHANG Nan <nan.zhann@gmail.com>', 'DENG Ken <dengken524@live.cn>', 'Antoine ORY-LAMBALLE <antoine.orylamballe@yahoo.fr>', 'ZHU Tong <zhutong0114@gmail.com>']
+CONTACT = ['ZHU Qi <realzhq@gmail.com>', 'ZHANG Nan <nan.zhann@gmail.com>',
+           'DENG Ken <dengken524@live.cn>', 'ZHU Tong <zhutong0114@gmail.com>',
+           'Antoine ORY-LAMBALLE <antoine.orylamballe@yahoo.fr>']
+CC = ['ZHU Qi <realzhq@gmail.com>', 'ZHANG Nan <nan.zhann@gmail.com>',
+      'DENG Ken <dengken524@live.cn>', 'ZHU Tong <zhutong0114@gmail.com>',
+      'Antoine ORY-LAMBALLE <antoine.orylamballe@yahoo.fr>']
 SENDER = 'Forum Horizon Chine <admin@forumhorizonchine.com>'
 
 
@@ -57,10 +61,13 @@ class Config(object):
     LANGUAGES = {'en': _('English'), 'fr': _('French'), 'zh': _('Chinese')}
 
     #EMAILS
-    CONTACT = ['ZHU Qi <realzhq@gmail.com>', 'LI Zheng <zheng.li@polytechnique.edu>', 'ZHANG Nan <nan.zhann@gmail.com>', 'DENG Ken <dengken524@live.cn>', 'Antoine ORY-LAMBALLE <antoine.orylamballe@yahoo.fr>', 'ZHU Tong <zhutong0114@gmail.com>']
-    CC = ['ZHU Qi <realzhq@gmail.com>', 'LI Zheng <zheng.li@polytechnique.edu>', 'ZHANG Nan <nan.zhann@gmail.com>', 'DENG Ken <dengken524@live.cn>', 'Antoine ORY-LAMBALLE <antoine.orylamballe@yahoo.fr>', 'ZHU Tong <zhutong0114@gmail.com>']
+    CONTACT = ['ZHU Qi <realzhq@gmail.com>', 'ZHANG Nan <nan.zhann@gmail.com>',
+               'DENG Ken <dengken524@live.cn>', 'ZHU Tong <zhutong0114@gmail.com>',
+               'Antoine ORY-LAMBALLE <antoine.orylamballe@yahoo.fr>']
+    CC = ['ZHU Qi <realzhq@gmail.com>', 'ZHANG Nan <nan.zhann@gmail.com>',
+          'DENG Ken <dengken524@live.cn>', 'ZHU Tong <zhutong0114@gmail.com>',
+          'Antoine ORY-LAMBALLE <antoine.orylamballe@yahoo.fr>']
     SENDER = 'Forum Horizon Chine <admin@forumhorizonchine.com>'
-
 
     #upload file size limit
     MAX_CONTENT_LENGTH = 16 * 1024 * 1024

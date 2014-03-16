@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2014-03-06 13:26+0100\n"
-"PO-Revision-Date: 2014-03-06 13:29+0100\n"
+"POT-Creation-Date: 2014-03-16 13:46+0100\n"
+"PO-Revision-Date: 2014-03-16 13:54+0100\n"
 "Last-Translator: Tianming.Lu <lutianming1005@gmail.com>\n"
 "Language-Team: zh <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -18,15 +18,15 @@ msgstr ""
 "Generated-By: Babel 1.3\n"
 "X-Generator: Poedit 1.5.4\n"
 
-#: admin.py:165 admin.py:196
+#: admin.py:166 admin.py:196
 msgid "no such enterprise"
 msgstr ""
 
-#: admin.py:205 admin.py:465 exhibitor.py:107
+#: admin.py:207 admin.py:464 exhibitor.py:107
 msgid "fail to delete"
 msgstr ""
 
-#: admin.py:387 admin.py:460 exhibitor.py:81 exhibitor.py:101
+#: admin.py:386 admin.py:459 exhibitor.py:81 exhibitor.py:101
 msgid "no such job"
 msgstr ""
 
@@ -62,15 +62,15 @@ msgstr "工作"
 msgid "Internship"
 msgstr "实习"
 
-#: settings.py:38 settings.py:57
+#: settings.py:38 settings.py:61
 msgid "English"
 msgstr "英文"
 
-#: settings.py:38 settings.py:57
+#: settings.py:38 settings.py:61
 msgid "French"
 msgstr "法文"
 
-#: settings.py:38 settings.py:57
+#: settings.py:38 settings.py:61
 msgid "Chinese"
 msgstr "中文"
 
@@ -147,7 +147,28 @@ msgstr "海报"
 msgid "Welcome to <em>China Horizon Forum</em>"
 msgstr "欢迎来到<em>中国地平线</em>论坛！"
 
+#: templates/home.html:58
+msgid "The China Horizon Forum 2013 is finished. Thanks for your coming."
+msgstr "中国地平线论坛2013已经圆满落幕。感谢您的到来。"
+
+#: templates/home.html:61
+msgid ""
+"The information related to the forum 2013 is still available at the site"
+msgstr "本次论坛的相关信息仍在本网站可见"
+
 #: templates/home.html:63
+msgid "program"
+msgstr "活动安排"
+
+#: templates/home.html:64
+msgid "exhibitors"
+msgstr "展出商"
+
+#: templates/home.html:65
+msgid "job"
+msgstr "工作"
+
+#: templates/home.html:76
 msgid ""
 "Co-organized by the French-Chinese Friendship Association of ParisTech "
 "(AFCP) and ParisTech, Forum Horizon Chine is a space for recruiting French "
@@ -158,7 +179,7 @@ msgstr ""
 "台，其面向对象为巴黎高科旗下的工程师学校及商校的中国学生及毕业生，以及一些会"
 "说中文的法国学生。"
 
-#: templates/home.html:67
+#: templates/home.html:80
 #, python-format
 msgid ""
 "This year, the sixth edition will be held at <a href=\"http://www.ensta-"
@@ -172,7 +193,7 @@ msgstr ""
 "决定了其可以吸引到那些最有志于在中法两国间开展职业生涯的学生和毕业生。论坛包"
 "含了一个招聘沙龙以及一些讲座，届时您将可以："
 
-#: templates/home.html:71
+#: templates/home.html:84
 msgid ""
 "Meet talented young Chinese students and graduates as well as French "
 "students and graduates wishing to pursue a career in China,"
@@ -180,11 +201,11 @@ msgstr ""
 "接触到一些正在求学或已经毕业了的中国年轻人才，以及希望在中国工作的法国学生和"
 "毕业生。"
 
-#: templates/home.html:74
+#: templates/home.html:87
 msgid "Present your company and your development strategy in China and Asia,"
 msgstr "介绍您的企业及其在中国及亚洲的发展战略。"
 
-#: templates/home.html:77
+#: templates/home.html:90
 msgid ""
 "Communicate with other companies and representatives of China’s special "
 "economic zones, in order to know the Chinese market, its regulatory "
@@ -193,13 +214,13 @@ msgstr ""
 "与来自中国经济特区的其他企业和代表进行交流，以便了解中国市场、其监管环境以及"
 "进入该市场的可能性。"
 
-#: templates/home.html:81
+#: templates/home.html:94
 msgid ""
 "You will participate in a series of conferences and round tables at the end "
 "of the day followed by a cocktail."
 msgstr "我们将为您提供一系列讲座及圆桌会议，在活动接近尾声时还将举行鸡尾酒会。"
 
-#: templates/home.html:84
+#: templates/home.html:97
 msgid ""
 "This forum is co-organized by the French-Chinese Friendship Association "
 "ParisTech (AFCP) and ParisTech, with the support of the Embassy of China."
@@ -207,11 +228,11 @@ msgstr ""
 "此论坛由巴黎高科中法友好协会(AFCP)及巴黎高科集团联合组织，并得到了中国大使馆"
 "的大力支持。"
 
-#: templates/home.html:88
+#: templates/home.html:101
 msgid "You are a student or an alumnus of Paristech?"
 msgstr "您是巴黎高科的学生或者校友？"
 
-#: templates/home.html:92
+#: templates/home.html:105
 #, python-format
 msgid ""
 "Registrations will open one or two months before the Forum. Until then, you "
@@ -222,7 +243,7 @@ msgstr ""
 "\"%(program)s\">去年活动安排</a>和<a href=\"%(exhibitors)s\">展出商</a>来获取"
 "更多信息。"
 
-#: templates/home.html:94
+#: templates/home.html:107
 #, python-format
 msgid ""
 "You can now register on <a href=\"%(inscription)s\">the registration page</"
@@ -234,11 +255,11 @@ msgstr ""
 "息，请查询“到访学生”页面，里面有 <a href=\"%(program)s\">日程安排</a> 和 <a "
 "href=\"%(exhibitors)s\">参展企业名单</a>。"
 
-#: templates/home.html:98
+#: templates/home.html:111
 msgid "Wish to get a stand for your company?"
 msgstr "您希望为您的企业获得一个展台？"
 
-#: templates/home.html:101
+#: templates/home.html:114
 #, python-format
 msgid ""
 "Please do not hesitate to <a href=\"%(contact)s\">contact us</a> to receive "
@@ -250,7 +271,7 @@ msgstr ""
 "面，您将可以了解到 <a href=\"%(visitors)s\">到访学生的基本信息</a> 以及 <a "
 "href=\"%(services)s\">我们提供的服务</a>。 "
 
-#: templates/home.html:117
+#: templates/home.html:130
 msgid "Organizers"
 msgstr "主办方"
 

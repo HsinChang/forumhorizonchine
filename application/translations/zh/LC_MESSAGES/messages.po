@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2014-03-16 13:46+0100\n"
-"PO-Revision-Date: 2014-03-16 13:54+0100\n"
+"POT-Creation-Date: 2014-03-16 17:19+0100\n"
+"PO-Revision-Date: 2014-03-16 17:20+0100\n"
 "Last-Translator: Tianming.Lu <lutianming1005@gmail.com>\n"
 "Language-Team: zh <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -148,13 +148,13 @@ msgid "Welcome to <em>China Horizon Forum</em>"
 msgstr "欢迎来到<em>中国地平线</em>论坛！"
 
 #: templates/home.html:58
-msgid "The China Horizon Forum 2013 is finished. Thanks for your coming."
-msgstr "中国地平线论坛2013已经圆满落幕。感谢您的到来。"
+msgid "The China Horizon Forum 2014 is finished. Thanks for your coming."
+msgstr "2014年中国地平线论坛已经圆满落幕。感谢您的到来。"
 
 #: templates/home.html:61
 msgid ""
-"The information related to the forum 2013 is still available at the site"
-msgstr "本次论坛的相关信息仍在本网站可见"
+"The information related to the forum 2014 is still available at the site"
+msgstr "2014年论坛的相关信息仍在本网站可见"
 
 #: templates/home.html:63
 msgid "program"
@@ -182,16 +182,16 @@ msgstr ""
 #: templates/home.html:80
 #, python-format
 msgid ""
-"This year, the sixth edition will be held at <a href=\"http://www.ensta-"
+"This year, the seventh edition was held at <a href=\"http://www.ensta-"
 "paristech.fr\"><strong>%(address)s</strong></a> on <strong>%(date)s</"
 "strong>. This unique event attracts the most promising students and "
 "graduates interested in a French-Chinese career. It will include a job fair "
 "and conference facilities where you will:"
 msgstr ""
-"今年，第七届中国地平线论坛将于<strong>%(date)s</strong>在<a href=\"http://"
-"www.ensta-paristech.fr\"><strong>%(address)s</strong></a>举行。此论坛的唯一性"
-"决定了其可以吸引到那些最有志于在中法两国间开展职业生涯的学生和毕业生。论坛包"
-"含了一个招聘沙龙以及一些讲座，届时您将可以："
+"今年，第七届中国地平线论坛于<strong>%(date)s</strong>在<a href=\"http://www."
+"ensta-paristech.fr\"><strong>%(address)s</strong></a>举行。此论坛的唯一性决定"
+"了其可以吸引到那些最有志于在中法两国间开展职业生涯的学生和毕业生。论坛包含了"
+"一个招聘沙龙以及一些讲座，届时您将可以："
 
 #: templates/home.html:84
 msgid ""

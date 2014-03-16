@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2014-03-16 13:46+0100\n"
+"POT-Creation-Date: 2014-03-16 17:19+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -145,11 +145,11 @@ msgid "Welcome to <em>China Horizon Forum</em>"
 msgstr ""
 
 #: templates/home.html:58
-msgid "The China Horizon Forum 2013 is finished. Thanks for your coming."
+msgid "The China Horizon Forum 2014 is finished. Thanks for your coming."
 msgstr ""
 
 #: templates/home.html:61
-msgid "The information related to the forum 2013 is still available at the site"
+msgid "The information related to the forum 2014 is still available at the site"
 msgstr ""
 
 #: templates/home.html:63
@@ -175,7 +175,7 @@ msgstr ""
 #: templates/home.html:80
 #, python-format
 msgid ""
-"This year, the sixth edition will be held at <a href=\"http://www.ensta-"
+"This year, the seventh edition was held at <a href=\"http://www.ensta-"
 "paristech.fr\"><strong>%(address)s</strong></a> on "
 "<strong>%(date)s</strong>. This unique event attracts the most promising "
 "students and graduates interested in a French-Chinese career. It will "

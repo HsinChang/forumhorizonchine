@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2014-03-16 17:19+0100\n"
-"PO-Revision-Date: 2014-03-16 17:20+0100\n"
+"POT-Creation-Date: 2014-03-25 19:16+0100\n"
+"PO-Revision-Date: 2014-03-25 19:17+0100\n"
 "Last-Translator: Tianming.Lu <lutianming1005@gmail.com>\n"
 "Language-Team: fr <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
@@ -22,11 +22,11 @@ msgstr ""
 msgid "no such enterprise"
 msgstr ""
 
-#: admin.py:207 admin.py:464 exhibitor.py:107
+#: admin.py:207 admin.py:461 exhibitor.py:107
 msgid "fail to delete"
 msgstr ""
 
-#: admin.py:386 admin.py:459 exhibitor.py:81 exhibitor.py:101
+#: admin.py:383 admin.py:456 exhibitor.py:81 exhibitor.py:101
 msgid "no such job"
 msgstr ""
 
@@ -991,9 +991,8 @@ msgid "Apply"
 msgstr "Postuler"
 
 #: templates/includes/job_apply.html:15
-msgid "*.doc and *.pdf files are accepted, max 500 KB for each attachment."
-msgstr ""
-"*. doc et *. pdf sont acceptés, maximum 500 Ko pour chaque pièce jointe."
+msgid "*.doc and *.pdf files are accepted, max 5MB for each attachment."
+msgstr "*. doc et *. pdf sont acceptés, maximum 5MB pour chaque pièce jointe."
 
 #: templates/includes/job_apply.html:26
 msgid "First name"

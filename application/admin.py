@@ -124,7 +124,6 @@ def sort_enterprises():
         order = [int(x) for x in order]
         for i in range(len(order)):
             rank = order[i]
-            print rank
             e = e_list[rank]
             e.order = i
         ndb.put_multi(e_list)

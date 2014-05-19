@@ -54,17 +54,30 @@
       <div class="block">
 	<h1>{{ _('Welcome to <em>China Horizon Forum</em>') }}</h1>
 
+	<p>
+	  {{ _('The China Horizon Forum 2014 is finished. Thanks for your coming.') }}
+	</p>
+	<p>
+	  {{ _('The information related to the forum 2014 is still available at the site')}}
+	  (
+	  <a href="{{ url_for('visitor.program') }}">{{ _('program') }}</a>,
+	  <a href="{{ url_for('visitor.exhibitors') }}">{{ _('exhibitors') }}</a>,
+	  <a href="{{ url_for('visitor.job') }}">{{ _('job') }}</a>
+	  ).
+	</p>
+	{#
 	<p id="registration">
 	  <a href="{{ url_for('visitor.inscription') }}">
 	    <img src={{ url_for('static', filename="img/inscrivez_redim_200.jpg") }} width="200px"/>
 	  </a>
 	</p>
+	#}
 	<p>
 	  {{ _('Co-organized by the French-Chinese Friendship Association of ParisTech (AFCP) and ParisTech, Forum Horizon Chine is a space for recruiting French sinophile and Chinese students and graduates from the engineering and business Grandes Écoles of ParisTech.') }}
 	</p>
 
 	<p>
-	  {{ _('This year, the sixth edition will be held at <a href="http://www.ensta-paristech.fr"><strong>%(address)s</strong></a> on <strong>%(date)s</strong>. This unique event attracts the most promising students and graduates interested in a French-Chinese career. It will include a job fair and conference facilities where you will:', address=forum.address, date=forum.formated_date) }}
+	  {{ _('This year, the seventh edition was held at <a href="http://www.ensta-paristech.fr"><strong>%(address)s</strong></a> on <strong>%(date)s</strong>. This unique event attracts the most promising students and graduates interested in a French-Chinese career. It will include a job fair and conference facilities where you will:', address=forum.address, date=forum.formated_date) }}
 	</p>
 	<ul>
 	  <li>

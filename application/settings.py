@@ -48,7 +48,7 @@ SENDER = 'Forum Horizon Chine <admin@forumhorizonchine.com>'
 
 
 #upload file size limit
-MAX_CONTENT_LENGTH = 16 * 1024 * 1024
+MAX_CONTENT_LENGTH = 5 * 1024 * 1024
 
 
 class Config(object):

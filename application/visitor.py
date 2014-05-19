@@ -119,11 +119,14 @@ def apply():
     # key = ndb.Key(urlsafe=joburl)
     # job = key.get()
     jobname = request.form['jobname']
+    joburl = request.form['joburl']
     lang = request.form['lang']
-    email_enterprise = request.form['email.to']
-    email_to = ndb.Key(urlsafe=email_enterprise)
 
-    to = email_to.get().email
+    job = ndb.Key(urlsafe=joburl).get()
+    mails_to = []
+    for m in job.enterprise_email:
+        v = m.get().email
+        mails_to.append(v)
     # to = 'lutianming1005@hotmail.com'
 
     enterprise = request.form['enterprise']
@@ -213,9 +216,10 @@ def apply():
 
     message = mail.EmailMessage(sender=sender)
     if app.config['DEBUG'] == True:
-        message.to = 'lutianming1005@gmail.com'
+        # message.to = 'lutianming1005@gmail.com'
+        message.to = mails_to
     else:
-        message.to = to
+        message.to = mails_to
         message.cc = cc
     message.subject = subject
     # message.html = render_template('mail/apply.html',

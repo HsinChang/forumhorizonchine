@@ -15,7 +15,6 @@
       {{ _("*.doc and *.pdf files are accepted, max 5MB for each attachment.") }}
       {# L'identifiant indiquant à quelle adresse mail la candidature est envoyée, cf ressources du Forum #}
       <input type="hidden" name="joburl" value = "{{ job.key.urlsafe() }}"/>
-      <input type="hidden" name="email.to" value="{{ job.enterprise_email.urlsafe() }}" />
       <input type="hidden" name="lang" value="{{ job.current_lang }}"/>
       {# Nom de l'emploi, le même que dans le titre #}
       <input type="hidden" name="jobname" value="{{ job.current.title }}" />

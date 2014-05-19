@@ -332,8 +332,11 @@ def new_job():
 
     if request.method == 'POST' and form.validate():
         user = flask_login.current_user
-        mail = ndb.Key(urlsafe=form.enterprise_email.data)
         enterprise = ndb.Key(urlsafe=form.enterprise.data)
+        mails = []
+        for item in form.enterprise_email:
+            mail = ndb.Key(urlsafe=item.data)
+            mails.append(mail)
 
         fr = {
             'published': form.publish_fr.data,
@@ -356,14 +359,14 @@ def new_job():
             "zh": zh
         }
         job = JobModel(
-            type = form.type.data,
-            is_online = form.is_online.data,
-            enterprise = enterprise,
-            enterprise_email = mail,
-            meta = meta,
-            published = fr["published"] or en["published"] or zh["published"],
-            default_lang = form.default_lang.data,
-            cv_required = form.cv_required.data,
+            type=form.type.data,
+            is_online=form.is_online.data,
+            enterprise=enterprise,
+            enterprise_email=mails,
+            meta=meta,
+            published=fr["published"] or en["published"] or zh["published"],
+            default_lang=form.default_lang.data,
+            cv_required=form.cv_required.data,
        #     poster = user.key
         )
         try:
@@ -398,8 +401,12 @@ def edit_job(keyurl):
     if request.method == 'POST' and form.validate():
         job.type = form.type.data
         job.is_online = form.is_online.data
-        mail = ndb.Key(urlsafe=form.enterprise_email.data)
-        job.enterprise_email = mail
+        mails = []
+        for item in form.enterprise_email.data:
+            mail = ndb.Key(urlsafe=item)
+            mails.append(mail)
+        print(mails)
+        job.enterprise_email = mails
         job.enterprise = ndb.Key(urlsafe=form.enterprise.data)
 
         for lang in ['fr', 'en', 'zh']:
@@ -427,7 +434,10 @@ def edit_job(keyurl):
             form.apply_url.data = job.apply_url
         else:
             form.is_online.data = False
-            form.enterprise_email.data = job.enterprise_email.urlsafe()
+            urls = []
+            for e in job.enterprise_email:
+                urls.append(e.urlsafe())
+            form.enterprise_email.data = urls
 
         for lang in ['fr', 'en', 'zh']:
             v = getattr(form, "publish_"+lang)

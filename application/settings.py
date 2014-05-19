@@ -35,7 +35,7 @@ DEBUG_TB_INTERCEPT_REDIRECTS = False
 # Flask-Cache settings
 CACHE_TYPE = 'gaememcached'
 
-LANGUAGES = {'en': _('English'), 'fr': _('French'), 'zh': _('Chinese')}
+LANGUAGES = {'en': ('English'), 'fr': ('French'), 'zh': ('Chinese')}
 
 #EMAILS
 CONTACT = ['ZHU Qi <realzhq@gmail.com>', 'ZHANG Nan <nan.zhann@gmail.com>',
@@ -48,7 +48,7 @@ SENDER = 'Forum Horizon Chine <admin@forumhorizonchine.com>'
 
 
 #upload file size limit
-MAX_CONTENT_LENGTH = 5 * 1024 * 1024
+MAX_CONTENT_LENGTH = 1 * 1024 * 1024
 
 
 class Config(object):
@@ -58,7 +58,7 @@ class Config(object):
     # Flask-Cache settings
     CACHE_TYPE = 'gaememcached'
 
-    LANGUAGES = {'en': _('English'), 'fr': _('French'), 'zh': _('Chinese')}
+    LANGUAGES = {'en': ('English'), 'fr': ('French'), 'zh': ('Chinese')}
 
     #EMAILS
     CONTACT = ['ZHU Qi <realzhq@gmail.com>', 'ZHANG Nan <nan.zhann@gmail.com>',
@@ -70,7 +70,7 @@ class Config(object):
     SENDER = 'Forum Horizon Chine <admin@forumhorizonchine.com>'
 
     #upload file size limit
-    MAX_CONTENT_LENGTH = 16 * 1024 * 1024
+    MAX_CONTENT_LENGTH = 1 * 1024 * 1024
 
 
 class Development(Config):

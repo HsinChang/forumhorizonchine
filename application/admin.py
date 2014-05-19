@@ -18,6 +18,7 @@ from os.path import splitext
 import re
 import json
 import itertools
+from collections import defaultdict
 
 admin = Blueprint('admin', __name__)
 
@@ -271,10 +272,10 @@ def jobs():
     """
     all jobs
     """
-    jobs = JobModel.query()
-    grouped_jobs = {k: sorted(g, key=lambda j: j.order)
-                    for k, g in itertools.groupby(jobs,
-                                                  key=lambda j: j.enterprise)}
+    q = JobModel.query()
+    grouped_jobs = defaultdict(list)
+    for j in q:
+        grouped_jobs[j.enterprise].append(j)
 
     grouped_jobs = sorted(grouped_jobs.items(),
                           key=lambda i: i[0].get().order)

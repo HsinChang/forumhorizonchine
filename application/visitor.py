@@ -9,6 +9,7 @@ from google.appengine.api import mail
 from google.appengine.ext import ndb
 from os.path import splitext, getsize
 import itertools
+from collections import defaultdict
 
 visitor = Blueprint('visitor', __name__)
 
@@ -47,6 +48,7 @@ def job():
     jobs = JobModel.query(JobModel.published==True,
                           JobModel.is_complete==True)
 
+    grouped_jobs = defaultdict(list)
     for job in jobs:
         locale = get_locale()
         if job.meta[locale]["published"] == True:
@@ -54,17 +56,17 @@ def job():
         else:
             job.current_lang = job.default_lang
         job.current = job.meta[job.current_lang]
-
-    grouped_jobs = {k: sorted(g, key=lambda j: j.order)
-                    for k, g in itertools.groupby(jobs,
-                                                  key=lambda j: j.enterprise)}
+        grouped_jobs[job.enterprise].append(job)
 
     if len(grouped_jobs) == 0:
         grouped_jobs = None
     else:
-        grouped_jobs = sorted(grouped_jobs.items(), key=lambda i: i[0].get().order)
+        grouped_jobs = sorted(grouped_jobs.items(),
+                              key=lambda i: i[0].get().order)
 
-    return render_template('visitors/job.html', grouped_jobs=grouped_jobs, languages = app.config['LANGUAGES'])
+    return render_template('visitors/job.html',
+                           grouped_jobs=grouped_jobs,
+                           languages=app.config['LANGUAGES'])
 
 
 @visitor.route('/activities')

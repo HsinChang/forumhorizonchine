@@ -334,8 +334,8 @@ def new_job():
         user = flask_login.current_user
         enterprise = ndb.Key(urlsafe=form.enterprise.data)
         mails = []
-        for item in form.enterprise_email:
-            mail = ndb.Key(urlsafe=item.data)
+        for item in form.enterprise_email.data:
+            mail = ndb.Key(urlsafe=item)
             mails.append(mail)
 
         fr = {

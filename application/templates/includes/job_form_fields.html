@@ -52,9 +52,6 @@
 {{ render_field(form.default_lang) }}
 {{ render_field(form.cv_required, **{"data-placeholder" : "Keep it empty if no requirement"}) }}
 
-<link rel="stylesheet" href="{{ url_for('static', filename='css/lib/chosen.min.css') }}" />
-<script type="text/javascript" src={{ url_for('static', filename="js/lib/chosen.jquery.min.js") }}>
-</script>
 <script type="text/javascript">
  $('#is_online').change(function(){
    if(this.checked){
@@ -75,11 +72,8 @@
      e.append($("<option></option>")
       .attr("value", value.url).text(value.email));
    });
+   e.trigger("chosen:updated");
  });
-
- $("#default_lang").chosen({width: "60%"});
- $("#cv_required").chosen({width: "60%"});
-// $("#enterprise_email").chosen({width: "80%"});
 
  $(document).ready(function(){
 //   var e = $('#enterprise_email');
@@ -88,7 +82,12 @@
 //   $.each(options, function(key, value) {
 //     e.append($("<option></option>")
 //      .attr("value", key).text(value));
-//   });
+   //   });
+   $("#enterprise").chosen({width: "40%"});
+   $("#default_lang").chosen({width: "40%"});
+   $("#cv_required").chosen({width: "40%"});
+   $("#type").chosen({width: "40%"});
+
    if($('#is_online').checked){
      document.getElementById('url').style.display = 'block';
      document.getElementById('email').style.display = 'none';

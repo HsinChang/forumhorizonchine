@@ -3,6 +3,8 @@
 
 {% block header %}
   {% include "includes/aloha.html" %}
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/lib/chosen.min.css') }}" />
+  <script type="text/javascript" src="{{ url_for('static', filename="js/lib/chosen.jquery.min.js") }}"></script>
 {% endblock header %}
 
 {% block html_title %}

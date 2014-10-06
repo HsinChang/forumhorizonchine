@@ -127,9 +127,7 @@ def apply():
     for m in job.enterprise_email:
         v = m.get().email
         mails_to.append(v)
-    # to = 'lutianming1005@hotmail.com'
 
-    enterprise = request.form['enterprise']
     first_name = request.form['firstname']
     last_name = request.form['lastname']
     email = request.form['email']
@@ -147,22 +145,6 @@ def apply():
         f.filename = u"{0}({1}){2}".format(k, path, ext)
         files.append(f)
 
-    # if 'cv_en' in request.files:
-    #     f = request.files['cv_en']
-    #     path, ext = splitext(f.filename)
-    #     f.filename = 'cv_en' + ext
-    #     cv['en'] = f
-    # if 'cv_fr' in request.files:
-    #     f = request.files['cv_fr']
-    #     path, ext = splitext(f.filename)
-    #     f.filename = 'cv_fr' + ext
-    #     cv['fr'] = request.files['cv_fr']
-    # if 'cv_zh' in request.files:
-    #     f = request.files['cv_zh']
-    #     path, ext = splitext(f.filename)
-    #     f.filename = 'cv_zh' + ext
-    #     cv['zh'] = request.files['cv_zh']
-    # lm = request.files['lm']
     attachments = []
     for f in files:
         attachments.append((f.filename, f.read()))
@@ -215,12 +197,8 @@ def apply():
     body = bodies[lang].format(jobname, first_name, last_name, email)
 
     message = mail.EmailMessage(sender=sender)
-    if app.config['DEBUG'] == True:
-        # message.to = 'lutianming1005@gmail.com'
-        message.to = mails_to
-    else:
-        message.to = mails_to
-        message.cc = cc
+    message.to = mails_to
+    message.cc = cc
     message.subject = subject
     # message.html = render_template('mail/apply.html',
     #                                title=jobname,
@@ -228,7 +206,8 @@ def apply():
     #                                last_name=last_name,
     #                                email=email)
     message.html = body
-    message.attachments = attachments
+    if attachments:
+        message.attachments = attachments
     # mail.send_mail(sender, to, subject, body, attachments=attachments, cc=cc)
     message.send()
     flash('mail sent', 'success')

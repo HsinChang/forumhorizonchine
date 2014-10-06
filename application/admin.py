@@ -405,7 +405,7 @@ def edit_job(keyurl):
         for item in form.enterprise_email.data:
             mail = ndb.Key(urlsafe=item)
             mails.append(mail)
-        print(mails)
+
         job.enterprise_email = mails
         job.enterprise = ndb.Key(urlsafe=form.enterprise.data)
 

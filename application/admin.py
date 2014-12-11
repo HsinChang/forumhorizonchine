@@ -7,17 +7,14 @@
 from google.appengine.runtime.apiproxy_errors import CapabilityDisabledError
 from google.appengine.ext import ndb
 from flask import Blueprint, render_template, redirect, url_for, request, flash, Response
-from forms import RegisterForm, JobForm, EnterpriseForm, EmailForm, PasswordForm, BaseEnterpriseForm, ForumForm, ActivityForm
-from models import UserModel, JobModel, JobMetaModel, ROLES, EnterpriseModel, EmailModel, ForumModel, ActivityModel
+from forms import JobForm, EnterpriseForm, EmailForm, PasswordForm, BaseEnterpriseForm, ForumForm, ActivityForm
+from models import UserModel, JobModel, ROLES, EnterpriseModel, EmailModel, ForumModel, ActivityModel
 from decorators import admin_required
-from application import app
 from passlib.apps import custom_app_context as pwd_context
 import flask_login
-from flask_babel import format_date
 from os.path import splitext
 import re
 import json
-import itertools
 from collections import defaultdict
 
 admin = Blueprint('admin', __name__)

@@ -1,72 +1,78 @@
 {% extends "base.html" %}
 
 {% block html_head %}
-  {% block html_title %}
-    <title>ADMIN</title>
-  {% endblock html_title %}
-  <script type="text/javascript" src="{{ url_for('static', filename="js/lib/jquery.ui.core.js") }}"></script>
-  <script type="text/javascript" src="{{ url_for('static', filename="js/lib/jquery.ui.widget.js") }}"></script>
-  <script type="text/javascript" src="{{ url_for('static', filename="js/lib/jquery.ui.mouse.js") }}"></script>
-  <script type="text/javascript" src="{{ url_for('static', filename="js/lib/jquery.ui.sortable.js") }}"></script>
-  <link rel="stylesheet" type="text/css" media="screen" href="{{ url_for('static', filename='css/sections.css') }}"/>
-{#  <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.3.0/pure-min.css">#}
+    {% block html_title %}
+	<title>ADMIN</title>
+    {% endblock html_title %}
+    <script type="text/javascript" src="{{ url_for('static', filename="js/lib/jquery.ui.core.js") }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename="js/lib/jquery.ui.widget.js") }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename="js/lib/jquery.ui.mouse.js") }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename="js/lib/jquery.ui.sortable.js") }}"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="{{ url_for('static', filename='css/sections.css') }}"/>
+    {#  <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.3.0/pure-min.css">#}
 {% endblock html_head %}{# html_head #}
 
 {% block header %}
 {% endblock %}{# header #}
 
 {% block content %}
-<h1>ADMIN</h1>
+    <h1>ADMIN</h1>
 {% endblock %}{# content #}
 
 {% block sidebar %}
-{% set user = current_user %}
+    {% set user = users.get_current_user() %}
 
-<div class="sidebar-section">
-  <div class="title">{{ _('Admin area')}}</div>
-  <div>
-    {% if user.is_authenticated() and user.role == ROLES['ADMIN'] %}
-    {{ _('Welcome!')}} {{ user.username }} <a href="{{ url_for('admin.logout')}}">{{ _('logout')}}</a>
+    <div class="sidebar-section">
+	<div class="title">{{ _('Admin area')}}</div>
+	<div>
+	    {% if user and user.email() in ADMINS %}
 
-    <ul class="list">
-      <li {% if request.path == url_for('admin.change_password') %}
-	class="current" {% endif %}>
-	<a href="{{ url_for('admin.change_password') }}">{{ _('change password') }}</a>
-      </li>
-      <li {% if request.path == url_for('admin.users') %}
-	class="current" {% endif %}>
-	<a href="{{ url_for('admin.users') }}">{{ _('users')}}</a>
-      </li>
-      <li {% if request.path == url_for('admin.jobs') %}
-	class="current" {% endif %}>
-	<a href="{{ url_for('admin.jobs') }}">{{ _('jobs')}}</a>
-      </li>
-      <li {% if request.path == url_for('admin.enterprises') %}
-	class="current" {% endif %}>
-	<a href="{{ url_for('admin.enterprises') }}">{{ _('enterprises')}}</a>
-      </li>
-      <li {% if request.path == url_for('admin.forum') %}
-	class="current" {% endif %}>
-	<a href="{{ url_for('admin.forum') }}">{{ _('forum')}}</a>
-      </li>
-      <li {% if request.path == url_for('admin.activities') %}
-	class="current" {% endif %}>
-	<a href="{{ url_for('admin.activities') }}">{{ _('activities')}}</a>
-      </li>
-      <li {% if request.path == url_for('admin.data') %}
-	class="current" {% endif %}>
-	<a href="{{ url_for('admin.data') }}">{{ _('data')}}</a>
-      </li>
-    </ul>
-    {% else %}
-    <form method="post" action="{{ url_for('admin.login') }}">
-      <input name="username" type="text" class="input-small" placeholder="Username">
-      </input>
-      <input name="password" type="password" class="input-small" placeholder="Password">
-      </input>
-      <input type="submit" value="Submit"></input>
-    </form>
-    {% endif %}
-  </div>
-</div>
+		{{ _('Welcome!') }} {{ user.nickname() }} <a href="{{ users.create_logout_url('/admin') }}">{{ _('logout')}}</a>
+
+		<ul class="list">
+		    {#
+		    <li {% if request.path == url_for('admin.change_password') %}
+			class="current" {% endif %}>
+			<a href="{{ url_for('admin.change_password') }}">{{ _('change password') }}</a>
+		    </li>
+		    #}
+		    <li {% if request.path == url_for('admin.users') %}
+			class="current" {% endif %}>
+			<a href="{{ url_for('admin.users') }}">{{ _('users')}}</a>
+		    </li>
+		    <li {% if request.path == url_for('admin.jobs') %}
+			class="current" {% endif %}>
+			<a href="{{ url_for('admin.jobs') }}">{{ _('jobs')}}</a>
+		    </li>
+		    <li {% if request.path == url_for('admin.enterprises') %}
+			class="current" {% endif %}>
+			<a href="{{ url_for('admin.enterprises') }}">{{ _('enterprises')}}</a>
+		    </li>
+		    <li {% if request.path == url_for('admin.forum') %}
+			class="current" {% endif %}>
+			<a href="{{ url_for('admin.forum') }}">{{ _('forum')}}</a>
+		    </li>
+		    <li {% if request.path == url_for('admin.activities') %}
+			class="current" {% endif %}>
+			<a href="{{ url_for('admin.activities') }}">{{ _('activities')}}</a>
+		    </li>
+		    <li {% if request.path == url_for('admin.data') %}
+			class="current" {% endif %}>
+			<a href="{{ url_for('admin.data') }}">{{ _('data')}}</a>
+		    </li>
+		</ul>
+	    {% else %}
+		<a href="{{ users.create_login_url('/admin') }}">login</a>
+		{#
+		<form method="post" action="{{ url_for('admin.login') }}">
+		    <input name="username" type="text" class="input-small" placeholder="Username">
+		    </input>
+		    <input name="password" type="password" class="input-small" placeholder="Password">
+		    </input>
+		    <input type="submit" value="Submit"></input>
+		</form>
+		#}
+	    {% endif %}
+	</div>
+    </div>
 {% endblock sidebar %}

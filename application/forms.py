@@ -89,9 +89,12 @@ class RegisterForm(wtf.Form):
 
 
 class PasswordForm(wtf.Form):
-    old_password = PasswordField('Old password', validators=[validators.InputRequired(), old_password_check])
-    new_password = PasswordField('New password', validators=[validators.InputRequired()])
-    confirm_password = PasswordField('Confirm password', validators=[validators.EqualTo('new_password')])
+    old_password = PasswordField('Old password',
+                                 validators=[validators.InputRequired(), old_password_check])
+    new_password = PasswordField('New password',
+                                 validators=[validators.InputRequired()])
+    confirm_password = PasswordField('Confirm password',
+                                     validators=[validators.EqualTo('new_password')])
 
 
 class JobMetaForm(wtf.Form):
@@ -103,9 +106,12 @@ class JobMetaForm(wtf.Form):
         super(JobMetaForm, self).__init__(*args, **kwargs)
 
 
-_lang_choices = [(k, v) for (k,v) in app.config['LANGUAGES'].items()]
+_lang_choices = [(k, v) for (k, v) in app.config['LANGUAGES'].items()]
 class JobForm(wtf.Form):
-    type = SelectField('Type', choices=[('Job', 'Job'), ('Internship', 'Internship')])
+    type = SelectField('Type',
+                       choices=[('Job', 'Job'),
+                                ('Internship', 'Internship'),
+                                ('Job/Internship', 'Job/Internship')])
     is_online = BooleanField('apply online')
     apply_url = StringField('apply URL')
     enterprise = SelectField('Enterprise')

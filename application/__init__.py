@@ -2,6 +2,8 @@
 Initialize Flask app
 
 """
+
+from google.appengine.api import users
 from flask import Flask, session, request
 
 from flask_debugtoolbar import DebugToolbarExtension
@@ -10,7 +12,7 @@ from werkzeug.debug import DebuggedApplication
 from models import UserModel, ROLES
 
 from flask_babel import Babel
-from flask_login import LoginManager, current_user
+from flask_login import LoginManager
 from flask_mail import Mail
 import gettext, os
 gettext.install(None)
@@ -22,9 +24,9 @@ app.config.from_object('application.settings')
 app.jinja_env.add_extension('jinja2.ext.loopcontrols')
 
 app.jinja_env.globals['LOCALES'] = sorted(app.config['LANGUAGES'].keys())
-app.jinja_env.globals['current_user'] = current_user
 app.jinja_env.globals['ROLES'] = ROLES
-
+app.jinja_env.globals['users'] = users
+app.jinja_env.globals['ADMINS'] = app.config['ADMINS']
 #Babel
 babel = Babel(app)
 
@@ -42,8 +44,8 @@ def get_timezone():
         return session['timezone']
 
 #login
-login_manager = LoginManager(app)
-#login_manager.init_app(app)
+login_manager = LoginManager()
+login_manager.init_app(app)
 
 @login_manager.user_loader
 def load_user(userid):

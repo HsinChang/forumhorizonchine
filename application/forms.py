@@ -71,6 +71,10 @@ def job_lang_check(lang):
                 raise validators.ValidationError('field should not be empty if you choose to publish it')
     return job_check
 
+def enterprise_email_check(form, field):
+    if not form.apply_url.data and len(field.data) == 0:
+        raise validators.ValidationError('enterprise email cant be empty')
+
 class LoginForm(wtf.Form):
     """form userd for login"""
     username = StringField('Username', validators=[validators.InputRequired()])
@@ -115,7 +119,7 @@ class JobForm(wtf.Form):
     is_online = BooleanField('apply online')
     apply_url = StringField('apply URL')
     enterprise = SelectField('Enterprise')
-    enterprise_email = SelectMultipleField('Enterprise_Email')
+    enterprise_email = SelectMultipleField('Enterprise_Email', validators=[enterprise_email_check])
     publish_en = BooleanField('Publish', default=False)
     publish_zh = BooleanField('Publish', default=False)
     publish_fr = BooleanField('Publish', default=False)
@@ -137,7 +141,7 @@ class BaseEnterpriseForm(wtf.Form):
     name = StringField('Name', validators=[validators.InputRequired()])
     shortname = StringField('Short name', validators=[validators.InputRequired(), shortname_check])
 
-
+    
 class EnterpriseForm(BaseEnterpriseForm):
     #at lest one email
     email = StringField('Email', validators=[validators.Email()])

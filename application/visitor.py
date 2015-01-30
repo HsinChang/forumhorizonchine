@@ -208,7 +208,36 @@ def apply():
     message.html = body
     if attachments:
         message.attachments = attachments
-    # mail.send_mail(sender, to, subject, body, attachments=attachments, cc=cc)
     message.send()
-    flash('mail sent', 'success')
+
+    _apply_feedback(email, jobname)
+
+    feedback = """
+    your application is sent,
+    please wait for the entreprise to contact with you
+    """
+
+    flash(feedback, 'success')
     return redirect(url_for('visitor.job'))
+
+
+def _apply_feedback(email, jobname):
+    sender = app.config['SENDER']
+    m = mail.EmailMessage()
+    m.sender = sender
+    m.to = email
+    m.subject = "your application is sent successfully"
+    m.html = """
+    <html>
+    <p>Dear Sir/Miss,<p>
+
+    <p>Your application for the position <b>{0}</b> has been sent to the entreprise</p>
+
+    <p>Please wait for the entreprise to contact with you!</p>
+
+    <p>Best regards，</p>
+    <p>The team of AFCP</p>
+    </html>
+    """
+    m.send()
+    return True

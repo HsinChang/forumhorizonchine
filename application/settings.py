@@ -38,15 +38,12 @@ CACHE_TYPE = 'gaememcached'
 LANGUAGES = {'en': ('English'), 'fr': ('French'), 'zh': ('Chinese')}
 
 #EMAILS
-CONTACT = ['ZHU Qi <realzhq@gmail.com>', 'ZHANG Nan <nan.zhann@gmail.com>',
-           'DENG Ken <dengken524@live.cn>', 'ZHU Tong <zhutong0114@gmail.com>',
+CONTACT = ['ZHANG Nan <nan.zhann@gmail.com>',
+           'ZHU Tong <zhutong0114@gmail.com>',
            'CHEN Cheng <chchen81@gmail.com>',
-           'Antoine ORY-LAMBALLE <antoine.orylamballe@yahoo.fr>',
            'Tianming LU <lutianming1005@gmail.com>']
-CC = ['ZHU Qi <realzhq@gmail.com>', 'ZHANG Nan <nan.zhann@gmail.com>',
-      'DENG Ken <dengken524@live.cn>', 'ZHU Tong <zhutong0114@gmail.com>',
+CC = ['ZHU Tong <zhutong0114@gmail.com>',
       'CHEN Cheng <chchen81@gmail.com>',
-      'Antoine ORY-LAMBALLE <antoine.orylamballe@yahoo.fr>',
       'Tianming LU <lutianming1005@gmail.com>']
 SENDER = 'Forum Horizon Chine <admin@forumhorizonchine.com>'
 ADMINS = [
@@ -84,12 +81,11 @@ class Config(object):
     LANGUAGES = {'en': ('English'), 'fr': ('French'), 'zh': ('Chinese')}
 
     #EMAILS
-    CONTACT = ['ZHU Qi <realzhq@gmail.com>', 'ZHANG Nan <nan.zhann@gmail.com>',
-               'DENG Ken <dengken524@live.cn>', 'ZHU Tong <zhutong0114@gmail.com>',
-               'Antoine ORY-LAMBALLE <antoine.orylamballe@yahoo.fr>']
-    CC = ['ZHU Qi <realzhq@gmail.com>', 'ZHANG Nan <nan.zhann@gmail.com>',
-          'DENG Ken <dengken524@live.cn>', 'ZHU Tong <zhutong0114@gmail.com>',
-          'Antoine ORY-LAMBALLE <antoine.orylamballe@yahoo.fr>']
+    CONTACT = ['ZHANG Nan <nan.zhann@gmail.com>',
+                'ZHU Tong <zhutong0114@gmail.com>',
+               ]
+    CC = ['ZHANG Nan <nan.zhann@gmail.com>',
+          'ZHU Tong <zhutong0114@gmail.com>']
     SENDER = 'Forum Horizon Chine <admin@forumhorizonchine.com>'
 
     #upload file size limit

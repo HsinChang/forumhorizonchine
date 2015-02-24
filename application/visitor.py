@@ -227,7 +227,7 @@ def _apply_feedback(email, jobname):
     m.sender = sender
     m.to = email
     m.subject = "your application is sent successfully"
-    m.html = """
+    m.html = u"""
     <html>
     <p>Dear Sir/Miss,<p>
 
@@ -238,6 +238,6 @@ def _apply_feedback(email, jobname):
     <p>Best regards，</p>
     <p>The team of AFCP</p>
     </html>
-    """
+    """.format(jobname)
     m.send()
     return True

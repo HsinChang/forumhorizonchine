@@ -1,6 +1,6 @@
 <div class="apply-button">
-  <div class="right">Created: {{ job.date }} | {{ _(job.type) }}</div>
-  <h3>{{ job.current['title'] }}</h3>
+    <div class="right"><b>{{ _(job.type) }}</b> | {{job.date}}</div>
+    <h3>{{ job.current['title'] }}</h3>
 </div>
 <div>
   {{ job.current['content']|safe }}

@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2014-03-25 19:16+0100\n"
-"PO-Revision-Date: 2014-03-25 19:17+0100\n"
+"POT-Creation-Date: 2015-03-13 15:02+0100\n"
+"PO-Revision-Date: 2015-03-13 15:05+0100\n"
 "Last-Translator: Tianming.Lu <lutianming1005@gmail.com>\n"
 "Language-Team: zh <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -16,17 +16,18 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 1.3\n"
-"X-Generator: Poedit 1.5.4\n"
+"Language: zh\n"
+"X-Generator: Poedit 1.6.10\n"
 
-#: admin.py:166 admin.py:196
+#: admin.py:163 admin.py:193
 msgid "no such enterprise"
 msgstr ""
 
-#: admin.py:207 admin.py:461 exhibitor.py:107
+#: admin.py:204 admin.py:468 exhibitor.py:107
 msgid "fail to delete"
 msgstr ""
 
-#: admin.py:383 admin.py:456 exhibitor.py:81 exhibitor.py:101
+#: admin.py:383 admin.py:463 exhibitor.py:81 exhibitor.py:101
 msgid "no such job"
 msgstr ""
 
@@ -38,19 +39,19 @@ msgstr ""
 msgid "job deleted"
 msgstr ""
 
-#: forms.py:145
+#: forms.py:155
 msgid "Your email:"
 msgstr "您的邮箱："
 
-#: forms.py:146
+#: forms.py:156
 msgid "Message:"
 msgstr "消息"
 
-#: forms.py:149
+#: forms.py:159
 msgid "Your first name:"
 msgstr "名"
 
-#: forms.py:150
+#: forms.py:160
 msgid "Your last name:"
 msgstr "姓"
 
@@ -62,18 +63,6 @@ msgstr "工作"
 msgid "Internship"
 msgstr "实习"
 
-#: settings.py:38 settings.py:61
-msgid "English"
-msgstr "英文"
-
-#: settings.py:38 settings.py:61
-msgid "French"
-msgstr "法文"
-
-#: settings.py:38 settings.py:61
-msgid "Chinese"
-msgstr "中文"
-
 #: templates/base.html:52
 msgid "Back to top"
 msgstr "返回顶部"
@@ -82,39 +71,35 @@ msgstr "返回顶部"
 msgid "Admin area"
 msgstr ""
 
-#: templates/base_admin.html:29
+#: templates/base_admin.html:30
 msgid "Welcome!"
 msgstr ""
 
-#: templates/base_admin.html:29
+#: templates/base_admin.html:30
 msgid "logout"
 msgstr ""
 
-#: templates/base_admin.html:34
-msgid "change password"
-msgstr ""
-
-#: templates/base_admin.html:38
+#: templates/base_admin.html:41
 msgid "users"
 msgstr ""
 
-#: templates/base_admin.html:42
+#: templates/base_admin.html:45
 msgid "jobs"
 msgstr ""
 
-#: templates/base_admin.html:46
+#: templates/base_admin.html:49
 msgid "enterprises"
 msgstr ""
 
-#: templates/base_admin.html:50
+#: templates/base_admin.html:53
 msgid "forum"
 msgstr ""
 
-#: templates/base_admin.html:54
+#: templates/base_admin.html:57
 msgid "activities"
 msgstr ""
 
-#: templates/base_admin.html:58 templates/admin/data.html:6
+#: templates/base_admin.html:61 templates/admin/data.html:6
 msgid "data"
 msgstr ""
 
@@ -132,8 +117,8 @@ msgstr ""
 "供就业机会。论坛也包含一系列讲座和圆桌会议。"
 
 #: templates/home.html:37
-msgid "Official partners of the Forum in 2014"
-msgstr "2014年论坛官方合作伙伴"
+msgid "Official partners of the Forum in 2015"
+msgstr "2015年论坛官方合作伙伴"
 
 #: templates/home.html:42
 msgid "Official website"
@@ -146,27 +131,6 @@ msgstr "海报"
 #: templates/home.html:55
 msgid "Welcome to <em>China Horizon Forum</em>"
 msgstr "欢迎来到<em>中国地平线</em>论坛！"
-
-#: templates/home.html:58
-msgid "The China Horizon Forum 2014 is finished. Thanks for your coming."
-msgstr "2014年中国地平线论坛已经圆满落幕。感谢您的到来。"
-
-#: templates/home.html:61
-msgid ""
-"The information related to the forum 2014 is still available at the site"
-msgstr "2014年论坛的相关信息仍在本网站可见"
-
-#: templates/home.html:63
-msgid "program"
-msgstr "活动安排"
-
-#: templates/home.html:64
-msgid "exhibitors"
-msgstr "展出商"
-
-#: templates/home.html:65
-msgid "job"
-msgstr "工作"
 
 #: templates/home.html:76
 msgid ""
@@ -182,14 +146,14 @@ msgstr ""
 #: templates/home.html:80
 #, python-format
 msgid ""
-"This year, the seventh edition was held at <a href=\"http://www.ensta-"
+"This year, the eighth edition was held at <a href=\"http://www.mines-"
 "paristech.fr\"><strong>%(address)s</strong></a> on <strong>%(date)s</"
 "strong>. This unique event attracts the most promising students and "
 "graduates interested in a French-Chinese career. It will include a job fair "
 "and conference facilities where you will:"
 msgstr ""
-"今年，第七届中国地平线论坛于<strong>%(date)s</strong>在<a href=\"http://www."
-"ensta-paristech.fr\"><strong>%(address)s</strong></a>举行。此论坛的唯一性决定"
+"今年，第八届中国地平线论坛于<strong>%(date)s</strong>在<a href=\"http://www."
+"mines-paristech.fr\"><strong>%(address)s</strong></a>举行。此论坛的唯一性决定"
 "了其可以吸引到那些最有志于在中法两国间开展职业生涯的学生和毕业生。论坛包含了"
 "一个招聘沙龙以及一些讲座，届时您将可以："
 
@@ -399,7 +363,7 @@ msgstr ""
 msgid "Wish to contact us?"
 msgstr "您希望联系我们?"
 
-#: templates/about/contact.html:53 templates/includes/job_apply.html:65
+#: templates/about/contact.html:53 templates/includes/job_apply.html:64
 msgid "Send"
 msgstr "发送"
 
@@ -489,12 +453,12 @@ msgstr ""
 msgid "no email"
 msgstr ""
 
-#: templates/admin/edit_job.html:10 templates/exhibitors/edit_job.html:9
+#: templates/admin/edit_job.html:12 templates/exhibitors/edit_job.html:9
 #: templates/exhibitors/edit_job.html:13
 msgid "Edit job"
 msgstr "编辑职位"
 
-#: templates/admin/edit_job.html:15
+#: templates/admin/edit_job.html:17
 msgid "Edit Job"
 msgstr ""
 
@@ -564,7 +528,7 @@ msgstr ""
 msgid "New enterprise"
 msgstr ""
 
-#: templates/admin/new_job.html:25 templates/admin/new_job.html:30
+#: templates/admin/new_job.html:28 templates/admin/new_job.html:33
 #: templates/exhibitors/new_job.html:11 templates/exhibitors/new_job.html:16
 msgid "New job"
 msgstr "新的职位"
@@ -945,35 +909,35 @@ msgstr "申请"
 msgid "*.doc and *.pdf files are accepted, max 5MB for each attachment."
 msgstr "接受doc和pdf文件。单个文件不超过5MB。"
 
-#: templates/includes/job_apply.html:26
+#: templates/includes/job_apply.html:25
 msgid "First name"
 msgstr "名"
 
-#: templates/includes/job_apply.html:30
+#: templates/includes/job_apply.html:29
 msgid "Last name"
 msgstr "姓"
 
-#: templates/includes/job_apply.html:34
+#: templates/includes/job_apply.html:33
 msgid "Email"
 msgstr "邮箱"
 
-#: templates/includes/job_apply.html:41
+#: templates/includes/job_apply.html:40
 msgid "CV in {0}"
 msgstr "{0}简历"
 
-#: templates/includes/job_apply.html:45
+#: templates/includes/job_apply.html:44
 msgid "Motivation letter in {0}"
 msgstr "{0}动机信"
 
-#: templates/includes/job_apply.html:51
+#: templates/includes/job_apply.html:50
 msgid "CV"
 msgstr "简历"
 
-#: templates/includes/job_apply.html:55
+#: templates/includes/job_apply.html:54
 msgid "Motivation letter"
 msgstr "动机信"
 
-#: templates/includes/job_apply.html:62
+#: templates/includes/job_apply.html:61
 msgid "required field"
 msgstr "必填项"
 
@@ -1226,14 +1190,14 @@ msgstr "注册到中国地平线论坛"
 
 #: templates/visitors/inscription.html:20
 msgid ""
-"Registrations for the 2014 edition of the China Horizon Forum are not yet "
+"Registrations for the 2015 edition of the China Horizon Forum are not yet "
 "open. Please come back later to register. Registrations will be open to "
 "visitors one or two months before the Forum. Other entries may also be "
 "required for certain activities of the Forum, such as the résumé and "
 "interview workshops organized respectively by Dragonfly Group and Saint-"
 "Gobain at the 2012 Forum."
 msgstr ""
-"2014年中国地平线论坛的报名工作还未开放。请您稍后再前来报名注册！针对论坛的一"
+"2015年中国地平线论坛的报名工作还未开放。请您稍后再前来报名注册！针对论坛的一"
 "些特殊活动，我们可能会安排其它报名环节，如分别由Dragonfly Group 和Saint "
 "Gobain 在2012年论坛组织的CV讨论会和面试。"
 
@@ -1403,3 +1367,28 @@ msgstr "下载PDF"
 
 #~ msgid "Speaker to be determined"
 #~ msgstr "嘉宾待确定"
+
+#~ msgid "English"
+#~ msgstr "英文"
+
+#~ msgid "French"
+#~ msgstr "法文"
+
+#~ msgid "Chinese"
+#~ msgstr "中文"
+
+#~ msgid "The China Horizon Forum 2014 is finished. Thanks for your coming."
+#~ msgstr "2014年中国地平线论坛已经圆满落幕。感谢您的到来。"
+
+#~ msgid ""
+#~ "The information related to the forum 2014 is still available at the site"
+#~ msgstr "2014年论坛的相关信息仍在本网站可见"
+
+#~ msgid "program"
+#~ msgstr "活动安排"
+
+#~ msgid "exhibitors"
+#~ msgstr "展出商"
+
+#~ msgid "job"
+#~ msgstr "工作"

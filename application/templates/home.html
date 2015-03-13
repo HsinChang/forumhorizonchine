@@ -34,7 +34,7 @@
 
     <div id="left-column">
 
-      <h1>{{ _('Official partners of the Forum in 2014') }}</h1>
+      <h1>{{ _('Official partners of the Forum in 2015') }}</h1>
 
       <div class="partners">
 	<a href="http://www.dragonflygroup.com/" target="_blank"><img
@@ -53,7 +53,7 @@
     <div id="right-column">
       <div class="block">
 	<h1>{{ _('Welcome to <em>China Horizon Forum</em>') }}</h1>
-
+	{#
 	<p>
 	  {{ _('The China Horizon Forum 2014 is finished. Thanks for your coming.') }}
 	</p>
@@ -65,7 +65,7 @@
 	  <a href="{{ url_for('visitor.job') }}">{{ _('job') }}</a>
 	  ).
 	</p>
-	{#
+
 	<p id="registration">
 	  <a href="{{ url_for('visitor.inscription') }}">
 	    <img src={{ url_for('static', filename="img/inscrivez_redim_200.jpg") }} width="200px"/>
@@ -77,7 +77,7 @@
 	</p>
 
 	<p>
-	  {{ _('This year, the seventh edition was held at <a href="http://www.ensta-paristech.fr"><strong>%(address)s</strong></a> on <strong>%(date)s</strong>. This unique event attracts the most promising students and graduates interested in a French-Chinese career. It will include a job fair and conference facilities where you will:', address=forum.address, date=forum.formated_date) }}
+	  {{ _('This year, the eighth edition was held at <a href="http://www.mines-paristech.fr"><strong>%(address)s</strong></a> on <strong>%(date)s</strong>. This unique event attracts the most promising students and graduates interested in a French-Chinese career. It will include a job fair and conference facilities where you will:', address=forum.address, date=forum.formated_date) }}
 	</p>
 	<ul>
 	  <li>

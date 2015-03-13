@@ -69,7 +69,7 @@ ADMINS = [
 
 #upload file size limit
 MAX_CONTENT_LENGTH = 1 * 1024 * 1024
-
+BABEL_DEFAULT_LOCALE = 'fr'
 
 class Config(object):
     # Set secret keys for CSRF protection

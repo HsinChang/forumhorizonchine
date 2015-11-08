@@ -1,188 +1,177 @@
 {% extends "base_visitors.html" %}
 
 {% block html_title %}
-  <title>{{ _('Exhibitors in China Horizon Forum') }}</title>
-  <meta name="description" content="{{ _("Companies at 2012 Forum: Dragonfly Group, Saint-Gobain, IBM, L'Oréal, Bureau Veritas, BNP Paribas, Alstom and Arkema.") }}" />
+    <title>{{ _('Exhibitors in China Horizon Forum') }}</title>
+    <meta name="description" content="{{ _("Companies at 2012 Forum: Dragonfly Group, Saint-Gobain, IBM, L'Oréal, Bureau Veritas, BNP Paribas, Alstom and Arkema.") }}" />
 
 {% endblock %}{# html_title #}
 
 {% block content %}
 
-  <div class="section exhibitors">
-    <h1>{{ _('Exposants') }}</h1>
-    <h3>{{ _('We are in contact with many French and Chinese players:') }}</h3>
-    <ul>
-      <li>{{ _("major French companies such as Michelin, l'Oréal, Areva, Suez, Schneider, Carrefour...") }}</li>
-      <li>{{ _('French SMEs wishing to expand their activities into the Chinese market,') }}</li>
-      <li>{{ _('major Chinese groups such as Huawei and ZTE, which are already present on the French market,') }}</li>
-      <li>{{ _('and some of China’s Special Economic Zones, eager to attract foreign investors.') }}</li>
-    </ul>
-    <h3>{{ _('The following companies have already confirmed their presence at the Forum:') }}</h3>
-    <table class="noborder">
-      <tr>
-	<td>
-	  <a href="http://www.arkema.fr/" target="_blank">
-	  <img class="shadow" src={{ url_for('static', filename="img/logo/enterprise/arkema.jpg") }}
-	  width="200px" alt="Arkema" />
-	  </a>
-	</td>
-	<td>
-	  <a href="http://www.dragonflygroup.com/" target="_blank">
-	    <img class="shadow" src={{ url_for('static', filename="img/logo/enterprise/dragonfly.jpg") }}
-	    width="200px" alt="Dragonfly Group"/>
-	  </a>
-	</td>
-	<td>
-	  <a href="http://www.schneider-electric.com/" target="_blank">
-	    <img class="shadow" src={{ url_for('static', filename="img/logo/enterprise/schneider.jpg") }}
-	    width="200px" alt="Schneider"/>
-	  </a>
-	</td>
-      </tr>
-      <tr>
-	<td>
-	  <a href="http://www.loreal.fr/" target="_blank"><img class="shadow" src={{ url_for('static', filename="img/logo/enterprise/LOreal.jpg") }}
-	    width="200px" alt="L'Oréal" />
-	  </a>
-	</td>
-	<td>
-	  <a href="http://www.valeo.com/" target="_blank">
-	    <img class="shadow" src={{ url_for('static', filename="img/logo/enterprise/valeo.jpg") }}
-	    width="200px" alt="Valeo" />
-	  </a>
-	</td>
-	<td>
-	  <a href="http://www.oxylane.com/" target="_blank">
-	    <img class="shadow" src={{ url_for('static', filename="img/logo/enterprise/oxylane.jpg") }}
-	    width="200px" alt="Oxylane" />
-	  </a>
-	</td>
-      </tr>
-      <tr>
-	<td>
-	  <a href="http://www.faurecia.com/" target="_blank">
-	    <img class="shadow" src={{ url_for('static', filename="img/logo/enterprise/faurecia.jpg") }}
-	    width="200px" alt="Faurecia" />
-	  </a>
-	</td>
-      </tr>
-    </table>
+    <div class="section exhibitors">
+	<h1>{{ _('Exposants') }}</h1>
+	<h3>{{ _('We are in contact with many French and Chinese players:') }}</h3>
+	<ul>
+	    <li>{{ _("major French companies such as Michelin, l'Oréal, Areva, Suez, Schneider, Carrefour...") }}</li>
+	    <li>{{ _('French SMEs wishing to expand their activities into the Chinese market,') }}</li>
+	    <li>{{ _('major Chinese groups such as Huawei and ZTE, which are already present on the French market,') }}</li>
+	    <li>{{ _('and some of China’s Special Economic Zones, eager to attract foreign investors.') }}</li>
+	</ul>
+	<h3>{{ _('The following companies have already confirmed their presence at the Forum:') }}</h3>
+	<table class="noborder">
+	    <tr>
+		<td>
+		    <a href="http://www.bmw.com" target="_blank">
+			<img class="shadow" src={{ url_for('static', filename='img/logo/enterprise/bmw.png') }} width="200px">
+		    </a>
+		</td>
+		<td>
+		    <a href="http://www.acece.eu" target="_blank">
+			<img class="shadow" src={{ url_for('static', filename='img/logo/enterprise/acece.jpg') }} width="200px">
+		    </a>
+		</td>
+		<td>
+		    <a href="http://www.schneider-electric.com/" target="_blank">
+			<img class="shadow" src={{ url_for('static', filename="img/logo/enterprise/schneider.jpg") }}
+				width="200px" alt="Schneider"/>
+		    </a>
+		</td>
+	    </tr>
+	    <tr>
+		<td>
+		    <a href="http://www.loreal.fr/" target="_blank"><img class="shadow" src={{ url_for('static', filename="img/logo/enterprise/LOreal.jpg") }}
+									    width="200px" alt="L'Oréal" />
+		    </a>
+		</td>
+		<td>
+		    <a href="http://www.valeo.com/" target="_blank">
+			<img class="shadow" src={{ url_for('static', filename="img/logo/enterprise/valeo.jpg") }}
+				width="200px" alt="Valeo" />
+		    </a>
+		</td>
+		<td>
+		    <a href="http://store.apple.com" target="_blank">
+			<img class="shadow" src={{ url_for('static', filename='img/logo/enterprise/apple.png') }} width="200px">
+		    </a>
+		</td>
+	    </tr>
+	</table>
 
-    {#
-    <!-- <h3>En attente de confirmation :</h3>
-    <table>
-    <tr>
-    <td></td>
-    </tr>
-    </table> -->
-    <!--
-    <hr/>
-    <table CELLSPACING="10">
-    <tr>
-    <td width="50"></td>
-    <td><img src="/static/forum/images/logo/michelin.gif"
-    width="100" /></td>
-    <td width="150"></td>
-    <td><img src="/static/forum/images/logo/faurecia.gif"
-    width="100" /></td>
-    </tr>
-    <tr align="center">
-    <th width="50"></th>
-    <th><p>
-    <a href="http://www.michelin.com" rel="external">Michelin</a>
-    </p></th>
-    <th width="150"></th>
-    <th><p>
-    <a href="http://www.faurecia.com" rel="external">Faurecia</a>
-    </p></th>
-    </tr>
-    </table>
+	{#
+	<!-- <h3>En attente de confirmation :</h3>
+	<table>
+	<tr>
+	<td></td>
+	</tr>
+	</table> -->
+	<!--
+	<hr/>
+	<table CELLSPACING="10">
+	<tr>
+	<td width="50"></td>
+	<td><img src="/static/forum/images/logo/michelin.gif"
+	width="100" /></td>
+	<td width="150"></td>
+	<td><img src="/static/forum/images/logo/faurecia.gif"
+	width="100" /></td>
+	</tr>
+	<tr align="center">
+	<th width="50"></th>
+	<th><p>
+	<a href="http://www.michelin.com" rel="external">Michelin</a>
+	</p></th>
+	<th width="150"></th>
+	<th><p>
+	<a href="http://www.faurecia.com" rel="external">Faurecia</a>
+	</p></th>
+	</tr>
+	</table>
 
-    <table CELLSPACING="10">
-    <tr>
-    <td width="50"></td>
-    <td><img src="/static/forum/images/logo/dragonflygroup.png"
-    width="100" /></td>
-    <td width="120"></td>
-    <td><img src="/static/forum/images/logo/PSA.jpg" width="160" /></td>
+	<table CELLSPACING="10">
+	<tr>
+	<td width="50"></td>
+	<td><img src="/static/forum/images/logo/dragonflygroup.png"
+	width="100" /></td>
+	<td width="120"></td>
+	<td><img src="/static/forum/images/logo/PSA.jpg" width="160" /></td>
 
-    </tr>
-    <tr align="center">
-    <th width="50"></th>
-    <th><p>
-    <a href="http://www.dragonflygroup.com" rel="external">Dragonfly
-    Group</a>
-    </p></th>
-    <th width="120"></th>
-    <th><p>
-    <a href="http://www.psa-peugeot-citroen.com" rel="external">PSA</a>
-    </p></th>
-    </tr>
-    </table>
-    <table CELLSPACING="10">
-    <tr>
-    <td width="50"></td>
-    <td><img src="/static/forum/images/logo/saint-gobain.gif"
-    width="100" /></td>
-    <td width="150"></td>
-    <td><img src="/static/forum/images/logo/arcelormittal.jpg"
-    width="100" /></td>
+	</tr>
+	<tr align="center">
+	<th width="50"></th>
+	<th><p>
+	<a href="http://www.dragonflygroup.com" rel="external">Dragonfly
+	Group</a>
+	</p></th>
+	<th width="120"></th>
+	<th><p>
+	<a href="http://www.psa-peugeot-citroen.com" rel="external">PSA</a>
+	</p></th>
+	</tr>
+	</table>
+	<table CELLSPACING="10">
+	<tr>
+	<td width="50"></td>
+	<td><img src="/static/forum/images/logo/saint-gobain.gif"
+	width="100" /></td>
+	<td width="150"></td>
+	<td><img src="/static/forum/images/logo/arcelormittal.jpg"
+	width="100" /></td>
 
-    </tr>
-    <tr align="center">
-    <th width="50"></th>
-    <th><p>
-    <a href="http://www.saint-gobain.com" rel="external">Saint-Gobain</a>
-    </p></th>
-    <th width="150"></th>
-    <th><p>
-    <a href="http://www.arcelormittal.com" rel="external">ArcelorMittal</a>
-    </p></th>
-    </tr>
-    </table>
+	</tr>
+	<tr align="center">
+	<th width="50"></th>
+	<th><p>
+	<a href="http://www.saint-gobain.com" rel="external">Saint-Gobain</a>
+	</p></th>
+	<th width="150"></th>
+	<th><p>
+	<a href="http://www.arcelormittal.com" rel="external">ArcelorMittal</a>
+	</p></th>
+	</tr>
+	</table>
 
-    <table CELLSPACING="10">
-    <tr>
-    <td width="50"></td>
-    <td><img src="/static/forum/images/logo/huawei.jpg" width="100" /></td>
-    <td width="150"></td>
-    <td><img src="/static/forum/images/logo/logo_l_orea.jpg"
-    width="100" /></td>
-    </tr>
+	<table CELLSPACING="10">
+	<tr>
+	<td width="50"></td>
+	<td><img src="/static/forum/images/logo/huawei.jpg" width="100" /></td>
+	<td width="150"></td>
+	<td><img src="/static/forum/images/logo/logo_l_orea.jpg"
+	width="100" /></td>
+	</tr>
 
-    <tr align="center">
-    <th width="50"></th>
-    <th><p>
-    <a href="http://www.huawei.com" rel="external">Huawei</a>
-    </p></th>
-    <th width="150"></th>
-    <th><p>
-    <a href="http://www.loreal.com/" rel="external">L'Oréal</a>
-    </p></th>
-    </tr>
-    </table>
+	<tr align="center">
+	<th width="50"></th>
+	<th><p>
+	<a href="http://www.huawei.com" rel="external">Huawei</a>
+	</p></th>
+	<th width="150"></th>
+	<th><p>
+	<a href="http://www.loreal.com/" rel="external">L'Oréal</a>
+	</p></th>
+	</tr>
+	</table>
 
-    <table CELLSPACING="10">
-    <tr>
-    <td width="50"></td>
-    <td><img src="/static/forum/images/logo/se.jpg" width="100" /></td>
-    <td width="150"></td>
-    </tr>
+	<table CELLSPACING="10">
+	<tr>
+	<td width="50"></td>
+	<td><img src="/static/forum/images/logo/se.jpg" width="100" /></td>
+	<td width="150"></td>
+	</tr>
 
-    <tr align="center">
-    <th width="50"></th>
-    <th><p>
-    <a href="http://www.schneider-electric.com/" rel="external">Schneider
-    Electric</a>
-    </p></th>
-    <th width="150"></th>
-    </tr>
-    </table> -->
+	<tr align="center">
+	<th width="50"></th>
+	<th><p>
+	<a href="http://www.schneider-electric.com/" rel="external">Schneider
+	Electric</a>
+	</p></th>
+	<th width="150"></th>
+	</tr>
+	</table> -->
 
-    <!--<h2>Par ailleurs, nous attendons une réponse sous peu d'autres intervenants possibles, dont: </h2>
-    -->
-    #}
+	<!--<h2>Par ailleurs, nous attendons une réponse sous peu d'autres intervenants possibles, dont: </h2>
+	-->
+	#}
 
-  </div>
+    </div>
 
 {% endblock %}{# content #}

@@ -37,16 +37,41 @@
       <h1>{{ _('Official partners of the Forum in 2015') }}</h1>
 
       <div class="partners">
-	<a href="http://www.dragonflygroup.com/" target="_blank"><img
-	  src="/static/img/logo/2013/dragonfly.png"
-	  width="150px" alt="Dragonfly Group" /><span>{{ _('Official website') }}</span>
-	</a>
+	  <a href="http://www.loreal.fr/" target="_blank">
+	      <img src={{ url_for('static', filename="img/logo/enterprise/LOreal.jpg") }}
+		      width="150px" alt="L'Oréal" />
+	  </a>
+	  <a href="http://www.schneider-electric.com/" target="_blank">
+	      <img src={{ url_for('static', filename="img/logo/enterprise/schneider.jpg") }}
+		      width="150px" alt="Schneider"/>
+	  </a>
+	  <a href="http://www.valeo.com/" target="_blank">
+	      <img src={{ url_for('static', filename="img/logo/enterprise/valeo.jpg") }}
+		      width="150px" alt="Valeo" />
+	  </a>
+	  <a href="http://www.bmw.com" target="_blank">
+	      <img src={{ url_for('static', filename='img/logo/enterprise/bmw.png') }} width="100px">
+	  </a>
+	  <a href="http://www.acece.eu" target="_blank">
+	      <img src={{ url_for('static', filename='img/logo/enterprise/acece.jpg') }} width="150px">
+	  </a>
+	  <a href="http://store.apple.com" target="_blank">
+	      <img src={{ url_for('static', filename='img/logo/enterprise/apple.png') }} width="100px">
+	  </a>
+	  <a href="http://www.dragonflygroup.com" target="_blank">
+	      <img src={{ url_for('static', filename='img/logo/enterprise/dragonfly.jpg') }} width="150px">
+	  </a>
+	  <a href="http://www.cgr.fr" target="_blank">
+	      <img src={{ url_for('static', filename='img/logo/enterprise/cgr.gif') }}>
+	  </a>
       </div>
 
-      <h1>{{ _('Poster') }}</h1>
+      <h1 class="clear">{{ _('Poster') }}</h1>
 
       <div id="announcements" class="block">
-	<img src="/static/img/affiche2014.jpg" width="420px"/>
+	  <a href="/static/img/2015-forum.jpg">
+	      <img src="/static/img/2015-forum.jpg" width="420px"/>
+	  </a>
       </div>
 
     </div>
@@ -66,12 +91,15 @@
 	  ).
 	</p>
 
+
+	#}
+
 	<p id="registration">
 	  <a href="{{ url_for('visitor.inscription') }}">
 	    <img src={{ url_for('static', filename="img/inscrivez_redim_200.jpg") }} width="200px"/>
 	  </a>
 	</p>
-	#}
+
 	<p>
 	  {{ _('Co-organized by the French-Chinese Friendship Association of ParisTech (AFCP) and ParisTech, Forum Horizon Chine is a space for recruiting French sinophile and Chinese students and graduates from the engineering and business Grandes Écoles of ParisTech.') }}
 	</p>

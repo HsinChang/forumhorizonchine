@@ -28,11 +28,11 @@ def admin_required(func):
     def decorated_view(*args, **kwargs):
         user = users.get_current_user()
         if user:
-            if user.email() not in app.config['ADMINS']:
+            if user.email().lower() not in app.config['ADMINS']:
                 abort(401)
             return func(*args, **kwargs)
         else:
-            return redirect(url_for('admin.index'))          
+            return redirect(url_for('admin.index'))
         # if user.is_authenticated():
         #     if user.role != 'admin':
         #         abort(401)  # Unauthorized

@@ -1,0 +1,30 @@
+<div class="forum-counter-container">
+  {#
+  <div class="date">{% blocktrans %}<span id="jj">{{ remaining_days }}</span> d{% endblocktrans %}</div>
+  <div class="time"><span id="hh">00</span>:<span id="mm">00</span>:<span id="ss">00</span></div>
+  <div class="nowlabel">Now!</div>
+  #}
+</div>
+
+<div class="logo">
+  <a href="{{ url_for('home') }}"><img src="/static/img/ForumChine.jpg" alt="AFCP Logo"
+  width="450px" height="45px" /></a>
+</div><!--/.logo-->
+
+<div class="links">
+
+  <div class="page">
+    <a href="{{ url_for('admin.exhibitors') }}">{{ _("Visitors") }}</a>
+    <a  href="{{ url_for('admin.jobs') }}">{{ _("Exhibitors") }}</a>
+  </div>
+
+  {% block language %}
+  {% for lang in LANGUAGES %}
+  <a href="{{ url_for('setlocale', locale=lang) }}">
+    <img src="/static/img/lang_{{ lang }}.gif">
+    </img>
+  </a>
+  {% endfor %}
+  {% endblock %}
+
+</div><!--/.links-->

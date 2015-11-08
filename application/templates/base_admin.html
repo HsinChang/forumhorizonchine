@@ -25,7 +25,9 @@
     <div class="sidebar-section">
 	<div class="title">{{ _('Admin area')}}</div>
 	<div>
-	    {% if user and user.email() in ADMINS %}
+	    {% if user %}
+
+		{% if user.email()|lower in ADMINS %}
 
 		{{ _('Welcome!') }} {{ user.nickname() }} <a href="{{ users.create_logout_url('/admin') }}">{{ _('logout')}}</a>
 
@@ -35,11 +37,11 @@
 			class="current" {% endif %}>
 			<a href="{{ url_for('admin.change_password') }}">{{ _('change password') }}</a>
 		    </li>
-		    #}
 		    <li {% if request.path == url_for('admin.users') %}
 			class="current" {% endif %}>
 			<a href="{{ url_for('admin.users') }}">{{ _('users')}}</a>
 		    </li>
+		    #}
 		    <li {% if request.path == url_for('admin.jobs') %}
 			class="current" {% endif %}>
 			<a href="{{ url_for('admin.jobs') }}">{{ _('jobs')}}</a>
@@ -61,6 +63,10 @@
 			<a href="{{ url_for('admin.data') }}">{{ _('data')}}</a>
 		    </li>
 		</ul>
+		{% else %}
+		{{ user.email() }} is not ADMIN, change your account please
+		<a href="{{ users.create_login_url('/admin') }}">login</a>
+		{% endif %}
 	    {% else %}
 		<a href="{{ users.create_login_url('/admin') }}">login</a>
 		{#

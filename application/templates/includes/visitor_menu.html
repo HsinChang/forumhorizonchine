@@ -10,6 +10,14 @@
 	{{ _('Program') }}
       </a>
     </li>
+
+    <li {% if request.path == url_for('visitor.inscription') %}
+      class="current" {% endif %}>
+      <a href="{{ url_for('visitor.inscription') }}">
+	{{ _('Inscription') }}
+      </a>
+    </li>
+
     <li {% if request.path == url_for('visitor.exhibitors') %}
       class="current" {% endif %}>
       <a href="{{ url_for('visitor.exhibitors')}}">

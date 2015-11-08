@@ -29,7 +29,7 @@ def inscription():
 def inscript(keyurl):
     activity = ndb.Key(urlsafe=keyurl).get()
     if not activity:
-        flash("enable to register")
+        flash("unable to register")
         return redirect(url_for('visitor.activities'))
     return render_template('visitors/inscript.html', activity=activity)
 

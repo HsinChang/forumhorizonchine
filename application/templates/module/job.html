@@ -1,0 +1,17 @@
+<div class="section job">
+  <h1>{{ _('Jobs opportunities') }}</h1>
+
+  {% if not grouped_jobs %}
+    {{ _('There is no job now.')}}
+  {% else %}
+    {% for key, jobs in grouped_jobs %}
+      {% set enterprise = key.get() %}
+      <h2 id="{{ enterprise.shortname }}">{{ enterprise.name }}</h2>
+      {% for job in jobs %}
+	<div class="block-job">
+	  {% include "includes/job_apply.html" %}
+	</div>
+      {% endfor %}
+    {% endfor %}
+  {% endif %}
+</div>

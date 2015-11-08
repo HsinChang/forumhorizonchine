@@ -1,0 +1,11 @@
+{% from "_formhelpers.html" import render_field as render_field %}
+<h2>{{ _('You wish to send a comment about this guide?') }}</h2>
+<form method="post" action="{{ url_for('visitor.workpermit') }}">
+  {{ form.hidden_tag() }}
+    {{ render_field(form.first_name) }}
+    {{ render_field(form.last_name) }}
+    {{ render_field(form.email) }}
+    {{ render_field(form.message, rows=5) }}
+    <input type="submit" value="{{ _('Send the message') }}">
+    </input>
+</form>

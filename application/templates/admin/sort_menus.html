@@ -1,0 +1,30 @@
+{% extends "base_admin.html" %}
+
+{% block html_title %}
+  <title>
+    {{ _('Sort menus') }}
+  </title>
+{% endblock html_title %}
+
+{% block content %}
+  <form method="POST" action="{{ url_for('admin.sort_menu', keyurl=keyurl) }}">
+    <input type="hidden" name="order" id="order"/>
+    <div>
+      <ol id="sortable" class="sorted">
+	{% for menu in menus %}
+	  <li id="index_{{ menu.order }}" class="index">{{ menu.id }}</li>
+	{% endfor %}
+      </ol>
+    </div>
+    <input type="submit" value="sort"/>
+  </form>
+  <script>
+   $( "#sortable" ).sortable();
+   $( "#sortable" ).disableSelection();
+
+   $('form').submit(function(){
+     $("#order").val($("#sortable").sortable("serialize"));
+   })
+  </script>
+
+{% endblock content %}

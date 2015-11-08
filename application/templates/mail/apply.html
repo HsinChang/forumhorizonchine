@@ -1,0 +1,11 @@
+<html>
+  <p>{{ _('Dear Sir/Miss,')}}</p>
+  <p></p>
+  <p>{{ _('A new application for the position <b>%(title)s</b> has been sent through the Site of AFCP where the offre is published.', title=title) }}</p>
+
+  <p>{{ _("Please have a look at the attached CV and cover letters of <b>%(first_name)s %(last_name)s</b> for this application. You can reach him/her with the following email address:", first_name=first_name, last_name=last_name) }}</p>
+  <p><a href="mailto:{{ email }}">{{ email }}</a></p>
+
+  <p>{{ _("Best regards,") }}</p>
+  <p>{{ _("The team of AFCP") }}</p>
+</html>

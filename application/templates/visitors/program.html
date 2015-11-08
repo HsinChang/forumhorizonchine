@@ -1,190 +1,229 @@
 {% extends "base_visitors.html" %}
 
 {% block html_title %}
-  <title>{{ _('Program of China Horizon Forum') }}</title>
-  <meta name="description" content="{{ _("Scheduled for 2013 Forum: welcome/breakfast, opening ceremony, business conferences, interviews, round tables, closing conference and cocktail.") }}">
+    <title>{{ _('Program of China Horizon Forum') }}</title>
+    <meta name="description" content="{{ _("Scheduled for 2013 Forum: welcome/breakfast, opening ceremony, business conferences, interviews, round tables, closing conference and cocktail.") }}">
   </meta>
 
 {% endblock %}{# html_title #}
 
 {% block content %}
 
-  <div class="section program">
-    <h1>{{ _('Forum program') }}</h1>
+    <div class="section program">
+	<h1>{{ _('Forum program') }}</h1>
 
-    <h2>{{ _('Free entrance, 9h30 – 19h00, March 6th 2014') }}</h2>
-    <table>
-      <tr>
-	<td><strong>9h30 – 10h</strong></td>
-	<td><h3>{{ _('Registration and welcome coffee') }}</h3></td>
-	<td rowspan="9">
-	  <a href="http://www.arkema.fr/" target="_blank">
-	  <img class="shadow" src={{ url_for('static', filename="img/logo/enterprise/arkema.jpg") }}
-	  width="200px" alt="Arkema" />
-	  </a>
-	  <a href="http://www.dragonflygroup.com/" target="_blank">
-	    <img class="shadow" src={{ url_for('static', filename="img/logo/enterprise/dragonfly.jpg") }}
-	    width="200px" alt="Dragonfly Group"/>
-	  </a>
-	  <a href="http://www.faurecia.com/" target="_blank">
-	    <img class="shadow" src={{ url_for('static', filename="img/logo/enterprise/faurecia.jpg") }}
-	    width="200px" alt="Faurecia" />
-	  </a>
-	  <a href="http://www.loreal.fr/" target="_blank"><img class="shadow" src={{ url_for('static', filename="img/logo/enterprise/LOreal.jpg") }}
-	    width="200px" alt="L'Oréal" />
-	  </a>
-	  <a href="http://www.oxylane.com/" target="_blank">
-	    <img class="shadow" src={{ url_for('static', filename="img/logo/enterprise/oxylane.jpg") }}
-	    width="200px" alt="Oxylane" />
-	  </a>
-	  <a href="http://www.schneider-electric.com/" target="_blank">
-	    <img class="shadow" src={{ url_for('static', filename="img/logo/enterprise/schneider.jpg") }}
-	    width="200px" alt="Schneider"/>
-	  </a>
-	  <a href="http://www.valeo.com/" target="_blank">
-	    <img class="shadow" src={{ url_for('static', filename="img/logo/enterprise/valeo.jpg") }}
-	    width="200px" alt="Valeo" />
-	  </a>
-	</td>
-      </tr>
-      <tr>
-	<td><strong>10h – 10h30</strong><br />Amphi R112</td>
-	<td>
-	  <h3>{{ _('Opening Speeches') }}</h3>
-	  <ul>
-	    <li><strong>{{ _('Ms. Elisabeth CREPON') }}</strong>, {{ _('Director of ENSTA ParisTech') }}</li>
-	    <li><strong>{{ _('Mr. Jean Philippe VANOT') }}</strong>, {{ _('President of ParisTech') }}</li>
-	    <li><strong>{{ _('Mr. Yansheng MA') }}</strong>, {{ _('Minister Counselor ( Education), Embassy of China') }}</li>
-	    <li><strong>{{ _('Mr. Qi ZHU') }}</strong>, {{ _('President of AFCP') }}</li>
-	  </ul>
-	</td>
-      </tr>
-      <tr>
-	<td><strong>11h – 11h30</strong><br />Room 1320</td>
-	<td>
-	  <h3>{{ _('Round Table Discussion') }}</h3>
-	  <div class="center">
-	    <strong>Arkema</strong>
-	  </div>
-	</td>
-      </tr>
-      <tr>
-	<td><strong>11h45 – 12h15</strong><br />Room 1320</td>
-	<td>
-	  <h3>{{ _('Round Table Discussion') }}</h3>
-	  <div class="center">
-	    <strong>Faurecia</strong>
-	  </div>
-	</td>
-      </tr>
-      <tr>
-	<td><strong>12h30 – 13h30</strong></td>
-	<td>
-	  <h3>{{ _('Lunch') }}</h3>
-	</td>
-      </tr>
-      <tr>
-	<td><strong>14h – 14h30</strong><br />Room 1320</td>
-	<td>
-	  <h3>{{ _('Round Table Discussion') }}</h3>
-	  <div class="center">
-	    <strong>Schneider Electric</strong>
-	  </div>
-	</td>
-      </tr>
-      <tr>
-	<td><strong>15h – 15h30</strong><br />Room 1320</td>
-	<td>
-	  <h3>{{ _('Round Table Discussion') }}</h3>
-	  <div class="center">
-	    <strong>Oxylane</strong>
-	  </div>
-	</td>
-      </tr>
-      <tr>
-	<td><strong>17h – 18h30</strong><br />Amphi R112</td>
-	<td>
-	  <h3>{{ _('Closing Ceremony') }}</h3>
-	  <div class="center">
-	    <p>
-	    <strong>{{ _('Philippe JULLIAN') }}</strong>, {{ _('Former Chief Financial Officer of Air Liquide') }} <br />
-	    <strong>{{ _('"The industrial, business and financial strategy of Air Liquide Group and its presence in China"') }}</strong>
-	    </p>
-	    <p>
-	    <strong>{{ _('Wei WEI') }}</strong>, {{ _('Group Management Development Director of Faurecia') }}<br />
-	    <strong>{{ _('"Your Global Career at Faurecia"') }}</strong>
-	    </p>
-	  </div>
-	</td>
-      </tr>
-      {#
-      <tr>
-	<td><strong>15h45 – 17h15</strong><br /> Amphi L108</td>
-	<td>
-	  <h3>{{ _('Panel discussion') }}</h3>
-	  <div class="center">{{ _('"China and renewable energies"') }}</div>
-	  <ul>
+	<h2>{{ _('Free entrance, 9:30 – 19:00, June 1st 2015') }}</h2>
+	<table>
+	    <tr>
+		<td><strong>9:30 - 10:00</strong></td>
+		<td><h3>{{ _('petit déjenner') }}</h3></td>
+
+		<td rowspan="11">
+		    <a href="http://www.loreal.fr/" target="_blank">
+			<img class="shadow" src={{ url_for('static', filename="img/logo/enterprise/LOreal.jpg") }}
+				width="200px" alt="L'Oréal" />
+		    </a>
+		    <a href="http://www.schneider-electric.com/" target="_blank">
+			<img class="shadow" src={{ url_for('static', filename="img/logo/enterprise/schneider.jpg") }}
+				width="200px" alt="Schneider"/>
+		    </a>
+		    <a href="http://www.valeo.com/" target="_blank">
+			<img class="shadow" src={{ url_for('static', filename="img/logo/enterprise/valeo.jpg") }}
+				width="200px" alt="Valeo" />
+		    </a>
+		    <a href="http://www.bmw.com" target="_blank">
+			<img class="shadow" src={{ url_for('static', filename='img/logo/enterprise/bmw.png') }} width="100px">
+		    </a>
+		    <a href="http://www.acece.eu" target="_blank">
+			<img class="shadow" src={{ url_for('static', filename='img/logo/enterprise/acece.jpg') }} width="200px">
+		    </a>
+		    <a href="http://store.apple.com" target="_blank">
+			<img class="shadow" src={{ url_for('static', filename='img/logo/enterprise/apple.png') }} width="100px">
+		    </a>
+		    <a href="http://www.dragonflygroup.com" target="_blank">
+			<img class="shadow" src={{ url_for('static', filename='img/logo/enterprise/dragonfly.jpg') }} width="200px">
+		    </a>
+		    <a href="http://www.cgr.fr" target="_blank">
+			<img class="shadow" src={{ url_for('static', filename='img/logo/enterprise/cgr.gif') }}>
+		    </a>
+		</td>
+	    </tr>
+	    <tr>
+		<td>
+		    <strong>10:10 - 10:30</strong><br/>
+		    V107
+		</td>
+		<td>
+		    <h3>{{ _('Conférence ouverture') }}</h3>
+		    {#
+		    <ul>
+			<li><strong>{{ _('Ms. Elisabeth CREPON') }}</strong>, {{ _('Director of ENSTA ParisTech') }}</li>
+			<li><strong>{{ _('Mr. Jean Philippe VANOT') }}</strong>, {{ _('President of ParisTech') }}</li>
+			<li><strong>{{ _('Mr. Yansheng MA') }}</strong>, {{ _('Minister Counselor ( Education), Embassy of China') }}</li>
+			<li><strong>{{ _('Mr. Qi ZHU') }}</strong>, {{ _('President of AFCP') }}</li>
+		    </ul>
+		    #}
+		</td>
+	    </tr>
+	    <tr>
+		<td>
+		    <strong>10:30 - 11:30</strong> <br/>
+		    V107
+		</td>
+		<td>
+		    <h3>Conférence</h3>
+		    <div class="center">
+			<strong>Valeo</strong>
+		    </div>
+		</td>
+	    </tr>
+	    <tr>
+		<td><strong>12:00 - 13:00</strong></td>
+		<td>
+		    <h3>{{ _('Lunch') }}</h3>
+		</td>
+	    </tr>
+	    <tr>
+		<td>
+		    <strong>13:15 - 14:00</strong><br/>V111
+		</td>
+		<td>
+		    <h3>{{ _('Round Table Discussion') }}</h3>
+		    <div class="center">
+			<strong>Schneider Electric</strong>
+		    </div>
+		</td>
+	    </tr>
+	    <tr>
+		<td><strong>14:15 – 15:00</strong><br/>V111</td>
+		<td>
+		    <h3>{{ _('Round Table Discussion') }}</h3>
+		    <div class="center">
+			<strong>Valeo</strong>
+		    </div>
+		</td>
+	    </tr>
+	    <tr>
+		<td><strong>15:15 - 16:00</strong><br/>V111</td>
+		<td>
+		    <h3>{{ _('Round Table Discussion') }}</h3>
+		    <div class="center">
+			<strong>L'Oreal</strong>
+		    </div>
+		</td>
+	    </tr>
+
+	    <tr>
+		<td><strong>16:15 - 17:00</strong><br/>V111</td>
+		<td>
+		    <h3>{{ _('Round Table Discussion') }}</h3>
+		    <div class="center">
+			<strong>CGR</strong>
+		    </div>
+		    <div class="center">
+			<strong>ACECE</strong>
+		    </div>
+		</td>
+	    </tr>
+
+	    <tr>
+		<td><strong>17:15 - 18:00</strong></td>
+		<td>
+		    <h3>{{ _('Cocktail') }}</h3>
+		    {#
+		    <h3>{{ _('Closing Ceremony') }}</h3>
+
+		    <div class="center">
+			<p>
+			    <strong>{{ _('Philippe JULLIAN') }}</strong>, {{ _('Former Chief Financial Officer of Air Liquide') }} <br />
+			    <strong>{{ _('"The industrial, business and financial strategy of Air Liquide Group and its presence in China"') }}</strong>
+			</p>
+			<p>
+			    <strong>{{ _('Wei WEI') }}</strong>, {{ _('Group Management Development Director of Faurecia') }}<br />
+			    <strong>{{ _('"Your Global Career at Faurecia"') }}</strong>
+			</p>
+		    </div>
+		    #}
+		</td>
+	    </tr>
+
+	    <tr>
+		<td colspan="2">
+		    <strong>Entretien</strong>
+		</td>
+	    </tr>
+	    <tr>
+		<td>
+		    <strong>15:00 - 18:00</strong> <br/>
+		    Valeo: L102, L103, L104, L105 <br/>
+		    Schneider Electric: V107
+		</td>
+		<td>
+		    <h3>Entretien de Valeo et Schneider Electric</h3>
+		</td>
+	    </tr>
+	    {#
+	    <tr>
+	    <td><strong>15h45 – 17h15</strong><br /> Amphi L108</td>
+	    <td>
+	    <h3>{{ _('Panel discussion') }}</h3>
+	    <div class="center">{{ _('"China and renewable energies"') }}</div>
+	    <ul>
 	    <li><strong>{{ _('Ms. Suyan ZHOU') }}</strong>, {{ _('Senior Advisor, EDF, Direction Strategy &amp; Prospective') }}</li>
 	    <li><strong>{{ _('Mr. Xavier BARBARO') }}</strong>, {{ _('Chief Executive Officer, NEOEN') }}</li>
 	    <li><strong>{{ _('Mr. Michel AUBLANT') }}</strong>, {{ _('Executive Director of Institut ICARE') }}</li>
 	    <li><strong>{{ _('Mr. Didier MAYER') }}</strong>, {{ _('Head of the Department Energy and Processes, MINES ParisTech') }}</li>
-	  </ul>
-	</td>
-      </tr>
+	    </ul>
+	    </td>
+	    </tr>
 
-      <tr>
-	<td><strong>17h30 – 18h30</strong><br /> Amphi L108</td>
-	<td>
-	  <h3>{{ _('Closing Ceremony') }}</h3>
+	    <tr>
+	    <td><strong>17h30 – 18h30</strong><br /> Amphi L108</td>
+	    <td>
+	    <h3>{{ _('Closing Ceremony') }}</h3>
 
-	  <div class="center">
+	    <div class="center">
 	    "Training at world level: Alstom University in China / Asia"
 	    <br /> <strong>David BRIGGS</strong>,
 	    Vice President of Alstom University.
-	  </div>
+	    </div>
 
-	</td>
-      </tr>
-      #}
-      <tr>
-	<td><strong>18h30 – 19h00</strong></td>
-	<td>
-	  <h3>{{ _('Cocktail') }}</h3>
-	</td>
-      </tr>
-    </table>
+	    </td>
+	    </tr>
+	    #}
+	</table>
 
-    <div>
-      <a href="http://www.afcp-paristech.org" target="_blank">
-	<img class="shadow"
-	     src="{{ url_for('static', filename="img/logo/afcp_logo.jpg") }}"
-	     width="312" height="45" alt="AFCP" />
-      </a>
-      <a href="http://www.ensta-paristech.fr" target="_blank">
-	<img class="shadow"
-	     src="{{ url_for('static', filename="img/logo/ensta.jpg") }}"
-	     width="60" alt="ensta" />
-      </a>
-      <div class="floatright">
-	<a href="http://www.paristech.fr/" target="_blank">
-	  <img class="shadow"
-	       src="{{ url_for("static", filename="img/logo/paristech.jpg") }}"
-	       width="200" height="54" alt="ParisTech" />
-	</a>
-      </div>
+	<div>
+	    <a href="http://www.afcp-paristech.org" target="_blank">
+		<img class="shadow"
+			src="{{ url_for('static', filename="img/logo/afcp_logo.jpg") }}"
+			width="312" height="45" alt="AFCP" />
+	    </a>
+	    <a href="http://www.mines-paristech.fr" target="_blank">
+		<img class="shadow"
+			src="{{ url_for('static', filename="img/logo/mines.png") }}"
+			width="60" alt="ensta" />
+	    </a>
+	    <div class="floatright">
+		<a href="http://www.paristech.fr/" target="_blank">
+		    <img class="shadow"
+			    src="{{ url_for("static", filename="img/logo/paristech.jpg") }}"
+			    width="200" height="54" alt="ParisTech" />
+		</a>
+	    </div>
+	</div>
+
+	<!-- TODO: intégrer le lien vers la nouvelle brochure ici -->
+	<!-- <h2>
+	<a href="/static/doc/ForumHorizonChine2011.pdf">Télécharger La
+	brochure du forum 2011</a>
+	</h2> -->
+
+
+
+	<!-- <p><a href="/static/doc/ForumHorizonChine2011.pdf">Télécharger La brochure du forum 2011</a></p> -->
+
     </div>
-
-    <!-- TODO: intégrer le lien vers la nouvelle brochure ici -->
-    <!-- <h2>
-    <a href="/static/doc/ForumHorizonChine2011.pdf">Télécharger La
-    brochure du forum 2011</a>
-    </h2> -->
-
-
-
-    <!-- <p><a href="/static/doc/ForumHorizonChine2011.pdf">Télécharger La brochure du forum 2011</a></p> -->
-
-  </div>
 
 
 {% endblock %}{# content #}

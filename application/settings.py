@@ -47,24 +47,19 @@ CC = ['ZHU Tong <zhutong0114@gmail.com>',
       'Tianming LU <lutianming1005@gmail.com>']
 SENDER = 'Forum Horizon Chine <admin@forumhorizonchine.com>'
 ADMINS = [
-    'nan.zhann@gmail.com',
     'realzhq@gmail.com',
-    'guan.pengpourss@gmail.com',
     'gaorunning@gmail.com',
-    'dengken524@live.cn',
     'lutianming1005@gmail.com',
     'beyondhyx@gmail.com',
-    'liuyx11241@gmail.com',
     'heyw0216@gmail.com',
     'weiwenjia121@gmail.com',
     'zhutong0114@gmail.com',
     'chchen81@gmail.com',
-    'julien.legrand@mines-paristech.fr',
     'xiangjunqian@gmail.com',
-    'laurent.erx@gmail.com',
     'flyzhangyi@gmail.com',
     'u.philippart@gmail.com',
-    'zengzhizhou@gmail.com'
+    'renheureux@gmail.com',
+    'panwei.whu@gmail.com',
 ]
 
 #upload file size limit

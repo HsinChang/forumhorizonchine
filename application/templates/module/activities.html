@@ -1,0 +1,26 @@
+<div class="section job">
+  <h1>{{ _('Activities') }}</h1>
+
+  {% for a in activities %}
+    <div class="block-job">
+      <div class="apply-button">
+	<div class="right">{{ _(a.date) }}</div>
+	<h3>{{ a.meta['en']['title'] }}</h3>
+      </div>
+      <div>
+	{{ a.meta['en']['content']|safe }}
+	{#
+	<a class="apply-button" href="{{ url_for('visitor.inscript', keyurl=a.key.u
+	rlsafe()) }}">
+	{{ _("register now") }}
+	</a>
+	#}
+	<a class="apply-button" href="{{ a.register_link }}">
+	  {{ _("register now") }}
+	</a>
+      </div>
+    </div>
+    {% else %}
+    {{ _('There is no activity now.')}}
+  {% endfor %}
+</div>

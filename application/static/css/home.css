@@ -2,9 +2,9 @@
  Copyright (C) 2008 ZHENG Zhong <heavyzheng nospam-at gmail D0T com>
   - http://heavyz.blogspot.com/
   - http://buggarden.blogspot.com/
- 
+
  Stylesheet for AFCP home page.
- 
+
  Created on 2008-11-19.
  $Id: home.css 26 2009-08-04 22:06:00Z guolin.mobi $
  */
@@ -38,7 +38,7 @@
 .banner-container {
 	width: 900px;
 	height: 270px;
-	
+
 	margin: 0 0 10px 0;
 	padding: 4px 0;
 	background-color: #DDD;
@@ -70,19 +70,19 @@
 	text-align: center;
 	/* background-color: rgba(200, 200, 200, 0.6); */
 	/* border-radius: 20px; */
-	
+
 	font-size: 2em;
 	font-weight: bold;
 	color: #653cc3;
 	text-shadow: 1px 0px 2px white, -1px 0px 2px white, 0px 1px 2px white, 0px -1px 2px white;
 }
 #banner-reflection {
-	
+
 	/* -webkit-box-reflect:below 0px -webkit-gradient(linear, 0 0, 0 100%, from(transparent), color-stop(.4, transparent), to(#FFF)); */
 	/* -webkit-box-reflect: below -5px -webkit-gradient(linear, left top, left bottom, from(transparent), to(rgba(255, 255, 255, 0.5))); */
 	/* -webkit-box-reflect: below -15px -webkit-linear-gradient(top, transparent, rgba(255, 255, 255, 0.3)); */
 	-webkit-box-reflect: below -2px -webkit-linear-gradient(bottom, rgba(255,255,255,0.4) 0%, transparent 60%, transparent 100%);
-	
+
 }
 
 	/* For Firefox */
@@ -94,7 +94,7 @@
 		0.9) 65%, rgba(255, 255, 255, 0.7) ) repeat scroll 0 0 border-box,
 		-moz-element(#banner-reflection) no-repeat scroll 0 -60px content-box
 		transparent; */
-		
+
   background: -moz-element(#banner-reflection)
               bottom left no-repeat;
    opacity: 0.3;
@@ -178,15 +178,21 @@
 }
 
 .partners a {
-	display: block;
-	height: 98px;
-	line-height: 98px;
+    display: block;
+    float: left;
+    width: 200px;
+    height: 98px;
+    line-height: 98px;
 }
 .partners img {
-	vertical-align: middle;
+    /* float: left; */
+    vertical-align: middle;
 }
 .partners span {
 	vertical-align: middle;
 	margin-left: 15px;
 }
 
+#clear {
+  clear: both;
+}

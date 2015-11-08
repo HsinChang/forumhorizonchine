@@ -19,44 +19,44 @@ from collections import defaultdict
 
 admin = Blueprint('admin', __name__)
 
-@admin.route('/login', methods=['GET', 'POST'])
-def login():
-    if request.method == 'POST':
-        username = request.form['username']
-        password = request.form['password']
+# @admin.route('/login', methods=['GET', 'POST'])
+# def login():
+#     if request.method == 'POST':
+#         username = request.form['username']
+#         password = request.form['password']
 
-        user = UserModel.query(UserModel.username==username).get()
-        if user and pwd_context.verify(password, user.password) and user.role == ROLES['ADMIN']:
-            result = flask_login.login_user(user)
-            flash('login succeeded!', 'success')
-        else:
-            flash('login failed', 'error')
-    return redirect(url_for('admin.index'))
+#         user = UserModel.query(UserModel.username==username).get()
+#         if user and pwd_context.verify(password, user.password) and user.role == ROLES['ADMIN']:
+#             result = flask_login.login_user(user)
+#             flash('login succeeded!', 'success')
+#         else:
+#             flash('login failed', 'error')
+#     return redirect(url_for('admin.index'))
 
-@admin.route('/logout', methods=['GET', 'POST'])
-@admin_required
-def logout():
-    """
-    logout admin
-    """
-    flask_login.logout_user()
-    return redirect(url_for('admin.index'))
+# @admin.route('/logout', methods=['GET', 'POST'])
+# @admin_required
+# def logout():
+#     """
+#     logout admin
+#     """
+#     flask_login.logout_user()
+#     return redirect(url_for('admin.index'))
 
 
-@admin.route('/change_password', methods=['GET', 'POST'])
-@admin_required
-def change_password():
-    form = PasswordForm(request.form)
-    if request.method == 'POST' and form.validate():
-        user = flask_login.current_user
-        user.password = pwd_context.encrypt(form.new_password.data)
-        try:
-            user.put()
-            flash('password changed!', 'info')
-            redirect(url_for('admin.index'))
-        except CapabilityDisabledError:
-            flash('error whan changing password', 'error')
-    return render_template('admin/change_password.html', form=form)
+# @admin.route('/change_password', methods=['GET', 'POST'])
+# @admin_required
+# def change_password():
+#     form = PasswordForm(request.form)
+#     if request.method == 'POST' and form.validate():
+#         user = flask_login.current_user
+#         user.password = pwd_context.encrypt(form.new_password.data)
+#         try:
+#             user.put()
+#             flash('password changed!', 'info')
+#             redirect(url_for('admin.index'))
+#         except CapabilityDisabledError:
+#             flash('error whan changing password', 'error')
+#     return render_template('admin/change_password.html', form=form)
 
 
 @admin.route('/users')

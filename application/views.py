@@ -23,6 +23,8 @@ from decorators import login_required, admin_required
 from forms import RegisterForm, JobForm, BaseContactForm
 from models import ForumModel
 
+import datetime
+
 # Flask-Cache (configured to use App Engine Memcache API)
 cache = Cache(app)
 
@@ -31,7 +33,7 @@ def home():
     forum = ForumModel.query().get()
     if not forum:
         forum = ForumModel(
-            date = '',
+            date = datetime.datetime.now().date(),
             address = ''
         )
     forum.formated_date = format_date(forum.date, 'full')

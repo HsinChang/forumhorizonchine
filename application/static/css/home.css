@@ -177,6 +177,10 @@
 	text-align: center;
 }
 
+.partners {
+    height: 315px;
+}
+
 .partners a {
     display: block;
     float: left;

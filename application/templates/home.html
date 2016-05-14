@@ -36,7 +36,7 @@
 
       <h1>{{ _('Exhibitors of the Forum in 2016') }}</h1>
 
-      <div class="partners">
+      <div class="partners block">
           <a href="http://www.schneider-electric.com/" target="_blank">
               <img src={{ url_for('static', filename="img/logo/enterprise/schneider.jpg") }}
               width="150px" alt="Schneider"/>
@@ -61,9 +61,37 @@
           <a href="http://www.acece.eu/" target="_blank">
               <img src={{ url_for('static', filename='img/logo/enterprise/acece.jpg') }} width="150px">
           </a>
+		  <a href="http://www.valeo.com/" target="_blank">
+              <img src={{ url_for('static', filename='img/logo/enterprise/valeo.gif') }} width="140px"
+			  style="margin-left:-20px">
+          </a>
 
 
       </div>
+
+		<div id="planet" class="block clear">
+			<h1>{{ _("Organizers") }}</h1>
+			<!--
+                <div class="modified">Lien sur les images, texte en dessous supprimé</div>
+                -->
+
+			<div>
+				<table class="noborder">
+					<tr>
+						<td><a href="http://www.afcp-paristech.org" target="_blank"><img src={{ url_for('static',
+							filename="img/logo/afcp_logo_redim_250.jpg") }}
+							alt="AFCP logo" width="150px" /></a></td>
+						<td><a href="http://www.paristech.org" target="_blank"><img src={{ url_for('static',
+							filename="img/logo/paristech_redim_150.jpg") }}
+							alt="ParisTech logo" width="100px"  /></a></td>
+						<td><a href="http://www.xineurope.com/" target="_blank"><img src={{ url_for('static',
+							filename="img/logo/xineurope.png") }}
+							alt="ParisTech logo" width="100px"  /></a></td>
+					</tr>
+				</table>
+			</div>
+
+		</div> <!--/#feeds-->
 
       <h1 class="clear">{{ _('Poster') }}</h1>
 
@@ -100,13 +128,11 @@
 	</p>
 
 	<p>
-	  {{ _('Co-organized by the French-Chinese Friendship Association of ParisTech (AFCP) and ParisTech, Forum Horizon Chine is a space for recruiting French sinophile and Chinese students and graduates from the engineering and business Grandes Écoles of ParisTech.') }}
+	  {{ _('Co-organized by the French-Chinese Friendship Association of ParisTech (AFCP), ParisTech and xineurope, Forum Horizon Chine is a space for recruiting French sinophile and Chinese students and graduates from the engineering and business Grandes Écoles of ParisTech.') }}
 	</p>
 
 	<p>
-		<!--%(address)s-->
-        <!--May 26th, 2016-->
-	  {{ _('This year, the ninth edition was held at <a href="https://www.espci.fr/fr/"><strong>%(address)s</strong></a> on <strong>%(date)s</strong>. This unique event attracts the most promising students and graduates interested in a French-Chinese career. It will include a job fair and conference facilities where you will:', address=forum.address, date=forum.formated_date) }}
+	  {{ _('This year, the ninth edition was held at <a href="https://www.espci.fr"><strong>%(address)s</strong></a> on <strong>%(date)s</strong>. This unique event attracts the most promising students and graduates interested in a French-Chinese career. It will include a job fair and conference facilities where you will:', address=forum.address, date=forum.formated_date) }}
 	</p>
 	<ul>
 	  <li>
@@ -123,7 +149,7 @@
 	  {{ _('You will participate in a series of conferences and round tables at the end of the day followed by a cocktail.') }}
 	</p>
 	<p>
-	  {{ _('This forum is co-organized by the French-Chinese Friendship Association ParisTech (AFCP) and ParisTech, with the support of the Embassy of China.') }}
+	  {{ _('This forum is co-organized by the French-Chinese Friendship Association ParisTech (AFCP), ParisTech and xineurope, with the support of the Embassy of China.') }}
 	</p>
 
 	<div class="info">
@@ -155,24 +181,7 @@
       <div class="fixme">Rajoute-t-on un lien vers la brochure de cette année ?</div>
       </div>
       #}
-      <div id="planet" class="block">
-	<h1>{{ _("Organizers") }}</h1>
-	<!--
-        <div class="modified">Lien sur les images, texte en dessous supprimé</div>
-        -->
 
-	<div>
-	  <table class="noborder">
-	    <tr>
-	      <td><a href="http://www.afcp-paristech.org" target="_blank"><img src={{ url_for('static', filename="img/logo/afcp_logo_redim_250.jpg") }}
-		alt="AFCP logo" width="250" height="36" /></a></td>
-	      <td><a href="http://www.paristech.org" target="_blank"><img src={{ url_for('static', filename="img/logo/paristech_redim_150.jpg") }}
-		alt="ParisTech logo" width="150" height="41" /></a></td>
-	    </tr>
-	  </table>
-	</div>
-
-      </div> <!--/#feeds-->
     </div> <!--/#right-column-->
 
   </div> <!--/#home-wrapper-->

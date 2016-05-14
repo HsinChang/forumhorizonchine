@@ -18,7 +18,7 @@
 
 .block {
   margin: 0;
-  padding: 0 0 8px 0;
+  padding: 0 0 10px 0;
 }
 
 .block .block-title {
@@ -87,7 +87,7 @@
 }
 
 #home-wrapper h1 {
-	margin: 2em 0;
+	margin: 25px 0 10px 0;
 }
 
 

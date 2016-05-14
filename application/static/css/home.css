@@ -159,7 +159,7 @@
 } */
 
 #announcements img {
-	margin-top: 1.9em;
+	margin-top: 1em;
 	margin-bottom: 14.4px;
 }
 
@@ -178,7 +178,7 @@
 }
 
 .partners {
-    height: 315px;
+    /*height: 360px;*/
 }
 
 .partners a {

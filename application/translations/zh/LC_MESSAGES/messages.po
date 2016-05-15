@@ -7,17 +7,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2015-03-13 15:02+0100\n"
+"POT-Creation-Date: 2016-05-15 12:09+0200\n"
 "PO-Revision-Date: 2015-03-13 15:05+0100\n"
 "Last-Translator: Tianming.Lu <lutianming1005@gmail.com>\n"
+"Language: zh\n"
 "Language-Team: zh <LL@li.org>\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 1.3\n"
-"Language: zh\n"
-"X-Generator: Poedit 1.6.10\n"
+"Generated-By: Babel 2.3.4\n"
 
 #: admin.py:163 admin.py:193
 msgid "no such enterprise"
@@ -39,22 +38,6 @@ msgstr ""
 msgid "job deleted"
 msgstr ""
 
-#: forms.py:155
-msgid "Your email:"
-msgstr "您的邮箱："
-
-#: forms.py:156
-msgid "Message:"
-msgstr "消息"
-
-#: forms.py:159
-msgid "Your first name:"
-msgstr "名"
-
-#: forms.py:160
-msgid "Your last name:"
-msgstr "姓"
-
 #: models.py:13
 msgid "Job"
 msgstr "工作"
@@ -71,35 +54,31 @@ msgstr "返回顶部"
 msgid "Admin area"
 msgstr ""
 
-#: templates/base_admin.html:30
+#: templates/base_admin.html:32
 msgid "Welcome!"
 msgstr ""
 
-#: templates/base_admin.html:30
+#: templates/base_admin.html:32
 msgid "logout"
 msgstr ""
 
-#: templates/base_admin.html:41
-msgid "users"
-msgstr ""
-
-#: templates/base_admin.html:45
+#: templates/base_admin.html:47
 msgid "jobs"
 msgstr ""
 
-#: templates/base_admin.html:49
+#: templates/base_admin.html:51
 msgid "enterprises"
 msgstr ""
 
-#: templates/base_admin.html:53
+#: templates/base_admin.html:55
 msgid "forum"
 msgstr ""
 
-#: templates/base_admin.html:57
+#: templates/base_admin.html:59
 msgid "activities"
 msgstr ""
 
-#: templates/base_admin.html:61 templates/admin/data.html:6
+#: templates/admin/data.html:6 templates/base_admin.html:63
 msgid "data"
 msgstr ""
 
@@ -110,134 +89,119 @@ msgstr "中国地平线论坛"
 #: templates/home.html:6
 msgid ""
 "This forum is a place for Franco-Chinese business recruitment gathering "
-"students and graduates of ParisTech. It also offers a series of conferences "
-"and round table discussions."
-msgstr ""
-"本招聘论坛汇集了巴黎高科(ParisTech)的中法精英学生，并邀请中法企业为该些学生提"
-"供就业机会。论坛也包含一系列讲座和圆桌会议。"
+"students and graduates of ParisTech. It also offers a series of "
+"conferences and round table discussions."
+msgstr "本招聘论坛汇集了巴黎高科(ParisTech)的中法精英学生，并邀请中法企业为该些学生提供就业机会。论坛也包含一系列讲座和圆桌会议。"
 
 #: templates/home.html:37
-msgid "Official partners of the Forum in 2015"
-msgstr "2015年论坛官方合作伙伴"
+msgid "Exhibitors of the Forum in 2016"
+msgstr "2016年论坛官方合作伙伴"
 
-#: templates/home.html:42
-msgid "Official website"
-msgstr "官方网站"
+#: templates/home.html:73
+msgid "Organizers"
+msgstr "主办方"
 
-#: templates/home.html:46
+#: templates/home.html:96
 msgid "Poster"
 msgstr "海报"
 
-#: templates/home.html:55
+#: templates/home.html:107
 msgid "Welcome to <em>China Horizon Forum</em>"
 msgstr "欢迎来到<em>中国地平线</em>论坛！"
 
-#: templates/home.html:76
+#: templates/home.html:131
 msgid ""
 "Co-organized by the French-Chinese Friendship Association of ParisTech "
-"(AFCP) and ParisTech, Forum Horizon Chine is a space for recruiting French "
-"sinophile and Chinese students and graduates from the engineering and "
-"business Grandes Écoles of ParisTech."
-msgstr ""
-"巴黎高科中法友好协会（AFCP）及巴黎高科集团联合组织了中国地平线论坛这个招聘平"
-"台，其面向对象为巴黎高科旗下的工程师学校及商校的中国学生及毕业生，以及一些会"
-"说中文的法国学生。"
+"(AFCP), ParisTech and xineurope, Forum Horizon Chine is a space for "
+"recruiting French sinophile and Chinese students and graduates from the "
+"engineering and business Grandes Écoles of ParisTech."
+msgstr "巴黎高科中法友好协会（AFCP），巴黎高科集团以及新欧洲联合组织了中国地平线论坛这个招聘平台，其面向对象为巴黎高科旗下的工程师学校及商校的中国学生及毕业生，以及一些会说中文的法国学生。"
 
-#: templates/home.html:80
+#: templates/home.html:135
 #, python-format
 msgid ""
-"This year, the eighth edition was held at <a href=\"http://www.mines-"
-"paristech.fr\"><strong>%(address)s</strong></a> on <strong>%(date)s</"
-"strong>. This unique event attracts the most promising students and "
-"graduates interested in a French-Chinese career. It will include a job fair "
-"and conference facilities where you will:"
+"This year, the ninth edition was held at <a "
+"href=\"https://www.espci.fr\"><strong>%(address)s</strong></a> on "
+"<strong>%(date)s</strong>. This unique event attracts the most promising "
+"students and graduates interested in a French-Chinese career. It will "
+"include a job fair and conference facilities where you will:"
 msgstr ""
-"今年，第八届中国地平线论坛于<strong>%(date)s</strong>在<a href=\"http://www."
-"mines-paristech.fr\"><strong>%(address)s</strong></a>举行。此论坛的唯一性决定"
-"了其可以吸引到那些最有志于在中法两国间开展职业生涯的学生和毕业生。论坛包含了"
-"一个招聘沙龙以及一些讲座，届时您将可以："
+"今年，第九届中国地平线论坛于<strong>%(date)s</strong>在<a "
+"href=\"https://www.espci.fr\"><strong>%(address)s</strong></a>举行。此论坛的唯一性决定了其可以吸引到那些最有志于在中法两国间开展职业生涯的学生和毕业生。论坛包含了一个招聘沙龙以及一些讲座，届时您将可以："
 
-#: templates/home.html:84
+#: templates/home.html:139
 msgid ""
 "Meet talented young Chinese students and graduates as well as French "
 "students and graduates wishing to pursue a career in China,"
-msgstr ""
-"接触到一些正在求学或已经毕业了的中国年轻人才，以及希望在中国工作的法国学生和"
-"毕业生。"
+msgstr "接触到一些正在求学或已经毕业了的中国年轻人才，以及希望在中国工作的法国学生和毕业生。"
 
-#: templates/home.html:87
+#: templates/home.html:142
 msgid "Present your company and your development strategy in China and Asia,"
 msgstr "介绍您的企业及其在中国及亚洲的发展战略。"
 
-#: templates/home.html:90
+#: templates/home.html:145
 msgid ""
 "Communicate with other companies and representatives of China’s special "
 "economic zones, in order to know the Chinese market, its regulatory "
 "environment and its opportunities for implementation."
-msgstr ""
-"与来自中国经济特区的其他企业和代表进行交流，以便了解中国市场、其监管环境以及"
-"进入该市场的可能性。"
+msgstr "与来自中国经济特区的其他企业和代表进行交流，以便了解中国市场、其监管环境以及进入该市场的可能性。"
 
-#: templates/home.html:94
+#: templates/home.html:149
 msgid ""
-"You will participate in a series of conferences and round tables at the end "
-"of the day followed by a cocktail."
+"You will participate in a series of conferences and round tables at the "
+"end of the day followed by a cocktail."
 msgstr "我们将为您提供一系列讲座及圆桌会议，在活动接近尾声时还将举行鸡尾酒会。"
 
-#: templates/home.html:97
+#: templates/home.html:152
 msgid ""
 "This forum is co-organized by the French-Chinese Friendship Association "
-"ParisTech (AFCP) and ParisTech, with the support of the Embassy of China."
-msgstr ""
-"此论坛由巴黎高科中法友好协会(AFCP)及巴黎高科集团联合组织，并得到了中国大使馆"
-"的大力支持。"
+"ParisTech (AFCP), ParisTech and xineurope, with the support of the "
+"Embassy of China."
+msgstr "此论坛由巴黎高科中法友好协会(AFCP)，巴黎高科集团以及新欧洲联合组织，并得到了中国大使馆的大力支持。"
 
-#: templates/home.html:101
+#: templates/home.html:156
 msgid "You are a student or an alumnus of Paristech?"
 msgstr "您是巴黎高科的学生或者校友？"
 
-#: templates/home.html:105
+#: templates/home.html:160
 #, python-format
 msgid ""
-"Registrations will open one or two months before the Forum. Until then, you "
-"may consult, on \"Visitor area\", the <a href=\"%(program)s\">previous year "
-"program</a> and <a href=\"%(exhibitors)s\">the exhibitors</a>."
+"Registrations will open one or two months before the Forum. Until then, "
+"you may consult, on \"Visitor area\", the <a "
+"href=\"%(program)s\">previous year program</a> and <a "
+"href=\"%(exhibitors)s\">the exhibitors</a>."
 msgstr ""
-"报名将于论坛前的一到两个月开放。在那之前, 您可以浏览\"到访学生\", <a href="
-"\"%(program)s\">去年活动安排</a>和<a href=\"%(exhibitors)s\">展出商</a>来获取"
-"更多信息。"
+"报名将于论坛前的一到两个月开放。在那之前, 您可以浏览\"到访学生\", <a "
+"href=\"%(program)s\">去年活动安排</a>和<a "
+"href=\"%(exhibitors)s\">展出商</a>来获取更多信息。"
 
-#: templates/home.html:107
+#: templates/home.html:162
 #, python-format
 msgid ""
-"You can now register on <a href=\"%(inscription)s\">the registration page</"
-"a>. Find out more about this Forum, in \"Visitor\" section, you can take a "
-"look at <a href=\"%(program)s\">the program</a> and at <a href="
-"\"%(exhibitors)s\">the companies</a> that will participate in."
+"You can now register on <a href=\"%(inscription)s\">the registration "
+"page</a>. Find out more about this Forum, in \"Visitor\" section, you can"
+" take a look at <a href=\"%(program)s\">the program</a> and at <a "
+"href=\"%(exhibitors)s\">the companies</a> that will participate in."
 msgstr ""
-"请点击 <a href=\"%(inscription)s\">注册页面</a> 来报名 ! 如果想要了解更多信"
-"息，请查询“到访学生”页面，里面有 <a href=\"%(program)s\">日程安排</a> 和 <a "
+"请点击 <a href=\"%(inscription)s\">注册页面</a> 来报名 ! 如果想要了解更多信息，请查询“到访学生”页面，里面有"
+" <a href=\"%(program)s\">日程安排</a> 和 <a "
 "href=\"%(exhibitors)s\">参展企业名单</a>。"
 
-#: templates/home.html:111
+#: templates/home.html:166
 msgid "Wish to get a stand for your company?"
 msgstr "您希望为您的企业获得一个展台？"
 
-#: templates/home.html:114
+#: templates/home.html:169
 #, python-format
 msgid ""
-"Please do not hesitate to <a href=\"%(contact)s\">contact us</a> to receive "
-"our offers. In section \"Exhibitors\", You will find <a href=\"%(visitors)s"
-"\">a presentation of the visitors\tof the Forum</a> as well as the <a href="
-"\"%(services)s\">services offered</a>."
+"Please do not hesitate to <a href=\"%(contact)s\">contact us</a> to "
+"receive our offers. In section \"Exhibitors\", You will find <a "
+"href=\"%(visitors)s\">a presentation of the visitors\tof the Forum</a> as"
+" well as the <a href=\"%(services)s\">services offered</a>."
 msgstr ""
-"请<a href=\"%(contact)s\">联系我们</a> ，我们会尽快回复您的提问. 在“展出商”页"
-"面，您将可以了解到 <a href=\"%(visitors)s\">到访学生的基本信息</a> 以及 <a "
+"请<a href=\"%(contact)s\">联系我们</a> ，我们会尽快回复您的提问. 在“展出商”页面，您将可以了解到 <a "
+"href=\"%(visitors)s\">到访学生的基本信息</a> 以及 <a "
 "href=\"%(services)s\">我们提供的服务</a>。 "
-
-#: templates/home.html:130
-msgid "Organizers"
-msgstr "主办方"
 
 #: templates/register.html:6 templates/register.html:9
 msgid "Register"
@@ -261,27 +225,15 @@ msgstr ""
 msgid "Access to the Forum"
 msgstr "我们的位置"
 
-#: templates/about/access.html:40
-msgid "View larger map"
-msgstr "查看大地图"
-
-#: templates/about/access.html:43
-msgid "Access:"
-msgstr ""
-
-#: templates/about/access.html:49
-msgid "Getting there by public transportation"
-msgstr ""
-
 #: templates/about/balance.html:5 templates/includes/about_forum.html:13
 msgid "2013 balance"
 msgstr "2013论坛总结"
 
 #: templates/about/balance.html:7
 msgid ""
-"The 2013 edition of the Forum received 8 companies and 300 subscriptions on "
-"the website. Assessment and statistics about participants are presented here "
-"(schools, location, area, nationality)."
+"The 2013 edition of the Forum received 8 companies and 300 subscriptions "
+"on the website. Assessment and statistics about participants are "
+"presented here (schools, location, area, nationality)."
 msgstr ""
 
 #: templates/about/balance.html:13
@@ -290,31 +242,26 @@ msgstr "2013年中国地平线论坛小结"
 
 #: templates/about/balance.html:15
 msgid ""
-"The 6<sup>th</sup> China Horizon Forum was held on April 18, 2013 at Mines "
-"ParisTech."
+"The 6<sup>th</sup> China Horizon Forum was held on April 18, 2013 at "
+"Mines ParisTech."
 msgstr "第五届中国地平线论坛已于2013年4月18日在巴黎高科高等矿业学校举行。"
 
 #: templates/about/balance.html:16
 msgid ""
-"In terms of attendance, 225 people registered on our official website. Among "
-"them, many Chinese graduates or experienced workers already in search of a "
-"first job, or a new job, as well as French and Chinese students looking for "
-"a short term or long term internship. During the Forum, participants "
-"responded to a questionnaire on their profile, and the information collected "
-"is analyzed and presented below. Speaking of the industry, seven companies "
-"from various sectors were present: Alstom, Arkema, BMW group, Egis "
-"International, Dragonfly, Valeo and L'Oréal."
+"In terms of attendance, 225 people registered on our official website. "
+"Among them, many Chinese graduates or experienced workers already in "
+"search of a first job, or a new job, as well as French and Chinese "
+"students looking for a short term or long term internship. During the "
+"Forum, participants responded to a questionnaire on their profile, and "
+"the information collected is analyzed and presented below. Speaking of "
+"the industry, seven companies from various sectors were present: Alstom, "
+"Arkema, BMW group, Egis International, Dragonfly, Valeo and L'Oréal."
 msgstr ""
-"在参与者方面，有225人在我们的官网上进行了注册。他们当中，有不少刚毕业的中国学"
-"生或者已经有工作经验的在职人员分别前来寻找他们的第一份工作或是一份新的工作，"
-"同时，也有一些在找短期或长期实习的在校学生。论坛当日，参与者们回答了有关他们"
-"简历的调查问卷，统计数据将在下方进行分析及介绍。在企业方面，7家分属不同领域的"
-"企业出席了论坛：Alstom, Arkema, BMW group, Egis International, Dragonfly, "
-"Valeo和Oréal"
+"在参与者方面，有225人在我们的官网上进行了注册。他们当中，有不少刚毕业的中国学生或者已经有工作经验的在职人员分别前来寻找他们的第一份工作或是一份新的工作，同时，也有一些在找短期或长期实习的在校学生。论坛当日，参与者们回答了有关他们简历的调查问卷，统计数据将在下方进行分析及介绍。在企业方面，7家分属不同领域的企业出席了论坛：Alstom,"
+" Arkema, BMW group, Egis International, Dragonfly, Valeo和Oréal"
 
 #: templates/about/balance.html:19
-msgid ""
-"Below are statistics about the participants of 2013 China Horizon Forum:"
+msgid "Below are statistics about the participants of 2013 China Horizon Forum:"
 msgstr "以下是2013年中国地平线论坛参与者的统计数据："
 
 #: templates/about/contact.html:7
@@ -323,8 +270,8 @@ msgstr "联系中国地平线论坛团队"
 
 #: templates/about/contact.html:9
 msgid ""
-"Wish to contact us? Please complete this form to send us a message. We will "
-"reply as soon as possible."
+"Wish to contact us? Please complete this form to send us a message. We "
+"will reply as soon as possible."
 msgstr ""
 
 #: templates/about/contact.html:14
@@ -339,7 +286,7 @@ msgstr "姓名"
 msgid "Title"
 msgstr "职位"
 
-#: templates/about/contact.html:25 templates/visitors/program.html:58
+#: templates/about/contact.html:25
 msgid "Mr. Qi ZHU"
 msgstr "朱琪 先生"
 
@@ -551,8 +498,8 @@ msgstr ""
 
 #: templates/admin/sort_enterprises.html:11
 msgid ""
-"Drag the rows to sort the enterprises. Enterprises shown to visitors will "
-"have the same order you sort."
+"Drag the rows to sort the enterprises. Enterprises shown to visitors will"
+" have the same order you sort."
 msgstr ""
 
 #: templates/admin/sort_jobs.html:5
@@ -561,8 +508,8 @@ msgstr ""
 
 #: templates/admin/sort_jobs.html:11
 msgid ""
-"Drag the rows to sort jobs. Jobs shown to visitors will have the same order "
-"you sort."
+"Drag the rows to sort jobs. Jobs shown to visitors will have the same "
+"order you sort."
 msgstr ""
 
 #: templates/admin/sort_menus.html:5
@@ -587,9 +534,9 @@ msgstr "中国地平线论坛的服务"
 
 #: templates/exhibitors/services.html:5
 msgid ""
-"China Horizon Forum offers a range of services, including the presentation "
-"of your company, the opportunity to recruit young talent and explore the "
-"Chinese market."
+"China Horizon Forum offers a range of services, including the "
+"presentation of your company, the opportunity to recruit young talent and"
+" explore the Chinese market."
 msgstr ""
 
 #: templates/exhibitors/services.html:12
@@ -610,10 +557,9 @@ msgstr "展示宣传贵处的平台"
 
 #: templates/exhibitors/services.html:27
 msgid ""
-"Via our website, emailing our students, the brochure and the presentation "
-"note of the forum"
-msgstr ""
-"我们将以网站、电子邮件、海报、以及论坛的宣传小册子的形式向各界宣传贵单位。"
+"Via our website, emailing our students, the brochure and the presentation"
+" note of the forum"
+msgstr "我们将以网站、电子邮件、海报、以及论坛的宣传小册子的形式向各界宣传贵单位。"
 
 #: templates/exhibitors/services.html:31
 msgid "Communication on your participation"
@@ -621,9 +567,7 @@ msgstr "对本次论坛进行宣传"
 
 #: templates/exhibitors/services.html:32
 msgid "Through the Chinese Embassy and the Grandes Ecoles of ParisTech"
-msgstr ""
-"我们还将通过中国大使馆、法国工程师学校、以及法国的著名商校等渠道对本次论坛进"
-"行宣传。"
+msgstr "我们还将通过中国大使馆、法国工程师学校、以及法国的著名商校等渠道对本次论坛进行宣传。"
 
 #: templates/exhibitors/services.html:36
 msgid "Thematic conferences"
@@ -631,9 +575,7 @@ msgstr "主题演讲"
 
 #: templates/exhibitors/services.html:37
 msgid "To submit your development strategy in China and Asia, on forum day"
-msgstr ""
-"我们将为您组织主题演讲，为贵处提供工一个展示介绍企业形象，介绍在法国中国的发"
-"展战略。"
+msgstr "我们将为您组织主题演讲，为贵处提供工一个展示介绍企业形象，介绍在法国中国的发展战略。"
 
 #: templates/exhibitors/services.html:42
 msgid "An opportunity to recruit talented young Chinese"
@@ -645,9 +587,7 @@ msgstr "提供完备的展台设施"
 
 #: templates/exhibitors/services.html:47
 msgid "You will meet young Chinese talents looking for work or internship"
-msgstr ""
-"您的展台是您与中国在法留学生直接交流的平台。您可在论坛当天与中法学生进行交"
-"流。"
+msgstr "您的展台是您与中国在法留学生直接交流的平台。您可在论坛当天与中法学生进行交流。"
 
 #: templates/exhibitors/services.html:51
 msgid "Database of résumés and candidate profiles"
@@ -655,16 +595,14 @@ msgstr "人材数据库和简历"
 
 #: templates/exhibitors/services.html:52
 msgid ""
-"After the forum, we will provide you with a database of CVs of candidates "
-"interested in your business, as well as their statistical profiles"
-msgstr ""
-"我们将为您收集所有对贵处感兴趣的人士的简历，并将其进行整理打包，作为可供您选"
-"择的附加服务。"
+"After the forum, we will provide you with a database of CVs of candidates"
+" interested in your business, as well as their statistical profiles"
+msgstr "我们将为您收集所有对贵处感兴趣的人士的简历，并将其进行整理打包，作为可供您选择的附加服务。"
 
 #: templates/exhibitors/services.html:57
 msgid ""
-"An opportunity to cooperate with areas of economic and technical operations "
-"in China"
+"An opportunity to cooperate with areas of economic and technical "
+"operations in China"
 msgstr "与参展的中法国企业、中国创业园区的交流与互动"
 
 #: templates/exhibitors/services.html:60
@@ -673,23 +611,21 @@ msgstr "圆桌会议"
 
 #: templates/exhibitors/services.html:63
 msgid ""
-"Along with Chinese companies and representatives from areas of economic and "
-"technical operations, you can better understand the conditions for foreign "
-"investment in China, and establish a first contact to effectively set up"
-msgstr ""
-"我们将为您组织圆桌会议，邀请有兴趣投资中国市场的法国大中小企业参加讨论。"
+"Along with Chinese companies and representatives from areas of economic "
+"and technical operations, you can better understand the conditions for "
+"foreign investment in China, and establish a first contact to effectively"
+" set up"
+msgstr "我们将为您组织圆桌会议，邀请有兴趣投资中国市场的法国大中小企业参加讨论。"
 
-#: templates/exhibitors/services.html:67 templates/visitors/program.html:152
+#: templates/exhibitors/services.html:67 templates/visitors/program.html:130
 msgid "Cocktail"
 msgstr "鸡尾酒会"
 
 #: templates/exhibitors/services.html:69
 msgid ""
-"A cocktail will be offered at the end of the day, to close the forum. You "
-"will be able to continue these discussions in a friendly atmosphere."
-msgstr ""
-"我们将在论坛当晚举行鸡尾酒会。您可以借此机会与有合作意向的企业进行更为密切的"
-"接触。"
+"A cocktail will be offered at the end of the day, to close the forum. You"
+" will be able to continue these discussions in a friendly atmosphere."
+msgstr "我们将在论坛当晚举行鸡尾酒会。您可以借此机会与有合作意向的企业进行更为密切的接触。"
 
 #: templates/exhibitors/visitors.html:4
 msgid "Visitor profiles of the China Horizon Forum"
@@ -699,9 +635,7 @@ msgstr "中国地平线论坛到访学生资料"
 msgid ""
 "The Forum is open to talented gratuates and students of ParisTech. This "
 "prestigious education system and research network is presented here."
-msgstr ""
-"论坛向巴黎高科（paristech）的学生或毕业生开放。本页将集中介绍巴黎高科：这个在"
-"法国培养学术和企业精英的学校联盟。"
+msgstr "论坛向巴黎高科（paristech）的学生或毕业生开放。本页将集中介绍巴黎高科：这个在法国培养学术和企业精英的学校联盟。"
 
 #: templates/exhibitors/visitors.html:12
 #: templates/includes/exhibitor_menu.html:30 templates/includes/nav.html:24
@@ -715,22 +649,16 @@ msgstr "受邀学生"
 
 #: templates/exhibitors/visitors.html:14
 msgid ""
-"China Horizon Forum is open to young Chinese talents in higher education or "
-"working in France. Young French talents motivated by a career related to "
-"China are also invited."
-msgstr ""
-"本次论坛致力于吸引在法留学、工作的中国留学生，以及一些从事与中国相关的工作的"
-"法国友人参加。预计接待总人数可达600人左右。"
+"China Horizon Forum is open to young Chinese talents in higher education "
+"or working in France. Young French talents motivated by a career related "
+"to China are also invited."
+msgstr "本次论坛致力于吸引在法留学、工作的中国留学生，以及一些从事与中国相关的工作的法国友人参加。预计接待总人数可达600人左右。"
 
 #: templates/exhibitors/visitors.html:16
 msgid ""
-"We also invite Chinese graduates with some years of experience in France and "
-"wishing to develop a project in China."
-msgstr ""
-"参加人员大部分是国内著名大学毕业后赴法攻读博士、硕士学位的学生，值得一提的"
-"是，他们中的相当一部分来自于在法国代表着精英教育的法国工程师学校、著名商校。"
-"除此以外，还有不少具有多年在法工作经验并希望回国效力，或是有合适项目、希望回"
-"国创业的精英人士参加我们的活动。"
+"We also invite Chinese graduates with some years of experience in France "
+"and wishing to develop a project in China."
+msgstr "参加人员大部分是国内著名大学毕业后赴法攻读博士、硕士学位的学生，值得一提的是，他们中的相当一部分来自于在法国代表着精英教育的法国工程师学校、著名商校。除此以外，还有不少具有多年在法工作经验并希望回国效力，或是有合适项目、希望回国创业的精英人士参加我们的活动。"
 
 #: templates/exhibitors/visitors.html:18
 msgid "Grandes Ecoles of ParisTech"
@@ -738,24 +666,21 @@ msgstr "巴黎高科学校介绍"
 
 #: templates/exhibitors/visitors.html:20
 msgid ""
-"ParisTech, institute of Science and Technology, is a point of reference in "
-"the field of higher education and research. It covers all sciences and "
-"engineering technologies. Each member school* is recognized as the best in "
-"its field in France."
+"ParisTech, institute of Science and Technology, is a point of reference "
+"in the field of higher education and research. It covers all sciences and"
+" engineering technologies. Each member school* is recognized as the best "
+"in its field in France."
 msgstr ""
-"巴黎高科（ParisTech）由法国十二所最著名的工程研究生学校和商校联合组成，其各校"
-"都是享誉极高的百年老校。其建校最早的国立桥路大学校已有254年的历史。 巴黎高科"
-"的每个成员都是各自学术领域中法国公认的最优秀学校。"
+"巴黎高科（ParisTech）由法国十二所最著名的工程研究生学校和商校联合组成，其各校都是享誉极高的百年老校。其建校最早的国立桥路大学校已有254年的历史。"
+" 巴黎高科的每个成员都是各自学术领域中法国公认的最优秀学校。"
 
 #: templates/exhibitors/visitors.html:22
 msgid ""
-"The number of teachers and the full range of scientific disciplines covered "
-"confer to ParisTech stature comparable to that of major scientific and "
-"technical universities in the world, for which it may be a partner for "
-"excellence."
-msgstr ""
-"它们的教学与科研领域优势互补，涵盖了工程科学的各个方面。这些学校录取最优秀的"
-"法国学生和外国的学生，培养他们成为工程学科与商业等各个领域的优秀人才。"
+"The number of teachers and the full range of scientific disciplines "
+"covered confer to ParisTech stature comparable to that of major "
+"scientific and technical universities in the world, for which it may be a"
+" partner for excellence."
+msgstr "它们的教学与科研领域优势互补，涵盖了工程科学的各个方面。这些学校录取最优秀的法国学生和外国的学生，培养他们成为工程学科与商业等各个领域的优秀人才。"
 
 #: templates/exhibitors/visitors.html:24
 msgid "Schools founder members of ParisTech"
@@ -816,22 +741,19 @@ msgstr "巴黎高科与中国高校的交流"
 #: templates/exhibitors/visitors.html:121
 msgid ""
 "In partnership with nine of the most prestigious universities in China, "
-"ParisTech has developed several cooperation initiatives, the main one being "
-"\"50 Chinese engineers in Paris.\""
+"ParisTech has developed several cooperation initiatives, the main one "
+"being \"50 Chinese engineers in Paris.\""
 msgstr ""
-"自1998年以来，巴黎高科开发了中国项目，其中的重要项目是2000年与中国9所著名高校"
-"建立的合作关系， 称为“50中国工程师在巴黎高科”， 在中国称为“9+9”项目，即在9所"
-"高校每年招收50名优秀理工科本科学生来巴黎高科攻读工程师文凭。"
+"自1998年以来，巴黎高科开发了中国项目，其中的重要项目是2000年与中国9所著名高校建立的合作关系， 称为“50中国工程师在巴黎高科”， "
+"在中国称为“9+9”项目，即在9所高校每年招收50名优秀理工科本科学生来巴黎高科攻读工程师文凭。"
 
 #: templates/exhibitors/visitors.html:123
 msgid ""
 "Since 2000, ParisTech recruits each year more than 50 Chinese bachelor "
 "graduates in Science and Technology, with the highest level, to study "
-"engineering for two years. Here is a list of Chinese universities, partners "
-"of ParisTech"
-msgstr ""
-"近几年，“9+9”项目每年招收100多学生。 “50中国工程师在巴黎高科”这一项目的中国合"
-"作大学为"
+"engineering for two years. Here is a list of Chinese universities, "
+"partners of ParisTech"
+msgstr "近几年，“9+9”项目每年招收100多学生。 “50中国工程师在巴黎高科”这一项目的中国合作大学为"
 
 #: templates/exhibitors/visitors.html:127
 msgid ""
@@ -847,7 +769,8 @@ msgstr "南京地区：南京大学、东南大学、南京农业大学"
 
 #: templates/exhibitors/visitors.html:133
 msgid ""
-"Shanghai : Fudan University, Shanghai Jiaotong University, Tongji University"
+"Shanghai : Fudan University, Shanghai Jiaotong University, Tongji "
+"University"
 msgstr "上海地区：同济大学、复旦大学、上海交通大学"
 
 #: templates/exhibitors/visitors.html:136
@@ -860,18 +783,13 @@ msgstr "武汉地区：武汉大学、华中科技大学"
 
 #: templates/exhibitors/visitors.html:143
 msgid ""
-"To date, more than one thousand Chinese students, nearly half of whom are "
-"engineering students, have benefited from various training within ParisTech "
-"awarded with diplomas of Engineering, Master, Specialized Master and "
-"Doctorate. The majority of Chinese graduates from the \"50&nbspengineers\" "
-"program were hired in large French or European companies, or have pursued "
-"doctoral studies."
-msgstr ""
-"巴黎高科的办学宗旨是教学培训不断地适应现代企业和全球劳动市场的需求。学校和企"
-"业紧密联系是其突出的特点，工程师教育的一半时间是通过在企业实践完成的。目前，"
-"共有逾千名中国学生，接受了巴黎高科不同项目的培养，涵盖了工程硕士、专业硕士及"
-"博士等学位类型，其中获得法国工程硕士学位的有六百人。已经毕业的中国工程师，大"
-"多直接进入法国以及欧洲各大企业工作或继续研读博士学位。"
+"To date, more than one thousand Chinese students, nearly half of whom are"
+" engineering students, have benefited from various training within "
+"ParisTech awarded with diplomas of Engineering, Master, Specialized "
+"Master and Doctorate. The majority of Chinese graduates from the "
+"\"50&nbspengineers\" program were hired in large French or European "
+"companies, or have pursued doctoral studies."
+msgstr "巴黎高科的办学宗旨是教学培训不断地适应现代企业和全球劳动市场的需求。学校和企业紧密联系是其突出的特点，工程师教育的一半时间是通过在企业实践完成的。目前，共有逾千名中国学生，接受了巴黎高科不同项目的培养，涵盖了工程硕士、专业硕士及博士等学位类型，其中获得法国工程硕士学位的有六百人。已经毕业的中国工程师，大多直接进入法国以及欧洲各大企业工作或继续研读博士学位。"
 
 #: templates/includes/about_AFCP.html:1
 msgid "About AFCP"
@@ -943,16 +861,16 @@ msgstr "必填项"
 
 #: templates/includes/job_form_fields.html:10
 msgid ""
-"For the following 3 sections, please check the \"publish\" checkbox to make "
-"it visible to users"
+"For the following 3 sections, please check the \"publish\" checkbox to "
+"make it visible to users"
 msgstr ""
 
 #: templates/includes/job_form_fields.html:13
 msgid ""
-"If you have only one language version of job, just choose the right section "
-"of language and set the right default language. This version will also be "
-"shown to clients when other language versions are empty. So you don't need "
-"to edit and copy 3 versions"
+"If you have only one language version of job, just choose the right "
+"section of language and set the right default language. This version will"
+" also be shown to clients when other language versions are empty. So you "
+"don't need to edit and copy 3 versions"
 msgstr ""
 
 #: templates/includes/nav.html:20
@@ -960,7 +878,7 @@ msgid "Home"
 msgstr "论坛首页"
 
 #: templates/includes/nav.html:27 templates/includes/nav_admin.html:18
-#: templates/includes/visitor_menu.html:16
+#: templates/includes/visitor_menu.html:24
 msgid "Exhibitors"
 msgstr "展出商"
 
@@ -972,20 +890,24 @@ msgstr "学生到访"
 msgid "Program"
 msgstr "活动安排"
 
-#: templates/includes/visitor_menu.html:22
+#: templates/includes/visitor_menu.html:17
+msgid "Inscription"
+msgstr "注册"
+
+#: templates/includes/visitor_menu.html:30
 msgid "Job opportunities"
 msgstr "职位信息"
 
-#: templates/includes/visitor_menu.html:28 templates/module/activities.html:2
+#: templates/includes/visitor_menu.html:36 templates/module/activities.html:2
 #: templates/visitors/activities.html:9
 msgid "Activities"
 msgstr "其他活动"
 
-#: templates/includes/visitor_menu.html:34
+#: templates/includes/visitor_menu.html:42
 msgid "Working permit"
 msgstr "工作许可"
 
-#: templates/includes/visitor_menu.html:40 templates/visitors/infos.html:13
+#: templates/includes/visitor_menu.html:48 templates/visitors/infos.html:13
 msgid "Useful information"
 msgstr "实用信息"
 
@@ -996,19 +918,19 @@ msgstr "您好，"
 #: templates/mail/apply.html:4
 #, python-format
 msgid ""
-"A new application for the position <b>%(title)s</b> has been sent through "
-"the Site of AFCP where the offre is published."
+"A new application for the position <b>%(title)s</b> has been sent through"
+" the Site of AFCP where the offre is published."
 msgstr "      AFCP发给了您一份<b>%(title)s</b>这一职位的新申请。"
 
 #: templates/mail/apply.html:6
 #, python-format
 msgid ""
-"Please have a look at the attached CV and cover letters of <b>%(first_name)s "
-"%(last_name)s</b> for this application. You can reach him/her with the "
-"following email address:"
+"Please have a look at the attached CV and cover letters of "
+"<b>%(first_name)s %(last_name)s</b> for this application. You can reach "
+"him/her with the following email address:"
 msgstr ""
-"    请查看附件中申请人<b>%(first_name)s %(last_name)s</b>的CV和动机信。您可以"
-"通过以下邮箱地址与他/她取得联系："
+"    请查看附件中申请人<b>%(first_name)s "
+"%(last_name)s</b>的CV和动机信。您可以通过以下邮箱地址与他/她取得联系："
 
 #: templates/mail/apply.html:9
 msgid "Best regards,"
@@ -1052,11 +974,9 @@ msgstr "中国地平线论坛展出商"
 
 #: templates/visitors/exhibitors.html:5
 msgid ""
-"Companies at 2012 Forum: Dragonfly Group, Saint-Gobain, IBM, L'Oréal, Bureau "
-"Veritas, BNP Paribas, Alstom and Arkema."
-msgstr ""
-"2012年论坛展出商：唐沪集团、圣戈班、IBM、欧莱雅、必维集团、法国巴黎银行、阿尔"
-"斯通和阿科玛。"
+"Companies at 2012 Forum: Dragonfly Group, Saint-Gobain, IBM, L'Oréal, "
+"Bureau Veritas, BNP Paribas, Alstom and Arkema."
+msgstr "2012年论坛展出商：唐沪集团、圣戈班、IBM、欧莱雅、必维集团、法国巴黎银行、阿尔斯通和阿科玛。"
 
 #: templates/visitors/exhibitors.html:12
 msgid "Exposants"
@@ -1068,11 +988,9 @@ msgstr "我们正在与众多法国及中国企业进行接触："
 
 #: templates/visitors/exhibitors.html:15
 msgid ""
-"major French companies such as Michelin, l'Oréal, Areva, Suez, Schneider, "
-"Carrefour..."
-msgstr ""
-"法国大型企业，如：米其林, 欧莱雅, 阿海珐集团, 瑞士环境集团, 施耐德电力, 家乐"
-"福..."
+"major French companies such as Michelin, l'Oréal, Areva, Suez, Schneider,"
+" Carrefour..."
+msgstr "法国大型企业，如：米其林, 欧莱雅, 阿海珐集团, 瑞士环境集团, 施耐德电力, 家乐福..."
 
 #: templates/visitors/exhibitors.html:16
 msgid "French SMEs wishing to expand their activities into the Chinese market,"
@@ -1080,8 +998,8 @@ msgstr "有意进军中国市场的法国中小型企业"
 
 #: templates/visitors/exhibitors.html:17
 msgid ""
-"major Chinese groups such as Huawei and ZTE, which are already present on "
-"the French market,"
+"major Chinese groups such as Huawei and ZTE, which are already present on"
+" the French market,"
 msgstr "中国大型企业，如已经进入法国市场的华为与中兴"
 
 #: templates/visitors/exhibitors.html:18
@@ -1092,7 +1010,8 @@ msgstr "以及希望吸引外资投入的一些中国经济特区."
 
 #: templates/visitors/exhibitors.html:20
 msgid ""
-"The following companies have already confirmed their presence at the Forum:"
+"The following companies have already confirmed their presence at the "
+"Forum:"
 msgstr "以下企业已经确认参加2013年论坛："
 
 #: templates/visitors/infos.html:4
@@ -1101,7 +1020,8 @@ msgstr "关于中国地平线论坛的实用信息"
 
 #: templates/visitors/infos.html:5
 msgid ""
-"Some useful information about the China Horizon Forum or related activities."
+"Some useful information about the China Horizon Forum or related "
+"activities."
 msgstr "一些关于中国地平线论坛的实用信息或相关活动"
 
 #: templates/visitors/infos.html:14
@@ -1110,25 +1030,21 @@ msgstr "巴黎高科招聘论坛"
 
 #: templates/visitors/infos.html:15
 msgid ""
-"The ParisTech forums are places for successful exchanges between students "
-"and recruiters. Designed and led by students, these forums promote the "
-"integration of students in the professional world that awaits them. The AFCP "
-"here gives you times and places of these forums."
-msgstr ""
-"巴黎高科每年都会举办近十个招聘论坛，这些论坛不但是高科的同学们与企业之间的交"
-"流平台，更是大家在找实习和工作的过程中不可错过的机会。AFCP在这里为大家整理了"
-"今年巴黎高科要举办的所有论坛的信息，希望对大家会有帮助！"
+"The ParisTech forums are places for successful exchanges between students"
+" and recruiters. Designed and led by students, these forums promote the "
+"integration of students in the professional world that awaits them. The "
+"AFCP here gives you times and places of these forums."
+msgstr "巴黎高科每年都会举办近十个招聘论坛，这些论坛不但是高科的同学们与企业之间的交流平台，更是大家在找实习和工作的过程中不可错过的机会。AFCP在这里为大家整理了今年巴黎高科要举办的所有论坛的信息，希望对大家会有帮助！"
 
 #: templates/visitors/infos.html:20
 msgid ""
-"Among the forums above, <strong>China Horizon Forum</strong> is organized by "
-"the French-Chinese Friendship Association of ParisTech (AFCP) together with "
-"ParisTech, and with the support of the Chinese Embassy in France. This forum "
-"has three objectives:"
+"Among the forums above, <strong>China Horizon Forum</strong> is organized"
+" by the French-Chinese Friendship Association of ParisTech (AFCP) "
+"together with ParisTech, and with the support of the Chinese Embassy in "
+"France. This forum has three objectives:"
 msgstr ""
-"在这些论坛中，<strong>“中国地平线”</strong>招聘论坛，是由巴黎高科中法友好协会"
-"（AFCP）联合全法中国学者学生联合会，在巴黎高科（Paristech）和中国驻法国大使馆"
-"教育处的支持下举办的。论坛旨在： "
+"在这些论坛中，<strong>“中国地平线”</strong>招聘论坛，是由巴黎高科中法友好协会（AFCP）联合全法中国学者学生联合会，在巴黎高科（Paristech）和中国驻法国大使馆教育处的支持下举办的。论坛旨在："
+" "
 
 #: templates/visitors/infos.html:23
 msgid "Helping Chinese ParisTech students to find an internship or a job"
@@ -1136,11 +1052,9 @@ msgstr "协助中国留法学生寻找在法国或中国实习和工作机会；
 
 #: templates/visitors/infos.html:24
 msgid ""
-"Helping French ParisTech students interested in a career related to China to "
-"find an internship or a job corresponding to their expectations"
-msgstr ""
-"为有意在中国发展职业，寻找实习或工作机会的优秀法国学生提供与企业交流，了解中"
-"国市场的机会；"
+"Helping French ParisTech students interested in a career related to China"
+" to find an internship or a job corresponding to their expectations"
+msgstr "为有意在中国发展职业，寻找实习或工作机会的优秀法国学生提供与企业交流，了解中国市场的机会；"
 
 #: templates/visitors/infos.html:25
 msgid ""
@@ -1150,19 +1064,15 @@ msgstr "为中法企业提供一个良好的、充满活力的信息交互平台
 
 #: templates/visitors/infos.html:28
 msgid ""
-"You are cordially invited to join us on <strong>March 6, 2014</strong> at "
-"<strong>ENSTA ParisTech</strong>!"
-msgstr ""
-"<strong>2014年3月6日</strong>，在<strong>国立高等先进技术大学校</strong>，我"
-"们诚挚得期待您的参与！ "
+"You are cordially invited to join us on <strong>March 6, 2014</strong> at"
+" <strong>ENSTA ParisTech</strong>!"
+msgstr "<strong>2014年3月6日</strong>，在<strong>国立高等先进技术大学校</strong>，我们诚挚得期待您的参与！ "
 
 #: templates/visitors/infos.html:31
 msgid ""
-"Thanks to <a href=\"http://paristech.org/\">Paristech.org</a> to provide us "
-"this information."
-msgstr ""
-"感谢巴黎高科 (<a href=\"http://paristech.org/\">Paristech.org</a>) 提供的论坛"
-"信息 "
+"Thanks to <a href=\"http://paristech.org/\">Paristech.org</a> to provide "
+"us this information."
+msgstr "感谢巴黎高科 (<a href=\"http://paristech.org/\">Paristech.org</a>) 提供的论坛信息 "
 
 #: templates/visitors/inscript.html:10 templates/visitors/inscription.html:12
 msgid "Registrations"
@@ -1190,16 +1100,15 @@ msgstr "注册到中国地平线论坛"
 
 #: templates/visitors/inscription.html:20
 msgid ""
-"Registrations for the 2015 edition of the China Horizon Forum are not yet "
-"open. Please come back later to register. Registrations will be open to "
+"Registrations for the 2015 edition of the China Horizon Forum are not yet"
+" open. Please come back later to register. Registrations will be open to "
 "visitors one or two months before the Forum. Other entries may also be "
 "required for certain activities of the Forum, such as the résumé and "
 "interview workshops organized respectively by Dragonfly Group and Saint-"
 "Gobain at the 2012 Forum."
 msgstr ""
-"2015年中国地平线论坛的报名工作还未开放。请您稍后再前来报名注册！针对论坛的一"
-"些特殊活动，我们可能会安排其它报名环节，如分别由Dragonfly Group 和Saint "
-"Gobain 在2012年论坛组织的CV讨论会和面试。"
+"2015年中国地平线论坛的报名工作还未开放。请您稍后再前来报名注册！针对论坛的一些特殊活动，我们可能会安排其它报名环节，如分别由Dragonfly"
+" Group 和Saint Gobain 在2012年论坛组织的CV讨论会和面试。"
 
 #: templates/visitors/job.html:21
 msgid "Job opportunities via China Horizon Forum"
@@ -1207,8 +1116,8 @@ msgstr "中国地平线论坛招聘广告"
 
 #: templates/visitors/job.html:22
 msgid ""
-"Here you will find job offers from partner companies of China Horizon Forum "
-"and AFCP."
+"Here you will find job offers from partner companies of China Horizon "
+"Forum and AFCP."
 msgstr "论坛和AFCP的合作企业的招聘广告将在本页贴出。"
 
 #: templates/visitors/program.html:4
@@ -1219,92 +1128,44 @@ msgstr "中国地平线论坛活动安排"
 msgid ""
 "Scheduled for 2013 Forum: welcome/breakfast, opening ceremony, business "
 "conferences, interviews, round tables, closing conference and cocktail."
-msgstr ""
-"2013论坛安排细节：包括接待、早餐、开幕式、企业讲座、招聘面试、圆桌会议、闭幕"
-"式、鸡尾酒会。"
+msgstr "2013论坛安排细节：包括接待、早餐、开幕式、企业讲座、招聘面试、圆桌会议、闭幕式、鸡尾酒会。"
 
 #: templates/visitors/program.html:13
 msgid "Forum program"
 msgstr "活动安排"
 
 #: templates/visitors/program.html:15
-msgid "Free entrance, 9h30 – 19h00, March 6th 2014"
-msgstr "免费入场, 2014年3月6日9点30至19点"
+msgid "Free entrance, 9:30 – 18:00, May 26th 2016"
+msgstr "免费入场，9:30 – 18:00，2016年5月26日"
 
 #: templates/visitors/program.html:19
-msgid "Registration and welcome coffee"
-msgstr "接待/早餐"
-
-#: templates/visitors/program.html:53
-msgid "Opening Speeches"
-msgstr "开幕仪式"
-
-#: templates/visitors/program.html:55
-msgid "Ms. Elisabeth CREPON"
-msgstr "Elisabeth CREPON 女士"
-
-#: templates/visitors/program.html:55
-msgid "Director of ENSTA ParisTech"
-msgstr "巴黎高科高等先进技术学校校长"
+msgid "Welcome coffee"
+msgstr “接待/早餐”
 
 #: templates/visitors/program.html:56
-msgid "Mr. Jean Philippe VANOT"
-msgstr "Jean Philippe VANOT先生"
+msgid "Opening speeches"
+msgstr “开幕仪式”
 
-#: templates/visitors/program.html:56
-msgid "President of ParisTech"
-msgstr "巴黎高科主席"
+#: templates/visitors/program.html:73 templates/visitors/program.html:85
+#: templates/visitors/program.html:120
+msgid "Company presentation"
+msgstr “企业讲座”
 
-#: templates/visitors/program.html:57
-msgid "Mr. Yansheng MA"
-msgstr "马燕生先生"
+#: templates/visitors/program.html:95
+msgid "Lunch"
+msgstr “午餐”
 
-#: templates/visitors/program.html:57
-msgid "Minister Counselor ( Education), Embassy of China"
-msgstr "中华人民共和国驻法兰西共和国大使馆教育处公使衔参赞"
-
-#: templates/visitors/program.html:58
-msgid "President of AFCP"
-msgstr "AFCP主席"
-
-#: templates/visitors/program.html:65 templates/visitors/program.html:74
-#: templates/visitors/program.html:89 templates/visitors/program.html:98
+#: templates/visitors/program.html:101 templates/visitors/program.html:110
 msgid "Round Table Discussion"
 msgstr "圆桌会议"
 
-#: templates/visitors/program.html:83
-msgid "Lunch"
-msgstr "午餐/休息时间"
+#: templates/visitors/program.html:150
+msgid "Interview"
+msgstr “面试”
 
-#: templates/visitors/program.html:107
-msgid "Closing Ceremony"
-msgstr "闭幕式"
-
-#: templates/visitors/program.html:110
-msgid "Philippe JULLIAN"
-msgstr "Philippe JULLIAN 先生"
-
-#: templates/visitors/program.html:110
-msgid "Former Chief Financial Officer of Air Liquide"
-msgstr "法国液化空气集团前任首席财务官"
-
-#: templates/visitors/program.html:111
-msgid ""
-"\"The industrial, business and financial strategy of Air Liquide Group and "
-"its presence in China\""
-msgstr "“液化空气集团的工业、商业和财务战略及其在中国的业务”"
-
-#: templates/visitors/program.html:114
-msgid "Wei WEI"
-msgstr ""
-
-#: templates/visitors/program.html:114
-msgid "Group Management Development Director of Faurecia"
-msgstr "佛吉亚集团管理发展总监"
-
-#: templates/visitors/program.html:115
-msgid "\"Your Global Career at Faurecia\""
-msgstr ""
+#: templates/visitors/program.html:160
+msgid "Interviews of Plastic Omnium and Schneider Electric"
+msgstr "Plastic Omnium 和 Schneider Electric 的面试”
 
 #: templates/visitors/workpermit.html:6 templates/visitors/workpermit.html:14
 msgid "Status change from student to employee"
@@ -1312,8 +1173,8 @@ msgstr "学生居留转工作居留"
 
 #: templates/visitors/workpermit.html:7
 msgid ""
-"This page explains the process to change the status from student to employee "
-"(mostly in Chinese)."
+"This page explains the process to change the status from student to "
+"employee (mostly in Chinese)."
 msgstr "本页面(主要以中文)详细介绍了从学生身份转为工作身份的步骤"
 
 #: templates/visitors/workpermit.html:17
@@ -1381,8 +1242,7 @@ msgstr "下载PDF"
 #~ msgstr "2014年中国地平线论坛已经圆满落幕。感谢您的到来。"
 
 #~ msgid ""
-#~ "The information related to the forum 2014 is still available at the site"
-#~ msgstr "2014年论坛的相关信息仍在本网站可见"
+#~ msgstr "“液化空气集团的工业、商业和财务战略及其在中国的业务”"
 
 #~ msgid "program"
 #~ msgstr "活动安排"
@@ -1392,3 +1252,103 @@ msgstr "下载PDF"
 
 #~ msgid "job"
 #~ msgstr "工作"
+
+#~ msgid "users"
+#~ msgstr ""
+
+#~ msgid "Official partners of the Forum in 2015"
+#~ msgstr "2015年论坛官方合作伙伴"
+
+#~ msgid "Official website"
+#~ msgstr "官方网站"
+
+#~ msgid "View larger map"
+#~ msgstr "查看大地图"
+
+#~ msgid "Access:"
+#~ msgstr ""
+
+#~ msgid "Getting there by public transportation"
+#~ msgstr ""
+
+#~ msgid "Free entrance, 9h30 – 19h00, March 6th 2014"
+#~ msgstr "免费入场, 2014年3月6日9点30至19点"
+
+#~ msgid "Registration and welcome coffee"
+#~ msgstr "接待/早餐"
+
+#~ msgid "Opening Speeches"
+#~ msgstr "开幕仪式"
+
+#~ msgid "Ms. Elisabeth CREPON"
+#~ msgstr "Elisabeth CREPON 女士"
+
+#~ msgid "Director of ENSTA ParisTech"
+#~ msgstr "巴黎高科高等先进技术学校校长"
+
+#~ msgid "Mr. Jean Philippe VANOT"
+#~ msgstr "Jean Philippe VANOT先生"
+
+#~ msgid "President of ParisTech"
+#~ msgstr "巴黎高科主席"
+
+#~ msgid "Mr. Yansheng MA"
+#~ msgstr "马燕生先生"
+
+#~ msgid "Minister Counselor ( Education), Embassy of China"
+#~ msgstr "中华人民共和国驻法兰西共和国大使馆教育处公使衔参赞"
+
+#~ msgid "President of AFCP"
+#~ msgstr "AFCP主席"
+
+#~ msgid "Lunch"
+#~ msgstr "午餐/休息时间"
+
+#~ msgid "Closing Ceremony"
+#~ msgstr "闭幕式"
+
+#~ msgid "Philippe JULLIAN"
+#~ msgstr "Philippe JULLIAN 先生"
+
+#~ msgid "Former Chief Financial Officer of Air Liquide"
+#~ msgstr "法国液化空气集团前任首席财务官"
+
+#~ msgid "Wei WEI"
+#~ msgstr ""
+
+#~ msgid "Group Management Development Director of Faurecia"
+#~ msgstr "佛吉亚集团管理发展总监"
+
+#~ msgid "\"Your Global Career at Faurecia\""
+#~ msgstr ""
+
+#~ msgid "Your email:"
+#~ msgstr "您的邮箱："
+
+#~ msgid "Message:"
+#~ msgstr "消息"
+
+#~ msgid "Your first name:"
+#~ msgstr "名"
+
+#~ msgid "Your last name:"
+#~ msgstr "姓"
+
+#~ msgid "petit déjenner"
+#~ msgstr "接待/早餐"
+
+#~ msgid "Conférence ouverture"
+#~ msgstr "开幕仪式"
+
+#~ msgid "Conférence"
+#~ msgstr "企业讲座"
+
+#~ msgid "Pause déjenner"
+#~ msgstr "午餐/休息时间"
+
+#~ msgid "Entretien"
+#~ msgstr "面试"
+
+#~ msgid "Entretien de Plastic Omnium et Schneider Electric"
+#~ msgstr "Plastic Omnium和Schneider Electric的面试"
+

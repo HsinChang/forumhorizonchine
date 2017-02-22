@@ -47,6 +47,7 @@ CC = ['ZHU Tong <zhutong0114@gmail.com>',
       'Tianming LU <lutianming1005@gmail.com>']
 SENDER = 'Forum Horizon Chine <admin@forumhorizonchine.com>'
 ADMINS = [
+    'tank2885360@gmail.com',
     'xuanlin.9211@gmail.com',
     'zijiaoli.julie@gmail.com',       
     'realzhq@gmail.com',

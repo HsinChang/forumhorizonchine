@@ -1,4 +1,5 @@
-version: tk-20170223
+version: 20170223
+application: forumhorizonchine
 runtime: python27
 api_version: 1
 threadsafe: true

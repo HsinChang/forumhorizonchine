@@ -30,12 +30,12 @@
 	{{ _('Job opportunities') }}
       </a>
     </li>
-    <li {% if request.path == url_for('visitor.activities') %}
+    <!--<li {% if request.path == url_for('visitor.activities') %}
       class="current" {% endif %}>
       <a href="{{ url_for('visitor.activities') }}">
 	{{ _('Activities') }}
       </a>
-    </li>
+    </li>-->
     <li {% if request.path == url_for('visitor.workpermit') %}
       class="current" {% endif %}>
       <a href="{{ url_for('visitor.workpermit') }}">

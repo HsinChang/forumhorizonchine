@@ -13,23 +13,18 @@ var durationBetweenSlides = 10000; // in milliseconds
 var bannerImageClassName = "banner-img";
 
 var root = "/static/img/";
-var bannersURLs = [root+"Forum_Horizon_Chine_2010_1.jpg"
-              , root+"Forum_Horizon_Chine_2010_2.jpg"
-              , root+"Forum_Horizon_Chine_2010_3.jpg"
-              , root+"Forum_Horizon_Chine_2010_4.jpg"
-              , root+"Forum_Horizon_Chine_2010_5.jpg"
-              , root+"Forum_Horizon_Chine_2010_6.jpg"
-              , root+"Forum_Horizon_Chine_2010_7.jpg"
-              , root+"Forum_Horizon_Chine_2010_8.jpg"
-              , root+"Forum_Horizon_Chine_2010_9.jpg"
-              , root+"Forum_Horizon_Chine_2010_10.jpg"
-              , root+"Forum_Horizon_Chine_2011_11.jpg"
-              , root+"Forum_Horizon_Chine_2011_12.jpg"
-              , root+"Forum_Horizon_Chine_2011_13.jpg"
-              , root+"Forum_Horizon_Chine_2011_14.jpg"
-              , root+"Forum_Horizon_Chine_2011_15.jpg"
-              , root+"Forum_Horizon_Chine_2011_16.jpg"
-              ];
+var bannersURLs = [ root+"Forum_Horizon_Chine_2017 (1).jpg"
+                , root+"Forum_Horizon_Chine_2017 (2).jpg"
+                , root+"Forum_Horizon_Chine_2017 (3).jpg"
+                , root+"Forum_Horizon_Chine_2017 (4).jpg"
+                , root+"Forum_Horizon_Chine_2017 (5).jpg"
+                , root+"Forum_Horizon_Chine_2017 (6).jpg"
+                , root+"Forum_Horizon_Chine_2017 (7).jpg"
+                , root+"Forum_Horizon_Chine_2017 (8).jpg"
+                , root+"Forum_Horizon_Chine_2017 (9).jpg"
+                , root+"Forum_Horizon_Chine_2017 (10).jpg"
+                ,root+"Forum_Horizon_Chine_2017 (0).jpg"
+                ];
 
 
 //Initialization

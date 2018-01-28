@@ -112,21 +112,6 @@
     <div id="right-column">
       <div class="block">
 	<h1>{{ _('Welcome to <em>China Horizon Forum</em>') }}</h1>
-	{#
-	<p>
-	  {{ _('The China Horizon Forum 2014 is finished. Thanks for your coming.') }}
-	</p>
-	<p>
-	  {{ _('The information related to the forum 2014 is still available at the site')}}
-	  (
-	  <a href="{{ url_for('visitor.program') }}">{{ _('program') }}</a>,
-	  <a href="{{ url_for('visitor.exhibitors') }}">{{ _('exhibitors') }}</a>,
-	  <a href="{{ url_for('visitor.job') }}">{{ _('job') }}</a>
-	  ).
-	</p>
-
-
-	#}
 
 	<p id="registration">
 	  <a href="{{ url_for('visitor.inscription') }}">
@@ -135,28 +120,64 @@
 	</p>
 
 	<p>
-	  {{ _('Co-organized by the French-Chinese Friendship Association of ParisTech (AFCP), ParisTech and xineurope, Forum Horizon Chine is a space for recruiting French sinophile and Chinese students and graduates from the engineering and business Grandes Écoles of ParisTech.') }}
+	  {{ _('Co-organized by the ParisTech French-Chinese Friendship Association (AFCP) and ParisTech with the support of the Chinese Embassy, the China Horizon Forum serves always as a great communication platform for both students and companies since 2008.') }}
 	</p>
 
 	<p>
-	  {{ _('This year, the ninth edition was held at <a href="https://www.espci.fr"><strong>%(address)s</strong></a> on <strong>%(date)s</strong>. This unique event attracts the most promising students and graduates interested in a French-Chinese career. It will include a job fair and conference facilities where you will:', address=forum.address, date=forum.formated_date) }}
+	  {{ _('11<sup>th</sup> <b>China Horizon Forum</b> will take place') }}
+  </p>
+
+	<p>
+	  {{ _('The March 15th, 2018') }}
+  </p>
+
+	<p>
+	  {{ _('At <i>Télécom ParisTech</i>') }}
+  </p>
+
+	<p>
+    {{ _('The 11th China Horizon Forum will be held in the form of exhibition stands and conferences where your company can:') }}
 	</p>
 	<ul>
 	  <li>
-	    {{ _('Meet talented young Chinese students and graduates as well as French students and graduates wishing to pursue a career in China,') }}
+	    {{ _('Recruit or interview directly talented Chinese graduates, students') }}
 	  </li>
 	  <li>
-	    {{ _('Present your company and your development strategy in China and Asia,') }}
+	    {{ _('Discover Chinese students’ characteristics: intelligence, pragmatism, modesty…') }}
 	  </li>
 	  <li>
-	    {{ _('Communicate with other companies and representatives of China’s special economic zones, in order to know the Chinese market, its regulatory environment and its opportunities for implementation.') }}
+	    {{ _('Present your company and your development strategy in France, China and Asia') }}
+	  </li>
+
+	  <li>
+	    {{ _('Discuss business with other French or Chinese companies or new company founders') }}
+	  </li>
+
+	  <li>
+	    {{ _('Communicate with representatives of Chinese companies in order to better understand the Chinese market, its regulation and opportunities.') }}
 	  </li>
 	</ul>
 	<p>
-	  {{ _('You will participate in a series of conferences and round tables at the end of the day followed by a cocktail.') }}
+	  {{ _('You can choose at least one of the following services:') }}
 	</p>
+  <ul>
+    <li>
+      {{ _('Recruit: stands, collect CVs and interview directly') }}
+    </li>
+    <li>
+      {{ _('Present and exchange: round table, conference and media exposures') }}
+    </li>
+  </ul>
 	<p>
-	  {{ _('This forum is co-organized by the French-Chinese Friendship Association ParisTech (AFCP), ParisTech and xineurope, with the support of the Embassy of China.') }}
+	  {{ _('We invite you to watch <a href="https://www.youtube.com/watch?v=Ommn8tT608w">the video of the China Horizon Forum 2017</a>, and <a href="https://www.youtube.com/watch?v=8y1f7X9-5ow">an interview with M.CORCELL, Associate Director for Europe of Dragonfly Group</a>') }}
+	</p>
+
+	<p>
+	  {{ _('We do hope that you will be able to confirm your attendance to this invitation; We look forward to your presence at this forum where there will be more than 300 students who come from the best schools in France. (Top engineering and business schools)') }}
+	</p>
+  
+	<p>
+	  {{ _('The participation of your company to our forum is not only useful but also essential for each of the participants. Please find attached an overview of the forum, the participants in previous forums and a presentation of AFCP and ParisTech.') }}
 	</p>
 
 	<div class="info">

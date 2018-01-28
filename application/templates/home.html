@@ -6,210 +6,204 @@
 <meta name="description" content="{{ _("This forum is a place for Franco-Chinese business recruitment gathering students and graduates of ParisTech. It also offers a series of conferences and round table discussions.") }}"/>
 
 <link rel="stylesheet" type="text/css" media="screen"
-      href="{{ url_for('static', filename='css/home.css')}}"/>
+href="{{ url_for('static', filename='css/home.css')}}"/>
 <link rel="stylesheet" type="text/css" media="screen"
-      href="{{ url_for('static', filename='css/block.css') }}"/>
+href="{{ url_for('static', filename='css/block.css') }}"/>
 <link rel="stylesheet" type="text/css" media="screen"
-      href="{{ url_for('static', filename='css/sections.css') }}"/>
+href="{{ url_for('static', filename='css/sections.css') }}"/>
 
 {% endblock %}
 
 {% block header %}
 
-  <div class="banner-container">
+<div class="banner-container">
 
-    <div class="banner-image">
-      <div id="header-wrapper">
-	<div class="banner-img" style="background: url('/static/img/Forum_Horizon_Chine_2011_16.jpg') no-repeat center"></div>
-      </div>
+  <div class="banner-image">
+    <div id="header-wrapper">
+      <div class="banner-img" style="background: url('/static/img/Forum_Horizon_Chine_2011_16.jpg') no-repeat center"></div>
     </div>
-
   </div>
+
+</div>
 
 {% endblock %}
 
 {% block sidebar_and_content %}
 
-  <div id="home-wrapper" class="container section">
+<div id="home-wrapper" class="container section">
 
-    <div id="left-column">
+  <div id="left-column">
 
-      <h1>{{ _('Exhibitors of the Forum in 2017') }}</h1>
+    <h1>{{ _('Exhibitors of the Forum in 2017') }}</h1>
 
-      <div class="partners block">
-          <a href="http://www.dragonflygroup.com" target="_blank">
-              <img src={{ url_for('static', filename='img/logo/2017-enterprise/dragonfly.png') }} width="130px" style="margin-left: 5px">
-          </a>
-          <a href="http://www.emploitic.com/cscec" target="_blank">
-              <img src= {{ url_for('static', filename="img/logo/2017-enterprise/CSCEC.jpg") }}
-              width="130px" alt="CSCEC" style="margin-left: 10px" />
-          </a>
-          <a href="http://www.amaris.com/" target="_blank">
-              <img src={{ url_for('static', filename="img/logo/2017-enterprise/amaris.png") }}
-              width="130px" alt="Amaris"/>
-          </a>
-          <a href="http://www.solvay.fr/fr/index.html" target="_blank">
-              <img src={{ url_for('static', filename='img/logo/2017-enterprise/Solvay.png') }} width="150px" alt="Solvey" >
-          </a>
-          <a href="http://www.valeo.com/" target="_blank">
-              <img src={{ url_for('static', filename='img/logo/2017-enterprise/Valeo.png') }} width="100px"
-              style="margin-left:15px" alt = "Valeo">
-          </a>
-          <a href="http://groupeastek.com/" target="_blank">
-              <img src={{ url_for('static', filename='img/logo/2017-enterprise/astek.png') }} width="170px" alt = "Astek" style="margin-left: -15px">
-          </a>
-      </div>
-
-		<div id="planet" class="block clear">
-			<h1>{{ _("Organizers") }}</h1>
-			<!--
-                <div class="modified">Lien sur les images, texte en dessous supprimé</div>
-                -->
-
-			<div>
-				<table  class="noborder" style="margin-left:-30px;">
-					<tr>
-						<td align="center"><a href="http://www.afcp-paristech.org" target="_blank"><img src={{ url_for('static',
-							filename="img/logo/afcp_logo_redim_250.jpg") }}
-							alt="AFCP logo" width="160px"/></a></td>
-              <td align="center"><a href="http://www.telecom-paristech.fr" target="_blank"><img src={{ url_for('static',
-  							filename="img/logo/telecomparis.png") }}
-  							alt="Télécom ParisTech logo" width="100px" /></a></td>
-					</tr>
-					<tr>
-						<td align="center"><a href="http://www.paristech.org" target="_blank"><img src={{ url_for('static',
-							filename="img/logo/paristech_redim_150.jpg") }}
-							alt="ParisTech logo" width="110px" /></a></td>
-						<td align="center"><a href="http://www.xineurope.com/" target="_blank"><img src={{ url_for('static',
-							filename="img/logo/xineurope.png") }}
-							alt="XinEurope logo" width="150px" /></a></td>
-					</tr>
-					<tr>
-						<td align="center"><a href="http://www.ucecf.fr/" target="_blank"><img src={{ url_for('static',
-							filename="img/logo/UCECF.png") }}
-							alt="NJU logo" width="150px"/></a></td>
-						<td align="center"><a href="http://www.sjtu.edu.cn/" target="_blank"><img src={{ url_for('static',
-							filename="img/logo/sjtu.jpg") }}
-							alt="SJTU logo" height="100px"/></a></td>
-					</tr>
-				</table>
-			</div>
-
-		</div> <!--/#feeds-->
-
-      <h1 class="clear">{{ _('Poster') }}</h1>
-
-      <div id="announcements" class="block">
-	  <a href="/static/img/poster2018.jpg">
-	      <img src="/static/img/poster2018.jpg" width="420px"/>
-	  </a>
-      </div>
-
+    <div class="partners block">
+      <a href="http://www.dragonflygroup.com" target="_blank">
+        <img src={{ url_for('static', filename='img/logo/2017-enterprise/dragonfly.png') }} width="130px" style="margin-left: 5px">
+      </a>
+      <a href="http://www.emploitic.com/cscec" target="_blank">
+        <img src= {{ url_for('static', filename="img/logo/2017-enterprise/CSCEC.jpg") }}
+        width="130px" alt="CSCEC" style="margin-left: 10px" />
+      </a>
+      <a href="http://www.amaris.com/" target="_blank">
+        <img src={{ url_for('static', filename="img/logo/2017-enterprise/amaris.png") }}
+        width="130px" alt="Amaris"/>
+      </a>
+      <a href="http://www.solvay.fr/fr/index.html" target="_blank">
+        <img src={{ url_for('static', filename='img/logo/2017-enterprise/Solvay.png') }} width="150px" alt="Solvey" >
+      </a>
+      <a href="http://www.valeo.com/" target="_blank">
+        <img src={{ url_for('static', filename='img/logo/2017-enterprise/Valeo.png') }} width="100px"
+        style="margin-left:15px" alt = "Valeo">
+      </a>
+      <a href="http://groupeastek.com/" target="_blank">
+        <img src={{ url_for('static', filename='img/logo/2017-enterprise/astek.png') }} width="170px" alt = "Astek" style="margin-left: -15px">
+      </a>
     </div>
-    <div id="right-column">
-      <div class="block">
-	<h1>{{ _('Welcome to <em>China Horizon Forum</em>') }}</h1>
 
-	<p id="registration">
-	  <a href="{{ url_for('visitor.inscription') }}">
-	    <img src={{ url_for('static', filename="img/inscrivez_redim_200.jpg") }} width="200px"/>
-	  </a>
-	</p>
+    <div id="planet" class="block clear">
+      <h1>{{ _("Organizers") }}</h1>
+      <!--
+      <div class="modified">Lien sur les images, texte en dessous supprimé</div>
+    -->
 
-	<p>
-	  {{ _('Co-organized by the ParisTech French-Chinese Friendship Association (AFCP) and ParisTech with the support of the Chinese Embassy, the China Horizon Forum serves always as a great communication platform for both students and companies since 2008.') }}
-	</p>
+    <div>
+      <table  class="noborder" style="margin-left:-30px;">
+        <tr>
+          <td align="center"><a href="http://www.afcp-paristech.org" target="_blank"><img src={{ url_for('static',
+            filename="img/logo/afcp_logo_redim_250.jpg") }}
+            alt="AFCP logo" width="160px"/></a></td>
+            <td align="center"><a href="http://www.telecom-paristech.fr" target="_blank"><img src={{ url_for('static',
+              filename="img/logo/telecomparis.png") }}
+              alt="Télécom ParisTech logo" width="100px" /></a></td>
+            </tr>
+            <tr>
+              <td align="center"><a href="http://www.paristech.org" target="_blank"><img src={{ url_for('static',
+                filename="img/logo/paristech_redim_150.jpg") }}
+                alt="ParisTech logo" width="110px" /></a></td>
+                <td align="center"><a href="http://www.xineurope.com/" target="_blank"><img src={{ url_for('static',
+                  filename="img/logo/xineurope.png") }}
+                  alt="XinEurope logo" width="150px" /></a></td>
+                </tr>
+                <tr>
+                  <td align="center"><a href="http://www.ucecf.fr/" target="_blank"><img src={{ url_for('static',
+                    filename="img/logo/UCECF.png") }}
+                    alt="NJU logo" width="150px"/></a></td>
+                    <td align="center"><a href="http://www.sjtu.edu.cn/" target="_blank"><img src={{ url_for('static',
+                      filename="img/logo/sjtu.jpg") }}
+                      alt="SJTU logo" height="100px"/></a></td>
+                    </tr>
+                  </table>
+                </div>
 
-	<p>
-	  {{ _('11<sup>th</sup> <b>China Horizon Forum</b> will take place') }}
-  </p>
+              </div> <!--/#feeds-->
 
-	<p>
-	  {{ _('The March 15th, 2018') }}
-  </p>
+              <h1 class="clear">{{ _('Poster') }}</h1>
 
-	<p>
-	  {{ _('At <i>Télécom ParisTech</i>') }}
-  </p>
+              <div id="announcements" class="block">
+                <a href="/static/img/poster2018.jpg">
+                  <img src="/static/img/poster2018.jpg" width="420px"/>
+                </a>
+              </div>
 
-	<p>
-    {{ _('The 11th China Horizon Forum will be held in the form of exhibition stands and conferences where your company can:') }}
-	</p>
-	<ul>
-	  <li>
-	    {{ _('Recruit or interview directly talented Chinese graduates, students') }}
-	  </li>
-	  <li>
-	    {{ _('Discover Chinese students’ characteristics: intelligence, pragmatism, modesty…') }}
-	  </li>
-	  <li>
-	    {{ _('Present your company and your development strategy in France, China and Asia') }}
-	  </li>
+            </div>
+            <div id="right-column">
+              <div class="block">
+                <h1>{{ _('Welcome to <em>China Horizon Forum</em>') }}</h1>
 
-	  <li>
-	    {{ _('Discuss business with other French or Chinese companies or new company founders') }}
-	  </li>
+                <p id="registration">
+                  <a href="{{ url_for('visitor.inscription') }}">
+                    <img src={{ url_for('static', filename="img/inscrivez_redim_200.jpg") }} width="200px"/>
+                  </a>
+                </p>
 
-	  <li>
-	    {{ _('Communicate with representatives of Chinese companies in order to better understand the Chinese market, its regulation and opportunities.') }}
-	  </li>
-	</ul>
-	<p>
-	  {{ _('You can choose at least one of the following services:') }}
-	</p>
-  <ul>
-    <li>
-      {{ _('Recruit: stands, collect CVs and interview directly') }}
-    </li>
-    <li>
-      {{ _('Present and exchange: round table, conference and media exposures') }}
-    </li>
-  </ul>
-	<p>
-	  {{ _('We invite you to watch <a href="https://www.youtube.com/watch?v=Ommn8tT608w">the video of the China Horizon Forum 2017</a>, and <a href="https://www.youtube.com/watch?v=8y1f7X9-5ow">an interview with M.CORCELL, Associate Director for Europe of Dragonfly Group</a>') }}
-	</p>
+                <p>
+                  {{ _('Co-organized by the ParisTech French-Chinese Friendship Association (AFCP) and ParisTech with the support of the Chinese Embassy, the China Horizon Forum serves always as a great communication platform for both students and companies since 2008.') }}
+                </p>
 
-	<p>
-	  {{ _('We do hope that you will be able to confirm your attendance to this invitation; We look forward to your presence at this forum where there will be more than 300 students who come from the best schools in France. (Top engineering and business schools)') }}
-	</p>
+                <div>
+                  <p style="text-align: center;">11<sup>th</sup> <b>China Horizon Forum</b> will take place</p>
+                  <p style="text-align: center;">The March 15th, 2018</p>
+                  <p style="text-align: center;">At <i>Télécom ParisTech</i></p>
+                </div>
 
-	<p>
-	  {{ _('The participation of your company to our forum is not only useful but also essential for each of the participants. Please find attached an overview of the forum, the participants in previous forums and a presentation of AFCP and ParisTech.') }}
-	</p>
+                <p>
+                  {{ _('The 11th China Horizon Forum will be held in the form of exhibition stands and conferences where your company can:') }}
+                </p>
+                <ul>
+                  <li>
+                    {{ _('Recruit or interview directly talented Chinese graduates, students') }}
+                  </li>
+                  <li>
+                    {{ _('Discover Chinese students’ characteristics: intelligence, pragmatism, modesty…') }}
+                  </li>
+                  <li>
+                    {{ _('Present your company and your development strategy in France, China and Asia') }}
+                  </li>
 
-	<div class="info">
-	  {{ _('You are a student or an alumnus of Paristech?') }}
-	</div>
-	<p class="post-info">
-	  <!--
-	  {{ _('Registrations will open one or two months before the Forum. Until then, you may consult, on "Visitor area", the <a href="%(program)s">previous year program</a> and <a href="%(exhibitors)s">the exhibitors</a>.', program=url_for("visitor.program"), exhibitors=url_for("visitor.exhibitors"))}}
-	  -->
-	  {{ _('You can now register on <a href="%(inscription)s">the registration page</a>. Find out more about this Forum, in "Visitor" section, you can take a look at <a href="%(program)s">the program</a> and at <a href="%(exhibitors)s">the companies</a> that will participate in.', inscription=url_for("visitor.inscription"), program=url_for("visitor.program"), exhibitors=url_for("visitor.exhibitors")) }}
-	</p>
+                  <li>
+                    {{ _('Discuss business with other French or Chinese companies or new company founders') }}
+                  </li>
 
-	<div class="info">
-	  {{ _('Wish to get a stand for your company?') }}
-	</div>
-	<p class="post-info">
-	  {{ _('Please do not hesitate to <a href="%(contact)s">contact us</a> to receive our offers. In section "Exhibitors", You will find <a href="%(visitors)s">a presentation of the visitors	of the Forum</a> as well as the <a href="%(services)s">services offered</a>.', contact=url_for("contact", usertype="exhibitors"), visitors=url_for("exhibitor.visitors"), services=url_for("exhibitor.services")) }}
-	</p>
-      </div>
+                  <li>
+                    {{ _('Communicate with representatives of Chinese companies in order to better understand the Chinese market, its regulation and opportunities.') }}
+                  </li>
+                </ul>
+                <p>
+                  {{ _('You can choose at least one of the following services:') }}
+                </p>
+                <ul>
+                  <li>
+                    {{ _('Recruit: stands, collect CVs and interview directly') }}
+                  </li>
+                  <li>
+                    {{ _('Present and exchange: round table, conference and media exposures') }}
+                  </li>
+                </ul>
+                <p>
+                  {{ _('We invite you to watch <a href="https://www.youtube.com/watch?v=Ommn8tT608w">the video of the China Horizon Forum 2017</a>, and <a href="https://www.youtube.com/watch?v=8y1f7X9-5ow">an interview with M.CORCELL, Associate Director for Europe of Dragonfly Group</a>') }}
+                </p>
+
+                <p>
+                  {{ _('We do hope that you will be able to confirm your attendance to this invitation; We look forward to your presence at this forum where there will be more than 300 students who come from the best schools in France. (Top engineering and business schools)') }}
+                </p>
+
+                <p>
+                  {{ _('The participation of your company to our forum is not only useful but also essential for each of the participants. Please find attached an overview of the forum, the participants in previous forums and a presentation of AFCP and ParisTech.') }}
+                </p>
+
+                <div class="info">
+                  {{ _('You are a student or an alumnus of Paristech?') }}
+                </div>
+                <p class="post-info">
+                  <!--
+                  {{ _('Registrations will open one or two months before the Forum. Until then, you may consult, on "Visitor area", the <a href="%(program)s">previous year program</a> and <a href="%(exhibitors)s">the exhibitors</a>.', program=url_for("visitor.program"), exhibitors=url_for("visitor.exhibitors"))}}
+                -->
+                {{ _('You can now register on <a href="%(inscription)s">the registration page</a>. Find out more about this Forum, in "Visitor" section, you can take a look at <a href="%(program)s">the program</a> and at <a href="%(exhibitors)s">the companies</a> that will participate in.', inscription=url_for("visitor.inscription"), program=url_for("visitor.program"), exhibitors=url_for("visitor.exhibitors")) }}
+              </p>
+
+              <div class="info">
+                {{ _('Wish to get a stand for your company?') }}
+              </div>
+              <p class="post-info">
+                {{ _('Please do not hesitate to <a href="%(contact)s">contact us</a> to receive our offers. In section "Exhibitors", You will find <a href="%(visitors)s">a presentation of the visitors	of the Forum</a> as well as the <a href="%(services)s">services offered</a>.', contact=url_for("contact", usertype="exhibitors"), visitors=url_for("exhibitor.visitors"), services=url_for("exhibitor.services")) }}
+              </p>
+            </div>
 
 
-      <!-- TODO: intégrer le lien vers la nouvelle brochure ici -->
-      {# hide the brochure
-      <div id="ecoles" class="block">
-      <div class="block-title">{{ _("Forum précédent") }}</div>
-      <div class="modified">Contenu du bloc à vérifier</div>
-      <p>Vous pouvez obtenir plus de détail concernant l'édition 2011 du forum Horizon Chine
-      en consultant <a href="/static/doc/ForumHorizonChine2011.pdf">la brochure du forum de 2011</a>.</p>
-      <div class="fixme">Rajoute-t-on un lien vers la brochure de cette année ?</div>
-      </div>
-      #}
+            <!-- TODO: intégrer le lien vers la nouvelle brochure ici -->
+            {# hide the brochure
+              <div id="ecoles" class="block">
+                <div class="block-title">{{ _("Forum précédent") }}</div>
+                <div class="modified">Contenu du bloc à vérifier</div>
+                <p>Vous pouvez obtenir plus de détail concernant l'édition 2011 du forum Horizon Chine
+                  en consultant <a href="/static/doc/ForumHorizonChine2011.pdf">la brochure du forum de 2011</a>.</p>
+                  <div class="fixme">Rajoute-t-on un lien vers la brochure de cette année ?</div>
+                </div>
+                #}
 
-    </div> <!--/#right-column-->
+              </div> <!--/#right-column-->
 
-  </div> <!--/#home-wrapper-->
-  <script type="text/javascript" src="{{ url_for('static', filename="js/home.js") }}"></script>
+            </div> <!--/#home-wrapper-->
+            <script type="text/javascript" src="{{ url_for('static', filename="js/home.js") }}"></script>
 
-{% endblock %}{# sidebar_and_content #}
+            {% endblock %}{# sidebar_and_content #}

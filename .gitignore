@@ -36,4 +36,5 @@ nosetests.xml
 .svn/
 tests/
 index.yaml
+
 *.pyc

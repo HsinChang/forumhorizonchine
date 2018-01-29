@@ -11,7 +11,6 @@
 
 <div class="section program">
   <h1>{{ _('Forum program') }}</h1>
-
   <h2>{{ _('Free entrance, 9:30 – 18:00, March 15th 2018') }}</h2>
   <table>
     <tr>
@@ -76,75 +75,46 @@
                     </td>
                   </tr>
 
-                  <tr>
-                    <td colspan="2">
-                      <strong>{{ _('Interview') }}</strong>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <strong>15:00 - 18:00</strong> <br/>
-                      <!--Plastic Omnium:  <br/>-->
-                      <!--Schneider Electric:-->
-                    </td>
-                    <td>
-                      <h3>{{ _('Interviews of Plastic Omnium and Schneider Electric') }}</h3>
-                    </td>
-                  </tr>
-                  {#
-                    <tr>
-                      <td><strong>15h45 – 17h15</strong><br /> Amphi L108</td>
-                      <td>
-                        <h3>{{ _('Panel discussion') }}</h3>
-                        <div class="center">{{ _('"China and renewable energies"') }}</div>
-                        <ul>
-                          <li><strong>{{ _('Ms. Suyan ZHOU') }}</strong>, {{ _('Senior Advisor, EDF, Direction Strategy &amp; Prospective') }}</li>
-                          <li><strong>{{ _('Mr. Xavier BARBARO') }}</strong>, {{ _('Chief Executive Officer, NEOEN') }}</li>
-                          <li><strong>{{ _('Mr. Michel AUBLANT') }}</strong>, {{ _('Executive Director of Institut ICARE') }}</li>
-                          <li><strong>{{ _('Mr. Didier MAYER') }}</strong>, {{ _('Head of the Department Energy and Processes, MINES ParisTech') }}</li>
-                        </ul>
-                      </td>
-                    </tr>
-
-                    <tr>
-                      <td><strong>17h30 – 18h30</strong><br /> Amphi L108</td>
-                      <td>
-                        <h3>{{ _('Closing Ceremony') }}</h3>
-
-                        <div class="center">
-                          "Training at world level: Alstom University in China / Asia"
-                          <br /> <strong>David BRIGGS</strong>,
-                          Vice President of Alstom University.
-                        </div>
-
-                      </td>
-                    </tr>
-                    #}
                   </table>
 
-                  <div>
+                  <div style=" vertical-align:middle; text-align:center ">
+
                     <a href="http://www.afcp-paristech.org" target="_blank">
                       <img class="shadow"
-                      src="{{ url_for('static', filename="img/logo/afcp_logo.jpg") }}"
-                      width="220" alt="AFCP" style="margin-right:10px;margin-top:20px;vertical-align:top" />
+                      src="{{ url_for('static', filename="img/logo/afcp_logo_small.jpg") }}"
+                      height="45" alt="AFCP" style="margin-right:5px; "/>
                     </a>
-                    <a href="https://www.espci.fr" target="_blank">
+
+
+                    <a href="http://www.mines-paristech.fr" target="_blank">
                       <img class="shadow"
-                      src="{{ url_for('static', filename="img/logo/espci_new.jpg") }}"
-                      width="100" alt="espci" style="margin-right:10px"/>
+                      src="{{ url_for('static', filename="img/logo/mines.png") }}"
+                      height="45" alt="Mines" style="margin-right:5px; "/>
                     </a>
-                    <a href="http://www.xineurope.com" target="_blank">
+
+
+                    <a href="http://www.nju.edu.cn" target="_blank">
                       <img class="shadow"
-                      src="{{ url_for('static', filename="img/logo/xineurope.png") }}"
-                      width="150" alt="xineurope" style="margin-right:10px"/>
+                      src="{{ url_for("static", filename="img/logo/nju.png") }}"
+                      height="45" alt="nju" style="margin-right:5px; "/>
                     </a>
-                    <!--<div class="floatright">-->
+
+                    <a href="http://www.sjtu.edu.cn" target="_blank">
+                      <img class="shadow"
+                      src="{{ url_for("static", filename="img/logo/sjtu.jpg") }}"
+                      height="45" alt="sjtu" style="margin-right:5px; " />
+                    </a>
+
                     <a href="http://www.paristech.fr/" target="_blank">
                       <img class="shadow"
                       src="{{ url_for("static", filename="img/logo/paristech.jpg") }}"
-                      width="100" alt="ParisTech" style="margin-top:25px;vertical-align:top" />
+                      height="45" alt="ParisTech" style="margin-right:5px; " />
                     </a>
-                    <!--</div>-->
+                    <a href="http://www.xineurope.com" target="_blank">
+                      <img class="shadow"
+                      src="{{ url_for('static', filename="img/logo/xineurope_new.png") }}"
+                      height="45" alt="xineurope" style="margin-right:5px; "/>
+                    </a>
                   </div>
 
                   <!-- TODO: intégrer le lien vers la nouvelle brochure ici -->

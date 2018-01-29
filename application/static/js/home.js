@@ -1,4 +1,3 @@
-
 //#### Banner animation ####
 
 // Parameters

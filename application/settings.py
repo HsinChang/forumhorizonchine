@@ -49,7 +49,7 @@ SENDER = 'Forum Horizon Chine <admin@forumhorizonchine.com>'
 ADMINS = [
     'tank2885360@gmail.com',
     'xuanlin.9211@gmail.com',
-    'zijiaoli.julie@gmail.com',       
+    'zijiaoli.julie@gmail.com',
     'realzhq@gmail.com',
     'gaorunning@gmail.com',
     'lutianming1005@gmail.com',
@@ -63,6 +63,9 @@ ADMINS = [
     'u.philippart@gmail.com',
     'renheureux@gmail.com',
     'panwei.whu@gmail.com',
+    'qizhangzhujulien@gmail.com',
+    'snowsunnybx@gmail.com',
+    'yuyanlinnju@gmail.com'
 ]
 
 #upload file size limit

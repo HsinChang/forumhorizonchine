@@ -59,7 +59,7 @@ ADMINS = [
     # Department of Entreprises
     'yihongsu1994@gmail.com',
     'fionatangbio@gmail.com',
-    'jiangwaner1995@gmail.com'
+    'jiangwaner0519@gmail.com'
 ]
 
 #upload file size limit

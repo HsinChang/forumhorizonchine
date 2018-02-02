@@ -37,16 +37,35 @@ CACHE_TYPE = 'gaememcached'
 
 LANGUAGES = {'en': ('English'), 'fr': ('French'), 'zh': ('Chinese')}
 
-#EMAILS
+# EMAILS
+'''
+This section configures the emails in the 'job opportunities' section or
+'contact us' section
+'''
+
+'''
+When an email is sent to a recruiter, it will also cc to this list
+'''
+CC = ['BAI Xue <snowsunnybx@gmail.com>',
+      'SU Yihong<yihongsu1994@gmail.com>',
+      'TANG Kai <tank2885360@gmail.com>']
+
+'''
+When an email is sent using the 'Contact us' page
+these people will receive the mail
+'''
 CONTACT = ['ZHANG Yi <flyzhangyi@gmail.com>',
            'BAI Xue <snowsunnybx@gmail.com>',
            'SU Yihong<yihongsu1994@gmail.com>',
            'TANG Kai <tank2885360@gmail.com>']
 
-CC = ['BAI Xue <snowsunnybx@gmail.com>',
-      'SU Yihong<yihongsu1994@gmail.com>',
-      'TANG Kai <tank2885360@gmail.com>']
+
+# The sender address of the emails
 SENDER = 'Forum Horizon Chine <admin@forumhorizonchine.com>'
+
+
+# ADMINS for the website. E-mails in this list can use their google account to
+# log into /admin and post new offer/enterprise/contacts.
 ADMINS = [
     'flyzhangyi@gmail.com',
     'zijiaoli.julie@gmail.com',

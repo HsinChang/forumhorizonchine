@@ -38,13 +38,14 @@ CACHE_TYPE = 'gaememcached'
 LANGUAGES = {'en': ('English'), 'fr': ('French'), 'zh': ('Chinese')}
 
 #EMAILS
-CONTACT = ['ZHANG Nan <nan.zhann@gmail.com>',
-           'ZHU Tong <zhutong0114@gmail.com>',
-           'CHEN Cheng <chchen81@gmail.com>',
-           'Tianming LU <lutianming1005@gmail.com>']
-CC = ['ZHU Tong <zhutong0114@gmail.com>',
-      'CHEN Cheng <chchen81@gmail.com>',
-      'Tianming LU <lutianming1005@gmail.com>']
+CONTACT = ['ZHANG Yi <flyzhangyi@gmail.com>',
+           'BAI Xue <snowsunnybx@gmail.com>',
+           'SU Yihong<yihongsu1994@gmail.com>',
+           'TANG Kai <tank2885360@gmail.com>']
+
+CC = ['BAI Xue <snowsunnybx@gmail.com>',
+      'SU Yihong<yihongsu1994@gmail.com>',
+      'TANG Kai <tank2885360@gmail.com>']
 SENDER = 'Forum Horizon Chine <admin@forumhorizonchine.com>'
 ADMINS = [
     'flyzhangyi@gmail.com',

@@ -22,7 +22,6 @@ var bannersURLs = [ root+"Forum_Horizon_Chine_2017_1.jpg"
                 , root+"Forum_Horizon_Chine_2017_8.jpg"
                 , root+"Forum_Horizon_Chine_2017_9.jpg"
                 , root+"Forum_Horizon_Chine_2017_10.jpg"
-                ,root+"Forum_Horizon_Chine_2017_0.jpg"
                 ];
 
 

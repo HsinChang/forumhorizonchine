@@ -44,6 +44,7 @@
     </tbody>
   </table>
 
+<!--
   {#
   {% ifnotequal errmsg None %}
   <div class="error">{{ errmsg }}</div>
@@ -52,7 +53,6 @@
   <div class="info">{{ _('The message is sent succussfully.') }}</div>
   {% endifnotequal %}
   #}
-<!--
   <h2>{{ _('Wish to contact us?') }}</h2>
   <form method="post" action="{{ url_for('contact', usertype=usertype) }}">
       {{ form.hidden_tag() }}
